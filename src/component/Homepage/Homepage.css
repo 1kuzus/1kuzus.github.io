@@ -1,0 +1,10 @@
+.homepage {
+    background-image: url(../../assets/1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-attachment: fixed; */
+    height: 100vh;
+}
+.mask {
+    
+}
