@@ -6,5 +6,19 @@
     height: 100vh;
 }
 .mask {
-    
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.7);
+    backdrop-filter: blur(20px);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.header {
+position: fixed;
+top: 0;
+left: 0;
+width: 100vw;
+height: 60px;
+background-color: #303030;
 }

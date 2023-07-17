@@ -1,0 +1,13 @@
+.conta {
+    width: 100vw;
+    background-color: '#f0f0f0';
+    padding: 300px;
+}
+h1 {
+
+}
+.code {
+    font-size: 16px;
+    border: 1px solid #aaa;
+    background-color: #ddd;
+}

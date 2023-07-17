@@ -6,6 +6,7 @@ export default function Homepage() {
         <>
             <div className="homepage">Homepage</div>
             <div className="mask"></div>
+            <div className="header"></div>
         </>
     );
 }
