@@ -6,7 +6,7 @@ export default function Homepage() {
     const navigate = useNavigate();
     return (
         <>
-        <button onClick={()=>navigate('/list')}>to list</button>
+        <button onClick={()=>navigate('/list')} style={{marginTop:'300px'}}>to list</button>
             {/* <div className="homepage">Homepage</div>
             <div className="mask"></div>
             <div className="header"></div> */}
