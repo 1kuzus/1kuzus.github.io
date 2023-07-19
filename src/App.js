@@ -1,13 +1,15 @@
 import Homepage from './component/Homepage/Homepage';
 import Testblog from './component/Testblog/Testblog';
+import Header from './component/Header/Header';
 import './App.css';
 
 function App() {
     return (
-        <h1 className="App">
+        <div className="App">
             {/* <Homepage></Homepage> */}
             <Testblog></Testblog>
-        </h1>
+            <Header></Header>
+        </div>
     );
 }
 

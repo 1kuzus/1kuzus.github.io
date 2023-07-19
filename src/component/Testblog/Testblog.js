@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react';
 import './Testblog.css';
-import 'highlight.js/styles/';
-import Highlight from 'react-highlight';
+import 'highlight.js/styles/base16/3024.css';
 import hljs from 'highlight.js';
 const markdown = `
     const variable = 'hello';
@@ -63,10 +62,6 @@ export default function Testblog() {
         <div className="conta">
             <link rel="stylesheet" href="..\..\..\"></link>
             <h1>使用</h1>
-            <Highlight className="python"></Highlight>
-            <Highlight innerHTML={true}>
-                {'html with multiple code snippets'}
-            </Highlight>
             <pre>
                 <code className="language-html">
                     const a=123 let class= b={2}
