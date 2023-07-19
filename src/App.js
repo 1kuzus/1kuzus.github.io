@@ -35,7 +35,10 @@ const router = [
 ];
 
 function App() {
-    return <>{useRoutes(router)}</>;
+    return <>
+    <Header></Header>
+    {useRoutes(router)}
+    </>;
 }
 
 export default App;
