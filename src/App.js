@@ -1,4 +1,4 @@
-import Homepage from './pages/Homepage';
+import Homepage from './component/Homepage/Homepage';
 import Testblog from './component/Testblog/Testblog';
 import Header from './component/Header/Header';
 
@@ -11,34 +11,18 @@ const router = [
         element: <Homepage />,
     },
     {
-        path: '/list',
+        path: '/blogname',
         element: <Testblog />,
     },
-    // {
-    //     path: '/',
-    //     element: <Layout />,
-    //     children: [
-    //         {
-    //             path: 'dashboard',
-    //             element: withLoadingComponent(<Dashboard />),
-    //         },
-    //         {
-    //             path: 'content',
-    //             element: withLoadingComponent(<Content />),
-    //         },
-    //     ],
-    // },
-    // {
-    //     path: '*',
-    //     element: <Navigate to="/dashboard" />,
-    // },
 ];
 
 function App() {
-    return <>
-    <Header></Header>
-    {useRoutes(router)}
-    </>;
+    return (
+        <>
+            <Header></Header>
+            {useRoutes(router)}
+        </>
+    );
 }
 
 export default App;
