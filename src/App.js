@@ -1,11 +1,11 @@
 import Homepage from './component/Homepage/Homepage';
-import Testblog from './component/Testblog/Testblog';
 import Header from './component/Header/Header';
 
 import {useRoutes} from 'react-router-dom';
 import './App.css';
 
 import Blog1 from '../src/blogs/b1-blogname'
+import Blog2 from '../src/blogs/b2-blogname2'
 
 const router = [
     {
@@ -14,7 +14,11 @@ const router = [
     },
     {
         path: '/blogname',
-        element: <Testblog />,
+        element: <Blog1 />,
+    },
+    {
+        path: '/blogname2',
+        element: <Blog2 />,
     },
 ];
 

@@ -10,12 +10,12 @@ export default function Homepage() {
             <ul>
                 <div>list</div>
                 <li onClick={() => navigate('/blogname')}>blog1</li>
-                <li onClick={() => navigate('/blogname')}>blog2</li>
+                <li onClick={() => navigate('/blogname2')}>blog2</li>
             </ul>
             <ul>
                 <div>list</div>
                 <li onClick={() => navigate('/blogname')}>blog1</li>
-                <li onClick={() => navigate('/blogname')}>blog2</li>
+                <li onClick={() => navigate('/blogname2')}>blog2</li>
             </ul>
         </div>
     );
