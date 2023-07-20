@@ -1,4 +1,4 @@
-import Homepage from './component/Homepage/Homepage';
+import Homepage from './pages/Homepage';
 import Testblog from './component/Testblog/Testblog';
 import Header from './component/Header/Header';
 
