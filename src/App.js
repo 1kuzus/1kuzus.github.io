@@ -5,6 +5,8 @@ import Header from './component/Header/Header';
 import {useRoutes} from 'react-router-dom';
 import './App.css';
 
+import Blog1 from '../src/blogs/b1-blogname'
+
 const router = [
     {
         path: '/',
