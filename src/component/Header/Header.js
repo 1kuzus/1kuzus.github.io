@@ -4,7 +4,7 @@ import './Header.css';
 export default function Header () { 
     return ( 
         <div className='header'>
-            123
+            Header
         </div>
     ); 
 } 

@@ -3,5 +3,6 @@
     top: 0;
     left: 0;
     height: 60px;
-    background-color: steelblue;
+    width: 100vw;
+    background-color: rgba(70,130,180, 0.3);
 }
