@@ -8,12 +8,12 @@ export default function Homepage() {
         <div className="homepage">
             <div className="homepage-content">homepage content</div>
             <ul>
-                <div>list</div>
+                <div>list1</div>
                 <li onClick={() => navigate('/blogname')}>blog1</li>
                 <li onClick={() => navigate('/blogname2')}>blog2</li>
             </ul>
             <ul>
-                <div>list</div>
+                <div>list2</div>
                 <li onClick={() => navigate('/blogname')}>blog1</li>
                 <li onClick={() => navigate('/blogname2')}>blog2</li>
             </ul>
