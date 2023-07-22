@@ -18,7 +18,7 @@ export default function Homepage() {
                     <div id="logopart-vl"></div>
                     <div id="logopart-vr"></div>
                 </div>
-                <h1 id="homepage-title">Blog-1kuzus</h1>
+                <h1 id="homepage-title">Write anything here</h1>
             </div>
             <ul>
                 <div>list1</div>
