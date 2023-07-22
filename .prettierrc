@@ -1,5 +1,6 @@
 {
     "tabWidth": 4,
     "singleQuote": true,
-    "bracketSpacing": false
+    "bracketSpacing": false,
+    "printWidth": 120
 }

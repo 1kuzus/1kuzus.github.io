@@ -9,9 +9,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 60px;
+    padding-top: 48px;
 }
 #homepage-title {
+    margin-top: 30px;
     color: #30303c;
     font-size: 60px;
 }
@@ -29,6 +30,7 @@
     height: 120px;
     background-color: #00f8ff;
     transform: skewX(-21.8deg);
+    transition: left 300ms;
 }
 #logopart-y {
     position: absolute;
@@ -39,6 +41,7 @@
     height: 60px;
     background-color: #00a8c4;
     transform: skewX(21.8deg);
+    transition: left 300ms;
 }
 #logopart-vl {
     position: absolute;
@@ -49,6 +52,7 @@
     height: 120px;
     background-color: #30303c;
     transform: skewX(21.8deg);
+    transition: left 300ms;
 }
 #logopart-vr {
     position: absolute;
@@ -59,6 +63,19 @@
     height: 120px;
     background-color: #30303c;
     transform: skewX(-21.8deg);
+    transition: left 300ms;
+}
+.logo-expand #logopart-x {
+    left: 36px;
+}
+.logo-expand #logopart-y {
+    left: 72px;
+}
+.logo-expand #logopart-vl {
+    left: 12px;
+}
+.logo-expand #logopart-vr {
+    left: 60px;
 }
 
 #homepage ul {
