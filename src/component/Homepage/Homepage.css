@@ -7,18 +7,13 @@
 }
 #homepage-content {
     display: flex;
-    justify-content: center;
-    padding-top: 30px;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
 }
-#homepage ul {
-    margin: 60px 200px;
-    padding: 30px;
-    background-color: pink;
-}
-#homepage li {
-    height: 60px;
-    background-color: hotpink;
-    margin-top: 60px;
+#homepage-title {
+    color: #30303c;
+    font-size: 60px;
 }
 #logopart-wrapper {
     position: relative;
@@ -64,4 +59,15 @@
     height: 120px;
     background-color: #30303c;
     transform: skewX(-21.8deg);
+}
+
+#homepage ul {
+    margin: 60px 200px;
+    padding: 30px;
+    background-color: pink;
+}
+#homepage li {
+    height: 60px;
+    background-color: hotpink;
+    margin-top: 60px;
 }
