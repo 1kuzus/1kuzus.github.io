@@ -8,7 +8,7 @@
 #homepage-content {
     display: flex;
     justify-content: center;
-    height: 300px;
+    padding-top: 30px;
 }
 #homepage ul {
     margin: 60px 200px;
@@ -22,46 +22,46 @@
 }
 #logopart-wrapper {
     position: relative;
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
 }
 #logopart-x {
     position: absolute;
     top: 0;
-    left: 30px;
+    left: 24px;
     z-index: 3;
-    width: 30px;
-    height: 150px;
+    width: 24px;
+    height: 120px;
     background-color: #00f8ff;
     transform: skewX(-21.8deg);
 }
 #logopart-y {
     position: absolute;
     top: 0;
-    left: 75px;
+    left: 60px;
     z-index: 1;
-    width: 30px;
-    height: 75px;
+    width: 24px;
+    height: 60px;
     background-color: #00a8c4;
     transform: skewX(21.8deg);
 }
 #logopart-vl {
     position: absolute;
     top: 0;
-    left: 30px;
+    left: 24px;
     z-index: 2;
-    width: 30px;
-    height: 150px;
+    width: 24px;
+    height: 120px;
     background-color: #30303c;
     transform: skewX(21.8deg);
 }
 #logopart-vr {
     position: absolute;
     top: 0;
-    left: 90px;
+    left: 72px;
     z-index: 2;
-    width: 30px;
-    height: 150px;
+    width: 24px;
+    height: 120px;
     background-color: #30303c;
     transform: skewX(-21.8deg);
 }
