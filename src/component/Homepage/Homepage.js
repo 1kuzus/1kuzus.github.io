@@ -5,8 +5,12 @@ import {useNavigate} from 'react-router-dom';
 export default function Homepage() {
     const navigate = useNavigate();
     return (
-        <div className="homepage">
-            <div className="homepage-content">homepage content</div>
+        <div id="homepage">
+            <div id="homepage-content">
+                <div id="logopart-x"></div>
+                <div id="logopart-y"></div>
+                <div id="logopart-v"></div>
+            </div>
             <ul>
                 <div>list1</div>
                 <li onClick={() => navigate('/blogname')}>blog1</li>
