@@ -7,9 +7,12 @@ export default function Homepage() {
     return (
         <div id="homepage">
             <div id="homepage-content">
-                <div id="logopart-x"></div>
-                <div id="logopart-y"></div>
-                <div id="logopart-v"></div>
+                <div id="logopart-wrapper">
+                    <div id="logopart-x"></div>
+                    <div id="logopart-y"></div>
+                    <div id="logopart-vl"></div>
+                    <div id="logopart-vr"></div>
+                </div>
             </div>
             <ul>
                 <div>list1</div>
