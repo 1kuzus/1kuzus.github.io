@@ -18,18 +18,20 @@ export default function Homepage() {
                     <div id="logopart-vl"></div>
                     <div id="logopart-vr"></div>
                 </div>
-                <h1 id="homepage-title">Suzuki</h1>
+                <h1 id="homepage-title">铃木のBlogs</h1>
             </div>
-            <ul>
-                <div>list1</div>
-                <li onClick={() => navigate('/blogname')}>blog1</li>
-                <li onClick={() => navigate('/blogname2')}>blog2</li>W
-            </ul>
-            <ul>
-                <div>list2</div>
-                <li onClick={() => navigate('/blogname')}>blog1</li>
-                <li onClick={() => navigate('/blogname2')}>blog2</li>
-            </ul>
+            <div id="homepage-blog-list">
+                <ul>
+                    <div>list1</div>
+                    <li onClick={() => navigate('/blogname')}>blog1</li>
+                    <li onClick={() => navigate('/blogname2')}>blog2</li>W
+                </ul>
+                <ul>
+                    <div>list2</div>
+                    <li onClick={() => navigate('/blogname')}>blog1</li>
+                    <li onClick={() => navigate('/blogname2')}>blog2</li>
+                </ul>
+            </div>
         </div>
     );
 }

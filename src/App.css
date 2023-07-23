@@ -5,5 +5,10 @@
 }
 body {
     padding-top: 60px;
-    background-color: #fcfcfc;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
 }
