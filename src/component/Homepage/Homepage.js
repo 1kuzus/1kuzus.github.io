@@ -13,10 +13,10 @@ export default function Homepage() {
                     onMouseEnter={() => setLogoExpand(!logoExpand)}
                     className={logoExpand && 'logo-expand'}
                 >
-                    <div id="logopart-x"></div>
-                    <div id="logopart-y"></div>
-                    <div id="logopart-vl"></div>
-                    <div id="logopart-vr"></div>
+                    <div id="logopart-x" />
+                    <div id="logopart-y" />
+                    <div id="logopart-vl" />
+                    <div id="logopart-vr" />
                 </div>
                 <h1 id="homepage-title">铃木のBlogs</h1>
             </div>
