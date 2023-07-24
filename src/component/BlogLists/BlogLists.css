@@ -1,0 +1,16 @@
+.bloglists-ul {
+    padding: 30px;
+    /* border: 1px solid #dcdcdc; */
+}
+.bloglists-ul:nth-child(odd) {
+    background-color: red;
+}
+.bloglists-ul:nth-child(even) {
+    /* background-color: red; */
+}
+.bloglists-li {
+    /* display: none; */
+    height: 60px;
+    background-color: hotpink;
+    margin-top: 60px;
+}

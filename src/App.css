@@ -5,6 +5,7 @@
 }
 body {
     padding-top: 64px;
+    background-color: #f4f4f4;
 }
 li {
     list-style: none;

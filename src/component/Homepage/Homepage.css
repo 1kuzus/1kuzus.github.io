@@ -73,17 +73,3 @@
 .logo-expand #logopart-vr {
     left: 60px;
 }
-#homepage-blog-list {
-    padding: 36px;
-    background-color: #f4f4f4;
-}
-#homepage-blog-list ul {
-    margin: 60px 200px;
-    padding: 30px;
-    background-color: pink;
-}
-#homepage-blog-list li {
-    height: 60px;
-    background-color: hotpink;
-    margin-top: 60px;
-}

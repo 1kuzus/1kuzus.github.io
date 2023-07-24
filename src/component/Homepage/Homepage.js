@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
+import BlogLists from '../BlogLists/BlogLists';
 import './Homepage.css';
-import {useNavigate} from 'react-router-dom';
 
 export default function Homepage() {
-    const navigate = useNavigate();
     const [logoExpand, setLogoExpand] = useState(true);
     return (
         <div id="homepage">
@@ -11,7 +10,7 @@ export default function Homepage() {
                 <div
                     id="logopart-wrapper"
                     onMouseEnter={() => setLogoExpand(!logoExpand)}
-                    className={logoExpand && 'logo-expand'}
+                    className={logoExpand ? 'logo-expand' : null}
                 >
                     <div id="logopart-x" />
                     <div id="logopart-y" />
@@ -20,18 +19,7 @@ export default function Homepage() {
                 </div>
                 <h1 id="homepage-title">铃木のBlogs</h1>
             </div>
-            <div id="homepage-blog-list">
-                <ul>
-                    <div>list1</div>
-                    <li onClick={() => navigate('/blogname')}>blog1</li>
-                    <li onClick={() => navigate('/blogname2')}>blog2</li>W
-                </ul>
-                <ul>
-                    <div>list2</div>
-                    <li onClick={() => navigate('/blogname')}>blog1</li>
-                    <li onClick={() => navigate('/blogname2')}>blog2</li>
-                </ul>
-            </div>
+            <BlogLists />
         </div>
     );
 }
