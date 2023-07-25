@@ -1,16 +1,30 @@
-.bloglists-ul {
-    padding: 30px;
-    /* border: 1px solid #dcdcdc; */
+.bloglist {
+    padding: 0 480px;
 }
-.bloglists-ul:nth-child(odd) {
-    background-color: red;
+.bloglist-head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 36px 0;
 }
-.bloglists-ul:nth-child(even) {
-    /* background-color: red; */
+.bloglist-ul {
+    transition: max-height 300ms;
+    overflow: hidden;
 }
-.bloglists-li {
+.bloglist:nth-child(odd) {
+    background-color: #fcfcfc;
+}
+.bloglist:nth-child(even) {
+    background-color: #ececec;
+}
+.bloglist-li {
     /* display: none; */
-    height: 60px;
-    background-color: hotpink;
-    margin-top: 60px;
+    width: 80%;
+    height: 144px;
+    border: 1px solid #cccccc;
+    border-radius: 18px;
+    padding: 24px;
+    margin-bottom: 24px;
+    /* background-color: hotpink; */
+    /* margin-top: 60px; */
 }

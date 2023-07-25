@@ -3,7 +3,7 @@ import BlogLists from '../BlogLists/BlogLists';
 import './Homepage.css';
 
 export default function Homepage() {
-    const [logoExpand, setLogoExpand] = useState(true);
+    const [logoExpand, setLogoExpand] = useState(false);
     return (
         <div id="homepage">
             <div id="homepage-content">
