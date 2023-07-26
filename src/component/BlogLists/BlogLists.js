@@ -9,7 +9,7 @@ function BlogList(props) {
     return (
         <div className="bloglist">
             <div className="bloglist-head">
-                <h3 className='bloglist-head-title'>{blogCategory.category}</h3>
+                <h3 className="bloglist-head-title">{blogCategory.category}</h3>
                 <button
                     onClick={() => {
                         setExpand(!expand);
@@ -32,7 +32,7 @@ function BlogList(props) {
 export default function BlogLists() {
     const navigate = useNavigate();
     return (
-        <div className='bloglists'>
+        <div className="bloglists">
             {blogCategories.map((blogCategory, index) => (
                 // 需要key
                 <BlogList blogCategory={blogCategory} navigate={navigate} />
