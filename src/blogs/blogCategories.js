@@ -1,7 +1,7 @@
 const blogCategories = [
     {
         category: 'test class A',
-        blogs: ['test blog 1', 'test arti 2'],
+        blogs: ['test blog 1', '使用useMemo'],
     },
     {
         category: 'test class B',
