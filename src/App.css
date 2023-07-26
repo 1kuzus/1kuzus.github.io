@@ -5,6 +5,8 @@
 }
 body {
     padding-top: 64px;
+    width: 100vw;
+    margin-right: calc(100% - 100vw);
     background-color: #f4f4f4;
 }
 li {

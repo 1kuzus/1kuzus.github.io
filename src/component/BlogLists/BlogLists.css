@@ -1,29 +1,38 @@
 .bloglists {
     background-color: #f4f4f4;
-    padding: 32px 480px 0;
+    padding: 0 480px;
+    overflow: hidden;
 }
 .bloglist {
-    margin-bottom: 32px;
+    margin-top: 48px;
 }
 .bloglist-head {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 12px 0;
+    margin-bottom: 12px;
     border-bottom: 1px solid #cccccc;
+    transition: margin-bottom 300ms;
 }
 .bloglist-head-title {
     font-size: 28px;
     color: #00a8c4;
 }
 .bloglist-ul {
-    padding: 16px 24px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0 24px;
+    height: 0;
+    overflow: hidden;
+    transition: height 300ms, opacity 300ms;
 }
 .bloglist-li {
     display: flex;
     align-items: center;
-    height: 48px;
-    margin-bottom: 8px;
+    height: 50px;
+    /* margin-top: 8px; */
     padding: 12px 24px;
     font-size: 20px;
     font-weight: bold;

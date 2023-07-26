@@ -1,25 +1,31 @@
 import React, {useState} from 'react';
 import {useNavigate, Link} from 'react-router-dom';
-import blogCategories from '../../blogs/blogCategories';
+import blogClasses from '../../blogs/blogClasses';
 import './BlogLists.css';
 
 function BlogList(props) {
-    const [expand, setExpand] = useState(true);
-    const {blogCategory, navigate} = props;
+    const [showList, setShowList] = useState(true);
+    const {blogClass, navigate} = props;
     return (
         <div className="bloglist">
-            <div className="bloglist-head">
-                <h3 className="bloglist-head-title">{blogCategory.category}</h3>
+            <div
+                className="bloglist-head"
+                style={{borderBottomWidth: showList ? '1px' : '0', marginBottom: showList ? '12px' : '-4px'}}
+            >
+                <h3 className="bloglist-head-title" style={{color:showList?'#00a8c4':'#30303c'}}>{blogClass.classTitle + `  (${blogClass.blogs.length})`}</h3>
                 <button
                     onClick={() => {
-                        setExpand(!expand);
+                        setShowList(!showList);
                     }}
                 >
                     expand
                 </button>
             </div>
-            <ul className="bloglist-ul" style={{maxHeight: expand ? '1000px' : '0'}}>
-                {blogCategory.blogs.map((blog) => (
+            <ul
+                className="bloglist-ul"
+                style={{height: showList ? 8 + 58 * blogClass.blogs.length + 'px' : '0', opacity: showList ? '1' : '0'}}
+            >
+                {blogClass.blogs.map((blog) => (
                     <li className="bloglist-li" onClick={() => navigate('blogname')}>
                         {blog}
                     </li>
@@ -33,9 +39,9 @@ export default function BlogLists() {
     const navigate = useNavigate();
     return (
         <div className="bloglists">
-            {blogCategories.map((blogCategory, index) => (
+            {blogClasses.map((blogClass, index) => (
                 // 需要key
-                <BlogList blogCategory={blogCategory} navigate={navigate} />
+                <BlogList blogClass={blogClass} navigate={navigate} />
             ))}
         </div>
     );
