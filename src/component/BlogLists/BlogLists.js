@@ -7,12 +7,12 @@ function BlogList(props) {
     const [showList, setShowList] = useState(true);
     const {blogClass, navigate} = props;
     return (
-        <div className="bloglist">
+        <div className={`bloglist${showList ? ' showlist' : ''}`}>
             <div
                 className="bloglist-head"
                 style={{borderBottomWidth: showList ? '1px' : '0', marginBottom: showList ? '12px' : '-4px'}}
             >
-                <h3 className="bloglist-head-title" style={{color:showList?'#00a8c4':'#30303c'}}>{blogClass.classTitle + `  (${blogClass.blogs.length})`}</h3>
+                <h3 className="bloglist-head-title">{blogClass.classTitle + `  (${blogClass.blogs.length})`}</h3>
                 <button
                     onClick={() => {
                         setShowList(!showList);
@@ -23,7 +23,7 @@ function BlogList(props) {
             </div>
             <ul
                 className="bloglist-ul"
-                style={{height: showList ? 8 + 58 * blogClass.blogs.length + 'px' : '0', opacity: showList ? '1' : '0'}}
+                style={{height: showList ? 6 + 56 * blogClass.blogs.length + 'px' : '0', opacity: showList ? '1' : '0'}}
             >
                 {blogClass.blogs.map((blog) => (
                     <li className="bloglist-li" onClick={() => navigate('blogname')}>
