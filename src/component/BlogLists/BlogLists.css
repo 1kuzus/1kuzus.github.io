@@ -1,53 +1,66 @@
 .bloglists {
-    background-color: #f4f4f4;
-    padding: 0 480px;
     overflow: hidden;
+    padding: 12px 480px 48px;
+    background-color: #f4f4f4;
 }
 .bloglist {
-    margin-top: 48px;
+    margin-top: 36px;
 }
 .bloglist-head {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 12px 0;
-    margin-bottom: 12px;
-    border-bottom: 1px solid #cccccc;
+    margin-bottom: 0;
+    cursor: pointer;
     transition: margin-bottom 300ms;
 }
 .bloglist-head-title {
+    width: fit-content;
+    padding: 12px 0;
     font-size: 24px;
     color: #30303c;
-}
-.bloglist-head:hover .bloglist-head-title,
-.bloglist.showlist .bloglist-head-title {
-    color: #00a8c4;
+    border-bottom: 1px solid transparent;
+    transition: color 150ms, border-bottom-color 150ms, flex-grow 300ms;
 }
 .bloglist-ul {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    padding: 0 24px;
-    height: 0;
     overflow: hidden;
+    height: 0;
+    padding: 0 24px;
+    opacity: 0;
     transition: height 300ms, opacity 500ms;
 }
 .bloglist-li {
     display: flex;
     align-items: center;
     height: 50px;
-    /* margin-top: 8px; */
     padding: 12px 24px;
     font-size: 18px;
     font-weight: bold;
     border-radius: 12px;
     color: #30303c;
-    opacity: 0.9;
+    cursor: pointer;
     transition: background-color 300ms;
 }
+
+/*hover样式*/
 .bloglist-li:hover {
     background-color: #ececec;
 }
-.bloglist-head :hover {
-    background-color: #ececec;
+.bloglist-head:hover .bloglist-head-title {
+    color: #00a8c4;
+    border-bottom-color: #cccccc;
+}
+
+/*分类展开样式*/
+.bloglist.showlist .bloglist-head {
+    margin-bottom: 12px;
+}
+.bloglist.showlist .bloglist-head-title {
+    flex-grow: 1;
+    color: #00a8c4;
+    border-bottom-color: #cccccc;
+}
+.bloglist.showlist .bloglist-ul {
+    opacity: 0.9;
 }

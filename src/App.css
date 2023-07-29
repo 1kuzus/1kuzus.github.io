@@ -2,12 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
 }
 body {
-    padding-top: 64px;
-    width: 100vw;
+    overflow-x: hidden;
     margin-right: calc(100% - 100vw);
+    padding-top: 64px;
     background-color: #f4f4f4;
 }
 li {
