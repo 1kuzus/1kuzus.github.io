@@ -6,8 +6,11 @@ import './Header.css';
 export default function Header() {
     return (
         <div id="header">
-            <img src={LogoIcon} id="header-logo" />
-            <img src={GithubIcon} id="header-github" />
+            <img id="header-logo" src={LogoIcon} />
+            <a href='https://github.com/1kuzus'>
+
+            <img id="header-github" src={GithubIcon} />
+            </a>
         </div>
     );
 }

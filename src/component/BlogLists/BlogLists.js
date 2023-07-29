@@ -30,7 +30,7 @@ function BlogList(props) {
 export default function BlogLists() {
     const navigate = useNavigate();
     return (
-        <div className="bloglists">
+        <div id="bloglists">
             {categories.map((category, index) => (
                 <BlogList key={index} category={category} navigate={navigate} />
             ))}
