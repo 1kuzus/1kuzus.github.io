@@ -20,7 +20,7 @@ DEBUG=1
 # BV="BV1FV4y41157Zx"
 # p=13
 # bili_video_link=f"https://www.bilibili.com/video/{BV}{'' if p<1 else f'?p={p}'}"
-bili_video_link="https://www.bilibili.com/video/BV1bg4y5137R6"
+bili_video_link="https://www.bilibili.com/video/BV1bg4y513712R6"
 if DEBUG:
     print(bili_video_link)
 
