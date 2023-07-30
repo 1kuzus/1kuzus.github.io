@@ -1,0 +1,26 @@
+#sidebar {
+    overflow-y: auto;
+    position: fixed;
+    width: 324px;
+    height: calc(100vh - 64px);
+    padding: 0 24px;
+    background-color: #fcfcfc;
+}
+.sidebarlist-head{
+    display: flex;
+    align-items: center;
+    height: 32px;
+    cursor: pointer;
+}
+.sidebarlist-title {
+    color: #00a8c4;
+}
+.sidebarlist-li {
+    margin: 2px 0;
+    padding: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.sidebarlist-li:hover {
+    background-color: #ececec;
+}

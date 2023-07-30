@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
-import {useNavigate, Link} from 'react-router-dom';
+import {useState} from 'react';
+import {useNavigate} from 'react-router-dom';
 import categories from '../../blogs/categories';
 import './BlogLists.css';
 
 function BlogList(props) {
-    const [showList, setShowList] = useState(true);
     const {category, navigate} = props;
+    const [showList, setShowList] = useState(true);
     return (
         <div className={`bloglist${showList ? ' showlist' : ''}`}>
             <div
@@ -14,11 +14,11 @@ function BlogList(props) {
                     setShowList(!showList);
                 }}
             >
-                <h3 className="bloglist-head-title">{category.categoryName + `  (${category.blogs.length})`}</h3>
+                <h3 className="bloglist-title">{category.categoryName + `  (${category.blogs.length})`}</h3>
             </div>
             <ul className="bloglist-ul" style={{height: showList ? 4 + 54 * category.blogs.length + 'px' : '0'}}>
                 {category.blogs.map((blog, index) => (
-                    <li className="bloglist-li" key={index} onClick={() => navigate('blogname')}>
+                    <li className="bloglist-li" key={index} onClick={() => navigate('/blogname')}>
                         {blog}
                     </li>
                 ))}

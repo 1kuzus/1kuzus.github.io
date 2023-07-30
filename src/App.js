@@ -4,8 +4,9 @@ import Header from './component/Header/Header';
 import {useRoutes} from 'react-router-dom';
 import './App.css';
 
-import Blog1 from '../src/blogs/b1-blogname';
-import Blog2 from '../src/blogs/b2-blogname2';
+import Blog1 from './blogs/b1-blogname';
+import Blog2 from './blogs/b2-blogname2';
+import SideBar from './component/SideBar/SideBar';
 
 const router = [
     {
@@ -16,6 +17,7 @@ const router = [
         path: '/blogname',
         element: (
             <>
+                <SideBar />
                 <Blog1 />
             </>
         ),

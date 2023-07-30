@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import {useEffect} from 'react';
 import './index.css';
 import 'highlight.js/styles/base16/3024.css';
 import hljs from 'highlight.js';

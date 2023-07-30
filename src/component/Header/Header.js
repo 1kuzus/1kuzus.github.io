@@ -1,11 +1,12 @@
-import React from 'react';
+import {useNavigate} from 'react-router-dom';
 import LogoIcon from '../../assets/logo.svg';
 import './Header.css';
 
 export default function Header() {
+    const navigate = useNavigate();
     return (
         <div id="header">
-            <img id="header-logo" src={LogoIcon} />
+            <img id="header-logo" src={LogoIcon} onClick={()=>navigate('/')}/>
             <a href="https://github.com/1kuzus" target='_blank'>
                 <svg id="header-github" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
                     <path d="M512 512m-512 0a512 512 0 1 0 1024 0 512 512 0 1 0-1024 0Z" fill="#30303C"></path>
