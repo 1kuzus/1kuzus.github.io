@@ -4,10 +4,10 @@
     box-sizing: border-box;
 }
 body {
-    overflow-x: hidden;
     margin-right: calc(100% - 100vw);
     padding-top: 64px;
     background-color: #f4f4f4;
+    overflow-x: hidden;
 }
 li {
     list-style: none;

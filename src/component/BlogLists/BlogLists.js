@@ -32,7 +32,7 @@ export default function BlogLists() {
     return (
         <div id="bloglists">
             {categories.map((category, index) => (
-                <BlogList key={index} category={category} navigate={navigate} />
+                <BlogList key={index} category={category} navigate={navigate} className="vvv"/>
             ))}
         </div>
     );

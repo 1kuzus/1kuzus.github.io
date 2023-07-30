@@ -1,7 +1,7 @@
 #bloglists {
-    overflow: hidden;
     padding: 12px 480px 48px;
     background-color: #f4f4f4;
+    overflow: hidden;
 }
 .bloglist {
     margin-top: 36px;
@@ -24,10 +24,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    overflow: hidden;
-    height: 0;
     padding: 0 24px;
     opacity: 0;
+    overflow: hidden;
     transition: height 300ms, opacity 500ms;
 }
 .bloglist-li {
@@ -37,8 +36,8 @@
     padding: 12px 24px;
     font-size: 18px;
     font-weight: bold;
-    border-radius: 12px;
     color: #30303c;
+    border-radius: 12px;
     cursor: pointer;
     transition: background-color 300ms;
 }

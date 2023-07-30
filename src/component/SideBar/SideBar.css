@@ -1,26 +1,68 @@
 #sidebar {
-    overflow-y: auto;
     position: fixed;
-    width: 324px;
+    width: 396px;
     height: calc(100vh - 64px);
-    padding: 0 24px;
+    padding: 24px;
     background-color: #fcfcfc;
+    overflow-y: auto;
 }
-.sidebarlist-head{
+.sidebarlist-head {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    height: 32px;
     cursor: pointer;
 }
 .sidebarlist-title {
-    color: #00a8c4;
+    box-sizing: content-box;
+    height: 24px;
+    line-height: 24px;
+    margin-bottom: 2px;
+    padding: 4px 0;
+    font-size: 16px;
+    color: #30303c;
+    transition: color 150ms;
+}
+.sidebarlist-title-rightarrow {
+    width: 18px;
+    height: 18px;
+    transition: transform 150ms;
+}
+.sidebarlist-ul {
+    opacity: 0;
+    overflow: hidden;
+    transition: height 200ms, opacity 200ms;
 }
 .sidebarlist-li {
-    margin: 2px 0;
-    padding: 4px;
-    border-radius: 4px;
+    box-sizing: content-box;
+    height: 24px;
+    line-height: 24px;
+    margin-bottom: 2px;
+    padding: 4px 16px;
+    font-size: 16px;
+    color: #30303c;
+    border-radius: 8px;
     cursor: pointer;
+    transition: background-color 200ms;
 }
+
+/*hover样式*/
 .sidebarlist-li:hover {
-    background-color: #ececec;
+    background-color: #f4f4f4;
+}
+.sidebarlist-head:hover .sidebarlist-title {
+    color: #00a8c4;
+}
+.sidebarlist-head:hover .sidebarlist-title-rightarrow {
+    transform: rotate(90deg);
+}
+
+/*分类展开样式*/
+.sidebarlist.showlist .sidebarlist-title {
+    color: #00a8c4;
+}
+.sidebarlist.showlist .sidebarlist-title-rightarrow {
+    transform: rotate(90deg);
+}
+.sidebarlist.showlist .sidebarlist-ul {
+    opacity: 0.9;
 }

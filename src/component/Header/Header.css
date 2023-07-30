@@ -8,14 +8,21 @@
     z-index: 100;
     width: 100vw;
     height: 64px;
-    padding: 0 144px;
+    padding: 0 180px;
     background-color: #fcfcfc;
 }
 #header-logo {
     width: 36px;
     height: 36px;
 }
-#header-github {
+#header-github-bg {
     width: 36px;
     height: 36px;
+    border-radius: 50%;
+    background-color: #30303c;
 }
+/* #header-github {
+    width: 36px;
+    height: 36px;
+    filter: drop-shadow(#f00 80px 0);
+} */
