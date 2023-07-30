@@ -17,7 +17,7 @@ import requests
 import json
 
 DEBUG=1
-# BV="BV1FV4y4157Zx"
+# BV="BV1FV4y41157Zx"
 # p=13
 # bili_video_link=f"https://www.bilibili.com/video/{BV}{'' if p<1 else f'?p={p}'}"
 bili_video_link="https://www.bilibili.com/video/BV1bg4y137R6"
