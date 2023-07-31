@@ -24,7 +24,21 @@ const router = [
     },
     {
         path: '/blogname2',
-        element: <Blog2 />,
+        element: (
+            <>
+                <SideBar />
+                <Blog2 />
+            </>
+        ),
+    },
+    {
+        path: '*',
+        element: (
+            <>
+                <SideBar />
+                <Blog2 />
+            </>
+        ),
     },
 ];
 

@@ -45,6 +45,12 @@
     transition: background-color 200ms;
 }
 
+/*active样式*/
+.sidebarlist-li.active {
+    color: #0088AC;
+    background-color: #ececec;
+}
+
 /*hover样式*/
 .sidebarlist-li:hover {
     background-color: #f4f4f4;
