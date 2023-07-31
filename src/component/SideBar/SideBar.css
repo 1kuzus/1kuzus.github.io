@@ -23,8 +23,8 @@
     transition: color 150ms;
 }
 .sidebarlist-title-rightarrow {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     transition: transform 150ms;
 }
 .sidebarlist-ul {
@@ -51,9 +51,6 @@
 }
 .sidebarlist-head:hover .sidebarlist-title {
     color: #00a8c4;
-}
-.sidebarlist-head:hover .sidebarlist-title-rightarrow {
-    transform: rotate(90deg);
 }
 
 /*分类展开样式*/
