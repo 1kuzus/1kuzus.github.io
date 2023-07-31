@@ -1,10 +1,12 @@
 #bloglists {
-    padding: 12px 480px 48px;
+    padding: 12px 120px 48px;
     background-color: #f4f4f4;
     overflow: hidden;
 }
 .bloglist {
-    margin-top: 36px;
+    min-width: 480px;
+    max-width: 1024px;
+    margin: 36px auto 0;
 }
 .bloglist-head {
     display: flex;
