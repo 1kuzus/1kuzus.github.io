@@ -14,7 +14,7 @@ const router = [
         element: <Homepage />,
     },
     {
-        path: '/blogname',
+        path: '/blog1',
         element: (
             <>
                 <SideBar />
@@ -23,7 +23,7 @@ const router = [
         ),
     },
     {
-        path: '/blogname2',
+        path: '/blog2',
         element: (
             <>
                 <SideBar />
