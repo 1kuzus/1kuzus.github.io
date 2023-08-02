@@ -2,7 +2,7 @@ import {useEffect} from 'react';
 import './index.css';
 import 'highlight.js/styles/base16/3024.css';
 import hljs from 'highlight.js';
-import B from '../../component/B';
+import X from '../../component/X';
 
 export default function Testblog() {
     useEffect(() => {
@@ -10,6 +10,11 @@ export default function Testblog() {
     }, []);
     return (
         <div className="conta">
+            <X.Title>汉字36pxbt你好hello</X.Title>
+            <X.H1>汉字36pxbt你好hello</X.H1>
+            <X.H2>汉字36pxbt你好hello</X.H2>
+            <X.H3>汉字36pxbt你好hello</X.H3>
+            <div>普通的 文本哈哈哈我哈哈哈普通的文本普通平静的，文本！！！</div>
             <link rel="stylesheet" href="..\..\..\"></link>
             <h1>blog2</h1>
             <pre>
@@ -17,7 +22,6 @@ export default function Testblog() {
             </pre>
 
             <div className="hello">123</div>
-            <B.Title>hello</B.Title>
         </div>
     );
 }
