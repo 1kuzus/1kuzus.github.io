@@ -47,10 +47,8 @@
 
 /*active样式*/
 .sidebarlist-li.active {
-    border-radius: 0;
-    border-left: 4px solid #0088ac;
     color: #0088ac;
-    background-color: #ececec;
+    background-color: #f4f4f4;
 }
 
 /*hover样式*/
