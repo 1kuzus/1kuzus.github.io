@@ -42,7 +42,7 @@
     color: #30303c;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 200ms;
+    transition: color 200ms, background-color 200ms;
 }
 
 /*active样式*/
