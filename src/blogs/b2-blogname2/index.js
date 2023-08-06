@@ -14,6 +14,10 @@ export default function Testblog() {
             <X.H1>汉字36pxbt你好hello</X.H1>
             <X.H2>汉字36pxbt你好hello</X.H2>
             <X.H3>汉字36pxbt你好hello</X.H3>
+            <X.Highlight>
+                这是一行文本
+                我想要另一行文本
+            </X.Highlight>
             <div>普通的 文本哈哈哈我哈哈哈普通的文本普通平静的，文本！！！</div>
             <link rel="stylesheet" href="..\..\..\"></link>
             <h1>blog2</h1>
