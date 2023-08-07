@@ -20,7 +20,7 @@ export default function Testblog() {
             </X.Highlight>
             <div>普通的 文本哈哈哈我哈哈哈普通的文本普通平静的，文本！！！</div>
             <link rel="stylesheet" href="..\..\..\"></link>
-            <h1>blog2</h1>
+            <h1>blog2test</h1>
             <pre>
                 <code className="language-html">const a=123 let class= b={2}</code>
             </pre>
