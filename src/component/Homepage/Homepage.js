@@ -9,7 +9,8 @@ export default function Homepage() {
             <div id="homepage-content">
                 <div
                     id="logopart-wrapper"
-                    onMouseEnter={() => setLogoExpand(!logoExpand)}
+                    onMouseEnter={() => setLogoExpand(true)}
+                    onMouseLeave={() => setLogoExpand(false)}
                     className={logoExpand ? 'logo-expand' : null}
                 >
                     <div id="logopart-x" />
