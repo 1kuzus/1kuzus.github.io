@@ -3,7 +3,7 @@
     width: 396px;
     height: calc(100vh - 64px);
     padding: 24px;
-    background-color: #fcfcfc;
+    background-color: var(--bg-color-1);
     overflow-y: auto;
 }
 .sidebarlist-head {
@@ -48,12 +48,12 @@
 /*active样式*/
 .sidebarlist-li.active {
     color: #0088ac;
-    background-color: #f4f4f4;
+    background-color: var(--bg-color-2);
 }
 
 /*hover样式*/
 .sidebarlist-li:hover {
-    background-color: #f4f4f4;
+    background-color: var(--bg-color-2);
 }
 .sidebarlist-head:hover .sidebarlist-title {
     color: #00a8c4;

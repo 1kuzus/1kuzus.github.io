@@ -9,7 +9,7 @@
     width: 100vw;
     height: 64px;
     padding: 0 180px;
-    background-color: #fcfcfc;
+    background-color: var(--bg-color-1);
 }
 #header-logo {
     width: 36px;
