@@ -7,7 +7,7 @@ body {
     margin-right: calc(100% - 100vw);
     padding-top: 64px;
     font-size: 16px;
-    background-color: #f4f4f4;
+    background-color: var(--bg-color-2);
     overflow-x: hidden;
 }
 li {
@@ -15,4 +15,13 @@ li {
 }
 a {
     text-decoration: none;
+}
+
+:root.light {
+    --bg-color-1: #fcfcfc;
+    --bg-color-2: #f4f4f4;
+}
+:root.dark {
+    --bg-color-1: #202028;
+    --bg-color-2: #30303c;
 }
