@@ -5,6 +5,7 @@
     padding: 24px;
     background-color: var(--bg-color-1);
     overflow-y: auto;
+    transition: background-color 200ms;
 }
 .sidebarlist-head {
     display: flex;
@@ -19,13 +20,13 @@
     margin-bottom: 2px;
     padding: 4px 0;
     font-size: 16px;
-    color: #30303c;
-    transition: color 150ms;
+    color: var(--text-color-main);
+    transition: color 200ms;
 }
 .sidebarlist-title-rightarrow {
     width: 16px;
     height: 16px;
-    transition: transform 150ms;
+    transition: transform 200ms;
 }
 .sidebarlist-ul {
     opacity: 0;
@@ -39,7 +40,7 @@
     margin-bottom: 2px;
     padding: 4px 16px;
     font-size: 16px;
-    color: #30303c;
+    color: var(--text-color-main);
     border-radius: 8px;
     cursor: pointer;
     transition: color 200ms, background-color 200ms;
@@ -47,21 +48,21 @@
 
 /*active样式*/
 .sidebarlist-li.active {
-    color: #0088ac;
-    background-color: var(--bg-color-2);
+    color: var(--text-color-active);
+    background-color: var(--hover-color-1);
 }
 
 /*hover样式*/
 .sidebarlist-li:hover {
-    background-color: var(--bg-color-2);
+    background-color: var(--hover-color-1);
 }
 .sidebarlist-head:hover .sidebarlist-title {
-    color: #00a8c4;
+    color: var(--title-color);
 }
 
 /*分类展开样式*/
 .sidebarlist.showlist .sidebarlist-title {
-    color: #00a8c4;
+    color: var(--title-color);
 }
 .sidebarlist.showlist .sidebarlist-title-rightarrow {
     transform: rotate(90deg);
