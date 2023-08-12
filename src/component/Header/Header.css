@@ -10,6 +10,7 @@
     height: 64px;
     padding: 0 180px;
     background-color: var(--bg-color-1);
+    transition: background-color 200ms;
 }
 #header-logo {
     width: 36px;
@@ -23,5 +24,5 @@
     background-color: #30303c;
 }
 #header-github-bg:hover {
-    background-color: #50505c;
+    background-color: var(--gray-1);
 }

@@ -11,15 +11,15 @@
     display: flex;
     margin-bottom: 0;
     cursor: pointer;
-    transition: margin-bottom 300ms;
+    transition: margin-bottom 200ms;
 }
 .bloglist-title {
     width: fit-content;
     padding: 12px 0;
     font-size: 24px;
-    color: #30303c;
+    color: var(--text-color-main);
     border-bottom: 1px solid transparent;
-    transition: color 150ms, border-bottom-color 150ms, flex-grow 300ms;
+    transition: color 200ms, border-bottom-color 200ms, flex-grow 300ms;
 }
 .bloglist-ul {
     display: flex;
@@ -28,7 +28,7 @@
     padding: 0 24px;
     opacity: 0;
     overflow: hidden;
-    transition: height 300ms, opacity 500ms;
+    transition: height 200ms, opacity 400ms;
 }
 .bloglist-li {
     display: flex;
@@ -37,19 +37,19 @@
     padding: 12px 24px;
     font-size: 18px;
     font-weight: bold;
-    color: #30303c;
+    color: var(--text-color-main);
     border-radius: 12px;
     cursor: pointer;
-    transition: background-color 300ms;
+    transition: background-color 200ms;
 }
 
 /*hover样式*/
 .bloglist-li:hover {
-    background-color: #ececec;
+    background-color: var(--hover-color-2);
 }
 .bloglist-head:hover .bloglist-title {
-    color: #00a8c4;
-    border-bottom-color: #cccccc;
+    color: var(--title-color);
+    border-bottom-color: var(--gray-1);
 }
 
 /*分类展开样式*/
@@ -58,8 +58,8 @@
 }
 .bloglist.showlist .bloglist-title {
     flex-grow: 1;
-    color: #00a8c4;
-    border-bottom-color: #cccccc;
+    color: var(--title-color);
+    border-bottom-color: var(--gray-1);
 }
 .bloglist.showlist .bloglist-ul {
     opacity: 0.9;

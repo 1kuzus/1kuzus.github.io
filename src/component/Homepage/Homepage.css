@@ -4,11 +4,12 @@
     align-items: center;
     padding: 64px 0;
     background-color: var(--bg-color-1);
+    transition: background-color 200ms;
 }
 #homepage-title {
     margin-top: 32px;
     font-size: 48px;
-    color: #30303c;
+    color: var(--text-color-main);
 }
 #logopart-wrapper {
     position: relative;
@@ -22,9 +23,10 @@
     z-index: 3;
     width: 24px;
     height: 120px;
-    background-color: #00f8ff;
+    background-color: var(--logopart-x-color);
+    box-shadow: var(--logopart-shadow);
     transform: skewX(-21.8deg);
-    transition: left 300ms;
+    transition: left 200ms, box-shadow 400ms;
 }
 #logopart-y {
     position: absolute;
@@ -33,9 +35,9 @@
     z-index: 1;
     width: 24px;
     height: 60px;
-    background-color: #00a8c4;
+    background-color: var(--logopart-y-color);
     transform: skewX(21.8deg);
-    transition: left 300ms;
+    transition: left 200ms;
 }
 #logopart-vl {
     position: absolute;
@@ -44,9 +46,9 @@
     z-index: 2;
     width: 24px;
     height: 120px;
-    background-color: #30303c;
+    background-color: var(--logopart-vl-color);
     transform: skewX(21.8deg);
-    transition: left 300ms;
+    transition: left 200ms;
 }
 #logopart-vr {
     position: absolute;
@@ -55,9 +57,9 @@
     z-index: 2;
     width: 24px;
     height: 120px;
-    background-color: #30303c;
+    background-color: var(--logopart-vr-color);
     transform: skewX(-21.8deg);
-    transition: left 300ms;
+    transition: left 200ms;
 }
 .logo-expand #logopart-x {
     left: 36px;

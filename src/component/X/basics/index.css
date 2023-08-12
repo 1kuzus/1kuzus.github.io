@@ -1,16 +1,16 @@
 .x-title {
     font-size: 36px;
-    color: #30303c;
+    color: var(--text-color-main);
 }
 .x-h1 {
     font-size: 30px;
-    color: #30303c;
+    color: var(--text-color-main);
 }
 .x-h2 {
     font-size: 24px;
-    color: #30303c;
+    color: var(--text-color-main);
 }
 .x-h3 {
     font-size: 18px;
-    color: #30303c;
+    color: var(--text-color-main);
 }
