@@ -6,10 +6,6 @@
     --title-color: #00a8c4;
     --text-color-main: #30303c;
     --text-color-active: #0088ac;
-    --logopart-x-color: #00f8ff;
-    --logopart-y-color: #00a8c4;
-    --logopart-vl-color: #30303c;
-    --logopart-vr-color: #30303c;
     --gray-1: #d4d4d4;
 }
 :root.dark {
@@ -20,14 +16,10 @@
     --title-color: #00b8d0;
     --text-color-main: #ececec;
     --text-color-active: #00a8c4;
-    --logopart-x-color: #00e8f4;
-    --logopart-y-color: #00b8d0;
-    --logopart-vl-color: #30303c;
-    --logopart-vr-color: #30303c;
     --gray-1: #50505c;
 
     /*仅暗色模式*/
-    --logopart-shadow: 0 0 32px 2px #00f8ff;
+    --logopart-shadow: 0 0 36px 4px #00e8f4a0;
 }
 
 * {

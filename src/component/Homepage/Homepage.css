@@ -23,7 +23,7 @@
     z-index: 3;
     width: 24px;
     height: 120px;
-    background-color: var(--logopart-x-color);
+    background-color: #00f8ff;
     box-shadow: var(--logopart-shadow);
     transform: skewX(-21.8deg);
     transition: left 200ms, box-shadow 400ms;
@@ -35,7 +35,7 @@
     z-index: 1;
     width: 24px;
     height: 60px;
-    background-color: var(--logopart-y-color);
+    background-color: #00a8c4;
     transform: skewX(21.8deg);
     transition: left 200ms;
 }
@@ -46,7 +46,7 @@
     z-index: 2;
     width: 24px;
     height: 120px;
-    background-color: var(--logopart-vl-color);
+    background-color: #30303c;
     transform: skewX(21.8deg);
     transition: left 200ms;
 }
@@ -57,7 +57,7 @@
     z-index: 2;
     width: 24px;
     height: 120px;
-    background-color: var(--logopart-vr-color);
+    background-color: #30303c;
     transform: skewX(-21.8deg);
     transition: left 200ms;
 }
