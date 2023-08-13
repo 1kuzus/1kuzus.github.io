@@ -1,4 +1,4 @@
-import {Title, H1, H2, H3} from './basics';
+import {Title, H1, H2, H3, P} from './basics';
 import Highlight from './Highlight/Highlight';
 
 const X = {
@@ -6,6 +6,7 @@ const X = {
     H1,
     H2,
     H3,
+    P,
     Highlight,
 };
 
