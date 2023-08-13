@@ -1,4 +1,4 @@
-import './index.css'
+import './index.css';
 
 export function Title(props) {
     const {children} = props;
@@ -15,4 +15,9 @@ export function H2(props) {
 export function H3(props) {
     const {children} = props;
     return <h4 className="x-h3">{children}</h4>;
+}
+export function P(props) {
+    const {children} = props;
+    const styled = children.replace(/`(.*?)`/g, '<span class="x-inline-highlight">$1</span>');
+    return <p className="x-p" dangerouslySetInnerHTML={{__html: styled}}></p>;
 }

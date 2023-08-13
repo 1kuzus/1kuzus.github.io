@@ -6,6 +6,8 @@
     --title-color: #00a8c4;
     --text-color-main: #30303c;
     --text-color-active: #0088ac;
+    --inline-highlight-color-text: #50505c;
+    --inline-highlight-color-bg: #50505c20;
     --gray-1: #d4d4d4;
 }
 :root.dark {
