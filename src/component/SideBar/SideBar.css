@@ -6,7 +6,6 @@
     background-color: var(--bg-color-1);
     overflow-y: auto;
     transition: background-color 200ms;
-    transition: all 0.3s;
 }
 .sidebarlist-head {
     display: flex;
