@@ -17,7 +17,16 @@ export function H3(props) {
     return <h4 className="x-h3">{children}</h4>;
 }
 export function P(props) {
+    /*
+        `content`  行内高亮
+        *content*  加粗
+        @text#url@ 超链接
+    */
     const {children} = props;
-    const styled = children.replace(/`(.*?)`/g, '<span class="x-inline-highlight">$1</span>');
-    return <p className="x-p" dangerouslySetInnerHTML={{__html: styled}}></p>;
+    let htmlContent = Array.isArray(children) ? children.join('') : children;
+    htmlContent = htmlContent.replace(/</g, '&#60;\n').replace(/>/g, '&#62;');
+    // const styled = children.replace(/`(.*?)`/g, '<span class="x-inline-highlight">$1</span>');
+    console.log(children);
+    console.log(htmlContent);
+    return <p className="x-p" dangerouslySetInnerHTML={{__html: htmlContent}}></p>;
 }
