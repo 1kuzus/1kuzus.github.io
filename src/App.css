@@ -7,7 +7,7 @@
     --text-color-main: #30303c;
     --text-color-active: #0088ac;
     --inline-highlight-color-text: #50505c;
-    --inline-highlight-color-bg: #50505c20;
+    --inline-highlight-color-bg: #50505c18;
     --gray-1: #d4d4d4;
 }
 :root.dark {
@@ -16,8 +16,10 @@
     --hover-color-1: #28282e;
     --hover-color-2: #383844;
     --title-color: #00b8d0;
-    --text-color-main: #ececec;
+    --text-color-main: #f4f4f4;
     --text-color-active: #00a8c4;
+    --inline-highlight-color-text: #ececec;
+    --inline-highlight-color-bg: #ececec18;
     --gray-1: #50505c;
 
     /*仅暗色模式*/

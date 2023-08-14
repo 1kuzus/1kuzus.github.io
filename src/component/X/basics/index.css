@@ -20,16 +20,10 @@
     color: var(--text-color-main);
 }
 .x-inline-highlight {
-    font-family: consolas;
-    /* line-height: 20px;  */
-
-    font-size: 14px;
-    padding: 0 4px;
     margin: 0 4px;
-    border-radius: 4px;
+    padding: 2px 4px;
+    font-family: consolas;
     color: var(--inline-highlight-color-text);
+    border-radius: 4px;
     background-color: var(--inline-highlight-color-bg);
-}
-p, span {
-    vertical-align: baseline;
 }
