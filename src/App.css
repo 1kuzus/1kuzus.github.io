@@ -12,18 +12,18 @@
 }
 :root.dark {
     --bg-color-1: #202026;
-    --bg-color-2: #30303c;
+    --bg-color-2: #28282e;
     --hover-color-1: #28282e;
     --hover-color-2: #383844;
     --title-color: #00b8d0;
-    --text-color-main: #f4f4f4;
+    --text-color-main: #fcfcfc;
     --text-color-active: #00a8c4;
     --inline-highlight-color-text: #ececec;
     --inline-highlight-color-bg: #ececec18;
     --gray-1: #50505c;
 
     /*仅暗色模式*/
-    --logopart-shadow: 0 0 36px 4px #00e8f4a0;
+    --logopart-shadow: 0 0 48px 4px #00e8f4a0;
 }
 
 * {
