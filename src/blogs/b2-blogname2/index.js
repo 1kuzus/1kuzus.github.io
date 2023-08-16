@@ -10,9 +10,15 @@ export default function Testblog() {
     }, []);
     return (
         <div className="conta">
-            <X.Title>汉字36pxbt你好hello</X.Title>
-            <X.H1>汉字36pxbt你好hello</X.H1>
-            <X.H2>汉字36pxbt你好hello</X.H2>
+            <X.Title>测试Blog</X.Title>
+            <X.H1>一级标题</X.H1>
+
+            <X.H2>在 class 组件中声明 ref</X.H2>
+            <X.P>
+                要在@class组件[https://react.docschina.org/reference/react/Component]@中声明
+                一个ref，请调用`createRef`并将其结果分配给`class`字段。\n 如果你现在将`{'ref={this.inputRef}'}`传递
+                给JSX中的`{'<input>'}`，React将把input的DOM节点赋值给`this.inputRef.current`。
+            </X.P>
             <X.H3>汉字36pxbt你好hello</X.H3>
             <X.P>
                 这里是一句普通的文本，你可以使用`\`\``符号包裹内容从而实现`像这样`的高亮效果。你可能会怀疑`\``这个符号是如何展示在屏幕上的。\n答案是使用`\\\``。
@@ -24,12 +30,7 @@ export default function Testblog() {
                 不远处，一朵朵绚丽多彩的花朵竞相绽放，为这个美丽的场景增添了一抹生机与色彩。在这个宁静的时刻，大自然似乎也在为这些生命欢呼，诉说着生命的美好与活力。\n
                 这段话里的加粗效果是用`\*`打出来的。
             </X.P>
-
-            <X.H2>在 class 组件中声明 ref</X.H2>
             <X.Highlight></X.Highlight>
-            <pre>
-                <code className="language-html">const a=123 let class= b={2}</code>
-            </pre>
         </div>
     );
 }

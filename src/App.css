@@ -6,8 +6,9 @@
     --title-color: #00a8c4;
     --text-color-main: #30303c;
     --text-color-active: #0088ac;
-    --inline-highlight-color-text: #50505c;
+    --inline-highlight-color-text: #50505a;
     --inline-highlight-color-bg: #50505c18;
+    --logopart-vr-color: #30303c;
     --gray-1: #d4d4d4;
 }
 :root.dark {
@@ -20,6 +21,7 @@
     --text-color-active: #00a8c4;
     --inline-highlight-color-text: #ececec;
     --inline-highlight-color-bg: #ececec18;
+    --logopart-vr-color: #40404c;
     --gray-1: #50505c;
 
     /*仅暗色模式*/
