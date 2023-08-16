@@ -1,6 +1,8 @@
 :root.light {
     --bg-color-1: #fcfcfc;
     --bg-color-2: #f4f4f4;
+    --bg-transparent-golden: #ffb80020;
+    --bg-transparent-red: #ff380020;
     --hover-color-1: #f4f4f4;
     --hover-color-2: #ececec;
     --title-color: #00a8c4;
@@ -14,6 +16,8 @@
 :root.dark {
     --bg-color-1: #202026;
     --bg-color-2: #28282e;
+    --bg-transparent-golden: #ffb80020;
+    --bg-transparent-red: #ff380020;
     --hover-color-1: #28282e;
     --hover-color-2: #383844;
     --title-color: #00b8d0;

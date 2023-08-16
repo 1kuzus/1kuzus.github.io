@@ -24,6 +24,16 @@
     font-size: 16px;
     color: var(--text-color-main);
 }
+.x-p.highlight-p {
+    border-radius: 12px;
+    padding: 24px 32px;
+}
+.x-p.highlight-background-golden {
+    background-color: var(--highlight-p-golden);
+}
+.x-p.highlight-background-red {
+    background-color: var(--highlight-p-red);
+}
 .x-inline-highlight {
     margin: 0 4px;
     padding: 2px 4px;
