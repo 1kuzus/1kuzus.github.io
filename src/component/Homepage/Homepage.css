@@ -57,7 +57,7 @@
     z-index: 2;
     width: 24px;
     height: 120px;
-    background-color: #30303c;
+    background-color: var(--logopart-vr-color);
     transform: skewX(-21.8deg);
     transition: left 200ms;
 }

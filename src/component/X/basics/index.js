@@ -24,6 +24,8 @@ export function P(props) {
     */
     const {children} = props;
     let htmlContent = Array.isArray(children) ? children.join('') : children;
+
+    htmlContent = htmlContent.replace(/ /g, '');
     htmlContent = htmlContent.replace(/</g, '&#60;').replace(/>/g, '&#62;');
     htmlContent = htmlContent.replace(/\\\\/g, '&#92;');
     htmlContent = htmlContent.replace(/\\`/g, '&#96;');
@@ -33,8 +35,6 @@ export function P(props) {
     htmlContent = htmlContent.replace(/`(.*?)`/g, '<span class="x-inline-highlight">$1</span>');
     htmlContent = htmlContent.replace(/\*(.*?)\*/g, '<span class="x-inline-strong">$1</span>');
     htmlContent = htmlContent.replace(/@(.*?)\[(.*?)\]@/g, '<a href="$2" target="_blank" class="x-inline-link">$1</a>');
-    // const styled = children.replace(/`(.*?)`/g, '<span class="x-inline-highlight">$1</span>');
-    console.log(children);
-    console.log(htmlContent);
+
     return <p className="x-p" dangerouslySetInnerHTML={{__html: htmlContent}}></p>;
 }
