@@ -29,10 +29,10 @@
     padding: 24px 32px;
 }
 .x-p.highlight-background-golden {
-    background-color: var(--highlight-p-golden);
+    background-color: var(--bg-transparent-golden);
 }
 .x-p.highlight-background-red {
-    background-color: var(--highlight-p-red);
+    background-color: var(--bg-transparent-red);
 }
 .x-inline-highlight {
     margin: 0 4px;
