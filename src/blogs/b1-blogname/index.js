@@ -69,7 +69,7 @@ export default function Testblog() {
             </pre>
 
             <pre>
-                <code className="language-python">{markdown}</code>
+                {/* <code className="language-python">{markdown}</code> */}
             </pre>
         </div>
     );
