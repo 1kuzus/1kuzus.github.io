@@ -2,6 +2,8 @@ import Homepage from './component/Homepage/Homepage';
 import Header from './component/Header/Header';
 
 import {useRoutes} from 'react-router-dom';
+import {useEffect} from 'react';
+import hljs from 'highlight.js';
 import './App.css';
 
 import Blog1 from './blogs/b1-blogname';
@@ -43,6 +45,9 @@ const router = [
 ];
 
 function App() {
+    useEffect(() => {
+        hljs.highlightAll();
+    }, []);
     return (
         <>
             <Header></Header>
