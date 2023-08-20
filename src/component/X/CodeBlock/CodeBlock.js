@@ -1,14 +1,11 @@
-import {useEffect} from 'react';
-// import 'highlight.js/styles/base16/3024.css';
-import hljs from 'highlight.js';
-// import './BlogWrapper.css';
+import './CodeBlock.css';
 
 export default function CodeBlock(props) {
-    const {children} = props;
+    const {language, code} = props;
     return (
-        <div className="codeblock">
+        <div className="x-codeblock">
             <pre>
-                <code>{children}</code>
+                <code className={`lang-${language}`}>{code}</code>
             </pre>
         </div>
     );

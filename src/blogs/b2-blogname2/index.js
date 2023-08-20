@@ -1,8 +1,6 @@
-import {useEffect} from 'react';
-import './index.css';
-import 'highlight.js/styles/base16/3024.css';
-import hljs from 'highlight.js';
 import X from '../../component/X';
+import './index.css';
+
 export default function Testblog() {
     return (
         <X.BlogWrapper>
@@ -33,6 +31,236 @@ export default function Testblog() {
             <X.P highlightBackground="red">
                 我们怀着极大的关切提醒您，当前我们所在地区可能会面临极端天气情况的威胁。气象部门预测，未来几天可能会出现强风、暴雨、甚至可能的洪水等极端气象事件。
             </X.P>
+            <X.CodeBlock
+                language="python"
+                code={`
+                import requests
+                import json
+
+                DEBUG=1
+                bili_video_link="https://www.bilibili.com/video/BV1bg4y51212R6"
+                if DEBUG:
+                    print(bili_video_link)
+
+                with open("./tool.js","r") as f:
+                    jscode=f.read()
+                tool_js=execjs.compile(jscode)
+
+                #获得两个加密参数
+                enc_link=tool_js.eval(f"getEncLink('{bili_video_link}')")
+                accept_patch=tool_js.eval(f"getAcceptPatch('{bili_video_link}')")
+
+                with requests.Session() as session:
+                    session.get("https://bilibili.iiilab.com/")
+                    resp=session.post(url="https://bilibili.iiilab.com/media",
+                                    cookies={"lab0626":"1"},
+                                    json={"link":enc_link},
+                                    headers={
+                                        "Accept-Patch":accept_patch,
+                                        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36",
+                                    })
+                    if DEBUG:
+                        print(resp.text)
+
+                if resp.status_code==200:
+                    result_data=resp.json()["data"]
+                    dec_data=tool_js.eval(f"getDecData('{result_data}')")
+                    dec_data=json.loads(dec_data)
+                    if DEBUG:
+                        print(dec_data)
+                    print("title",dec_data["text"])
+                    print("url",dec_data["medias"][0]["resource_url"])
+                    print("cover",dec_data["medias"][0]["preview_url"])
+                `}
+            />
+            <X.CodeBlock
+                language="python"
+                code={`
+                @font-face {
+                    font-family: Chunkfive;
+                    src: url('Chunkfive.otf');
+                }
+
+                body,
+                .usertext {
+                    color: #f0f0f0;
+                    background: #600;
+                    font-family: Chunkfive, sans;
+                    --heading-1: 30px/32px Helvetica, sans-serif;
+                }
+
+                @import url(print.css);
+                @media print {
+                    a[href^='http']::after {
+                        content: attr(href);
+                    }
+                }
+                `}
+            />
+            <X.CodeBlock
+                language="html"
+                code={`
+                <div id="header">
+                    <img id="header-logo" src={LogoIcon} onClick={() => navigate('/')} />
+                    <button onClick={() => setIsDarkMode(!isDarkMode)}>go to {isDarkMode ? 'light' : 'dark'}</button>
+                    <a href="https://github.com/1kuzus" target="_blank">
+                        <div id="header-github-bg">
+                            <img id="header-github" src={GithubIcon} />
+                        </div>
+                    </a>
+                </div>
+                `}
+            />
+            <X.CodeBlock
+                language="c"
+                code={`
+                export default function Header() {
+                    const [isDarkMode, setIsDarkMode] = useState(false);
+                    const navigate = useNavigate();
+                    useEffect(() => {
+                        if (isDarkMode) document.documentElement.setAttribute('class','dark');
+                        else document.documentElement.setAttribute('class','light');
+                    });
+                    return (
+                        <div id="header">
+                            <img id="header-logo" src={LogoIcon} onClick={() => navigate('/')} />
+                            <button onClick={() => setIsDarkMode(!isDarkMode)}>go to {isDarkMode ? 'light' : 'dark'}</button>
+                            <a href="https://github.com/1kuzus" target="_blank">
+                                <div id="header-github-bg">
+                                    <img id="header-github" src={GithubIcon} />
+                                </div>
+                            </a>
+                        </div>
+                    );
+                }
+                `}
+            />
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                #include <iostream>
+                #include <stdlib.h>
+                #include <ctime>
+                using namespace std;
+                int n=12,a[1000]={19,1,13,5,6,13,17,3,2,4,19,5};
+
+                int getrand(int l,int r)
+                {
+                    return rand()%(r-l+1)+l;
+                }
+
+                void swap(int i,int j)
+                {
+                    int tmp=a[i];
+                    a[i]=a[j];
+                    a[j]=tmp;
+                    return;
+                }
+
+                int Partition(int l,int r)
+                {
+                    //swap(getrand(l,r),r);//随机化 
+                    int x=a[r];//选最后一项作为主元
+                    int lp=l,rp=l;
+                    for(;rp<r;rp++)
+                    {
+                        if(a[rp]<x)
+                        {
+                            swap(lp,rp);
+                            lp++;
+                        }
+                    }
+                    swap(lp,r);
+                    return lp;
+                }
+
+                void QuickSort(int l,int r)
+                {
+                    if(l<r)
+                    {
+                        int m=Partition(l,r);
+                        QuickSort(l,m-1);
+                        QuickSort(m+1,r);
+                    }
+                    else return; 
+                }
+
+                int main()
+                {
+                    srand(time(0));
+                    QuickSort(0,n-1);
+                    for(int i=0;i<n;i++)
+                    {
+                        cout<<a[i]<<" ";
+                    }
+                    cout<<endl;
+                    return 0;
+                }
+                `}
+            />
+            <X.CodeBlock
+                language="c"
+                code={`
+                #include <iostream>
+                #include <stdlib.h>
+                #include <ctime>
+                using namespace std;
+                int n=12,a[1000]={19,1,13,5,6,13,17,3,2,4,19,5};
+
+                int getrand(int l,int r)
+                {
+                    return rand()%(r-l+1)+l;
+                }
+
+                void swap(int i,int j)
+                {
+                    int tmp=a[i];
+                    a[i]=a[j];
+                    a[j]=tmp;
+                    return;
+                }
+
+                int Partition(int l,int r)
+                {
+                    //swap(getrand(l,r),r);//随机化 
+                    int x=a[r];//选最后一项作为主元
+                    int lp=l,rp=l;
+                    for(;rp<r;rp++)
+                    {
+                        if(a[rp]<x)
+                        {
+                            swap(lp,rp);
+                            lp++;
+                        }
+                    }
+                    swap(lp,r);
+                    return lp;
+                }
+
+                void QuickSort(int l,int r)
+                {
+                    if(l<r)
+                    {
+                        int m=Partition(l,r);
+                        QuickSort(l,m-1);
+                        QuickSort(m+1,r);
+                    }
+                    else return; 
+                }
+
+                int main()
+                {
+                    srand(time(0));
+                    QuickSort(0,n-1);
+                    for(int i=0;i<n;i++)
+                    {
+                        cout<<a[i]<<" ";
+                    }
+                    cout<<endl;
+                    return 0;
+                }
+                `}
+            />
         </X.BlogWrapper>
     );
 }
