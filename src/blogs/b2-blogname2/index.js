@@ -3,13 +3,9 @@ import './index.css';
 import 'highlight.js/styles/base16/3024.css';
 import hljs from 'highlight.js';
 import X from '../../component/X';
-
 export default function Testblog() {
-    useEffect(() => {
-        hljs.highlightAll();
-    }, []);
     return (
-        <div className="conta">
+        <X.BlogWrapper>
             <X.Title>测试Blog</X.Title>
             <X.H1>一级标题</X.H1>
             <X.H2>二级标题</X.H2>
@@ -37,6 +33,6 @@ export default function Testblog() {
             <X.P highlightBackground="red">
                 我们怀着极大的关切提醒您，当前我们所在地区可能会面临极端天气情况的威胁。气象部门预测，未来几天可能会出现强风、暴雨、甚至可能的洪水等极端气象事件。
             </X.P>
-        </div>
+        </X.BlogWrapper>
     );
 }

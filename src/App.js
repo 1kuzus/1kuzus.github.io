@@ -45,9 +45,6 @@ const router = [
 ];
 
 function App() {
-    useEffect(() => {
-        hljs.highlightAll();
-    }, []);
     return (
         <>
             <Header></Header>
