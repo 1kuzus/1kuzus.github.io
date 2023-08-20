@@ -1,6 +1,5 @@
 import {useEffect} from 'react';
 import './index.css';
-import 'highlight.js/styles/base16/3024.css';
 import hljs from 'highlight.js';
 import X from '../../component/X';
 const markdown = `
@@ -8,9 +7,6 @@ import requests
 import json
 
 DEBUG=1
-# BV="BV1FV4y41157Zx"
-# p=13
-# bili_video_link=f"https://www.bilibili.com/video/{BV}{'' if p<1 else f'?p={p}'}"
 bili_video_link="https://www.bilibili.com/video/BV1bg4y51212R6"
 if DEBUG:
     print(bili_video_link)
@@ -58,20 +54,37 @@ export default function Testblog() {
                 );
                 `}
             </X.CodeBlock>
+            <X.CodeBlock>
+                {`
+                #这是python代码
+                def f():
+                if(4)
+                return x;
+                `}
+            </X.CodeBlock>
             {/* <pre>
                 <code className="language-html">const a=123 let class= b={2}</code>
             </pre>*/}
             {/* <pre><code className="language-python">{markdown}</code></pre>  */}
             <pre>
-                <code className="language-python">{`
-                <h1>gello</h1>
-                `}</code>
+                <code className="language-python">
+                    {`
+                #这是python代码
+                def f():
+                if(4)
+                return x;
+                `}
+                </code>
             </pre>
             <pre>
-                <code className="language-python">{`
-                import requests
-                import json
-                `}</code>
+                <code className="language-pyth1on">
+                    {`
+                #这是python代码
+                def f():
+                if(4)
+                return x;
+                `}
+                </code>
             </pre>
             {/* <pre><code className="language-python">{`
                 // import requests

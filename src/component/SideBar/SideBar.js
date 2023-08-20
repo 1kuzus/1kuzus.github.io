@@ -15,6 +15,7 @@ function SideBarList(props) {
             </div>
             <ul className="sidebarlist-ul" style={{height: showList ? 34 * category.blogs.length + 'px' : '0'}}>
                 {category.blogs.map((blog, index) => (
+                    //todo:用a标签改造
                     <li
                         className={`sidebarlist-li${currentPath === blog.path ? ' active' : ''}`}
                         key={index}

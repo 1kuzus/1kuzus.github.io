@@ -8,5 +8,5 @@ export default function BlogWrapper(props) {
     useLayoutEffect(() => {
         hljs.highlightAll();
     }, []);
-    return <div className="blogwrapper">{children}</div>;
+    return <div className="x-blogwrapper">{children}</div>;
 }
