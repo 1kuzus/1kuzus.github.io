@@ -12,6 +12,9 @@
     --inline-highlight-color-bg: #50505c18;
     --logopart-vr-color: #30303c;
     --gray-1: #d4d4d4;
+
+    /*仅亮色模式*/
+    --codeblock-shadow: 0 0 8px 1px #00000008;
 }
 :root.dark {
     --bg-color-1: #202026;

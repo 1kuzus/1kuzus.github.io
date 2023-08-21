@@ -103,7 +103,7 @@ export default function Testblog() {
                 `}
             />
             <X.CodeBlock
-                language="js"
+                language="jsx"
                 code={`
                 <div id="header">
                     <img id="header-logo" src={LogoIcon} onClick={() => navigate('/')} />

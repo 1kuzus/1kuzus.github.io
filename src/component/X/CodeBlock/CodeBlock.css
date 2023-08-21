@@ -1,17 +1,17 @@
 .x-codeblock {
     margin-bottom: 24px;
+    padding: 24px 32px;
     border-radius: 12px;
-    background: #202026;
+    background-color: var(--bg-color-1);
+    box-shadow: var(--codeblock-shadow);
+    overflow-x: auto;
+    transition: background-color 200ms;
 }
 
 /*highlight.js 代码块样式*/
 pre code.hljs {
     display: block;
-    overflow-x: auto;
-    padding: 1em;
-}
-code.hljs {
-    padding: 3px 5px;
+    font-family: monospace;
 }
 .hljs {
     color: #dcdcdc;
@@ -47,7 +47,7 @@ code.hljs {
 .hljs-params,
 .hljs-subst,
 .hljs-title {
-    color: #dcdcdc;
+    color: #dc0cdc;
 }
 .hljs-comment,
 .hljs-quote {
