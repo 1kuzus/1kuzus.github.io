@@ -31,6 +31,11 @@ export default function Testblog() {
             <X.P highlightBackground="red">
                 我们怀着极大的关切提醒您，当前我们所在地区可能会面临极端天气情况的威胁。气象部门预测，未来几天可能会出现强风、暴雨、甚至可能的洪水等极端气象事件。
             </X.P>
+            <X.CodeBlock language="python" code={`      with open("./tool.js","r") as f:`} />
+            <X.CodeBlock language="python" code={`      
+                with open("./tool.js","r")      
+                                        
+                as f:`} />
             <X.CodeBlock
                 language="python"
                 code={`
@@ -74,7 +79,7 @@ export default function Testblog() {
                 `}
             />
             <X.CodeBlock
-                language="python"
+                language="css"
                 code={`
                 @font-face {
                     font-family: Chunkfive;
@@ -98,7 +103,7 @@ export default function Testblog() {
                 `}
             />
             <X.CodeBlock
-                language="html"
+                language="js"
                 code={`
                 <div id="header">
                     <img id="header-logo" src={LogoIcon} onClick={() => navigate('/')} />
@@ -109,30 +114,6 @@ export default function Testblog() {
                         </div>
                     </a>
                 </div>
-                `}
-            />
-            <X.CodeBlock
-                language="c"
-                code={`
-                export default function Header() {
-                    const [isDarkMode, setIsDarkMode] = useState(false);
-                    const navigate = useNavigate();
-                    useEffect(() => {
-                        if (isDarkMode) document.documentElement.setAttribute('class','dark');
-                        else document.documentElement.setAttribute('class','light');
-                    });
-                    return (
-                        <div id="header">
-                            <img id="header-logo" src={LogoIcon} onClick={() => navigate('/')} />
-                            <button onClick={() => setIsDarkMode(!isDarkMode)}>go to {isDarkMode ? 'light' : 'dark'}</button>
-                            <a href="https://github.com/1kuzus" target="_blank">
-                                <div id="header-github-bg">
-                                    <img id="header-github" src={GithubIcon} />
-                                </div>
-                            </a>
-                        </div>
-                    );
-                }
                 `}
             />
             <X.CodeBlock
