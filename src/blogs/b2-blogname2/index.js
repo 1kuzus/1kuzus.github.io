@@ -103,17 +103,19 @@ export default function Testblog() {
                 `}
             />
             <X.CodeBlock
-                language="html"
+                language="jsx"
                 code={`
-                <div id="header">
-                    <img id="header-logo" src={LogoIcon} onClick={() => navigate('/')} />
-                    <button onClick={() => setIsDarkMode(!isDarkMode)}>go to {isDarkMode ? 'light' : 'dark'}</button>
-                    <a href="https://github.com/1kuzus" target="_blank">
-                        <div id="header-github-bg">
-                            <img id="header-github" src={GithubIcon} />
-                        </div>
-                    </a>
-                </div>
+                <>
+                    <div id="header">
+                        <img id="header-logo" src={LogoIcon} onClick={() => navigate('/')} />
+                        <button onClick={() => setIsDarkMode(!isDarkMode)}>go to {isDarkMode ? 'light' : 'dark'}</button>
+                        <a href="https://github.com/1kuzus" target="_blank">
+                            <div id="header-github-bg">
+                                <img id="header-github" src={GithubIcon} />
+                            </div>
+                        </a>
+                    </div>
+                </>
                 `}
             />
             <X.CodeBlock
