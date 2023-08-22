@@ -10,8 +10,8 @@
 
 /*highlight.js 代码块样式*/
 pre code.hljs {
-    /* //todo 嵌入字体 */
     display: block;
+    line-height: 24px;
     font-size: 95%;
     font-family: Consolas, Menlo, 'Courier New', Courier, monospace;
 }

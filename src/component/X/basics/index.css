@@ -38,7 +38,7 @@
     margin: 0 4px;
     padding: 2px 4px;
     font-size: 14px;
-    font-family: consolas;
+    font-family: Consolas, Menlo, 'Courier New', Courier, monospace;
     color: var(--inline-highlight-color-text);
     border-radius: 4px;
     background-color: var(--inline-highlight-color-bg);
