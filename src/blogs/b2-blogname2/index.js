@@ -32,10 +32,13 @@ export default function Testblog() {
                 我们怀着极大的关切提醒您，当前我们所在地区可能会面临极端天气情况的威胁。气象部门预测，未来几天可能会出现强风、暴雨、甚至可能的洪水等极端气象事件。
             </X.P>
             <X.CodeBlock language="python" code={`      with open("./tool.js","r") as f:`} />
-            <X.CodeBlock language="python" code={`      
+            <X.CodeBlock
+                language="python"
+                code={`      
                 with open("./tool.js","r")      
                                         
-                as f:`} />
+                as f:`}
+            />
             <X.CodeBlock
                 language="python"
                 code={`
@@ -76,6 +79,19 @@ export default function Testblog() {
                     print("title",dec_data["text"])
                     print("url",dec_data["medias"][0]["resource_url"])
                     print("cover",dec_data["medias"][0]["preview_url"])
+                
+                @requires_authorization(roles=["ADMIN"])
+                def somefunc(param1='', param2=0):
+                    r'''A docstring'''
+                    if param1 > param2: # interesting
+                        print 'Greater'
+                    return (param2 - param1 + 1 + 0b10l) or None
+                
+                class SomeClass:
+                    pass
+                
+                >>> message = '''interpreter
+                ... prompt'''
                 `}
             />
             <X.CodeBlock
@@ -103,19 +119,24 @@ export default function Testblog() {
                 `}
             />
             <X.CodeBlock
-                language="jsx"
+                language="js"
                 code={`
-                <>
-                    <div id="header">
-                        <img id="header-logo" src={LogoIcon} onClick={() => navigate('/')} />
-                        <button onClick={() => setIsDarkMode(!isDarkMode)}>go to {isDarkMode ? 'light' : 'dark'}</button>
-                        <a href="https://github.com/1kuzus" target="_blank">
-                            <div id="header-github-bg">
-                                <img id="header-github" src={GithubIcon} />
-                            </div>
-                        </a>
-                    </div>
-                </>
+                import './CodeBlock.css';
+                /$^/.test('hello')
+                export default function CodeBlock(props) {
+                    const {language, code} = props;
+                    let lines = code.split('\\n').map((line) => line.trimRight());
+                    if (!lines[0]) lines = lines.slice(1);
+                    const indent = lines[0].length - lines[0].trimStart().length;
+                    lines = lines.map((line) => line.slice(indent));
+                    return (
+                        <div className="x-codeblock">
+                            <pre>
+                                <code className={\`lang-\${language}\`}>{lines.join('\\n')}</code>
+                            </pre>
+                        </div>
+                    );
+                }
                 `}
             />
             <X.CodeBlock
