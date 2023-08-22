@@ -10,11 +10,13 @@
 
 /*highlight.js 代码块样式*/
 pre code.hljs {
+    /* //todo 嵌入字体 */
     display: block;
-    font-family: monospace;
+    font-size: 95%;
+    font-family: Consolas, Menlo, 'Courier New', Courier, monospace;
 }
 .hljs {
-    color: #dcdcdc;
+    color: var(--text-color-main);
 }
 .hljs-keyword,
 .hljs-literal,
@@ -42,13 +44,13 @@ pre code.hljs {
 .hljs-template-tag {
     color: #9a5334;
 }
-.hljs-formula,
+/* .hljs-formula,
 .hljs-function,
 .hljs-params,
 .hljs-subst,
 .hljs-title {
-    color: #dc0cdc;
-}
+    color: #dcdcdc;
+} */
 .hljs-comment,
 .hljs-quote {
     color: #57a64a;
