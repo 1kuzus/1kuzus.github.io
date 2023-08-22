@@ -9,7 +9,7 @@ export default function CodeBlock(props) {
     return (
         <div className="x-codeblock">
             <pre>
-                <code className={`lang-${language}`}>{lines.join('\n')}</code>
+                <code className={language && `lang-${language}`}>{lines.join('\n')}</code>
             </pre>
         </div>
     );

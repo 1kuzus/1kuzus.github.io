@@ -18,10 +18,23 @@ pre code.hljs {
 .hljs {
     color: var(--text-color-main);
 }
+.hljs-formula,
+.hljs-params,
+.hljs-subst,
+.hljs-function {
+    color: var(--text-color-main);
+}
+.hljs-title {
+    color: #dcdcaa;
+}
 .hljs-keyword,
 .hljs-literal,
 .hljs-name,
 .hljs-symbol {
+    color: #569cd6;
+}
+.hljs-meta,
+.hljs-meta .hljs-keyword {
     color: #569cd6;
 }
 .hljs-link {
@@ -40,28 +53,21 @@ pre code.hljs {
 .hljs-string {
     color: #d69d85;
 }
-.hljs-regexp,
+.hljs-regexp {
+    color: #d06868;
+}
 .hljs-template-tag {
     color: #9a5334;
 }
-/* .hljs-formula,
-.hljs-function,
-.hljs-params,
-.hljs-subst,
-.hljs-title {
-    color: #dcdcdc;
-} */
+.hljs-tag {
+    color: #888888;
+}
 .hljs-comment,
 .hljs-quote {
     color: #57a64a;
 }
 .hljs-doctag {
     color: #608b4e;
-}
-.hljs-meta,
-.hljs-meta .hljs-keyword,
-.hljs-tag {
-    color: #9b9b9b;
 }
 .hljs-template-variable,
 .hljs-variable {
