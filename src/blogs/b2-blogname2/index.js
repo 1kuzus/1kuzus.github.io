@@ -5,11 +5,18 @@ export default function Testblog() {
     return (
         <X.BlogWrapper>
             <X.Title>测试Blog</X.Title>
-            <X.H1>一级标题</X.H1>
+            <X.H1>基础组件</X.H1>
+            <X.H2>段落</X.H2>
+            <X.P>
+                夜晚的城市灯光璀璨夺目，高楼的霓虹灯在黑夜中闪烁不停，像是星空中的繁星在闪烁。\n
+                摩天轮缓缓转动，将人们带入一个绚丽多彩的世界，让他们忘记日常的烦忧。\n
+                购物中心里，五颜六色的商品琳琅满目，人们拿着购物袋匆匆穿梭，寻找着自己心仪的物品。时尚与潮流在这里汇聚，流行的节奏从不停歇。
+                浓郁的咖啡香气弥漫开来，与人们的谈笑声交织成一幅城市特有的画面。街头艺人弹奏着吉他，歌声飘荡在空气中，与城市的脉搏合奏出一曲动人的旋律。
+            </X.P>
             <X.H2>二级标题</X.H2>
             <X.P>
                 这里是一句普通的文本，你可以使用`\`\``符号包裹内容从而实现`像这样`的高亮效果。你可能会怀疑`\``这个符号是如何展示在屏幕上的。\n答案是使用`\\\``。
-                同理打出`\\`需要在实际编写`blog html`时写`\\\\`。\n `单独一行的高亮块`\n
+                同理打出`\\`需要写`\\\\`。\n\n `单独一行的高亮块`\n\n
                 这是一个指向@`百度`[https://www.baidu.com]@的超链接，格式为`\@百度[https://www.baidu.com]\@`。同理需要使用`\\\@`打出`\@`符号。
             </X.P>
             <X.H2>在 class 组件中声明 ref</X.H2>
@@ -18,9 +25,10 @@ export default function Testblog() {
                 一个ref，请调用`createRef`并将其结果分配给`class`字段。\n 如果你现在将`{'ref={this.inputRef}'}`传递
                 给JSX中的`{'<input>'}`，React将把input的DOM节点赋值给`this.inputRef.current`。
             </X.P>
+            <X.H1>高亮块</X.H1>
             <X.P highlightBackground="golden">
                 这里是一句普通的文本，你可以使用`\`\``符号包裹内容从而实现`像这样`的高亮效果。你可能会怀疑`\``这个符号是如何展示在屏幕上的。\n答案是使用`\\\``。
-                同理打出`\\`需要在实际编写`blog html`时写`\\\\`。\n `单独一行的高亮块`\n
+                同理打出`\\`需要在实际编写`blog html`时写`\\\\`。\n
                 这是一个指向@`百度`[https://www.baidu.com]@的超链接，格式为`\@百度[https://www.baidu.com]\@`。同理需要使用`\\\@`打出`\@`符号。
             </X.P>
             <X.P>
@@ -31,55 +39,38 @@ export default function Testblog() {
             <X.P highlightBackground="red">
                 我们怀着极大的关切提醒您，当前我们所在地区可能会面临极端天气情况的威胁。气象部门预测，未来几天可能会出现强风、暴雨、甚至可能的洪水等极端气象事件。
             </X.P>
-            <X.CodeBlock language="python" code={`      with open("./tool.js","r") as f:`} />
+            <X.H1>代码块</X.H1>
+            <X.H2>单行代码</X.H2>
+            <X.CodeBlock language="python" code={`with open("./tool.js","r") as f:`} />
+            <X.CodeBlock language="cpp" code={`bool operator <(const NODE &other)const`} />
+            <X.H2>多行代码</X.H2>
+            <X.H3>cpp</X.H3>
             <X.CodeBlock
-                language="python"
-                code={`      
-                with open("./tool.js","r")      
-                                        
-                as f:`}
+                language="cpp"
+                code={String.raw`
+                #include <iostream>
+                using namespace std;
+
+                int main(int argc, char *argv[]) {
+                    printf("\t1 + 2 is %d \n",3);
+                    /* An annoying "Hello World" example */
+                    for (auto i = 0; i < 0xFFFF; i++)
+                        cout << "Hello, World!" << endl;
+                    
+                    char c = '\n';
+                    unordered_map <string, vector<string> > m;
+                    m["key"] = "\\\\"; // this is an error
+                    
+                    return -2e3 + 12l;
+                }
+                `}
             />
+            <X.H3>python</X.H3>
             <X.CodeBlock
                 language="python"
                 code={`
                 import requests
                 import json
-
-                DEBUG=1
-                bili_video_link="https://www.bilibili.com/video/BV1bg4y51212R6"
-                if DEBUG:
-                    print(bili_video_link)
-
-                with open("./tool.js","r") as f:
-                    jscode=f.read()
-                tool_js=execjs.compile(jscode)
-
-                #获得两个加密参数
-                enc_link=tool_js.eval(f"getEncLink('{bili_video_link}')")
-                accept_patch=tool_js.eval(f"getAcceptPatch('{bili_video_link}')")
-
-                with requests.Session() as session:
-                    session.get("https://bilibili.iiilab.com/")
-                    resp=session.post(url="https://bilibili.iiilab.com/media",
-                                    cookies={"lab0626":"1"},
-                                    json={"link":enc_link},
-                                    headers={
-                                        "Accept-Patch":accept_patch,
-                                        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36",
-                                    })
-                    if DEBUG:
-                        print(resp.text)
-
-                if resp.status_code==200:
-                    result_data=resp.json()["data"]
-                    dec_data=tool_js.eval(f"getDecData('{result_data}')")
-                    dec_data=json.loads(dec_data)
-                    if DEBUG:
-                        print(dec_data)
-                    print("title",dec_data["text"])
-                    print("url",dec_data["medias"][0]["resource_url"])
-                    print("cover",dec_data["medias"][0]["preview_url"])
-                
                 @requires_authorization(roles=["ADMIN"])
                 def somefunc(param1='', param2=0):
                     r'''A docstring'''
@@ -94,6 +85,49 @@ export default function Testblog() {
                 ... prompt'''
                 `}
             />
+            <X.H3>html</X.H3>
+            <X.CodeBlock
+                language="html"
+                code={`
+                <!DOCTYPE html>
+                <title>Title</title>
+                
+                <style>body {width: 500px;}</style>
+                
+                <script type="application/javascript">
+                  function $init() {return true;}
+                </script>
+                
+                <body>
+                  <p checked class="title" id='title'>Title</p>
+                  <!-- here goes the rest of the page -->
+                </body>
+                `}
+            />
+            <X.H3>bash</X.H3>
+            <X.CodeBlock
+                language="bash"
+                code={`
+                #!/bin/bash
+
+                ###### CONFIG
+                ACCEPTED_HOSTS="/root/.hag_accepted.conf"
+                BE_VERBOSE=false
+                
+                if [ "$UID" -ne 0 ]
+                then
+                 echo "Superuser rights required"
+                 exit 2
+                fi
+                
+                genApacheConf(){
+                 echo -e "# Host \${HOME_DIR}$1/$2 :"
+                }
+                
+                echo '"quoted"' | tr -d \\" > text.txt
+                `}
+            />
+            <X.H3>css</X.H3>
             <X.CodeBlock
                 language="css"
                 code={`
@@ -118,151 +152,29 @@ export default function Testblog() {
                 }
                 `}
             />
+            <X.H3>llvm</X.H3>
             <X.CodeBlock
-                language="js"
-                code={`
-                import './CodeBlock.css';
-                /$^/.test('hello')
-                export default function CodeBlock(props) {
-                    const {language, code} = props;
-                    let lines = code.split('\\n').map((line) => line.trimRight());
-                    if (!lines[0]) lines = lines.slice(1);
-                    const indent = lines[0].length - lines[0].trimStart().length;
-                    lines = lines.map((line) => line.slice(indent));
-                    return (
-                        <div className="x-codeblock">
-                            <pre>
-                                <code className={\`lang-\${language}\`}>{lines.join('\\n')}</code>
-                            </pre>
-                        </div>
-                    );
-                }
-                `}
-            />
-            <X.CodeBlock
-                language="cpp"
-                code={`
-                #include <iostream>
-                #include <stdlib.h>
-                #include <ctime>
-                using namespace std;
-                int n=12,a[1000]={19,1,13,5,6,13,17,3,2,4,19,5};
-
-                int getrand(int l,int r)
-                {
-                    return rand()%(r-l+1)+l;
-                }
-
-                void swap(int i,int j)
-                {
-                    int tmp=a[i];
-                    a[i]=a[j];
-                    a[j]=tmp;
-                    return;
-                }
-
-                int Partition(int l,int r)
-                {
-                    //swap(getrand(l,r),r);//随机化 
-                    int x=a[r];//选最后一项作为主元
-                    int lp=l,rp=l;
-                    for(;rp<r;rp++)
-                    {
-                        if(a[rp]<x)
-                        {
-                            swap(lp,rp);
-                            lp++;
-                        }
-                    }
-                    swap(lp,r);
-                    return lp;
-                }
-
-                void QuickSort(int l,int r)
-                {
-                    if(l<r)
-                    {
-                        int m=Partition(l,r);
-                        QuickSort(l,m-1);
-                        QuickSort(m+1,r);
-                    }
-                    else return; 
-                }
-
-                int main()
-                {
-                    srand(time(0));
-                    QuickSort(0,n-1);
-                    for(int i=0;i<n;i++)
-                    {
-                        cout<<a[i]<<" ";
-                    }
-                    cout<<endl;
-                    return 0;
-                }
-                `}
-            />
-            <X.CodeBlock
-                language="c"
-                code={`
-                #include <iostream>
-                #include <stdlib.h>
-                #include <ctime>
-                using namespace std;
-                int n=12,a[1000]={19,1,13,5,6,13,17,3,2,4,19,5};
-
-                int getrand(int l,int r)
-                {
-                    return rand()%(r-l+1)+l;
-                }
-
-                void swap(int i,int j)
-                {
-                    int tmp=a[i];
-                    a[i]=a[j];
-                    a[j]=tmp;
-                    return;
-                }
-
-                int Partition(int l,int r)
-                {
-                    //swap(getrand(l,r),r);//随机化 
-                    int x=a[r];//选最后一项作为主元
-                    int lp=l,rp=l;
-                    for(;rp<r;rp++)
-                    {
-                        if(a[rp]<x)
-                        {
-                            swap(lp,rp);
-                            lp++;
-                        }
-                    }
-                    swap(lp,r);
-                    return lp;
-                }
-
-                void QuickSort(int l,int r)
-                {
-                    if(l<r)
-                    {
-                        int m=Partition(l,r);
-                        QuickSort(l,m-1);
-                        QuickSort(m+1,r);
-                    }
-                    else return; 
-                }
-
-                int main()
-                {
-                    srand(time(0));
-                    QuickSort(0,n-1);
-                    for(int i=0;i<n;i++)
-                    {
-                        cout<<a[i]<<" ";
-                    }
-                    cout<<endl;
-                    return 0;
-                }
+                language="llvm"
+                code={String.raw`
+                ; ModuleID = 'test.c'
+                target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
+                target triple = "x86_64-unknown-linux-gnu"
+                
+                %struct._IO_FILE = type { i32, i8*, i8*, i8*, i8*, i8*, i8*, i8*, i8*, i8*, i8*, i8*, %struct._IO_marker*, %struct._IO_FILE*, i32, i32, i64, i16, i8, [1 x i8], i8*, i64, i8*, i8*, i8*, i8*, i64, i32, [20 x i8] }
+                %struct._IO_marker = type { %struct._IO_marker*, %struct._IO_FILE*, i32 }
+                %struct.what = type { i8, i16 }
+                
+                @.str = private unnamed_addr constant [6 x i8] c"foo()\00", align 1
+                @e_long = common global i64 0, align 8
+                @g_double = common global double 0.000000e+00, align 8
+                @.str.1 = private unnamed_addr constant [7 x i8] c"oooooh\00", align 1
+                @func_ptr = common global i32 (...)* null, align 8
+                @stderr = external global %struct._IO_FILE*, align 8
+                
+                ; Function Attrs: nounwind uwtable
+                define i32 @foo() #0 {
+                %1 = call i32 @puts(i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str, i32 0, i32 0))
+                ret i32 0
                 `}
             />
         </X.BlogWrapper>
