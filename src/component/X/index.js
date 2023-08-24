@@ -10,7 +10,6 @@ const X = {
     P,
     BlogWrapper,
     CodeBlock,
-    raw: String.raw,
 };
 
 export default X;

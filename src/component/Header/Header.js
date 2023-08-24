@@ -8,16 +8,18 @@ export default function Header() {
     const [isDarkMode, setIsDarkMode] = useState(false);
     const navigate = useNavigate();
     useEffect(() => {
-        if (isDarkMode) document.documentElement.setAttribute('class','dark');
-        else document.documentElement.setAttribute('class','light');
+        if (isDarkMode) document.documentElement.setAttribute('class', 'dark');
+        else document.documentElement.setAttribute('class', 'light');
     });
     return (
         <div id="header">
-            <img id="header-logo" src={LogoIcon} onClick={() => navigate('/')} />
+            <div id="header-logo-bg">
+                <img id="header-logo" src={LogoIcon} onClick={() => navigate('/')} />
+            </div>
             <button onClick={() => setIsDarkMode(!isDarkMode)}>go to {isDarkMode ? 'light' : 'dark'}</button>
             <a href="https://github.com/1kuzus" target="_blank">
                 <div id="header-github-bg">
-                    <img id="header-github" src={GithubIcon} />
+                    <img src={GithubIcon} />
                 </div>
             </a>
         </div>
