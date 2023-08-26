@@ -24,6 +24,21 @@
     height: 36px;
     cursor: pointer;
 }
+#header-theme-bg {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #30303c;
+    /* border: 4px solid #30303c; */
+}
+#header-theme {
+    /* position: absolute;
+    left: -6px;
+    top: -6px; */
+    width: 36px;
+    height: 36px;
+}
 #header-github-bg {
     width: 36px;
     height: 36px;
