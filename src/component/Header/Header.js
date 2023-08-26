@@ -18,18 +18,20 @@ export default function Header() {
             <div id="header-logo-bg">
                 <img id="header-logo" src={LogoIcon} onClick={() => navigate('/')} />
             </div>
-            <div id="header-theme-bg">
-                <img
-                    id="header-theme"
-                    src={isDarkTheme ? DarkThemeIcon : LightThemeIcon}
-                    onClick={() => setIsDarkTheme(!isDarkTheme)}
-                />
-            </div>
-            <a href="https://github.com/1kuzus" target="_blank">
-                <div id="header-github-bg">
-                    <img src={GithubIcon} />
+            <div id="header-right-wrapper">
+                <div id="header-theme-bg">
+                    <img
+                        id="header-theme"
+                        src={isDarkTheme ? DarkThemeIcon : LightThemeIcon}
+                        onClick={() => setIsDarkTheme(!isDarkTheme)}
+                    />
                 </div>
-            </a>
+                <a href="https://github.com/1kuzus" target="_blank">
+                    <div id="header-github-bg">
+                        <img src={GithubIcon} />
+                    </div>
+                </a>
+            </div>
         </div>
     );
 }
