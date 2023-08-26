@@ -2,13 +2,15 @@ import {useEffect, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import LogoIcon from '../../assets/logo.svg';
 import GithubIcon from '../../assets/github.svg';
+import LightThemeIcon from '../../assets/light_theme.svg';
+import DarkThemeIcon from '../../assets/dark_theme.svg';
 import './Header.css';
 
 export default function Header() {
-    const [isDarkMode, setIsDarkMode] = useState(false);
+    const [isDarkTheme, setIsDarkTheme] = useState(false);
     const navigate = useNavigate();
     useEffect(() => {
-        if (isDarkMode) document.documentElement.setAttribute('class', 'dark');
+        if (isDarkTheme) document.documentElement.setAttribute('class', 'dark');
         else document.documentElement.setAttribute('class', 'light');
     });
     return (
@@ -16,7 +18,13 @@ export default function Header() {
             <div id="header-logo-bg">
                 <img id="header-logo" src={LogoIcon} onClick={() => navigate('/')} />
             </div>
-            <button onClick={() => setIsDarkMode(!isDarkMode)}>go to {isDarkMode ? 'light' : 'dark'}</button>
+            <div id="header-theme-bg">
+                <img
+                    id="header-theme"
+                    src={isDarkTheme ? DarkThemeIcon : LightThemeIcon}
+                    onClick={() => setIsDarkTheme(!isDarkTheme)}
+                />
+            </div>
             <a href="https://github.com/1kuzus" target="_blank">
                 <div id="header-github-bg">
                     <img src={GithubIcon} />
