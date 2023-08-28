@@ -1,12 +1,14 @@
 import {useLayoutEffect} from 'react';
-// import 'highlight.js/styles/base16/3024.css';
+import 'prismjs/themes/prism.css';
 import hljs from 'highlight.js';
+import prismjs from 'prismjs';
 import './BlogWrapper.css';
+
 
 export default function BlogWrapper(props) {
     const {children} = props;
     useLayoutEffect(() => {
-        hljs.highlightAll();
+        prismjs.highlightAll();
     }, []);
     return <div className="x-blogwrapper">{children}</div>;
 }

@@ -41,6 +41,7 @@ export default function Testblog() {
             </X.P>
             <X.H1>代码块</X.H1>
             <X.H2>单行代码</X.H2>
+            <pre><code className='language-tsx'>export default x;</code></pre>
             <X.CodeBlock language="python" code={`with open("./tool.js","r") as f:`} />
             <X.CodeBlock language="cpp" code={`bool operator <(const NODE &other)const`} />
             <X.H2>多行代码</X.H2>
@@ -67,7 +68,7 @@ export default function Testblog() {
             />
             <X.H3>python</X.H3>
             <X.CodeBlock
-                language="python"
+                language="py"
                 code={`
                 import requests
                 import json
@@ -179,7 +180,7 @@ export default function Testblog() {
             />
             <X.H3>llvm</X.H3>
             <X.CodeBlock
-                language="js"
+                language="jsx"
                 code={`
                 import React, { Component } from 'react';
                 import ReactMarkdown from 'react-markdown';     // 解析 markdown
@@ -233,6 +234,47 @@ export default function Testblog() {
                 }
                 }
                 export default App;
+
+
+                import {useState} from 'react';
+                import {useLocation, Link} from 'react-router-dom';
+                import categories from '../../blogs/categories';
+                import RightArrowIcon from '../../assets/rightarrow.svg';
+                import './SideBar.css';
+
+                function SideBarList(props) {
+                    const {category, currentPath} = props;
+                    const [showList, setShowList] = useState(true);
+                    return (
+                        <div className={\`sidebarlist\${showList ? ' showlist' : ''}\`}>
+                            <div className="sidebarlist-head" onClick={() => setShowList(!showList)}>
+                                <h3 className="sidebarlist-title">{category.categoryName + \`  (\${category.blogs.length})\`}</h3>
+                                <img className="sidebarlist-title-rightarrow" src={RightArrowIcon} />
+                            </div>
+                            <ul className="sidebarlist-ul" style={{height: showList ? 34 * category.blogs.length + 'px' : '0'}}>
+                                {category.blogs.map((blog, index) => (
+                                    <li key={index}>
+                                        <Link className={\`sidebarlist-li\${currentPath === blog.path ? ' active' : ''}\`} to={blog.path}>
+                                            {blog.blogName}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    );
+                }
+
+                export default function SideBar() {
+                    const location = useLocation();
+                    return (
+                        <div id="sidebar">
+                            {categories.map((category, index) => (
+                                <SideBarList key={index} category={category} currentPath={location.pathname} />
+                            ))}
+                        </div>
+                    );
+                }
+
                 `}
             />
         </X.BlogWrapper>
