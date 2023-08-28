@@ -15,14 +15,11 @@
 #header-right-wrapper {
     display: flex;
 }
-/* #header-logo-bg {
-    width: 6px;
-    height: 6px;
+#header-logo-bg {
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
-    background-color: transparent;
-    box-shadow: 0 0 10px 1px #0088ac;
-} */
-/*//todo: 整理这一页的css次序*/
+}
 #header-logo {
     width: 36px;
     height: 36px;
@@ -32,26 +29,17 @@
     width: 36px;
     height: 36px;
     margin-right: 24px;
+    padding: 6px;
     border-radius: 50%;
-    background-color: #30303c;
-    border: 4px solid #30303c;
-}
-#header-theme {
-    /* position: absolute;
-    left: -6px;
-    top: -6px; */
-    /* width: 36px;
-    height: 36px; */
+    background-color: var(--bg-icon-color);
 }
 #header-github-bg {
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background-color: #30303c;
-    box-shadow: 0 0 6px 1px #00f8ff80;
-    transition: all 0.2s;
+    background-color: var(--bg-icon-color);
 }
+#header-theme-bg:hover,
 #header-github-bg:hover {
-    /* background-color: #50505c; */
-    box-shadow: 0 0 12px 1px #00f8ffA0;
+    background-color: #484854;
 }

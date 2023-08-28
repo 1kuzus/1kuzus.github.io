@@ -61,7 +61,7 @@
     transform: skewX(-21.8deg);
     transition: left 200ms;
 }
-.logo-expand #logopart-x {
+/* .logo-expand #logopart-x {
     left: 36px;
 }
 .logo-expand #logopart-y {
@@ -72,4 +72,4 @@
 }
 .logo-expand #logopart-vr {
     left: 60px;
-}
+} */

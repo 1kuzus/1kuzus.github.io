@@ -21,7 +21,6 @@ export default function Header() {
             <div id="header-right-wrapper">
                 <div id="header-theme-bg">
                     <img
-                        id="header-theme"
                         src={isDarkTheme ? DarkThemeIcon : LightThemeIcon}
                         onClick={() => setIsDarkTheme(!isDarkTheme)}
                     />
