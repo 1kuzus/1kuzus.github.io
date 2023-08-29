@@ -1,6 +1,5 @@
 import X from '../../component/X';
-import './index.css';
-
+import {useEffect, useRef} from 'react';
 export default function Testblog() {
     return (
         <X.BlogWrapper>
@@ -39,14 +38,48 @@ export default function Testblog() {
             <X.P highlightBackground="red">
                 我们怀着极大的关切提醒您，当前我们所在地区可能会面临极端天气情况的威胁。气象部门预测，未来几天可能会出现强风、暴雨、甚至可能的洪水等极端气象事件。
             </X.P>
+            <X.H1>公式</X.H1>
+            <X.Formula text="P(A|B) = \frac{{P(B|A) \cdot P(A)}}{{P(B)}}" />
+            <X.Formula text="\frac{{dy}}{{dx}} = \frac{{dy}}{{du}} \cdot \frac{{du}}{{dx}}" />
+            <X.Formula text="x+y=1" />
+            <X.Formula text="\int_{a}^{b} f(x) \, dx = \lim_{{n \to \infty}} \sum_{{i=1}}^{n} f(x_i) \cdot \Delta x" />
+            <X.Formula
+                text="
+                \begin{cases}
+                ax + by &= c \\
+                dx - ey &= f
+                \end{cases}
+                "
+            />
+            <X.Formula
+                text="
+                \begin{bmatrix}
+                a & b & c \\
+                d & e & f \\
+                g & h & i
+                \end{bmatrix}
+                \times
+                \begin{bmatrix}
+                x & y & z \\
+                w & v & u \\
+                t & s & r
+                \end{bmatrix}
+                =
+                \begin{bmatrix}
+                ax + bw + ct & ay + bv + cu & az + bz + cr \\
+                dx + ew + ft & dy + ev + fu & dz + fv + fu \\
+                gx + hw + it & gy + hv + iu & gz + hv + ir
+                \end{bmatrix}
+                "
+            />
             <X.H1>代码块</X.H1>
             <X.H2>单行代码</X.H2>
-            <X.CodeBlock language="python" code={`with open("./tool.js","r") as f:`} />
-            <X.CodeBlock language="cpp" code={`bool operator <(const NODE &other)const`} />
-            <X.CodeBlock language="c" code={`fprintf(stdout, "hello world\\n");`} />
-            <X.CodeBlock language="markdown" code={`[Prism](https://prismjs.com) is a cool syntax highlighter.`} />
-            <X.CodeBlock language="js" code={`let entity = /&#x?[\\da-f]{1,8};/;`} />
-            <X.CodeBlock language="ts" code={`type SearchFunc = (source: string, subStr: string) => boolean;`} />
+            <X.CodeBlock language="python" code='with open("./tool.js","r") as f:' />
+            <X.CodeBlock language="cpp" code="bool operator <(const NODE &other)const" />
+            <X.CodeBlock language="c" code='fprintf(stdout, "hello world\n");' />
+            <X.CodeBlock language="markdown" code="[Prism](https://prismjs.com) is a cool syntax highlighter." />
+            <X.CodeBlock language="js" code="let entity = /&#x?[\da-f]{1,8};/;" />
+            <X.CodeBlock language="ts" code="type SearchFunc = (source: string, subStr: string) => boolean;" />
             <X.H2>多行代码</X.H2>
             <X.H3>cpp</X.H3>
             <X.CodeBlock
