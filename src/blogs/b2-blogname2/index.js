@@ -53,7 +53,7 @@ export default function Testblog() {
                 code={String.raw`
                 #include <iostream>
                 using namespace std;
-
+                const PI = 3.14159;
                 int main(int argc, char *argv[]) {
                     printf("\t1 + 2 is %d \n",3);
                     /* An annoying "Hello World" example */
@@ -125,6 +125,10 @@ export default function Testblog() {
                     --heading-1: 30px/32px Helvetica, sans-serif;
                 }
 
+                div {
+                    color: var(--div-color) !important;
+                }
+
                 @import url(print.css);
                 @media print {
                     a[href^='http']::after {
@@ -132,6 +136,17 @@ export default function Testblog() {
                     }
                 }
                 `}
+            />
+            <X.H3>js</X.H3>
+            <X.CodeBlock
+                language="js"
+                code={`
+                const a={
+                    "data": { "labels": ["foo", "bar"], },
+                    "error": null,
+                    "status": "Ok"
+                }
+            `}
             />
             <X.H3>jsx</X.H3>
             <X.CodeBlock
