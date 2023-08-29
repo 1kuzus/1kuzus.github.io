@@ -43,6 +43,7 @@ export default function Testblog() {
             <X.H2>单行代码</X.H2>
             <X.CodeBlock language="python" code={`with open("./tool.js","r") as f:`} />
             <X.CodeBlock language="cpp" code={`bool operator <(const NODE &other)const`} />
+            <X.CodeBlock language="c" code={`fprintf(stdout, "hello world\\n");`} />
             <X.CodeBlock language="markdown" code={`[Prism](https://prismjs.com) is a cool syntax highlighter.`} />
             <X.CodeBlock language="js" code={`let entity = /&#x?[\\da-f]{1,8};/;`} />
             <X.CodeBlock language="ts" code={`type SearchFunc = (source: string, subStr: string) => boolean;`} />
@@ -89,6 +90,29 @@ export default function Testblog() {
                 ... prompt'''
                 `}
             />
+            <X.H3>bash</X.H3>
+            <X.CodeBlock
+                language="bash"
+                code={`
+                #!/bin/bash
+
+                ###### CONFIG
+                ACCEPTED_HOSTS="/root/.hag_accepted.conf"
+                BE_VERBOSE=false
+                
+                if [ "$UID" -ne 0 ]
+                then
+                 echo "Superuser rights required"
+                 exit 2
+                fi
+                
+                genApacheConf(){
+                 echo -e "# Host \${HOME_DIR}$1/$2 :"
+                }
+                
+                echo '"quoted"' | tr -d \\" > text.txt
+                `}
+            />
             <X.H3>html</X.H3>
             <X.CodeBlock
                 language="html"
@@ -103,7 +127,7 @@ export default function Testblog() {
                 </script>
                 
                 <body>
-                  <p checked class="title" id='title'>Title</p>
+                  <p checked class="title" id='title'>Title&nbsp;</p>
                   <!-- here goes the rest of the page -->
                 </body>
                 `}
@@ -141,11 +165,37 @@ export default function Testblog() {
             <X.CodeBlock
                 language="js"
                 code={`
+                const PI = 3.14159;
                 const a={
                     "data": { "labels": ["foo", "bar"], },
                     "error": null,
                     "status": "Ok"
                 }
+            `}
+            />
+            <X.H3>diff</X.H3>
+            <X.CodeBlock
+                language="diff"
+                code={`
+                Index: languages/ini.js
+                ===================================================================
+                --- languages/ini.js    (revision 199)
+                +++ languages/ini.js    (revision 200)
+                @@ -1,8 +1,7 @@
+                 hljs.LANGUAGES.ini =
+                 {
+                   case_insensitive: true,
+                -  defaultMode:
+                -  {
+                +  defaultMode: {
+                     contains: ['comment', 'title', 'setting'],
+                     illegal: '[^\\s]'
+                   },
+                
+                *** /path/to/original timestamp
+                --- /path/to/new      timestamp
+                ***************
+                *** 1,3 ****
             `}
             />
             <X.H3>jsx</X.H3>
