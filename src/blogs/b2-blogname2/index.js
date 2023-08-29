@@ -43,6 +43,9 @@ export default function Testblog() {
             <X.H2>单行代码</X.H2>
             <X.CodeBlock language="python" code={`with open("./tool.js","r") as f:`} />
             <X.CodeBlock language="cpp" code={`bool operator <(const NODE &other)const`} />
+            <X.CodeBlock language="markdown" code={`[Prism](https://prismjs.com) is a cool syntax highlighter.`} />
+            <X.CodeBlock language="js" code={`let entity = /&#x?[\\da-f]{1,8};/;`} />
+            <X.CodeBlock language="ts" code={`type SearchFunc = (source: string, subStr: string) => boolean;`} />
             <X.H2>多行代码</X.H2>
             <X.H3>cpp</X.H3>
             <X.CodeBlock
@@ -71,6 +74,7 @@ export default function Testblog() {
                 code={`
                 import requests
                 import json
+                pi = round(float('3.14159'), 2)
                 @requires_authorization(roles=["ADMIN"])
                 def somefunc(param1='', param2=0):
                     r'''A docstring'''

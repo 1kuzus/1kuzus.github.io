@@ -7,7 +7,7 @@ import DarkThemeIcon from '../../assets/dark_theme.svg';
 import './Header.css';
 
 export default function Header() {
-    const [isDarkTheme, setIsDarkTheme] = useState(false);
+    const [isDarkTheme, setIsDarkTheme] = useState(true);
     const navigate = useNavigate();
     useEffect(() => {
         if (isDarkTheme) document.documentElement.setAttribute('class', 'dark');
