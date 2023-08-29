@@ -9,6 +9,10 @@ import './App.css';
 import Blog1 from './blogs/b1-blogname';
 import Blog2 from './blogs/b2-blogname2';
 import SideBar from './component/SideBar/SideBar';
+import 'prismjs/components/prism-python';
+import 'prismjs/components/prism-jsx';
+import 'prismjs/components/prism-c';
+import 'prismjs/components/prism-cpp';
 //todo: 统一空行规范
 const router = [
     {
@@ -45,9 +49,6 @@ const router = [
 ];
 
 function App() {
-    useEffect(() => {
-        hljs.configure({ignoreUnescapedHTML: true});
-    }, []);
     return (
         <>
             <Header></Header>

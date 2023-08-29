@@ -41,7 +41,6 @@ export default function Testblog() {
             </X.P>
             <X.H1>代码块</X.H1>
             <X.H2>单行代码</X.H2>
-            <pre><code className='language-tsx'>export default x;</code></pre>
             <X.CodeBlock language="python" code={`with open("./tool.js","r") as f:`} />
             <X.CodeBlock language="cpp" code={`bool operator <(const NODE &other)const`} />
             <X.H2>多行代码</X.H2>
@@ -68,7 +67,7 @@ export default function Testblog() {
             />
             <X.H3>python</X.H3>
             <X.CodeBlock
-                language="py"
+                language="python"
                 code={`
                 import requests
                 import json
@@ -105,29 +104,6 @@ export default function Testblog() {
                 </body>
                 `}
             />
-            <X.H3>bash</X.H3>
-            <X.CodeBlock
-                language="bash"
-                code={`
-                #!/bin/bash
-
-                ###### CONFIG
-                ACCEPTED_HOSTS="/root/.hag_accepted.conf"
-                BE_VERBOSE=false
-                
-                if [ "$UID" -ne 0 ]
-                then
-                 echo "Superuser rights required"
-                 exit 2
-                fi
-                
-                genApacheConf(){
-                 echo -e "# Host \${HOME_DIR}$1/$2 :"
-                }
-                
-                echo '"quoted"' | tr -d \\" > text.txt
-                `}
-            />
             <X.H3>css</X.H3>
             <X.CodeBlock
                 language="css"
@@ -153,32 +129,7 @@ export default function Testblog() {
                 }
                 `}
             />
-            <X.H3>llvm</X.H3>
-            <X.CodeBlock
-                language="llvm"
-                code={String.raw`
-                ; ModuleID = 'test.c'
-                target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
-                target triple = "x86_64-unknown-linux-gnu"
-                
-                %struct._IO_FILE = type { i32, i8*, i8*, i8*, i8*, i8*, i8*, i8*, i8*, i8*, i8*, i8*, %struct._IO_marker*, %struct._IO_FILE*, i32, i32, i64, i16, i8, [1 x i8], i8*, i64, i8*, i8*, i8*, i8*, i64, i32, [20 x i8] }
-                %struct._IO_marker = type { %struct._IO_marker*, %struct._IO_FILE*, i32 }
-                %struct.what = type { i8, i16 }
-                
-                @.str = private unnamed_addr constant [6 x i8] c"foo()\00", align 1
-                @e_long = common global i64 0, align 8
-                @g_double = common global double 0.000000e+00, align 8
-                @.str.1 = private unnamed_addr constant [7 x i8] c"oooooh\00", align 1
-                @func_ptr = common global i32 (...)* null, align 8
-                @stderr = external global %struct._IO_FILE*, align 8
-                
-                ; Function Attrs: nounwind uwtable
-                define i32 @foo() #0 {
-                %1 = call i32 @puts(i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str, i32 0, i32 0))
-                ret i32 0
-                `}
-            />
-            <X.H3>llvm</X.H3>
+            <X.H3>jsx</X.H3>
             <X.CodeBlock
                 language="jsx"
                 code={`
@@ -234,8 +185,12 @@ export default function Testblog() {
                 }
                 }
                 export default App;
-
-
+            `}
+            />
+            <X.H3>jsx</X.H3>
+            <X.CodeBlock
+                language="jsx"
+                code={`
                 import {useState} from 'react';
                 import {useLocation, Link} from 'react-router-dom';
                 import categories from '../../blogs/categories';
@@ -274,7 +229,6 @@ export default function Testblog() {
                         </div>
                     );
                 }
-
                 `}
             />
         </X.BlogWrapper>
