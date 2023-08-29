@@ -11,10 +11,13 @@ import Blog2 from './blogs/b2-blogname2';
 import SideBar from './component/SideBar/SideBar';
 import 'prismjs/components/prism-c';
 import 'prismjs/components/prism-cpp';
-import 'prismjs/components/prism-jsx';
-import 'prismjs/components/prism-jsx';
+import 'prismjs/components/prism-java';
 import 'prismjs/components/prism-python';
 import 'prismjs/components/prism-markdown';
+import 'prismjs/components/prism-javascript';
+import 'prismjs/components/prism-typescript';
+import 'prismjs/components/prism-jsx';
+import 'prismjs/components/prism-tsx';
 //todo: 统一空行规范
 const router = [
     {

@@ -7,7 +7,6 @@
     overflow-x: auto; /*//todo 滚动到最右侧，padding-right没有体现*/
     transition: background-color 200ms;
 }
-
 /*highlight.js 代码块样式*/
 pre code.hljs {
     display: block;
@@ -118,13 +117,17 @@ pre code[class*='language-'] {
     font-family: Consolas, Menlo, 'Courier New', Courier, 'Ubuntu Mono', monospace;
     color: var(--text-color-main);
 }
-.token.string {
+.token.string,
+.token.attr-value,
+.token.attr-value .token.punctuation,
+.token.url {
     color: #d69d85;
 }
 .token.comment {
     color: #57a64a;
 }
 .token.keyword,
+.token.important,
 .token.tag {
     color: #569cd6;
 }
@@ -132,7 +135,11 @@ pre code[class*='language-'] {
     color: #b8d7a3;
 }
 .token.operator,
-.token.punctuation {
+.token.attr-value .token.attr-equals,
+.token.punctuation,
+.token.prolog,
+.token.doctype,
+.token.cdata {
     color: #808080;
 }
 .token.function {
@@ -151,27 +158,23 @@ pre code[class*='language-'] {
 .token.regex {
     color: #c86464;
 }
-
+.token.namespace {
+    opacity: 0.7;
+}
+.token.bold {
+    font-weight: bold;
+}
+.token.italic {
+    font-style: italic;
+}
 /**
  * prism.js default theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)
  * @author Lea Verou
  */
-
-/* color: rgb(79, 193, 255); */
-.token.prolog,
-.token.doctype,
-.token.cdata {
-    color: #708090;
-}
-
-.token.namespace {
-    opacity: 0.7;
-}
-.token.attr-value {
-    /* color: #569cd6; */
-    color: red;
-}
+/* aa {
+color: rgb(79, 193, 255);
+} */
 
 .token.property,
 .token.constant,
@@ -187,23 +190,14 @@ pre code[class*='language-'] {
 .token.inserted {
     color: rgb(215, 186, 125);
 }
-.token.entity,
-.token.url {
+.token.entity {
     color: #9a6e3a;
 }
 
-.token.important,
 .token.variable {
     color: #e90;
 }
 
-.token.important,
-.token.bold {
-    font-weight: bold;
-}
-.token.italic {
-    font-style: italic;
-}
 .token.entity {
     cursor: help;
 }
