@@ -192,7 +192,7 @@ export default function Testblog() {
                      illegal: '[^\\s]'
                    },
                 
-                *** /path/to/original timestamp
+                *** /path/to/original/path/to/original/path/to/original/path/to/original/path/to/original/path/to/original/path/to/original/path/to/original timestamp
                 --- /path/to/new      timestamp
                 ***************
                 *** 1,3 ****

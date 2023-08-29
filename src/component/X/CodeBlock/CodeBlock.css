@@ -33,6 +33,7 @@ pre code[class*='language-'] {
 }
 .token.keyword,
 .token.important,
+.token.macro .token.directive-hash,
 .token.tag {
     color: #569cd6;
 }
@@ -84,7 +85,6 @@ pre code[class*='language-'] {
 .token.italic {
     font-style: italic;
 }
-
 
 /**
  * prism.js default theme for JavaScript, CSS and HTML
