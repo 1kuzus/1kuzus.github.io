@@ -1,6 +1,6 @@
 const test = fmt`123`;
 function fmt(strings) {
-    const aa = [`123`];
+    const aa = [/21132123/];
     const bb = strings;
     console.log(strings);
     console.log(String.raw(bb)); // 正确
