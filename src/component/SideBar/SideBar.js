@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import {useLocation, Link} from 'react-router-dom';
 import categories from '../../blogs/categories';
 import RightArrowIcon from '../../assets/rightarrow.svg';
@@ -28,11 +28,28 @@ function SideBarList(props) {
 
 export default function SideBar() {
     const location = useLocation();
+    const [showSideBar, setShowSideBar] = useState(true);
+    function handleResize() {
+        if (window.innerWidth < 800) setShowSideBar(false);
+        else setShowSideBar(true);
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     return (
-        <div id="sidebar">
-            {categories.map((category, index) => (
-                <SideBarList key={index} category={category} currentPath={location.pathname} />
-            ))}
-        </div>
+        <>
+            {showSideBar && (
+                <div id="sidebar">
+                    {categories.map((category, index) => (
+                        <SideBarList key={index} category={category} currentPath={location.pathname} />
+                    ))}
+                </div>
+            )}
+        </>
     );
 }
