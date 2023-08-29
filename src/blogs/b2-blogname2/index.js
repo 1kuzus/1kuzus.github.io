@@ -1,5 +1,4 @@
 import X from '../../component/X';
-import './index.css';
 
 export default function Testblog() {
     return (
