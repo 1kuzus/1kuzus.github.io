@@ -12,7 +12,7 @@ export default function Header() {
     useEffect(() => {
         if (isDarkTheme) document.documentElement.setAttribute('class', 'dark');
         else document.documentElement.setAttribute('class', 'light');
-    });
+    }, [isDarkTheme]);
     return (
         <div id="header">
             <div id="header-logo-bg">
