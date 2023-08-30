@@ -19,38 +19,44 @@ import 'prismjs/components/prism-jsx';
 import 'prismjs/components/prism-tsx';
 import 'prismjs/components/prism-diff';
 import 'prismjs/components/prism-bash';
+import {elements} from './blogs/categories';
+
 //todo: 统一空行规范
 const router = [
     {
         path: '/',
         element: <Homepage />,
     },
-    {
-        path: '/blog1',
+    ...elements.map(({path, element}) => ({
+        path,
         element: (
             <>
                 <SideBar />
-                <Blog1 />
+                {element}
             </>
         ),
-    },
-    {
-        path: '/blog2',
-        element: (
-            <>
-                <SideBar />
-                <Blog2 />
-            </>
-        ),
-    },
+    })),
+    // {
+    //     path: '/blog1',
+    //     element: (
+    //         <>
+    //             <SideBar />
+    //             <Blog1 />
+    //         </>
+    //     ),
+    // },
+    // {
+    //     path: '/blog2',
+    //     element: (
+    //         <>
+    //             <SideBar />
+    //             <Blog2 />
+    //         </>
+    //     ),
+    // },
     {
         path: '*',
-        element: (
-            <>
-                <SideBar />
-                <Blog2 />
-            </>
-        ),
+        element: <Homepage />,
     },
 ];
 

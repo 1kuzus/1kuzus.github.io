@@ -1,6 +1,6 @@
 import X from '../../component/X';
-import {useEffect, useRef} from 'react';
-export default function Testblog() {
+
+export default function Blog() {
     return (
         <X.BlogWrapper>
             <X.Title>测试Blog</X.Title>
