@@ -5,8 +5,6 @@ import {useRoutes} from 'react-router-dom';
 import 'katex/dist/katex.min.css';
 import './App.css';
 
-import Blog1 from './blogs/b23830demo';
-import Blog2 from './blogs/b23831test';
 import SideBar from './component/SideBar/SideBar';
 import 'prismjs/components/prism-c';
 import 'prismjs/components/prism-cpp';
@@ -36,24 +34,6 @@ const router = [
             </>
         ),
     })),
-    // {
-    //     path: '/blog1',
-    //     element: (
-    //         <>
-    //             <SideBar />
-    //             <Blog1 />
-    //         </>
-    //     ),
-    // },
-    // {
-    //     path: '/blog2',
-    //     element: (
-    //         <>
-    //             <SideBar />
-    //             <Blog2 />
-    //         </>
-    //     ),
-    // },
     {
         path: '*',
         element: <Homepage />,
