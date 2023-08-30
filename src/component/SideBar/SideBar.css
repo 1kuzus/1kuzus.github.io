@@ -8,6 +8,9 @@
     user-select: none;
     transition: background-color 200ms;
 }
+.main-only #sidebar {
+    display: none;
+}
 .sidebarlist {
     width: 348px;
 }

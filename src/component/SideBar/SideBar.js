@@ -28,28 +28,12 @@ function SideBarList(props) {
 
 export default function SideBar() {
     const location = useLocation();
-    // const [showSideBar, setShowSideBar] = useState(true);
-    // function handleResize() {
-    //     if (window.innerWidth < 800) setShowSideBar(false);
-    //     else setShowSideBar(true);
-    // }
-
-    // useEffect(() => {
-    //     window.addEventListener('resize', handleResize);
-    //     return () => {
-    //         window.removeEventListener('resize', handleResize);
-    //     };
-    // }, []);
 
     return (
-        // <>
-        //     {showSideBar && (
         <div id="sidebar">
             {categories.map((category, index) => (
                 <SideBarList key={index} category={category} currentPath={location.pathname} />
             ))}
         </div>
-        // )}
-        // </>
     );
 }

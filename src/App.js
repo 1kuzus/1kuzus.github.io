@@ -1,10 +1,8 @@
+import {useEffect} from 'react';
+import {useRoutes} from 'react-router-dom';
+import {elements} from './blogs/categories';
 import Homepage from './component/Homepage/Homepage';
 import Header from './component/Header/Header';
-
-import {useRoutes} from 'react-router-dom';
-import 'katex/dist/katex.min.css';
-import './App.css';
-
 import SideBar from './component/SideBar/SideBar';
 import 'prismjs/components/prism-c';
 import 'prismjs/components/prism-cpp';
@@ -17,7 +15,8 @@ import 'prismjs/components/prism-jsx';
 import 'prismjs/components/prism-tsx';
 import 'prismjs/components/prism-diff';
 import 'prismjs/components/prism-bash';
-import {elements} from './blogs/categories';
+import 'katex/dist/katex.min.css';
+import './App.css';
 
 //todo: 统一空行规范
 const router = [
@@ -41,6 +40,16 @@ const router = [
 ];
 
 function App() {
+    function handleResize() {
+        if (window.innerWidth < 1150) document.body.classList.add('main-only');
+        else document.body.classList.remove('main-only');
+    }
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
     return (
         <>
             <Header></Header>
