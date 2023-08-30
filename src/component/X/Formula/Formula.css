@@ -2,4 +2,5 @@
     margin-bottom: 24px;
     font-size: 20px;
     color: var(--text-color-main);
+    user-select: none;
 }

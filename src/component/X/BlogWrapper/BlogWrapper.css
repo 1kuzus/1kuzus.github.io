@@ -1,5 +1,9 @@
 .x-blogwrapper {
     box-sizing: content-box;
-    min-width: 800px;
-    padding: 48px 480px;
+    max-width: 1000px;
+    min-width: 600px;
+    padding: 48px 48px 48px 480px;
+}
+.main-only .x-blogwrapper {
+    padding: 48px;
 }

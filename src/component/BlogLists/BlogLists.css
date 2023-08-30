@@ -48,6 +48,7 @@
 .bloglist-time {
     opacity: 0;
     font-size: 14px;
+    font-weight: normal;
 }
 
 /*hover样式*/
@@ -55,7 +56,7 @@
     background-color: var(--hover-color-2);
 }
 .bloglist-li:hover .bloglist-time {
-    opacity: 0.4;
+    opacity: 0.5;
 }
 .bloglist-head:hover .bloglist-title {
     color: var(--title-color);
