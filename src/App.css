@@ -4,8 +4,10 @@
     --bg-transparent-golden: #ffb80018;
     --bg-transparent-red: #ff380018;
     --bg-icon-color: #30303c;
+    --bg-scrollbar-thumb-color: #cccccc;
     --hover-color-1: #f4f4f4;
     --hover-color-2: #ececec;
+    --hover-scrollbar-thumb-color: #bcbcbc;
     --title-color: #00a8c4;
     --text-color-main: #30303c;
     --text-color-active: #0088ac;
@@ -23,8 +25,10 @@
     --bg-transparent-golden: #c08a0020;
     --bg-transparent-red: #c02a0020;
     --bg-icon-color: #383844;
+    --bg-scrollbar-thumb-color: #ececec;
     --hover-color-1: #28282e;
     --hover-color-2: #383844;
+    --hover-scrollbar-thumb-color: #ececec;
     --title-color: #00b8d0;
     --text-color-main: #fcfcfc;
     --text-color-active: #00a8c4;
@@ -41,19 +45,15 @@
     --logopart-shadow: 0 0 48px 4px #00e8f4a0;
 }
 
-
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 body {
-    margin-right: calc(100% - 100vw);
     padding-top: 64px;
     font-size: 16px;
     background-color: var(--bg-color-2);
-    overflow-x: hidden;
     transition: background-color 200ms;
 }
 li {
@@ -64,4 +64,19 @@ a {
 }
 img {
     -webkit-user-drag: none;
+}
+
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+*::-webkit-scrollbar-track {
+    background-color: var(--bg-color-1);
+}
+*::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: var(--bg-scrollbar-thumb-color);
+}
+*::-webkit-scrollbar-thumb:hover {
+    background-color: var(--hover-scrollbar-thumb-color);
 }
