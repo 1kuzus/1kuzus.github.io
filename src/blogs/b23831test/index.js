@@ -1,6 +1,6 @@
 import X from '../../component/X';
 
-export default function Testblog() {
+export default function Blog() {
     return (
         <X.BlogWrapper>
             <X.Title>测试Blog</X.Title>
