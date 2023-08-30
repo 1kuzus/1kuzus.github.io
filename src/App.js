@@ -2,12 +2,11 @@ import Homepage from './component/Homepage/Homepage';
 import Header from './component/Header/Header';
 
 import {useRoutes} from 'react-router-dom';
-import {useEffect} from 'react';
 import 'katex/dist/katex.min.css';
 import './App.css';
 
-import Blog1 from './blogs/b1-blogname';
-import Blog2 from './blogs/b2-blogname2';
+import Blog1 from './blogs/b23830demo';
+import Blog2 from './blogs/b23831test';
 import SideBar from './component/SideBar/SideBar';
 import 'prismjs/components/prism-c';
 import 'prismjs/components/prism-cpp';

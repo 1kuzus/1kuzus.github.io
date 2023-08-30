@@ -1,3 +1,5 @@
+
+
 const categories = [
     {
         categoryName: 'React',
@@ -71,3 +73,4 @@ const categories = [
     },
 ];
 export default categories;
+// console.log(categories.map((i) => i.blogs).reduce((acc, cur) => [...acc, ...cur]));
