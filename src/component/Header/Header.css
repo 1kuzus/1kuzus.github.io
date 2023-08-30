@@ -10,6 +10,7 @@
     height: 64px;
     padding: 0 180px;
     background-color: var(--bg-color-1);
+    user-select: none;
     transition: background-color 200ms;
 }
 #header-right-wrapper {

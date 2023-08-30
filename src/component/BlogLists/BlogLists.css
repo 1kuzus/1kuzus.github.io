@@ -2,6 +2,7 @@
     min-height: calc(100vh - 64px);
     padding: 12px 120px 48px;
     overflow: hidden;
+    user-select: none;
 }
 .bloglist {
     min-width: 480px;
@@ -33,6 +34,7 @@
 }
 .bloglist-li {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     height: 50px;
     padding: 12px 24px;
@@ -43,10 +45,17 @@
     cursor: pointer;
     transition: background-color 200ms;
 }
+.bloglist-time {
+    opacity: 0;
+    font-size: 14px;
+}
 
 /*hover样式*/
 .bloglist-li:hover {
     background-color: var(--hover-color-2);
+}
+.bloglist-li:hover .bloglist-time {
+    opacity: 0.4;
 }
 .bloglist-head:hover .bloglist-title {
     color: var(--title-color);

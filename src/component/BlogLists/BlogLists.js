@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, Link} from 'react-router-dom';
 import categories from '../../blogs/categories';
 import './BlogLists.css';
 
@@ -13,8 +13,11 @@ function BlogList(props) {
             </div>
             <ul className="bloglist-ul" style={{height: showList ? 4 + 54 * category.blogs.length + 'px' : '0'}}>
                 {category.blogs.map((blog, index) => (
-                    <li className="bloglist-li" key={index} onClick={() => navigate(blog.path)}>
-                        {blog.blogName}
+                    <li key={index}>
+                        <Link className="bloglist-li" to={blog.path}>
+                            {blog.blogName}
+                            <span className="bloglist-time">{blog.time}</span>
+                        </Link>
                     </li>
                 ))}
             </ul>
@@ -27,7 +30,7 @@ export default function BlogLists() {
     return (
         <div id="bloglists">
             {categories.map((category, index) => (
-                <BlogList key={index} category={category} navigate={navigate} className="vvv" />
+                <BlogList key={index} category={category} navigate={navigate} />
             ))}
         </div>
     );
