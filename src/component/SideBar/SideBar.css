@@ -2,11 +2,14 @@
     position: fixed;
     width: 396px;
     height: calc(100vh - 64px);
-    padding: 24px;
+    padding: 24px 0 24px 24px;
     background-color: var(--bg-color-1);
-    overflow-y: auto;
+    overflow-x: hidden;
     user-select: none;
     transition: background-color 200ms;
+}
+.sidebarlist {
+    width: 348px;
 }
 .sidebarlist-head {
     display: flex;
