@@ -45,6 +45,27 @@ export function P(props) {
         <p
             className={`x-p${highlightBackground ? ' highlight-p highlight-background-' + highlightBackground : ''}`}
             dangerouslySetInnerHTML={{__html: htmlContent}}
-        ></p>
+        />
     );
+}
+export function Br() {
+    return <div className="x-br" />;
+}
+export function Divider() {
+    return <div className="x-divider" />;
+}
+
+export function Uli(props) {
+    const {children} = props;
+    return (
+        <div className="x-uli">
+            <div className="x-uli-marker" />
+            {children}
+        </div>
+    );
+}
+//Oli将在BlogWrapper组件中完成列表序号的渲染
+export function Oli(props) {
+    const {children} = props;
+    return <>{children}</>;
 }

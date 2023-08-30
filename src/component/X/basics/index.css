@@ -7,13 +7,13 @@
     font-size: 30px;
     color: var(--text-color-main);
     margin-bottom: 16px;
-    margin-top: 32px;
+    margin-top: 48px;
 }
 .x-h2 {
     font-size: 24px;
     color: var(--text-color-main);
     margin-bottom: 12px;
-    margin-top: 28px;
+    margin-top: 32px;
 }
 .x-h3 {
     font-size: 18px;
@@ -57,4 +57,38 @@
 }
 .x-inline-link:hover {
     border-bottom: 1px solid var(--text-color-active);
+}
+.x-br {
+    width: 0;
+    height: 24px;
+}
+.x-divider {
+    height: 1px;
+    background-color: var(--gray-1);
+    transform: scaleY(0.5);
+}
+.x-uli {
+    display: flex;
+    align-items: center;
+    line-height: 28px;
+    color: var(--text-color-main);
+}
+.x-uli-marker {
+    width: 4px;
+    height: 4px;
+    margin: 0 14px;
+    border-radius: 50%;
+    background-color: var(--text-color-active);
+}
+.x-oli {
+    display: flex;
+    align-items: center;
+    line-height: 28px;
+    color: var(--text-color-main);
+}
+.x-oli-number {
+    width: 32px;
+    font-size: 14px;
+    text-align: center;
+    color: var(--text-color-active);
 }
