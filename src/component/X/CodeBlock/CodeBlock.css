@@ -1,11 +1,19 @@
 .x-codeblock {
     margin-bottom: 24px;
-    padding: 24px 32px;
     border-radius: 12px;
     background-color: var(--bg-color-1);
     box-shadow: var(--codeblock-shadow);
-    overflow-x: auto; /*//todo 滚动到最右侧，padding-right没有体现*/
+    overflow-x: auto;
     transition: background-color 200ms;
+}
+.x-codeblock pre code[class*='language-'] {
+    display: block;
+    width: fit-content;
+    padding: 24px 32px;
+    line-height: 24px;
+    font-size: 95%;
+    font-family: Consolas, Menlo, 'Courier New', Courier, 'Ubuntu Mono', monospace;
+    color: var(--text-color-main);
 }
 
 /**
@@ -14,13 +22,6 @@
  * @author Lea Verou
  */
 
-pre code[class*='language-'] {
-    display: block;
-    line-height: 24px;
-    font-size: 95%;
-    font-family: Consolas, Menlo, 'Courier New', Courier, 'Ubuntu Mono', monospace;
-    color: var(--text-color-main);
-}
 .token.string,
 .token.attr-value,
 .token.attr-value .token.punctuation,
