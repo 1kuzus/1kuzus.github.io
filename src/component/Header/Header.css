@@ -33,6 +33,7 @@
     padding: 8px;
     border-radius: 50%;
     background-color: var(--bg-icon-color);
+    cursor: pointer;
 }
 #header-github-bg {
     width: 36px;

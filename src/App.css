@@ -25,10 +25,10 @@
     --bg-transparent-golden: #c08a0020;
     --bg-transparent-red: #c02a0020;
     --bg-icon-color: #383844;
-    --bg-scrollbar-thumb-color: #ececec;
+    --bg-scrollbar-thumb-color: #383844;
     --hover-color-1: #28282e;
     --hover-color-2: #383844;
-    --hover-scrollbar-thumb-color: #ececec;
+    --hover-scrollbar-thumb-color: #484854;
     --title-color: #00b8d0;
     --text-color-main: #fcfcfc;
     --text-color-active: #00a8c4;
@@ -69,9 +69,6 @@ img {
 *::-webkit-scrollbar {
     width: 8px;
     height: 8px;
-}
-*::-webkit-scrollbar-track {
-    background-color: var(--bg-color-1);
 }
 *::-webkit-scrollbar-thumb {
     border-radius: 4px;

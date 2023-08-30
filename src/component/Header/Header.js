@@ -19,11 +19,8 @@ export default function Header() {
                 <img id="header-logo" src={LogoIcon} onClick={() => navigate('/')} />
             </div>
             <div id="header-right-wrapper">
-                <div id="header-theme-bg">
-                    <img
-                        src={isDarkTheme ? DarkThemeIcon : LightThemeIcon}
-                        onClick={() => setIsDarkTheme(!isDarkTheme)}
-                    />
+                <div id="header-theme-bg" onClick={() => setIsDarkTheme(!isDarkTheme)}>
+                    <img src={isDarkTheme ? DarkThemeIcon : LightThemeIcon} />
                 </div>
                 <a href="https://github.com/1kuzus" target="_blank">
                     <div id="header-github-bg">
