@@ -96,3 +96,6 @@
 .x-oli .x-p {
     margin-bottom: 0;
 }
+.x-flex {
+    display: flex;
+}

@@ -1,7 +1,18 @@
-import B0000 from './b23830demo';
-import Behwl from './b23831test';
+import B0000 from './2308/demo';
+import Behwl from './2308/pr1';
 
 const categories = [
+    {
+        categoryName: '课程',
+        blogs: [
+            {
+                blogName: '「模式识别」统计决策方法',
+                path: '/behwl',
+                time: '2023-8-31',
+                component: <Behwl />,
+            },
+        ],
+    },
     {
         categoryName: '其他',
         blogs: [
