@@ -134,6 +134,6 @@
     ]
   },
   "eslintConfig": {
-    
+    "extends": "react-app"
   }
 }
