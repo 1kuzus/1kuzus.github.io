@@ -1,7 +1,7 @@
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import {useLocation, Link} from 'react-router-dom';
-import categories from '../../blogs/categories';
-import RightArrowIcon from '../../assets/rightarrow.svg';
+import categories from '@/blogs/categories';
+import RightArrowIcon from '@/assets/rightarrow.svg';
 import './SideBar.css';
 
 function SideBarList(props) {

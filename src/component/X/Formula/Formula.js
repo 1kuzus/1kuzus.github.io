@@ -8,7 +8,7 @@ export default function Formula(props) {
         Katex.render(text, elementRef.current, {
             output: 'html',
         });
-    }, []);
+    }, [text]);
     return (
         <div className="x-formula" ref={elementRef}>
             {text}

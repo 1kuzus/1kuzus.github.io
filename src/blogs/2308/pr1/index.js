@@ -1,4 +1,5 @@
 import X from '@/component/X';
+import './index.css';
 
 export default function Blog() {
     return (
@@ -7,6 +8,7 @@ export default function Blog() {
 
             <X.H2>贝叶斯公式</X.H2>
             <div className="behwl-boxes">
+                <div className="behwl-square" />
                 <div className="behwl-square" />
             </div>
             <X.Formula text="P(AB) = \frac{P(AB)}{P(B)} = \frac{P(B|A) \cdot P(A)}{P(B)}" />

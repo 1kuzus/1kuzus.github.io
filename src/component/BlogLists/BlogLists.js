@@ -1,10 +1,10 @@
 import {useState} from 'react';
-import {useNavigate, Link} from 'react-router-dom';
-import categories from '../../blogs/categories';
+import {Link} from 'react-router-dom';
+import categories from '@/blogs/categories';
 import './BlogLists.css';
 
 function BlogList(props) {
-    const {category, navigate} = props;
+    const {category} = props;
     const [showList, setShowList] = useState(true);
     return (
         <div className={`bloglist${showList ? ' showlist' : ''}`}>
@@ -26,11 +26,10 @@ function BlogList(props) {
 }
 
 export default function BlogLists() {
-    const navigate = useNavigate();
     return (
         <div id="bloglists">
             {categories.map((category, index) => (
-                <BlogList key={index} category={category} navigate={navigate} />
+                <BlogList key={index} category={category} />
             ))}
         </div>
     );

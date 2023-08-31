@@ -5,5 +5,5 @@
 .behwl-boxes .behwl-square {
     width: 60px;
     height: 60px;
-    border: 10px solid var(--gray-5);
+    border: 6px solid var(--gray-5);
 }
