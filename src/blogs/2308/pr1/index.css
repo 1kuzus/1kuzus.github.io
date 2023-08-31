@@ -1,0 +1,9 @@
+.behwl-boxes {
+    display: flex;
+    align-items: center;
+}
+.behwl-boxes .behwl-square {
+    width: 60px;
+    height: 60px;
+    border: 10px solid var(--gray-5);
+}

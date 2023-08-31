@@ -1,4 +1,4 @@
-import X from '../../component/X';
+import X from '../../../component/X';
 
 export default function Blog() {
     return (
