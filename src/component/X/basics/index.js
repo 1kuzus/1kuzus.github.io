@@ -20,16 +20,16 @@ export function P(props) {
     /*
         `content`  行内高亮
         *content*  加粗
-        @text#url@ 超链接
+        @text[url]@ 超链接
     */
     const {children, highlightBackground} = props;
-
     if (highlightBackground && !['golden', 'red'].includes(highlightBackground)) {
         throw new Error('X.P props <highlightBackground> should be a value in ["golden", "red"]');
     }
 
     let htmlContent = Array.isArray(children) ? children.join('') : children;
 
+    htmlContent = htmlContent.replace(/\\ /g, '&#160;');
     htmlContent = htmlContent.replace(/ /g, '');
     htmlContent = htmlContent.replace(/</g, '&#60;').replace(/>/g, '&#62;');
     htmlContent = htmlContent.replace(/\\\\/g, '&#92;');
@@ -54,12 +54,13 @@ export function Br() {
 export function Divider() {
     return <div className="x-divider" />;
 }
-
 export function Uli(props) {
     const {children} = props;
     return (
         <div className="x-uli">
-            <div className="x-uli-marker" />
+            <div className="x-uli-marker">
+                <div className="x-uli-marker-dot"></div>
+            </div>
             {children}
         </div>
     );

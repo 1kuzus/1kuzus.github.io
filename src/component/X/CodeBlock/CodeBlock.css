@@ -21,7 +21,9 @@
  * Based on dabblet (http://dabblet.com)
  * @author Lea Verou
  */
-
+.token .script {
+    color: var(--text-color-main);
+}
 .token.string,
 .token.attr-value,
 .token.attr-value .token.punctuation,
@@ -76,6 +78,9 @@
 .token.char,
 .token.entity {
     color: #d7ba7d;
+}
+.token.interpolation-punctuation {
+    color: #ffc814;
 }
 .token.namespace {
     opacity: 0.7;
