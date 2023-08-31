@@ -8,7 +8,7 @@ export default function BlogWrapper(props) {
     let processedChild = Children.map(children, (child) =>
         child.type.name === 'Oli' ? (
             <div className="x-oli">
-                <div className="x-oli-number">{++oliIdx}.</div>
+                <div className="x-oli-number">{(child.props.reset ? (oliIdx = 1) : ++oliIdx) + '.'}</div>
                 {child}
             </div>
         ) : (

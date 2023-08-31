@@ -3,10 +3,10 @@ import Behwl from './b23831test';
 
 const categories = [
     {
-        categoryName: '示例',
+        categoryName: '其他',
         blogs: [
             {
-                blogName: '测试Blog',
+                blogName: '示例',
                 path: '/b0000',
                 time: '2023-8-30',
                 component: <B0000 />,
