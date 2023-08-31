@@ -1,1 +1,0 @@
-type SearchFunc = (source: string, subStr: string) => boolean;
