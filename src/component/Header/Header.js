@@ -1,9 +1,9 @@
 import {useEffect, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
-import LogoIcon from '../../assets/logo.svg';
-import GithubIcon from '../../assets/github.svg';
-import LightThemeIcon from '../../assets/light_theme.svg';
-import DarkThemeIcon from '../../assets/dark_theme.svg';
+import LogoIcon from '@/assets/logo.svg';
+import GithubIcon from '@/assets/github.svg';
+import LightThemeIcon from '@/assets/light_theme.svg';
+import DarkThemeIcon from '@/assets/dark_theme.svg';
 import './Header.css';
 
 export default function Header() {

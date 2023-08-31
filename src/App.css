@@ -1,4 +1,5 @@
 :root.light {
+    --color-main: #30303c;
     --bg-color-1: #fcfcfc;
     --bg-color-2: #f4f4f4;
     --bg-transparent-golden: #ffb80018;
@@ -20,6 +21,7 @@
     --codeblock-shadow: 0 0 8px 1px #00000008;
 }
 :root.dark {
+    --color-main: #fcfcfc;
     --bg-color-1: #202026;
     --bg-color-2: #28282e;
     --bg-transparent-golden: #c08a0020;
@@ -36,10 +38,10 @@
     --inline-highlight-color-bg: #ececec18;
     --logopart-vr-color: #40404c;
     --gray-1: #50505c;
-    --gray-2: #484854;
+    /* --gray-2: #484854;
     --gray-3: #40404c;
     --gray-4: #383844;
-    --gray-5: #30303c;
+    --gray-5: #30303c; */
 
     /*仅暗色模式*/
     --logopart-shadow: 0 0 48px 4px #00e8f4a0;
