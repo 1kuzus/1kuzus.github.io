@@ -22,10 +22,7 @@ export function P(props) {
         *content*  加粗
         @text[url]@ 超链接
     */
-    const {children, highlightBackground} = props;
-    if (highlightBackground && !['golden', 'red'].includes(highlightBackground)) {
-        throw new Error('X.P props <highlightBackground> should be a value in ["golden", "red"]');
-    }
+    const {children = ''} = props;
 
     let htmlContent = Array.isArray(children) ? children.join('') : children;
 
@@ -41,12 +38,7 @@ export function P(props) {
     htmlContent = htmlContent.replace(/\*(.*?)\*/g, '<span class="x-inline-strong">$1</span>');
     htmlContent = htmlContent.replace(/@(.*?)\[(.*?)\]@/g, '<a href="$2" target="_blank" class="x-inline-link">$1</a>');
 
-    return (
-        <p
-            className={`x-p${highlightBackground ? ' highlight-p highlight-background-' + highlightBackground : ''}`}
-            dangerouslySetInnerHTML={{__html: htmlContent}}
-        />
-    );
+    return <p className="x-p" dangerouslySetInnerHTML={{__html: htmlContent}} />;
 }
 export function Br() {
     return <div className="x-br" />;

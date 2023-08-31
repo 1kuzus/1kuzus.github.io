@@ -1,0 +1,14 @@
+.x-highlightblock {
+    margin-bottom: 24px;
+    padding: 24px 32px;
+    border-radius: 12px;
+}
+.x-highlightblock > * {
+    margin: 0;
+}
+.x-highlightblock.highlight-background-golden {
+    background-color: var(--bg-transparent-golden);
+}
+.x-highlightblock.highlight-background-red {
+    background-color: var(--bg-transparent-red);
+}
