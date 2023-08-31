@@ -102,18 +102,28 @@ export default function Blog() {
             <X.CodeBlock
                 language="jsx"
                 code={`
-                <X.P highlightBackground="golden">
-                    ...
-                </X.P>
+                <X.HighlightBlock bgcolor="red">
+                    <X.P>
+                        ...
+                    </X.P>
+                </X.HighlightBlock>
                 `}
             />
-            <X.P highlightBackground="golden">
-                这里是一句普通的文本，你可以使用`\`\``符号包裹内容从而实现`像这样`的高亮效果。
-                这是一个指向@`百度`[https://www.baidu.com]@的超链接，格式为`\@百度[https://www.baidu.com]\@`。需要使用`\\\@`打出`\@`符号。
+            <X.P>
+                `HighlightBlock`组件只提供一个有背景的容器并且默认移除*直接子元素*的外边距，因此其内部可以嵌套其他组件。\n
+                `bgcolor`的默认值是`golden`。
             </X.P>
-            <X.P highlightBackground="red">
-                我们怀着极大的关切提醒您，当前我们所在地区可能会面临极端天气情况的威胁。气象部门预测，未来几天可能会出现强风、暴雨、甚至可能的洪水等极端气象事件。
-            </X.P>
+            <X.HighlightBlock>
+                <X.P>
+                    这里是一句普通的文本，你可以使用`\`\``符号包裹内容从而实现`像这样`的高亮效果。
+                    这是一个指向@`百度`[https://www.baidu.com]@的超链接，格式为`\@百度[https://www.baidu.com]\@`。需要使用`\\\@`打出`\@`符号。
+                </X.P>
+            </X.HighlightBlock>
+            <X.HighlightBlock bgcolor="red">
+                <X.P>
+                    我们怀着极大的关切提醒您，当前我们所在地区可能会面临极端天气情况的威胁。气象部门预测，未来几天可能会出现强风、暴雨、甚至可能的洪水等极端气象事件。
+                </X.P>
+            </X.HighlightBlock>
 
             <X.H1>公式</X.H1>
             <X.P>通过`Formula`组件定义一个公式：</X.P>

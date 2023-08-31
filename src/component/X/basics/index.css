@@ -9,6 +9,11 @@
     margin-bottom: 16px;
     margin-top: 48px;
 }
+.x-h1::before {
+    content: '#';
+    margin-right: 4px;
+    color: var(--text-color-active);
+}
 .x-h2 {
     font-size: 24px;
     color: var(--text-color-main);
@@ -26,16 +31,6 @@
     line-height: 28px;
     font-size: 16px;
     color: var(--text-color-main);
-}
-.x-p.highlight-p {
-    border-radius: 12px;
-    padding: 24px 32px;
-}
-.x-p.highlight-background-golden {
-    background-color: var(--bg-transparent-golden);
-}
-.x-p.highlight-background-red {
-    background-color: var(--bg-transparent-red);
 }
 .x-inline-highlight {
     margin: 0 4px;
@@ -74,7 +69,6 @@
     line-height: 28px;
     color: var(--text-color-main);
 }
-
 .x-uli-marker,
 .x-oli-number {
     display: flex;
