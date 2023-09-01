@@ -10,7 +10,7 @@
 .token.italic {
     font-style: italic;
 }
-:root.lisght {
+:root.light {
     .token.operator,
     .token.punctuation,
     .token.attr-value .token.attr-equals,
@@ -22,14 +22,14 @@
     .token.string,
     .token.url,
     .token.attr-value,
-    .token.attr-value .token.punctuation {
-        color: hsl(18, 77%, 43%);
+    .token.attr-value .punctuation {
+        color: #c94d18;
     }
     .token.tag,
     .token.keyword,
     .token.important,
     .token.macro .token.directive-hash {
-        color: hsl(207, 95%, 30%);
+        color: #045495;
     }
     .token.boolean,
     .token.attr-name,
@@ -37,40 +37,40 @@
     .token.constant,
     .token.symbol,
     .token.variable {
-        color: hsl(201, 71%, 40%);
+        color: #168bca;
     }
     .token.function {
-        color: hsl(55, 82%, 44%);
+        color: #c18401;
     }
     .token.char,
     .token.entity,
     .token.selector,
     .token.decorator {
-        color: hsl(41, 100%, 30%);
+        color: #c18401;
     }
     .token.interpolation-punctuation {
-        color: hsl(46, 100%, 40%);
+        color: #c18401;
     }
     .token.number {
-        color: hsl(96, 83%, 27%);
+        color: #44950e;
     }
     .token.builtin,
     .token.class-name {
-        color: hsl(168, 90%, 27%);
+        color: #00997a;
     }
     .token.comment,
     .token.inserted {
-        color: hsl(112, 78%, 37%);
+        color: #008000;
     }
     .token.regex,
     .token.deleted {
-        color: hsl(0, 80%, 50%);
+        color: #e61919;
     }
     .token.atrule {
-        color: hsl(305, 80%, 45%);
+        color: #a626a4;
     }
 }
-:root {
+:root.dark {
     .token.operator,
     .token.punctuation,
     .token.attr-value .token.attr-equals,
@@ -82,7 +82,7 @@
     .token.string,
     .token.url,
     .token.attr-value,
-    .token.attr-value .token.punctuation {
+    .token.attr-value .punctuation {
         color: #d69d85;
     }
     .token.tag,
@@ -130,89 +130,3 @@
         color: #c586c0;
     }
 }
-/**
- * prism.js default theme for JavaScript, CSS and HTML
- * Based on dabblet (http://dabblet.com)
- * @author Lea Verou
- */
-/* aa {
-color: rgb(79, 193, 255);
-} */
-
-/* 
-pre code[class*='language-'] {
-    display: block;
-    line-height: 24px;
-    font-size: 95%;
-    font-family: Consolas, Menlo, 'Courier New', Courier, 'Ubuntu Mono', monospace;
-}
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-    color: slategray;
-}
-
-.token.punctuation {
-    color: #999;
-}
-
-.token.namespace {
-    opacity: 0.7;
-}
-
-.token.property,
-.token.tag,
-.token.boolean,
-.token.number,
-.token.constant,
-.token.symbol,
-.token.deleted {
-    color: #905;
-}
-
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-    color: #690;
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string {
-    color: #9a6e3a;
-}
-
-.token.atrule,
-.token.attr-value,
-.token.keyword {
-    color: #07a;
-}
-
-.token.function,
-.token.class-name {
-    color: #dd4a68;
-}
-
-.token.regex,
-.token.important,
-.token.variable {
-    color: #e90;
-}
-
-.token.important,
-.token.bold {
-    font-weight: bold;
-}
-.token.italic {
-    font-style: italic;
-}
-
-.token.entity {
-    cursor: help;
-} */
