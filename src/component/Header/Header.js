@@ -7,11 +7,18 @@ import DarkThemeIcon from '@/assets/dark_theme.svg';
 import './Header.css';
 
 export default function Header() {
-    const [isDarkTheme, setIsDarkTheme] = useState(true);
+    const [isDarkTheme, setIsDarkTheme] = useState(
+        localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : true
+    );
     const navigate = useNavigate();
     useEffect(() => {
-        if (isDarkTheme) document.documentElement.setAttribute('class', 'dark');
-        else document.documentElement.setAttribute('class', 'light');
+        if (isDarkTheme) {
+            document.documentElement.setAttribute('class', 'dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.documentElement.setAttribute('class', 'light');
+            localStorage.setItem('theme', 'light');
+        }
     }, [isDarkTheme]);
     return (
         <div id="header">
@@ -22,7 +29,7 @@ export default function Header() {
                 <div id="header-theme-bg" onClick={() => setIsDarkTheme(!isDarkTheme)}>
                     <img src={isDarkTheme ? DarkThemeIcon : LightThemeIcon} />
                 </div>
-                <a href="https://github.com/1kuzus" target="_blank">
+                <a href="https://github.com/1kuzus" target="_blank" rel="noreferrer">
                     <div id="header-github-bg">
                         <img src={GithubIcon} />
                     </div>
