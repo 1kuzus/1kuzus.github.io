@@ -77,12 +77,8 @@ export default function Blog() {
             <X.Formula text="R(\alpha_2|x) = \lambda_{21}P(\omega_1|x) + \lambda_{22}P(\omega_2|x)" />
             <X.Formula text="若R(\alpha_1|x) < R(\alpha_2|x)则x属于\omega_1类" />
             <X.H2>最小风险贝叶斯决策的另两种形式</X.H2>
-            <X.Uli>
-                <X.Formula text="若(\lambda_{21} - \lambda_{11})P(\omega_1|x) > (\lambda_{12} - \lambda_{22})P(\omega_2|x)，则决策x \in \omega_1" />
-            </X.Uli>
-            <X.Uli>
-                <X.Formula text="若l(x)=\frac{P(x|\omega_1)}{P(x|\omega_2)} > \frac{\lambda_{12} - \lambda_{22}}{\lambda_{21} - \lambda_{11}} \cdot \frac{P(\omega_2)}{P(\omega_1)}，则决策x \in \omega_1" />
-            </X.Uli>
+            <X.Formula text="若(\lambda_{21} - \lambda_{11})P(\omega_1|x) > (\lambda_{12} - \lambda_{22})P(\omega_2|x)，则决策x \in \omega_1" />
+            <X.Formula text="若l(x)=\frac{P(x|\omega_1)}{P(x|\omega_2)} > \frac{\lambda_{12} - \lambda_{22}}{\lambda_{21} - \lambda_{11}} \cdot \frac{P(\omega_2)}{P(\omega_1)}，则决策x \in \omega_1" />
             <X.HighlightBlock>
                 <X.Formula
                     text="设损失函数为\lambda(\alpha_i,\omega_j)=
