@@ -53,14 +53,14 @@ export function Uli(props) {
             <div className="x-uli-marker">
                 <div className="x-uli-marker-dot"></div>
             </div>
-            {children}
+            <div className="x-uli-content-wrapper">{children}</div>
         </div>
     );
 }
 //Oli将在BlogWrapper组件中完成列表序号的渲染
 export function Oli(props) {
     const {children} = props;
-    return <>{children}</>;
+    return <div className="x-oli-content-wrapper">{children}</div>;
 }
 // export function FlexH(props) {
 //     const {children,} = props;

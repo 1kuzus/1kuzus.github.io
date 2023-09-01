@@ -7,6 +7,7 @@ export default function Formula(props) {
     useLayoutEffect(() => {
         Katex.render(text, elementRef.current, {
             output: 'html',
+            strict: false,
         });
     }, [text]);
     return (
