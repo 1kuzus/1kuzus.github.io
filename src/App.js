@@ -16,7 +16,7 @@ import 'prismjs/components/prism-tsx';
 import 'prismjs/components/prism-diff';
 import 'prismjs/components/prism-bash';
 import './assets/katex.css';
-import './assets/prism.css';
+import './assets/prism.scss';
 import './App.css';
 
 //todo: 统一空行规范

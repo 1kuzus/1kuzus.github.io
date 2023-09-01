@@ -1,7 +1,7 @@
 .x-codeblock {
     margin: 24px 0;
     border-radius: 12px;
-    background-color: var(--bg-color-1);
+    background-color: var(--bg-color-11,#30303c);
     box-shadow: var(--codeblock-shadow);
     overflow-x: auto;
     transition: background-color 200ms;
