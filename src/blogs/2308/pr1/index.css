@@ -1,6 +1,6 @@
 .behwl-boxes {
     display: flex;
-    justify-content: center;
+    margin: 24px;
 }
 .behwl-boxes .behwl-box {
     width: 28px;

@@ -1,5 +1,5 @@
 .x-codeblock {
-    margin-bottom: 24px;
+    margin: 24px 0;
     border-radius: 12px;
     background-color: var(--bg-color-1);
     box-shadow: var(--codeblock-shadow);

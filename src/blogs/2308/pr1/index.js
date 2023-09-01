@@ -34,12 +34,65 @@ export default function Blog() {
             <X.Uli>
                 <X.Formula text="P(B|A，抓到方形时抓到的是实心图形) = \frac{1}{3}" />
             </X.Uli>
-            <X.P>结合上述例子理解贝叶斯公式的推导过程：</X.P>
+            <X.P>\n结合上述例子理解贝叶斯公式的推导过程：</X.P>
             <X.Formula text="P(AB) = P(A|B) \cdot P(B)" />
             <X.Formula text="P(BA) = P(B|A) \cdot P(A)" />
             <X.Formula text="P(AB) = P(BA) \quad \Rightarrow \quad  P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}" />
 
-            <X.H1>最策</X.H1>
+            <X.H1>最小错误率贝叶斯决策</X.H1>
+            <X.P>研究的类别有`c`个。</X.P>
+            <X.HighlightBlock>
+                <X.Formula text="若P(\omega_i|x) = max_{j=1,...,c} P(\omega_j|x)，则x属于\omega_i类" />
+            </X.HighlightBlock>
+            <X.H2>两分类情况下，最小错误率决策的四种等价规则</X.H2>
+            <X.Oli>
+                <X.P>`后验概率判决`</X.P>
+                <X.Formula text="P(\omega_1|x) > P(\omega_2|x)" />
+            </X.Oli>
+            <X.Oli>
+                <X.P>`后验概率判决，分母相同看分子`</X.P>
+                <X.Formula text="P(x|\omega_1)P(\omega_1) > P(x|\omega_2)P(\omega_2)" />
+            </X.Oli>
+            <X.Oli>
+                <X.P>`似然比l、似然比阈值λ`</X.P>
+                <X.Formula text="l(x) = \frac{P(x|\omega_1)}{P(x|\omega_2)} \quad \lambda = \frac{P(\omega_2)}{P(\omega_1)} \quad l(x)>\lambda选\omega_1" />
+            </X.Oli>
+            <X.Oli>
+                <X.P>`对数似然比`</X.P>
+                <X.Formula text="h(x)=-ln[l(x)] \ 与 \ ln\frac{P(\omega_1)}{P(\omega_2)} \quad 比较，h(x)小选\omega_1" />
+            </X.Oli>
+
+            <X.H1>最小风险贝叶斯决策</X.H1>
+            <X.H2>条件风险</X.H2>
+            <X.Formula text="R(\alpha_i|x) = \sum_j\lambda(\alpha_i,\omega_j)P(\omega_j|x)，\lambda(\alpha_i,\omega_j)表示样本x \in \omega_j但被决策为\omega_i类的损失" />
+            <X.P>`i=j`表示正确决策</X.P>
+            <X.H2>最小风险贝叶斯决策</X.H2>
+            <X.P>研究的类别有`c`个，做了`k`个决策。</X.P>
+            <X.HighlightBlock>
+                <X.Formula text="若R(\alpha_i|x) = min_{j=1,...,k} R(\alpha_j|x)，则采用决策\alpha_i，即x属于\omega_i类" />
+            </X.HighlightBlock>
+            <X.H2>两分类情况下的最小风险贝叶斯决策</X.H2>
+            <X.P>简记`λ(αi,ωj)`为`λij`</X.P>
+            <X.Formula text="R(\alpha_1|x) = \lambda_{11}P(\omega_1|x) + \lambda_{12}P(\omega_2|x)" />
+            <X.Formula text="R(\alpha_2|x) = \lambda_{21}P(\omega_1|x) + \lambda_{22}P(\omega_2|x)" />
+            <X.Formula text="若R(\alpha_1|x) < R(\alpha_2|x)则x属于\omega_1类" />
+            <X.H2>最小风险贝叶斯决策的另两种形式</X.H2>
+            <X.Uli>
+                <X.Formula text="若(\lambda_{21} - \lambda_{11})P(\omega_1|x) > (\lambda_{12} - \lambda_{22})P(\omega_2|x)，则决策x \in \omega_1" />
+            </X.Uli>
+            <X.Uli>
+                <X.Formula text="若l(x)=\frac{P(x|\omega_1)}{P(x|\omega_2)} > \frac{\lambda_{12} - \lambda_{22}}{\lambda_{21} - \lambda_{11}} \cdot \frac{P(\omega_2)}{P(\omega_1)}，则决策x \in \omega_1" />
+            </X.Uli>
+            <X.HighlightBlock>
+                <X.Formula
+                    text="设损失函数为\lambda(\alpha_i,\omega_j)=
+                    \begin{cases}
+                        0 \quad i=j \\ 
+                        1 \quad i \neq j
+                    \end{cases}"
+                />
+                <X.P>\n最小错误率贝叶斯决策就是`0/1损失函数`条件下的最小风险贝叶斯决策。</X.P>
+            </X.HighlightBlock>
         </X.BlogWrapper>
     );
 }
