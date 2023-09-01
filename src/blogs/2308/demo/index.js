@@ -206,6 +206,7 @@ export default function Blog() {
                 import requests
                 import json
                 pi = round(float('3.14159'), 2)
+
                 @requires_authorization(roles=["ADMIN"])
                 def somefunc(param1='', param2=0):
                     r'''A docstring'''
