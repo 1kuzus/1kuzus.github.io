@@ -1,7 +1,19 @@
-import B0000 from './2308/demo';
-import Behwl from './2308/pr1';
+import B0000 from './23c/demo';
+import Behwl from './23c/pr1';
+import Bj23k from './23c/jsarray';
 
 const categories = [
+    {
+        categoryName: '语言碎片',
+        blogs: [
+            {
+                blogName: 'JavaScript 数组常用方法',
+                path: '/bj23k',
+                time: '2023-9-2',
+                component: <Bj23k />,
+            },
+        ],
+    },
     {
         categoryName: '课程',
         blogs: [
