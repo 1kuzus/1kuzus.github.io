@@ -1,6 +1,7 @@
-import './Formula.css';
+import {useRef, useLayoutEffect} from 'react';
 import Katex from 'katex';
-import {useLayoutEffect, useRef} from 'react';
+import './Formula.css';
+
 export default function Formula(props) {
     const elementRef = useRef();
     const {text} = props;
@@ -12,9 +13,5 @@ export default function Formula(props) {
         });
     }, [text]);
 
-    return (
-        <div className="x-formula" ref={elementRef}>
-            {text}
-        </div>
-    );
+    return <div className="x-formula" ref={elementRef} />;
 }

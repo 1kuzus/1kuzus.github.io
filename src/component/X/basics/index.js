@@ -4,18 +4,22 @@ export function Title(props) {
     const {children} = props;
     return <h1 className="x-title">{children}</h1>;
 }
+
 export function H1(props) {
     const {children} = props;
     return <h2 className="x-h1">{children}</h2>;
 }
+
 export function H2(props) {
     const {children} = props;
     return <h3 className="x-h2">{children}</h3>;
 }
+
 export function H3(props) {
     const {children} = props;
     return <h4 className="x-h3">{children}</h4>;
 }
+
 export function P(props) {
     /*
         `content`  行内高亮
@@ -39,12 +43,15 @@ export function P(props) {
 
     return <p className="x-p" dangerouslySetInnerHTML={{__html: htmlContent}} />;
 }
+
 export function Br() {
     return <div className="x-br" />;
 }
+
 export function Divider() {
     return <div className="x-divider" />;
 }
+
 export function Uli(props) {
     const {children} = props;
     return (
@@ -56,14 +63,9 @@ export function Uli(props) {
         </div>
     );
 }
+
 //Oli将在BlogWrapper组件中完成列表序号的渲染
 export function Oli(props) {
     const {children} = props;
     return <div className="x-oli-content-wrapper">{children}</div>;
 }
-// export function FlexH(props) {
-//     const {children,} = props;
-//     return <div className="x-flex" style={{
-//         flexDirection:''
-//     }}>{children}</div>;
-// }
