@@ -66,8 +66,8 @@
 .x-uli,
 .x-oli {
     display: flex;
-    margin-bottom: 8px;
     line-height: 28px;
+    margin-bottom: 8px;
     color: var(--text-color-main);
 }
 .x-uli-marker,
@@ -91,6 +91,3 @@
 .x-oli .x-oli-content-wrapper > * {
     margin-bottom: 0;
 }
-/* .x-flex {
-    display: flex;
-} */

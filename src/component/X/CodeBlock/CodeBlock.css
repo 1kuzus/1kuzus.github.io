@@ -9,8 +9,8 @@
 .x-codeblock pre code[class*='language-'] {
     display: block;
     width: fit-content;
-    padding: 24px 32px;
     line-height: 24px;
+    padding: 24px 32px;
     font-size: 95%;
     font-family: Consolas, Menlo, 'Courier New', Courier, 'Ubuntu Mono', monospace;
     color: var(--text-color-main);
