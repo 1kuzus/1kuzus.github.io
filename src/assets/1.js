@@ -1,3 +1,2 @@
-const ap = [5, 12, 8, 130, 44];
-console.log(ap[-1]);
-console.log(ap.at(-2));
+const arr = [1, 5, 7, 13, 45, 66];
+console.log(arr.filter((i) => i > 10)); //[13, 45, 66]

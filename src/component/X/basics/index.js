@@ -23,7 +23,6 @@ export function P(props) {
         @text[url]@ 超链接
     */
     const {children = ''} = props;
-
     let htmlContent = Array.isArray(children) ? children.join('') : children;
 
     htmlContent = htmlContent.replace(/\\ /g, '&#160;');

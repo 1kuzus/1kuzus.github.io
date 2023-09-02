@@ -19,7 +19,6 @@ import './assets/katex.css';
 import './assets/prism.scss';
 import './App.css';
 
-//todo: 统一空行规范
 const router = [
     {
         path: '/',
@@ -45,12 +44,14 @@ function App() {
         if (window.innerWidth < 1150) document.body.classList.add('main-only');
         else document.body.classList.remove('main-only');
     }
+
     useEffect(() => {
         window.addEventListener('resize', handleResize);
         return () => {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
+
     return (
         <>
             <Header />

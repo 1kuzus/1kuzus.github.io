@@ -7,10 +7,11 @@ import DarkThemeIcon from '@/assets/dark_theme.svg';
 import './Header.css';
 
 export default function Header() {
+    const navigate = useNavigate();
     const [isDarkTheme, setIsDarkTheme] = useState(
         localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : true
     );
-    const navigate = useNavigate();
+
     useEffect(() => {
         if (isDarkTheme) {
             document.documentElement.setAttribute('class', 'dark');
@@ -20,6 +21,7 @@ export default function Header() {
             localStorage.setItem('theme', 'light');
         }
     }, [isDarkTheme]);
+
     return (
         <div id="header">
             <div id="header-logo-bg">
