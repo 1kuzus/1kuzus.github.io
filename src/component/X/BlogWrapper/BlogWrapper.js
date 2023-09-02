@@ -6,16 +6,16 @@ export default function BlogWrapper(props) {
     const {children} = props;
     let oliIdx = 0;
 
-    const processedChild = Children.map(children, (child) =>
-        child.type.name === 'Oli' ? (
-            <div className="x-oli">
-                <div className="x-oli-number">{(child.props.reset ? (oliIdx = 1) : ++oliIdx) + '.'}</div>
-                {child}
-            </div>
-        ) : (
-            child
-        )
-    );
+    const processedChild = Children.map(children, (child) => {
+        if (child.type.name === 'Oli') {
+            return (
+                <div className="x-oli">
+                    <div className="x-oli-number">{(child.props.reset ? (oliIdx = 1) : ++oliIdx) + '.'}</div>
+                    {child}
+                </div>
+            );
+        } else return child;
+    });
 
     useLayoutEffect(() => {
         Prism.highlightAll();

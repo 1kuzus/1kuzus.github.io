@@ -1,9 +1,9 @@
 import {useEffect} from 'react';
 import {useRoutes} from 'react-router-dom';
-import {elements} from './blogs/categories';
-import Homepage from './component/Homepage/Homepage';
 import Header from './component/Header/Header';
 import SideBar from './component/SideBar/SideBar';
+import Homepage from './component/Homepage/Homepage';
+import {elements} from './blogs/categories';
 import 'prismjs/components/prism-c';
 import 'prismjs/components/prism-cpp';
 import 'prismjs/components/prism-java';
