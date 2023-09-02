@@ -10,7 +10,7 @@
 
 /**
  * @license React
- * react-jsx-runtime.production.min.js
+ * react-jsx-dev-runtime.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -39,7 +39,7 @@
  */
 
 /**
- * @remix-run/router v1.7.2
+ * @remix-run/router v1.8.0
  *
  * Copyright (c) Remix Software Inc.
  *
@@ -50,7 +50,27 @@
  */
 
 /**
- * React Router v6.14.2
+ * Prism: Lightweight, robust, elegant syntax highlighting
+ *
+ * @license MIT <https://opensource.org/licenses/MIT>
+ * @author Lea Verou <https://lea.verou.me>
+ * @namespace
+ * @public
+ */
+
+/**
+ * React Router DOM v6.15.0
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */
+
+/**
+ * React Router v6.15.0
  *
  * Copyright (c) Remix Software Inc.
  *
