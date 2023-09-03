@@ -1,5 +1,6 @@
 import {Children, useLayoutEffect} from 'react';
 import Prism from 'prismjs';
+import {Oli} from '../basics';
 import './BlogWrapper.css';
 
 export default function BlogWrapper(props) {
@@ -7,7 +8,7 @@ export default function BlogWrapper(props) {
     let oliIdx = 0;
 
     const processedChild = Children.map(children, (child) => {
-        if (child.type.name === 'Oli') {
+        if (child.type === Oli) {
             return (
                 <div className="x-oli">
                     <div className="x-oli-number">{(child.props.reset ? (oliIdx = 1) : ++oliIdx) + '.'}</div>
