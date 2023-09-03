@@ -2,6 +2,5 @@
     "tabWidth": 4,
     "singleQuote": true,
     "bracketSpacing": false,
-    "selfClosingTags": true,
     "printWidth": 120
 }
