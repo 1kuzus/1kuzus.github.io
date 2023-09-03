@@ -133,9 +133,99 @@ export default function Blog() {
 
                 console.log(arr.flat());         //[1, 2, 'a', 'b', [88, 99, ['xx', 'yy']], 3]
                 console.log(arr.flat(2));        //[1, 2, 'a', 'b', 88, 99, ['xx', 'yy'], 3]
-                console.log(arr.flat(Infinity)); //[1, 2, 'a', 'b', 88, 99, 'xx', 'yy', 3]                
+                console.log(arr.flat(Infinity)); //[1, 2, 'a', 'b', 88, 99, 'xx', 'yy', 3]
                 `}
             />
+
+            <X.H1>forEach()</X.H1>
+            <X.P>`forEach()`方法对数组的每个元素执行一次给定的函数。</X.P>
+            <X.CodeBlock language="js" code="arr.forEach(callbackFn)" />
+            <X.P>`callbackFn`为数组中每个元素执行的函数，并会丢弃它的返回值。该函数被调用时将传入以下参数：</X.P>
+            <X.Uli>
+                <X.P>`value`：数组中正在处理的当前元素</X.P>
+            </X.Uli>
+            <X.Uli>
+                <X.P>`index`：数组中正在处理的当前元素的索引</X.P>
+            </X.Uli>
+            <X.Uli>
+                <X.P>`array`：调用了`forEach()`的数组本身</X.P>
+            </X.Uli>
+            <X.CodeBlock
+                language="js"
+                code={`
+                const arr = ['a', 'b', 'c'];
+
+                arr.forEach((value, index, array) => console.log(value, index, array));
+                // a 0 ['a', 'b', 'c']
+                // b 1 ['a', 'b', 'c']
+                // c 2 ['a', 'b', 'c']
+                `}
+            />
+
+            <X.H1>includes()</X.H1>
+            <X.P>`includes()`方法用来判断一个数组是否包含一个指定的值。</X.P>
+            <X.CodeBlock
+                language="js"
+                code={`
+                arr.includes(searchElement)
+                arr.includes(searchElement, fromIndex) //开始搜索的索引
+                `}
+            />
+            <X.CodeBlock
+                language="js"
+                code={`
+                console.log([1, 2, 3].includes(2)); //true
+                console.log([1, 2, 3].includes(4)); //false
+                console.log([1, 2, 3].includes(1, 2)); //false
+
+                //负索引从数组末尾开始计数,但仍然从前往后进行搜索
+                console.log([1, 2, 3].includes(3, -2)); //true
+
+                console.log([1, 2, NaN].includes(NaN)); //true
+                console.log(['1', '2', '3'].includes(3)); //false                
+                `}
+            />
+
+            <X.H1>indexOf()</X.H1>
+            <X.P>`indexOf()`方法返回数组中第一次出现给定元素的下标，如果不存在则返回`-1`。</X.P>
+            <X.CodeBlock
+                language="js"
+                code={`
+                arr.indexOf(searchElement)
+                arr.indexOf(searchElement, fromIndex) //开始搜索的索引
+                `}
+            />
+            <X.CodeBlock
+                language="js"
+                code={`
+                const arr = [0, 1, 2, 3, 2];
+                console.log(arr.indexOf(2)); //2
+                console.log(arr.indexOf(2, 3)); //4
+                console.log(arr.indexOf(9)); //-1                
+                `}
+            />
+            {/* from here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/}
+            <X.H1>Array.from()</X.H1>
+            <X.P>
+                `Array.from()`静态方法从可迭代或类数组对象创建一个新的浅拷贝的数组实例。\n
+                转换异步的可迭代对象到数组，可以使用`@Array.fromAsync()[https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/fromAsync]@`。
+            </X.P>
+            <X.CodeBlock
+                language="js"
+                code={`
+                console.log(Array.from('hello')); //['h', 'e', 'l', 'l', 'o']
+                console.log(Array.from([1, 2, 3], (x) => x * x)); //[1, 4, 9]
+                `}
+            />
+            <X.P>`Array.from()`可以通过以下方式来创建数组对象：</X.P>
+            <X.Uli>
+                <X.P>
+                    可迭代对象（例如`@Map[https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Map]@`和`@Set[https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Set]@`对象）
+                </X.P>
+            </X.Uli>
+            <X.Uli>
+                <X.P>类数组对象（带有`length`属性和索引元素的对象）</X.P>
+            </X.Uli>
         </X.BlogWrapper>
     );
 }
