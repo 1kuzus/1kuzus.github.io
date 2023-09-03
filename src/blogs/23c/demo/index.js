@@ -73,7 +73,7 @@ export default function Blog() {
                     段落组件会自动删掉所有空格，因此打出这\ 样的空格需要使用`\\\ `。
                 </X.P>
             </X.Oli>
-            <X.Br></X.Br>
+            <X.Br />
             <X.P>上一段内容的源代码为：</X.P>
             <X.CodeBlock
                 language="jsx"
@@ -130,7 +130,7 @@ export default function Blog() {
             <X.CodeBlock
                 language="jsx"
                 code='<X.Formula text="P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}" />'
-            ></X.CodeBlock>
+            />
             <X.Formula text="P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}" />
             <X.P>更多的例子如下：</X.P>
             <X.Formula text="\int_{a}^{b} f(x)dx = \lim_{n \to \infty} \sum_{i=1}^{n} f(x_i) \cdot \Delta x" />
@@ -169,7 +169,7 @@ export default function Blog() {
             <X.CodeBlock
                 language="jsx"
                 code={`<X.CodeBlock language="python" code='with open("./tool.js","r") as f:' />`}
-            ></X.CodeBlock>
+            />
             <X.H2>单行代码</X.H2>
             <X.CodeBlock language="python" code='with open("./tool.js","r") as f:' />
             <X.CodeBlock language="cpp" code="bool operator <(const NODE &other)const" />
