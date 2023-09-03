@@ -46,6 +46,7 @@
 }
 .x-inline-link {
     color: var(--text-color-active);
+    border-bottom: 1px solid transparent;
 }
 .x-inline-link .x-inline-highlight {
     color: var(--text-color-active);

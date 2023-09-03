@@ -68,13 +68,16 @@ export default function Blog() {
                 <X.P>`\@text[url]\@`：这是一个指向@百度[https://www.baidu.com]@的超链接</X.P>
             </X.Oli>
             <X.Oli>
+                <X.P>复合使用`\`\@text[url]\@\``：这是一个指向`@百度[https://www.baidu.com]@`的超链接</X.P>
+            </X.Oli>
+            <X.Oli>
                 <X.P>
                     在段落组件中可以使用一些转义字符，打出上述代表了特殊格式的符号如`\``、`\*`等；\n也可以通过`\\n`换行；\n
                     段落组件会自动删掉所有空格，因此打出这\ 样的空格需要使用`\\\ `。
                 </X.P>
             </X.Oli>
             <X.Br />
-            <X.P>上一段内容的源代码为：</X.P>
+            <X.P>上述内容的源代码为：</X.P>
             <X.CodeBlock
                 language="jsx"
                 code={`
@@ -87,6 +90,9 @@ export default function Blog() {
                 </X.Oli>
                 <X.Oli>
                     <X.P>\`\\@text[url]\\@\`：这是一个指向@百度[https://www.baidu.com]@的超链接</X.P>
+                </X.Oli>
+                <X.Oli>
+                    <X.P>复合使用\`\\\`\\@text[url]\\@\\\`\`：这是一个指向\`@百度[https://www.baidu.com]@\`的超链接</X.P>
                 </X.Oli>
                 <X.Oli>
                     <X.P>
@@ -115,8 +121,8 @@ export default function Blog() {
             </X.P>
             <X.HighlightBlock>
                 <X.P>
-                    这里是一句普通的文本，你可以使用`\`\``符号包裹内容从而实现`像这样`的高亮效果。
-                    这是一个指向@`百度`[https://www.baidu.com]@的超链接，格式为`\@百度[https://www.baidu.com]\@`。需要使用`\\\@`打出`\@`符号。
+                    这里是一句普通的文本，你可以使用`\`\``符号包裹内容从而实现`像这样`的高亮效果。\n
+                    这是一个指向`@百度[https://www.baidu.com]@`的超链接，格式为`\`\@百度[https://www.baidu.com]\@\``。需要使用`\\\@`打出`\@`符号。
                 </X.P>
             </X.HighlightBlock>
             <X.HighlightBlock bgcolor="red">
@@ -127,10 +133,7 @@ export default function Blog() {
 
             <X.H1>公式</X.H1>
             <X.P>通过`Formula`组件定义一个公式：</X.P>
-            <X.CodeBlock
-                language="jsx"
-                code='<X.Formula text="P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}" />'
-            />
+            <X.CodeBlock language="jsx" code='<X.Formula text="P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}" />' />
             <X.Formula text="P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}" />
             <X.P>更多的例子如下：</X.P>
             <X.Formula text="\int_{a}^{b} f(x)dx = \lim_{n \to \infty} \sum_{i=1}^{n} f(x_i) \cdot \Delta x" />
