@@ -1,2 +1,5 @@
-const arr = [1, 5, 7, 13, 45, 66];
-console.log(arr.filter((i) => i > 10)); //[13, 45, 66]
+const arr = [1, 2, ['a', 'b', [88, 99, ['xx', 'yy']]], 3];
+
+console.log(arr.flat());         //[1, 2, 'a', 'b', [88, 99, ['xx', 'yy']], 3]
+console.log(arr.flat(2));        //[1, 2, 'a', 'b', 88, 99, ['xx', 'yy'], 3]
+console.log(arr.flat(Infinity)); //[1, 2, 'a', 'b', 88, 99, 'xx', 'yy', 3]
