@@ -69,3 +69,12 @@ export function Oli(props) {
     const {children} = props;
     return <div className="x-oli-content-wrapper">{children}</div>;
 }
+
+export function Table(props) {
+    const {children} = props;
+    return (
+        <table className="x-table" cellSpacing="0">
+            <tbody>{children}</tbody>
+        </table>
+    );
+}

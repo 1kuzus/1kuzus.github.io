@@ -12,3 +12,6 @@
 .x-highlightblock.highlight-background-red {
     background-color: var(--bg-transparent-red);
 }
+.x-highlightblock.highlight-background-gray {
+    background-color: var(--bg-transparent-gray);
+}
