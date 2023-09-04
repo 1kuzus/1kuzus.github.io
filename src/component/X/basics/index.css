@@ -92,3 +92,17 @@
 .x-oli .x-oli-content-wrapper > * {
     margin-bottom: 0;
 }
+.x-table {
+    color: var(--text-color-main);
+    border-collapse: collapse;
+}
+.x-table tr:nth-child(even) {
+    background-color: #80808020;
+}
+
+.x-table th,
+.x-table td {
+    padding: 12px 6px;
+    border: 1px solid #80808080;
+    text-align: center;
+}

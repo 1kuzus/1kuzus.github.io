@@ -4,6 +4,7 @@
     --bg-color-2: #f4f4f4;
     --bg-transparent-golden: #ffb80018;
     --bg-transparent-red: #ff380018;
+    --bg-transparent-gray: #80808018;
     --bg-icon-color: #30303c;
     --bg-scrollbar-thumb-color: #cccccc;
     --hover-color-1: #f4f4f4;
@@ -26,6 +27,7 @@
     --bg-color-2: #28282e;
     --bg-transparent-golden: #c08a0020;
     --bg-transparent-red: #c02a0020;
+    --bg-transparent-gray: #80808018;
     --bg-icon-color: #383844;
     --bg-scrollbar-thumb-color: #383844;
     --hover-color-1: #28282e;

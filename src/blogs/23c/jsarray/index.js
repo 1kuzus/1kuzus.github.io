@@ -226,6 +226,19 @@ export default function Blog() {
             <X.Uli>
                 <X.P>类数组对象（带有`length`属性和索引元素的对象）</X.P>
             </X.Uli>
+
+            <X.H1>Array.isArray()</X.H1>
+            <X.P>`Array.isArray()`静态方法用于确定传递的值是否是一个`Array`。</X.P>
+            <X.CodeBlock
+                language="js"
+                code={`
+                console.log(Array.isArray([1, 2, 3])); //true
+                console.log(Array.isArray('123')); //false                
+                `}
+            />
+            <X.P>
+                更多示例：`@Array.isArray()[https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray]@`
+            </X.P>
         </X.BlogWrapper>
     );
 }

@@ -7,7 +7,6 @@ export default function Blog() {
 
             <X.H1>基础组件</X.H1>
             <X.H2>标题</X.H2>
-            <X.Divider />
             <X.P>使用如下代码定义：</X.P>
             <X.CodeBlock
                 language="jsx"
@@ -17,9 +16,13 @@ export default function Blog() {
                 <X.H3>三级标题</X.H3>
                 `}
             />
-            <X.H1>一级标题</X.H1>
-            <X.H2>二级标题</X.H2>
-            <X.H3>三级标题</X.H3>
+            <X.HighlightBlock bgcolor="gray">
+                <X.H1>一级标题</X.H1>
+                <X.Br></X.Br>
+                <X.H2>二级标题</X.H2>
+                <X.Br></X.Br>
+                <X.H3>三级标题</X.H3>
+            </X.HighlightBlock>
             <X.Divider />
 
             <X.H2>有序列表</X.H2>
@@ -103,40 +106,11 @@ export default function Blog() {
                 `}
             />
 
-            <X.H1>高亮块</X.H1>
-            <X.P>使用如下代码定义：</X.P>
-            <X.CodeBlock
-                language="jsx"
-                code={`
-                <X.HighlightBlock bgcolor="red">
-                    <X.P>
-                        ...
-                    </X.P>
-                </X.HighlightBlock>
-                `}
-            />
-            <X.P>
-                `HighlightBlock`组件只提供一个有背景的容器并且默认移除*直接子元素*的外边距，因此其内部可以嵌套其他组件。\n
-                `bgcolor`的默认值是`golden`。
-            </X.P>
-            <X.HighlightBlock>
-                <X.P>
-                    这里是一句普通的文本，你可以使用`\`\``符号包裹内容从而实现`像这样`的高亮效果。\n
-                    这是一个指向`@百度[https://www.baidu.com]@`的超链接，格式为`\`\@百度[https://www.baidu.com]\@\``。需要使用`\\\@`打出`\@`符号。
-                </X.P>
-            </X.HighlightBlock>
-            <X.HighlightBlock bgcolor="red">
-                <X.P>
-                    我们怀着极大的关切提醒您，当前我们所在地区可能会面临极端天气情况的威胁。气象部门预测，未来几天可能会出现强风、暴雨、甚至可能的洪水等极端气象事件。
-                </X.P>
-            </X.HighlightBlock>
-
             <X.H1>公式</X.H1>
             <X.P>通过`Formula`组件定义一个公式：</X.P>
             <X.CodeBlock language="jsx" code='<X.Formula text="P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}" />' />
             <X.Formula text="P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}" />
             <X.P>更多的例子如下：</X.P>
-            <X.Formula text="\int_{a}^{b} f(x)dx = \lim_{n \to \infty} \sum_{i=1}^{n} f(x_i) \cdot \Delta x" />
             <X.Formula
                 text="
                 \begin{cases}
@@ -166,6 +140,65 @@ export default function Blog() {
                 \end{bmatrix}
                 "
             />
+
+            <X.H1>表格</X.H1>
+            <X.Table>
+                <tr>
+                    <th>姓名</th>
+                    <th>年龄</th>
+                    <th>uid</th>
+                </tr>
+                <tr>
+                    <td>Alice</td>
+                    <td>18</td>
+                    <td>4p6a4eumxmki</td>
+                </tr>
+                <tr>
+                    <td>Bob</td>
+                    <td>19</td>
+                    <td>kob5wkh1gpff</td>
+                </tr>
+                <tr>
+                    <td>Eric</td>
+                    <td>23</td>
+                    <td>jxchv2sx3s5a</td>
+                </tr>
+                <tr>
+                    <td>Jack</td>
+                    <td>17</td>
+                    <td>nx3vb156864f</td>
+                </tr>
+            </X.Table>
+
+            <X.H1>高亮块</X.H1>
+            <X.P>使用如下代码定义：</X.P>
+            <X.CodeBlock
+                language="jsx"
+                code={`
+                <X.HighlightBlock bgcolor="red">
+                    <X.P>
+                        ...
+                    </X.P>
+                </X.HighlightBlock>
+                `}
+            />
+            <X.P>
+                `HighlightBlock`组件只提供一个有背景的容器并且默认移除*直接子元素*的外边距，因此其内部可以嵌套其他组件。\n
+                `bgcolor`的默认值是`golden`。
+            </X.P>
+            <X.HighlightBlock>
+                <X.P>
+                    高亮块中可以使用公式组件。\n 不过由于直接子元素的外边距被移除，可以在段落下方使用`{`<X.Br />`}`
+                    添加空行。
+                </X.P>
+                <X.Br />
+                <X.Formula text="\int_{a}^{b} f(x)dx = \lim_{n \to \infty} \sum_{i=1}^{n} f(x_i) \cdot \Delta x" />
+            </X.HighlightBlock>
+            <X.HighlightBlock bgcolor="red">
+                <X.P>
+                    我们怀着极大的关切提醒您，当前我们所在地区可能会面临极端天气情况的威胁。气象部门预测，未来几天可能会出现强风、暴雨、甚至可能的洪水等极端气象事件。
+                </X.P>
+            </X.HighlightBlock>
 
             <X.H1>代码块</X.H1>
             <X.P>通过`CodeBlock`组件定义一个代码块：</X.P>
