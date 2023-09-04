@@ -312,6 +312,9 @@
 .katex .mfrac {
     font-size: 143%;
 }
+.katex .mfrac .mfrac {
+    font-size: 100%;
+}
 .katex .mfrac > span > span {
     text-align: center;
 }

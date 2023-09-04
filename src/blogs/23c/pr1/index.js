@@ -120,12 +120,13 @@ export default function Blog() {
                 \begin{bmatrix}
                 \sigma_1^2 & \rho\sigma_1\sigma_2 \\
                 \rho\sigma_1\sigma_2 & \sigma_2^2 \\
-                \end{bmatrix}，
+                \end{bmatrix}
                 "
             />
             <X.P>则用矩阵形式表示为：</X.P>
             <X.HighlightBlock>
-                <X.Formula text="1"/>
+                <X.Formula text="p(\bm{X}) = \frac{1}{(2\pi)^{\frac{d}{2}}}"/>
+                <X.Formula text="\frac{1}{1+\frac{1}{1+\frac{1}{1+\frac{1}{1+1}}}}"/>
             </X.HighlightBlock>
         </X.BlogWrapper>
     );
