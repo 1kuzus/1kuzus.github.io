@@ -85,9 +85,47 @@ export default function Blog() {
                     \begin{cases}
                         0 \quad i=j \\ 
                         1 \quad i \neq j
-                    \end{cases}"
+                    \end{cases}
+                    "
                 />
                 <X.P>\n最小错误率贝叶斯决策就是`0/1损失函数`条件下的最小风险贝叶斯决策。</X.P>
+            </X.HighlightBlock>
+
+            <X.H1>正态分布的统计决策</X.H1>
+            <X.H2>从一维正态分布到高维正态分布</X.H2>
+            <X.P>单变量正态分布函数：</X.P>
+            <X.Formula text="p(x) = \frac{1}{\sqrt{2\pi}\sigma} exp\{-\frac{1}{2} \cdot (\frac{x-\mu}{\sigma})^2\}" />
+            <X.P>双变量正态分布函数：</X.P>
+            <X.Formula
+                text="p(x_1,x_2) = \frac{1}{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}} \exp\{
+                -\frac{1}{2} \cdot \frac{1}{1-\rho^2} \cdot [(\frac{x_1-\mu_1}{\sigma_1})^2 - 2\rho\frac{(x_1-\mu_1)(x_2-\mu_2)}{\sigma_1\sigma_2} + (\frac{x_2-\mu_2}{\sigma_2})^2]
+                \}"
+            />
+            <X.P>对于上述二维正态分布，记：</X.P>
+            <X.Formula
+                text="
+                \bm{X}=
+                \begin{bmatrix}
+                x_1 \\
+                x_2 \\
+                \end{bmatrix}，
+
+                \bm{\mu}=
+                \begin{bmatrix}
+                \mu_1 \\
+                \mu_2 \\
+                \end{bmatrix}，
+
+                \bm{\Sigma}=
+                \begin{bmatrix}
+                \sigma_1^2 & \rho\sigma_1\sigma_2 \\
+                \rho\sigma_1\sigma_2 & \sigma_2^2 \\
+                \end{bmatrix}，
+                "
+            />
+            <X.P>则用矩阵形式表示为：</X.P>
+            <X.HighlightBlock>
+                <X.Formula text="1"/>
             </X.HighlightBlock>
         </X.BlogWrapper>
     );
