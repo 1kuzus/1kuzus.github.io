@@ -71,10 +71,10 @@ export function Oli(props) {
 }
 
 export function Img(props) {
-    const {src} = props;
+    const {...rest} = props;
     return (
         <div className="x-img-wrapper">
-            <img src={src} alt="ximg"></img>
+            <img alt="img" {...rest}></img>
         </div>
     );
 }
