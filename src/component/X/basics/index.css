@@ -96,6 +96,9 @@
 .x-img-wrapper {
     margin: 18px 0;
 }
+.x-img {
+    border-radius: 4px;
+}
 
 .x-table {
     color: var(--text-color-main);

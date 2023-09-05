@@ -199,6 +199,16 @@ export default function Blog() {
                 来看一个具体的例子！我们需要对平面上的点进行分类任务，第一堆样本点中心为`(2,3)`，第二堆样本点中心为`(4,4)`：
             </X.P>
             <X.Img src={require('./fig1.png')} width="600" />
+            <X.P>
+                红色和蓝色分别标记了两类样本点的分布情况，其中加粗的红点和蓝点表示样本中心的位置；\n生成两组样本时使用的方差均为`0.8`；样本的`x`,`y`坐标相关性为0。\n
+                现在对平面上的所有点计算判别函数`g_red`和`g_blue`。`g_red`更大的区域用红色阴影表示，`g_blue`更大的区域用l蓝色阴影表示。\n
+                两个区域的交界处即为自然生成的决策面。如果计算其解析式，也应满足上述推导。结果如下：
+            </X.P>
+            <X.FlexRow>
+                <X.Img src={require('./fig2.png')} width="320" />
+                <X.Img src={require('./fig3.png')} width="320" />
+                <X.Img src={require('./fig4.png')} width="320" />
+            </X.FlexRow>
             <X.Oli>
                 <X.Formula text="\bm{\Sigma_1} = \bm{\Sigma_2}=...=\bm{\Sigma_c} = \bm{\Sigma}" />
             </X.Oli>
