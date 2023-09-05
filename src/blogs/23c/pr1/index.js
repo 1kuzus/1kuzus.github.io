@@ -191,8 +191,9 @@ export default function Blog() {
             </X.HighlightBlock>
             <X.P>如果对于上述判别函数`g(X)`的欧式距离项展开，并删掉与类别无关的二次项，得：</X.P>
             <X.Formula text="g_i(\bm{X}) = \bm{W_i}^T\bm{X} + b，其中\bm{W_i} = \frac{1}{\sigma^2}\bm{\mu_i}，b = -\frac{1}{2\sigma^2}\bm{\mu_i}^T\bm{\mu_i} + lnP(\omega_i)" />
-            <X.P>判别函数是`X`的线性函数，称为`线性分类器`。</X.P>
-
+            <X.P>判别函数是`X`的线性函数，称为`线性分类器`。\n接下来考虑决策面方程：</X.P>
+            <X.Formula text="g_i(\bm{X}) = g_j(\bm{X}) \Rightarrow" />
+            {/* <img src={require('./fig1.png')} style={{width: '400px'}}></img> */}
             <X.Oli>
                 <X.Formula text="\bm{\Sigma_1} = \bm{\Sigma_2}=...=\bm{\Sigma_c} = \bm{\Sigma}" />
             </X.Oli>
