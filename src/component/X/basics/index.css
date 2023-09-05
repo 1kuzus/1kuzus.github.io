@@ -92,6 +92,11 @@
 .x-oli .x-oli-content-wrapper > * {
     margin-bottom: 0;
 }
+
+.x-img-wrapper {
+    
+}
+
 .x-table {
     color: var(--text-color-main);
     border-collapse: collapse;

@@ -37,7 +37,7 @@ export default function Blog() {
             <X.P>\n结合上述例子理解贝叶斯公式的推导过程：</X.P>
             <X.Formula text="P(AB) = P(A|B) \cdot P(B)" />
             <X.Formula text="P(BA) = P(B|A) \cdot P(A)" />
-            <X.Formula text="P(AB) = P(BA) \quad \Rightarrow \quad  P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}" />
+            <X.Formula text="P(AB) = P(BA) \; \Rightarrow \; P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}" />
 
             <X.H1>最小错误率贝叶斯决策</X.H1>
             <X.P>研究的类别有`c`个。</X.P>
@@ -55,11 +55,11 @@ export default function Blog() {
             </X.Oli>
             <X.Oli>
                 <X.P>`似然比l、似然比阈值λ`</X.P>
-                <X.Formula text="l(x) = \frac{P(x|\omega_1)}{P(x|\omega_2)} \quad \lambda = \frac{P(\omega_2)}{P(\omega_1)} \quad l(x)>\lambda选\omega_1" />
+                <X.Formula text="l(x) = \frac{P(x|\omega_1)}{P(x|\omega_2)}，\lambda = \frac{P(\omega_2)}{P(\omega_1)}，l(x)>\lambda选\omega_1" />
             </X.Oli>
             <X.Oli>
                 <X.P>`对数似然比`</X.P>
-                <X.Formula text="h(x)=-ln[l(x)] \ 与 \ ln\frac{P(\omega_1)}{P(\omega_2)} \quad 比较，h(x)小选\omega_1" />
+                <X.Formula text="h(x)=-ln[l(x)] \; 与 \; ln\frac{P(\omega_1)}{P(\omega_2)} \; 比较，h(x)小选\omega_1" />
             </X.Oli>
             <X.HighlightBlock>
                 <X.P>
@@ -153,7 +153,7 @@ export default function Blog() {
                 "
             />
             <X.P>`ρ`的含义为两个变量的相关系数，以上述变量`x1`,`x2`为例，计算公式为：</X.P>
-            <X.Formula text="\rho = \frac{cov(x_1,x_2)}{\sigma_1\sigma_2} \Rightarrow cov(x_1,x_2)=\rho\sigma_1\sigma_2" />
+            <X.Formula text="\rho = \frac{cov(x_1,x_2)}{\sigma_1\sigma_2} \; \Rightarrow \; cov(x_1,x_2)=\rho\sigma_1\sigma_2" />
             <X.P>至此就可以理解`Σ`,`ρ`两个参数的含义了！</X.P>
             <X.H2>正态分布概率模型下的最小错误率贝叶斯决策</X.H2>
             <X.Formula
@@ -192,8 +192,13 @@ export default function Blog() {
             <X.P>如果对于上述判别函数`g(X)`的欧式距离项展开，并删掉与类别无关的二次项，得：</X.P>
             <X.Formula text="g_i(\bm{X}) = \bm{W_i}^T\bm{X} + b，其中\bm{W_i} = \frac{1}{\sigma^2}\bm{\mu_i}，b = -\frac{1}{2\sigma^2}\bm{\mu_i}^T\bm{\mu_i} + lnP(\omega_i)" />
             <X.P>判别函数是`X`的线性函数，称为`线性分类器`。\n接下来考虑决策面方程：</X.P>
-            <X.Formula text="g_i(\bm{X}) = g_j(\bm{X}) \Rightarrow" />
-            {/* <img src={require('./fig1.png')} style={{width: '400px'}}></img> */}
+            <X.Formula text="g_i(\bm{X}) = g_j(\bm{X}) \; \Rightarrow \; \bm{W}^T(\bm{X}-\bm{X_0}) = 0" />
+            <X.Formula text="其中\bm{W} = \bm{\mu_i} - \bm{\mu_j}，\bm{X_0} = \frac{1}{2}(\bm{\mu_i} + \bm{\mu_j}) - \sigma^2\frac{\bm{\mu_i}-\bm{\mu_j}}{\Vert \bm{\mu_i}-\bm{\mu_j} \Vert^2}ln\frac{P(\omega_1)}{P(\omega_2)}" />
+            <X.P>
+                这个方程确定了决策面是通过`X0`并正交于向量`W`的一个超平面。如果是二维平面上的点的分类问题，决策线过`X0`点并且垂直于样本中心的连线。当先验概率相等时，`X0`的后项为`0`，此时决策线就是样本中心连线的中垂线。\n
+                来看一个具体的例子！我们需要对平面上的点进行分类任务，第一堆样本点中心为`(2,3)`，第二堆样本点中心为`(4,4)`：
+            </X.P>
+            <img src={require('./fig1.png')} style={{width: '600px'}}></img>
             <X.Oli>
                 <X.Formula text="\bm{\Sigma_1} = \bm{\Sigma_2}=...=\bm{\Sigma_c} = \bm{\Sigma}" />
             </X.Oli>

@@ -70,6 +70,15 @@ export function Oli(props) {
     return <div className="x-oli-content-wrapper">{children}</div>;
 }
 
+export function Img(props) {
+    const {src} = props;
+    return (
+        <div className="x-img-wrapper">
+            <img src={src} alt="ximg"></img>
+        </div>
+    );
+}
+
 export function Table(props) {
     const {children} = props;
     return (
