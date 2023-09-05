@@ -4,7 +4,7 @@
     min-width: 600px;
     padding: 48px 48px 48px 480px;
 }
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1128px) {
     .x-blogwrapper {
         padding: 48px;
     }
