@@ -1,4 +1,3 @@
-import {useEffect} from 'react';
 import {useRoutes} from 'react-router-dom';
 import Header from './component/Header/Header';
 import SideBar from './component/SideBar/SideBar';
@@ -40,18 +39,6 @@ const router = [
 ];
 
 function App() {
-    function handleResize() {
-        if (window.innerWidth < 1150) document.body.classList.add('main-only');
-        else document.body.classList.remove('main-only');
-    }
-
-    useEffect(() => {
-        window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
-
     return (
         <>
             <Header />

@@ -142,7 +142,7 @@
     font-style: normal;
 }
 .katex {
-    font: normal 20px KaTeX_Main, Times New Roman, serif;
+    font: normal 18px KaTeX_Main, Times New Roman, serif;
     line-height: 1.2;
     text-indent: 0;
     text-rendering: auto;
@@ -157,8 +157,6 @@
     content: '0.16.8';
 }
 .katex .katex-mathml {
-    /* Accessibility hack to only show to screen readers
-           Found at: http://a11yproject.com/posts/how-to-hide-content/ */
     position: absolute;
     clip: rect(1px, 1px, 1px, 1px);
     padding: 0;
