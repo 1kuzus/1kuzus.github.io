@@ -10,7 +10,7 @@ export default function Blog() {
             <X.HighlightBlock>
                 <X.Formula text="P(\omega_i|x) = \frac{P(x|\omega_i) \cdot P(\omega_i)}{P(x)}" />
                 <X.P>
-                    \n`P(ωi)`为`先验概率`，表示没有进行任何观测时的主观推测概率\n `P(x|ωi)`为`类条件密度`，已知\n
+                    `P(ωi)`为`先验概率`，表示没有进行任何观测时的主观推测概率\n `P(x|ωi)`为`类条件密度`，已知\n
                     `P(ωi|x)`为`后验概率`，希望得到其值，并用于决策
                 </X.P>
             </X.HighlightBlock>
@@ -93,7 +93,7 @@ export default function Blog() {
                     \end{cases}
                     "
                 />
-                <X.P>\n最小错误率贝叶斯决策就是`0/1损失函数`条件下的最小风险贝叶斯决策。</X.P>
+                <X.P>最小错误率贝叶斯决策就是`0/1损失函数`条件下的最小风险贝叶斯决策。</X.P>
             </X.HighlightBlock>
 
             <X.H1>正态分布的统计决策</X.H1>
@@ -112,19 +112,19 @@ export default function Blog() {
                 \bm{X}=
                 \begin{bmatrix}
                 x_1 \\
-                x_2 \\
+                x_2
                 \end{bmatrix}，
 
                 \bm{\mu}=
                 \begin{bmatrix}
                 \mu_1 \\
-                \mu_2 \\
+                \mu_2
                 \end{bmatrix}，
 
                 \bm{\Sigma}=
                 \begin{bmatrix}
                 \sigma_1^2 & \rho\sigma_1\sigma_2 \\
-                \rho\sigma_2\sigma_1 & \sigma_2^2 \\
+                \rho\sigma_2\sigma_1 & \sigma_2^2
                 \end{bmatrix}
                 "
             />
@@ -136,7 +136,7 @@ export default function Blog() {
                     \}
                     "
                 />
-                <X.P>\n此式通用于高维正态分布。</X.P>
+                <X.P>此式通用于高维正态分布。</X.P>
             </X.HighlightBlock>
             <X.P>
                 以上公式很长，从两个概念入手：`Σ`矩阵代表什么？`ρ`似乎没有在通式中体现，其含义是什么？\n
@@ -158,7 +158,7 @@ export default function Blog() {
             <X.H2>正态分布概率模型下的最小错误率贝叶斯决策</X.H2>
             <X.Formula
                 text="P(\bm{X}|\omega_i) = \frac{1}{(2\pi)^{\frac{d}{2}}|\bm{\Sigma_i}|^\frac{1}{2}} \exp \{
-                -\frac{1}{2} \cdot (\bm{X}-\bm{\mu_i})^T \bm{\Sigma_i}^{-1} (\bm{X}-\bm{\mu_i}) 
+                -\frac{1}{2} \cdot (\bm{X}-\bm{\mu_i})^T \bm{\Sigma_i}^{-1} (\bm{X}-\bm{\mu_i})
                 \}
                 "
             />
@@ -180,7 +180,6 @@ export default function Blog() {
             <X.Formula text="g_i(\bm{X}) = -\frac{1}{2\sigma^2}\Vert\bm{X}-\bm{\mu_i}\Vert^2 +lnP(\omega_i)" />
             <X.HighlightBlock>
                 <X.P>如果先验概率相等，则决策只与欧氏距离有关。此时决策为：</X.P>
-                <X.Br></X.Br>
                 <X.Formula text="若\Vert\bm{X}-\bm{\mu_i}\Vert^2 = min_{j=1,...,c} \Vert\bm{X}-\bm{\mu_j}\Vert^2，则x属于\omega_i类" />
             </X.HighlightBlock>
             <X.HighlightBlock bgcolor="gray">
@@ -198,20 +197,57 @@ export default function Blog() {
                 这个方程确定了决策面是通过`X0`并正交于向量`W`的一个超平面。如果是二维平面上的点的分类问题，决策线过`X0`点并且垂直于样本中心的连线。当先验概率相等时，`X0`的后项为`0`，此时决策线就是样本中心连线的中垂线。\n
                 来看一个具体的例子！我们需要对平面上的点进行分类任务，第一堆样本点中心为`(2,3)`，第二堆样本点中心为`(4,4)`：
             </X.P>
-            <X.Img src={require('./fig1.png')} width="600" />
+            <X.Img src={require('./fig1.png')} width="500" />
             <X.P>
                 红色和蓝色分别标记了两类样本点的分布情况，其中加粗的红点和蓝点表示样本中心的位置；\n生成两组样本时使用的方差均为`0.8`；样本的`x`,`y`坐标相关性为0。\n
-                现在对平面上的所有点计算判别函数`g_red`和`g_blue`。`g_red`更大的区域用红色阴影表示，`g_blue`更大的区域用l蓝色阴影表示。\n
-                两个区域的交界处即为自然生成的决策面。结果如下：
+                现在对平面上的所有点计算判别函数`g_red`和`g_blue`。`g_red`更大的区域用红色阴影表示，`g_blue`更大的区域用蓝色阴影表示。\n
+                两个区域的交界处即为自然生成的决策线。结果如下：
             </X.P>
             <X.FlexRow>
                 <X.Img src={require('./fig2.png')} width="320" />
                 <X.Img src={require('./fig3.png')} width="320" />
                 <X.Img src={require('./fig4.png')} width="320" />
             </X.FlexRow>
+            <X.P>
+                决策线垂直于样本中心的连线并且在先验概率相等的前提下过样本中心连线中点`(左图)`。\n如果先验概率不相等，决策线会偏向先验概率小的一侧`(中图)`，而且有可能超过端点`(右图)`。
+            </X.P>
+            <X.P>对于三分类问题，得到的结果类似：</X.P>
+            <X.Img src={require('./fig5.png')} width="500" />
             <X.Oli>
                 <X.Formula text="\bm{\Sigma_1} = \bm{\Sigma_2}=...=\bm{\Sigma_c} = \bm{\Sigma}" />
             </X.Oli>
+            <X.HighlightBlock bgcolor="gray">
+                <X.H3>马氏距离</X.H3>
+                <X.P>
+                    马氏距离可以看作对欧氏距离的修正。考虑下面的例子：\n
+                    黑色的点距离`green`类样本中心更近，与`red`、`blue`类样本中心等距。它应该被归为哪一类？\n
+                </X.P>
+                <X.Img src={require('./fig6.png')} width="500px"></X.Img>
+                <X.P>
+                    按照欧氏距离判别，它应该被归为`green`类；然而从直觉上判断，它更可能属于`red`类。\n
+                    欧式距离并没有考虑样本的方差，以及样本各个维度之间的相关性。\n 定义马氏距离：
+                </X.P>
+                <X.Formula text="r^2 = (\bm{X}-\bm{\mu})^T \bm{\Sigma}^{-1} (\bm{X}-\bm{\mu})" />
+                <X.P>如果样本是二维的，且协方差矩阵`Σ`为对角矩阵，马氏距离表示为：</X.P>
+                <X.Formula
+                    text="r^2 =
+                    \begin{bmatrix}
+                    X_1 - \mu_1 & X_2 - \mu_2
+                    \end{bmatrix}
+                    \begin{bmatrix}
+                   1/\sigma_1^2 & 0 \\
+                    0 & 1/\sigma_2^2
+                    \end{bmatrix}
+                    \begin{bmatrix}
+                    X_1 - \mu_1 \\
+                    X_2 - \mu_2
+                    \end{bmatrix} =
+                    \frac{(X_1-\mu_1)^2}{\sigma_1^2} + \frac{(X_2-\mu_2)^2}{\sigma_2^2}
+                    "
+                />
+                <X.P>如果样本方差一样，则就是欧式距离；如果方差不一样，可以看作是标准化之后的欧氏距离。</X.P>
+            </X.HighlightBlock>
+            <X.P>决策面和决策函数为</X.P>
             <X.Oli>
                 <X.Formula text="\bm{\Sigma_i} \neq \bm{\Sigma_j}" />
             </X.Oli>

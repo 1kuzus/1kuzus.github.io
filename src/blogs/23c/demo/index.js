@@ -18,9 +18,7 @@ export default function Blog() {
             />
             <X.HighlightBlock bgcolor="gray">
                 <X.H1>一级标题</X.H1>
-                <X.Br></X.Br>
                 <X.H2>二级标题</X.H2>
-                <X.Br></X.Br>
                 <X.H3>三级标题</X.H3>
             </X.HighlightBlock>
             <X.Divider />
@@ -183,15 +181,12 @@ export default function Blog() {
                 `}
             />
             <X.P>
-                `HighlightBlock`组件只提供一个有背景的容器并且默认移除*直接子元素*的外边距，因此其内部可以嵌套其他组件。\n
+                `HighlightBlock`组件只提供一个有背景色的容器，因此其内部可以嵌套其他组件。\n
+                高亮块会自动移除第一个子元素的`margin-top`和最后一个子元素的`margin-bottom`。\n
                 `bgcolor`的默认值是`golden`。
             </X.P>
             <X.HighlightBlock>
-                <X.P>
-                    高亮块中可以使用公式组件。\n 不过由于直接子元素的外边距被移除，可以在段落下方使用`{`<X.Br />`}`
-                    添加空行。
-                </X.P>
-                <X.Br />
+                <X.P>高亮块中可以使用公式组件。</X.P>
                 <X.Formula text="\int_{a}^{b} f(x)dx = \lim_{n \to \infty} \sum_{i=1}^{n} f(x_i) \cdot \Delta x" />
             </X.HighlightBlock>
             <X.HighlightBlock bgcolor="red">
