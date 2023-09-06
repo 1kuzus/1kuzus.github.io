@@ -3,8 +3,11 @@
     padding: 24px 32px;
     border-radius: 12px;
 }
-.x-highlightblock > * {
-    margin: 0;
+.x-highlightblock > :first-child {
+    margin-top: 0;
+}
+.x-highlightblock > :last-child {
+    margin-bottom: 0;
 }
 .x-highlightblock.highlight-background-golden {
     background-color: var(--bg-transparent-golden);
