@@ -74,7 +74,7 @@ export function Img(props) {
     const {...rest} = props;
     return (
         <div className="x-img-wrapper">
-            <img className="x-img" alt="img" {...rest}></img>
+            <img alt="img" {...rest}></img>
         </div>
     );
 }
