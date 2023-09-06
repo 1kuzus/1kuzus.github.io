@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.181284f3.css",
-    "main.js": "/static/js/main.c1d9475d.js",
+    "main.css": "/static/css/main.91581dce.css",
+    "main.js": "/static/js/main.74f27a85.js",
     "static/media/KaTeX_AMS-Regular.ttf": "/static/media/KaTeX_AMS-Regular.853be92419a6c3766b9a.ttf",
     "static/media/KaTeX_Main-Regular.ttf": "/static/media/KaTeX_Main-Regular.9eba1d77abcf2aa6e94e.ttf",
     "static/media/KaTeX_Main-Bold.ttf": "/static/media/KaTeX_Main-Bold.8169508bf58f8bd92ad8.ttf",
@@ -36,15 +36,20 @@
     "static/media/KaTeX_Typewriter-Regular.woff2": "/static/media/KaTeX_Typewriter-Regular.c295e7f71970f03c0549.woff2",
     "static/media/KaTeX_Fraktur-Bold.woff": "/static/media/KaTeX_Fraktur-Bold.354501bac435c3264834.woff",
     "static/media/KaTeX_Fraktur-Regular.woff": "/static/media/KaTeX_Fraktur-Regular.6fdf0ac577be0ba82a4c.woff",
+    "static/media/fig5.png": "/static/media/fig5.04c460a1eaa5d7b35aaf.png",
     "static/media/KaTeX_Caligraphic-Bold.ttf": "/static/media/KaTeX_Caligraphic-Bold.7489a2fbfb9bfe704420.ttf",
     "static/media/KaTeX_Caligraphic-Regular.ttf": "/static/media/KaTeX_Caligraphic-Regular.7e873d3833eb108a0758.ttf",
     "static/media/KaTeX_SansSerif-Regular.woff": "/static/media/KaTeX_SansSerif-Regular.02271ec5cb9f5b4588ac.woff",
     "static/media/KaTeX_Size1-Regular.ttf": "/static/media/KaTeX_Size1-Regular.6de7d4b539221a49e9e2.ttf",
     "static/media/KaTeX_SansSerif-Bold.woff2": "/static/media/KaTeX_SansSerif-Bold.95591a929f0d32aa282a.woff2",
     "static/media/KaTeX_SansSerif-Italic.woff2": "/static/media/KaTeX_SansSerif-Italic.7d393d382f3e7fb1c637.woff2",
+    "static/media/fig3.png": "/static/media/fig3.eec4fa0cea7f0f5587ad.png",
+    "static/media/fig2.png": "/static/media/fig2.bc61f4a17a0bf9ab67ca.png",
     "static/media/KaTeX_Size2-Regular.ttf": "/static/media/KaTeX_Size2-Regular.57f5c1837853986ea1db.ttf",
     "static/media/KaTeX_Fraktur-Bold.woff2": "/static/media/KaTeX_Fraktur-Bold.931d67ea207ab37ee693.woff2",
     "static/media/KaTeX_Fraktur-Regular.woff2": "/static/media/KaTeX_Fraktur-Regular.172d3529b26f8cedef6b.woff2",
+    "static/media/fig4.png": "/static/media/fig4.5ffe0e6d17015730957f.png",
+    "static/media/fig6.png": "/static/media/fig6.82f321930603a24f4650.png",
     "static/media/KaTeX_Script-Regular.woff": "/static/media/KaTeX_Script-Regular.073b3402d036714b4370.woff",
     "static/media/KaTeX_Size4-Regular.ttf": "/static/media/KaTeX_Size4-Regular.4ad7c7e8bb8d10a34bb7.ttf",
     "static/media/KaTeX_SansSerif-Regular.woff2": "/static/media/KaTeX_SansSerif-Regular.cd5e231e0cc53b2cb2c0.woff2",
@@ -67,11 +72,11 @@
     "static/media/dark_theme.svg": "/static/media/dark_theme.830b9f553aa45eb5499e66f740db7d57.svg",
     "static/media/logo.svg": "/static/media/logo.ea9249bf81c188f48ff0624ab04081be.svg",
     "index.html": "/index.html",
-    "main.181284f3.css.map": "/static/css/main.181284f3.css.map",
-    "main.c1d9475d.js.map": "/static/js/main.c1d9475d.js.map"
+    "main.91581dce.css.map": "/static/css/main.91581dce.css.map",
+    "main.74f27a85.js.map": "/static/js/main.74f27a85.js.map"
   },
   "entrypoints": [
-    "static/css/main.181284f3.css",
-    "static/js/main.c1d9475d.js"
+    "static/css/main.91581dce.css",
+    "static/js/main.74f27a85.js"
   ]
 }
