@@ -241,7 +241,7 @@ export default function Blog() {
                     \begin{bmatrix}
                     X_1 - \mu_1 \\
                     X_2 - \mu_2
-                    \end{bmatrix} =
+                    \end{bmatrix}=
                     \frac{(X_1-\mu_1)^2}{\sigma_1^2} + \frac{(X_2-\mu_2)^2}{\sigma_2^2}
                     "
                 />
