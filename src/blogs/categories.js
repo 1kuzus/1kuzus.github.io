@@ -1,6 +1,7 @@
 import B0000 from './23c/demo';
-import Behwl from './23c/pr1';
 import Bj23k from './23c/jsarray';
+import Behwl from './23c/pr1';
+import Bco21 from './23c/pr2';
 
 const categories = [
     {
@@ -22,6 +23,12 @@ const categories = [
                 path: '/behwl',
                 time: '2023-8-31',
                 component: <Behwl />,
+            },
+            {
+                blogName: '「模式识别」概率密度函数的估计',
+                path: '/bco21',
+                time: '2023-9-12',
+                component: <Bco21 />,
             },
         ],
     },
