@@ -192,7 +192,7 @@ export default function Blog() {
             <X.Formula text="g_i(\bm{X}) = \bm{W_i}^T\bm{X} + b，其中\bm{W_i} = \frac{1}{\sigma^2}\bm{\mu_i}，b = -\frac{1}{2\sigma^2}\bm{\mu_i}^T\bm{\mu_i} + lnP(\omega_i)" />
             <X.P>判别函数是`X`的线性函数，称为`线性分类器`。\n接下来考虑决策面方程：</X.P>
             <X.Formula text="g_i(\bm{X}) = g_j(\bm{X}) \; \Rightarrow \; \bm{W}^T(\bm{X}-\bm{X_0}) = 0" />
-            <X.Formula text="其中\bm{W} = \bm{\mu_i} - \bm{\mu_j}，\bm{X_0} = \frac{1}{2}(\bm{\mu_i} + \bm{\mu_j}) - \sigma^2\frac{\bm{\mu_i}-\bm{\mu_j}}{\Vert \bm{\mu_i}-\bm{\mu_j} \Vert^2}ln\frac{P(\omega_1)}{P(\omega_2)}" />
+            <X.Formula text="其中\bm{W} = \bm{\mu_i} - \bm{\mu_j}，\bm{X_0} = \frac{1}{2}(\bm{\mu_i} + \bm{\mu_j}) - \sigma^2\frac{\bm{\mu_i}-\bm{\mu_j}}{\Vert \bm{\mu_i}-\bm{\mu_j} \Vert^2}ln\frac{P(\omega_i)}{P(\omega_j)}" />
             <X.P>
                 这个方程确定了决策面是通过`X0`并正交于向量`W`的一个超平面。如果是二维平面上的点的分类问题，决策线过`X0`点并且垂直于样本中心的连线。当先验概率相等时，`X0`的后项为`0`，此时决策线就是样本中心连线的中垂线。\n
                 来看一个具体的例子！我们需要对平面上的点进行分类任务，第一堆样本点中心为`(2,3)`，第二堆样本点中心为`(4,4)`：
@@ -232,22 +232,29 @@ export default function Blog() {
                 <X.Formula
                     text="r^2 =
                     \begin{bmatrix}
-                    X_1 - \mu_1 & X_2 - \mu_2
+                    x_1 - \mu_1 & x_2 - \mu_2
                     \end{bmatrix}
                     \begin{bmatrix}
                    1/\sigma_1^2 & 0 \\
                     0 & 1/\sigma_2^2
                     \end{bmatrix}
                     \begin{bmatrix}
-                    X_1 - \mu_1 \\
-                    X_2 - \mu_2
+                    x_1 - \mu_1 \\
+                    x_2 - \mu_2
                     \end{bmatrix}=
-                    \frac{(X_1-\mu_1)^2}{\sigma_1^2} + \frac{(X_2-\mu_2)^2}{\sigma_2^2}
+                    \frac{(x_1-\mu_1)^2}{\sigma_1^2} + \frac{(x_2-\mu_2)^2}{\sigma_2^2}
                     "
                 />
                 <X.P>如果样本方差一样，则就是欧式距离；如果方差不一样，可以看作是标准化之后的欧氏距离。</X.P>
             </X.HighlightBlock>
-            <X.P>决策面和决策函数为</X.P>
+            <X.P>判别函数：</X.P>
+            <X.Formula text="g_i(\bm{X}) = -\frac{1}{2}r^2 + lnP(\omega_i)" />
+            <X.P>决策面方程：</X.P>
+            <X.Formula text="\bm{W}^T(\bm{X}-\bm{X_0}) = 0" />
+            <X.Formula text="其中\bm{W} =\bm{\Sigma}^{-1} (\bm{\mu_i} - \bm{\mu_j})，\bm{X_0} = \frac{1}{2}(\bm{\mu_i} + \bm{\mu_j}) - \frac{\bm{\mu_i}-\bm{\mu_j}}{(\bm{\mu_i}-\bm{\mu_j})^T \bm{\Sigma}^{-1} (\bm{\mu_i}-\bm{\mu_j})}ln\frac{P(\omega_i)}{P(\omega_j)}" />
+            <X.P>此时，先验概率相等的前提下，决策面仍然过样本中心连线中点；但不一定垂直于样本中心的连线。</X.P>
+            <X.Img src={require('./fig7.png')} width="500" />
+
             <X.Oli>
                 <X.Formula text="\bm{\Sigma_i} \neq \bm{\Sigma_j}" />
             </X.Oli>
