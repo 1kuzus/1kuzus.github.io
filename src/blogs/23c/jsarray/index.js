@@ -204,6 +204,40 @@ export default function Blog() {
                 console.log(arr.indexOf(9)); //-1                
                 `}
             />
+            <X.H2>lastIndexOf</X.H2>
+            <X.P>
+                `lastIndexOf()`方法返回数组中给定元素最后一次出现的索引，如果不存在则返回`-1`。该方法从`fromIndex`开始向前搜索数组。
+            </X.P>
+            <X.CodeBlock
+                language="js"
+                code={`
+                arr.lastIndexOf(searchElement)
+                arr.lastIndexOf(searchElement, fromIndex) //开始搜索的索引
+                `}
+            />
+            <X.CodeBlock
+                language="js"
+                code={`
+                const arr = [0, 1, 2, 3, 2];
+                console.log(arr.lastIndexOf(2)); //4
+                console.log(arr.lastIndexOf(2, 2)); //2
+                console.log(arr.lastIndexOf(9)); //-1
+                `}
+            />
+
+            <X.H1>join()</X.H1>
+            <X.P>
+                `join()`方法将一个数组的所有元素连接成一个字符串并返回这个字符串，用逗号或指定的分隔符字符串分隔。如果数组只有一个元素，那么将返回该元素而不使用分隔符。
+            </X.P>
+            <X.CodeBlock
+                language="js"
+                code={`
+                const elements = ['Fire', 'Air', 'Water'];
+                console.log(elements.join()); //Fire,Air,Water
+                console.log(elements.join('')); //FireAirWater
+                console.log(elements.join('-')); //Fire-Air-Water
+                `}
+            />
             {/* from here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/}
             <X.H1>Array.from()</X.H1>
             <X.P>
