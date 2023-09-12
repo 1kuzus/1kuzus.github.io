@@ -42,7 +42,7 @@ export default function Blog() {
             <X.H1>最小错误率贝叶斯决策</X.H1>
             <X.P>研究的类别有`c`个。</X.P>
             <X.HighlightBlock>
-                <X.Formula text="若P(\omega_i|x) = max_{j=1,...,c} P(\omega_j|x)，则x属于\omega_i类" />
+                <X.Formula text="若P(\omega_i|x) = \max_{j=1,...,c} P(\omega_j|x)，则x属于\omega_i类" />
             </X.HighlightBlock>
             <X.H2>两分类情况下，最小错误率决策的四种等价规则</X.H2>
             <X.Oli>
@@ -59,7 +59,7 @@ export default function Blog() {
             </X.Oli>
             <X.Oli>
                 <X.P>`对数似然比`</X.P>
-                <X.Formula text="h(x)=-ln[l(x)] \; 与 \; ln\frac{P(\omega_1)}{P(\omega_2)} \; 比较，h(x)小选\omega_1" />
+                <X.Formula text="h(x)=-\ln [l(x)] \; 与 \; \ln\frac{P(\omega_1)}{P(\omega_2)} \; 比较，h(x)小选\omega_1" />
             </X.Oli>
             <X.HighlightBlock>
                 <X.P>
@@ -74,7 +74,7 @@ export default function Blog() {
             <X.H2>最小风险贝叶斯决策</X.H2>
             <X.P>研究的类别有`c`个，做了`k`个决策。</X.P>
             <X.HighlightBlock>
-                <X.Formula text="若R(\alpha_i|x) = min_{j=1,...,k} R(\alpha_j|x)，则采用决策\alpha_i，即x属于\omega_i类" />
+                <X.Formula text="若R(\alpha_i|x) = \min_{j=1,...,k} R(\alpha_j|x)，则采用决策\alpha_i，即x属于\omega_i类" />
             </X.HighlightBlock>
             <X.H2>两分类情况下的最小风险贝叶斯决策</X.H2>
             <X.P>简记`λ(αi,ωj)`为`λij`</X.P>
@@ -166,8 +166,8 @@ export default function Blog() {
                 注意这个类概率密度函数`P(X|ωi)`的含义为，第`ωi`类的样本`X`的概率密度。\n使用后验概率的变形作为判别函数：
             </X.P>
             <X.Formula
-                text="g_i(\bm{X}) = ln[P(\bm{X}|\omega_i)P(\omega_i)] =
-                -\frac{d}{2}ln2\pi -\frac{1}{2}ln|\bm{\Sigma_i}| -\frac{1}{2}(\bm{X}-\bm{\mu_i})^T\bm{\Sigma_i}^{-1}(\bm{X}-\bm{\mu_i}) +lnP(\omega_i)
+                text="g_i(\bm{X}) = \ln [P(\bm{X}|\omega_i)P(\omega_i)] =
+                -\frac{d}{2}\ln 2\pi -\frac{1}{2}\ln |\bm{\Sigma_i}| -\frac{1}{2}(\bm{X}-\bm{\mu_i})^T\bm{\Sigma_i}^{-1}(\bm{X}-\bm{\mu_i}) +\ln P(\omega_i)
                 "
             />
             <X.P>从以下三种情况考虑决策面：</X.P>
@@ -177,10 +177,10 @@ export default function Blog() {
             <X.P>
                 各类模式分布的协方差矩阵相等，样本统计独立且方差相同，协方差均为0。\n此时`g(X)`的前两项与类别无关，后两项化简为：
             </X.P>
-            <X.Formula text="g_i(\bm{X}) = -\frac{1}{2\sigma^2}\Vert\bm{X}-\bm{\mu_i}\Vert^2 +lnP(\omega_i)" />
+            <X.Formula text="g_i(\bm{X}) = -\frac{1}{2\sigma^2}\Vert\bm{X}-\bm{\mu_i}\Vert^2 +\ln P(\omega_i)" />
             <X.HighlightBlock>
                 <X.P>如果先验概率相等，则决策只与欧氏距离有关。此时决策为：</X.P>
-                <X.Formula text="若\Vert\bm{X}-\bm{\mu_i}\Vert^2 = min_{j=1,...,c} \Vert\bm{X}-\bm{\mu_j}\Vert^2，则x属于\omega_i类" />
+                <X.Formula text="若\Vert\bm{X}-\bm{\mu_i}\Vert^2 = \min_{j=1,...,c} \Vert\bm{X}-\bm{\mu_j}\Vert^2，则x属于\omega_i类" />
             </X.HighlightBlock>
             <X.HighlightBlock bgcolor="gray">
                 <X.P>
@@ -189,10 +189,10 @@ export default function Blog() {
                 </X.P>
             </X.HighlightBlock>
             <X.P>如果对于上述判别函数`g(X)`的欧式距离项展开，并删掉与类别无关的二次项，得：</X.P>
-            <X.Formula text="g_i(\bm{X}) = \bm{W_i}^T\bm{X} + b，其中\bm{W_i} = \frac{1}{\sigma^2}\bm{\mu_i}，b = -\frac{1}{2\sigma^2}\bm{\mu_i}^T\bm{\mu_i} + lnP(\omega_i)" />
+            <X.Formula text="g_i(\bm{X}) = \bm{W_i}^T\bm{X} + b，其中\bm{W_i} = \frac{1}{\sigma^2}\bm{\mu_i}，b = -\frac{1}{2\sigma^2}\bm{\mu_i}^T\bm{\mu_i} + \ln P(\omega_i)" />
             <X.P>判别函数是`X`的线性函数，称为`线性分类器`。\n接下来考虑决策面方程：</X.P>
             <X.Formula text="g_i(\bm{X}) = g_j(\bm{X}) \; \Rightarrow \; \bm{W}^T(\bm{X}-\bm{X_0}) = 0" />
-            <X.Formula text="其中\bm{W} = \bm{\mu_i} - \bm{\mu_j}，\bm{X_0} = \frac{1}{2}(\bm{\mu_i} + \bm{\mu_j}) - \sigma^2\frac{\bm{\mu_i}-\bm{\mu_j}}{\Vert \bm{\mu_i}-\bm{\mu_j} \Vert^2}ln\frac{P(\omega_i)}{P(\omega_j)}" />
+            <X.Formula text="其中\bm{W} = \bm{\mu_i} - \bm{\mu_j}，\bm{X_0} = \frac{1}{2}(\bm{\mu_i} + \bm{\mu_j}) - \sigma^2\frac{\bm{\mu_i}-\bm{\mu_j}}{\Vert \bm{\mu_i}-\bm{\mu_j} \Vert^2}\ln\frac{P(\omega_i)}{P(\omega_j)}" />
             <X.P>
                 这个方程确定了决策面是通过`X0`并正交于向量`W`的一个超平面。如果是二维平面上的点的分类问题，决策线过`X0`点并且垂直于样本中心的连线。当先验概率相等时，`X0`的后项为`0`，此时决策线就是样本中心连线的中垂线。\n
                 来看一个具体的例子！我们需要对平面上的点进行分类任务，第一堆样本点中心为`(2,3)`，第二堆样本点中心为`(4,4)`：
@@ -248,16 +248,22 @@ export default function Blog() {
                 <X.P>如果样本方差一样，则就是欧式距离；如果方差不一样，可以看作是标准化之后的欧氏距离。</X.P>
             </X.HighlightBlock>
             <X.P>判别函数：</X.P>
-            <X.Formula text="g_i(\bm{X}) = -\frac{1}{2}r^2 + lnP(\omega_i)" />
+            <X.Formula text="g_i(\bm{X}) = -\frac{1}{2}r_i^2 + \ln P(\omega_i)" />
             <X.P>决策面方程：</X.P>
             <X.Formula text="\bm{W}^T(\bm{X}-\bm{X_0}) = 0" />
-            <X.Formula text="其中\bm{W} =\bm{\Sigma}^{-1} (\bm{\mu_i} - \bm{\mu_j})，\bm{X_0} = \frac{1}{2}(\bm{\mu_i} + \bm{\mu_j}) - \frac{\bm{\mu_i}-\bm{\mu_j}}{(\bm{\mu_i}-\bm{\mu_j})^T \bm{\Sigma}^{-1} (\bm{\mu_i}-\bm{\mu_j})}ln\frac{P(\omega_i)}{P(\omega_j)}" />
+            <X.Formula text="其中\bm{W} =\bm{\Sigma}^{-1} (\bm{\mu_i} - \bm{\mu_j})，\bm{X_0} = \frac{1}{2}(\bm{\mu_i} + \bm{\mu_j}) - \frac{\bm{\mu_i}-\bm{\mu_j}}{(\bm{\mu_i}-\bm{\mu_j})^T \bm{\Sigma}^{-1} (\bm{\mu_i}-\bm{\mu_j})}\ln\frac{P(\omega_i)}{P(\omega_j)}" />
             <X.P>此时，先验概率相等的前提下，决策面仍然过样本中心连线中点；但不一定垂直于样本中心的连线。</X.P>
             <X.Img src={require('./fig7.png')} width="500" />
-
             <X.Oli>
                 <X.Formula text="\bm{\Sigma_i} \neq \bm{\Sigma_j}" />
             </X.Oli>
+            <X.P>此为最一般情况。决策面为超二次曲面。对于二维样本，决策线为二次曲线。\n 判别函数：</X.P>
+            <X.Formula text="g_i(\bm{X}) = -\frac{1}{2}r_i^2 - \frac{1}{2}\ln |\bm{\Sigma_i}| + \ln P(\omega_i)" />
+            <X.FlexRow>
+                <X.Img src={require('./fig8.png')} width="320" />
+                <X.Img src={require('./fig9.png')} width="320" />
+                <X.Img src={require('./fig10.png')} width="320" />
+            </X.FlexRow>
         </X.BlogWrapper>
     );
 }
