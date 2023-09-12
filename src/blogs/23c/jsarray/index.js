@@ -220,7 +220,7 @@ export default function Blog() {
                 code={`
                 const arr = [0, 1, 2, 3, 2];
                 console.log(arr.lastIndexOf(2)); //4
-                console.log(arr.lastIndexOf(2, 2)); //2
+                console.log(arr.lastIndexOf(2, 3)); //2
                 console.log(arr.lastIndexOf(9)); //-1
                 `}
             />
@@ -238,7 +238,33 @@ export default function Blog() {
                 console.log(elements.join('-')); //Fire-Air-Water
                 `}
             />
-            {/* from here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/}
+
+            <X.H1>map()</X.H1>
+            <X.P>`map()`方法创建一个*新数组*，这个新数组由原数组中的每个元素都调用一次提供的函数后的返回值组成。</X.P>
+            <X.CodeBlock language="js" code="arr.map(callbackFn)" />
+            <X.P>
+                `callbackFn`为数组中每个元素执行的函数，它的返回值作为一个元素被添加为新数组中。该函数被调用时将传入以下参数：
+            </X.P>
+            <X.Uli>
+                <X.P>`value`：数组中正在处理的当前元素</X.P>
+            </X.Uli>
+            <X.Uli>
+                <X.P>`index`：数组中正在处理的当前元素的索引</X.P>
+            </X.Uli>
+            <X.Uli>
+                <X.P>`array`：调用了`map()`的数组本身</X.P>
+            </X.Uli>
+            <X.CodeBlock
+                language="js"
+                code={`
+                const numbers = [1, 4, 9];
+                const roots = numbers.map((num) => Math.sqrt(num));
+                
+                console.log(numbers); //[1, 4, 9]
+                console.log(roots); //[1, 2, 3]
+                `}
+            />
+
             <X.H1>Array.from()</X.H1>
             <X.P>
                 `Array.from()`静态方法从可迭代或类数组对象创建一个新的浅拷贝的数组实例。\n

@@ -5,6 +5,7 @@ export default function Blog() {
         <X.BlogWrapper>
             <X.Title>「模式识别」概率密度函数的估计</X.Title>
 
+            <X.P>@上一篇[#/behwl]@</X.P>
             <X.H1></X.H1>
             <X.H2>标题</X.H2>
             <X.P>使用如下代码定义：</X.P>
