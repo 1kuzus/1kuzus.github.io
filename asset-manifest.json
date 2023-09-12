@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.91581dce.css",
-    "main.js": "/static/js/main.74f27a85.js",
+    "main.css": "/static/css/main.2a8c1e37.css",
+    "main.js": "/static/js/main.e6daf259.js",
     "static/media/KaTeX_AMS-Regular.ttf": "/static/media/KaTeX_AMS-Regular.853be92419a6c3766b9a.ttf",
     "static/media/KaTeX_Main-Regular.ttf": "/static/media/KaTeX_Main-Regular.9eba1d77abcf2aa6e94e.ttf",
     "static/media/KaTeX_Main-Bold.ttf": "/static/media/KaTeX_Main-Bold.8169508bf58f8bd92ad8.ttf",
@@ -17,6 +17,10 @@
     "static/media/KaTeX_Main-Regular.woff2": "/static/media/KaTeX_Main-Regular.f650f111a3b890d116f1.woff2",
     "static/media/KaTeX_Main-Bold.woff2": "/static/media/KaTeX_Main-Bold.39890742bc957b368704.woff2",
     "static/media/KaTeX_SansSerif-Bold.ttf": "/static/media/KaTeX_SansSerif-Bold.5b49f4993ae22d7975b4.ttf",
+    "static/media/fig10.png": "/static/media/fig10.dd810e00a5638a8402e0.png",
+    "static/media/fig9.png": "/static/media/fig9.e757a81163ebe985e3b6.png",
+    "static/media/fig8.png": "/static/media/fig8.0f276692a2410e2244c2.png",
+    "static/media/fig7.png": "/static/media/fig7.67be4cecca205970b9a5.png",
     "static/media/KaTeX_SansSerif-Italic.ttf": "/static/media/KaTeX_SansSerif-Italic.b257a18c016f37ee4543.ttf",
     "static/media/KaTeX_Main-Italic.woff": "/static/media/KaTeX_Main-Italic.fd947498bc16392e76c2.woff",
     "static/media/KaTeX_Fraktur-Bold.ttf": "/static/media/KaTeX_Fraktur-Bold.4c761b3711973ab04edf.ttf",
@@ -72,11 +76,11 @@
     "static/media/dark_theme.svg": "/static/media/dark_theme.830b9f553aa45eb5499e66f740db7d57.svg",
     "static/media/logo.svg": "/static/media/logo.ea9249bf81c188f48ff0624ab04081be.svg",
     "index.html": "/index.html",
-    "main.91581dce.css.map": "/static/css/main.91581dce.css.map",
-    "main.74f27a85.js.map": "/static/js/main.74f27a85.js.map"
+    "main.2a8c1e37.css.map": "/static/css/main.2a8c1e37.css.map",
+    "main.e6daf259.js.map": "/static/js/main.e6daf259.js.map"
   },
   "entrypoints": [
-    "static/css/main.91581dce.css",
-    "static/js/main.74f27a85.js"
+    "static/css/main.2a8c1e37.css",
+    "static/js/main.e6daf259.js"
   ]
 }
