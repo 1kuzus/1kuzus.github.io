@@ -114,3 +114,7 @@
     border: 1px solid #80808080;
     text-align: center;
 }
+.x-table th > *,
+.x-table td > * {
+    margin: 0;
+}

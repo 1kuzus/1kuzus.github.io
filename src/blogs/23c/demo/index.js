@@ -160,22 +160,24 @@ export default function Blog() {
                 </tr>
                 <tr>
                     <td>Alice</td>
-                    <td>18</td>
+                    <td><X.P>`18`</X.P></td>
                     <td>4p6a4eumxmki</td>
                 </tr>
                 <tr>
-                    <td>Bob</td>
+                    <td rowSpan={2}>Bob</td>
                     <td>19</td>
                     <td>kob5wkh1gpff</td>
                 </tr>
                 <tr>
-                    <td>Eric</td>
-                    <td>23</td>
+                    <td rowSpan={2}>23</td>
                     <td>jxchv2sx3s5a</td>
                 </tr>
                 <tr>
                     <td>Jack</td>
-                    <td>17</td>
+                    <td rowSpan={2}>nx3vb156864f</td>
+                </tr>
+                <tr>
+                    <td>Jack</td>
                     <td>nx3vb156864f</td>
                 </tr>
             </X.Table>
