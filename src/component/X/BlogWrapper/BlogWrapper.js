@@ -1,5 +1,4 @@
-import {Children, useLayoutEffect} from 'react';
-import Prism from 'prismjs';
+import {Children} from 'react';
 import {Oli} from '../basics';
 import './BlogWrapper.css';
 
@@ -7,7 +6,7 @@ export default function BlogWrapper(props) {
     const {children} = props;
     let oliIdx = 0;
 
-    const processedChild = Children.map(children, (child) => {
+    const processedChildren = Children.map(children, (child) => {
         if (child.type === Oli) {
             return (
                 <div className="x-oli">
@@ -18,9 +17,5 @@ export default function BlogWrapper(props) {
         } else return child;
     });
 
-    useLayoutEffect(() => {
-        Prism.highlightAll();
-    }, []);
-
-    return <div className="x-blogwrapper">{processedChild}</div>;
+    return <div className="x-blogwrapper">{processedChildren}</div>;
 }
