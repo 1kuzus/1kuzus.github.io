@@ -4,7 +4,6 @@
     background-color: var(--bg-color-1);
     box-shadow: var(--codeblock-shadow);
     overflow-x: auto;
-    transition: background-color 200ms;
 }
 .x-codeblock pre code[class*='language-'] {
     display: block;
