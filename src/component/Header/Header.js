@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import {useState, useLayoutEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
 import LogoIcon from '@/assets/logo.svg';
 import GithubIcon from '@/assets/github.svg';
@@ -12,7 +12,7 @@ export default function Header() {
         localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : true
     );
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         if (isDarkTheme) {
             document.documentElement.setAttribute('class', 'dark');
             localStorage.setItem('theme', 'dark');
