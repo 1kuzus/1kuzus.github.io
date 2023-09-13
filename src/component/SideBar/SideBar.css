@@ -7,7 +7,6 @@
     background-color: var(--bg-color-1);
     overflow-x: hidden;
     user-select: none;
-    transition: background-color 200ms;
 }
 @media screen and (max-width: 1128px) {
     #sidebar {
@@ -31,7 +30,6 @@
     padding: 4px 0;
     font-size: 16px;
     color: var(--text-color-main);
-    transition: color 200ms;
 }
 .sidebarlist-title-rightarrow {
     width: 16px;
@@ -54,21 +52,22 @@
     color: var(--text-color-main);
     border-radius: 8px;
     cursor: pointer;
-    transition: color 200ms, background-color 200ms;
+    transition: background-color 200ms;
 }
 
 /*active样式*/
 .sidebarlist-li.active {
     color: var(--text-color-active);
-    background-color: var(--hover-color-1);
+    background-color: var(--bg-transparent-gray);
 }
 
 /*hover样式*/
 .sidebarlist-li:hover {
-    background-color: var(--hover-color-1);
+    background-color: var(--bg-transparent-gray);
 }
 .sidebarlist-head:hover .sidebarlist-title {
     color: var(--title-color);
+    transition: color 200ms;
 }
 
 /*分类展开样式*/

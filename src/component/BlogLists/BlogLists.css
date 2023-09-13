@@ -21,7 +21,7 @@
     font-size: 24px;
     color: var(--text-color-main);
     border-bottom: 1px solid transparent;
-    transition: color 200ms, border-bottom-color 200ms, flex-grow 300ms;
+    transition: flex-grow 300ms;
 }
 .bloglist-ul {
     display: flex;
@@ -53,7 +53,7 @@
 
 /*hover样式*/
 .bloglist-li:hover {
-    background-color: var(--hover-color-2);
+    background-color: var(--bg-transparent-gray);
 }
 .bloglist-li:hover .bloglist-time {
     opacity: 0.5;
@@ -61,6 +61,7 @@
 .bloglist-head:hover .bloglist-title {
     color: var(--title-color);
     border-bottom-color: var(--gray-1);
+    transition: color 200ms;
 }
 
 /*分类展开样式*/
