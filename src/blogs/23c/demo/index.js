@@ -66,6 +66,13 @@ export default function Blog() {
                 <X.P>`\*content\*`：实现*这样的*加粗效果</X.P>
             </X.Oli>
             <X.Oli>
+                <X.P>
+                    `\$content\$`：插入一个行内公式
+                    {`$\\int_{a}^{b} f(x)dx = \\lim_{n \\to \\infty} \\sum_{i=1}^{n} f(x_i) \\cdot \\Delta x$`}，
+                    或者一些简单的数学符号$\mu_1$、$\mu_2$等
+                </X.P>
+            </X.Oli>
+            <X.Oli>
                 <X.P>`\@text[url]\@`：这是一个指向@百度[https://www.baidu.com]@的超链接</X.P>
             </X.Oli>
             <X.Oli>
@@ -73,8 +80,7 @@ export default function Blog() {
             </X.Oli>
             <X.Oli>
                 <X.P>
-                    在段落组件中可以使用一些转义字符，打出上述代表了特殊格式的符号如`\``、`\*`等；\n也可以通过`\\n`换行；\n
-                    段落组件会自动删掉所有空格，因此打出这\ 样的空格需要使用`\\\ `。
+                    在段落组件中可以使用一些转义字符，打出上述代表了特殊格式的符号如`\``、`\*`等；\n也可以通过`\\n`换行。
                 </X.P>
             </X.Oli>
             <X.Br />
@@ -90,6 +96,13 @@ export default function Blog() {
                     <X.P>\`\\*content\\*\`：实现*这样的*加粗效果</X.P>
                 </X.Oli>
                 <X.Oli>
+                    <X.P>
+                        \`\\$content\\$\`：插入一个行内公式
+                        {\`$\\\\int_{a}^{b} f(x)dx = \\\\lim_{n \\\\to \\\\infty} \\\\sum_{i=1}^{n} f(x_i) \\\\cdot \\\\Delta x$\`}，
+                        或者一些简单的数学符号$\\mu_1$、$\\mu_2$等
+                    </X.P>
+                </X.Oli>
+                <X.Oli>
                     <X.P>\`\\@text[url]\\@\`：这是一个指向@百度[https://www.baidu.com]@的超链接</X.P>
                 </X.Oli>
                 <X.Oli>
@@ -97,8 +110,7 @@ export default function Blog() {
                 </X.Oli>
                 <X.Oli>
                     <X.P>
-                        在段落组件中可以使用一些转义字符，打出上述代表了特殊格式的符号如\`\\\`\`、\`\\*\`等；\\n也可以通过\`\\\\n\`换行；\\n
-                        段落组件会自动删掉所有空格，因此打出这\\ 样的空格需要使用\`\\\\\\ \`。
+                        在段落组件中可以使用一些转义字符，打出上述代表了特殊格式的符号如\`\\\`\`、\`\\*\`等；\\n也可以通过\`\\\\n\`换行。
                     </X.P>
                 </X.Oli>
                 `}

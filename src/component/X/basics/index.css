@@ -1,13 +1,13 @@
 .x-title {
+    margin-bottom: 36px;
     font-size: 42px;
     color: var(--text-color-main);
-    margin-bottom: 36px;
 }
 .x-h1 {
+    margin-top: 48px;
+    margin-bottom: 16px;
     font-size: 30px;
     color: var(--text-color-main);
-    margin-bottom: 16px;
-    margin-top: 48px;
 }
 .x-h1::before {
     content: '#';
@@ -15,16 +15,16 @@
     color: var(--text-color-active);
 }
 .x-h2 {
+    margin-top: 32px;
+    margin-bottom: 12px;
     font-size: 24px;
     color: var(--text-color-main);
-    margin-bottom: 12px;
-    margin-top: 32px;
 }
 .x-h3 {
+    margin-top: 24px;
+    margin-bottom: 8px;
     font-size: 18px;
     color: var(--text-color-main);
-    margin-bottom: 8px;
-    margin-top: 24px;
 }
 .x-p {
     margin-bottom: 24px;

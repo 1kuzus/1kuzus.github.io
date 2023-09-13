@@ -3,6 +3,7 @@
     max-width: 1024px;
     min-width: 600px;
     padding: 48px 48px 48px 480px;
+    color: var(--text-color-main);
 }
 @media screen and (max-width: 1128px) {
     .x-blogwrapper {
