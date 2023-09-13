@@ -1,5 +1,6 @@
-import './index.css';
 import Katex from 'katex';
+import {addOliIdx, setOliIdx} from '../BlogWrapper/BlogWrapper';
+import './index.css';
 
 export function Title(props) {
     const {children} = props;
@@ -71,10 +72,14 @@ export function Uli(props) {
     );
 }
 
-//Oli将在BlogWrapper组件中完成列表序号的渲染
 export function Oli(props) {
-    const {children} = props;
-    return <div className="x-oli-content-wrapper">{children}</div>;
+    const {reset, children} = props;
+    return (
+        <div className="x-oli">
+            <div className="x-oli-number">{(reset ? setOliIdx(1) : addOliIdx(1)) + '.'}</div>
+            <div className="x-oli-content-wrapper">{children}</div>
+        </div>
+    );
 }
 
 export function Img(props) {
