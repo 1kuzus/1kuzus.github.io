@@ -10,7 +10,7 @@ export default function Blog() {
             <X.HighlightBlock>
                 <X.Formula text="P(\omega_i|x) = \frac{P(x|\omega_i) \cdot P(\omega_i)}{P(x)}" />
                 <X.P>
-                    `P(ωi)`为`先验概率`，表示没有进行任何观测时的主观推测概率\n `P(x|ωi)`为`类条件密度`，已知\n
+                    `P(ωi)`为`先验概率`，表示没有进行任何观测时的主观推测概率\n`P(x|ωi)`为`类条件密度`，已知\n
                     `P(ωi|x)`为`后验概率`，希望得到其值，并用于决策
                 </X.P>
             </X.HighlightBlock>
@@ -225,7 +225,7 @@ export default function Blog() {
                 <X.Img src={require('./fig6.png')} width="500px"></X.Img>
                 <X.P>
                     按照欧氏距离判别，它应该被归为`green`类；然而从直觉上判断，它更可能属于`red`类。\n
-                    欧式距离并没有考虑样本的方差，以及样本各个维度之间的相关性。\n 定义马氏距离：
+                    欧式距离并没有考虑样本的方差，以及样本各个维度之间的相关性。\n定义马氏距离：
                 </X.P>
                 <X.Formula text="r^2 = (\bm{X}-\bm{\mu})^T \bm{\Sigma}^{-1} (\bm{X}-\bm{\mu})" />
                 <X.P>如果样本是二维的，且协方差矩阵`Σ`为对角矩阵，马氏距离表示为：</X.P>
@@ -257,7 +257,7 @@ export default function Blog() {
             <X.Oli>
                 <X.Formula text="\bm{\Sigma_i} \neq \bm{\Sigma_j}" />
             </X.Oli>
-            <X.P>此为最一般情况。决策面为超二次曲面。对于二维样本，决策线为二次曲线。\n 判别函数：</X.P>
+            <X.P>此为最一般情况。决策面为超二次曲面。对于二维样本，决策线为二次曲线。\n判别函数：</X.P>
             <X.Formula text="g_i(\bm{X}) = -\frac{1}{2}r_i^2 - \frac{1}{2}\ln |\bm{\Sigma_i}| + \ln P(\omega_i)" />
             <X.FlexRow>
                 <X.Img src={require('./fig8.png')} width="320" />
