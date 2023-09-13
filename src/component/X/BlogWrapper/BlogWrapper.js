@@ -1,21 +1,15 @@
-import {Children} from 'react';
-import {Oli} from '../basics';
 import './BlogWrapper.css';
+
+let oliIdx = 0;
+export function addOliIdx() {
+    return ++oliIdx;
+}
+export function setOliIdx(idx) {
+    return (oliIdx = idx);
+}
 
 export default function BlogWrapper(props) {
     const {children} = props;
-    let oliIdx = 0;
-
-    const processedChildren = Children.map(children, (child) => {
-        if (child.type === Oli) {
-            return (
-                <div className="x-oli">
-                    <div className="x-oli-number">{(child.props.reset ? (oliIdx = 1) : ++oliIdx) + '.'}</div>
-                    {child}
-                </div>
-            );
-        } else return child;
-    });
-
-    return <div className="x-blogwrapper">{processedChildren}</div>;
+    oliIdx = 0;
+    return <div className="x-blogwrapper">{children}</div>;
 }
