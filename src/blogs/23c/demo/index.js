@@ -160,7 +160,9 @@ export default function Blog() {
                 </tr>
                 <tr>
                     <td>Alice</td>
-                    <td><X.P>`18`</X.P></td>
+                    <td>
+                        <X.P>`18`</X.P>
+                    </td>
                     <td>4p6a4eumxmki</td>
                 </tr>
                 <tr>
