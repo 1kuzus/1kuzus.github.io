@@ -1,4 +1,3 @@
-'use strict';
 const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
@@ -653,6 +652,7 @@ module.exports = function (webpackEnv) {
                                 declarationMap: false,
                                 noEmit: true,
                                 incremental: true,
+                                jsx: 'react-jsx',
                                 tsBuildInfoFile: paths.appTsBuildInfoFile,
                             },
                         },
