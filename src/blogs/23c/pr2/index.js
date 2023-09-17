@@ -18,11 +18,13 @@ export default function Blog() {
             <X.HighlightBlock bgcolor="gray">
                 <X.P>
                     每一个样本都形如{`$\\bm{X}=[x_1, x_2, \\dots, x_d]^T$`}
-                    ，其中的每维度都是二值变量，其分布可以由
+                    ，其中的每个维度都是二值变量，其分布可以由
                     {`$\\bm{\\theta}=[\\theta_1, \\theta_2, \\dots, \\theta_d]^T$`}
                     描述，即$s_i=1$的概率为$\theta_i$，相应地，$s_i=0$的概率为$1-\theta_i$。假设现在已经观察到样本
                     {'$\\bm{\\chi}=\\{\\bm{X}_1, \\bm{X}_2, \\dots, \\bm{X}_n\\}$'}，希望估计参数{'$\\bm{\\theta}$'}。
+                    观测到样本{'$\\bm{\\chi}$'}的概率为
                 </X.P>
+                <X.Formula text="P=" />
             </X.HighlightBlock>
         </X.BlogWrapper>
     );

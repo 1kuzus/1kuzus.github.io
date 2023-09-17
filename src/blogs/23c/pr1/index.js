@@ -99,7 +99,7 @@ export default function Blog() {
             <X.H1>正态分布的统计决策</X.H1>
             <X.H2>从一维正态分布到高维正态分布</X.H2>
             <X.P>单变量正态分布函数：</X.P>
-            <X.Formula text="p(x) = \frac{1}{\sqrt{2\pi}\sigma} \exp\{-\frac{1}{2} \cdot (\frac{x-\mu}{\sigma})^2\}" />
+            <X.Formula text="P(x) = \frac{1}{\sqrt{2\pi}\sigma} \exp\{-\frac{1}{2} \cdot (\frac{x-\mu}{\sigma})^2\}" />
             <X.P>双变量正态分布函数：</X.P>
             <X.Formula
                 text="p(x_1,x_2) = \frac{1}{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}} \exp\{
