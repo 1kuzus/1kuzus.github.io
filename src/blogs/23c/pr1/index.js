@@ -199,7 +199,7 @@ export default function Blog() {
             </X.P>
             <X.Img src={require('./fig1.png')} width="500" />
             <X.P>
-                红色和蓝色分别标记了两类样本点的分布情况，其中加粗的红点和蓝点表示样本中心的位置；\n生成两组样本时使用的方差均为`0.8`；样本的`x`,`y`坐标相关性为0。\n
+                红色和蓝色分别标记了两类样本点的分布情况，其中加粗的红点和蓝点表示样本中心的位置；\n生成两组样本时使用的方差均为`0.8`；样本的`x`,`y`坐标相关性为`0`。\n
                 现在对平面上的所有点计算判别函数`g_red`和`g_blue`。`g_red`更大的区域用红色阴影表示，`g_blue`更大的区域用蓝色阴影表示。\n
                 两个区域的交界处即为自然生成的决策线。结果如下：
             </X.P>
@@ -252,7 +252,7 @@ export default function Blog() {
             <X.P>决策面方程：</X.P>
             <X.Formula text="\bm{W}^T(\bm{X}-\bm{X_0}) = 0" />
             <X.Formula text="其中\bm{W} =\bm{\Sigma}^{-1} (\bm{\mu_i} - \bm{\mu_j})，\bm{X_0} = \frac{1}{2}(\bm{\mu_i} + \bm{\mu_j}) - \frac{\bm{\mu_i}-\bm{\mu_j}}{(\bm{\mu_i}-\bm{\mu_j})^T \bm{\Sigma}^{-1} (\bm{\mu_i}-\bm{\mu_j})}\ln\frac{P(\omega_i)}{P(\omega_j)}" />
-            <X.P>此时，先验概率相等的前提下，决策面仍然过样本中心连线中点；但不一定垂直于样本中心的连线。</X.P>
+            <X.P>此时，先验概率相等的前提下，决策线仍然过样本中心连线中点；但不一定垂直于样本中心的连线。</X.P>
             <X.Img src={require('./fig7.png')} width="500" />
             <X.Oli>
                 <X.Formula text="\bm{\Sigma_i} \neq \bm{\Sigma_j}" />
