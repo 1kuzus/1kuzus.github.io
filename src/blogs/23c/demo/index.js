@@ -68,7 +68,7 @@ export default function Blog() {
             <X.Oli>
                 <X.P>
                     `\$content\$`：插入一个行内公式
-                    {`$\\int_{a}^{b} f(x)dx = \\lim_{n \\to \\infty} \\sum_{i=1}^{n} f(x_i) \\cdot \\Delta x$`}，
+                    {`$\\int_{a}^{b} f(x)dx = \\lim_{n \\to \\infty} \\sum_{i=1}^n f(x_i) \\cdot \\Delta x$`}，
                     或者一些简单的数学符号$\mu_1$、$\mu_2$等
                 </X.P>
             </X.Oli>
@@ -98,7 +98,7 @@ export default function Blog() {
                 <X.Oli>
                     <X.P>
                         \`\\$content\\$\`：插入一个行内公式
-                        {\`$\\\\int_{a}^{b} f(x)dx = \\\\lim_{n \\\\to \\\\infty} \\\\sum_{i=1}^{n} f(x_i) \\\\cdot \\\\Delta x$\`}，
+                        {\`$\\\\int_{a}^{b} f(x)dx = \\\\lim_{n \\\\to \\\\infty} \\\\sum_{i=1}^n f(x_i) \\\\cdot \\\\Delta x$\`}，
                         或者一些简单的数学符号$\\mu_1$、$\\mu_2$等
                     </X.P>
                 </X.Oli>
@@ -203,7 +203,7 @@ export default function Blog() {
             </X.P>
             <X.HighlightBlock>
                 <X.P>高亮块中可以使用公式组件。</X.P>
-                <X.Formula text="\int_{a}^{b} f(x)dx = \lim_{n \to \infty} \sum_{i=1}^{n} f(x_i) \cdot \Delta x" />
+                <X.Formula text="\int_{a}^{b} f(x)dx = \lim_{n \to \infty} \sum_{i=1}^n f(x_i) \cdot \Delta x" />
             </X.HighlightBlock>
             <X.HighlightBlock bgcolor="red">
                 <X.P>

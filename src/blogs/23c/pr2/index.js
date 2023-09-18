@@ -14,7 +14,7 @@ export default function Blog() {
                 {'$\\bm{\\chi}$'}，则我们要找的参数即为：使得出现观测样本{'$\\bm{\\chi}$'}概率最大的参数
                 {'$\\bm{\\theta}$'}。
             </X.P>
-            <X.P>考虑下面的例子：</X.P>
+            <X.P>考虑下面的例题：</X.P>
             <X.HighlightBlock bgcolor="gray">
                 <X.P>
                     每一个样本都形如{`$\\bm{X}=[x_1, x_2, \\dots, x_d]^T$`}
@@ -22,10 +22,34 @@ export default function Blog() {
                     {`$\\bm{\\theta}=[\\theta_1, \\theta_2, \\dots, \\theta_d]^T$`}
                     描述，即$s_i=1$的概率为$\theta_i$，相应地，$s_i=0$的概率为$1-\theta_i$。假设现在已经观察到样本
                     {'$\\bm{\\chi}=\\{\\bm{X}_1, \\bm{X}_2, \\dots, \\bm{X}_n\\}$'}，希望估计参数{'$\\bm{\\theta}$'}。
-                    观测到样本{'$\\bm{\\chi}$'}的概率为
                 </X.P>
-                <X.Formula text="P=" />
             </X.HighlightBlock>
+            <X.P>观测到样本{'$\\bm{\\chi}$'}的概率为：</X.P>
+            <X.Formula text="P(\bm{X}_1, \bm{X}_2, \dots, \bm{X}_n|\bm{\theta}) = \prod_{k=1}^n P(\bm{X}_i) = \prod_{k=1}^n \prod_{i=1}^d \theta_i^{x_{ki}}(1-\theta_i)^{1-x_{ki}}" />
+            <X.P>式子中的{`$x_{ki}$`}代表第`k`个样本的第`i`个分量，其值为`0`或`1`。</X.P>
+            <X.P>取对数似然函数：</X.P>
+            <X.Formula text="l(\bm{\theta}) = \ln P = \sum_{k=1}^n \sum_{i=1}^d [x_{ki}\ln\theta_i + (1-x_{ki})\ln(1-\theta_i)]" />
+            <X.P>求偏导得：</X.P>
+            <X.Formula text="\frac{\partial l(\bm{\theta})}{\partial \theta_i} = \sum_{k=1}^n [\frac{x_{ki}}{\theta_i} - \frac{1-x_{ki}}{1-\theta_i}]" />
+            <X.Formula text="\frac{\partial l(\bm{\theta})}{\partial \theta_i} = 0 \; 得 \; \sum_{k=1}^n (x_{ki} - \theta_i) = 0，即\theta_i = \frac{1}{n} \sum_{k=1}^n x_{ki}" />
+            <X.P>把每一个分量都叠加起来，就得到最终的参数估计：</X.P>
+            <X.Formula text="\hat{\bm{\theta}} = \frac{1}{n} \sum_{k=1}^n \bm{X}_k" />
+            <X.P>
+                举一个带有具体数值的例子，假如观测到了四个样本：$[1,0,0]$、$[1,1,0]$、$[1,0,0]$、$[1,1,1]$，则估计参数
+                {'$\\hat{\\bm{\\theta}} = [1,0.5,0.25]$'}\n
+                其含义为，对于第一个维度，四个样本均为`1`，因此估计$x_1=1$的概率为`1`；对于第二个样本，四个样本中有两个为`1`，另外两个为`0`，则估计$x_2=1$的概率为`0.5`，以此类推。
+            </X.P>
+
+            <X.H1>正态分布下的最大似然估计</X.H1>
+            <X.H2>单变量正态分布</X.H2>
+            <X.Formula text="\hat{\mu} = \frac{1}{n} \sum x_k" />
+            <X.Formula text="\hat{\sigma} = \frac{1}{n} \sum (x_k - \hat{\mu})^2" />
+            <X.H2>多变量正态分布</X.H2>
+            <X.Formula text="\hat{\bm{\mu}} = \frac{1}{n} \sum \bm{X}_k" />
+            <X.Formula text="\hat{\bm{\Sigma}} = \frac{1}{n} \sum (\bm{X}_k - \hat{\bm{\mu}})(\bm{X}_k - \hat{\bm{\mu}})^T" />
+
+            <X.H1>贝叶斯估计</X.H1>
+            <X.P></X.P>
         </X.BlogWrapper>
     );
 }
