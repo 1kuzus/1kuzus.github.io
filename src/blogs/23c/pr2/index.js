@@ -34,22 +34,7 @@ export default function Blog() {
             <X.Formula text="\frac{\partial l(\bm{\theta})}{\partial \theta_i} = 0 \; 得 \; \sum_{k=1}^n (x_{ki} - \theta_i) = 0，即\theta_i = \frac{1}{n} \sum_{k=1}^n x_{ki}" />
             <X.P>把每一个分量都叠加起来，就得到最终的参数估计：</X.P>
             <X.Formula text="\hat{\bm{\theta}} = \frac{1}{n} \sum_{k=1}^n \bm{X}_k" />
-            <X.P>
-                举一个带有具体数值的例子，假如观测到了四个样本：$[1,0,0]$、$[1,1,0]$、$[1,0,0]$、$[1,1,1]$，则估计参数
-                {'$\\hat{\\bm{\\theta}} = [1,0.5,0.25]$'}\n
-                其含义为，对于第一个维度，四个样本均为`1`，因此估计$x_1=1$的概率为`1`；对于第二个样本，四个样本中有两个为`1`，另外两个为`0`，则估计$x_2=1$的概率为`0.5`，以此类推。
-            </X.P>
 
-            <X.H1>正态分布下的最大似然估计</X.H1>
-            <X.H2>单变量正态分布</X.H2>
-            <X.Formula text="\hat{\mu} = \frac{1}{n} \sum x_k" />
-            <X.Formula text="\hat{\sigma} = \frac{1}{n} \sum (x_k - \hat{\mu})^2" />
-            <X.H2>多变量正态分布</X.H2>
-            <X.Formula text="\hat{\bm{\mu}} = \frac{1}{n} \sum \bm{X}_k" />
-            <X.Formula text="\hat{\bm{\Sigma}} = \frac{1}{n} \sum (\bm{X}_k - \hat{\bm{\mu}})(\bm{X}_k - \hat{\bm{\mu}})^T" />
-
-            <X.H1>贝叶斯估计</X.H1>
-            <X.P></X.P>
         </X.BlogWrapper>
     );
 }
