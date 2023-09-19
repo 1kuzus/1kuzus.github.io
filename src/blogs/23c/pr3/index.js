@@ -3,11 +3,7 @@ import X from '@/component/X';
 export default function Blog() {
     return (
         <X.BlogWrapper>
-            <X.Title>「模式识别」参数估计</X.Title>
-            <X.P>
-                上一篇提到的统计决策方法，类条件密度按已知处理。但实际问题中，往往只有已知样本，需要根据已知样本推测分布。
-            </X.P>
-
+            <X.Title>「模式识别」非参数估计</X.Title>
             <X.H1>最大似然估计</X.H1>
             <X.P>
                 假设样本的分布形式已知，现在想确定参数{'$\\bm{\\theta}$'}。如果已经观测到了一些样本，记这些样本为
@@ -89,23 +85,6 @@ export default function Blog() {
                     {`$\\int_{\\bm{\\Theta}} \\bm{\\theta} P(\\bm{\\theta}|\\bm{\\chi}) d\\bm{\\theta}$`}
                 </X.P>
             </X.Oli>
-            <X.H2>贝叶斯学习</X.H2>
-            <X.H2>正态分布下的贝叶斯估计</X.H2>
-            <X.P>
-                假设要估计的正态分布均值$\mu$未知，方差$\sigma^2$已知。假定$\mu$的先验分布也是正态分布，均值为$\mu_0$，方差为$\sigma_0^2$；
-            </X.P>
-            <X.P>假设观测到的$N$个样本的均值为$m$，这里直接给出结论：</X.P>
-            <X.Formula text="\hat{\mu} = \frac{N\sigma_0^2}{N\sigma_0^2+\sigma^2}m + \frac{\sigma^2}{N\sigma_0^2+\sigma^2}\mu_0" />
-            <X.P>可以看到贝叶斯估计结果由两部分构成，第一项是样本知识，第二项是先验知识。</X.P>
-            <X.Uli>
-                <X.P>样本数量为`0`时，估计值完全等于先验$\mu_0$；样本数量为`无穷`时，估计值趋于样本均值$m$；</X.P>
-            </X.Uli>
-            <X.Uli>
-                <X.P>若$\sigma_0^2=0$，则先验知识绝对可靠，样本不起作用；</X.P>
-            </X.Uli>
-            <X.Uli>
-                <X.P>若$\sigma_0 \gg \sigma$，则先验知识十分不确定，估计值近似等于样本均值。</X.P>
-            </X.Uli>
         </X.BlogWrapper>
     );
 }
