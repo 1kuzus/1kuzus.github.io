@@ -3,7 +3,7 @@ import X from '@/component/X';
 export default function Blog() {
     return (
         <X.BlogWrapper>
-            <X.Title>「模式识别」概率密度函数的估计</X.Title>
+            <X.Title>「模式识别」参数估计</X.Title>
             <X.P>
                 上一篇提到的统计决策方法，类条件密度按已知处理。但实际问题中，往往只有已知样本，需要根据已知样本推测分布。
             </X.P>
@@ -34,7 +34,26 @@ export default function Blog() {
             <X.Formula text="\frac{\partial l(\bm{\theta})}{\partial \theta_i} = 0 \; 得 \; \sum_{k=1}^n (x_{ki} - \theta_i) = 0，即\theta_i = \frac{1}{n} \sum_{k=1}^n x_{ki}" />
             <X.P>把每一个分量都叠加起来，就得到最终的参数估计：</X.P>
             <X.Formula text="\hat{\bm{\theta}} = \frac{1}{n} \sum_{k=1}^n \bm{X}_k" />
+            <X.P>
+                举一个带有具体数值的例子，假如观测到了四个样本：$[1,0,0]$、$[1,1,0]$、$[1,0,0]$、$[1,1,1]$，则估计参数
+                {'$\\hat{\\bm{\\theta}} = [1,0.5,0.25]$'}\n
+                其含义为，对于第一个维度，四个样本均为`1`，因此估计$x_1=1$的概率为`1`；对于第二个样本，四个样本中有两个为`1`，另外两个为`0`，则估计$x_2=1$的概率为`0.5`，以此类推。
+            </X.P>
+            <X.H2>正态分布下的最大似然估计</X.H2>
+            <X.H3>单变量正态分布</X.H3>
+            <X.Formula text="\hat{\mu} = \frac{1}{n} \sum x_k" />
+            <X.Formula text="\hat{\sigma} = \frac{1}{n} \sum (x_k - \hat{\mu})^2" />
+            <X.H3>多变量正态分布</X.H3>
+            <X.Formula text="\hat{\bm{\mu}} = \frac{1}{n} \sum \bm{X}_k" />
+            <X.Formula text="\hat{\bm{\Sigma}} = \frac{1}{n} \sum (\bm{X}_k - \hat{\bm{\mu}})(\bm{X}_k - \hat{\bm{\mu}})^T" />
 
+            <X.H1>贝叶斯估计</X.H1>
+            <X.P>
+                贝叶斯估计与最大似然估计一个根本的区别是，最大似然估计把未知参数当作固定的量，\n而贝叶斯估计把未知参数本身也看作随机变---
+                量。---
+                123456
+            </X.P>
+            
         </X.BlogWrapper>
     );
 }

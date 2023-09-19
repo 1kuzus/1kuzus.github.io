@@ -25,7 +25,7 @@ const categories = [
                 component: <Behwl />,
             },
             {
-                blogName: '「模式识别」概率密度函数的估计',
+                blogName: '「模式识别」参数估计',
                 path: '/bco21',
                 time: '2023-9-12',
                 component: <Bco21 />,

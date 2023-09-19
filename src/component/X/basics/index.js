@@ -32,6 +32,7 @@ export function P(props) {
     const {children = ''} = props;
     let htmlContent = Array.isArray(children) ? children.join('') : children;
 
+    htmlContent = htmlContent.replace(/--- /g, '');
     htmlContent = htmlContent.replace(/</g, '&#60;').replace(/>/g, '&#62;');
     htmlContent = htmlContent.replace(/\\\\/g, '&#92;');
     htmlContent = htmlContent.replace(/\\`/g, '&#96;');
