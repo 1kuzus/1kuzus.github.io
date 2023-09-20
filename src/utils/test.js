@@ -1,10 +1,7 @@
-const arr = [1, 2, 3];
+console.log(Array()); //[]
+console.log(Array(5)); //[<5 empty items>]
+console.log(Array(98, 99)); //[98, 99]
 
-arr.push(50);
-const res1 = arr.push(98, 99);
-console.log(res1, arr); //6 [1, 2, 3, 50, 98, 99]
-
-const res2 = arr.pop();
-console.log(res2, arr); //99 [1, 2, 3, 50, 98]
-
-console.log([].pop()); //undefined
+console.log(Array.of()); //[]
+console.log(Array.of(5)); //[5]
+console.log(Array.of(98, 99)); //[98, 99]
