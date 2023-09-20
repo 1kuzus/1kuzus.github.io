@@ -37,6 +37,7 @@
     padding: 2px 4px;
     font-size: 14px;
     font-family: Consolas, Menlo, 'Courier New', Courier, 'Ubuntu Mono', monospace;
+    white-space: nowrap;
     color: var(--inline-highlight-color-text);
     border-radius: 4px;
     background-color: var(--inline-highlight-color-bg);
@@ -88,11 +89,20 @@
     border-radius: 50%;
     background-color: var(--text-color-active);
 }
+.x-uli .x-uli-content-wrapper,
+.x-oli .x-oli-content-wrapper {
+    flex: 1;
+}
 .x-uli .x-uli-content-wrapper > *,
 .x-oli .x-oli-content-wrapper > * {
     margin-bottom: 0;
 }
-
+/* .x-highlightblock > :first-child {
+    margin-top: 0;
+}
+.x-highlightblock > :last-child {
+    margin-bottom: 0;
+} */
 .x-img-wrapper {
     margin: 18px 0;
 }
