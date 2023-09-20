@@ -265,6 +265,27 @@ export default function Blog() {
                 `}
             />
 
+            <X.H1>pop()和push()</X.H1>
+            <X.P>
+                `pop()`方法从数组中删除最后一个元素，并返回该元素的值。此方法会更改数组的长度。\n
+                `push()`方法将指定的元素添加到数组的末尾，并返回新的数组长度。
+            </X.P>
+            <X.CodeBlock
+                language="js"
+                code={`
+                const arr = [1, 2, 3];
+
+                arr.push(50);
+                const res1 = arr.push(98, 99);
+                console.log(res1, arr); //6 [1, 2, 3, 50, 98, 99]
+                
+                const res2 = arr.pop();
+                console.log(res2, arr); //99 [1, 2, 3, 50, 98]
+                
+                console.log([].pop()); //undefined                
+                `}
+            />
+
             <X.H1>Array.from()</X.H1>
             <X.P>
                 `Array.from()`静态方法从可迭代或类数组对象创建一个新的浅拷贝的数组实例。\n
