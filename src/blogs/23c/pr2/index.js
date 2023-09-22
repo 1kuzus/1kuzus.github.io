@@ -155,12 +155,21 @@ export default function Blog() {
             <X.H2>贝叶斯学习</X.H2>
             <X.P>现在我们逐一考虑每一个样本。没有样本的时候，先验分布为{`$P(\\bm{\\theta})$`}。</X.P>
             <X.P>观测到第一个样本{`$\\bm{X}_1$`}的时候，用其来修正先验分布，也就是：</X.P>
-            <X.Formula text="P(\bm{\theta}|\bm{X}_1) = \frac{P(\bm{X}_1|\bm{\theta}) P(\bm{\theta})}{\int_{\bm{\Theta}} P(\bm{X}_1|\bm{\theta}) P(\bm{\theta}) d\bm{\theta}}" />
+            <X.Formula text="P(\bm{\theta}|\bm{X}_1) = \frac{P(\bm{X}_1|\bm{\theta}) \cdot P(\bm{\theta})}{\int_{\bm{\Theta}} P(\bm{X}_1|\bm{\theta}) \cdot P(\bm{\theta}) d\bm{\theta}}" />
             <X.P>
-                现在继续观测到第二个样本{`$\\bm{X}_2$`}，此时根据贝叶斯学派用数据修正先验的思想，先验分布是上一轮得到的
+                现在继续观测到第二个样本{`$\\bm{X}_2$`}，此时根据贝叶斯学派*用数据修正先验*的思想，先验分布是上一轮得到的
                 {`$P(\\bm{\\theta}|\\bm{X}_1)$`}，修正后的后验分布为
             </X.P>
-            <X.Formula text="P(\bm{\theta}|\bm{X}_1) = \frac{P(\bm{X}_1|\bm{\theta}) P(\bm{\theta})}{\int_{\bm{\Theta}} P(\bm{X}_1|\bm{\theta}) P(\bm{\theta}) d\bm{\theta}}" />
+            <X.Formula text="P(\bm{\theta}|\bm{X}_1, \bm{X}_2) = \frac{P(\bm{X}_2|\bm{\theta}) \cdot P(\bm{\theta}|\bm{X}_1)}{\int_{\bm{\Theta}} P(\bm{X}_2|\bm{\theta}) \cdot P(\bm{\theta}|\bm{X}_1) d\bm{\theta}}" />
+            <X.P>以此递推：</X.P>
+            <X.Formula text="P(\bm{\theta}|\bm{X}_1, \bm{X}_2, \bm{X}_3) = \frac{P(\bm{X}_3|\bm{\theta}) \cdot P(\bm{\theta}|\bm{X}_1, \bm{X}_2)}{\int_{\bm{\Theta}} P(\bm{X}_3|\bm{\theta}) \cdot P(\bm{\theta}|\bm{X}_1, \bm{X}_2) d\bm{\theta}}" />
+            <X.Formula
+                text="
+                P(\bm{\theta}|\bm{X}_1, \bm{X}_2, \dots, \bm{X}_N) =
+                \frac{P(\bm{X}_N|\bm{\theta}) \cdot P(\bm{\theta}|\bm{X}_1, \bm{X}_2, \dots, \bm{X}_{N-1})}
+                {\int_{\bm{\Theta}} P(\bm{X}_N|\bm{\theta}) \cdot P(\bm{\theta}|\bm{X}_1, \bm{X}_2, \dots, \bm{X}_{N-1}) d\bm{\theta}}
+                "
+            />
             <X.H2>正态分布下的贝叶斯估计</X.H2>
             <X.P>
                 假设要估计的正态分布均值$\mu$未知，方差$\sigma^2$已知。假定$\mu$的先验分布也是正态分布，均值为$\mu_0$，方差为$\sigma_0^2$。
