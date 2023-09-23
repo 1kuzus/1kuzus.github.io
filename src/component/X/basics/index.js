@@ -29,7 +29,7 @@ export function P(props) {
         $content$   行内公式
         @text[url]@ 超链接
     */
-    const {children = ''} = props;
+    const {withMarginTop = false, noMarginBottom = false, children = ''} = props;
     let htmlContent = Array.isArray(children) ? children.join('') : children;
 
     htmlContent = htmlContent.replace(/--- /g, '');
@@ -50,7 +50,12 @@ export function P(props) {
         });
     });
 
-    return <p className="x-p" dangerouslySetInnerHTML={{__html: htmlContent}} />;
+    return (
+        <p
+            className={`x-p${withMarginTop ? ' with-margin-top' : ''}${noMarginBottom ? ' no-margin-bottom' : ''}`}
+            dangerouslySetInnerHTML={{__html: htmlContent}}
+        />
+    );
 }
 
 export function Br() {

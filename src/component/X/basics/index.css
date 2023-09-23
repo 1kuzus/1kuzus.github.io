@@ -32,6 +32,12 @@
     font-size: 16px;
     color: var(--text-color-main);
 }
+.x-p.with-margin-top {
+    margin-top: 24px;
+}
+.x-p.no-margin-bottom {
+    margin-bottom: 0px;
+}
 .x-p .katex {
     margin: 0 2px;
 }
@@ -72,7 +78,7 @@
 .x-oli {
     display: flex;
     line-height: 28px;
-    margin-bottom: 8px;
+    margin: 8px 0;
     color: var(--text-color-main);
 }
 .x-uli-marker,
@@ -98,7 +104,7 @@
 }
 .x-uli .x-uli-content-wrapper > :first-child,
 .x-oli .x-oli-content-wrapper > :first-child {
-    margin-bottom: 0;
+    margin-top: 0;
 }
 .x-uli .x-uli-content-wrapper > :last-child,
 .x-oli .x-oli-content-wrapper > :last-child {

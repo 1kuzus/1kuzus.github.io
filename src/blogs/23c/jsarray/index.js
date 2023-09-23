@@ -132,7 +132,9 @@ export default function Blog() {
             <X.H1>forEach()</X.H1>
             <X.P>`forEach()`方法对数组的每个元素执行一次给定的函数。</X.P>
             <X.CodeBlock language="js" code="arr.forEach(callbackFn)" />
-            <X.P>`callbackFn`为数组中每个元素执行的函数，并会丢弃它的返回值。该函数被调用时将传入以下参数：</X.P>
+            <X.P noMarginBottom>
+                `callbackFn`为数组中每个元素执行的函数，并会丢弃它的返回值。该函数被调用时将传入以下参数：
+            </X.P>
             <X.Uli>
                 <X.P>`value`：数组中正在处理的当前元素</X.P>
             </X.Uli>
@@ -230,7 +232,7 @@ export default function Blog() {
             <X.H1>map()</X.H1>
             <X.P>`map()`方法创建一个*新数组*，这个新数组由原数组中的每个元素都调用一次提供的函数后的返回值组成。</X.P>
             <X.CodeBlock language="js" code="arr.map(callbackFn)" />
-            <X.P>
+            <X.P noMarginBottom>
                 `callbackFn`为数组中每个元素执行的函数，它的返回值作为一个元素被添加为新数组中。该函数被调用时将传入以下参数：
             </X.P>
             <X.Uli>
@@ -363,7 +365,7 @@ export default function Blog() {
                 console.log(Array.from([1, 2, 3], (x) => x * x)); //[1, 4, 9]
                 `}
             />
-            <X.P>`Array.from()`可以通过以下方式来创建数组对象：</X.P>
+            <X.P noMarginBottom>`Array.from()`可以通过以下方式来创建数组对象：</X.P>
             <X.Uli>
                 <X.P>
                     可迭代对象（例如`@Map[https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Map]@`和`@Set[https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Set]@`对象）
