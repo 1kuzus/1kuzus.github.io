@@ -96,16 +96,14 @@
 .x-oli .x-oli-content-wrapper {
     flex: 1;
 }
-.x-uli .x-uli-content-wrapper > *,
-.x-oli .x-oli-content-wrapper > * {
+.x-uli .x-uli-content-wrapper > :first-child,
+.x-oli .x-oli-content-wrapper > :first-child {
     margin-bottom: 0;
 }
-/* .x-highlightblock > :first-child {
-    margin-top: 0;
-}
-.x-highlightblock > :last-child {
+.x-uli .x-uli-content-wrapper > :last-child,
+.x-oli .x-oli-content-wrapper > :last-child {
     margin-bottom: 0;
-} */
+}
 .x-img-wrapper {
     margin: 18px 0;
 }
