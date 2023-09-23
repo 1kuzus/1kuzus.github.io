@@ -8,6 +8,7 @@ export default function Blog() {
                 上一篇提到的统计决策方法，类条件密度按已知处理。但实际问题中，往往只有已知样本，需要根据已知样本推测分布。\n
                 本章讨论的是`参数估计`，也就是分布的表达式形式是已知的，只是希望确定其中参数的值。
             </X.P>
+
             <X.H1>最大似然估计</X.H1>
             <X.P>
                 假设样本的分布形式已知，现在想确定参数{'$\\bm{\\theta}$'}。如果已经观测到了一些样本，记这些样本为
@@ -53,6 +54,7 @@ export default function Blog() {
             <X.H3>多变量正态分布</X.H3>
             <X.Formula text="\hat{\bm{\mu}} = \frac{1}{n} \sum \bm{X}_k" />
             <X.Formula text="\hat{\bm{\Sigma}} = \frac{1}{n} \sum (\bm{X}_k - \hat{\bm{\mu}})(\bm{X}_k - \hat{\bm{\mu}})^T" />
+
             <X.H1>贝叶斯估计</X.H1>
             <X.P>
                 贝叶斯估计与最大似然估计一个根本的区别是，最大似然估计把未知参数当作固定的量，而贝叶斯估计把未知参数本身也看作随机变量。---
@@ -75,19 +77,19 @@ export default function Blog() {
                     {`$\\int_{\\bm{\\Theta}} \\bm{\\theta} P(\\bm{\\theta}|\\bm{\\chi}) d\\bm{\\theta}$`}。
                 </X.P>
             </X.HighlightBlock>
-            <X.P>在平方损失函数下，贝叶斯估计的步骤是：</X.P>
+            <X.P noMarginBottom>在平方损失函数下，贝叶斯估计的步骤是：</X.P>
             <X.Oli>
                 <X.P>猜测参数的先验分布{`$P(\\bm{\\theta})$`}</X.P>
             </X.Oli>
             <X.Oli>
-                <X.P>
+                <X.P noMarginBottom>
                     对于参数估计问题，样本的概率密度函数形式已知为{`$P(\\bm{X}|\\bm{\\theta})$`}
                     ，形式上求出样本集分布为：
                 </X.P>
                 <X.Formula text="P(\bm{\chi}|\bm{\theta}) = \prod_i P(\bm{X}_i|\bm{\theta})" />
             </X.Oli>
             <X.Oli>
-                <X.P>利用贝叶斯公式求{`$\\bm{\\theta}$`}的后验概率分布</X.P>
+                <X.P noMarginBottom>利用贝叶斯公式求{`$\\bm{\\theta}$`}的后验概率分布</X.P>
                 <X.Formula text="P(\bm{\theta}|\bm{\chi}) = \frac{P(\bm{\chi}|\bm{\theta}) P(\bm{\theta})}{\int_{\bm{\Theta}} P(\bm{\chi}|\bm{\theta}) P(\bm{\theta}) d\bm{\theta}}" />
             </X.Oli>
             <X.Oli>
@@ -122,7 +124,7 @@ export default function Blog() {
                     </X.P>
                 </X.Uli>
                 <X.Uli>
-                    <X.P>
+                    <X.P noMarginBottom>
                         概率论的两个学派中，`频率学派`认为应从客观掌握的数据来计算概率；而`贝叶斯学派`则认为概率是有先验和后验的，我们要计算的是后验概率，这个后验概率又是以先验概率为基础的。---
                         如果采用贝叶斯估计，会假设参数$\mu$存在先验分布（`步骤1`），这里假设$\mu$服从均匀分布：
                     </X.P>
@@ -157,7 +159,8 @@ export default function Blog() {
             <X.P>观测到第一个样本{`$\\bm{X}_1$`}的时候，用其来修正先验分布，也就是：</X.P>
             <X.Formula text="P(\bm{\theta}|\bm{X}_1) = \frac{P(\bm{X}_1|\bm{\theta}) \cdot P(\bm{\theta})}{\int_{\bm{\Theta}} P(\bm{X}_1|\bm{\theta}) \cdot P(\bm{\theta}) d\bm{\theta}}" />
             <X.P>
-                现在继续观测到第二个样本{`$\\bm{X}_2$`}，此时根据贝叶斯学派*用数据修正先验*的思想，先验分布是上一轮得到的
+                现在继续观测到第二个样本{`$\\bm{X}_2$`}
+                ，此时根据贝叶斯学派*用数据修正先验*的思想，先验分布是上一轮得到的
                 {`$P(\\bm{\\theta}|\\bm{X}_1)$`}，修正后的后验分布为
             </X.P>
             <X.Formula text="P(\bm{\theta}|\bm{X}_1, \bm{X}_2) = \frac{P(\bm{X}_2|\bm{\theta}) \cdot P(\bm{\theta}|\bm{X}_1)}{\int_{\bm{\Theta}} P(\bm{X}_2|\bm{\theta}) \cdot P(\bm{\theta}|\bm{X}_1) d\bm{\theta}}" />
@@ -176,7 +179,7 @@ export default function Blog() {
             </X.P>
             <X.P>假设观测到的$N$个样本的均值为$m$，这里直接给出结论：</X.P>
             <X.Formula text="\hat{\mu} = \frac{N\sigma_0^2}{N\sigma_0^2+\sigma^2}m + \frac{\sigma^2}{N\sigma_0^2+\sigma^2}\mu_0" />
-            <X.P>可以看到贝叶斯估计结果由两部分构成，第一项是样本知识，第二项是先验知识。</X.P>
+            <X.P noMarginBottom>可以看到贝叶斯估计结果由两部分构成，第一项是样本知识，第二项是先验知识。</X.P>
             <X.Uli>
                 <X.P>样本数量为`0`时，估计值完全等于先验$\mu_0$；样本数量为`无穷`时，估计值趋于样本均值$m$；</X.P>
             </X.Uli>
@@ -186,7 +189,7 @@ export default function Blog() {
             <X.Uli>
                 <X.P>若$\sigma_0 \gg \sigma$，则先验知识十分不确定，估计值近似等于样本均值。</X.P>
             </X.Uli>
-            <X.P>
+            <X.P withMarginTop>
                 贝叶斯估计的优势在于，可以结合样本信息和先验知识，并且根据`样本数量`和`先验知识的确定程度`调和两部分信息的相对贡献。
             </X.P>
         </X.BlogWrapper>

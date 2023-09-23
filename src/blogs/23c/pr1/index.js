@@ -46,19 +46,19 @@ export default function Blog() {
             </X.HighlightBlock>
             <X.H2>两分类情况下，最小错误率决策的四种等价规则</X.H2>
             <X.Oli>
-                <X.P>后验概率判决</X.P>
+                <X.P noMarginBottom>后验概率判决</X.P>
                 <X.Formula text="P(\omega_1|x) > P(\omega_2|x)" />
             </X.Oli>
             <X.Oli>
-                <X.P>后验概率判决，分母相同看分子</X.P>
+                <X.P noMarginBottom>后验概率判决，分母相同看分子</X.P>
                 <X.Formula text="P(x|\omega_1)P(\omega_1) > P(x|\omega_2)P(\omega_2)" />
             </X.Oli>
             <X.Oli>
-                <X.P>似然比$l$、似然比阈值$\lambda$</X.P>
+                <X.P noMarginBottom>似然比$l$、似然比阈值$\lambda$</X.P>
                 <X.Formula text="l(x) = \frac{P(x|\omega_1)}{P(x|\omega_2)}，\lambda = \frac{P(\omega_2)}{P(\omega_1)}，l(x)>\lambda选\omega_1" />
             </X.Oli>
             <X.Oli>
-                <X.P>对数似然比</X.P>
+                <X.P noMarginBottom>对数似然比</X.P>
                 <X.Formula text="h(x)=-\ln [l(x)] \; 与 \; \ln\frac{P(\omega_1)}{P(\omega_2)} \; 比较，h(x)小选\omega_1" />
             </X.Oli>
             <X.HighlightBlock>
@@ -70,7 +70,9 @@ export default function Blog() {
             <X.H1>最小风险贝叶斯决策</X.H1>
             <X.H2>条件风险</X.H2>
             <X.Formula text="R(\alpha_i|x) = \sum_j\lambda(\alpha_i,\omega_j)P(\omega_j|x)" />
-            <X.P>$\lambda(\alpha_i,\omega_j)$表示样本$x \in \omega_j$但被决策为$\omega_i$类的损失，$i=j$表示正确决策</X.P>
+            <X.P>
+                $\lambda(\alpha_i,\omega_j)$表示样本$x \in \omega_j$但被决策为$\omega_i$类的损失，$i=j$表示正确决策
+            </X.P>
             <X.H2>最小风险贝叶斯决策</X.H2>
             <X.P>研究的类别有`c`个，做了`k`个决策。</X.P>
             <X.HighlightBlock>
@@ -163,7 +165,8 @@ export default function Blog() {
                 "
             />
             <X.P>
-                注意这个类概率密度函数{`$P(\\bm{X}|\\omega_i)$`}的含义为，第$\omega_i$类的样本{`$\\bm{X}$`}的概率密度。\n使用后验概率的变形作为判别函数：
+                注意这个类概率密度函数{`$P(\\bm{X}|\\omega_i)$`}的含义为，第$\omega_i$类的样本{`$\\bm{X}$`}
+                的概率密度。\n使用后验概率的变形作为判别函数：
             </X.P>
             <X.Formula
                 text="g_i(\bm{X}) = \ln [P(\bm{X}|\omega_i)P(\omega_i)] =
@@ -175,7 +178,8 @@ export default function Blog() {
                 <X.Formula text="\bm{\Sigma_1} = \bm{\Sigma_2}=...=\bm{\Sigma_c} = \sigma^2\bm{I}" />
             </X.Oli>
             <X.P>
-                各类模式分布的协方差矩阵相等，样本统计独立且方差相同，协方差均为0。\n此时{`$g(\\bm{X})$`}的前两项与类别无关，后两项化简为：
+                各类模式分布的协方差矩阵相等，样本统计独立且方差相同，协方差均为0。\n此时{`$g(\\bm{X})$`}
+                的前两项与类别无关，后两项化简为：
             </X.P>
             <X.Formula text="g_i(\bm{X}) = -\frac{1}{2\sigma^2}\Vert\bm{X}-\bm{\mu_i}\Vert^2 +\ln P(\omega_i)" />
             <X.HighlightBlock>
@@ -194,7 +198,10 @@ export default function Blog() {
             <X.Formula text="g_i(\bm{X}) = g_j(\bm{X}) \; \Rightarrow \; \bm{W}^T(\bm{X}-\bm{X_0}) = 0" />
             <X.Formula text="其中\bm{W} = \bm{\mu_i} - \bm{\mu_j}，\bm{X_0} = \frac{1}{2}(\bm{\mu_i} + \bm{\mu_j}) - \sigma^2\frac{\bm{\mu_i}-\bm{\mu_j}}{\Vert \bm{\mu_i}-\bm{\mu_j} \Vert^2}\ln\frac{P(\omega_i)}{P(\omega_j)}" />
             <X.P>
-                这个方程确定了决策面是通过{`$\\bm{X}_0$`}并正交于向量{`$\\bm{W}$`}的一个超平面。如果是二维平面上的点的分类问题，决策线过{`$\\bm{X}_0$`}点并且垂直于样本中心的连线。当先验概率相等时，{`$\\bm{X}_0$`}的后项为`0`，此时决策线就是样本中心连线的中垂线。\n
+                这个方程确定了决策面是通过{`$\\bm{X}_0$`}并正交于向量{`$\\bm{W}$`}
+                的一个超平面。如果是二维平面上的点的分类问题，决策线过{`$\\bm{X}_0$`}
+                点并且垂直于样本中心的连线。当先验概率相等时，{`$\\bm{X}_0$`}
+                的后项为`0`，此时决策线就是样本中心连线的中垂线。\n
                 来看一个具体的例子！我们需要对平面上的点进行分类任务，第一堆样本点中心为`(2,3)`，第二堆样本点中心为`(4,4)`：
             </X.P>
             <X.Img src={require('./fig1.png')} width="500" />
