@@ -10,8 +10,8 @@ export default function Blog() {
             <X.HighlightBlock>
                 <X.Formula text="P(\omega_i|x) = \frac{P(x|\omega_i) \cdot P(\omega_i)}{P(x)}" />
                 <X.P>
-                    `P(ωi)`为`先验概率`，表示没有进行任何观测时的主观推测概率\n`P(x|ωi)`为`类条件密度`，已知\n
-                    `P(ωi|x)`为`后验概率`，希望得到其值，并用于决策
+                    $P(\omega_i)$为`先验概率`，表示没有进行任何观测时的主观推测概率\n$P(x|\omega_i)$为`类条件密度`，已知\n
+                    $P(\omega_i|x)$为`后验概率`，希望得到其值，并用于决策
                 </X.P>
             </X.HighlightBlock>
             <X.P>考虑如下例子，记A为`抓到方形`，B为`抓到实心图形`：</X.P>
