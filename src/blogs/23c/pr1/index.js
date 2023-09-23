@@ -46,19 +46,19 @@ export default function Blog() {
             </X.HighlightBlock>
             <X.H2>两分类情况下，最小错误率决策的四种等价规则</X.H2>
             <X.Oli>
-                <X.P>`后验概率判决`</X.P>
+                <X.P>后验概率判决</X.P>
                 <X.Formula text="P(\omega_1|x) > P(\omega_2|x)" />
             </X.Oli>
             <X.Oli>
-                <X.P>`后验概率判决，分母相同看分子`</X.P>
+                <X.P>后验概率判决，分母相同看分子</X.P>
                 <X.Formula text="P(x|\omega_1)P(\omega_1) > P(x|\omega_2)P(\omega_2)" />
             </X.Oli>
             <X.Oli>
-                <X.P>`似然比l、似然比阈值λ`</X.P>
+                <X.P>似然比$l$、似然比阈值$\lambda$</X.P>
                 <X.Formula text="l(x) = \frac{P(x|\omega_1)}{P(x|\omega_2)}，\lambda = \frac{P(\omega_2)}{P(\omega_1)}，l(x)>\lambda选\omega_1" />
             </X.Oli>
             <X.Oli>
-                <X.P>`对数似然比`</X.P>
+                <X.P>对数似然比</X.P>
                 <X.Formula text="h(x)=-\ln [l(x)] \; 与 \; \ln\frac{P(\omega_1)}{P(\omega_2)} \; 比较，h(x)小选\omega_1" />
             </X.Oli>
             <X.HighlightBlock>
@@ -69,8 +69,8 @@ export default function Blog() {
 
             <X.H1>最小风险贝叶斯决策</X.H1>
             <X.H2>条件风险</X.H2>
-            <X.Formula text="R(\alpha_i|x) = \sum_j\lambda(\alpha_i,\omega_j)P(\omega_j|x)，\lambda(\alpha_i,\omega_j)表示样本x \in \omega_j但被决策为\omega_i类的损失" />
-            <X.P>`i=j`表示正确决策</X.P>
+            <X.Formula text="R(\alpha_i|x) = \sum_j\lambda(\alpha_i,\omega_j)P(\omega_j|x)" />
+            <X.P>$\lambda(\alpha_i,\omega_j)$表示样本$x \in \omega_j$但被决策为$\omega_i$类的损失，$i=j$表示正确决策</X.P>
             <X.H2>最小风险贝叶斯决策</X.H2>
             <X.P>研究的类别有`c`个，做了`k`个决策。</X.P>
             <X.HighlightBlock>
