@@ -63,7 +63,7 @@ export default function Blog() {
             </X.Oli>
             <X.HighlightBlock>
                 <X.P>
-                    可以把每一类的后验概率`P(ωi|x)`或者`P(x|ωi)P(ωi)`看作该类的一个`判别函数g(x)`，决策的过程就是各类的判别函数比较大小
+                    可以把每一类的后验概率$P(\omega_i|x)$或者$P(x|\omega_i)P(\omega_i)$看作该类的一个`判别函数`$g(x)$，决策的过程就是各类的判别函数比较大小
                 </X.P>
             </X.HighlightBlock>
 
@@ -77,7 +77,7 @@ export default function Blog() {
                 <X.Formula text="若R(\alpha_i|x) = \min_{j=1,...,k} R(\alpha_j|x)，则采用决策\alpha_i，即x属于\omega_i类" />
             </X.HighlightBlock>
             <X.H2>两分类情况下的最小风险贝叶斯决策</X.H2>
-            <X.P>简记`λ(αi,ωj)`为`λij`</X.P>
+            <X.P>简记$\lambda(\alpha_i,\omega_j)$为{`$\\lambda_{ij}$`}：</X.P>
             <X.Formula text="R(\alpha_1|x) = \lambda_{11}P(\omega_1|x) + \lambda_{12}P(\omega_2|x)" />
             <X.Formula text="R(\alpha_2|x) = \lambda_{21}P(\omega_1|x) + \lambda_{22}P(\omega_2|x)" />
             <X.Formula text="若R(\alpha_1|x) < R(\alpha_2|x)则x属于\omega_1类" />
@@ -139,11 +139,11 @@ export default function Blog() {
                 <X.P>此式通用于高维正态分布。</X.P>
             </X.HighlightBlock>
             <X.P>
-                以上公式很长，从两个概念入手：`Σ`矩阵代表什么？`ρ`似乎没有在通式中体现，其含义是什么？\n
+                以上公式很长，从两个概念入手：$\Sigma$矩阵代表什么？$\rho$似乎没有在通式中体现，其含义是什么？\n
                 对于二维正态分布例子中的两个变量来说，他们的*协方差*定义为：
             </X.P>
             <X.Formula text="cov(x_1,x_2)=E[(x_1-\mu_1)(x_2-\mu_2)]=E(x_1x_2)-\mu_1\mu_2" />
-            <X.P>`Σ`矩阵的含义其实是两个变量的协方差矩阵，也就是：</X.P>
+            <X.P>$\Sigma$矩阵的含义其实是两个变量的协方差矩阵，也就是：</X.P>
             <X.Formula
                 text="\bm{\Sigma} =
                 \begin{bmatrix}
@@ -152,9 +152,9 @@ export default function Blog() {
                 \end{bmatrix}，其中cov(x_1,x_1)=\sigma_1^2
                 "
             />
-            <X.P>`ρ`的含义为两个变量的相关系数，以上述变量`x1`,`x2`为例，计算公式为：</X.P>
+            <X.P>$\rho$的含义为两个变量的相关系数，以上述变量`x1`,`x2`为例，计算公式为：</X.P>
             <X.Formula text="\rho = \frac{cov(x_1,x_2)}{\sigma_1\sigma_2} \; \Rightarrow \; cov(x_1,x_2)=\rho\sigma_1\sigma_2" />
-            <X.P>至此就可以理解`Σ`,`ρ`两个参数的含义了！</X.P>
+            <X.P>至此就可以理解$\Sigma$,$\rho$两个参数的含义了！</X.P>
             <X.H2>正态分布概率模型下的最小错误率贝叶斯决策</X.H2>
             <X.Formula
                 text="P(\bm{X}|\omega_i) = \frac{1}{(2\pi)^{\frac{d}{2}}|\bm{\Sigma_i}|^\frac{1}{2}} \exp \{
@@ -163,7 +163,7 @@ export default function Blog() {
                 "
             />
             <X.P>
-                注意这个类概率密度函数`P(X|ωi)`的含义为，第`ωi`类的样本`X`的概率密度。\n使用后验概率的变形作为判别函数：
+                注意这个类概率密度函数{`$P(\\bm{X}|\\omega_i)$`}的含义为，第$\omega_i$类的样本{`$\\bm{X}$`}的概率密度。\n使用后验概率的变形作为判别函数：
             </X.P>
             <X.Formula
                 text="g_i(\bm{X}) = \ln [P(\bm{X}|\omega_i)P(\omega_i)] =
@@ -175,7 +175,7 @@ export default function Blog() {
                 <X.Formula text="\bm{\Sigma_1} = \bm{\Sigma_2}=...=\bm{\Sigma_c} = \sigma^2\bm{I}" />
             </X.Oli>
             <X.P>
-                各类模式分布的协方差矩阵相等，样本统计独立且方差相同，协方差均为0。\n此时`g(X)`的前两项与类别无关，后两项化简为：
+                各类模式分布的协方差矩阵相等，样本统计独立且方差相同，协方差均为0。\n此时{`$g(\\bm{X})$`}的前两项与类别无关，后两项化简为：
             </X.P>
             <X.Formula text="g_i(\bm{X}) = -\frac{1}{2\sigma^2}\Vert\bm{X}-\bm{\mu_i}\Vert^2 +\ln P(\omega_i)" />
             <X.HighlightBlock>
@@ -188,18 +188,18 @@ export default function Blog() {
                     以上分类器也称`最小距离分类器`，把每个`均值`看作一个`典型的样本`，则这种分类方法也称为`模板匹配技术`。
                 </X.P>
             </X.HighlightBlock>
-            <X.P>如果对于上述判别函数`g(X)`的欧式距离项展开，并删掉与类别无关的二次项，得：</X.P>
+            <X.P>如果对于上述判别函数{`$g(\\bm{X})$`}的欧式距离项展开，并删掉与类别无关的二次项，得：</X.P>
             <X.Formula text="g_i(\bm{X}) = \bm{W_i}^T\bm{X} + b，其中\bm{W_i} = \frac{1}{\sigma^2}\bm{\mu_i}，b = -\frac{1}{2\sigma^2}\bm{\mu_i}^T\bm{\mu_i} + \ln P(\omega_i)" />
-            <X.P>判别函数是`X`的线性函数，称为`线性分类器`。\n接下来考虑决策面方程：</X.P>
+            <X.P>判别函数是{`$\\bm{X}$`}的线性函数，称为`线性分类器`。\n接下来考虑决策面方程：</X.P>
             <X.Formula text="g_i(\bm{X}) = g_j(\bm{X}) \; \Rightarrow \; \bm{W}^T(\bm{X}-\bm{X_0}) = 0" />
             <X.Formula text="其中\bm{W} = \bm{\mu_i} - \bm{\mu_j}，\bm{X_0} = \frac{1}{2}(\bm{\mu_i} + \bm{\mu_j}) - \sigma^2\frac{\bm{\mu_i}-\bm{\mu_j}}{\Vert \bm{\mu_i}-\bm{\mu_j} \Vert^2}\ln\frac{P(\omega_i)}{P(\omega_j)}" />
             <X.P>
-                这个方程确定了决策面是通过`X0`并正交于向量`W`的一个超平面。如果是二维平面上的点的分类问题，决策线过`X0`点并且垂直于样本中心的连线。当先验概率相等时，`X0`的后项为`0`，此时决策线就是样本中心连线的中垂线。\n
+                这个方程确定了决策面是通过{`$\\bm{X}_0$`}并正交于向量{`$\\bm{W}$`}的一个超平面。如果是二维平面上的点的分类问题，决策线过{`$\\bm{X}_0$`}点并且垂直于样本中心的连线。当先验概率相等时，{`$\\bm{X}_0$`}的后项为`0`，此时决策线就是样本中心连线的中垂线。\n
                 来看一个具体的例子！我们需要对平面上的点进行分类任务，第一堆样本点中心为`(2,3)`，第二堆样本点中心为`(4,4)`：
             </X.P>
             <X.Img src={require('./fig1.png')} width="500" />
             <X.P>
-                红色和蓝色分别标记了两类样本点的分布情况，其中加粗的红点和蓝点表示样本中心的位置；\n生成两组样本时使用的方差均为`0.8`；样本的`x`,`y`坐标相关性为`0`。\n
+                红色和蓝色分别标记了两类样本点的分布情况，其中加粗的红点和蓝点表示样本中心的位置；\n生成两组样本时使用的方差均为`0.8`；样本的$x,y$坐标相关性为`0`。\n
                 现在对平面上的所有点计算判别函数`g_red`和`g_blue`。`g_red`更大的区域用红色阴影表示，`g_blue`更大的区域用蓝色阴影表示。\n
                 两个区域的交界处即为自然生成的决策线。结果如下：
             </X.P>
@@ -228,7 +228,7 @@ export default function Blog() {
                     欧式距离并没有考虑样本的方差，以及样本各个维度之间的相关性。\n定义马氏距离：
                 </X.P>
                 <X.Formula text="r^2 = (\bm{X}-\bm{\mu})^T \bm{\Sigma}^{-1} (\bm{X}-\bm{\mu})" />
-                <X.P>如果样本是二维的，且协方差矩阵`Σ`为对角矩阵，马氏距离表示为：</X.P>
+                <X.P>如果样本是二维的，且协方差矩阵$\sigma$为对角矩阵，马氏距离表示为：</X.P>
                 <X.Formula
                     text="r^2 =
                     \begin{bmatrix}
