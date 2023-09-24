@@ -50,7 +50,7 @@ export default function Blog() {
             <X.H2>正态分布下的最大似然估计</X.H2>
             <X.H3>单变量正态分布</X.H3>
             <X.Formula text="\hat{\mu} = \frac{1}{n} \sum x_k" />
-            <X.Formula text="\hat{\sigma} = \frac{1}{n} \sum (x_k - \hat{\mu})^2" />
+            <X.Formula text="\hat{\sigma}^2 = \frac{1}{n} \sum (x_k - \hat{\mu})^2" />
             <X.H3>多变量正态分布</X.H3>
             <X.Formula text="\hat{\bm{\mu}} = \frac{1}{n} \sum \bm{X}_k" />
             <X.Formula text="\hat{\bm{\Sigma}} = \frac{1}{n} \sum (\bm{X}_k - \hat{\bm{\mu}})(\bm{X}_k - \hat{\bm{\mu}})^T" />
