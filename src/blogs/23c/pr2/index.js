@@ -155,7 +155,7 @@ export default function Blog() {
                 </X.Uli>
             </X.HighlightBlock>
             <X.H2>贝叶斯学习</X.H2>
-            <X.P>现在我们逐一考虑每一个样本。没有样本的时候，先验分布为{`$P(\\bm{\\theta})$`}。</X.P>
+            <X.P>现在我们逐一考虑每一个样本。没有样本的时候，要估计的参数先验分布为{`$P(\\bm{\\theta})$`}。</X.P>
             <X.P>观测到第一个样本{`$\\bm{X}_1$`}的时候，用其来修正先验分布，也就是：</X.P>
             <X.Formula text="P(\bm{\theta}|\bm{X}_1) = \frac{P(\bm{X}_1|\bm{\theta}) \cdot P(\bm{\theta})}{\int_{\bm{\Theta}} P(\bm{X}_1|\bm{\theta}) \cdot P(\bm{\theta}) d\bm{\theta}}" />
             <X.P>
@@ -173,6 +173,63 @@ export default function Blog() {
                 {\int_{\bm{\Theta}} P(\bm{X}_N|\bm{\theta}) \cdot P(\bm{\theta}|\bm{X}_1, \bm{X}_2, \dots, \bm{X}_{N-1}) d\bm{\theta}}
                 "
             />
+            <X.H3>贝叶斯学习程序实现</X.H3>
+            <X.P>假设我们有一个方差$s=3$的正态分布样本集，均值$m$待估计。</X.P>
+            <X.CodeBlock
+                language="python"
+                code={`
+                import matplotlib.pyplot as plt
+                import numpy
+                import math
+                
+                #生成样本集，样本集的真实均值为m=13
+                Xs=numpy.random.normal(13,3,100)
+                
+                #计算某个样本X出现的概率
+                def P(X,m,s=3):
+                    return numpy.exp(-(X-m)**2/(2*s*s))/(s*numpy.sqrt(2*math.pi))
+                
+                #假设mX的先验分布也是一个正态分布，初始的均值m0=4、方差s0=4
+                m0=4
+                s0=4
+                
+                #mX的分布区间，理论上应该是(-inf,inf)，但由于两侧足够趋近于0，这里取(-40,40)
+                m_lim=numpy.arange(-40,40,0.01)
+                
+                #无样本时m的先验分布
+                pm=P(m_lim,m0,s0)
+                
+                #数值积分
+                def numint(f):
+                    s=0
+                    step=m_lim[1]-m_lim[0]
+                    for i in range(len(m_lim)-1):
+                        s+=step*f[i]
+                    return s
+                
+                #逐个样本学习
+                for i,X in enumerate(Xs):
+                    if (i+1)%20==0 or i<5:
+                        plt.plot(m_lim,pm,label=f"epoch {i+1}")
+                
+                    #样本出现概率，在参数m分布区间上对应的值
+                    pX_m=P(X,m_lim)
+                
+                    #用pX_m(数据)修正pm(先验)，得到pm_X(后验)
+                    pm_X = pX_m*pm / numint(pX_m*pm)
+                
+                    #把第i轮得到的后验分布，视作第i+1轮迭代的先验分布
+                    pm=pm_X
+                
+                plt.legend()
+                plt.show()
+                `}
+            />
+            <X.P>观察迭代结果：</X.P>
+            <X.Img src={require('./fig1.png')} width="100%" />
+            <X.P>
+                如果随着样本数增加，后验概率序列逐渐尖锐，最终趋向于以参数真实值为中心的一个尖峰，则这一过程称为贝叶斯学习。
+            </X.P>
             <X.H2>正态分布下的贝叶斯估计</X.H2>
             <X.P>
                 假设要估计的正态分布均值$\mu$未知，方差$\sigma^2$已知。假定$\mu$的先验分布也是正态分布，均值为$\mu_0$，方差为$\sigma_0^2$。
