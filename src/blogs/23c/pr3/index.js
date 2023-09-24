@@ -76,13 +76,13 @@ export default function Blog() {
                 <X.Formula text="P(\bm{\chi}|\bm{\theta}) = \prod_i P(\bm{X}_i|\bm{\theta})" />
             </X.Oli>
             <X.Oli>
-                <X.P>利用贝叶斯公式求{`$\\bm{\\theta}$`}的后验概率分布</X.P>
                 <X.Formula text="P(\bm{\theta}|\bm{\chi}) = \frac{P(\bm{\chi}|\bm{\theta})P(\bm{\theta})}{\int_{\bm{\Theta}} P(\bm{\chi}|\bm{\theta}) P(\bm{\theta}) d\bm{\theta}}" />
+                <X.P>利用贝叶斯公式求{`$\\bm{\\theta}$`}的后验概率分布</X.P>
             </X.Oli>
             <X.Oli>
                 <X.P>
                     {'$\\bm{\\theta}$'}的贝叶斯估计量是
-                    {`$\\int_{\\bm{\\Theta}} \\bm{\\theta} P(\\bm{\\theta}|\\bm{\\chi}) d\\bm{\\theta}$`}
+                    {`$\\frac{5}{8} \\int_{\\bm{\\Theta}} \\bm{\\theta} P(\\bm{\\theta}|\\bm{\\chi}) d\\bm{\\theta} \\frac{5}{8}$`}
                 </X.P>
             </X.Oli>
         </X.BlogWrapper>
