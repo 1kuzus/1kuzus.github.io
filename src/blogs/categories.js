@@ -20,19 +20,19 @@ const categories = [
         categoryName: '课程',
         blogs: [
             {
-                blogName: '「模式识别」统计决策方法',
+                blogName: '模式识别 · 统计决策方法',
                 path: '/behwl',
                 time: '2023-8-31',
                 component: <Behwl />,
             },
             {
-                blogName: '「模式识别」参数估计',
+                blogName: '模式识别 · 参数估计',
                 path: '/bco21',
                 time: '2023-9-12',
                 component: <Bco21 />,
             },
             {
-                blogName: '「模式识别」非参数估计',
+                blogName: '模式识别 · 非参数估计',
                 path: '/bjjj5',
                 time: '2023-9-19',
                 component: <Bjjj5 />,
