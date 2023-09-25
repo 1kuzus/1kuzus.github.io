@@ -35,12 +35,25 @@ export default function Blog() {
             <X.CodeBlock
                 language="js"
                 code={`
-                const array1 = [1, 30, 39, 29, 10, 13];
-                const array2 = [1, 30, 39, 88];
+                const arr1 = [1, 30, 39, 29, 10, 13];
+                const arr2 = [1, 30, 39, 88];
                 const isBelow50 = (num) => num < 50;
 
-                console.log(array1.every(isBelow50)); //true
-                console.log(array2.every(isBelow50)); //false                
+                console.log(arr1.every(isBelow50)); //true
+                console.log(arr2.every(isBelow50)); //false
+                `}
+            />
+            <X.H1>some()</X.H1>
+            <X.P>`some()`方法测试数组中是否至少有一个元素能通过指定函数的测试，返回一个布尔值。</X.P>
+            <X.CodeBlock
+                language="js"
+                code={`
+                const arr1 = [1, 30, 39, 29, 10, 13];
+                const arr2 = [1, 30, 39, 88];
+                const isOver80 = (num) => num > 80;
+
+                console.log(arr1.some(isOver80)); //false
+                console.log(arr2.some(isOver80)); //true
                 `}
             />
             <X.H1>fill()</X.H1>
@@ -276,22 +289,39 @@ export default function Blog() {
             />
             <X.H1>reduce()</X.H1>
             <X.P>
-                `pop()`方法从数组中删除最后一个元素，并返回该元素的值。此方法会更改数组的长度。\n
-                `push()`方法将指定的元素添加到数组的末尾，并返回新的数组长度。
+                `reduce()`方法对数组中的每个元素按序执行一个提供的`reducer`函数，每一次运行`reducer`会将先前元素的计算结果作为参数传入，最后将其结果汇总为单个返回值。
+            </X.P>
+            <X.P>
+                第一次执行回调函数时，不存在“上一次的计算结果”。如果需要回调函数从数组索引为`0`的元素开始执行，则需要传递初始值。---
+                否则，数组索引为`0`的元素将被用作初始值，迭代器将从索引为`1`的元素开始执行。\n
+                下面是一个使用`reduce()`的例子，计算数组所有元素的总和：
             </X.P>
             <X.CodeBlock
                 language="js"
                 code={`
-                const arr = [1, 2, 3];
+                const arr = [1, 2, 3, 4];
+                const initialValue = 7;
+                const sum = arr.reduce((sum, currentValue) => sum + currentValue, initialValue);
+                console.log(sum); //17
+                `}
+            />
+            <X.H2>使用 .reduce() 替代 .filter().map()</X.H2>
+            <X.P>
+                使用`filter()`和`map()`会遍历数组两次，但是你可以使用`reduce()`只遍历一次并实现相同的效果。\n
+                下面这个例子中，希望筛选出数组中的正数并将其乘`2`：
+            </X.P>
+            <X.CodeBlock
+                language="js"
+                code={`
+                const numbers = [-5, 6, 2, -1];
 
-                arr.push(50);
-                const res1 = arr.push(98, 99);
-                console.log(res1, arr); //6 [1, 2, 3, 50, 98, 99]
-                
-                const res2 = arr.pop();
-                console.log(res2, arr); //99 [1, 2, 3, 50, 98]
-                
-                console.log([].pop()); //undefined
+                console.log(
+                    numbers.filter((n) => n > 0).map((n) => n * 2)
+                ); //[12, 4]
+
+                console.log(
+                    numbers.reduce((result, n) => (n > 0 ? [...result, n * 2] : result), [])
+                ); //[12, 4]
                 `}
             />
             <X.H1>reverse()</X.H1>
@@ -341,18 +371,64 @@ export default function Blog() {
                 console.log([].shift()); //undefined
                 `}
             />
+            <X.H1>slice()</X.H1>
+            <X.P>`slice()`方法返回一个新的数组对象，该对象为原数组的一段，包括`start`，不包括`end`。</X.P>
+            <X.CodeBlock
+                language="js"
+                code={`
+                arr.slice()
+                arr.slice(start)
+                arr.slice(start, end)
+                `}
+            />
+            <X.CodeBlock
+                language="js"
+                code={`
+                const arr = [0, 1, 2, 3, 4, 5];
 
-<X.H1>slice()</X.H1>
+                console.log(arr.slice()); //[0, 1, 2, 3, 4, 5]
+                console.log(arr.slice(2)); //[2, 3, 4, 5]
+                console.log(arr.slice(2, 4)); //[2, 3]
 
+                //支持负数索引
+                console.log(arr.slice(-2)); //[4, 5]
+                console.log(arr.slice(-6, 4)); //[[0, 1, 2, 3]
+                console.log(arr.slice(-5, -1)); //[1, 2, 3, 4]
 
+                //end超出范围会提取所有元素直到末尾
+                console.log(arr.slice(-5, 99)); //[1, 2, 3, 4, 5]
+                `}
+            />
+            <X.H1>sort()</X.H1>
+            <X.P>`sort()`方法*就地*对数组的元素进行排序，并返回对相同数组的引用。</X.P>
+            <X.CodeBlock
+                language="js"
+                code={`
+                sort()
+                sort(compareFn)
+                `}
+            />
+            <X.CodeBlock
+                language="js"
+                code={`
+                const arr1 = [2, 5, 14, 8, 1];
+                const arr2 = arr1.sort();
 
+                console.log(arr1); //[1, 14, 2, 5, 8]
+                arr2[0] = 99;
+                console.log(arr1); //[99, 14, 2, 5, 8]
+
+                arr1.sort((a, b) => a - b);
+                console.log(arr1); //[2, 5, 8, 14, 99]
+                `}
+            />
             <X.H1>Array.isArray()</X.H1>
             <X.P>`Array.isArray()`静态方法用于确定传递的值是否是一个`Array`。</X.P>
             <X.CodeBlock
                 language="js"
                 code={`
                 console.log(Array.isArray([1, 2, 3])); //true
-                console.log(Array.isArray('123')); //false                
+                console.log(Array.isArray('123')); //false
                 `}
             />
             <X.P>
@@ -394,8 +470,7 @@ export default function Blog() {
                 console.log(Array.of(98, 99)); //[98, 99]
                 `}
             />
-            Array.prototype.reduce() Array.prototype.reduceRight() Array.prototype.slice() Array.prototype.some()
-            Array.prototype.sort() Array.prototype.splice() Array.prototype.with()
+            Array.prototype.some() Array.prototype.sort() Array.prototype.splice() Array.prototype.with()
         </X.BlogWrapper>
     );
 }

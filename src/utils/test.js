@@ -1,7 +1,9 @@
-console.log(Array()); //[]
-console.log(Array(5)); //[<5 empty items>]
-console.log(Array(98, 99)); //[98, 99]
+const arr1 = [2, 5, 14, 8, 1];
+const arr2 = arr1.sort();
 
-console.log(Array.of()); //[]
-console.log(Array.of(5)); //[5]
-console.log(Array.of(98, 99)); //[98, 99]
+console.log(arr1); //[1, 14, 2, 5, 8]
+arr2[0] = 99;
+console.log(arr1); //[99, 14, 2, 5, 8]
+
+arr1.sort((a, b) => a - b);
+console.log(arr1); //[2, 5, 8, 14, 99]
