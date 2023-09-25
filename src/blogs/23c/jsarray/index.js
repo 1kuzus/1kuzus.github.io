@@ -408,6 +408,9 @@ export default function Blog() {
                 sort(compareFn)
                 `}
             />
+            <X.HighlightBlock bgcolor="red">
+                <X.P>如果省略`compareFn`，数组元素会被转换为字符串，然后根据每个字符的Unicode码位值进行排序。</X.P>
+            </X.HighlightBlock>
             <X.CodeBlock
                 language="js"
                 code={`
@@ -470,7 +473,7 @@ export default function Blog() {
                 console.log(Array.of(98, 99)); //[98, 99]
                 `}
             />
-            Array.prototype.some() Array.prototype.sort() Array.prototype.splice() Array.prototype.with()
+            Array.prototype.splice() Array.prototype.with()
         </X.BlogWrapper>
     );
 }
