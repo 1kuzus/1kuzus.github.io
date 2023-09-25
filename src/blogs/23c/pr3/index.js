@@ -69,7 +69,6 @@ export default function Blog() {
             <X.Formula text="\hat{P}(x) = \frac{1}{n} \sum_{i=1}^n K(x,x_i)" />
             <X.P>核函数只需要本身满足概率密度函数的要求即可：</X.P>
             <X.Formula text="K(x,x_i) > 0 \; 且 \; \int K(x,x_i) dx = 1" />
-            
         </X.BlogWrapper>
     );
 }
