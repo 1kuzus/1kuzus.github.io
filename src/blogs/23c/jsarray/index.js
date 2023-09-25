@@ -4,6 +4,7 @@ export default function Blog() {
     return (
         <X.BlogWrapper>
             <X.Title>JavaScript 数组常用方法</X.Title>
+
             <X.H1>at()</X.H1>
             <X.P>
                 `at()`方法接收一个整数值并返回该索引对应的元素，允许正数和负数。负整数从数组中的最后一个元素开始倒数。
@@ -17,6 +18,7 @@ export default function Blog() {
                 console.log(arr.at(-1)); //44
                 `}
             />
+
             <X.H1>concat()</X.H1>
             <X.P>`concat()`方法用于合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组。</X.P>
             <X.CodeBlock
@@ -30,6 +32,7 @@ export default function Blog() {
                 console.log(arr3); //[1, 2, 3, 99, 'a', 'b', 'c']
                 `}
             />
+
             <X.H1>every()</X.H1>
             <X.P>`every()`方法测试一个数组内的所有元素是否都能通过指定函数的测试，返回一个布尔值。</X.P>
             <X.CodeBlock
@@ -43,6 +46,7 @@ export default function Blog() {
                 console.log(arr2.every(isBelow50)); //false
                 `}
             />
+
             <X.H1>some()</X.H1>
             <X.P>`some()`方法测试数组中是否至少有一个元素能通过指定函数的测试，返回一个布尔值。</X.P>
             <X.CodeBlock
@@ -56,6 +60,7 @@ export default function Blog() {
                 console.log(arr2.some(isOver80)); //true
                 `}
             />
+
             <X.H1>fill()</X.H1>
             <X.P>
                 `fill()`方法用一个固定值填充数组中从起始索引（默认为`0`）到终止索引（默认为`array.length`）内的全部元素，返回修改后的数组。
@@ -88,6 +93,7 @@ export default function Blog() {
                 console.log(getArray(3, 'some value')); //['some value', 'some value', 'some value']
                 `}
             />
+
             <X.H1>filter()</X.H1>
             <X.P>
                 `filter()`方法用一个固定值填充数组中从起始索引（默认为`0`）到终止索引（默认为`array.length`）内的全部元素，返回修改后的数组。
@@ -99,6 +105,7 @@ export default function Blog() {
                 console.log(arr.filter((i) => i > 10)); //[13, 45, 66]
                 `}
             />
+
             <X.H1>find系列</X.H1>
             <X.Uli>
                 <X.P>`find()`方法返回数组中满足提供的测试函数的第一个元素的值。否则返回`undefined`。</X.P>
@@ -130,6 +137,7 @@ export default function Blog() {
                 console.log(arr.findLastIndex(cond)); //6
                 `}
             />
+
             <X.H1>flat()</X.H1>
             <X.P>`flat()`方法创建一个新的数组，并根据指定深度递归地将所有子数组元素拼接到新的数组中。</X.P>
             <X.CodeBlock
@@ -142,6 +150,7 @@ export default function Blog() {
                 console.log(arr.flat(Infinity)); //[1, 2, 'a', 'b', 88, 99, 'xx', 'yy', 3]
                 `}
             />
+
             <X.H1>forEach()</X.H1>
             <X.P>`forEach()`方法对数组的每个元素执行一次给定的函数。</X.P>
             <X.CodeBlock language="js" code="arr.forEach(callbackFn)" />
@@ -168,6 +177,7 @@ export default function Blog() {
                 // c 2 ['a', 'b', 'c']
                 `}
             />
+
             <X.H1>includes()</X.H1>
             <X.P>`includes()`方法用来判断一个数组是否包含一个指定的值。</X.P>
             <X.CodeBlock
@@ -191,6 +201,7 @@ export default function Blog() {
                 console.log(['1', '2', '3'].includes(3)); //false
                 `}
             />
+
             <X.H1>indexOf()</X.H1>
             <X.P>`indexOf()`方法返回数组中第一次出现给定元素的下标，如果不存在则返回`-1`。</X.P>
             <X.CodeBlock
@@ -229,6 +240,7 @@ export default function Blog() {
                 console.log(arr.lastIndexOf(9)); //-1
                 `}
             />
+
             <X.H1>join()</X.H1>
             <X.P>
                 `join()`方法将一个数组的所有元素连接成一个字符串并返回这个字符串，用逗号或指定的分隔符字符串分隔。如果数组只有一个元素，那么将返回该元素而不使用分隔符。
@@ -242,6 +254,7 @@ export default function Blog() {
                 console.log(elements.join('-')); //Fire-Air-Water
                 `}
             />
+
             <X.H1>map()</X.H1>
             <X.P>`map()`方法创建一个*新数组*，这个新数组由原数组中的每个元素都调用一次提供的函数后的返回值组成。</X.P>
             <X.CodeBlock language="js" code="arr.map(callbackFn)" />
@@ -267,6 +280,7 @@ export default function Blog() {
                 console.log(roots); //[1, 2, 3]
                 `}
             />
+
             <X.H1>pop()和push()</X.H1>
             <X.P>
                 `pop()`方法从数组中删除最后一个元素，并返回该元素的值。此方法会更改数组的长度。\n
@@ -287,6 +301,7 @@ export default function Blog() {
                 console.log([].pop()); //undefined
                 `}
             />
+
             <X.H1>reduce()</X.H1>
             <X.P>
                 `reduce()`方法对数组中的每个元素按序执行一个提供的`reducer`函数，每一次运行`reducer`会将先前元素的计算结果作为参数传入，最后将其结果汇总为单个返回值。
@@ -324,6 +339,7 @@ export default function Blog() {
                 ); //[12, 4]
                 `}
             />
+
             <X.H1>reverse()</X.H1>
             <X.P>`reverse()`方法反转数组中的元素，并返回同一数组的引用。\n改变返回的数组也会改变原始数组。</X.P>
             <X.CodeBlock
@@ -351,6 +367,7 @@ export default function Blog() {
                 console.log(res, arr); //[99, 2, 1] [1, 2, 3]
                 `}
             />
+
             <X.H1>shift()和unshift()</X.H1>
             <X.P>
                 `shift()`方法从数组中删除第一个元素，并返回该元素的值。此方法会更改数组的长度。\n
@@ -371,6 +388,7 @@ export default function Blog() {
                 console.log([].shift()); //undefined
                 `}
             />
+
             <X.H1>slice()</X.H1>
             <X.P>`slice()`方法返回一个新的数组对象，该对象为原数组的一段，包括`start`，不包括`end`。</X.P>
             <X.CodeBlock
@@ -399,13 +417,14 @@ export default function Blog() {
                 console.log(arr.slice(-5, 99)); //[1, 2, 3, 4, 5]
                 `}
             />
+
             <X.H1>sort()</X.H1>
             <X.P>`sort()`方法*就地*对数组的元素进行排序，并返回对相同数组的引用。</X.P>
             <X.CodeBlock
                 language="js"
                 code={`
-                sort()
-                sort(compareFn)
+                arr.sort()
+                arr.sort(compareFn)
                 `}
             />
             <X.HighlightBlock bgcolor="red">
@@ -425,6 +444,50 @@ export default function Blog() {
                 console.log(arr1); //[2, 5, 8, 14, 99]
                 `}
             />
+
+            <X.H1>splice()</X.H1>
+            <X.P>`splice()`方法通过移除或者替换已存在的元素和/或添加新元素*就地*改变一个数组的内容。</X.P>
+            <X.CodeBlock
+                language="js"
+                code={`
+                arr.splice(start)
+                arr.splice(start, deleteCount)
+                arr.splice(start, deleteCount, item1)
+                arr.splice(start, deleteCount, item1, item2, itemN)
+                `}
+            />
+            <X.P noMarginBottom>参数说明：</X.P>
+            <X.Uli>
+                <X.P>`start`：表示要开始改变数组的位置</X.P>
+            </X.Uli>
+            <X.Uli>
+                <X.P>`deleteCount`：数组中要从`start`开始删除的元素数量</X.P>
+            </X.Uli>
+            <X.Uli>
+                <X.P>`item1 ... itemN`：从`start`开始要加入到数组中的元素</X.P>
+            </X.Uli>
+            <X.P>
+                如果省略了`deleteCount`，或者其值大于或等于由`start`指定的位置到数组末尾的元素数量，那么从`start`到数组末尾的所有元素将被删除。
+            </X.P>
+            <X.CodeBlock
+                language="js"
+                code={`
+                const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+
+                arr.splice(6);
+                console.log(arr); //[0, 1, 2, 3, 4, 5]
+
+                arr.splice(2, 2);
+                console.log(arr); //[0, 1, 4, 5]
+
+                arr.splice(1, 2, 'a');
+                console.log(arr); //[0, 'a', 5]
+
+                arr.splice(0, 0, 'hello', 'world');
+                console.log(arr); //['hello', 'world', 0, 'a', 5]
+                `}
+            />
+
             <X.H1>Array.isArray()</X.H1>
             <X.P>`Array.isArray()`静态方法用于确定传递的值是否是一个`Array`。</X.P>
             <X.CodeBlock
@@ -437,6 +500,7 @@ export default function Blog() {
             <X.P>
                 更多示例：`@Array.isArray()[https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray]@`
             </X.P>
+
             <X.H1>Array.from()</X.H1>
             <X.P>
                 `Array.from()`静态方法从可迭代或类数组对象创建一个新的浅拷贝的数组实例。\n
@@ -458,6 +522,7 @@ export default function Blog() {
             <X.Uli>
                 <X.P>类数组对象（带有`length`属性和索引元素的对象）</X.P>
             </X.Uli>
+
             <X.H1>Array.of()</X.H1>
             <X.P>
                 `Array.of()`静态方法通过可变数量的参数创建一个新的`Array`实例。\n
@@ -473,7 +538,6 @@ export default function Blog() {
                 console.log(Array.of(98, 99)); //[98, 99]
                 `}
             />
-            Array.prototype.splice() Array.prototype.with()
         </X.BlogWrapper>
     );
 }
