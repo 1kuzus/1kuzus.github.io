@@ -341,6 +341,11 @@ export default function Blog() {
                 console.log([].shift()); //undefined
                 `}
             />
+
+<X.H1>slice()</X.H1>
+
+
+
             <X.H1>Array.isArray()</X.H1>
             <X.P>`Array.isArray()`静态方法用于确定传递的值是否是一个`Array`。</X.P>
             <X.CodeBlock
