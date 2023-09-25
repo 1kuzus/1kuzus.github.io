@@ -33,7 +33,7 @@ export default function Blog() {
             <X.HighlightBlock>
                 <X.P>
                     小舱的选择应该与样本总数相适应。如果样本总数是$n$，小舱体积是$V_n$，在$x$附近落入小舱的样本个数是$k_n$，那么估计的概率密度
-                    {`\\hat{P}(x)`}可以收敛于真实概率密度$P(x)$的条件是：
+                    {`$\\hat{P}(x)$`}可以收敛于真实概率密度$P(x)$的条件是：
                 </X.P>
                 <X.Formula text="\lim_{n \to \infty} V_n=0, \quad \lim_{n \to \infty} k_n=\infty, \quad \lim_{n \to \infty} \frac{k_n}{n}=0" />
                 <X.P>
@@ -41,7 +41,8 @@ export default function Blog() {
                 </X.P>
             </X.HighlightBlock>
 
-            <X.P>观测到样本{'$\\bm{\\chi}$'}的概率为：</X.P>
+            <X.H1>k近邻法</X.H1>
+            <X.P>`KNN`的全称是`K Nearest Neighbors`，意思是K个最近的邻居。</X.P>
             <X.Formula text="P(\bm{X}_1, \bm{X}_2, \dots, \bm{X}_n|\bm{\theta}) = \prod_{k=1}^n P(\bm{X}_i) = \prod_{k=1}^n \prod_{i=1}^d \theta_i^{x_{ki}}(1-\theta_i)^{1-x_{ki}}" />
             <X.P>式子中的{`$x_{ki}$`}代表第`k`个样本的第`i`个分量，其值为`0`或`1`。</X.P>
             <X.P>取对数似然函数：</X.P>
