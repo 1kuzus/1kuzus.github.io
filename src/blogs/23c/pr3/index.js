@@ -63,20 +63,13 @@ export default function Blog() {
 
             <X.H1>Parzen窗法</X.H1>
             <X.P>
-                贝叶斯估计与最大似然估计一个根本的区别是，最大似然估计把未知参数当作固定的量，而贝叶斯估计把未知参数本身也看作随机变量。---
-                假设未知参数是{`$\\bm{\\theta}$`}，其分布空间为{`$\\bm{\\Theta}$`}，定义损失函数
-                {`$\\lambda(\\bm{\\theta},\\hat{\\bm{\\theta}})$`}表示估计误差的损失。如果已经观测到了样本集
-                {`$\\bm{\\chi}$`}，那么我们的目标是：
+                在这种方法中，我们会定义一个核函数（也称窗函数）$K(x,x_i)$，其含义是，一个观测样本$x_i$对在$x$处概率密度估计的贡献。---
+                概率密度估计就是在每一点上把所有观测样本的贡献进行平均，即：
             </X.P>
-            <X.HighlightBlock>
-                <X.P>最小化期望风险：</X.P>
-                <X.Formula text="\int_{\bm{\Theta}} \lambda(\bm{\theta},\hat{\bm{\theta}}) P(\bm{\theta}|\bm{\chi}) d\bm{\theta}" />
-            </X.HighlightBlock>
-            <X.P>
-                通常情况下损失函数取
-                {`$\\lambda(\\bm{\\theta},\\hat{\\bm{\\theta}}) = (\\bm{\\theta}-\\hat{\\bm{\\theta}})^2$`}
-                ，此时有结论：
-            </X.P>
+            <X.Formula text="\hat{P}(x) = \frac{1}{n} \sum_{i=1}^n K(x,x_i)" />
+            <X.P>核函数只需要本身满足概率密度函数的要求即可：</X.P>
+            <X.Formula text="K(x,x_i) > 0 \; 且 \; \int K(x,x_i) dx = 1" />
+            
         </X.BlogWrapper>
     );
 }
