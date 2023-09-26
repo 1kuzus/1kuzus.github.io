@@ -9,4 +9,13 @@
     .x-blogwrapper {
         padding: 48px;
     }
+    .x-blogcontent {
+        display: none;
+    }
+}
+
+.x-blogcontent {
+    position: fixed;
+    top: 96px;
+    right: 200px;
 }

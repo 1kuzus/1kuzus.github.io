@@ -141,7 +141,7 @@ export default function Blog() {
                 <X.P>此式通用于高维正态分布。</X.P>
             </X.HighlightBlock>
             <X.P>
-                以上公式很长，从两个概念入手：$\Sigma$矩阵代表什么？$\rho$似乎没有在通式中体现，其含义是什么？\n
+                理解这个长公式，先从两个概念入手：$\Sigma$矩阵代表什么？$\rho$似乎没有在通式中体现，其含义是什么？\n
                 对于二维正态分布例子中的两个变量来说，他们的*协方差*定义为：
             </X.P>
             <X.Formula text="cov(x_1,x_2)=E[(x_1-\mu_1)(x_2-\mu_2)]=E(x_1x_2)-\mu_1\mu_2" />
@@ -151,7 +151,7 @@ export default function Blog() {
                 \begin{bmatrix}
                 cov(x_1,x_1) & cov(x_1,x_2) \\
                 cov(x_2,x_1) & cov(x_2,x_2)
-                \end{bmatrix}，其中cov(x_1,x_1)=\sigma_1^2
+                \end{bmatrix}，有cov(x_1,x_1)=\sigma_1^2
                 "
             />
             <X.P>$\rho$的含义为两个变量的相关系数，以上述变量`x1`,`x2`为例，计算公式为：</X.P>
