@@ -124,8 +124,8 @@ export default function Blog() {
             <X.Formula
                 text="
                 \begin{cases}
-                ax + by &= c \\
-                dx - ey &= f
+                ax + by = c \\
+                dx - ey = f
                 \end{cases}
                 "
             />
