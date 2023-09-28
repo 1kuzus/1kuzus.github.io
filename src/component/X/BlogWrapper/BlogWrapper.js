@@ -24,9 +24,11 @@ export default function BlogWrapper(props) {
             {children}
             <BlogContent
                 titles={children.reduce((titles, current) => {
-                    if (current.type === H1) return [...titles, [current.props.children]];
-                    else if (current.type === H2) return [...titles, current.props.children];
-                    else return titles;
+                    if (current.type === H1) return [...titles, {h1Name: current.props.children, h2Names: []}];
+                    else if (current.type === H2) {
+                        titles[titles.length - 1].h2Names.push(current.props.children);
+                        return titles;
+                    } else return titles;
                 }, [])}
             />
         </div>
