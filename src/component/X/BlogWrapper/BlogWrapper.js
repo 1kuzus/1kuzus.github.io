@@ -11,8 +11,20 @@ export function setOliIdx(idx) {
 
 function BlogContent(props) {
     const {titles} = props;
-    console.log(titles);
-    return <div className="x-blogcontent">{123}</div>;
+    return (
+        <div className="x-blogcontent">
+            {titles.map((h1Title) => (
+                <div>
+                    <div>{h1Title.hiName}</div>
+                    <div>
+                        {h1Title.h2Names.map((h2Title) => (
+                            <a>{h2Title}</a>
+                        ))}
+                    </div>
+                </div>
+            ))}
+        </div>
+    );
 }
 
 export default function BlogWrapper(props) {
