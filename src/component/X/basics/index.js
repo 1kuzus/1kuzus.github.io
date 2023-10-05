@@ -1,4 +1,5 @@
 import Katex from 'katex';
+import {SHA256Hash8} from '@/utils/SHA256Hash';
 import {addOliIdx, setOliIdx} from '../BlogWrapper/BlogWrapper';
 import './index.css';
 
@@ -9,12 +10,20 @@ export function Title(props) {
 
 export function H1(props) {
     const {children} = props;
-    return <h2 className="x-h1">{children}</h2>;
+    return (
+        <h2 id={SHA256Hash8(children)} className="x-h1">
+            {children}
+        </h2>
+    );
 }
 
 export function H2(props) {
     const {children} = props;
-    return <h3 className="x-h2">{children}</h3>;
+    return (
+        <h3 id={SHA256Hash8(children)} className="x-h2">
+            {children}
+        </h3>
+    );
 }
 
 export function H3(props) {

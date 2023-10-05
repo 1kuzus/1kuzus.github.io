@@ -2,6 +2,7 @@
     box-sizing: content-box;
     max-width: 1024px;
     min-width: 600px;
+    height: calc(100vh - 64px);
     padding: 48px 48px 48px 480px;
     color: var(--text-color-main);
 }
@@ -16,6 +17,11 @@
 
 .x-blogcontent {
     position: fixed;
-    top: 96px;
-    right: 200px;
+    top: 100px;
+    right: 48px;
+    padding: 24px;
+    border-radius: 12px;
+    background-color: #fff;
+
+    box-shadow: 0 0 6px 1px #0000000c;
 }

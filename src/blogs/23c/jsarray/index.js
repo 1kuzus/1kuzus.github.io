@@ -220,7 +220,7 @@ export default function Blog() {
                 console.log(arr.indexOf(9)); //-1
                 `}
             />
-            <X.H2>lastIndexOf</X.H2>
+            <X.H2>lastIndexOf()</X.H2>
             <X.P>
                 `lastIndexOf()`方法返回数组中给定元素最后一次出现的索引，如果不存在则返回`-1`。该方法从`fromIndex`开始向前搜索数组。
             </X.P>

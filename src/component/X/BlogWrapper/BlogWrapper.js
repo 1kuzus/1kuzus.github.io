@@ -1,5 +1,6 @@
-import './BlogWrapper.css';
+import {SHA256Hash8} from '@/utils/SHA256Hash';
 import {H1, H2} from '../basics';
+import './BlogWrapper.css';
 
 let oliIdx = 0;
 export function addOliIdx() {
@@ -15,10 +16,22 @@ function BlogContent(props) {
         <div className="x-blogcontent">
             {titles.map((h1Title) => (
                 <div>
-                    <div>{h1Title.hiName}</div>
+                    <div
+                        onClick={() => {
+                            document.getElementById(SHA256Hash8(h1Title.h1Name)).scrollIntoView({behavior: 'smooth'});
+                        }}
+                    >
+                        {h1Title.h1Name}
+                    </div>
                     <div>
-                        {h1Title.h2Names.map((h2Title) => (
-                            <a>{h2Title}</a>
+                        {h1Title.h2Names.map((h2TitleName) => (
+                            <div
+                                onClick={() => {
+                                    document.getElementById(SHA256Hash8(h2TitleName)).scrollIntoView();
+                                }}
+                            >
+                                {h2TitleName}
+                            </div>
                         ))}
                     </div>
                 </div>
