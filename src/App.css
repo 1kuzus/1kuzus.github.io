@@ -80,6 +80,6 @@ img {
     -webkit-user-drag: none;
 }
 
-.root {
+#root {
     padding-top: 64px;
 }
