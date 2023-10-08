@@ -39,8 +39,8 @@ export default function BlogWrapper(props) {
     const scrollHandler = () => {
         titles.map((title, index) => {
             console.log(document.getElementById(SHA256Hash8(title.text)).offsetTop);
-            console.log(document.getElementById(SHA256Hash8(title.text)).clientTop);
         });
+        console.log(document.documentElement.scrollTop);
         console.log('---');
     };
 
