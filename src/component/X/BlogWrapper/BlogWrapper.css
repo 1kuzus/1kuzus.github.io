@@ -2,7 +2,6 @@
     box-sizing: content-box;
     max-width: 1024px;
     min-width: 600px;
-    height: calc(100vh - 64px);
     padding: 48px 48px 48px 480px;
     color: var(--text-color-main);
 }

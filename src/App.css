@@ -60,13 +60,13 @@
     margin: 0;
     padding: 0;
 }
+
 div,
 li,
 a {
     -webkit-tap-highlight-color: transparent;
 }
 body {
-    padding-top: 64px;
     font-size: 16px;
     background-color: var(--bg-color-2);
 }
@@ -78,4 +78,8 @@ a {
 }
 img {
     -webkit-user-drag: none;
+}
+
+.root {
+    padding-top: 64px;
 }
