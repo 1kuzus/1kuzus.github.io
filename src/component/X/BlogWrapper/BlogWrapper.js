@@ -36,20 +36,21 @@ export default function BlogWrapper(props) {
         else if (current.type === H2) return [...titles, {type: 'x-h2', text: current.props.children}];
         else return titles;
     }, []);
-    const scrollHandler = () => {
-        titles.map((title, index) => {
-            console.log(document.getElementById(SHA256Hash8(title.text)).offsetTop);
-        });
-        console.log(document.documentElement.scrollTop);
-        console.log('---');
-    };
 
     oliIdx = 0;
 
     useEffect(() => {
+        const scrollHandler = () => {
+            //找到第一个自身offsetTop大于<html>根元素的scrollTop的title元素在titles数组中的位置。
+            //也就是目前还没有向上滚动出屏幕范围外的、第一个标题的索引
+            const idx = titles
+                .map((title) => document.getElementById(SHA256Hash8(title.text)).offsetTop)
+                .findIndex((offset) => offset > document.documentElement.scrollTop);
+            console.log(idx);
+        };
         window.addEventListener('scroll', scrollHandler);
         return () => window.removeEventListener('scroll', scrollHandler);
-    }, []);
+    }, [titles]);
 
     return (
         <div className="x-blogwrapper">
