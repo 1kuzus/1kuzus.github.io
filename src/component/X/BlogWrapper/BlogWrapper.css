@@ -20,20 +20,24 @@
     right: 48px;
     padding: 24px 0;
     border-radius: 12px;
-    /* color: var(--text-color-main); */
+    font-size: 14px;
     background-color: var(--bg-color-1);
     box-shadow: 0 0 6px 1px #0000000c;
 }
 
 .x-blogcontent-titletype-x-h2,
 .x-blogcontent-titletype-x-h1 {
-    padding: 2px 24px;
+    padding: 2px 36px 2px 32px;
+    cursor: pointer;
+    border-left: 4px solid transparent;
+    border-radius: 4px;
 }
 .x-blogcontent-titletype-x-h2 {
-    padding-left: calc(24px + 1em);
+    padding-left: calc(32px + 1em);
 }
 .x-blogcontent-titletype-x-h2.active,
 .x-blogcontent-titletype-x-h1.active {
     color: var(--text-color-active);
     background-color: var(--bg-transparent-gray);
+    border-left: 4px solid var(--text-color-active);
 }

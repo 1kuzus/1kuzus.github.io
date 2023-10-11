@@ -52,7 +52,7 @@ export default function BlogWrapper(props) {
             //64是header高度，16是希望距离header底边有16px距离时就判定为进入下一块内容
             const lastIdx = titles
                 .map((title) => document.getElementById(SHA256Hash8(title.text)).offsetTop)
-                .findLastIndex((offset) => offset - 64 - 16 + 1 < document.documentElement.scrollTop);
+                .findLastIndex((offset) => offset - 64 - 16 < document.documentElement.scrollTop);
             //lastIdx可能为-1，特殊处理
             setActiveIdx(Math.max(0, lastIdx));
         };
