@@ -21,8 +21,9 @@
     padding: 24px 0;
     border-radius: 12px;
     font-size: 14px;
-    background-color: var(--bg-color-1);
-    box-shadow: 0 0 6px 1px #0000000c;
+    border-left: 1px solid var(--bg-color-1);
+    /* background-color: var(--bg-color-1); */
+    /* box-shadow: 0 0 6px 1px #0000000c; */
 }
 
 .x-blogcontent-titletype-x-h2,
