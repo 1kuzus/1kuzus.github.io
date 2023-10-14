@@ -18,20 +18,30 @@
     position: fixed;
     top: 100px;
     right: 48px;
+    width: 320px;
     padding: 24px 0;
     border-radius: 12px;
     font-size: 14px;
     border-left: 1px solid var(--bg-color-1);
-    /* background-color: var(--bg-color-1); */
-    /* box-shadow: 0 0 6px 1px #0000000c; */
+    background-color: var(--bg-color-1);
+    box-shadow: 0 0 6px 1px #0000000c;
 }
 
+.x-blogcontent-titletype-x-h2 {
+    margin-top: 2px;
+}
+.x-blogcontent-titletype-x-h1 {
+    margin-top: 2px;
+}
 .x-blogcontent-titletype-x-h2,
 .x-blogcontent-titletype-x-h1 {
     padding: 2px 36px 2px 32px;
     cursor: pointer;
     border-left: 4px solid transparent;
     border-radius: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .x-blogcontent-titletype-x-h2 {
     padding-left: calc(32px + 1em);
