@@ -54,7 +54,7 @@ export default function BlogWrapper(props) {
                 .map((title) => document.getElementById(SHA256Hash8(title.type + title.text)).offsetTop)
                 .findLastIndex((offset) => {
                     console.log(offset - 64 - 16, document.documentElement.scrollTop);
-                    return offset - 64 - 16 <= document.documentElement.scrollTop;
+                    return offset - 64-32 <= document.documentElement.scrollTop;
                 });
             //lastIdx可能为-1，特殊处理
             setActiveIdx(Math.max(0, lastIdx));
