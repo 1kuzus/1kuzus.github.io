@@ -52,7 +52,7 @@
     color: var(--text-color-active);
     background-color: var(--bg-transparent-gray);
 
-    background: linear-gradient(90deg, var(--bg-transparent-gray) 50%, transparent);
+    background: linear-gradient(120deg, var(--bg-transparent-gray) 50%, transparent);
     border-left: 4px solid var(--text-color-active);
     opacity: 1;
 }
