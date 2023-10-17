@@ -105,12 +105,3 @@ export function Img(props) {
         </div>
     );
 }
-
-export function Table(props) {
-    const {children} = props;
-    return (
-        <table className="x-table" cellSpacing="0">
-            <tbody>{children}</tbody>
-        </table>
-    );
-}
