@@ -43,6 +43,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
     opacity: 0.9;
+    user-select: none;
+
 }
 .x-blogcontent-titletype-x-h2 {
     padding-left: calc(32px + 1em);

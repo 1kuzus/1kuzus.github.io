@@ -3,6 +3,7 @@ import Bj23k from './23c/jsarray';
 import Behwl from './23c/pr1';
 import Bco21 from './23c/pr2';
 import Bjjj5 from './23c/pr3';
+import Bykl9 from './23d/db3nf';
 
 const categories = [
     {
@@ -13,6 +14,17 @@ const categories = [
                 path: '/bj23k',
                 time: '2023-9-2',
                 component: <Bj23k />,
+            },
+        ],
+    },
+    {
+        categoryName: '赛博杂识',
+        blogs: [
+            {
+                blogName: '数据库设计三大范式',
+                path: '/bykl9',
+                time: '2023-10-17',
+                component: <Bykl9 />,
             },
         ],
     },

@@ -4,6 +4,7 @@ import CodeBlock from './CodeBlock/CodeBlock';
 import FlexRow from './FlexRow/FlexRow';
 import Formula from './Formula/Formula';
 import HighlightBlock from './HighlightBlock/HighlightBlock';
+import Table from './Table/Table';
 
 const X = {
     ...Basics,
@@ -12,6 +13,7 @@ const X = {
     FlexRow,
     Formula,
     HighlightBlock,
+    Table,
 };
 
 export default X;
