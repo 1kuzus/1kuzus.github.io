@@ -12,5 +12,13 @@
 			"<X.P>$1</X.P>",
 		],
 		"description": "X.P tag"
+	},
+	"X.FlexRow tag": {
+		"scope": "javascript,typescript",
+		"prefix": "xflex",
+		"body": [
+			"<X.FlexRow>$1</X.FlexRow>",
+		],
+		"description": "X.FlexRow tag"
 	}
 }
