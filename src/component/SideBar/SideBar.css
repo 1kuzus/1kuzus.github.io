@@ -8,7 +8,7 @@
     overflow-x: hidden;
     user-select: none;
 }
-@media screen and (max-width: 1128px) {
+@media screen and (max-width: 1164px) {
     #sidebar {
         display: none;
     }
