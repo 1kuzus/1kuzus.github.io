@@ -1,14 +1,14 @@
 .x-table {
+    margin-bottom: 24px;
     color: var(--text-color-main);
     border-collapse: collapse;
 }
-.x-table tr:nth-child(even) {
-    background-color: #80808020;
+.x-table th {
+    background-color: var(--bg-transparent-gray);
 }
-
 .x-table th,
 .x-table td {
-    padding: 12px 6px;
+    padding: 8px 12px;
     border: 1px solid #80808080;
     text-align: center;
 }
