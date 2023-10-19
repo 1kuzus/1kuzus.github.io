@@ -7,49 +7,21 @@ export default function Blog() {
 
             <X.H1>基础组件</X.H1>
             <X.H2>标题</X.H2>
-            <X.P>使用如下代码定义：</X.P>
-            <X.CodeBlock
-                language="jsx"
-                code={`
-                <X.H1>一级标题</X.H1>
-                <X.H2>二级标题</X.H2>
-                <X.H3>三级标题</X.H3>
-                `}
-            />
+            <X.P>此组件体系中标题分为三级，且只有一级和二级标题会展示在右侧目录中。</X.P>
             <X.HighlightBlock bgcolor="gray">
+                <X.H3>示例</X.H3>
+                <X.CodeBlock
+                    language="jsx"
+                    code={`
+                    <X.H1>一级标题</X.H1>
+                    <X.H2>二级标题</X.H2>
+                    <X.H3>三级标题</X.H3>
+                    `}
+                />
                 <X.H1>一级标题</X.H1>
                 <X.H2>二级标题</X.H2>
                 <X.H3>三级标题</X.H3>
             </X.HighlightBlock>
-            <X.Divider />
-
-            <X.H2>有序列表</X.H2>
-            <X.P>有序列表可以使用`{`<X.Oli>...</X.Oli>`}`来定义。</X.P>
-            <X.Oli>第一项</X.Oli>
-            <X.Oli>第二项</X.Oli>
-            <X.Oli>第三项</X.Oli>
-
-            <X.H2>无序列表</X.H2>
-            <X.P>无序列表可以使用`{`<X.Uli>...</X.Uli>`}`来定义。</X.P>
-            <X.Uli>第一项</X.Uli>
-            <X.Uli>
-                <X.P>列表项可以嵌套`段落组件`，但是*最好不要嵌套其他组件*。</X.P>
-            </X.Uli>
-            <X.Uli>第三项</X.Uli>
-            <X.Br />
-            <X.Oli>有序列表项会自动渲染列表序号</X.Oli>
-
-            <X.H2>重置有序列表</X.H2>
-            <X.Oli>对有序列表序号的渲染是线性扫描，如果不重置则会永远继续下去；</X.Oli>
-            <X.Oli reset>
-                <X.P>可以通过`{`<X.Oli\\ reset>...</X.Oli>`}`来重置列表序号；</X.P>
-            </X.Oli>
-            <X.Oli>
-                <X.P>
-                    这样的设计无法应对*嵌套*有序列表，但为了保持组件的简洁性，同时考虑到嵌套列表应用场景很少，牺牲了这一特性。
-                </X.P>
-            </X.Oli>
-
             <X.H2>段落</X.H2>
             <X.P>
                 夜晚的城市灯光璀璨夺目，高楼的霓虹灯在黑夜中闪烁不停，像是星空中的繁星在闪烁。\n
@@ -57,8 +29,29 @@ export default function Blog() {
                 购物中心里，五颜六色的商品琳琅满目，人们拿着购物袋匆匆穿梭，寻找着自己心仪的物品。时尚与潮流在这里汇聚，流行的节奏从不停歇。---
                 浓郁的咖啡香气弥漫开来，与人们的谈笑声交织成一幅城市特有的画面。街头艺人弹奏着吉他，歌声飘荡在空气中，与城市的脉搏合奏出一曲动人的旋律。
             </X.P>
-
-            <X.H2>段落中的特殊格式</X.H2>
+            <X.H3>灵活设置段落的上下外边距</X.H3>
+            <X.P>
+                段落组件默认的`margin-top`为`0`，`margin-bottom`为`24px`，但可以：\n
+                通过`withMarginTop`设置`margin-top`为`24px`；\n 通过`noMarginBottom`设置`margin-bottom`为`0`。\n
+                这样使得段落组件的使用更为灵活。
+            </X.P>
+            <X.HighlightBlock bgcolor="gray">
+                <X.H3>示例</X.H3>
+                <X.CodeBlock
+                    language="jsx"
+                    code={`
+                    <X.P>这是一个正常的段落。</X.P>
+                    <X.P noMarginBottom>这是一个没有下外边距的段落。</X.P>
+                    <X.P>这是一个正常的段落。</X.P>
+                    <X.P>这是一个正常的段落。</X.P>
+                    `}
+                />
+                <X.P>这是一个正常的段落。</X.P>
+                <X.P noMarginBottom>这是一个没有下外边距的段落。</X.P>
+                <X.P>这是一个正常的段落。</X.P>
+                <X.P>这是一个正常的段落。</X.P>
+            </X.HighlightBlock>
+            <X.H3>段落中的特殊格式</X.H3>
             <X.Oli reset>
                 <X.P>`\`content\``：实现`这样的`强调效果</X.P>
             </X.Oli>
@@ -83,73 +76,265 @@ export default function Blog() {
                     在段落组件中可以使用一些转义字符，打出上述代表了特殊格式的符号如`\``、`\*`等；\n也可以通过`\\n`换行。
                 </X.P>
             </X.Oli>
-            <X.Br />
-            <X.P>上述内容的源代码为：</X.P>
-            <X.CodeBlock
-                language="jsx"
-                code={`
-                <X.H2>段落中的特殊格式</X.H2>
-                <X.Oli reset>
-                    <X.P>\`\\\`content\\\`\`：实现\`这样的\`强调效果</X.P>
-                </X.Oli>
-                <X.Oli>
-                    <X.P>\`\\*content\\*\`：实现*这样的*加粗效果</X.P>
-                </X.Oli>
-                <X.Oli>
+            <X.HighlightBlock bgcolor="gray">
+                <X.H3>示例</X.H3>
+                <X.P>生成上述内容的源代码为：</X.P>
+                <X.CodeBlock
+                    language="jsx"
+                    code={`
+                    <X.H2>段落中的特殊格式</X.H2>
+                    <X.Oli reset>
+                        <X.P>\`\\\`content\\\`\`：实现\`这样的\`强调效果</X.P>
+                    </X.Oli>
+                    <X.Oli>
+                        <X.P>\`\\*content\\*\`：实现*这样的*加粗效果</X.P>
+                    </X.Oli>
+                    <X.Oli>
+                        <X.P>
+                            \`\\$content\\$\`：插入一个行内公式
+                            {\`$\\\\int_{a}^{b} f(x)dx = \\\\lim_{n \\\\to \\\\infty} \\\\sum_{i=1}^n f(x_i) \\\\cdot \\\\Delta x$\`}，
+                            或者一些简单的数学符号$\\mu_1$、$\\mu_2$等
+                        </X.P>
+                    </X.Oli>
+                    <X.Oli>
+                        <X.P>\`\\@text[url]\\@\`：这是一个指向@百度[https://www.baidu.com]@的超链接</X.P>
+                    </X.Oli>
+                    <X.Oli>
+                        <X.P>复合使用\`\\\`\\@text[url]\\@\\\`\`：这是一个指向\`@百度[https://www.baidu.com]@\`的超链接</X.P>
+                    </X.Oli>
+                    <X.Oli>
+                        <X.P>
+                            在段落组件中可以使用一些转义字符，打出上述代表了特殊格式的符号如\`\\\`\`、\`\\*\`等；\\n也可以通过\`\\\\n\`换行。
+                        </X.P>
+                    </X.Oli>
+                    `}
+                />
+            </X.HighlightBlock>
+            <X.H3>换行空格问题</X.H3>
+            <X.P>对于一个很长的段落，如果你希望在代码编辑器中换行，可能会遇到被自动补一个空格的问题，例如：</X.P>
+            <X.HighlightBlock bgcolor="gray">
+                <X.H3>坏示例</X.H3>
+                <X.CodeBlock
+                    language="jsx"
+                    code={`
                     <X.P>
-                        \`\\$content\\$\`：插入一个行内公式
-                        {\`$\\\\int_{a}^{b} f(x)dx = \\\\lim_{n \\\\to \\\\infty} \\\\sum_{i=1}^n f(x_i) \\\\cdot \\\\Delta x$\`}，
-                        或者一些简单的数学符号$\\mu_1$、$\\mu_2$等
+                        这是一句很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的话，注意*我的后面*
+                        是不是有一个空格？
                     </X.P>
-                </X.Oli>
-                <X.Oli>
-                    <X.P>\`\\@text[url]\\@\`：这是一个指向@百度[https://www.baidu.com]@的超链接</X.P>
-                </X.Oli>
-                <X.Oli>
-                    <X.P>复合使用\`\\\`\\@text[url]\\@\\\`\`：这是一个指向\`@百度[https://www.baidu.com]@\`的超链接</X.P>
-                </X.Oli>
-                <X.Oli>
+                    `}
+                />
+                <X.P>
+                    这是一句很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的话，注意*我的后面*
+                    是不是有一个空格？
+                </X.P>
+            </X.HighlightBlock>
+            <X.P>
+                为了避免这个html文档自动将换行转换成的空格，你需要在换行时在上一行的行末添加`---`，组件会自动处理掉这个换行产生的空格。\n
+                就像这样：
+            </X.P>
+            <X.HighlightBlock bgcolor="gray">
+                <X.H3>好示例</X.H3>
+                <X.CodeBlock
+                    language="jsx"
+                    code={`
                     <X.P>
-                        在段落组件中可以使用一些转义字符，打出上述代表了特殊格式的符号如\`\\\`\`、\`\\*\`等；\\n也可以通过\`\\\\n\`换行。
+                        这是一句很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的话，注意*我的后面*---
+                        是不是没有空格了？
                     </X.P>
-                </X.Oli>
-                `}
-            />
+                    `}
+                />
+                <X.P>
+                    这是一句很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的话，注意*我的后面*---
+                    是不是没有空格了？
+                </X.P>
+            </X.HighlightBlock>
+            <X.H2>换行和分割线</X.H2>
+            <X.P>换行组件效果等同于插入`24px`高的空间；分割线组件是`0.5px`高的灰色细线。</X.P>
+            <X.HighlightBlock bgcolor="gray">
+                <X.H3>示例</X.H3>
+                <X.CodeBlock
+                    language="jsx"
+                    code={`
+                    <X.Divider />
+                    <X.Br />
+                    <X.Br />
+                    <X.Br />
+                    <X.Divider />
+                    `}
+                />
+                <X.Divider />
+                <X.Br />
+                <X.Br />
+                <X.Br />
+                <X.Divider />
+            </X.HighlightBlock>
+            <X.H2>无序列表</X.H2>
+            <X.P>
+                无序列表的每一项可以是纯文本、段落组件、或者嵌套其他任何内容（但通常不是很推荐这样做）。\n
+                注意每一个列表项的`first-child`的`margin-top`和`last-child`的`margin-bottom`会被置为`0`。
+            </X.P>
+            <X.HighlightBlock bgcolor="gray">
+                <X.H3>示例</X.H3>
+                <X.CodeBlock
+                    language="jsx"
+                    code={`
+                    <X.Uli>第一项</X.Uli>
+                    <X.Uli>第二项</X.Uli>
+                    <X.Uli>
+                        <X.P>第三项\`嵌套了段落组件\`</X.P>
+                    </X.Uli>
+                    <X.Uli>
+                        <X.P>第四项嵌套了更多组件</X.P>
+                        <X.Uli>
+                            <X.H3>一个标题</X.H3>
+                        </X.Uli>
+                        <X.CodeBlock
+                            language="jsx"
+                            code={\`
+                            console.log('Hello, world!')
+                            \`}
+                        />
+                    </X.Uli>
+                    <X.Uli>
+                        <X.P>注意第四项的代码块的\`margin-bottom\`被移除了</X.P>
+                    </X.Uli>
+                    `}
+                />
+                <X.Uli>第一项</X.Uli>
+                <X.Uli>第二项</X.Uli>
+                <X.Uli>
+                    <X.P>第三项`嵌套了段落组件`</X.P>
+                </X.Uli>
+                <X.Uli>
+                    <X.P>第四项嵌套了更多组件</X.P>
+                    <X.Uli>
+                        <X.H3>一个标题</X.H3>
+                    </X.Uli>
+                    <X.CodeBlock
+                        language="jsx"
+                        code={`
+                        console.log('Hello, world!')
+                       `}
+                    />
+                </X.Uli>
+                <X.Uli>
+                    <X.P>注意第四项的代码块的`margin-bottom`被移除了</X.P>
+                </X.Uli>
+            </X.HighlightBlock>
+            <X.P>
+                与`html`的`ul``li`标签不同的是，无序列表直接在任意位置写列表项组件即可，而不需要一个父组件包裹。---
+                这也是此组件体系的设计理念之一：尽量使得行文*线性化*，减少组件嵌套。
+            </X.P>
+            <X.P>无序列表组件的上述特性同样适用于有序列表组件，因此下一节中不再重复。</X.P>
+            <X.H2>有序列表</X.H2>
+            <X.P>
+                有序列表项会自动渲染列表序号。然而正如前面提到的，列表项可以直接写在文档的任意位置，而渲染序号只是从头至尾机械地设置一个不断自增的变量。---
+                因此当文档中出现两处以上有序列表时，你需要通过`reset`重置序号的渲染。
+            </X.P>
+            <X.HighlightBlock bgcolor="gray">
+                <X.H3>示例</X.H3>
+                <X.CodeBlock
+                    language="jsx"
+                    code={`
+                    <X.P noMarginBottom>列表1：</X.P>
+                    <X.Oli reset>第一项（重置）</X.Oli>
+                    <X.Oli>第二项</X.Oli>
+                    <X.Oli>第三项</X.Oli>
+                    <X.Oli>第四项</X.Oli>
+                    <X.P noMarginBottom>列表2：</X.P>
+                    <X.Oli reset>第一项（重置）</X.Oli>
+                    <X.Oli>第二项</X.Oli>
+                    `}
+                />
+                <X.P noMarginBottom>列表1：</X.P>
+                <X.Oli reset>第一项（重置）</X.Oli>
+                <X.Oli>第二项</X.Oli>
+                <X.Oli>第三项</X.Oli>
+                <X.Oli>第四项</X.Oli>
+                <X.P noMarginBottom>列表2：</X.P>
+                <X.Oli reset>第一项（重置）</X.Oli>
+                <X.Oli>第二项</X.Oli>
+            </X.HighlightBlock>
+            <X.HighlightBlock>
+                <X.P>
+                    这样线性设计无法满足嵌套有序列表的需求，也就是有序列表的一项是另一个有序列表。但考虑到嵌套列表应用场景很少，为保持组件的简洁性牺牲了这一需求。
+                </X.P>
+            </X.HighlightBlock>
+
+            <X.H1>水平布局</X.H1>
+            <X.P>水平布局组件提供一个`flex-direction`为`row`的容器。</X.P>
 
             <X.H1>公式</X.H1>
-            <X.P>通过`Formula`组件定义一个公式：</X.P>
-            <X.CodeBlock language="jsx" code='<X.Formula text="P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}" />' />
-            <X.Formula text="P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}" />
-            <X.P>更多的例子如下：</X.P>
-            <X.Formula
-                text="
-                \begin{cases}
-                ax + by = c \\
-                dx - ey = f
-                \end{cases}
-                "
-            />
-            <X.Formula
-                text="
-                \begin{bmatrix}
-                a & b & c \\
-                d & e & f \\
-                g & h & i
-                \end{bmatrix}
-                \times
-                \begin{bmatrix}
-                x & y & z \\
-                w & v & u \\
-                t & s & r
-                \end{bmatrix}
-                =
-                \begin{bmatrix}
-                ax + bw + ct & ay + bv + cu & az + bz + cr \\
-                dx + ew + ft & dy + ev + fu & dz + fv + fu \\
-                gx + hw + it & gy + hv + iu & gz + hv + ir
-                \end{bmatrix}
-                "
-            />
+            <X.P>除了在段落组件中使用`\$content\$`插入行内公式，还可以直接使用公式组件。公式组件会独占一行。</X.P>
+            <X.HighlightBlock bgcolor="gray">
+                <X.H3>示例</X.H3>
+                <X.CodeBlock language="jsx" code='<X.Formula text="P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}" />' />
+                <X.Formula text="P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}" />
+                <X.P>还有一些更复杂的例子：</X.P>
+                <X.CodeBlock
+                    language="jsx"
+                    code={`
+                    <X.Formula
+                        text="
+                        \\begin{cases}
+                        ax + by = c \\\\
+                        dx - ey = f
+                        \\end{cases}
+                        "
+                    />
+                    <X.Formula
+                        text="
+                        \\begin{bmatrix}
+                        a & b & c \\\\
+                        d & e & f \\\\
+                        g & h & i
+                        \\end{bmatrix}
+                        \\times
+                        \\begin{bmatrix}
+                        x & y & z \\\\
+                        w & v & u \\\\
+                        t & s & r
+                        \\end{bmatrix}
+                        =
+                        \\begin{bmatrix}
+                        ax + bw + ct & ay + bv + cu & az + bz + cr \\\\
+                        dx + ew + ft & dy + ev + fu & dz + fv + fu \\\\
+                        gx + hw + it & gy + hv + iu & gz + hv + ir
+                        \\end{bmatrix}
+                        "
+                    />
+                    `}
+                />
+                <X.Formula
+                    text="
+                    \begin{cases}
+                    ax + by = c \\
+                    dx - ey = f
+                    \end{cases}
+                    "
+                />
+                <X.Formula
+                    text="
+                    \begin{bmatrix}
+                    a & b & c \\
+                    d & e & f \\
+                    g & h & i
+                    \end{bmatrix}
+                    \times
+                    \begin{bmatrix}
+                    x & y & z \\
+                    w & v & u \\
+                    t & s & r
+                    \end{bmatrix}
+                    =
+                    \begin{bmatrix}
+                    ax + bw + ct & ay + bv + cu & az + bz + cr \\
+                    dx + ew + ft & dy + ev + fu & dz + fv + fu \\
+                    gx + hw + it & gy + hv + iu & gz + hv + ir
+                    \end{bmatrix}
+                    "
+                />
+            </X.HighlightBlock>
 
             <X.H1>表格</X.H1>
             <X.Table>

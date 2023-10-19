@@ -41,7 +41,7 @@
 }
 .x-blogcontent-titletype-x-h2,
 .x-blogcontent-titletype-x-h1 {
-    padding: 4px 0 4px 32px;
+    padding: 4px 32px 4px 32px;
     cursor: pointer;
     border-left: 4px solid transparent;
     border-radius: 4px;

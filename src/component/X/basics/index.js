@@ -96,12 +96,3 @@ export function Oli(props) {
         </div>
     );
 }
-
-export function Img(props) {
-    const {...rest} = props;
-    return (
-        <div className="x-img-wrapper">
-            <img alt="img" {...rest}></img>
-        </div>
-    );
-}
