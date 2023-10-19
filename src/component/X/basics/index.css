@@ -5,7 +5,7 @@
 }
 .x-h1 {
     margin-top: 48px;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
     font-size: 30px;
     color: var(--text-color-main);
 }
@@ -15,8 +15,8 @@
     color: var(--text-color-active);
 }
 .x-h2 {
-    margin-top: 32px;
-    margin-bottom: 16px;
+    margin-top: 36px;
+    margin-bottom: 24px;
     font-size: 24px;
     color: var(--text-color-main);
 }
@@ -109,10 +109,4 @@
 .x-uli .x-uli-content-wrapper > :last-child,
 .x-oli .x-oli-content-wrapper > :last-child {
     margin-bottom: 0;
-}
-.x-img-wrapper {
-    margin: 18px 0;
-}
-.x-img-wrapper img {
-    display: block;
 }

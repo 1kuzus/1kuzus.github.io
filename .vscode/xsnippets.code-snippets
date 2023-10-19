@@ -5,6 +5,30 @@
 	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
 	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
 	// Placeholders with the same ids are connected.
+	"X.H1 tag": {
+		"scope": "javascript,typescript",
+		"prefix": "xh1",
+		"body": [
+			"<X.H1>$1</X.H1>",
+		],
+		"description": "X.H1 tag"
+	},
+	"X.H2 tag": {
+		"scope": "javascript,typescript",
+		"prefix": "xh2",
+		"body": [
+			"<X.H2>$1</X.H2>",
+		],
+		"description": "X.H2 tag"
+	},
+	"X.H3 tag": {
+		"scope": "javascript,typescript",
+		"prefix": "xh3",
+		"body": [
+			"<X.H3>$1</X.H3>",
+		],
+		"description": "X.H3 tag"
+	},
 	"X.P tag": {
 		"scope": "javascript,typescript",
 		"prefix": "xp",
