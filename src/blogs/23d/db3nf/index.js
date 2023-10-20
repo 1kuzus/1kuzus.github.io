@@ -19,7 +19,7 @@ export default function Blog() {
             </X.HighlightBlock>
             <X.P>下面是一个不符合第一范式的例子：</X.P>
             <X.Table
-                fasttext={`
+                fromText={`
                 人员编号|姓名|地址|职务
                 1001|李雨晨|江苏省南京市|财务部经理
                 1002|张文浩|辽宁省沈阳市|财务部员工
@@ -29,7 +29,7 @@ export default function Blog() {
             />
             <X.P>其中的`职务`应该再分为`部门`和`职务`两个字段，因为业务中可能会经常分别用到这两个属性！</X.P>
             <X.Table
-                fasttext={`
+                fromText={`
                 人员编号|姓名|地址|部门|职务
                 1001|李雨晨|江苏省南京市|财务部|经理
                 1002|张文浩|辽宁省沈阳市|财务部|员工
@@ -39,7 +39,7 @@ export default function Blog() {
             />
             <X.P>你可能在想`地址`字段是否应该拆分。甚至`姓名`也可以拆分成`姓`和`名`两个字段：</X.P>
             <X.Table
-                fasttext={`
+                fromText={`
                 人员编号|姓|名|省|市|部门|职务
                 1001|李|雨晨|江苏省|南京市|财务部|经理
                 1002|张|文浩|辽宁省|沈阳市|财务部|员工
@@ -60,7 +60,7 @@ export default function Blog() {
             </X.HighlightBlock>
             <X.P>下面是一个不符合第二范式的例子：</X.P>
             <X.Table
-                fasttext={`
+                fromText={`
                 学号(主键)|课程代码(主键)|学生姓名|成绩
                 202101|001|Alice|97
                 202102|001|Bob|86
@@ -74,7 +74,7 @@ export default function Blog() {
             </X.P>
             <X.FlexRow gap="32px">
                 <X.Table
-                    fasttext={`
+                    fromText={`
                     学号(主键)|学生姓名
                     202101|Alice
                     202102|Bob
@@ -82,7 +82,7 @@ export default function Blog() {
                     `}
                 />
                 <X.Table
-                    fasttext={`
+                    fromText={`
                     学号(主键)|课程代码(主键)|成绩
                     202101|001|97
                     202102|001|86
@@ -99,7 +99,7 @@ export default function Blog() {
             <X.P>即第三范式要求不存在*传递依赖*，非主键属性之间应该是独立无关的。</X.P>
             <X.P>下面是一个不符合第三范式的例子：</X.P>
             <X.Table
-                fasttext={`
+                fromText={`
                 id|姓名|城市|城市人口/万
                 1|张三|重庆市|3100
                 2|李四|武汉市|1418
@@ -112,7 +112,7 @@ export default function Blog() {
             </X.P>
             <X.FlexRow gap="32px">
                 <X.Table
-                    fasttext={`
+                    fromText={`
                     id|姓名|城市
                     1|张三|重庆市
                     2|李四|武汉市
@@ -120,7 +120,7 @@ export default function Blog() {
                     `}
                 />
                 <X.Table
-                    fasttext={`
+                    fromText={`
                     城市|城市人口/万
                     重庆市|3100
                     武汉市|1418
