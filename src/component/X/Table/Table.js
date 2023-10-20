@@ -1,10 +1,10 @@
 import './Table.css';
 
 export default function Table(props) {
-    const {fasttext, children} = props;
+    const {fromText, children} = props;
 
-    if (fasttext) {
-        const trs = fasttext.trim().split('\n');
+    if (fromText) {
+        const trs = fromText.trim().split('\n');
         return (
             <table className="x-table" cellSpacing="0">
                 <tbody>

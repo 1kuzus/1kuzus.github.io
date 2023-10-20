@@ -1,4 +1,9 @@
 import X from '@/component/X';
+import './index.css';
+
+function DemoBox() {
+    return <div className="b0000-demo-box" />;
+}
 
 export default function Blog() {
     return (
@@ -111,7 +116,7 @@ export default function Blog() {
                 />
             </X.HighlightBlock>
             <X.H3>换行空格问题</X.H3>
-            <X.P>对于一个很长的段落，如果你希望在代码编辑器中换行，可能会遇到被自动补一个空格的问题，例如：</X.P>
+            <X.P>对于一个很长的段落，如果希望在代码编辑器中换行，可能会遇到被自动补一个空格的问题，例如：</X.P>
             <X.HighlightBlock bgcolor="gray">
                 <X.H3>坏示例</X.H3>
                 <X.CodeBlock
@@ -129,7 +134,7 @@ export default function Blog() {
                 </X.P>
             </X.HighlightBlock>
             <X.P>
-                为了避免这个html文档自动将换行转换成的空格，你需要在换行时在上一行的行末添加`---`，组件会自动处理掉这个换行产生的空格。\n
+                为了避免这个html文档自动将换行转换成的空格，需要在换行时在上一行的行末添加`---`，组件会自动处理掉这个换行产生的空格。\n
                 就像这样：
             </X.P>
             <X.HighlightBlock bgcolor="gray">
@@ -229,7 +234,7 @@ export default function Blog() {
             <X.H2>有序列表</X.H2>
             <X.P>
                 有序列表项会自动渲染列表序号。然而正如前面提到的，列表项可以直接写在文档的任意位置，而渲染序号只是从头至尾机械地设置一个不断自增的变量。---
-                因此当文档中出现两处以上有序列表时，你需要通过`reset`重置序号的渲染。
+                因此当文档中出现两处以上有序列表时，需要通过`reset`重置序号的渲染。
             </X.P>
             <X.HighlightBlock bgcolor="gray">
                 <X.H3>示例</X.H3>
@@ -263,6 +268,205 @@ export default function Blog() {
 
             <X.H1>水平布局</X.H1>
             <X.P>水平布局组件提供一个`flex-direction`为`row`的容器。</X.P>
+            <X.H3>设置主轴上的对齐方式</X.H3>
+            <X.P>使用方法与`justify-content`CSS属性相同。</X.P>
+            <X.HighlightBlock bgcolor="gray">
+                <X.H3>示例</X.H3>
+                <X.CodeBlock
+                    language="jsx"
+                    code={`
+                    <X.FlexRow>
+                        <DemoBox />
+                        <DemoBox />
+                        <DemoBox />
+                    </X.FlexRow>
+
+                    <X.FlexRow justifyContent="center">
+                        <DemoBox />
+                        <DemoBox />
+                        <DemoBox />
+                    </X.FlexRow>
+
+                    <X.FlexRow justifyContent="space-around">
+                        <DemoBox />
+                        <DemoBox />
+                        <DemoBox />
+                    </X.FlexRow>
+                    `}
+                />
+                <X.FlexRow>
+                    <DemoBox />
+                    <DemoBox />
+                    <DemoBox />
+                </X.FlexRow>
+                <X.FlexRow justifyContent="center">
+                    <DemoBox />
+                    <DemoBox />
+                    <DemoBox />
+                </X.FlexRow>
+                <X.FlexRow justifyContent="space-around">
+                    <DemoBox />
+                    <DemoBox />
+                    <DemoBox />
+                </X.FlexRow>
+            </X.HighlightBlock>
+            <X.H3>设置水平布局组件的 width 与 gap</X.H3>
+            <X.P>缩放浏览器窗口宽度，可以体现出百分比宽度和固定像素宽度的区别。</X.P>
+            <X.HighlightBlock bgcolor="gray">
+                <X.H3>示例</X.H3>
+                <X.CodeBlock
+                    language="jsx"
+                    code={`
+                    <X.FlexRow width="75%" justifyContent="space-around">
+                        <DemoBox />
+                        <DemoBox />
+                        <DemoBox />
+                    </X.FlexRow>
+
+                    <X.FlexRow width="702px" justifyContent="space-around">
+                        <DemoBox />
+                        <DemoBox />
+                        <DemoBox />
+                    </X.FlexRow>
+
+                    <X.FlexRow gap={24}>
+                        <DemoBox />
+                        <DemoBox />
+                        <DemoBox />
+                    </X.FlexRow>
+                    `}
+                />
+                <X.FlexRow width="75%" justifyContent="space-around">
+                    <DemoBox />
+                    <DemoBox />
+                    <DemoBox />
+                </X.FlexRow>
+                <X.FlexRow width="702px" justifyContent="space-around">
+                    <DemoBox />
+                    <DemoBox />
+                    <DemoBox />
+                </X.FlexRow>
+                <X.FlexRow gap={24}>
+                    <DemoBox />
+                    <DemoBox />
+                    <DemoBox />
+                </X.FlexRow>
+            </X.HighlightBlock>
+            <X.H3>均匀平分空间</X.H3>
+            <X.P>
+                有些场景例如双栏正文、双栏列表可能希望几个宽度不确定的元素均分水平宽度。这时可以用`flex1`属性。\n
+                注意下面示例中，使用和不使用`flex1`属性的区别：
+            </X.P>
+            <X.HighlightBlock bgcolor="gray">
+                <X.H3>示例</X.H3>
+                <X.CodeBlock
+                    language="jsx"
+                    code={`
+                    <X.FlexRow gap={24}>
+                        <X.P>
+                            夜晚的城市灯光璀璨夺目，高楼的霓虹灯在黑夜中闪烁不停，像是星空中的繁星在闪烁。---
+                            摩天轮缓缓转动，将人们带入一个绚丽多彩的世界，让他们忘记日常的烦忧。---
+                            购物中心里，五颜六色的商品琳琅满目，人们拿着购物袋匆匆穿梭，寻找着自己心仪的物品。时尚与潮流在这里汇聚，流行的节奏从不停歇。
+                        </X.P>
+                        <X.P>
+                            浓郁的咖啡香气弥漫开来，与人们的谈笑声交织成一幅城市特有的画面。街头艺人弹奏着吉他，歌声飘荡在空气中，与城市的脉搏合奏出一曲动人的旋律。
+                        </X.P>
+                    </X.FlexRow>
+
+                    <X.FlexRow gap={24} flex1>
+                        <X.P>
+                            夜晚的城市灯光璀璨夺目，高楼的霓虹灯在黑夜中闪烁不停，像是星空中的繁星在闪烁。---
+                            摩天轮缓缓转动，将人们带入一个绚丽多彩的世界，让他们忘记日常的烦忧。---
+                            购物中心里，五颜六色的商品琳琅满目，人们拿着购物袋匆匆穿梭，寻找着自己心仪的物品。时尚与潮流在这里汇聚，流行的节奏从不停歇。
+                        </X.P>
+                        <X.P>
+                            浓郁的咖啡香气弥漫开来，与人们的谈笑声交织成一幅城市特有的画面。街头艺人弹奏着吉他，歌声飘荡在空气中，与城市的脉搏合奏出一曲动人的旋律。
+                        </X.P>
+                    </X.FlexRow>
+                    `}
+                />
+                <X.FlexRow gap={24}>
+                    <X.P>
+                        夜晚的城市灯光璀璨夺目，高楼的霓虹灯在黑夜中闪烁不停，像是星空中的繁星在闪烁。---
+                        摩天轮缓缓转动，将人们带入一个绚丽多彩的世界，让他们忘记日常的烦忧。---
+                        购物中心里，五颜六色的商品琳琅满目，人们拿着购物袋匆匆穿梭，寻找着自己心仪的物品。时尚与潮流在这里汇聚，流行的节奏从不停歇。
+                    </X.P>
+                    <X.P>
+                        浓郁的咖啡香气弥漫开来，与人们的谈笑声交织成一幅城市特有的画面。街头艺人弹奏着吉他，歌声飘荡在空气中，与城市的脉搏合奏出一曲动人的旋律。
+                    </X.P>
+                </X.FlexRow>
+                <X.FlexRow gap={24} flex1>
+                    <X.P>
+                        夜晚的城市灯光璀璨夺目，高楼的霓虹灯在黑夜中闪烁不停，像是星空中的繁星在闪烁。---
+                        摩天轮缓缓转动，将人们带入一个绚丽多彩的世界，让他们忘记日常的烦忧。---
+                        购物中心里，五颜六色的商品琳琅满目，人们拿着购物袋匆匆穿梭，寻找着自己心仪的物品。时尚与潮流在这里汇聚，流行的节奏从不停歇。
+                    </X.P>
+                    <X.P>
+                        浓郁的咖啡香气弥漫开来，与人们的谈笑声交织成一幅城市特有的画面。街头艺人弹奏着吉他，歌声飘荡在空气中，与城市的脉搏合奏出一曲动人的旋律。
+                    </X.P>
+                </X.FlexRow>
+            </X.HighlightBlock>
+            <X.HighlightBlock>
+                <X.P>使用水平布局排版列表时，需要额外用`div`包裹列表项。</X.P>
+            </X.HighlightBlock>
+
+            <X.HighlightBlock bgcolor="gray">
+                <X.H3>示例</X.H3>
+                <X.CodeBlock
+                    language="jsx"
+                    code={`
+                    <X.FlexRow>
+                        <div>
+                            <X.Uli>第一项</X.Uli>
+                            <X.Uli>第二项</X.Uli>
+                            <X.Uli>第三项</X.Uli>
+                        </div>
+                        <div>
+                            <X.Oli reset>第一项</X.Oli>
+                            <X.Oli>第二项</X.Oli>
+                            <X.Oli>第三项</X.Oli>
+                        </div>
+                    </X.FlexRow>
+
+                    <X.FlexRow flex1>
+                        <div>
+                            <X.Uli>第一项</X.Uli>
+                            <X.Uli>第二项</X.Uli>
+                            <X.Uli>第三项</X.Uli>
+                        </div>
+                        <div>
+                            <X.Oli reset>第一项</X.Oli>
+                            <X.Oli>第二项</X.Oli>
+                            <X.Oli>第三项</X.Oli>
+                        </div>
+                    </X.FlexRow>
+                    `}
+                />
+                <X.FlexRow>
+                    <div>
+                        <X.Uli>第一项</X.Uli>
+                        <X.Uli>第二项</X.Uli>
+                        <X.Uli>第三项</X.Uli>
+                    </div>
+                    <div>
+                        <X.Oli reset>第一项</X.Oli>
+                        <X.Oli>第二项</X.Oli>
+                        <X.Oli>第三项</X.Oli>
+                    </div>
+                </X.FlexRow>
+                <X.FlexRow flex1>
+                    <div>
+                        <X.Uli>第一项</X.Uli>
+                        <X.Uli>第二项</X.Uli>
+                        <X.Uli>第三项</X.Uli>
+                    </div>
+                    <div>
+                        <X.Oli reset>第一项</X.Oli>
+                        <X.Oli>第二项</X.Oli>
+                        <X.Oli>第三项</X.Oli>
+                    </div>
+                </X.FlexRow>
+            </X.HighlightBlock>
 
             <X.H1>公式</X.H1>
             <X.P>除了在段落组件中使用`\$content\$`插入行内公式，还可以直接使用公式组件。公式组件会独占一行。</X.P>
@@ -270,7 +474,10 @@ export default function Blog() {
                 <X.H3>示例</X.H3>
                 <X.CodeBlock language="jsx" code='<X.Formula text="P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}" />' />
                 <X.Formula text="P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}" />
-                <X.P>还有一些更复杂的例子：</X.P>
+            </X.HighlightBlock>
+            <X.P>一些更复杂的例子：</X.P>
+            <X.HighlightBlock bgcolor="gray">
+                <X.H3>示例</X.H3>
                 <X.CodeBlock
                     language="jsx"
                     code={`
@@ -336,7 +543,61 @@ export default function Blog() {
                 />
             </X.HighlightBlock>
 
+            <X.H1>高亮块</X.H1>
+            <X.P>
+                高亮块组件只提供一个有背景色的容器，因此其内部可以嵌套其他组件。\n
+                高亮块会自动移除第一个子元素的`margin-top`和最后一个子元素的`margin-bottom`。\n
+                `bgcolor`的默认值是`golden`，可选值有`red`和`gray`。
+            </X.P>
+            <X.HighlightBlock bgcolor="gray">
+                <X.H3>示例</X.H3>
+                <X.CodeBlock
+                    language="jsx"
+                    code={`
+                    <X.HighlightBlock bgcolor="gray">
+                        <X.P>高亮块组件可以嵌套，事实上，每一个*示例*区域都是一个高亮块组件。</X.P>
+                    </X.HighlightBlock>
+
+                    <X.HighlightBlock>
+                        <X.P>高亮块中可以使用其他组件。</X.P>
+                        <X.Formula text="\\int_{a}^{b} f(x)dx = \\lim_{n \\to \\infty} \\sum_{i=1}^n f(x_i) \\cdot \\Delta x" />
+                    </X.HighlightBlock>
+
+                    <X.HighlightBlock bgcolor="red">
+                        <X.P>
+                            我们怀着极大的关切提醒您，当前我们所在地区可能会面临极端天气情况的威胁。---
+                            气象部门预测，未来几天可能会出现强风、暴雨、甚至可能的洪水等极端气象事件。
+                        </X.P>
+                    </X.HighlightBlock>
+                    `}
+                />
+                <X.HighlightBlock bgcolor="gray">
+                    <X.P>高亮块组件可以嵌套，事实上，每一个*示例*区域都是一个高亮块组件。</X.P>
+                </X.HighlightBlock>
+                <X.HighlightBlock>
+                    <X.P>高亮块中可以使用其他组件。</X.P>
+                    <X.Formula text="\int_{a}^{b} f(x)dx = \lim_{n \to \infty} \sum_{i=1}^n f(x_i) \cdot \Delta x" />
+                </X.HighlightBlock>
+                <X.HighlightBlock bgcolor="red">
+                    <X.P>
+                        我们怀着极大的关切提醒您，当前我们所在地区可能会面临极端天气情况的威胁。---
+                        气象部门预测，未来几天可能会出现强风、暴雨、甚至可能的洪水等极端气象事件。
+                    </X.P>
+                </X.HighlightBlock>
+            </X.HighlightBlock>
+
+
+
+
+
+
+
+
+
+            <X.H1>图片</X.H1>
+
             <X.H1>表格</X.H1>
+            <X.P>表格支持两种方式</X.P>
             <X.Table>
                 <tr>
                     <th>姓名</th>
@@ -369,39 +630,23 @@ export default function Blog() {
                 </tr>
             </X.Table>
 
-            <X.H1>高亮块</X.H1>
-            <X.P>使用如下代码定义：</X.P>
-            <X.CodeBlock
-                language="jsx"
-                code={`
-                <X.HighlightBlock bgcolor="red">
-                    <X.P>
-                        ...
-                    </X.P>
-                </X.HighlightBlock>
-                `}
-            />
-            <X.P>
-                `HighlightBlock`组件只提供一个有背景色的容器，因此其内部可以嵌套其他组件。\n
-                高亮块会自动移除第一个子元素的`margin-top`和最后一个子元素的`margin-bottom`。\n
-                `bgcolor`的默认值是`golden`。
-            </X.P>
-            <X.HighlightBlock>
-                <X.P>高亮块中可以使用公式组件。</X.P>
-                <X.Formula text="\int_{a}^{b} f(x)dx = \lim_{n \to \infty} \sum_{i=1}^n f(x_i) \cdot \Delta x" />
-            </X.HighlightBlock>
-            <X.HighlightBlock bgcolor="red">
-                <X.P>
-                    我们怀着极大的关切提醒您，当前我们所在地区可能会面临极端天气情况的威胁。气象部门预测，未来几天可能会出现强风、暴雨、甚至可能的洪水等极端气象事件。
-                </X.P>
-            </X.HighlightBlock>
+
+
+
+
 
             <X.H1>代码块</X.H1>
-            <X.P>通过`CodeBlock`组件定义一个代码块：</X.P>
-            <X.CodeBlock
-                language="jsx"
-                code={`<X.CodeBlock language="python" code='with open("./tool.js","r") as f:' />`}
-            />
+            <X.HighlightBlock bgcolor="gray">
+                <X.H3>示例</X.H3>
+                <X.CodeBlock
+                    language="jsx"
+                    code={`
+                    <X.CodeBlock language="python" code='with open("./tool.js","r") as f:' />
+                    `}
+                />
+                <X.CodeBlock language="python" code='with open("./tool.js","r") as f:' />
+            </X.HighlightBlock>
+            <X.P>下面是一些常见语言的高亮效果：</X.P>
             <X.H2>单行代码</X.H2>
             <X.CodeBlock language="python" code='with open("./tool.js","r") as f:' />
             <X.CodeBlock language="cpp" code="bool operator <(const NODE &other)const" />

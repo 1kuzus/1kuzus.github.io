@@ -44,5 +44,21 @@
 			"<X.FlexRow>$1</X.FlexRow>",
 		],
 		"description": "X.FlexRow tag"
+	},
+	"X.HighlightBlock tag": {
+		"scope": "javascript,typescript",
+		"prefix": "xh",
+		"body": [
+			"<X.HighlightBlock>$1</X.HighlightBlock>",
+		],
+		"description": "X.HighlightBlock tag"
+	},
+	"X.HighlightBlock tag with bgcolor": {
+		"scope": "javascript,typescript",
+		"prefix": "xhbg",
+		"body": [
+			"<X.HighlightBlock bgcolor=\"$1\"></X.HighlightBlock>",
+		],
+		"description": "X.HighlightBlock tag with bgcolor"
 	}
 }
