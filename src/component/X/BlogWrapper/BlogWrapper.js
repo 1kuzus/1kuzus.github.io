@@ -37,11 +37,13 @@ function BlogContent(props) {
 export default function BlogWrapper(props) {
     const {children} = props;
     const [activeIdx, setActiveIdx] = useState(0);
-    const titles = children.reduce((titles, current) => {
-        if (current.type === H1) return [...titles, {type: 'x-h1', text: current.props.children}];
-        else if (current.type === H2) return [...titles, {type: 'x-h2', text: current.props.children}];
-        else return titles;
-    }, []);
+    const titles = Array.isArray(children)
+        ? children.reduce((titles, current) => {
+              if (current.type === H1) return [...titles, {type: 'x-h1', text: current.props.children}];
+              else if (current.type === H2) return [...titles, {type: 'x-h2', text: current.props.children}];
+              else return titles;
+          }, [])
+        : null;
 
     oliIdx = 0;
 
@@ -63,7 +65,7 @@ export default function BlogWrapper(props) {
     return (
         <div className="x-blogwrapper">
             {children}
-            <BlogContent titles={titles} activeIdx={activeIdx} />
+            {titles && <BlogContent titles={titles} activeIdx={activeIdx} />}
         </div>
     );
 }

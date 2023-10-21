@@ -42,8 +42,8 @@
     transition: height 200ms, opacity 200ms;
 }
 .sidebarlist-li {
-    display: block;
     box-sizing: content-box;
+    display: block;
     height: 24px;
     line-height: 24px;
     margin-bottom: 2px;

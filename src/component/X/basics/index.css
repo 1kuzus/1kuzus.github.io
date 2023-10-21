@@ -84,8 +84,8 @@
 .x-uli-marker,
 .x-oli-number {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     width: 32px;
     height: 28px;
 }

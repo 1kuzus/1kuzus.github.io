@@ -1,8 +1,8 @@
 .x-table {
+    height: fit-content;
     margin-bottom: 24px;
     color: var(--text-color-main);
     border-collapse: collapse;
-    height: fit-content;
 }
 .x-table th {
     background-color: var(--bg-transparent-gray);
@@ -10,8 +10,8 @@
 .x-table th,
 .x-table td {
     padding: 8px 12px;
-    border: 1px solid #80808080;
     text-align: center;
+    border: 1px solid #80808080;
 }
 .x-table th > *,
 .x-table td > * {

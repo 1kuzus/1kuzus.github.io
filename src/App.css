@@ -54,7 +54,6 @@
 *::-webkit-scrollbar-thumb:hover {
     background-color: var(--hover-scrollbar-thumb-color);
 }
-
 * {
     box-sizing: border-box;
     margin: 0;
