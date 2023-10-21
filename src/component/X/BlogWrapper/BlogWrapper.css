@@ -26,29 +26,23 @@
     right: 36px;
     width: 300px;
     padding: 24px 0;
-    border-radius: 12px;
     font-size: 14px;
     border-left: 1px solid var(--bg-color-1);
-    background: var(--bg-color-1);
+    border-radius: 12px;
+    background-color: var(--bg-color-1);
     box-shadow: 0 0 6px 1px #0000000c;
 }
-
+.x-blogcontent-titletype-x-h1,
 .x-blogcontent-titletype-x-h2 {
     margin-top: 2px;
-}
-.x-blogcontent-titletype-x-h1 {
-    margin-top: 2px;
-}
-.x-blogcontent-titletype-x-h2,
-.x-blogcontent-titletype-x-h1 {
     padding: 4px 32px 4px 32px;
-    cursor: pointer;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
     border-left: 4px solid transparent;
     border-radius: 4px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     opacity: 0.9;
+    cursor: pointer;
     user-select: none;
 }
 .x-blogcontent-titletype-x-h2 {
@@ -57,9 +51,7 @@
 .x-blogcontent-titletype-x-h2.active,
 .x-blogcontent-titletype-x-h1.active {
     color: var(--text-color-active);
-    background-color: var(--bg-transparent-gray);
-
-    background: linear-gradient(120deg, var(--bg-transparent-gray) 50%, transparent);
     border-left: 4px solid var(--text-color-active);
+    background: linear-gradient(120deg, var(--bg-transparent-gray) 50%, transparent);
     opacity: 1;
 }

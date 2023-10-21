@@ -14,7 +14,7 @@ export default function Blog() {
             </X.P>
 
             <X.H1>第一范式 - 1NF</X.H1>
-            <X.HighlightBlock bgcolor="gray">
+            <X.HighlightBlock>
                 <X.P>数据库表的每一列都是不可再分的。</X.P>
             </X.HighlightBlock>
             <X.P>下面是一个不符合第一范式的例子：</X.P>
@@ -53,7 +53,7 @@ export default function Blog() {
             </X.P>
 
             <X.H1>第二范式 - 2NF</X.H1>
-            <X.HighlightBlock bgcolor="gray">
+            <X.HighlightBlock>
                 <X.P>
                     符合第一范式，且非主键字段必须完全依赖于主键字段，不能只依赖主键的一部分。（主要针对联合主键而言）
                 </X.P>
@@ -93,7 +93,7 @@ export default function Blog() {
             </X.FlexRow>
 
             <X.H1>第三范式 - 3NF</X.H1>
-            <X.HighlightBlock bgcolor="gray">
+            <X.HighlightBlock>
                 <X.P>符合第二范式，且非主键列都和主键直接相关，而不能间接相关（依赖于其他非主键字段）。</X.P>
             </X.HighlightBlock>
             <X.P>即第三范式要求不存在*传递依赖*，非主键属性之间应该是独立无关的。</X.P>

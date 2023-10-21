@@ -28,12 +28,15 @@ export default function Blog() {
                 <X.H3>三级标题</X.H3>
             </X.HighlightBlock>
             <X.H2>段落</X.H2>
-            <X.P>
-                夜晚的城市灯光璀璨夺目，高楼的霓虹灯在黑夜中闪烁不停，像是星空中的繁星在闪烁。\n
-                摩天轮缓缓转动，将人们带入一个绚丽多彩的世界，让他们忘记日常的烦忧。---
-                购物中心里，五颜六色的商品琳琅满目，人们拿着购物袋匆匆穿梭，寻找着自己心仪的物品。时尚与潮流在这里汇聚，流行的节奏从不停歇。---
-                浓郁的咖啡香气弥漫开来，与人们的谈笑声交织成一幅城市特有的画面。街头艺人弹奏着吉他，歌声飘荡在空气中，与城市的脉搏合奏出一曲动人的旋律。
-            </X.P>
+            <X.P>最基本的用于展示文本的组件。</X.P>
+            <X.HighlightBlock bgcolor="gray">
+                <X.H3>示例</X.H3>
+                <X.CodeBlock
+                    language="jsx"
+                    code="<X.P>夜晚的城市灯光璀璨夺目，高楼的霓虹灯在黑夜中闪烁不停，像是星空中的繁星在闪烁。</X.P>"
+                />
+                <X.P>夜晚的城市灯光璀璨夺目，高楼的霓虹灯在黑夜中闪烁不停，像是星空中的繁星在闪烁。</X.P>
+            </X.HighlightBlock>
             <X.H3>灵活设置段落的上下外边距</X.H3>
             <X.P>
                 段落组件默认的`margin-top`为`0`，`margin-bottom`为`24px`，但可以：\n
@@ -227,7 +230,7 @@ export default function Blog() {
                 </X.Uli>
             </X.HighlightBlock>
             <X.P>
-                与`html`的`ul``li`标签不同的是，无序列表直接在任意位置写列表项组件即可，而不需要一个父组件包裹。---
+                与html的`ul``li`标签不同的是，无序列表直接在任意位置写列表项组件即可，而不需要一个父组件包裹。---
                 这也是此组件体系的设计理念之一：尽量使得行文*线性化*，减少组件嵌套。
             </X.P>
             <X.P>无序列表组件的上述特性同样适用于有序列表组件，因此下一节中不再重复。</X.P>
@@ -586,96 +589,200 @@ export default function Blog() {
                 </X.HighlightBlock>
             </X.HighlightBlock>
 
-
-
-
-
-
-
-
-
             <X.H1>图片</X.H1>
+            <X.HighlightBlock>正在开发中~</X.HighlightBlock>
 
             <X.H1>表格</X.H1>
-            <X.P>表格支持两种方式</X.P>
-            <X.Table>
-                <tr>
-                    <th>姓名</th>
-                    <th>年龄</th>
-                    <th>uid</th>
-                </tr>
-                <tr>
-                    <td>Alice</td>
-                    <td>
-                        <X.P>`18`</X.P>
-                    </td>
-                    <td>4p6a4eumxmki</td>
-                </tr>
-                <tr>
-                    <td rowSpan={2}>Bob</td>
-                    <td>19</td>
-                    <td>kob5wkh1gpff</td>
-                </tr>
-                <tr>
-                    <td rowSpan={2}>23</td>
-                    <td>jxchv2sx3s5a</td>
-                </tr>
-                <tr>
-                    <td>Jack</td>
-                    <td rowSpan={2}>nx3vb156864f</td>
-                </tr>
-                <tr>
-                    <td>Jack</td>
-                    <td>nx3vb156864f</td>
-                </tr>
-            </X.Table>
-
-
-
-
-
-
-            <X.H1>代码块</X.H1>
+            <X.P>对于仅展示文本，无特殊格式需求的简单表格，可以通过`fromText`来快速定义表格。单元格之间用`|`分割。</X.P>
             <X.HighlightBlock bgcolor="gray">
                 <X.H3>示例</X.H3>
                 <X.CodeBlock
                     language="jsx"
                     code={`
-                    <X.CodeBlock language="python" code='with open("./tool.js","r") as f:' />
+                    <X.Table
+                        fromText={\`
+                        学号|学生姓名|成绩
+                        202101|Alice|97
+                        202102|Bob|86
+                        202103|Candy|80
+                        \`}
+                    />
                     `}
+                />
+                <X.Table
+                    fromText={`
+                        学号|学生姓名|成绩
+                        202101|Alice|97
+                        202102|Bob|86
+                        202103|Candy|80
+                    `}
+                />
+            </X.HighlightBlock>
+            <X.P>
+                如需合并单元格、在单元格中使用其他组件，可以使用html原生的表格结构。单元格所有直接子元素的外边距都会被移除。
+            </X.P>
+            <X.HighlightBlock bgcolor="gray">
+                <X.H3>示例</X.H3>
+                <X.CodeBlock
+                    language="jsx"
+                    code={`
+                    <X.Table>
+                        <tr>
+                            <th colSpan={3}>汇总表</th>
+                        </tr>
+                        <tr>
+                            <th>类别</th>
+                            <th>项目</th>
+                            <th>金额</th>
+                        </tr>
+                        <tr>
+                            <td rowSpan={2}>通讯费</td>
+                            <td>座机</td>
+                            <td><X.P>\`107.6\`</X.P></td>
+                        </tr>
+                        <tr>
+                            <td>移动电话</td>
+                            <td><X.P>\`658.2\`</X.P></td>
+                        </tr>
+                        <tr>
+                            <td rowSpan={3}>餐补</td>
+                            <td>早餐</td>
+                            <td><X.P>\`180.4\`</X.P></td>
+                        </tr>
+                        <tr>
+                            <td>午餐</td>
+                            <td><X.P>\`477.2\`</X.P></td>
+                        </tr>
+                        <tr>
+                            <td>晚餐</td>
+                            <td><X.P>\`590.0\`</X.P></td>
+                        </tr>
+                        <tr>
+                            <td colSpan={2}>合计</td>
+                            <td><X.P>\`2013.4\`</X.P></td>
+                        </tr>
+                    </X.Table>
+                    `}
+                />
+                <X.Table>
+                    <tr>
+                        <th colSpan={3}>汇总表</th>
+                    </tr>
+                    <tr>
+                        <th>类别</th>
+                        <th>项目</th>
+                        <th>金额</th>
+                    </tr>
+                    <tr>
+                        <td rowSpan={2}>通讯费</td>
+                        <td>座机</td>
+                        <td>
+                            <X.P>`107.6`</X.P>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>移动电话</td>
+                        <td>
+                            <X.P>`658.2`</X.P>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowSpan={3}>餐补</td>
+                        <td>早餐</td>
+                        <td>
+                            <X.P>`180.4`</X.P>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>午餐</td>
+                        <td>
+                            <X.P>`477.2`</X.P>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>晚餐</td>
+                        <td>
+                            <X.P>`590.0`</X.P>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colSpan={2}>合计</td>
+                        <td>
+                            <X.P>`2013.4`</X.P>
+                        </td>
+                    </tr>
+                </X.Table>
+            </X.HighlightBlock>
+
+            <X.H1>代码块</X.H1>
+            <X.H2>单行代码</X.H2>
+            <X.HighlightBlock bgcolor="gray">
+                <X.H3>示例</X.H3>
+                <X.CodeBlock
+                    language="jsx"
+                    code={`<X.CodeBlock language="python" code='with open("./tool.js","r") as f:' />`}
                 />
                 <X.CodeBlock language="python" code='with open("./tool.js","r") as f:' />
             </X.HighlightBlock>
-            <X.P>下面是一些常见语言的高亮效果：</X.P>
-            <X.H2>单行代码</X.H2>
-            <X.CodeBlock language="python" code='with open("./tool.js","r") as f:' />
+            <X.P>更多语言：</X.P>
             <X.CodeBlock language="cpp" code="bool operator <(const NODE &other)const" />
             <X.CodeBlock language="c" code='fprintf(stdout, "hello world\n");' />
             <X.CodeBlock language="markdown" code="[Prism](https://prismjs.com) is a cool syntax highlighter." />
             <X.CodeBlock language="js" code="let entity = /&#x?[\da-f]{1,8};/;" />
             <X.CodeBlock language="ts" code="type SearchFunc = (source: string, subStr: string) => boolean;" />
             <X.H2>多行代码</X.H2>
-            <X.H3>cpp</X.H3>
-            <X.CodeBlock
-                language="cpp"
-                code={String.raw`
-                #include <iostream>
-                using namespace std;
-                const PI = 3.14159;
-                int main(int argc, char *argv[]) {
-                    printf("\t1 + 2 is %d \n",3);
-                    /* An annoying "Hello World" example */
-                    for (auto i = 0; i < 0xFFFF; i++)
-                        cout << "Hello, World!" << endl;
-                    
-                    char c = '\n';
-                    unordered_map <string, vector<string> > m;
-                    m["key"] = "\\\\"; // this is an error
-                    
-                    return -2e3 + 12l;
-                }
-                `}
-            />
+            <X.P>
+                对于出现转义字符如`\\t`，`\\n`的语言，可以使用`String.raw`标签函数保留原始字符串形式，或者将`\\`写为`\\\\`。
+            </X.P>
+            <X.HighlightBlock bgcolor="gray">
+                <X.H3>示例</X.H3>
+                <X.CodeBlock
+                    language="jsx"
+                    code={`
+                    <X.CodeBlock
+                        language="cpp"
+                        code={String.raw\`
+                        #include <iostream>
+                        using namespace std;
+                        const PI = 3.14159;
+                        int main(int argc, char *argv[]) {
+                            printf("\\t1 + 2 is %d \\n",3);
+                            /* An annoying "Hello World" example */
+                            for (auto i = 0; i < 0xFFFF; i++)
+                                cout << "Hello, World!" << endl;
+                            
+                            char c = '\\n';
+                            unordered_map <string, vector<string>> m;
+                            m["key"] = "\\\\"; // this is an error
+                            
+                            return -2e3 + 12l;
+                        }
+                        \`}
+                    />
+                    `}
+                />
+                <X.CodeBlock
+                    language="cpp"
+                    code={String.raw`
+                    #include <iostream>
+                    using namespace std;
+                    const PI = 3.14159;
+                    int main(int argc, char *argv[]) {
+                        printf("\t1 + 2 is %d \n",3);
+                        /* An annoying "Hello World" example */
+                        for (auto i = 0; i < 0xFFFF; i++)
+                            cout << "Hello, World!" << endl;
+
+                        char c = '\n';
+                        unordered_map <string, vector<string>> m;
+                        m["key"] = "\\"; // this is an error
+
+                        return -2e3 + 12l;
+                    }
+                    `}
+                />
+            </X.HighlightBlock>
+            <X.P>更多语言：</X.P>
             <X.H3>python</X.H3>
             <X.CodeBlock
                 language="python"
