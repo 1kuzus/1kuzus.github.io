@@ -26,5 +26,3 @@ export default function CodeBlock(props) {
     );
 }
 
-
-// font-family: Menlo,DejaVu Sans Mono,Liberation Mono,Consolas,Ubuntu Mono,Courier New,andale mono,lucida console,monospace;
