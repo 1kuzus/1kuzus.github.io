@@ -14,8 +14,8 @@ import 'prismjs/components/prism-jsx';
 import 'prismjs/components/prism-tsx';
 import 'prismjs/components/prism-diff';
 import 'prismjs/components/prism-bash';
-import './assets/katex.css';
 import './assets/prism.scss';
+import './assets/katex.css';
 import './App.css';
 
 const router = [

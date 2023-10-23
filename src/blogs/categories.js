@@ -57,7 +57,6 @@ const categories = [
             {
                 blogName: '示例',
                 path: '/b0000',
-                time: '2023-8-30',
                 component: <B0000 />,
             },
         ],
