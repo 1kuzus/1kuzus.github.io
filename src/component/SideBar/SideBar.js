@@ -9,7 +9,7 @@ function SideBarList(props) {
     return (
         <div className={`sidebarlist${showList ? ' showlist' : ''}`}>
             <div className="sidebarlist-head" onClick={() => setShowList(!showList)}>
-                <h3 className="sidebarlist-title">{category.categoryName + `  (${category.blogs.length})`}</h3>
+                <h3 className="sidebarlist-title">{category.categoryName + ` (${category.blogs.length})`}</h3>
                 <svg
                     className="sidebarlist-title-rightarrow"
                     viewBox="0 0 1024 1024"
