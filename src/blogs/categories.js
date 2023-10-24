@@ -1,9 +1,11 @@
 import B0000 from './23c/demo';
 import Bj23k from './23c/jsarray';
-import Behwl from './23c/pr1';
-import Bco21 from './23c/pr2';
-import Bjjj5 from './23c/pr3';
+import Behwl from './23c/pattern_recognition1';
+import Bco21 from './23c/pattern_recognition2';
+import Bjjj5 from './23c/pattern_recognition3';
 import Bykl9 from './23d/db3nf';
+import B2fph from './23d/pattern_recognition4';
+import Blnrj from './23d/protocols';
 
 const categories = [
     {
@@ -48,6 +50,18 @@ const categories = [
                 path: '/bjjj5',
                 time: '2023-9-19',
                 component: <Bjjj5 />,
+            },
+            {
+                blogName: '模式识别 · 线性分类器',
+                path: '/b2fph',
+                time: '2023-10-24',
+                component: <B2fph />,
+            },
+            {
+                blogName: '计算机网络 · 协议总结',
+                path: '/blnrj',
+                time: '2023-10-26',
+                component: <Blnrj />,
             },
         ],
     },
