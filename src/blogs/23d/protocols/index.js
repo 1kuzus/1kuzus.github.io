@@ -46,7 +46,7 @@ export default function Blog() {
             </X.Table>
             <X.H2>路由信息协议 - RIP</X.H2>
             <X.P>
-                RIP协议是基于`距离矢量法`的，较为简单，适用于小网络。\n
+                *路由信息协议*`(Routing Information Protocol, RIP)`是基于`距离矢量法`的，较为简单，适用于小网络。\n
                 RIP协议要求网络中每一个路由器都维护从自己到每个其他目的网络的距离，这个距离用*跳数*来衡量，每经过一个路由器跳数+1。\n
                 RIP协议允许一条路最多包含`15`个路由器，即跳数最多为`15`，超过则表示不可达。\n
                 RIP协议只和*相邻路由器*交换信息，交换的信息是*自己的路由表*。
@@ -112,7 +112,7 @@ export default function Blog() {
             </X.HighlightBlock>
             <X.H2>开放最短路径优先 - OSPF</X.H2>
             <X.P>
-                OSPF协议是基于`链路状态法`的，较为复杂，适用于大网络。\n
+                *开放最短路径优先*`(Open Shortest Path First, OSPF)`是基于`链路状态法`的，较为复杂，适用于大网络。\n
                 每个路由器使用洪泛法向区域中的所有路由器发送信息，因此最终整个区域内所有路由器都得到了区域完整的图结构。---
                 然后每台路由器在本地运行`Dijkstra`最短路径算法，确定一个以自身为根节点到所有子网的最短路径树。
             </X.P>
@@ -123,7 +123,7 @@ export default function Blog() {
                 该主干总是包含本AS中的所有区域边界路由器、但也可能包含非边界路由器。在AS中的区域间的路由选择要求分组先路由到一个区域边界路由器（区域内路由选择），---
                 然后通过主干路由到位于目的区域的区域边界路由器进而再路由到最终目的地。
             </X.P>
-            <X.Image src={require('./ospf.png')} width="640" />
+            <X.Image src={require('./ospf.png')} width="600" />
             <X.H3>OSPF 相较于 RIP 的优点</X.H3>
             <X.Uli>
                 安全：使用鉴别，仅有受信任的路由器能参于OSPF协议，可防止恶意入侵者将不正确的信息注入路由器表内。
@@ -139,16 +139,39 @@ export default function Blog() {
             </X.Uli>
             <X.Uli>支持在单个AS中的层次结构。</X.Uli>
             <X.H2>边界网关协议 - BGP</X.H2>
-
+            <X.P>*边界网关协议*`(Border Gateway Protocol, BGP)`在这里只做简单的概念性介绍。</X.P>
+            <X.FlexRow>
+                <X.Image src={require('./bgp1.png')} width="400" />
+                <X.Image src={require('./bgp2.png')} width="400" />
+            </X.FlexRow>
+            <X.P>
+                在不同自治系统内，度量路由的代价可能不同；自治系统之间的路由选择也需要考虑相关的政治、经济、安全因素。---
+                BGP只希望选择一条可达，无环路，且相对较优的路由。
+            </X.P>
+            <X.Image src={require('./bgp3.png')} width="600" />
+            <X.P>
+                在配置BGP时，每个AS需要选择至少一个路由器作为*BGP发言人*，不同自治系统的BGP发言人要通过TCP连接交换路由信息。---
+                当BGP发言人互相交换了网络可达性信息后，各BGP发言人就根据自己的策略选择出到达各自治系统的较好的路由，也就是构造出树形结构、不存在回路的连通图。
+            </X.P>
             <X.HighlightBlock bgcolor="red">
                 <X.P>
-                    关于协议所属层次的划分，无需过多纠结：\n
+                    关于协议所属层次的划分：\n
                     RIP基于UDP，BGP基于TCP，归类到应用层协议比较合理；\nOSPF基于IP，归类到传输层协议比较合理；\n
                     只不过，他们计算出的路径都服务于网络层，因此按照课程目录划在了网络层下。
                 </X.P>
             </X.HighlightBlock>
 
             <X.H1>运输层</X.H1>
+
+            <X.H1>参考</X.H1>
+            <X.P noMarginBottom>本文的部分内容、图片来源于：</X.P>
+            <X.Uli>
+                <X.P>@Bilibili - 王道计算机考研 计算机网络[https://www.bilibili.com/video/BV19E411D78Q]@</X.P>
+            </X.Uli>
+            <X.Uli>
+                <X.P>@Bilibili - 计算机网络微课堂[https://www.bilibili.com/video/BV1c4411d7jb]@</X.P>
+            </X.Uli>
+            <X.Uli>《计算机网络自顶向下方法》（第七版）</X.Uli>
         </X.BlogWrapper>
     );
 }
