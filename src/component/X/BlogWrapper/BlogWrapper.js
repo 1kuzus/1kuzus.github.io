@@ -37,6 +37,7 @@ function BlogContent(props) {
 export default function BlogWrapper(props) {
     const {children} = props;
     const [activeIdx, setActiveIdx] = useState(0);
+    //todo 优化逻辑
     const titles = Array.isArray(children)
         ? children.reduce((titles, current) => {
               if (current.type === H1) return [...titles, {type: 'x-h1', text: current.props.children}];
@@ -49,6 +50,7 @@ export default function BlogWrapper(props) {
 
     useEffect(() => {
         const scrollHandler = () => {
+            if (!titles) return;
             //找到最后一个自身offsetTop小于<html>根元素的scrollTop的title元素在titles数组中的位置。
             //也就是最后一个已经向上滚动出文本可视范围外(即元素顶部已经在header底边的上方)的标题的索引
             //64是header高度，32是希望距离header底边有32px距离时就判定为进入下一块内容

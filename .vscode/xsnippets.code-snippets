@@ -37,6 +37,22 @@
 		],
 		"description": "X.P tag"
 	},
+	"X.Uli tag": {
+		"scope": "javascript,typescript",
+		"prefix": "xuli",
+		"body": [
+			"<X.Uli>$1</X.Uli>",
+		],
+		"description": "X.Uli tag"
+	},
+	"X.Oli tag": {
+		"scope": "javascript,typescript",
+		"prefix": "xoli",
+		"body": [
+			"<X.Oli>$1</X.Oli>",
+		],
+		"description": "X.Oli tag"
+	},
 	"X.FlexRow tag": {
 		"scope": "javascript,typescript",
 		"prefix": "xflex",
@@ -60,5 +76,33 @@
 			"<X.HighlightBlock bgcolor=\"$1\"></X.HighlightBlock>",
 		],
 		"description": "X.HighlightBlock tag with bgcolor"
+	},
+	"X.Table tag": {
+		"scope": "javascript,typescript",
+		"prefix": "xtable",
+		"body": [
+			"<X.Table>",
+			"\t<th>",
+			"\t\t<td>$1</td>",
+			"\t</th>",
+			"\t<tr>",
+			"\t\t<td></td>",
+			"\t</tr>",
+			"</X.Table>",
+		],
+		"description": "X.Table tag"
+	},
+	"X.Table from text": {
+		"scope": "javascript,typescript",
+		"prefix": "xtft",
+		"body": [
+			"<X.Table",
+			"\tfromText={`",
+			"\t$1||",
+			"\t||",
+			"\t`}",
+			"/>",
+		],
+		"description": "X.Table from text"
 	}
 }
