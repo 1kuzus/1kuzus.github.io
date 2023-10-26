@@ -590,6 +590,7 @@ export default function Blog() {
             </X.HighlightBlock>
 
             <X.H1>图片</X.H1>
+            <X.P>使用百分比宽度，包裹在flex容器中，或不超过600px</X.P>
             <X.HighlightBlock>正在开发中~</X.HighlightBlock>
 
             <X.H1>表格</X.H1>

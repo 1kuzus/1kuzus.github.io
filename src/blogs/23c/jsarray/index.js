@@ -82,7 +82,7 @@ export default function Blog() {
                 console.log(arr.fill('b', 1, 3)); //[1, 'b', 'b', 'a', 'a']
                 `}
             />
-            <X.H3>创建指定长度和内容的数组</X.H3>
+            <X.H2>创建指定长度和内容的数组</X.H2>
             <X.CodeBlock
                 language="js"
                 code={`

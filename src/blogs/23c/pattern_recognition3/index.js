@@ -24,7 +24,7 @@ export default function Blog() {
             <X.Formula text="\hat{P}(x) = \frac{k}{n} \cdot \frac{1}{V}" />
             <X.H1>直方图方法</X.H1>
             <X.P>直方图方法非常简单，可以理解为近似的用直方图的形状取描述概率密度函数。</X.P>
-            <X.Image src={require('./fig1.png')} width="800" />
+            <X.Image src={require('./fig1.png')} width="600" />
             <X.P>
                 不过，在样本数量并非无限时，如果小舱（直方图组距）过大，那么最终估计出的密度函数就非常粗糙；---
                 如果过小，那么有的小舱内可能没有样本，估计出的概率密度函数很不连续。
