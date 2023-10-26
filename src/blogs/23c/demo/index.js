@@ -611,10 +611,10 @@ export default function Blog() {
                 />
                 <X.Table
                     fromText={`
-                        学号|学生姓名|成绩
-                        202101|Alice|97
-                        202102|Bob|86
-                        202103|Candy|80
+                    学号|学生姓名|成绩
+                    202101|Alice|97
+                    202102|Bob|86
+                    202103|Candy|80
                     `}
                 />
             </X.HighlightBlock>

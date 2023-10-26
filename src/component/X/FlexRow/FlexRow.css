@@ -9,6 +9,12 @@
     margin-top: 0 !important;
     margin-bottom: 0 !important;
 }
+.x-flexrow > div > *:first-child {
+    margin-top: 0 !important;
+}
+.x-flexrow > div > *:last-child {
+    margin-bottom: 0 !important;
+}
 .x-flexrow.flex1 > * {
     flex: 1;
 }

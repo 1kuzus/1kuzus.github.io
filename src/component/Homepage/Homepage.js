@@ -1,7 +1,12 @@
+import {useLayoutEffect} from 'react';
 import BlogLists from '../BlogLists/BlogLists';
 import './Homepage.css';
 
 export default function Homepage() {
+    useLayoutEffect(() => {
+        document.title = 'Blogs';
+    }, []);
+
     return (
         <div id="homepage">
             <div id="homepage-content">

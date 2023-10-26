@@ -1,3 +1,4 @@
+import {useLayoutEffect} from 'react';
 import Katex from 'katex';
 import {SHA256Hash8} from '@/utils/SHA256Hash';
 import {addOliIdx, setOliIdx} from '../BlogWrapper/BlogWrapper';
@@ -5,6 +6,9 @@ import './index.css';
 
 export function Title(props) {
     const {children} = props;
+    useLayoutEffect(() => {
+        document.title = 'Blogs - ' + children;
+    }, [children]);
     return <h1 className="x-title">{children}</h1>;
 }
 
