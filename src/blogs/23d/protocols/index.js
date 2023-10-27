@@ -163,7 +163,7 @@ export default function Blog() {
 
             <X.H1>运输层</X.H1>
 
-            <X.H1>参考</X.H1>
+            <X.H1>参考资料</X.H1>
             <X.P noMarginBottom>本文的部分内容、图片来源于：</X.P>
             <X.Uli>
                 <X.P>@Bilibili - 王道计算机考研 计算机网络[https://www.bilibili.com/video/BV19E411D78Q]@</X.P>
