@@ -4,9 +4,7 @@ export default function Blog() {
     return (
         <X.BlogWrapper>
             <X.Title>「计算机网络」协议总结</X.Title>
-
             <X.H1>链路层</X.H1>
-
             <X.H1>网络层</X.H1>
             <X.H2>自治系统、IGP和EGP</X.H2>
             <X.P>
@@ -380,12 +378,57 @@ export default function Blog() {
                 <X.P>`2001:db8:de::2e13`</X.P>
             </X.Uli>
             <X.H2>IPv6比IPv4的改进</X.H2>
-
+            <X.Image src={require('./ip.png')} width="100%" />
+            <X.Uli>
+                <X.P>扩大了地址空间，从`8`位变为`32`位</X.P>
+            </X.Uli>
+            <X.Uli>IPv6移除了校验和字段，以减少每跳的处理时间</X.Uli>
+            <X.Uli>
+                IPv6将可选字段移出首部字段，放在有效载荷的扩展首部中，路由器不对扩展首部进行检查，提高了处理效率
+            </X.Uli>
+            <X.Uli>IPv6支持即插即用，不需要DHCP协议</X.Uli>
+            <X.H2>动态主机配置协议 - DHCP</X.H2>
+            <X.P>
+                *动态主机配置协议*`(Dynamic Host Configuration Protocol,
+                DHCP)`用于自动给内网机器分配IP地址等信息。虽然可以手动给内网设备一个一个的分配IP地址，---
+                但这项任务通常由DHCP服务器完成。
+            </X.P>
+            <X.P noMarginBottom>DHCP的四个步骤是：</X.P>
+            <X.Uli>
+                <X.P>
+                    *DHCP发现*`(DHCP Discover)`\n
+                    新加入主机的首要任务是发现一个要与其交互的DHCP服务器，这可以通过生成一个目的地址为`255.255.255.255`或者一个子网广播地址的UDP包实现。
+                </X.P>
+            </X.Uli>
+            <X.Uli>
+                <X.P>*DHCP提供*`(DHCP Offer)`\nDHCP服务器提供一个IP租约。服务器租用期通常设置为几小时或几天。</X.P>
+            </X.Uli>
+            <X.Uli>
+                <X.P>
+                    *DHCP请求*`(DHCP Request)`\n
+                    当客户主机从一个或多个DHCP服务器的提供中选择了一个IP租约时，它必须告诉其他的DHCP服务器它已经接受了一个租约提供。
+                </X.P>
+            </X.Uli>
+            <X.Uli>
+                <X.P>
+                    *DHCP确认*`(DHCP Acknowledge/ACK)`\n对DHCP
+                    Request报文进行响应，证实所要求的参数。一旦客户主机收到DHCP ACK后，配置过程就完成了。
+                </X.P>
+            </X.Uli>
             <X.H2>地址解析协议 - ARP</X.H2>
-            ARP(Address Resolution Protocol，地址解析协议)用于动态地完成IP地址向物理地址的转换。物理地址通常是指计算机的网卡地址，也称为MAC(Medai Access Control，媒体访问控制)地址，每块网卡都有唯一的地址。
+            <X.P>
+                在以太网协议中规定，同一局域网中的一台主机要和另一台主机进行直接通信，必须要知道目标主机的MAC地址，而网络层和运输层只关心目标主机的IP地址。\n
+                *地址解析协议*`(Address Resolution Protocol,
+                ARP)`用于完成网络层地址（例如IP地址）和链路层地址（即MAC地址）的转换。
+            </X.P>
+            <X.H2>互联网控制报文协议 - ICMP</X.H2>
+            <X.P>
+                *互联网控制报文协议*`(Internet Control Message Protocol,
+                ICMP)`被主机和路由器用来彼此沟通网络层的信息，ICMP最典型的用途是差错报告，提供可能发生在通信环境中的各种问题反馈。---
+                通过这些信息，管理者可以对所发生的问题作出诊断，然后采取适当的措施解决。
+            </X.P>
 
             <X.H1>运输层</X.H1>
-
             <X.H1>参考资料</X.H1>
             <X.P noMarginBottom>本文的部分内容、图片来源于：</X.P>
             <X.Uli>
