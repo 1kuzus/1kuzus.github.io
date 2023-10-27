@@ -110,7 +110,7 @@ export default function Blog() {
                     这些窗函数中都有一个表示窗口宽度的参数（$h$/$\rho$/$r$），也称作平滑参数，它反映了一个样本可以对多大范围内的密度估计产生影响。
                 </X.P>
             </X.HighlightBlock>
-            <X.P>下面是在样本数和平滑参数不同时，使用方窗和高斯窗的估计结果：</X.P>
+            <X.P noMarginBottom>下面是在样本数和平滑参数不同时，使用方窗和高斯窗的估计结果：</X.P>
             <X.Uli>方窗</X.Uli>
             <X.Image src={require('./fig4.png')} width="100%" />
             <X.Uli>高斯窗</X.Uli>
