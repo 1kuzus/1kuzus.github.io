@@ -10,7 +10,7 @@ export default function Blog() {
                 @第一范式[https://zh.wikipedia.org/zh-cn/%E7%AC%AC%E4%B8%80%E6%AD%A3%E8%A6%8F%E5%8C%96]@、---
                 @第二范式[https://zh.wikipedia.org/zh-cn/%E7%AC%AC%E4%BA%8C%E6%AD%A3%E8%A6%8F%E5%8C%96]@、---
                 @第三范式[https://zh.wikipedia.org/zh-cn/%E7%AC%AC%E4%B8%89%E6%AD%A3%E8%A6%8F%E5%8C%96]@，---
-                互联网上也有很多优秀的技术博客。本篇希望以简洁的语句和例子进行描述。
+                互联网上也有很多优秀的技术博客。本文希望以简洁的语句和例子进行描述。
             </X.P>
 
             <X.H1>第一范式 - 1NF</X.H1>
