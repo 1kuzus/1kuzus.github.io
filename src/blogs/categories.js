@@ -52,7 +52,7 @@ const categories = [
                 component: <Bjjj5 />,
             },
             {
-                blogName: '模式识别 · 线性分类器',
+                blogName: '模式识别 · 线性学习器与线性分类器',
                 path: '/b2fph',
                 time: '2023-10-24',
                 component: <B2fph />,
