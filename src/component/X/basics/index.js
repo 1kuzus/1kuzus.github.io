@@ -13,18 +13,18 @@ export function Title(props) {
 }
 
 export function H1(props) {
-    const {children} = props;
+    const {salt = '', children} = props;
     return (
-        <h2 id={SHA256Hash8('x-h1' + children)} className="x-h1">
+        <h2 id={SHA256Hash8('x-h1' + children + salt)} className="x-h1">
             {children}
         </h2>
     );
 }
 
 export function H2(props) {
-    const {children} = props;
+    const {salt = '', children} = props;
     return (
-        <h3 id={SHA256Hash8('x-h2' + children)} className="x-h2">
+        <h3 id={SHA256Hash8('x-h2' + children + salt)} className="x-h2">
             {children}
         </h3>
     );
