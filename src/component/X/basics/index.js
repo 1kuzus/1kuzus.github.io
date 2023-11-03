@@ -16,7 +16,7 @@ export function H1(props) {
     const {children} = props;
     return (
         <h2 id={SHA256Hash8('x-h1' + children)} className="x-h1">
-            {/* {children} */}
+            {children}
         </h2>
     );
 }
@@ -25,7 +25,7 @@ export function H2(props) {
     const {children} = props;
     return (
         <h3 id={SHA256Hash8('x-h2' + children)} className="x-h2">
-            {/* {children} */}
+            {children}
         </h3>
     );
 }
