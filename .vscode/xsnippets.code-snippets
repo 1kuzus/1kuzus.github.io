@@ -61,6 +61,14 @@
 		],
 		"description": "X.FlexRow tag"
 	},
+	"X.Formula tag": {
+		"scope": "javascript,typescript",
+		"prefix": "xformula",
+		"body": [
+			"<X.Formula text=\"$1\" />",
+		],
+		"description": "X.Formula tag"
+	},
 	"X.HighlightBlock tag": {
 		"scope": "javascript,typescript",
 		"prefix": "xh",
