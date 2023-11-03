@@ -21,6 +21,7 @@ function BlogContent(props) {
                     key={index}
                     className={`x-blogcontent-titletype-${title.type}${index === activeIdx ? ' active' : ''}`}
                     onClick={() => {
+                        //这里不用getElementById，用index匹配原来html的元素。
                         const titleElement = document.getElementById(SHA256Hash8(title.type + title.text + title.salt));
                         document.documentElement.scrollTo({
                             top: titleElement.offsetTop - 64 - 16,
@@ -38,6 +39,7 @@ export default function BlogWrapper(props) {
     const {children} = props;
     const [activeIdx, setActiveIdx] = useState(0);
     //todo 优化判断逻辑
+    //todo 全都可以用queryselectorAll重写，弃用hash值做id
     const titles = Array.isArray(children)
         ? children.reduce((titles, current) => {
               if (current.type === H1)
@@ -51,6 +53,7 @@ export default function BlogWrapper(props) {
     oliIdx = 0;
 
     useEffect(() => {
+        // const titles=queryselectorall('x-blogwrapper>x-h1,x-blogwrapper>x-h2')
         const scrollHandler = () => {
             if (!titles) return;
             //找到最后一个自身offsetTop小于<html>根元素的scrollTop的title元素在titles数组中的位置。
