@@ -21,7 +21,7 @@ function BlogContent(props) {
                     key={index}
                     className={`x-blogcontent-titletype-${title.type}${index === activeIdx ? ' active' : ''}`}
                     onClick={() => {
-                        const titleElement = document.getElementById(SHA256Hash8(title.type + title.text));
+                        const titleElement = document.getElementById(SHA256Hash8(title.type + title.text + title.salt));
                         document.documentElement.scrollTo({
                             top: titleElement.offsetTop - 64 - 16,
                         });
@@ -37,11 +37,13 @@ function BlogContent(props) {
 export default function BlogWrapper(props) {
     const {children} = props;
     const [activeIdx, setActiveIdx] = useState(0);
-    //todo 优化逻辑
+    //todo 优化判断逻辑
     const titles = Array.isArray(children)
         ? children.reduce((titles, current) => {
-              if (current.type === H1) return [...titles, {type: 'x-h1', text: current.props.children}];
-              else if (current.type === H2) return [...titles, {type: 'x-h2', text: current.props.children}];
+              if (current.type === H1)
+                  return [...titles, {type: 'x-h1', text: current.props.children, salt: current.props.salt || ''}];
+              else if (current.type === H2)
+                  return [...titles, {type: 'x-h2', text: current.props.children, salt: current.props.salt || ''}];
               else return titles;
           }, [])
         : null;
@@ -55,7 +57,7 @@ export default function BlogWrapper(props) {
             //也就是最后一个已经向上滚动出文本可视范围外(即元素顶部已经在header底边的上方)的标题的索引
             //64是header高度，32是希望距离header底边有32px距离时就判定为进入下一块内容
             const lastIdx = titles
-                .map((title) => document.getElementById(SHA256Hash8(title.type + title.text)).offsetTop)
+                .map((title) => document.getElementById(SHA256Hash8(title.type + title.text + title.salt)).offsetTop)
                 .findLastIndex((offset) => offset - 64 - 32 <= document.documentElement.scrollTop);
             //lastIdx可能为-1，特殊处理
             setActiveIdx(Math.max(0, lastIdx));
