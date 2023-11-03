@@ -54,11 +54,68 @@ export default function Blog() {
                 现在希望找到的方向满足：两类间的距离尽可能大，但每一类内部的样本尽可能聚集。
             </X.P>
             <X.H2>准则函数</X.H2>
-            <X.P>假设两类问题中每类的均值向量分别为{`$\\bm{m}_1$`}和{`$\\bm{m}_2$`}，定义两类的类内离散度矩阵：</X.P>
-<X.Formula text="\bm{S}_1=\sum(\bm{X}_i-\bm{m}_1)(\bm{X}_i-\bm{m}_1)^T" />
-
+            <X.P>
+                假设两类问题中每类的均值向量分别为{`$\\bm{m}_1$`}和{`$\\bm{m}_2$`}，定义两类的类内离散度矩阵：
+            </X.P>
+            <X.Formula text="\bm{S}_1=\sum(\bm{X}_i-\bm{m}_1)(\bm{X}_i-\bm{m}_1)^T, \quad \bm{S}_2=\dots" />
+            <X.P>总类内离散度矩阵：</X.P>
+            <X.Formula text="\bm{S}_w=\bm{S}_1+\bm{S}_2" />
+            <X.P>类间离散度矩阵：</X.P>
+            <X.Formula text="\bm{S}_b=(\bm{m}_1-\bm{m}_2)(\bm{m}_1-\bm{m}_2)^T" />
+            <X.P>判别准则为</X.P>
+            <X.HighlightBlock bgcolor="gray">
+                <X.Formula text="\max J_F(\bm{W})=\frac{\bm{W}^T\bm{S}_b\bm{W}}{\bm{W}^T\bm{S}_w\bm{W}}" />
+            </X.HighlightBlock>
+            <X.H2>最优解</X.H2>
+            <X.P>Fisher判别准则下的最优投影方向为：</X.P>
+            <X.HighlightBlock bgcolor="gray">
+                <X.Formula text="\bm{W}^*=\bm{S}_w^{-1}(\bm{m}_1-\bm{m}_2)" />
+            </X.HighlightBlock>
+            <X.P>
+                确定了方向后，分类的阈值可以取投影过后的两类的均值的平均数，即$(m_1+m_2)/2$。注意投影后是一维空间，$m_1$和$m_2$是常数。
+            </X.P>
             <X.H1>感知器</X.H1>
+            <X.H2>动机</X.H2>
+            <X.P>感知器用{`$\\bm{W}^T\\bm{X}$`}的正负来判断样本的分类。</X.P>
+            <X.H2>损失函数</X.H2>
+            <X.P>感知器的损失函数可以理解为错分样本的个数，数学形式如下：</X.P>
+            <X.HighlightBlock bgcolor="gray">
+                <X.Formula
+                    text="\min L(\bm{W})=\frac{1}{N}\sum_1^Nl(i)，其中l(i)=
+                    \begin{cases}
+                    1, \quad \text{sign}(y_i\bm{W}^T\bm{X_i}) < 0 \\
+                    0, \quad 其他
+                    \end{cases}
+                    "
+                />
+            </X.HighlightBlock>
+            <X.H2>更新规则</X.H2>
+            <X.P>如果所有样本都分类正确，算法结束；否则对于分错的样本{`$(\\bm{X}_i,y_i)$`}执行：</X.P>
+            <X.Formula text="\bm{W}_{t+1}=\bm{W}_t+y_i\bm{X}_i" />
+
             <X.H1>两类Logistic回归</X.H1>
+            <X.H2>动机</X.H2>
+            <X.P>
+                使用`Sigmoid`函数将{`$\\bm{W}^T\\bm{X}$`}
+                归约到区间$[0,1]$，可以把这个输出结果看作概率，那么输出将从单纯的以{`$\\bm{W}^T\\bm{X}$`}
+                的符号进行二分类变成连续的概率。
+            </X.P>
+            <X.H2>损失函数</X.H2>
+            <X.P>考虑最大似然估计，样本集出现的概率为：</X.P>
+            <X.Formula text="P=\prod_1^NP(y_i|\bm{X}_i)" />
+            <X.P>使用对数似然函数{`$\\ln P=\\sum_1^N\\ln P(y_i|\\bm{X}_i)$`}，考虑单个样本出现的概率：</X.P>
+            <X.P>
+                假设`Sigmoid`函数的输出是$p$，其含义应为“样本是正类”的概率。因此一个正样本对似然函数的贡献是$p$，而负样本要代入$1-p$。---
+                换句话说，上述对数似然函数中的{`$P(y_i|\\bm{X}_i)$`}可以有如下数学表示：
+            </X.P>
+            <X.Formula
+                    text="\min L(\bm{W})=\frac{1}{N}\sum_1^Nl(i)，其中l(i)=
+                    \begin{cases}
+                    1, \quad \text{sign}(y_i\bm{W}^T\bm{X_i}) < 0 \\
+                    0, \quad 其他
+                    \end{cases}
+                    "
+                />
         </X.BlogWrapper>
     );
 }
