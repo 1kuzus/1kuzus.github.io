@@ -5,7 +5,6 @@ export default function Blog() {
     return (
         <X.BlogWrapper>
             <X.Title>「模式识别」统计决策方法</X.Title>
-
             <X.H1>贝叶斯公式</X.H1>
             <X.HighlightBlock>
                 <X.Formula text="P(\omega_i|x) = \frac{P(x|\omega_i) \cdot P(\omega_i)}{P(x)}" />
@@ -38,7 +37,6 @@ export default function Blog() {
             <X.Formula text="P(AB) = P(A|B) \cdot P(B)" />
             <X.Formula text="P(BA) = P(B|A) \cdot P(A)" />
             <X.Formula text="P(AB) = P(BA) \; \Rightarrow \; P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}" />
-
             <X.H1>最小错误率贝叶斯决策</X.H1>
             <X.P>研究的类别有`c`个。</X.P>
             <X.HighlightBlock>
@@ -66,7 +64,6 @@ export default function Blog() {
                     可以把每一类的后验概率$P(\omega_i|x)$或者$P(x|\omega_i)P(\omega_i)$看作该类的一个`判别函数`$g(x)$，决策的过程就是各类的判别函数比较大小
                 </X.P>
             </X.HighlightBlock>
-
             <X.H1>最小风险贝叶斯决策</X.H1>
             <X.H2>条件风险</X.H2>
             <X.Formula text="R(\alpha_i|x) = \sum_j\lambda(\alpha_i,\omega_j)P(\omega_j|x)" />
@@ -97,7 +94,6 @@ export default function Blog() {
                 />
                 <X.P>最小错误率贝叶斯决策就是`0/1损失函数`条件下的最小风险贝叶斯决策。</X.P>
             </X.HighlightBlock>
-
             <X.H1>正态分布的统计决策</X.H1>
             <X.H2>从一维正态分布到高维正态分布</X.H2>
             <X.P>单变量正态分布函数：</X.P>

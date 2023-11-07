@@ -4,7 +4,6 @@ export default function Blog() {
     return (
         <X.BlogWrapper>
             <X.Title>「模式识别」线性学习器与线性分类器</X.Title>
-
             <X.H1>背景知识</X.H1>
             <X.H2>Sigmoid函数</X.H2>
             <X.P>
@@ -25,7 +24,6 @@ export default function Blog() {
                 上述操作相当于，仍然以二维空间上的分类为例，若希望分类线不受过原点的限制，考虑把问题放入三维空间：\n
                 $xy$坐标不变，令$z=1$，此时可以在三维空间中用一过原点的平面作为分类面，这个分类面与平面$z=1$的交线可以是任意（平面$z=1$上的）直线。
             </X.P>
-
             <X.H1>线性回归</X.H1>
             <X.H2>动机</X.H2>
             <X.P>用下式：</X.P>
@@ -46,7 +44,6 @@ export default function Blog() {
             <X.HighlightBlock bgcolor="gray">
                 <X.Formula text="\bm{W}^*=(\bm{\chi}^T\bm{\chi})^{-1}\bm{\chi}^T\bm{y}" />
             </X.HighlightBlock>
-
             <X.H1>Fisher线性判别</X.H1>
             <X.H2 salt="1">动机</X.H2>
             <X.P>
@@ -92,7 +89,6 @@ export default function Blog() {
             <X.H2>更新规则</X.H2>
             <X.P>如果所有样本都分类正确，算法结束；否则对于分错的样本{`$(\\bm{X}_i,y_i)$`}执行：</X.P>
             <X.Formula text="\bm{W}_{t+1}=\bm{W}_t+y_i\bm{X}_i" />
-
             <X.H1>两类Logistic回归</X.H1>
             <X.H2 salt="3">动机</X.H2>
             <X.P>

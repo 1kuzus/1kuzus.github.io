@@ -9,7 +9,6 @@ export default function Blog() {
     return (
         <X.BlogWrapper>
             <X.Title>示例</X.Title>
-
             <X.H1>基础组件</X.H1>
             <X.H2>标题</X.H2>
             <X.P>此组件体系中标题分为三级，且只有一级和二级标题会展示在右侧目录中。</X.P>
@@ -273,7 +272,6 @@ export default function Blog() {
                     这样线性设计无法满足嵌套有序列表的需求，也就是有序列表的一项是另一个有序列表。但考虑到嵌套列表应用场景很少，为保持组件的简洁性牺牲了这一需求。
                 </X.P>
             </X.HighlightBlock>
-
             <X.H1>水平布局</X.H1>
             <X.P>水平布局组件提供一个`flex-direction`为`row`的容器。</X.P>
             <X.H3>设置主轴上的对齐方式</X.H3>
@@ -417,7 +415,6 @@ export default function Blog() {
             <X.HighlightBlock>
                 <X.P>使用水平布局排版列表时，需要额外用`div`包裹列表项。</X.P>
             </X.HighlightBlock>
-
             <X.HighlightBlock bgcolor="gray">
                 <X.H3>示例</X.H3>
                 <X.CodeBlock
@@ -475,7 +472,6 @@ export default function Blog() {
                     </div>
                 </X.FlexRow>
             </X.HighlightBlock>
-
             <X.H1>公式</X.H1>
             <X.P>除了在段落组件中使用`\$content\$`插入行内公式，还可以直接使用公式组件。公式组件会独占一行。</X.P>
             <X.HighlightBlock bgcolor="gray">
@@ -550,7 +546,6 @@ export default function Blog() {
                     "
                 />
             </X.HighlightBlock>
-
             <X.H1>高亮块</X.H1>
             <X.P>
                 高亮块组件只提供一个有背景色的容器，因此其内部可以嵌套其他组件。\n
@@ -593,11 +588,9 @@ export default function Blog() {
                     </X.P>
                 </X.HighlightBlock>
             </X.HighlightBlock>
-
             <X.H1>图片</X.H1>
             <X.P>使用百分比宽度，包裹在flex容器中，或不超过600px</X.P>
             <X.HighlightBlock>正在开发中~</X.HighlightBlock>
-
             <X.H1>表格</X.H1>
             <X.P>对于仅展示文本，无特殊格式需求的简单表格，可以通过`fromText`来快速定义表格。单元格之间用`|`分割。</X.P>
             <X.HighlightBlock bgcolor="gray">
@@ -719,7 +712,6 @@ export default function Blog() {
                     </tr>
                 </X.Table>
             </X.HighlightBlock>
-
             <X.H1>代码块</X.H1>
             <X.H2>单行代码</X.H2>
             <X.HighlightBlock bgcolor="gray">
