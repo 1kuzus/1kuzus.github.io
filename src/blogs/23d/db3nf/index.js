@@ -12,7 +12,6 @@ export default function Blog() {
                 @第三范式[https://zh.wikipedia.org/zh-cn/%E7%AC%AC%E4%B8%89%E6%AD%A3%E8%A6%8F%E5%8C%96]@，---
                 互联网上也有很多优秀的技术博客。本文希望以简洁的语句和例子进行描述。
             </X.P>
-
             <X.H1>第一范式 - 1NF</X.H1>
             <X.HighlightBlock>
                 <X.P>数据库表的每一列都是不可再分的。</X.P>
@@ -51,7 +50,6 @@ export default function Blog() {
                 这个例子比上一个更好吗？哪一种设计更符合第一范式？事实上，两个例子都是符合的，具体的取舍要参考具体的业务。---
                 例如`姓名`、`地址`在业务中都整体出现，那么第二个例子就是最佳选择。如果业务涉及*分别*对所属省、市的操作，那么就应该将`地址`字段拆分为`省`和`市`。
             </X.P>
-
             <X.H1>第二范式 - 2NF</X.H1>
             <X.HighlightBlock>
                 <X.P>
@@ -91,7 +89,6 @@ export default function Blog() {
                     `}
                 />
             </X.FlexRow>
-
             <X.H1>第三范式 - 3NF</X.H1>
             <X.HighlightBlock>
                 <X.P>符合第二范式，且非主键列都和主键直接相关，而不能间接相关（依赖于其他非主键字段）。</X.P>
