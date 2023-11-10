@@ -38,7 +38,7 @@
 
     /*仅暗色模式*/
     --logopart-shadow: 0 0 48px 4px #00e8f4a0;
-}
+} 
 
 *::-webkit-scrollbar {
     width: 8px;
