@@ -4,7 +4,9 @@ export default function Blog() {
     return (
         <X.BlogWrapper>
             <X.Title>「计算机网络」协议总结</X.Title>
-            <X.P>文中各层出现的协议参考教程的教学顺序，不代表对协议所属层次的划分。</X.P>
+            <X.HighlightBlock>
+                <X.P>文中各层出现的协议参考教程的教学顺序，不代表对协议所属层次的划分。</X.P>
+            </X.HighlightBlock>
             <X.H1>链路层</X.H1>
             <X.H2>停等协议 - SW</X.H2>
             <X.P>
@@ -497,8 +499,8 @@ export default function Blog() {
             <X.Uli>IPv6支持即插即用，不需要DHCP协议</X.Uli>
             <X.H2>动态主机配置协议 - DHCP</X.H2>
             <X.P>
-                *动态主机配置协议*`(Dynamic Host Configuration Protocol,
-                DHCP)`用于自动给内网机器分配IP地址等信息。虽然可以手动给内网设备一个一个的分配IP地址，---
+                *动态主机配置协议*`(Dynamic Host Configuration Protocol, DHCP)`---
+                是使用UDP协议的应用层协议，用于自动给内网机器分配IP地址等信息。虽然可以手动给内网设备一个一个的分配IP地址，---
                 但这项任务通常由DHCP服务器完成。
             </X.P>
             <X.P noMarginBottom>DHCP的四个步骤是：</X.P>
