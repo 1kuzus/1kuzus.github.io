@@ -4,6 +4,7 @@ export default function Blog() {
     return (
         <X.BlogWrapper>
             <X.Title>「计算机网络」协议总结</X.Title>
+            <X.P>文中各层出现的协议参考教程的教学顺序，不代表对协议所属层次的划分。</X.P>
             <X.H1>链路层</X.H1>
             <X.H2>停等协议 - SW</X.H2>
             <X.P>
@@ -74,6 +75,44 @@ export default function Blog() {
                 如果`4`号、`5`号可以被正常接收，并且返回的`ACK 4`、`ACK 5`可以正确到达发送方，---
                 那么最后会使得发送窗口和接收窗口都卡在`2`的位置，并最终触发`2`号分组超时重传。
             </X.P>
+            <X.H2>媒体接入控制</X.H2>
+            <X.P>
+                共享信道要着重考虑的一个问题就是如何协调多个发送和接收站点对一个共享传输媒体的占用，即*媒体接入控制*`(Medium
+                Access Control, MAC)`。
+            </X.P>
+            <X.Table>
+                <tr>
+                    <th rowSpan={4}>静态划分信道</th>
+                    <td colSpan={2}>时分多路复用</td>
+                </tr>
+                <tr>
+                    <td colSpan={2}>频分多路复用</td>
+                </tr>
+                <tr>
+                    <td colSpan={2}>波分多路复用</td>
+                </tr>
+                <tr>
+                    <td colSpan={2}>码分多路复用</td>
+                </tr>
+                <tr>
+                    <th rowSpan={5}>动态接入控制</th>
+                    <th>轮询访问</th>
+                    <td>令牌等方式</td>
+                </tr>
+                <tr>
+                    <th rowSpan={4}>随机访问</th>
+                    <td>ALOHA</td>
+                </tr>
+                <tr>
+                    <td>CSMA</td>
+                </tr>
+                <tr>
+                    <td>CSMA/CD</td>
+                </tr>
+                <tr>
+                    <td>CSMA/CA</td>
+                </tr>
+            </X.Table>
             <X.H1>网络层</X.H1>
             <X.H2>自治系统、IGP和EGP</X.H2>
             <X.P>
