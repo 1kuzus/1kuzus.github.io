@@ -52,12 +52,10 @@ export default function Blog() {
             </X.P>
             <X.H2>准则函数</X.H2>
             <X.P>
-                假设两类问题中每类的均值向量分别为{`$\\bm{m}_1$`}和{`$\\bm{m}_2$`}，定义两类的类内离散度矩阵：
+                假设两类问题中每类的均值向量分别为{`$\\bm{m}_1$`}和{`$\\bm{m}_2$`}，定义*类内离散度矩阵*：
             </X.P>
-            <X.Formula text="\bm{S}_1=\sum(\bm{X}_i-\bm{m}_1)(\bm{X}_i-\bm{m}_1)^T, \quad \bm{S}_2=\dots" />
-            <X.P>总类内离散度矩阵：</X.P>
-            <X.Formula text="\bm{S}_w=\bm{S}_1+\bm{S}_2" />
-            <X.P>类间离散度矩阵：</X.P>
+            <X.Formula text="\bm{S}_w=\bm{S}_1+\bm{S}_2=\sum_{\bm{X} \in \bm{\chi}_1}(\bm{X}-\bm{m}_1)(\bm{X}-\bm{m}_1)^T+\sum_{\bm{X} \in \bm{\chi}_2}(\bm{X}-\bm{m}_2)(\bm{X}-\bm{m}_2)^T" />
+            <X.P>*类间离散度矩阵*：</X.P>
             <X.Formula text="\bm{S}_b=(\bm{m}_1-\bm{m}_2)(\bm{m}_1-\bm{m}_2)^T" />
             <X.P>判别准则为</X.P>
             <X.HighlightBlock bgcolor="gray">
