@@ -43,7 +43,7 @@ export default function Blog() {
                     可以这样理解：小舱体积应该尽可能小，同时要保证小舱内有充分多的样本，但每个小舱内样本数又必须是总样本数中很小一部分。
                 </X.P>
             </X.HighlightBlock>
-            <X.H1>k近邻法</X.H1>
+            <X.H1>k近邻估计</X.H1>
             <X.P>
                 `kNN`的全称是`k Nearest Neighbors`，意思是K个最近的邻居。---
                 基本做法是：根据样本总数确定一个参数$k_n$，例如样本总数为$n$时，可以取
