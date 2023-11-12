@@ -66,9 +66,10 @@ export default function Blog() {
             <X.HighlightBlock bgcolor="gray">
                 <X.Formula text="\bm{W}^*=\bm{S}_w^{-1}(\bm{m}_1-\bm{m}_2)" />
             </X.HighlightBlock>
-            <X.P>
-                确定了方向后，分类的阈值可以取投影过后的两类的均值的平均数，即$(m_1+m_2)/2$。注意投影后是一维空间，$m_1$和$m_2$是常数。
-            </X.P>
+            <X.P>确定了方向后，分类的阈值可以取两类均值的中心的投影，即：</X.P>
+            <X.HighlightBlock bgcolor="gray">
+                <X.Formula text="threshold=\bm{W}^{*T}\frac{\bm{m}_1+\bm{m}_2}{2}" />
+            </X.HighlightBlock>
             <X.H1>感知器</X.H1>
             <X.H2 salt="2">动机</X.H2>
             <X.P>感知器用{`$\\bm{W}^T\\bm{X}$`}的正负来判断样本的分类。</X.P>
