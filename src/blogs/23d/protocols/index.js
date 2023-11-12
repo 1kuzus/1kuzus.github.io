@@ -610,16 +610,34 @@ export default function Blog() {
             <X.H2>地址解析协议 - ARP</X.H2>
             <X.P>
                 在以太网协议中规定，同一局域网中的一台主机要和另一台主机进行直接通信，必须要知道目标主机的MAC地址，而网络层和运输层只关心目标主机的IP地址。\n
-                *地址解析协议*`(Address Resolution Protocol,
-                ARP)`用于完成网络层地址（例如IP地址）和链路层地址（即MAC地址）的转换。
+                *地址解析协议*`(Address Resolution Protocol, ARP)`---
+                用于完成网络层地址（例如IP地址）和链路层地址（即MAC地址）的转换。
             </X.P>
             <X.H2>互联网控制报文协议 - ICMP</X.H2>
             <X.P>
-                *互联网控制报文协议*`(Internet Control Message Protocol,
-                ICMP)`被主机和路由器用来彼此沟通网络层的信息，ICMP最典型的用途是差错报告，提供可能发生在通信环境中的各种问题反馈。---
+                *互联网控制报文协议*`(Internet Control Message Protocol, ICMP)`---
+                被主机和路由器用来彼此沟通网络层的信息，ICMP最典型的用途是差错报告，提供可能发生在通信环境中的各种问题反馈。---
                 通过这些信息，管理者可以对所发生的问题作出诊断，然后采取适当的措施解决。
             </X.P>
             <X.H1>运输层</X.H1>
+            <X.H2>用户数据报协议 - UDP</X.H2>
+            <X.P>
+                *用户数据报协议*`(User Datagram Protocol, UDP)`---
+                提供无连接、不可靠的服务，支持单播、多播、广播；UDP面向报文，对应用进程交下来的报文既不合并也不拆分。\n
+                UDP传输效率更高，其牺牲了可靠性来保证性能。UDP适用于实时应用，例如视频会议、电话等。\n
+                UDP首部开销小，只包括源端口、目的端口、长度、校验和共`8`字节。
+            </X.P>
+            <X.Image src={require('./tcpudp.jpg')} width="600" />
+            <X.H2>传输控制协议 - TCP</X.H2>
+            <X.P>
+                *传输控制协议*`(Transmission Control Protocol, TCP)`---
+                提供连接、可靠的服务，仅支持单播；TCP面向字节流，把应用进程交下来的报文仅当作字节流。
+            </X.P>
+            <X.H3>TCP连接管理</X.H3>
+            <X.Image src={require('./tcp1.jpg')} width="100%" />
+            <X.Image src={require('./tcp2.jpg')} width="600" />
+            <X.H3>TCP流量控制</X.H3>
+            <X.H3>TCP拥塞控制</X.H3>
             <X.H1>参考资料</X.H1>
             <X.P noMarginBottom>本文的部分内容、图片来源于：</X.P>
             <X.Uli>
