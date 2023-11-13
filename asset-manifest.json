@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.20e7c138.css",
-    "main.js": "/static/js/main.cef8a50d.js",
+    "main.js": "/static/js/main.36d1ca98.js",
     "static/media/sw.png": "/static/media/sw.6c99883b5301d8cc7c4d.png",
     "static/media/csma1.png": "/static/media/csma1.2a11daa6d5a2b4dea4fe.png",
     "static/media/csma3.png": "/static/media/csma3.fa0bc36fa6c06e11198f.png",
@@ -36,6 +36,7 @@
     "static/media/KaTeX_Main-Bold.woff2": "/static/media/KaTeX_Main-Bold.39890742bc957b368704.woff2",
     "static/media/KaTeX_SansSerif-Bold.ttf": "/static/media/KaTeX_SansSerif-Bold.5b49f4993ae22d7975b4.ttf",
     "static/media/fig10.png": "/static/media/fig10.dd810e00a5638a8402e0.png",
+    "static/media/tcp3.jpg": "/static/media/tcp3.4142bfff0c6965122546.jpg",
     "static/media/fig9.png": "/static/media/fig9.e757a81163ebe985e3b6.png",
     "static/media/fig8.png": "/static/media/fig8.0f276692a2410e2244c2.png",
     "static/media/fig7.png": "/static/media/fig7.67be4cecca205970b9a5.png",
@@ -94,10 +95,10 @@
     "static/media/dark_theme.svg": "/static/media/dark_theme.830b9f553aa45eb5499e66f740db7d57.svg",
     "static/media/logo.svg": "/static/media/logo.ea9249bf81c188f48ff0624ab04081be.svg",
     "main.20e7c138.css.map": "/static/css/main.20e7c138.css.map",
-    "main.cef8a50d.js.map": "/static/js/main.cef8a50d.js.map"
+    "main.36d1ca98.js.map": "/static/js/main.36d1ca98.js.map"
   },
   "entrypoints": [
     "static/css/main.20e7c138.css",
-    "static/js/main.cef8a50d.js"
+    "static/js/main.36d1ca98.js"
   ]
 }
