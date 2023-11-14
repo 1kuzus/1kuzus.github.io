@@ -13,7 +13,7 @@ const categories = [
         blogs: [
             {
                 blogName: 'JavaScript 数组常用方法',
-                path: '/bj23k',
+                path: '/bj23k/',
                 time: '2023-9-2',
                 component: <Bj23k />,
             },
@@ -24,7 +24,7 @@ const categories = [
         blogs: [
             {
                 blogName: '数据库设计三大范式',
-                path: '/bykl9',
+                path: '/bykl9/',
                 time: '2023-10-17',
                 component: <Bykl9 />,
             },
@@ -35,31 +35,31 @@ const categories = [
         blogs: [
             {
                 blogName: '模式识别 · 统计决策方法',
-                path: '/behwl',
+                path: '/behwl/',
                 time: '2023-8-31',
                 component: <Behwl />,
             },
             {
                 blogName: '模式识别 · 参数估计',
-                path: '/bco21',
+                path: '/bco21/',
                 time: '2023-9-12',
                 component: <Bco21 />,
             },
             {
                 blogName: '模式识别 · 非参数估计',
-                path: '/bjjj5',
+                path: '/bjjj5/',
                 time: '2023-9-19',
                 component: <Bjjj5 />,
             },
             {
                 blogName: '模式识别 · 线性学习器与线性分类器',
-                path: '/b2fph',
+                path: '/b2fph/',
                 time: '2023-10-24',
                 component: <B2fph />,
             },
             {
                 blogName: '计算机网络 · 协议总结',
-                path: '/blnrj',
+                path: '/blnrj/',
                 time: '2023-10-26',
                 component: <Blnrj />,
             },
@@ -70,7 +70,7 @@ const categories = [
         blogs: [
             {
                 blogName: '示例',
-                path: '/b0000',
+                path: '/b0000/',
                 component: <B0000 />,
             },
         ],
