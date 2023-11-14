@@ -33,7 +33,7 @@ export default function Header() {
                     <div id="header-theme-bg" onClick={() => setIsDarkTheme(!isDarkTheme)}>
                         <img src={isDarkTheme ? DarkThemeIcon : LightThemeIcon} alt="theme" />
                     </div>
-                    <a href="https://github.com/1kuzus" target="_blank" rel="noreferrer">
+                    <a href="https://github.com/1kuzus/1kuzus.github.io" target="_blank" rel="noreferrer">
                         <div id="header-github-bg">
                             <img src={GithubIcon} alt="github" />
                         </div>
