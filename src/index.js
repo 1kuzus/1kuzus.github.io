@@ -3,6 +3,7 @@ import {BrowserRouter} from 'react-router-dom';
 import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+console.log('app'+Math.random())
 root.render(
     <BrowserRouter>
         <App />

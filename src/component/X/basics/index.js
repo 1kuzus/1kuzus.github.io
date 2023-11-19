@@ -45,6 +45,7 @@ export function P(props) {
     const {withMarginTop = false, noMarginBottom = false, children = ''} = props;
     let htmlContent = Array.isArray(children) ? children.join('') : children;
 
+    //todo:连起来写
     htmlContent = htmlContent.replace(/--- /g, '');
     htmlContent = htmlContent.replace(/</g, '&#60;').replace(/>/g, '&#62;');
     htmlContent = htmlContent.replace(/\\\\/g, '&#92;');
