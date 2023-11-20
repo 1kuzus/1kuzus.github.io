@@ -7,7 +7,7 @@ import './index.css';
 export function Title(props) {
     const {children} = props;
     useLayoutEffect(() => {
-        document.title = 'Blogs - ' + children;
+        document.title = children;
     }, [children]);
     return <h1 className="x-title">{children}</h1>;
 }
