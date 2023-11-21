@@ -6,6 +6,7 @@ import Bjjj5 from './23c/pattern_recognition3';
 import Bykl9 from './23d/db3nf';
 import B2fph from './23d/pattern_recognition4';
 import Blnrj from './23d/protocols';
+import B0001 from './23d/update_log';
 
 const categories = [
     {
@@ -72,6 +73,11 @@ const categories = [
                 blogName: '示例',
                 path: '/b0000/',
                 component: <B0000 />,
+            },
+            {
+                blogName: '更新日志',
+                path: '/b0001/',
+                component: <B0001 />,
             },
         ],
     },
