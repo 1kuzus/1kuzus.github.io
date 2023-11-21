@@ -15,25 +15,24 @@ routepathsAndFilepaths.forEach(([routepath, filepath]) => {
     const noScriptCode = rawBlogCode
         .match(/<X.BlogWrapper>(.*?)<\/X.BlogWrapper>/s)[0]
         .replace(/<X.BlogWrapper>(.*?)<\/X.BlogWrapper>/gs, '<div>$1</div>')
-        //固定替换或删除
         .replace(/<X.Br \/>/gs, '<br/>')
         .replace(/<X.Divider \/>/gs, '')
-        .replace(/<X.Uli(.*?)>/gs, '')
-        .replace(/<\/X.Uli>/gs, '')
-        .replace(/<X.Oli(.*?)>/gs, '')
-        .replace(/<\/X.Oli>/gs, '')
+        .replace(/<X.Uli(.*?)>/gs, '<div>')
+        .replace(/<\/X.Uli>/gs, '</div>')
+        .replace(/<X.Oli(.*?)>/gs, '<div>')
+        .replace(/<\/X.Oli>/gs, '</div>')
+        .replace(/<X.HighlightBlock(.*?)>/gs, '<div>')
+        .replace(/<\/X.HighlightBlock>/gs, '</div>')
+        .replace(/<X.FlexRow(.*?)>/gs, '<div>')
+        .replace(/<\/X.FlexRow>/gs, '</div>')
         .replace(/<X.Table(.*?)>(.*?)<\/X.Table>/gs, '<div>[TABLE]</div>')
         .replace(/<X.Table(.*?)\/>/gs, '<div>[TABLE]</div>')
         .replace(/<X.Image(.*?)\/>/gs, '<div>[IMAGE]</div>')
-        .replace(/<X.HighlightBlock(.*?)>/gs, '<div>')
-        .replace(/<\/X.HighlightBlock>/gs, '</div>')
         .replace(/<X.CodeBlock(.*?)code={`(.*?)[^\\]`}(.*?)\/>/gs, '<div>[CODEBLOCK]</div>')
-        //仅标签
         .replace(/<X.Title>(.*?)<\/X.Title>/gs, '<h1>$1</h1>')
         .replace(/<X.H1>(.*?)<\/X.H1>/gs, '<h2>$1</h2>')
         .replace(/<X.H2(.*?)>(.*?)<\/X.H2>/gs, '<h3>$2</h3>')
         .replace(/<X.H3(.*?)>(.*?)<\/X.H3>/gs, '<h4>$2</h4>')
-        .replace(/<X.FlexRow(.*?)>(.*?)<\/X.FlexRow>/gs, '<div>$2</div>')
         .replace(/<X.Formula\s*text="(.*?)"\s*\/>/gs, '$1')
         //段落
         .replace(
@@ -42,16 +41,16 @@ routepathsAndFilepaths.forEach(([routepath, filepath]) => {
                 '<p>' +
                 group2
                     .replace(/---/gs, '')
-                    .replace(/\\\\/g, '[backslash]')
-                    .replace(/\\`/g, '[backtick]')
-                    .replace(/\\\*/g, '[star]')
-                    .replace(/\\@/g, '[at]')
-                    .replace(/\\\$/g, '[dollar]')
-                    .replace(/\\n/g, '<br/>')
-                    .replace(/{`(.*?)`}/g, '$1')
-                    .replace(/`(.*?)`/g, '$1')
-                    .replace(/\*(.*?)\*/g, '$1')
-                    .replace(/@(.*?)\[(.*?)\]@/g, '<a href="$2" target="_blank">$1</a>') +
+                    .replace(/\\\\/gs, '[backslash]')
+                    .replace(/\\`/gs, '[backtick]')
+                    .replace(/\\\*/gs, '[star]')
+                    .replace(/\\@/gs, '[at]')
+                    .replace(/\\\$/gs, '[dollar]')
+                    .replace(/\\n/gs, '<br/>')
+                    .replace(/{`(.*?)`}/gs, '$1')
+                    .replace(/`(.*?)`/gs, '$1')
+                    .replace(/\*(.*?)\*/gs, '$1')
+                    .replace(/@(.*?)\[(.*?)\]@/gs, '<a href="$2" target="_blank">$1</a>') +
                 '</p>'
         )
         //删除其他标签
