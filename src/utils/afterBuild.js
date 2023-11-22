@@ -8,6 +8,7 @@ const routepathsAndFilepaths = fs
     .toString()
     .match(/import (.*?) from '(.*?)'/g)
     .map((i) => [i.split(' ')[1].toLowerCase(), i.split(' ')[3].replace(/'/g, '')]);
+
 routepathsAndFilepaths.forEach(([routepath, filepath]) => {
     fs.mkdirSync(path.join('build', routepath));
     console.log(`writing ${path.join('build', routepath, 'index.html')}`);
@@ -70,7 +71,7 @@ console.log('--- Updating build\\index.html ---');
 const homepageLinks =
     '<ul>' +
     routepathsAndFilepaths
-        .map(([routepath, filepath]) => `<li><a href="${routepath}" target="_blank">${filepath.split('/')[2]}</a></li>`)
+        .map(([routepath, filepath]) => `<li><h2><a href="${routepath}" target="_blank">${filepath.split('/')[2]}</a></h2></li>`)
         .join('') +
     '</ul>';
 const htmlCode = fs
@@ -80,8 +81,9 @@ fs.writeFileSync(path.join('build', 'index.html'), htmlCode);
 
 console.log('--- Writing sitemap.xml ---');
 const sitemapStream = new sitemap.SitemapStream({hostname: 'https://1kuzus.github.io'});
+sitemapStream.write({url: '/'});
 routepathsAndFilepaths.forEach(([routepath, _]) => {
-    sitemapStream.write({url: '/' + routepath, lastmod: new Date().toLocaleString()});
+    sitemapStream.write({url: '/' + routepath + '/'});
 });
 sitemapStream.end();
 const writeStream = fs.createWriteStream(path.join('build', 'sitemap.xml'));
