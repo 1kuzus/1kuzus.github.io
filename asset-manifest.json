@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.20e7c138.css",
-    "main.js": "/static/js/main.970d77a7.js",
+    "main.css": "/static/css/main.5042e902.css",
+    "main.js": "/static/js/main.d843ba55.js",
     "static/media/sw.png": "/static/media/sw.6c99883b5301d8cc7c4d.png",
     "static/media/csma1.png": "/static/media/csma1.2a11daa6d5a2b4dea4fe.png",
     "static/media/csma3.png": "/static/media/csma3.fa0bc36fa6c06e11198f.png",
@@ -43,6 +43,7 @@
     "static/media/fig6.png": "/static/media/fig6.82f321930603a24f4650.png",
     "static/media/fig1.png": "/static/media/fig1.ac0c93fcf50ca93e9432.png",
     "static/media/KaTeX_SansSerif-Italic.ttf": "/static/media/KaTeX_SansSerif-Italic.b257a18c016f37ee4543.ttf",
+    "static/media/dance.gif": "/static/media/dance.90228ca053fdafb258eb.gif",
     "static/media/KaTeX_Main-Italic.woff": "/static/media/KaTeX_Main-Italic.fd947498bc16392e76c2.woff",
     "static/media/KaTeX_Fraktur-Bold.ttf": "/static/media/KaTeX_Fraktur-Bold.4c761b3711973ab04edf.ttf",
     "static/media/KaTeX_Fraktur-Regular.ttf": "/static/media/KaTeX_Fraktur-Regular.ed305b5434865e06ffde.ttf",
@@ -72,6 +73,7 @@
     "static/media/KaTeX_Size2-Regular.ttf": "/static/media/KaTeX_Size2-Regular.57f5c1837853986ea1db.ttf",
     "static/media/KaTeX_Fraktur-Bold.woff2": "/static/media/KaTeX_Fraktur-Bold.931d67ea207ab37ee693.woff2",
     "static/media/KaTeX_Fraktur-Regular.woff2": "/static/media/KaTeX_Fraktur-Regular.172d3529b26f8cedef6b.woff2",
+    "static/media/cheer.gif": "/static/media/cheer.0a66bbeeb5dfc7c7d6f7.gif",
     "static/media/KaTeX_Script-Regular.woff": "/static/media/KaTeX_Script-Regular.073b3402d036714b4370.woff",
     "static/media/KaTeX_Size4-Regular.ttf": "/static/media/KaTeX_Size4-Regular.4ad7c7e8bb8d10a34bb7.ttf",
     "static/media/KaTeX_SansSerif-Regular.woff2": "/static/media/KaTeX_SansSerif-Regular.cd5e231e0cc53b2cb2c0.woff2",
@@ -94,11 +96,11 @@
     "index.html": "/index.html",
     "static/media/dark_theme.svg": "/static/media/dark_theme.830b9f553aa45eb5499e66f740db7d57.svg",
     "static/media/logo.svg": "/static/media/logo.ea9249bf81c188f48ff0624ab04081be.svg",
-    "main.20e7c138.css.map": "/static/css/main.20e7c138.css.map",
-    "main.970d77a7.js.map": "/static/js/main.970d77a7.js.map"
+    "main.5042e902.css.map": "/static/css/main.5042e902.css.map",
+    "main.d843ba55.js.map": "/static/js/main.d843ba55.js.map"
   },
   "entrypoints": [
-    "static/css/main.20e7c138.css",
-    "static/js/main.970d77a7.js"
+    "static/css/main.5042e902.css",
+    "static/js/main.d843ba55.js"
   ]
 }
