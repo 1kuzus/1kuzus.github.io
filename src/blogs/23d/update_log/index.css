@@ -2,8 +2,10 @@
     position: absolute;
     left: 0;
     top: 0;
+    z-index: -1;
 }
 #b0001-dance-version-wrapper {
+    max-width: 360px;
     padding-top: 24px;
 }
 #b0001-dance-gif-wrapper {
