@@ -1,4 +1,5 @@
 .x-img-wrapper {
+    height: fit-content;
     margin: 18px 0;
 }
 .x-img-wrapper img {

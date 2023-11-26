@@ -1,4 +1,11 @@
-#b0001-version-text {
-    font-size: 60px;
-    font-family: Consolas, Menlo, 'Courier New', Courier, 'Ubuntu Mono', monospace;;
+#b0001-canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#b0001-dance-version-wrapper {
+    padding-top: 24px;
+}
+#b0001-dance-gif-wrapper {
+    padding-top: 32px;
 }
