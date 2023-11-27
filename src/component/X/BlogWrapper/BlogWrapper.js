@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import {useState, useEffect} from 'react';
 import {SHA256Hash8} from '@/utils/SHA256Hash';
 import {H1, H2} from '../basics';
 import './BlogWrapper.css';
@@ -50,7 +50,10 @@ export default function BlogWrapper(props) {
           }, [])
         : null;
 
-    oliIdx = 0;
+    useEffect(() => {
+        oliIdx = 0;
+        document.documentElement.scrollTo({top: 0});
+    }, []);
 
     useEffect(() => {
         // const titles=queryselectorall('x-blogwrapper>x-h1,x-blogwrapper>x-h2')

@@ -1,4 +1,4 @@
-import {useRef, useLayoutEffect} from 'react';
+import {useLayoutEffect, useRef} from 'react';
 import Katex from 'katex';
 import './Formula.css';
 

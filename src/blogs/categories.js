@@ -7,6 +7,7 @@ import Bykl9 from './23d/db3nf';
 import B2fph from './23d/pattern_recognition4';
 import Blnrj from './23d/protocols';
 import B0001 from './23d/update_log';
+import B97t6 from './23d/r2plus1d';
 
 const categories = [
     {
@@ -28,6 +29,17 @@ const categories = [
                 path: '/bykl9/',
                 time: '2023-10-17',
                 component: <Bykl9 />,
+            },
+        ],
+    },
+    {
+        categoryName: '深度学习',
+        blogs: [
+            {
+                blogName: '行为识别R(2+1)D模型',
+                path: '/b97t6/',
+                time: '2023-11-27',
+                component: <B97t6 />,
             },
         ],
     },
