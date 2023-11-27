@@ -44,25 +44,25 @@ export function P(props) {
     */
     const {withMarginTop = false, noMarginBottom = false, children = ''} = props;
     let htmlContent = Array.isArray(children) ? children.join('') : children;
-
-    //todo:连起来写
-    htmlContent = htmlContent.replace(/--- /g, '');
-    htmlContent = htmlContent.replace(/</g, '&#60;').replace(/>/g, '&#62;');
-    htmlContent = htmlContent.replace(/\\\\/g, '&#92;');
-    htmlContent = htmlContent.replace(/\\`/g, '&#96;');
-    htmlContent = htmlContent.replace(/\\\*/g, '&#42;');
-    htmlContent = htmlContent.replace(/\\@/g, '&#64;');
-    htmlContent = htmlContent.replace(/\\\$/g, '&#36;');
-    htmlContent = htmlContent.replace(/\\n/g, '<br/>');
-    htmlContent = htmlContent.replace(/`(.*?)`/g, '<span class="x-inline-highlight">$1</span>');
-    htmlContent = htmlContent.replace(/\*(.*?)\*/g, '<span class="x-inline-strong">$1</span>');
-    htmlContent = htmlContent.replace(/@(.*?)\[(.*?)\]@/g, '<a href="$2" target="_blank" class="x-inline-link">$1</a>');
-    htmlContent = htmlContent.replace(/\$(.*?)\$/g, (_, group1) => {
-        return Katex.renderToString(group1, {
-            output: 'html',
-            strict: false,
+    htmlContent = htmlContent
+        .replace(/--- /g, '')
+        .replace(/</g, '&#60;')
+        .replace(/>/g, '&#62;')
+        .replace(/\\\\/g, '&#92;')
+        .replace(/\\`/g, '&#96;')
+        .replace(/\\\*/g, '&#42;')
+        .replace(/\\@/g, '&#64;')
+        .replace(/\\\$/g, '&#36;')
+        .replace(/\\n/g, '<br/>')
+        .replace(/`(.*?)`/g, '<span class="x-inline-highlight">$1</span>')
+        .replace(/\*(.*?)\*/g, '<span class="x-inline-strong">$1</span>')
+        .replace(/@(.*?)\[(.*?)\]@/g, '<a href="$2" target="_blank" class="x-inline-link">$1</a>')
+        .replace(/\$(.*?)\$/g, (_, group1) => {
+            return Katex.renderToString(group1, {
+                output: 'html',
+                strict: false,
+            });
         });
-    });
 
     return (
         <p
