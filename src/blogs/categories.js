@@ -36,7 +36,7 @@ const categories = [
         categoryName: '深度学习',
         blogs: [
             {
-                blogName: '行为识别R(2+1)D模型',
+                blogName: '行为识别R(2+1)D网络',
                 path: '/b97t6/',
                 time: '2023-11-27',
                 component: <B97t6 />,

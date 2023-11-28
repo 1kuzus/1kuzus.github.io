@@ -3,17 +3,85 @@ import X from '@/component/X';
 export default function Blog() {
     return (
         <X.BlogWrapper>
-            <X.Title>行为识别R(2+1)D模型</X.Title>
+            <X.Title>行为识别R(2+1)D网络</X.Title>
             <X.P>
                 论文@A Closer Look at Spatiotemporal Convolutions for Action
                 Recognition[https://arxiv.org/pdf/1711.11248.pdf]@讨论了几种用于行为识别的时空卷积网络。---
-                文中提出了R(2+1)D模型，即将R3D模型中的3D卷积拆分成2D空间卷积+1D时间卷积。
+                文中提出了R(2+1)D网络，即将R3D网络中的3D卷积拆分成2D空间卷积+1D时间卷积。
+            </X.P>
+            <X.P>
+                文中的部分复现代码来自于Github仓库 @Github: R2Plus1D-PyTorch[https://github.com/irhum/R2Plus1D-PyTorch]@
             </X.P>
             <X.H1>(2+1)D卷积</X.H1>
-            <X.P>普通3D卷积的核大小为$(C_i,C_o,K_t,K_w,K_h)$</X.P>
+            <X.P>
+                普通3D卷积的核大小为$(C_i,C_o,K_t,K_w,K_h)$，$C_i,C_o$为输入通道数、$K_t,K_w,K_h$是3D卷积核的尺寸。\n
+                R(2+1)D网络最核心的改动就是将普通的`Conv3d`替换为`SpatioTemporalConv`卷积。
+            </X.P>
+            <X.P noMarginBottom>`SpatioTemporalConv`卷积从外部看与`Conv3d`相同，均有`5`个超参数，区别在于其内部的结构：</X.P>
+            <X.Uli>
+                <X.P>大小为$(C_i,C,1,K_w,K_h)$的`Conv3d`</X.P>
+            </X.Uli>
+            <X.Uli>
+                <X.P>`BatchNorm`+`ReLU`</X.P>
+            </X.Uli>
+            <X.Uli>
+                <X.P>大小为$(C,C_o,K_t,1,1)$的`Conv3d`</X.P>
+            </X.Uli>
+            <X.P withMarginTop>如果二者作用于相同的输出，得到的结果`shape`是一样的：</X.P>
+            <X.CodeBlock
+                language="python"
+                code={`
+                import torch
+                from r2plus1d.module import SpatioTemporalConv
 
-            
+                video_3d=torch.rand(8,3,60,32,32) #(batch*channels*frames*w*h)
+                conv3d=torch.nn.Conv3d(in_channels=3,out_channels=16,kernel_size=[7,5,5])
+                spconv=SpatioTemporalConv(in_channels=3,out_channels=16,kernel_size=[7,5,5])
+
+                output1=conv3d(video_3d)
+                output2=spconv(video_3d)
+
+                print(output1.shape) #torch.Size([8, 16, 54, 28, 28])
+                print(output2.shape) #torch.Size([8, 16, 54, 28, 28])
+                `}
+            />
+            <X.P>注意到拆分成两次卷积后，会出现一个中间通道数$C$。论文中给出选取$C$值的公式是：</X.P>
             <X.Image src={require('./fig1.jpg')} width="100%" />
+            <X.CodeBlock
+                language="python"
+                code={`
+                class SpatioTemporalConv(nn.Module):
+                    def __init__(self, in_channels, out_channels, kernel_size, stride=1, padding=0, bias=True):
+                        super(SpatioTemporalConv, self).__init__()
+
+                        kernel_size = _triple(kernel_size)
+                        stride = _triple(stride)
+                        padding = _triple(padding)
+
+                        spatial_kernel_size =  [1, kernel_size[1], kernel_size[2]]
+                        spatial_stride =  [1, stride[1], stride[2]]
+                        spatial_padding =  [0, padding[1], padding[2]]
+
+                        temporal_kernel_size = [kernel_size[0], 1, 1]
+                        temporal_stride =  [stride[0], 1, 1]
+                        temporal_padding =  [padding[0], 0, 0]
+                
+                        # 计算中间通道数
+                        # from the paper section 3.5
+                        intermed_channels = int(math.floor((kernel_size[0] * kernel_size[1] * kernel_size[2] * in_channels * out_channels)/ \\
+                                            (kernel_size[1]* kernel_size[2] * in_channels + kernel_size[0] * out_channels)))
+
+                        self.spatial_conv = nn.Conv3d(in_channels, intermed_channels, spatial_kernel_size, stride=spatial_stride, padding=spatial_padding, bias=bias)
+                        self.bn = nn.BatchNorm3d(intermed_channels)
+                        self.relu = nn.ReLU()
+                        self.temporal_conv = nn.Conv3d(intermed_channels, out_channels, temporal_kernel_size, stride=temporal_stride, padding=temporal_padding, bias=bias)
+                
+                    def forward(self, x):
+                        x = self.relu(self.bn(self.spatial_conv(x)))
+                        x = self.temporal_conv(x)
+                        return x
+                `}
+            />
         </X.BlogWrapper>
     );
 }
