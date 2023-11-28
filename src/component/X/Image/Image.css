@@ -5,4 +5,5 @@
 }
 .x-img-wrapper img {
     display: block;
+    /* filter: invert(1) hue-rotate(180deg) saturate(1.6); */
 }
