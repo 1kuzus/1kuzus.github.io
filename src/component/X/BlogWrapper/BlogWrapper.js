@@ -50,8 +50,8 @@ export default function BlogWrapper(props) {
           }, [])
         : null;
 
+    oliIdx = 0;
     useEffect(() => {
-        oliIdx = 0;
         document.documentElement.scrollTo({top: 0});
     }, []);
 
