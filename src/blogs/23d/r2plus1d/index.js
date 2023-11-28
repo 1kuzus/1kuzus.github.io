@@ -10,7 +10,8 @@ export default function Blog() {
                 文中提出了R(2+1)D网络，即将R3D网络中的3D卷积拆分成2D空间卷积+1D时间卷积。
             </X.P>
             <X.P>
-                文中的部分复现代码来自于Github仓库 @Github: R2Plus1D-PyTorch[https://github.com/irhum/R2Plus1D-PyTorch]@
+                PyTorch版本复现代码来自于Github仓库 @Github:
+                R2Plus1D-PyTorch[https://github.com/irhum/R2Plus1D-PyTorch]@
             </X.P>
             <X.H1>(2+1)D卷积</X.H1>
             <X.P>
@@ -56,42 +57,7 @@ export default function Blog() {
             </X.P>
             <X.Oli>增加了网络非线性层的层数</X.Oli>
             <X.Oli>优化更容易（实验结果：R(2+1)D网络的训练和测试误差都更小）</X.Oli>
-            <X.Image src={require('./fig2.jpg')} width="100%" />
-            <X.CodeBlock
-                language="python"
-                code={`
-                class SpatioTemporalConv(nn.Module):
-                    def __init__(self, in_channels, out_channels, kernel_size, stride=1, padding=0, bias=True):
-                        super(SpatioTemporalConv, self).__init__()
-
-                        kernel_size = _triple(kernel_size)
-                        stride = _triple(stride)
-                        padding = _triple(padding)
-
-                        spatial_kernel_size =  [1, kernel_size[1], kernel_size[2]]
-                        spatial_stride =  [1, stride[1], stride[2]]
-                        spatial_padding =  [0, padding[1], padding[2]]
-
-                        temporal_kernel_size = [kernel_size[0], 1, 1]
-                        temporal_stride =  [stride[0], 1, 1]
-                        temporal_padding =  [padding[0], 0, 0]
-                
-                        # 计算中间通道数
-                        # from the paper section 3.5
-                        intermed_channels = int(math.floor((kernel_size[0] * kernel_size[1] * kernel_size[2] * in_channels * out_channels)/ \\
-                                            (kernel_size[1]* kernel_size[2] * in_channels + kernel_size[0] * out_channels)))
-
-                        self.spatial_conv = nn.Conv3d(in_channels, intermed_channels, spatial_kernel_size, stride=spatial_stride, padding=spatial_padding, bias=bias)
-                        self.bn = nn.BatchNorm3d(intermed_channels)
-                        self.relu = nn.ReLU()
-                        self.temporal_conv = nn.Conv3d(intermed_channels, out_channels, temporal_kernel_size, stride=temporal_stride, padding=temporal_padding, bias=bias)
-                
-                    def forward(self, x):
-                        x = self.relu(self.bn(self.spatial_conv(x)))
-                        x = self.temporal_conv(x)
-                        return x
-                `}
-            />
+            <X.Image src={require('./fig2.jpg')} width="600" />
         </X.BlogWrapper>
     );
 }
