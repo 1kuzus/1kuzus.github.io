@@ -5,6 +5,7 @@ import './Homepage.css';
 export default function Homepage() {
     useLayoutEffect(() => {
         document.title = 'Blogs';
+        document.documentElement.scrollTo({top: 0});
     }, []);
 
     return (

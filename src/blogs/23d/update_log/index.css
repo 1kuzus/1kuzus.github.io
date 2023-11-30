@@ -2,7 +2,7 @@
     position: absolute;
     left: 0;
     top: 0;
-    z-index: -1;
+    pointer-events: none;
 }
 #b0001-dance-version-wrapper {
     max-width: 360px;

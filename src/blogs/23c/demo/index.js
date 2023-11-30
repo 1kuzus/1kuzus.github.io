@@ -26,11 +26,6 @@ export default function Blog() {
                 <X.H2>二级标题</X.H2>
                 <X.H3>三级标题</X.H3>
             </X.HighlightBlock>
-            <X.H3>给标题加盐</X.H3>
-            <X.P>目录组件通过标题内容的`hash`值作为元素的`id`，如果有中文一样的两个标题，请指定`salt`属性。</X.P>
-            <X.HighlightBlock bgcolor="red">
-                <X.P>该用法预计在下个版本弃用。因此不过多描述。</X.P>
-            </X.HighlightBlock>
             <X.H2>段落</X.H2>
             <X.P>最基本的用于展示文本的组件。</X.P>
             <X.HighlightBlock bgcolor="gray">

@@ -23,6 +23,12 @@ function Version() {
     );
 }
 
+const logs = [
+    {date: '2023-07-12', description: '更新了主要内容'},
+    {date: '2023-07-12', description: '更新了主要内容'},
+    {date: '2023-07-12', description: '更新了主要内容'},
+];
+
 export default function Blog() {
     useEffect(() => {
         const trigger = document.getElementById('b0001-trigger');
@@ -109,26 +115,15 @@ export default function Blog() {
         window.addEventListener('resize', resizeHandler);
         return () => window.removeEventListener('resize', resizeHandler);
     }, []);
+
     return (
         <X.BlogWrapper>
             <X.Title>更新日志</X.Title>
             <Version />
-            <X.HighlightBlock>123</X.HighlightBlock>
-            <X.HighlightBlock>123</X.HighlightBlock>
-            <X.HighlightBlock>123</X.HighlightBlock>
-            <X.HighlightBlock>123</X.HighlightBlock>
-            <X.HighlightBlock>123</X.HighlightBlock>
-            <X.HighlightBlock>123</X.HighlightBlock>
-            <X.HighlightBlock>123</X.HighlightBlock>
-            <X.HighlightBlock>123</X.HighlightBlock>
-            <X.HighlightBlock>123</X.HighlightBlock>
-            <X.HighlightBlock>123</X.HighlightBlock>
-            <X.HighlightBlock>123</X.HighlightBlock>
-            <X.HighlightBlock>123</X.HighlightBlock>
-            <X.HighlightBlock>123</X.HighlightBlock>
-            <X.HighlightBlock>123</X.HighlightBlock>
-            <X.HighlightBlock>123</X.HighlightBlock>
-            <X.HighlightBlock>123</X.HighlightBlock>
+            {logs.map((log) => (
+                <X.H3>{log.date}</X.H3>
+                    // <X.P>`{log.date}`\n{log.description}</X.P>
+            ))}
         </X.BlogWrapper>
     );
 }
