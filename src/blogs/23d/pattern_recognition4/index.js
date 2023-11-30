@@ -45,7 +45,7 @@ export default function Blog() {
                 <X.Formula text="\bm{W}^*=(\bm{\chi}^T\bm{\chi})^{-1}\bm{\chi}^T\bm{y}" />
             </X.HighlightBlock>
             <X.H1>Fisher线性判别</X.H1>
-            <X.H2 salt="1">动机</X.H2>
+            <X.H2>动机</X.H2>
             <X.P>
                 线性二分类问题都可以看作把样本投影到某个方向上，再在这个一维空间中确定一个阈值，将两类样本分开。---
                 现在希望找到的方向满足：两类间的距离尽可能大，但每一类内部的样本尽可能聚集。
@@ -61,7 +61,7 @@ export default function Blog() {
             <X.HighlightBlock bgcolor="gray">
                 <X.Formula text="\max J_F(\bm{W})=\frac{\bm{W}^T\bm{S}_b\bm{W}}{\bm{W}^T\bm{S}_w\bm{W}}" />
             </X.HighlightBlock>
-            <X.H2 salt="1">最优解</X.H2>
+            <X.H2>最优解</X.H2>
             <X.P>Fisher判别准则下的最优投影方向为：</X.P>
             <X.HighlightBlock bgcolor="gray">
                 <X.Formula text="\bm{W}^*=\bm{S}_w^{-1}(\bm{m}_1-\bm{m}_2)" />
@@ -71,9 +71,9 @@ export default function Blog() {
                 <X.Formula text="threshold=\bm{W}^{*T}\frac{\bm{m}_1+\bm{m}_2}{2}" />
             </X.HighlightBlock>
             <X.H1>感知器</X.H1>
-            <X.H2 salt="2">动机</X.H2>
+            <X.H2>动机</X.H2>
             <X.P>感知器用{`$\\bm{W}^T\\bm{X}$`}的正负来判断样本的分类。</X.P>
-            <X.H2 salt="2">损失函数</X.H2>
+            <X.H2>损失函数</X.H2>
             <X.P>感知器的损失函数可以理解为错分样本的个数，数学形式如下：</X.P>
             <X.HighlightBlock bgcolor="gray">
                 <X.Formula
@@ -89,13 +89,13 @@ export default function Blog() {
             <X.P>如果所有样本都分类正确，算法结束；否则对于分错的样本{`$(\\bm{X}_i,y_i)$`}执行：</X.P>
             <X.Formula text="\bm{W}_{t+1}=\bm{W}_t+y_i\bm{X}_i" />
             <X.H1>两类Logistic回归</X.H1>
-            <X.H2 salt="3">动机</X.H2>
+            <X.H2>动机</X.H2>
             <X.P>
                 使用`Sigmoid`函数将{`$\\bm{W}^T\\bm{X}$`}
                 归约到区间$[0,1]$，可以把这个输出结果看作概率，那么输出将从单纯的以{`$\\bm{W}^T\\bm{X}$`}
                 的符号进行二分类变成连续的概率。
             </X.P>
-            <X.H2 salt="3">损失函数</X.H2>
+            <X.H2>损失函数</X.H2>
             <X.P>考虑最大似然估计，样本集出现的概率为：</X.P>
             <X.Formula text="P=\prod_1^NP(y_i|\bm{X}_i)" />
             <X.P>使用对数似然函数{`$\\ln P=\\sum_{i=1}^N\\ln P(y_i|\\bm{X}_i)$`}，考虑单个样本出现的概率：</X.P>
@@ -119,7 +119,7 @@ export default function Blog() {
             <X.HighlightBlock bgcolor="gray">
                 <X.Formula text="\min L(\bm{W})=\frac{1}{N}\sum_{i=1}^N\ln(1+e^{-y_i\bm{W}^T\bm{X_i}})" />
             </X.HighlightBlock>
-            <X.H2 salt="3">更新规则</X.H2>
+            <X.H2>更新规则</X.H2>
             <X.P>使用梯度下降法，计算出梯度：</X.P>
             <X.Formula
                 text="

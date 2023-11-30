@@ -1,6 +1,5 @@
 import {useLayoutEffect} from 'react';
 import Katex from 'katex';
-import {SHA256Hash8} from '@/utils/SHA256Hash';
 import {addOliIdx, setOliIdx} from '../BlogWrapper/BlogWrapper';
 import './index.css';
 
@@ -13,21 +12,13 @@ export function Title(props) {
 }
 
 export function H1(props) {
-    const {salt = '', children} = props;
-    return (
-        <h2 id={SHA256Hash8('x-h1' + children + salt)} className="x-h1">
-            {children}
-        </h2>
-    );
+    const {children} = props;
+    return <h2 className="x-h1">{children}</h2>;
 }
 
 export function H2(props) {
-    const {salt = '', children} = props;
-    return (
-        <h3 id={SHA256Hash8('x-h2' + children + salt)} className="x-h2">
-            {children}
-        </h3>
-    );
+    const {children} = props;
+    return <h3 className="x-h2">{children}</h3>;
 }
 
 export function H3(props) {
