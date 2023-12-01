@@ -76,7 +76,7 @@ export function Uli(props) {
     return (
         <div className="x-uli">
             <div className="x-uli-marker">
-                <div className="x-uli-marker-dot"></div>
+                <div className="x-uli-marker-dot" />
             </div>
             <div className="x-uli-content-wrapper">{children}</div>
         </div>

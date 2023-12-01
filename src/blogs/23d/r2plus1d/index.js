@@ -18,7 +18,7 @@ export default function Blog() {
                 普通3D卷积的核大小为$(C_i,C_o,K_t,K_w,K_h)$，$C_i,C_o$为输入通道数、$K_t,K_w,K_h$是3D卷积核的尺寸。\n
                 R(2+1)D网络最核心的改动就是将普通的`Conv3d`替换为`SpatioTemporalConv`卷积。
             </X.P>
-            <X.Image src={require('./fig1.jpg')} width="100%" />
+            <X.Image src={require('./fig1.jpg')} width="100%" invertInDarkTheme />
             <X.P noMarginBottom>
                 `SpatioTemporalConv`卷积从外部看与`Conv3d`相同，均有`5`个超参数，区别在于其内部的结构：
             </X.P>
@@ -57,7 +57,7 @@ export default function Blog() {
             </X.P>
             <X.Oli>增加了网络非线性层的层数</X.Oli>
             <X.Oli>优化更容易（实验结果：R(2+1)D网络的训练和测试误差都更小）</X.Oli>
-            <X.Image src={require('./fig2.jpg')} width="600" />
+            <X.Image src={require('./fig2.jpg')} width="600" invertInDarkTheme />
         </X.BlogWrapper>
     );
 }

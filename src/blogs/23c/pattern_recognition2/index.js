@@ -224,7 +224,7 @@ export default function Blog() {
                 `}
             />
             <X.P>观察迭代结果：</X.P>
-            <X.Image src={require('./fig1.png')} width="100%" />
+            <X.Image src={require('./fig1.png')} width="100%" invertInDarkTheme />
             <X.P>
                 如果随着样本数增加，后验概率序列逐渐尖锐，最终趋向于以参数真实值为中心的一个尖峰，则这一过程称为贝叶斯学习。
             </X.P>
