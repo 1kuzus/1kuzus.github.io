@@ -24,14 +24,14 @@ export default function Blog() {
             <X.Formula text="\hat{P}(x) = \frac{k}{n} \cdot \frac{1}{V}" />
             <X.H1>直方图方法</X.H1>
             <X.P>直方图方法非常简单，可以理解为近似的用直方图的形状取描述概率密度函数。</X.P>
-            <X.Image src={require('./fig1.png')} width="600" />
+            <X.Image src={require('./fig1.png')} width="600" invertInDarkTheme />
             <X.P>
                 不过，在样本数量并非无限时，如果小舱（直方图组距）过大，那么最终估计出的密度函数就非常粗糙；---
                 如果过小，那么有的小舱内可能没有样本，估计出的概率密度函数很不连续。
             </X.P>
             <X.FlexRow>
-                <X.Image src={require('./fig2.png')} width="100%" />
-                <X.Image src={require('./fig3.png')} width="100%" />
+                <X.Image src={require('./fig2.png')} width="100%" invertInDarkTheme />
+                <X.Image src={require('./fig3.png')} width="100%" invertInDarkTheme />
             </X.FlexRow>
             <X.HighlightBlock>
                 <X.P>
@@ -112,9 +112,9 @@ export default function Blog() {
             </X.HighlightBlock>
             <X.P noMarginBottom>下面是在样本数和平滑参数不同时，使用方窗和高斯窗的估计结果：</X.P>
             <X.Uli>方窗</X.Uli>
-            <X.Image src={require('./fig4.png')} width="100%" />
+            <X.Image src={require('./fig4.png')} width="100%" invertInDarkTheme />
             <X.Uli>高斯窗</X.Uli>
-            <X.Image src={require('./fig5.png')} width="100%" />
+            <X.Image src={require('./fig5.png')} width="100%" invertInDarkTheme />
             <X.HighlightBlock>
                 <X.P>
                     你可能发现当平滑参数过大时，估计的效果并不理想。然而在窗函数及其参数满足一定的条件时，Parzen窗估计可以是渐进无偏的。---
@@ -123,7 +123,7 @@ export default function Blog() {
                 </X.P>
             </X.HighlightBlock>
             <X.P>下面是取{`$\\sigma=\\frac{32}{\\sqrt{n}}$`}的高斯窗的估计结果：</X.P>
-            <X.Image src={require('./fig6.png')} width="100%" />
+            <X.Image src={require('./fig6.png')} width="100%" invertInDarkTheme />
         </X.BlogWrapper>
     );
 }

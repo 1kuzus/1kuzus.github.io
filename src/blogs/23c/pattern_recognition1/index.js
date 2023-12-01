@@ -200,22 +200,22 @@ export default function Blog() {
                 的后项为`0`，此时决策线就是样本中心连线的中垂线。\n
                 来看一个具体的例子！我们需要对平面上的点进行分类任务，第一堆样本点中心为`(2,3)`，第二堆样本点中心为`(4,4)`：
             </X.P>
-            <X.Image src={require('./fig1.png')} width="500" />
+            <X.Image src={require('./fig1.png')} width="500" invertInDarkTheme />
             <X.P>
                 红色和蓝色分别标记了两类样本点的分布情况，其中加粗的红点和蓝点表示样本中心的位置；\n生成两组样本时使用的方差均为`0.8`；样本的$x,y$坐标相关性为`0`。\n
                 现在对平面上的所有点计算判别函数`g_red`和`g_blue`。`g_red`更大的区域用红色阴影表示，`g_blue`更大的区域用蓝色阴影表示。\n
                 两个区域的交界处即为自然生成的决策线。结果如下：
             </X.P>
             <X.FlexRow>
-                <X.Image src={require('./fig2.png')} width="320" />
-                <X.Image src={require('./fig3.png')} width="320" />
-                <X.Image src={require('./fig4.png')} width="320" />
+                <X.Image src={require('./fig2.png')} width="320" invertInDarkTheme />
+                <X.Image src={require('./fig3.png')} width="320" invertInDarkTheme />
+                <X.Image src={require('./fig4.png')} width="320" invertInDarkTheme />
             </X.FlexRow>
             <X.P>
                 决策线垂直于样本中心的连线并且在先验概率相等的前提下过样本中心连线中点`(左图)`。\n如果先验概率不相等，决策线会偏向先验概率小的一侧`(中图)`，而且有可能超过端点`(右图)`。
             </X.P>
             <X.P>对于三分类问题，得到的结果类似：</X.P>
-            <X.Image src={require('./fig5.png')} width="500" />
+            <X.Image src={require('./fig5.png')} width="500" invertInDarkTheme />
             <X.Oli>
                 <X.Formula text="\bm{\Sigma_1} = \bm{\Sigma_2}=...=\bm{\Sigma_c} = \bm{\Sigma}" />
             </X.Oli>
@@ -225,7 +225,7 @@ export default function Blog() {
                     马氏距离可以看作对欧氏距离的修正。考虑下面的例子：\n
                     黑色的点距离`green`类样本中心更近，与`red`、`blue`类样本中心等距。它应该被归为哪一类？\n
                 </X.P>
-                <X.Image src={require('./fig6.png')} width="500px"></X.Image>
+                <X.Image src={require('./fig6.png')} width="500px" invertInDarkTheme />
                 <X.P>
                     按照欧氏距离判别，它应该被归为`green`类；然而从直觉上判断，它更可能属于`red`类。\n
                     欧式距离并没有考虑样本的方差，以及样本各个维度之间的相关性。\n定义马氏距离：
@@ -256,16 +256,16 @@ export default function Blog() {
             <X.Formula text="\bm{W}^T(\bm{X}-\bm{X_0}) = 0" />
             <X.Formula text="其中\bm{W} =\bm{\Sigma}^{-1} (\bm{\mu_i} - \bm{\mu_j})，\bm{X_0} = \frac{1}{2}(\bm{\mu_i} + \bm{\mu_j}) - \frac{\bm{\mu_i}-\bm{\mu_j}}{(\bm{\mu_i}-\bm{\mu_j})^T \bm{\Sigma}^{-1} (\bm{\mu_i}-\bm{\mu_j})}\ln\frac{P(\omega_i)}{P(\omega_j)}" />
             <X.P>此时，先验概率相等的前提下，决策线仍然过样本中心连线中点；但不一定垂直于样本中心的连线。</X.P>
-            <X.Image src={require('./fig7.png')} width="500" />
+            <X.Image src={require('./fig7.png')} width="500" invertInDarkTheme />
             <X.Oli>
                 <X.Formula text="\bm{\Sigma_i} \neq \bm{\Sigma_j}" />
             </X.Oli>
             <X.P>此为最一般情况。决策面为超二次曲面。对于二维样本，决策线为二次曲线。\n判别函数：</X.P>
             <X.Formula text="g_i(\bm{X}) = -\frac{1}{2}r_i^2 - \frac{1}{2}\ln |\bm{\Sigma_i}| + \ln P(\omega_i)" />
             <X.FlexRow>
-                <X.Image src={require('./fig8.png')} width="320" />
-                <X.Image src={require('./fig9.png')} width="320" />
-                <X.Image src={require('./fig10.png')} width="320" />
+                <X.Image src={require('./fig8.png')} width="320" invertInDarkTheme />
+                <X.Image src={require('./fig9.png')} width="320" invertInDarkTheme />
+                <X.Image src={require('./fig10.png')} width="320" invertInDarkTheme />
             </X.FlexRow>
         </X.BlogWrapper>
     );

@@ -11,13 +11,13 @@ const logs = [
 function Version() {
     return (
         <>
-            <canvas id="b0001-canvas"></canvas>
+            <canvas id="b0001-canvas" />
             <div id="b0001-trigger">
                 <X.HighlightBlock>
                     <X.FlexRow justifyContent="space-around">
                         <X.Image src={require('./cheer.gif')} width="150" />
                         <div id="b0001-dance-version-wrapper">
-                            <X.Image src={require('./version.png')} width="100%" />
+                            <X.Image src={require('./version.png')} width="100%" invertInDarkTheme />
                         </div>
                         <div id="b0001-dance-gif-wrapper">
                             <X.Image src={require('./dance.gif')} width="128" />
