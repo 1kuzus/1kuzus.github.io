@@ -1,7 +1,8 @@
 #b0001-canvas {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
+    z-index: 200;
     pointer-events: none;
 }
 #b0001-dance-version-wrapper {

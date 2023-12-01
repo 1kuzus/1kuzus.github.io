@@ -5,7 +5,7 @@ import './Header.css';
 function LogoIcon() {
     return (
         <svg viewBox="0 0 1560 1560" xmlns="http://www.w3.org/2000/svg">
-            <g fill-rule="evenodd">
+            <g fillRule="evenodd">
                 <path d="M644 97h272.529L1189 780H916.471z" fill="#00A8C4" />
                 <path d="M98 97h272.84L780 1120.73 1189.162 97H1462L916.438 1462H643.562z" fill="#30303C" />
                 <path d="M98 1462L643.3 97H916L370.7 1462z" fill="#00F8FF" />

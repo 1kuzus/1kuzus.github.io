@@ -8,13 +8,13 @@ export default function Table(props) {
         return (
             <table className="x-table" cellSpacing="0">
                 <tbody>
-                    {trs.map((tr, tr_idx) => (
-                        <tr key={tr_idx}>
+                    {trs.map((tr, tr_index) => (
+                        <tr key={tr_index}>
                             {tr
                                 .trim()
                                 .split('|')
-                                .map((td, td_idx) =>
-                                    tr_idx ? <td key={td_idx}>{td}</td> : <th key={td_idx}>{td}</th>
+                                .map((td, td_index) =>
+                                    tr_index ? <td key={td_index}>{td}</td> : <th key={td_index}>{td}</th>
                                 )}
                         </tr>
                     ))}
