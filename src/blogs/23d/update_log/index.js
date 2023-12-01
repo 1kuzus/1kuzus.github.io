@@ -34,18 +34,20 @@ export default function Blog() {
         const trigger = document.getElementById('b0001-trigger');
         const canvas = document.getElementById('b0001-canvas');
         const ctx = canvas.getContext('2d');
-        canvas.width = document.body.clientWidth;
-        canvas.height = document.body.clientHeight;
-        const confettiCount = 20;
+        canvas.width = document.documentElement.clientWidth;
+        canvas.height = document.documentElement.clientHeight;
+        const confettiCount = 30;
         const gravityConfetti = 0.3;
-        const dragConfetti = 0.075;
+        const dragConfetti = 0.06;
         const terminalVelocity = 3;
         let confetti = [];
         let done = true;
         const colors = [
-            {front: '#7b5cff', back: '#6245e0'}, // Purple
-            {front: '#b3c7ff', back: '#8fa5e5'}, // Light Blue
-            {front: '#5c86ff', back: '#345dd1'}, // Darker Blue
+            {front: '#ff5252a0', back: '#c41c00c0'}, // Red
+            {front: '#feee6ba0', back: '#fbc442c0'}, // Yellow
+            {front: '#ab47bca0', back: '#7b1fa2c0'}, // Purple
+            {front: '#00b8d0a0', back: '#0088acc0'}, // Cyan
+            {front: '#4caf50a0', back: '#388e3cc0'}, // Green
         ];
         const randomRange = (min, max) => Math.random() * (max - min) + min;
         const initConfettoVelocity = (xRange, yRange) => {
@@ -109,8 +111,8 @@ export default function Blog() {
         trigger.onclick = run;
         run();
         const resizeHandler = () => {
-            canvas.width = document.body.clientWidth;
-            canvas.height = document.body.clientHeight;
+            canvas.width = document.documentElement.clientWidth;
+            canvas.height = document.documentElement.clientHeight;
         };
         window.addEventListener('resize', resizeHandler);
         return () => window.removeEventListener('resize', resizeHandler);
@@ -120,9 +122,18 @@ export default function Blog() {
         <X.BlogWrapper>
             <X.Title>更新日志</X.Title>
             <Version />
-            {logs.map((log) => (
-                <X.H3>{log.date}</X.H3>
-                // <X.P>`{log.date}`\n{log.description}</X.P>
+            <X.H1>历史</X.H1>
+            {logs.map((log, index) => (
+                <div key={index}>
+                    <X.FlexRow gap="16px">
+                        <X.P>`{log.date}`</X.P>
+                        <X.P>{log.description}</X.P>
+                    </X.FlexRow>
+                    {/* <X.H3>{log.date}</X.H3>
+                    <X.P>
+                        `{log.date}`\n{log.description}
+                    </X.P> */}
+                </div>
             ))}
         </X.BlogWrapper>
     );

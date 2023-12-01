@@ -5,5 +5,7 @@
 }
 .x-img-wrapper img {
     display: block;
+    color: rgb(245,238,221);
+    color: #fbc442;
     /* filter: invert(90%) hue-rotate(180deg) saturate(1.6); */
 }

@@ -25,12 +25,14 @@
     top: 100px;
     right: 36px;
     width: 300px;
+    max-height: 838px;
     padding: 24px 0;
     font-size: 14px;
     border-left: 1px solid var(--bg-color-1);
     border-radius: 12px;
     background-color: var(--bg-color-1);
     box-shadow: 0 0 6px 1px #0000000c;
+    overflow-y: auto;
 }
 .x-blogcontent-titletype-x-h1,
 .x-blogcontent-titletype-x-h2 {
