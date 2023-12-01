@@ -2,6 +2,12 @@ import X from '@/component/X';
 import {useEffect} from 'react';
 import './index.css';
 
+const logs = [
+    {date: '2023-07-12', description: '更新了主要内容'},
+    {date: '2023-07-12', description: '更新了主要内容'},
+    {date: '2023-07-12', description: '更新了主要内容'},
+];
+
 function Version() {
     return (
         <>
@@ -22,12 +28,6 @@ function Version() {
         </>
     );
 }
-
-const logs = [
-    {date: '2023-07-12', description: '更新了主要内容'},
-    {date: '2023-07-12', description: '更新了主要内容'},
-    {date: '2023-07-12', description: '更新了主要内容'},
-];
 
 export default function Blog() {
     useEffect(() => {
@@ -122,7 +122,7 @@ export default function Blog() {
             <Version />
             {logs.map((log) => (
                 <X.H3>{log.date}</X.H3>
-                    // <X.P>`{log.date}`\n{log.description}</X.P>
+                // <X.P>`{log.date}`\n{log.description}</X.P>
             ))}
         </X.BlogWrapper>
     );
