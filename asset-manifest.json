@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.c0d8959d.css",
-    "main.js": "/static/js/main.37072331.js",
+    "main.css": "/static/css/main.6eb2ca21.css",
+    "main.js": "/static/js/main.c4baad14.js",
     "static/media/sw.png": "/static/media/sw.6c99883b5301d8cc7c4d.png",
     "static/media/csma1.png": "/static/media/csma1.2a11daa6d5a2b4dea4fe.png",
     "static/media/csma3.png": "/static/media/csma3.fa0bc36fa6c06e11198f.png",
@@ -94,16 +94,12 @@
     "static/media/KaTeX_Size4-Regular.woff2": "/static/media/KaTeX_Size4-Regular.e418bf257af1052628d8.woff2",
     "static/media/KaTeX_Size3-Regular.woff": "/static/media/KaTeX_Size3-Regular.7947224e8a9914fa332b.woff",
     "static/media/KaTeX_Size3-Regular.woff2": "/static/media/KaTeX_Size3-Regular.e1951519f6f0596f7356.woff2",
-    "static/media/light_theme.svg": "/static/media/light_theme.8ba634191ca5d6ce5a8540d167af3d19.svg",
-    "static/media/github.svg": "/static/media/github.960164244d5d71c42edce54930acd592.svg",
     "index.html": "/index.html",
-    "static/media/dark_theme.svg": "/static/media/dark_theme.830b9f553aa45eb5499e66f740db7d57.svg",
-    "static/media/logo.svg": "/static/media/logo.ea9249bf81c188f48ff0624ab04081be.svg",
-    "main.c0d8959d.css.map": "/static/css/main.c0d8959d.css.map",
-    "main.37072331.js.map": "/static/js/main.37072331.js.map"
+    "main.6eb2ca21.css.map": "/static/css/main.6eb2ca21.css.map",
+    "main.c4baad14.js.map": "/static/js/main.c4baad14.js.map"
   },
   "entrypoints": [
-    "static/css/main.c0d8959d.css",
-    "static/js/main.37072331.js"
+    "static/css/main.6eb2ca21.css",
+    "static/js/main.c4baad14.js"
   ]
 }
