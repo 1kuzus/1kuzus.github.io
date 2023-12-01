@@ -43,11 +43,11 @@ export default function Blog() {
         let confetti = [];
         let done = true;
         const colors = [
-            {front: '#ff5252a0', back: '#c41c00c0'}, // Red
-            {front: '#feee6ba0', back: '#fbc442c0'}, // Yellow
-            {front: '#ab47bca0', back: '#7b1fa2c0'}, // Purple
-            {front: '#00b8d0a0', back: '#0088acc0'}, // Cyan
-            {front: '#4caf50a0', back: '#388e3cc0'}, // Green
+            {front: '#ff5252a0', back: '#c41c00c0'}, //Red
+            {front: '#feee6ba0', back: '#fbc442c0'}, //Yellow
+            {front: '#ab47bca0', back: '#7b1fa2c0'}, //Purple
+            {front: '#00b8d0a0', back: '#0088acc0'}, //Cyan
+            {front: '#4caf50a0', back: '#388e3cc0'}, //Green
         ];
         const randomRange = (min, max) => Math.random() * (max - min) + min;
         const initConfettoVelocity = (xRange, yRange) => {
