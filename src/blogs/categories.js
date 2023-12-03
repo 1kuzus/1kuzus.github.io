@@ -4,6 +4,7 @@ import Behwl from './23c/pattern_recognition1';
 import Bco21 from './23c/pattern_recognition2';
 import Bjjj5 from './23c/pattern_recognition3';
 import Bykl9 from './23d/db3nf';
+import Bo8sr from './23d/papers';
 import B2fph from './23d/pattern_recognition4';
 import Blnrj from './23d/protocols';
 import B97t6 from './23d/r2plus1d';
@@ -35,6 +36,11 @@ const categories = [
     {
         categoryName: '深度学习',
         blogs: [
+            {
+                blogName: '论文速记',
+                path: '/bo8sr/',
+                component: <Bo8sr />,
+            },
             {
                 blogName: '行为识别R(2+1)D网络',
                 path: '/b97t6/',
