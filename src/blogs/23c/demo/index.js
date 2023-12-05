@@ -26,6 +26,13 @@ export default function Blog() {
                 <X.H2>二级标题</X.H2>
                 <X.H3>三级标题</X.H3>
             </X.HighlightBlock>
+            <X.H3 href="/">带有超链接的标题（比如我！）</X.H3>
+            <X.P>如果希望标题带有超链接的效果，可以指定`href`属性。三种级别的标题均可使用。</X.P>
+            <X.HighlightBlock bgcolor="gray">
+                <X.H3>示例</X.H3>
+                <X.CodeBlock language="jsx" code='<X.H2 href="https://www.baidu.com">指向百度的二级标题</X.H2>' />
+                <X.H2 href="https://www.baidu.com">指向百度的二级标题</X.H2>
+            </X.HighlightBlock>
             <X.H2>段落</X.H2>
             <X.P>最基本的用于展示文本的组件。</X.P>
             <X.HighlightBlock bgcolor="gray">

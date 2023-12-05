@@ -31,7 +31,7 @@ routepathsAndFilepaths.forEach(([routepath, filepath]) => {
         .replace(/<X.Table(.*?)\/>/gs, '<div>[TABLE]</div>')
         .replace(/<X.CodeBlock(.*?)code={`(.*?)[^\\]`}(.*?)\/>/gs, '<div>[CODEBLOCK]</div>')
         .replace(/<X.Title>(.*?)<\/X.Title>/gs, '<h1>$1</h1>')
-        .replace(/<X.H1>(.*?)<\/X.H1>/gs, '<h2>$1</h2>')
+        .replace(/<X.H1(.*?)>(.*?)<\/X.H1>/gs, '<h2>$2</h2>')
         .replace(/<X.H2(.*?)>(.*?)<\/X.H2>/gs, '<h3>$2</h3>')
         .replace(/<X.H3(.*?)>(.*?)<\/X.H3>/gs, '<h4>$2</h4>')
         .replace(/<X.Formula\s*text="(.*?)"\s*\/>/gs, '$1')
@@ -51,7 +51,7 @@ routepathsAndFilepaths.forEach(([routepath, filepath]) => {
                     .replace(/{`(.*?)`}/gs, '$1')
                     .replace(/`(.*?)`/gs, '$1')
                     .replace(/\*(.*?)\*/gs, '$1')
-                    .replace(/@(.*?)\[(.*?)\]@/gs, '<a href="$2" target="_blank">$1</a>') +
+                    .replace(/@(.*?)\[(.*?)\]@/gs, '<a href="$2" target="_blank" rel="noreferrer">$1</a>') +
                 '</p>'
         )
         //删除其他标签
@@ -71,7 +71,12 @@ console.log('--- Updating build\\index.html ---');
 const homepageLinks =
     '<ul>' +
     routepathsAndFilepaths
-        .map(([routepath, filepath]) => `<li><h2><a href="${routepath}" target="_blank">${filepath.split('/')[2]}</a></h2></li>`)
+        .map(
+            ([routepath, filepath]) =>
+                `<li><h2><a href="${routepath}" target="_blank" rel="noreferrer">${
+                    filepath.split('/')[2]
+                }</a></h2></li>`
+        )
         .join('') +
     '</ul>';
 const htmlCode = fs

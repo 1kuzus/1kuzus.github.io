@@ -14,7 +14,7 @@ function BlogContent(props) {
     return (
         <div className="x-blogcontent">
             {titles.map((titleNode, index) => {
-                const {className: type, innerHTML: text} = titleNode;
+                const {className: type, textContent: text} = titleNode;
                 return (
                     <div
                         key={index}
