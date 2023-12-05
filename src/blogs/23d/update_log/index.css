@@ -6,9 +6,9 @@
     pointer-events: none;
 }
 #b0001-dance-version-wrapper {
+    align-self: center;
     max-width: 360px;
-    padding-top: 24px;
 }
-#b0001-dance-gif-wrapper {
+#b0001-dance-gif {
     padding-top: 32px;
 }
