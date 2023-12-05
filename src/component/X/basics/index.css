@@ -26,6 +26,16 @@
     font-size: 18px;
     color: var(--text-color-main);
 }
+.x-h1 a,
+.x-h2 a,
+.x-h3 a {
+    color: inherit;
+}
+.x-h1 a:hover,
+.x-h2 a:hover,
+.x-h3 a:hover {
+    color: var(--text-color-active);
+}
 .x-p {
     margin-bottom: 24px;
     line-height: 28px;
