@@ -12,18 +12,7 @@ import B0001 from './23d/update_log';
 
 const categories = [
     {
-        categoryName: '语言碎片',
-        blogs: [
-            {
-                blogName: 'JavaScript 数组常用方法',
-                path: '/bj23k/',
-                time: '2023-9-2',
-                component: <Bj23k />,
-            },
-        ],
-    },
-    {
-        categoryName: '赛博杂识',
+        categoryName: '网络杂识',
         blogs: [
             {
                 blogName: '数据库设计三大范式',
@@ -46,6 +35,17 @@ const categories = [
                 path: '/b97t6/',
                 time: '2023-11-27',
                 component: <B97t6 />,
+            },
+        ],
+    },
+    {
+        categoryName: '前端与JavaScript',
+        blogs: [
+            {
+                blogName: 'JavaScript 数组常用方法',
+                path: '/bj23k/',
+                time: '2023-9-2',
+                component: <Bj23k />,
             },
         ],
     },
