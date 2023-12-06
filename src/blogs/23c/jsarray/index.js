@@ -1,9 +1,9 @@
 import X from '@/component/X';
 
-export default function Blog() {
+export default function Blog({blogTitle}) {
     return (
         <X.BlogWrapper>
-            <X.Title>JavaScript 数组常用方法</X.Title>
+            <X.Title>{blogTitle}</X.Title>
             <X.H1>at()</X.H1>
             <X.P>
                 `at()`方法接收一个整数值并返回该索引对应的元素，允许正数和负数。负整数从数组中的最后一个元素开始倒数。

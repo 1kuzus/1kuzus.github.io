@@ -1,9 +1,9 @@
 import X from '@/component/X';
 
-export default function Blog() {
+export default function Blog({blogTitle}) {
     return (
         <X.BlogWrapper>
-            <X.Title>「模式识别」线性学习器与线性分类器</X.Title>
+            <X.Title>{blogTitle}</X.Title>
             <X.H1>背景知识</X.H1>
             <X.H2>Sigmoid函数</X.H2>
             <X.P>

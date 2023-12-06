@@ -5,10 +5,10 @@ function DemoBox() {
     return <div className="b0000-demo-box" />;
 }
 
-export default function Blog() {
+export default function Blog({blogTitle}) {
     return (
         <X.BlogWrapper>
-            <X.Title>示例</X.Title>
+            <X.Title>{blogTitle}</X.Title>
             <X.H1>基础组件</X.H1>
             <X.H2>标题</X.H2>
             <X.P>此组件体系中标题分为三级，且只有一级和二级标题会展示在右侧目录中。</X.P>
@@ -891,7 +891,7 @@ export default function Blog() {
                             <ul className="sidebarlist-ul" style={{height: showList ? 34 * category.blogs.length + 'px' : '0'}}>
                                 {category.blogs.map((blog, index) => (
                                     <li key={index}>
-                                        <Link className={\`sidebarlist-li\${currentPath === blog.path ? ' active' : ''}\`} to={blog.path}>{blog.blogName}</Link>
+                                        <Link className={\`sidebarlist-li\${currentPath === blog.path ? ' active' : ''}\`} to={blog.path}>{blog.blogTitle}</Link>
                                     </li>
                                 ))}
                             </ul>

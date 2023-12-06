@@ -1,9 +1,9 @@
 import X from '@/component/X';
 
-export default function Blog() {
+export default function Blog({blogTitle}) {
     return (
         <X.BlogWrapper>
-            <X.Title>「模式识别」非参数估计</X.Title>
+            <X.Title>{blogTitle}</X.Title>
             <X.P>
                 本章讨论的是`非参数估计`。很多时候我们无法给出样本分布的函数形式，也就无法使用根据样本估计函数参数的思路。\n
                 非参数估计的思想是，直接根据样本，用数值方法估计出整个分布函数。

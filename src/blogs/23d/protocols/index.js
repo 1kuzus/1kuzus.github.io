@@ -1,9 +1,9 @@
 import X from '@/component/X';
 
-export default function Blog() {
+export default function Blog({blogTitle}) {
     return (
         <X.BlogWrapper>
-            <X.Title>「计算机网络」协议总结</X.Title>
+            <X.Title>{blogTitle}</X.Title>
             <X.HighlightBlock>
                 <X.P>文中各层出现的协议参考教程的教学顺序，不代表对协议所属层次的划分。</X.P>
             </X.HighlightBlock>
