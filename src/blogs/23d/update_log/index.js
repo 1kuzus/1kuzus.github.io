@@ -27,7 +27,7 @@ function Version() {
     );
 }
 
-export default function Blog() {
+export default function Blog({blogTitle}) {
     useEffect(() => {
         const trigger = document.getElementById('b0001-trigger');
         const canvas = document.getElementById('b0001-canvas');
@@ -125,7 +125,7 @@ export default function Blog() {
     }, []);
     return (
         <X.BlogWrapper>
-            <X.Title>更新日志</X.Title>
+            <X.Title>{blogTitle}</X.Title>
             <Version />
             <X.H1>历史</X.H1>
             {logs.map((log, index) => (

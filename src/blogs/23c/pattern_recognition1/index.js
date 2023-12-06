@@ -1,10 +1,10 @@
 import X from '@/component/X';
 import './index.css';
 
-export default function Blog() {
+export default function Blog({blogTitle}) {
     return (
         <X.BlogWrapper>
-            <X.Title>「模式识别」统计决策方法</X.Title>
+            <X.Title>{blogTitle}</X.Title>
             <X.H1>贝叶斯公式</X.H1>
             <X.HighlightBlock>
                 <X.Formula text="P(\omega_i|x) = \frac{P(x|\omega_i) \cdot P(\omega_i)}{P(x)}" />

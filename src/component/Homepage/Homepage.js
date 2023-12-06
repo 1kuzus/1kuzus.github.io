@@ -15,7 +15,7 @@ function BlogList(props) {
                 {category.blogs.map((blog, index) => (
                     <li key={index}>
                         <Link className="bloglist-li" to={blog.path}>
-                            {blog.blogName}
+                            {blog.blogTitle}
                             {blog.time && <span className="bloglist-time">{blog.time}</span>}
                         </Link>
                     </li>
@@ -37,7 +37,7 @@ function BlogLists() {
 
 export default function Homepage() {
     useLayoutEffect(() => {
-        document.title = 'Blogs';
+        document.title = '铃木的网络日记';
         document.documentElement.scrollTo({top: 0});
     }, []);
 

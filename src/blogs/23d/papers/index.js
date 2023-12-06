@@ -38,10 +38,10 @@ function PaperSummary(props) {
     );
 }
 
-export default function Blog() {
+export default function Blog({blogTitle}) {
     return (
         <X.BlogWrapper>
-            <X.Title>论文速记</X.Title>
+            <X.Title>{blogTitle}</X.Title>
             <X.H1>研究</X.H1>
             <PaperSummary
                 title="NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis"

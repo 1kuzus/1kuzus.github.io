@@ -1,9 +1,9 @@
 import X from '@/component/X';
 
-export default function Blog() {
+export default function Blog({blogTitle}) {
     return (
         <X.BlogWrapper>
-            <X.Title>「模式识别」参数估计</X.Title>
+            <X.Title>{blogTitle}</X.Title>
             <X.P>
                 上一篇提到的统计决策方法，类条件密度按已知处理。但实际问题中，往往只有已知样本，需要根据已知样本推测分布。\n
                 本章讨论的是`参数估计`，也就是分布的表达式形式是已知的，只是希望确定其中参数的值。
