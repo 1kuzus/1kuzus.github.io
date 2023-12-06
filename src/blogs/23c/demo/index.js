@@ -202,12 +202,7 @@ export default function Blog() {
                         <X.Uli>
                             <X.H3>一个标题</X.H3>
                         </X.Uli>
-                        <X.CodeBlock
-                            language="jsx"
-                            code={\`
-                            console.log('Hello, world!')
-                            \`}
-                        />
+                        <X.CodeBlock language="jsx" code="console.log('Hello, world!')" />
                     </X.Uli>
                     <X.Uli>
                         <X.P>注意第四项的代码块的\`margin-bottom\`被移除了</X.P>
@@ -224,12 +219,7 @@ export default function Blog() {
                     <X.Uli>
                         <X.H3>一个标题</X.H3>
                     </X.Uli>
-                    <X.CodeBlock
-                        language="jsx"
-                        code={`
-                        console.log('Hello, world!')
-                       `}
-                    />
+                    <X.CodeBlock language="jsx" code="console.log('Hello, world!')" />
                 </X.Uli>
                 <X.Uli>
                     <X.P>注意第四项的代码块的`margin-bottom`被移除了</X.P>
@@ -269,10 +259,28 @@ export default function Blog() {
                 <X.Oli reset>第一项（重置）</X.Oli>
                 <X.Oli>第二项</X.Oli>
             </X.HighlightBlock>
-            <X.HighlightBlock>
-                <X.P>
-                    这样线性设计无法满足嵌套有序列表的需求，也就是有序列表的一项是另一个有序列表。但考虑到嵌套列表应用场景很少，为保持组件的简洁性牺牲了这一需求。
-                </X.P>
+            <X.H3>关于reset的更多用法</X.H3>
+            <X.P>
+                在源码中，对于设置了`reset`属性的有序列表项，实际上是将列表序号变量设置为`reset`属性的整型值。---
+                因此作为布尔类型传递的`true`值恰好将序号重置为`1`，这符合绝大多数情况下的预期。然而，也可以将`reset`设为其他整数值，甚至是负数，以满足特殊的需求。
+            </X.P>
+            <X.HighlightBlock bgcolor="gray">
+                <X.H3>示例</X.H3>
+                <X.CodeBlock
+                    language="jsx"
+                    code={`
+                    <X.Oli reset={-2}>A</X.Oli>
+                    <X.Oli>B</X.Oli>
+                    <X.Oli>C</X.Oli>
+                    <X.Oli>D</X.Oli>
+                    <X.Oli>E</X.Oli>
+                    `}
+                />
+                <X.Oli reset={-2}>A</X.Oli>
+                <X.Oli>B</X.Oli>
+                <X.Oli>C</X.Oli>
+                <X.Oli>D</X.Oli>
+                <X.Oli>E</X.Oli>
             </X.HighlightBlock>
             <X.H1>水平布局</X.H1>
             <X.P>水平布局组件提供一个`flex-direction`为`row`的容器。</X.P>

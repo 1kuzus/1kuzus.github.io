@@ -86,9 +86,10 @@ fs.writeFileSync(path.join('build', 'index.html'), htmlCode);
 
 console.log('--- Writing sitemap.xml ---');
 const sitemapStream = new sitemap.SitemapStream({hostname: 'https://1kuzus.github.io'});
-sitemapStream.write({url: '/'});
+const dateString = new Date().toISOString();
+sitemapStream.write({url: '/', lastmod: dateString});
 routepathsAndFilepaths.forEach(([routepath, _]) => {
-    sitemapStream.write({url: '/' + routepath + '/'});
+    sitemapStream.write({url: '/' + routepath + '/', lastmod: dateString});
 });
 sitemapStream.end();
 const writeStream = fs.createWriteStream(path.join('build', 'sitemap.xml'));
