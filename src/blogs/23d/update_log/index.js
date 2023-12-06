@@ -9,7 +9,6 @@ const logs = [
 ];
 
 function Version() {
-    const onloadHandler = () => {};
     return (
         <>
             <canvas id="b0001-canvas" />
@@ -124,7 +123,6 @@ export default function Blog() {
         window.addEventListener('resize', resizeHandler);
         return () => window.removeEventListener('resize', resizeHandler);
     }, []);
-
     return (
         <X.BlogWrapper>
             <X.Title>更新日志</X.Title>

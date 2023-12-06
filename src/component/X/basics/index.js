@@ -110,7 +110,7 @@ export function Oli(props) {
     const {reset, children} = props;
     return (
         <div className="x-oli">
-            <div className="x-oli-number">{(reset ? setOliIdx(1) : addOliIdx(1)) + '.'}</div>
+            <div className="x-oli-number">{(reset !== undefined ? setOliIdx(+reset) : addOliIdx(1)) + '.'}</div>
             <div className="x-oli-content-wrapper">{children}</div>
         </div>
     );
