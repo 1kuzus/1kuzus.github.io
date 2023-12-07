@@ -39,30 +39,15 @@ function PaperSummary(props) {
     );
 }
 
-/************************************************
- * 提问示例
+/*
+提问示例
 请分别回答下面五个问题：
 1.文章主要想解决什么问题？
 2.文章是如何做的，核心方法是什么？
 3.文章做了什么实验，效果怎么样？
 4.研究有什么创新点？
 5.研究有什么限制或可以改进的地方？
-
- * 组件使用示例
-<X.H2 href="https://arxiv.org/pdf/2003.08934.pdf">
-NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis (2020)
-</X.H2>
-<PaperSummary
-    topic="文章主要解决了用5D空间表示3D合成"
-    method="文章主要解决了用5D空间表示3D合成"
-    experiment="文章主要解决了用5D空间表示3D合成"
-    innovation="文章主要解决了用5D空间表示3D合成"
-    limitation="文章主要解决了用5D空间表示3D合成"
-/>
-<X.HighlightBlock bgcolor="gray">
-    <X.H3>其他笔记</X.H3>
-</X.HighlightBlock>
-************************************************/
+*/
 
 export default function Blog({blogTitle}) {
     return (
@@ -95,6 +80,7 @@ export default function Blog({blogTitle}) {
                     </>
                 }
             />
+
             <X.H1>学习</X.H1>
         </X.BlogWrapper>
     );
