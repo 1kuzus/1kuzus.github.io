@@ -33,9 +33,7 @@ export default function BlogWrapper(props) {
     const {children} = props;
     const [activeIdx, setActiveIdx] = useState(0);
     const [titles, setTitles] = useState([]);
-
     oliIdx = 0;
-
     useLayoutEffect(() => {
         document.documentElement.scrollTo({top: 0});
         const titleNodes = Array.from(document.querySelectorAll('.x-blogwrapper>.x-h1,.x-blogwrapper>.x-h2'));
@@ -54,7 +52,6 @@ export default function BlogWrapper(props) {
         window.addEventListener('scroll', scrollHandler);
         return () => window.removeEventListener('scroll', scrollHandler);
     }, []);
-
     return (
         <div className="x-blogwrapper">
             {children}

@@ -52,7 +52,6 @@ export default function Header() {
     const [isDarkTheme, setIsDarkTheme] = useState(
         localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : true
     );
-
     useLayoutEffect(() => {
         if (isDarkTheme) {
             document.documentElement.setAttribute('class', 'dark');
@@ -62,7 +61,6 @@ export default function Header() {
             localStorage.setItem('theme', 'light');
         }
     }, [isDarkTheme]);
-
     return (
         <>
             <div id="background" />
