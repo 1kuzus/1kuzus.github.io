@@ -40,7 +40,7 @@ function PaperSummary(props) {
 }
 
 /*
-提问示例
+AI提问示例
 请分别回答下面五个问题：
 1.文章主要想解决什么问题？
 2.文章是如何做的，核心方法是什么？
@@ -58,17 +58,18 @@ export default function Blog({blogTitle}) {
                 NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis (2020)
             </X.H2>
             <PaperSummary
-                topic="文章主要解决了用5D空间表示3D合成"
-                method="文章主要解决了用5D空间表示3D合成"
+                topic="使用稀疏输入2D图片集实现场景的3D视图合成。"
+                method={<X.P>从`($x,y,z,\theta,\phi$)`到`($R,G,B,\sigma$)`</X.P>}
                 experiment="文章主要解决了用5D空间表示3D合成"
                 innovation="文章主要解决了用5D空间表示3D合成"
                 limitation="文章主要解决了用5D空间表示3D合成"
             />
             <X.HighlightBlock bgcolor="gray">
                 <X.H3>其他笔记</X.H3>
+                <X.P>神经辐射场用于从2D的图片重建3D的场景。</X.P>
             </X.HighlightBlock>
-            <X.H2 href="https://arxiv.org/pdf/2003.08934.pdf">
-                NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis (2020)
+            <X.H2 href="https://arxiv.org/pdf/2308.04079.pdf">
+                3D Gaussian Splatting for Real-Time Radiance Field Rendering (2023)
             </X.H2>
             <PaperSummary
                 topic={<X.P>文章主要解决了用`5D`空间表示`3D`合成</X.P>}
@@ -80,7 +81,6 @@ export default function Blog({blogTitle}) {
                     </>
                 }
             />
-
             <X.H1>学习</X.H1>
         </X.BlogWrapper>
     );

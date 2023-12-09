@@ -40,7 +40,6 @@ export default function Homepage() {
         document.title = '铃木的网络日记';
         document.documentElement.scrollTo({top: 0});
     }, []);
-
     return (
         <div id="homepage">
             <div id="homepage-content">
