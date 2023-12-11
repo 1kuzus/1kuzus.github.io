@@ -2,12 +2,6 @@ import X from '@/component/X';
 import {useEffect} from 'react';
 import './index.css';
 
-const logs = [
-    {date: '2023-07-12', description: '更新了主要内容'},
-    {date: '2023-07-12', description: '更新了主要内容'},
-    {date: '2023-07-12', description: '更新了主要内容'},
-];
-
 function Version() {
     return (
         <>
@@ -23,6 +17,51 @@ function Version() {
                     </X.FlexRow>
                 </X.HighlightBlock>
             </div>
+        </>
+    );
+}
+
+function UpdateLog() {
+    const logs = [
+        {date: '2023-07-02', description: '创建仓库'},
+        {date: '2023-07-11', description: '第一次推送'},
+        {date: '2023-07-22', description: '搭建页面框架，测试路由'},
+        {date: '2023-07-23', description: '设计首页logo和顶栏'},
+        {date: '2023-07-29', description: '首页博客列表组件'},
+        {date: '2023-07-30', description: '博客页侧栏组件'},
+        {date: '2023-08-03', description: '创建`X`组件库\\n新组件`Title``H1``H2``H3`'},
+        {date: '2023-08-09', description: '开始设计暗色主题'},
+        {date: '2023-08-13', description: '新组件`P`，自动解析行内高亮'},
+        {date: '2023-08-16', description: '段落组件自动解析加粗、换行、超链接和转义字符'},
+        {date: '2023-08-20', description: '新组件`BlogWrapper``CodeBlock`'},
+        {date: '2023-08-29', description: '由于`highlight.js`库对jsx的高亮支持不好，决定采用`prism.js`作为代码高亮库'},
+        {
+            date: '2023-08-30',
+            description: '新组件`Formula`，使用`katex`作为公式渲染库\\n修改路由表定义逻辑，根据目录导入路由项',
+        },
+        {
+            date: '2023-08-31',
+            description:
+                '新组件`Br``Divider``Uli``Oli`\\n新组件`HighlightBlock`\\n创建第1篇博客 - 模式识别 · 统计决策方法',
+        },
+        {date: '2023-09-02', description: '调整亮色、暗色两套代码高亮配色\\n创建第2篇博客 - JavaScript 数组常用方法'},
+        {date: '2023-09-03', description: '部署后遇到刷新404问题，将`BrowserRouter`改为`HashRouter`'},
+        {date: '2023-09-04', description: '新组件`Table`'},
+        {date: '2023-09-06', description: '新组件`FlexRow``Image`'},
+        {date: '2023-09-13', description: '段落组件支持解析行内公式'},
+        {date: '2023-09-14', description: '取消了切换主题时背景颜色的过渡动画'},
+        {date: '2023-09-19', description: '解决代码编辑器里文本自动换行导致html文档插入空格'},
+    ];
+    return (
+        <>
+            {logs.reverse().map((log, index) => (
+                <div key={index}>
+                    <X.FlexRow gap="16px">
+                        <X.P>`{log.date}`</X.P>
+                        <X.P>{log.description}</X.P>
+                    </X.FlexRow>
+                </div>
+            ))}
         </>
     );
 }
@@ -128,18 +167,7 @@ export default function Blog({blogTitle}) {
             <X.Title>{blogTitle}</X.Title>
             <Version />
             <X.H1>历史</X.H1>
-            {logs.map((log, index) => (
-                <div key={index}>
-                    <X.FlexRow gap="16px">
-                        <X.P>`{log.date}`</X.P>
-                        <X.P>{log.description}</X.P>
-                    </X.FlexRow>
-                    {/* <X.H3>{log.date}</X.H3>
-                    <X.P>
-                        `{log.date}`\n{log.description}
-                    </X.P> */}
-                </div>
-            ))}
+            <UpdateLog />
         </X.BlogWrapper>
     );
 }
