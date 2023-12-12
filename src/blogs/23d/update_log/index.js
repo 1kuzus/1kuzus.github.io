@@ -23,8 +23,8 @@ function Version() {
 
 function UpdateLog() {
     const logs = [
-        {date: '2023-07-02', description: '创建仓库'},
-        {date: '2023-07-11', description: '第一次推送'},
+        {date: '2023-07-02', description: '@创建仓库[https://github.com/1kuzus/1kuzus.github.io]@！'},
+        {date: '2023-07-11', description: '首次推送'},
         {date: '2023-07-22', description: '搭建页面框架，测试路由'},
         {date: '2023-07-23', description: '设计首页logo和顶栏'},
         {date: '2023-07-29', description: '首页博客列表组件'},
@@ -37,20 +37,29 @@ function UpdateLog() {
         {date: '2023-08-29', description: '由于`highlight.js`库对jsx的高亮支持不好，决定采用`prism.js`作为代码高亮库'},
         {
             date: '2023-08-30',
-            description: '新组件`Formula`，使用`katex`作为公式渲染库\\n修改路由表定义逻辑，根据目录导入路由项',
+            description: '新组件`Formula`，使用`katex`作为公式渲染库\\n修改路由表定义逻辑，根据分类目录文件导入路由项',
         },
         {
             date: '2023-08-31',
             description:
-                '新组件`Br``Divider``Uli``Oli`\\n新组件`HighlightBlock`\\n创建第1篇博客 - 模式识别 · 统计决策方法',
+                '新组件`Br``Divider``Uli``Oli`\\n新组件`HighlightBlock`\\n创建第1篇博客 - @模式识别 · 统计决策方法[/behwl/]@',
         },
-        {date: '2023-09-02', description: '调整亮色、暗色两套代码高亮配色\\n创建第2篇博客 - JavaScript 数组常用方法'},
+        {date: '2023-09-02', description: '调整亮色、暗色两套代码高亮配色'},
         {date: '2023-09-03', description: '部署后遇到刷新404问题，将`BrowserRouter`改为`HashRouter`'},
         {date: '2023-09-04', description: '新组件`Table`'},
         {date: '2023-09-06', description: '新组件`FlexRow``Image`'},
         {date: '2023-09-13', description: '段落组件支持解析行内公式'},
         {date: '2023-09-14', description: '取消了切换主题时背景颜色的过渡动画'},
         {date: '2023-09-19', description: '解决代码编辑器里文本自动换行导致html文档插入空格'},
+        {date: '2023-09-27', description: '博客目录'},
+        {date: '2023-10-17', description: '加入`vscode snippets`'},
+        {date: '2023-10-22', description: '加入`Google Analytics`'},
+        {date: '2023-11-15', description: '通过后部署脚本解决刷新404问题'},
+        {date: '2023-11-19', description: '后部署脚本中加入生成`@sitemap.xml[/sitemap.xml]@`\\n用`<noscript>`标签作为临时SEO方案'},
+        {date: '2023-12-01', description: '优化目录生成逻辑，不要求同一博客内标题不重复'},
+        {date: '2023-12-02', description: '图片组件新增可选的在暗色模式下自动反转颜色的功能'},
+        {date: '2023-12-05', description: '标题组件`H1``H2``H3`支持超链接'},
+        {date: '2023-12-06', description: '博客标题自动从分类目录文件同步'},
     ];
     return (
         <>
