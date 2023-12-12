@@ -60,13 +60,33 @@ export default function Blog({blogTitle}) {
             <PaperSummary
                 topic="使用稀疏输入2D图片集实现场景的3D视图合成。"
                 method={<X.P>从`($x,y,z,\theta,\phi$)`到`($R,G,B,\sigma$)`</X.P>}
-                experiment="文章主要解决了用5D空间表示3D合成"
-                innovation="文章主要解决了用5D空间表示3D合成"
-                limitation="文章主要解决了用5D空间表示3D合成"
+                experiment="测试数据集是`Diffuse Synthetic 360◦`、`Realistic Synthetic 360◦`和`Real Forward-Facing`"
+                innovation="将输入坐标位置编码，帮助MLP表示高频函数\n分层采样"
+                limitation="有效地优化和渲染神经辐射场\n可解释性"
             />
             <X.HighlightBlock bgcolor="gray">
                 <X.H3>其他笔记</X.H3>
                 <X.P>神经辐射场用于从2D的图片重建3D的场景。</X.P>
+                <X.P noMarginBottom>文中出现的三个指标：PSNR、SSIM、LPIPS</X.P>
+                <X.Uli>
+                    <X.P>
+                        *峰值信噪比*`(Peak Signal to Noise Ratio, PSNR)`：---
+                        用于衡量图像恢复的质量，数值越高表示图像质量越好。接近`50 dB`代表误差非常小，大于`30 dB`---
+                        人眼难察觉差异。
+                    </X.P>
+                </X.Uli>
+                <X.Uli>
+                    <X.P>
+                        *结构相似性*`(Structural Similarity Index Measure, SSIM)`：---
+                        用于衡量图像的结构相似性，得分通常在`0`~`1`之间，数值越高表示图像结构越相似。相较于PSNR在图像质量的衡量上更能符合人眼对图像质量的判断。
+                    </X.P>
+                </X.Uli>
+                <X.Uli>
+                    <X.P>
+                        *基于学习的感知图像质量评价*`(Learned Perceptual Image Patch Similarity, LPIPS)`：---
+                        测量从预训练网络中提取的两个图像的特征之间的相似性，得分通常在`0`~`1`之间，数值越低表示感知质量越高。
+                    </X.P>
+                </X.Uli>
             </X.HighlightBlock>
             <X.H2 href="https://arxiv.org/pdf/2308.04079.pdf">
                 3D Gaussian Splatting for Real-Time Radiance Field Rendering (2023)
