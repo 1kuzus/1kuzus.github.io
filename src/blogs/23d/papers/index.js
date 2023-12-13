@@ -5,6 +5,7 @@ function PaperSummary(props) {
     return (
         <X.HighlightBlock bgcolor="gray">
             {X.Oli({reset: 0}) && false}
+            {/* todo: 可以写的更好看一点 */}
             {topic && (
                 <X.Oli>
                     <X.P noMarginBottom>*文章的主题 / 文章要解决什么问题？*</X.P>
@@ -58,7 +59,7 @@ export default function Blog({blogTitle}) {
                 NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis (2020)
             </X.H2>
             <PaperSummary
-                topic="使用稀疏输入2D图片集实现场景的3D视图合成。"
+                topic="使用稀疏输入2D图片集实现场景的3D视图合成"
                 method={<X.P>从`($x,y,z,\theta,\phi$)`到`($R,G,B,\sigma$)`</X.P>}
                 experiment="测试数据集是`Diffuse Synthetic 360◦`、`Realistic Synthetic 360◦`和`Real Forward-Facing`"
                 innovation="将输入坐标位置编码，帮助MLP表示高频函数\n分层采样"
@@ -91,16 +92,7 @@ export default function Blog({blogTitle}) {
             <X.H2 href="https://arxiv.org/pdf/2308.04079.pdf">
                 3D Gaussian Splatting for Real-Time Radiance Field Rendering (2023)
             </X.H2>
-            <PaperSummary
-                topic={<X.P>文章主要解决了用`5D`空间表示`3D`合成</X.P>}
-                method={
-                    <>
-                        <X.P>文章主要解决了用`5D`空间表`3D`合成</X.P>
-                        <X.P>文章主要解决了用`D`空间表示`3D`合成</X.P>
-                        <X.P>文章主要解决用`5D`空间表示`3D`合成</X.P>
-                    </>
-                }
-            />
+            <PaperSummary topic="实现实时辐射场渲染，同时保持高质量的视觉效果，并且保持较短的训练时间" />
             <X.H1>学习</X.H1>
         </X.BlogWrapper>
     );
