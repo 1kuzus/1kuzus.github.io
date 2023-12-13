@@ -1,5 +1,5 @@
-import X from '@/component/X';
 import {useEffect} from 'react';
+import X from '@/component/X';
 import './index.css';
 
 function Version() {
