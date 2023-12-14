@@ -61,12 +61,12 @@ export default function Blog({blogTitle}) {
             <PaperSummary
                 topic="使用稀疏输入2D图片集实现场景的3D视图合成"
                 method={<X.P>从`($x,y,z,\theta,\phi$)`到`($R,G,B,\sigma$)`</X.P>}
-                experiment="测试数据集是`Diffuse Synthetic 360◦`、`Realistic Synthetic 360◦`和`Real Forward-Facing`"
+                experiment="测试数据集是`Diffuse Synthetic 360`、`Realistic Synthetic 360`和`Real Forward-Facing`"
                 innovation="将输入坐标位置编码，帮助MLP表示高频函数\n分层采样"
                 limitation="有效地优化和渲染神经辐射场\n可解释性"
             />
             <X.HighlightBlock bgcolor="gray">
-                <X.H3>其他笔记</X.H3>
+                <X.H3>更多笔记</X.H3>
                 <X.P>神经辐射场用于从2D的图片重建3D的场景。</X.P>
                 <X.P noMarginBottom>文中出现的三个指标：PSNR、SSIM、LPIPS</X.P>
                 <X.Uli>
@@ -93,6 +93,36 @@ export default function Blog({blogTitle}) {
                 3D Gaussian Splatting for Real-Time Radiance Field Rendering (2023)
             </X.H2>
             <PaperSummary topic="实现实时辐射场渲染，同时保持高质量的视觉效果，并且保持较短的训练时间" />
+            <X.HighlightBlock bgcolor="gray">
+                <X.H3>更多笔记</X.H3>
+                <X.P>
+                    *文章的相关工作部分*\n传统的场景重建与渲染：基于光场的，密集采样、非结构化捕获；---
+                    *运动恢复结构*`(Structure from Motion, SFM)`用一组照片估计稀疏点云合成新视图；---
+                    *多视点立体视觉*`(Multi-View Stereo, MVS)`；\n
+                    神经渲染和辐射场：用CNN估计混合权重，用于纹理空间；`Soft3D`提出`Volumetric representations`；---
+                    `NeRF`提出重要性采样和位置编码来提高质量，但使用了大型多层感知器，对速度有负面影响；
+                </X.P>
+                <X.P>
+                    *稀疏重建和稠密重建*\n稀疏重建主要用于定位，得到每张图片的相机参数，提取特征点，例如SFM；---
+                    稠密重建是假设相机参数已知的情况下，从不同视角的图像中找到匹配的对应点，对整个图像或图像中绝大部分像素进行重建。
+                </X.P>
+            </X.HighlightBlock>
+            <X.H2 href="https://export.arxiv.org/pdf/2304.04395v3.pdf">Instance Neural Radiance Field (2023)</X.H2>
+            <PaperSummary topic="输入一个以多视图RGB图像预训练的NeRF，学习给定场景的3D实例分割" />
+            <X.HighlightBlock bgcolor="gray">
+                <X.H3>更多笔记</X.H3>
+                <X.P>
+                    *文章的相关工作部分*\n传统的场景重建与渲染：基于光场的，密集采样、非结构化捕获；---
+                    *运动恢复结构*`(Structure from Motion, SFM)`用一组照片估计稀疏点云合成新视图；---
+                    *多视点立体视觉*`(Multi-View Stereo, MVS)`；\n
+                    神经渲染和辐射场：用CNN估计混合权重，用于纹理空间；`Soft3D`提出`Volumetric representations`；---
+                    `NeRF`提出重要性采样和位置编码来提高质量，但使用了大型多层感知器，对速度有负面影响；
+                </X.P>
+                <X.P>
+                    *稀疏重建和稠密重建*\n稀疏重建主要用于定位，得到每张图片的相机参数，提取特征点，例如SFM；---
+                    稠密重建是假设相机参数已知的情况下，从不同视角的图像中找到匹配的对应点，对整个图像或图像中绝大部分像素进行重建。
+                </X.P>
+            </X.HighlightBlock>
             <X.H1>学习</X.H1>
         </X.BlogWrapper>
     );
