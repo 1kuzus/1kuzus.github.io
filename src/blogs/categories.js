@@ -5,6 +5,7 @@ import Behwl from './23c/pattern_recognition1';
 import Bco21 from './23c/pattern_recognition2';
 import Bjjj5 from './23c/pattern_recognition3';
 import Bykl9 from './23d/db3nf';
+import B24fa from './23d/object_detection_map';
 import Bo8sr from './23d/papers';
 import B2fph from './23d/pattern_recognition4';
 import Blnrj from './23d/protocols';
@@ -37,13 +38,19 @@ const categories = [
                 time: '2023-11-27',
                 component: <B97t6 />,
             },
+            {
+                blogTitle: '目标检测评价指标mAP',
+                path: '/b24fa/',
+                time: '2023-12-15',
+                component: <B24fa />,
+            },
         ],
     },
     {
         categoryName: '前端与JavaScript',
         blogs: [
             {
-                blogTitle: 'JavaScript 数组常用方法',
+                blogTitle: 'JavaScript数组常用方法',
                 path: '/bj23k/',
                 time: '2023-9-2',
                 component: <Bj23k />,

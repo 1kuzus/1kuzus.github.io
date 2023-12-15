@@ -107,8 +107,20 @@ export default function Blog({blogTitle}) {
                     稠密重建是假设相机参数已知的情况下，从不同视角的图像中找到匹配的对应点，对整个图像或图像中绝大部分像素进行重建。
                 </X.P>
             </X.HighlightBlock>
-            <X.H2 href="https://export.arxiv.org/pdf/2304.04395v3.pdf">Instance Neural Radiance Field (2023)</X.H2>
+            <X.H2 href="https://arxiv.org/pdf/2304.04395v3.pdf">Instance Neural Radiance Field (2023)</X.H2>
             <PaperSummary topic="输入一个以多视图RGB图像预训练的NeRF，学习给定场景的3D实例分割" />
+            <X.HighlightBlock bgcolor="gray">
+                <X.H3>更多笔记</X.H3>
+                <X.P>
+                    *稀疏重建和稠密重建*\n稀疏重建主要用于定位，得到每张图片的相机参数，提取特征点，例如SFM；---
+                    稠密重建是假设相机参数已知的情况下，从不同视角的图像中找到匹配的对应点，对整个图像或图像中绝大部分像素进行重建。
+                </X.P>
+            </X.HighlightBlock>
+
+            <X.H2 href="https://arxiv.org/pdf/2201.05989.pdf">
+                Instant Neural Graphics Primitives with a Multiresolution Hash Encoding (2022)
+            </X.H2>
+            <PaperSummary topic="实现实时辐射场渲染，同时保持高质量的视觉效果，并且保持较短的训练时间" />
             <X.HighlightBlock bgcolor="gray">
                 <X.H3>更多笔记</X.H3>
                 <X.P>
@@ -123,7 +135,28 @@ export default function Blog({blogTitle}) {
                     稠密重建是假设相机参数已知的情况下，从不同视角的图像中找到匹配的对应点，对整个图像或图像中绝大部分像素进行重建。
                 </X.P>
             </X.HighlightBlock>
+
             <X.H1>学习</X.H1>
+            <X.H2 href="https://www.cv-foundation.org/openaccess/content_cvpr_2014/papers/Girshick_Rich_Feature_Hierarchies_2014_CVPR_paper.pdf">
+                Rich Feature Hierarchies for Accurate Object Detection and Semantic Segmentation (2014)
+            </X.H2>
+            <PaperSummary
+                topic="提出`Regions with CNN features, R-CNN`提高目标检测性能"
+                experiment="在`PASCAL VOC 2012`取得`mAP 53.3%`，在`ILSVRC 2013`竞赛数据集取得`mAP 31.4%`"
+            />
+            <X.HighlightBlock bgcolor="gray">
+                <X.H3>更多笔记</X.H3>
+                <X.P>
+                    *全类平均正确率*\n`(mean Average Precision, mAP)`用于评估目标检测模型性能。---
+                    *交并比*`(Intersection over Union, IoU)`是产生的检测框与真实检测框的交集与并集的比值。---
+                    对于一组图像的目标检测结果来说，假如规定`IoU`大于某一阈值就把检测结果视为真正例`TP`，否则视为假正例`FP`，并且如果出现多个检测重叠一个真值的情况，---
+                    只有最高置信度的检测框被视为`TP`；\n
+                    接下来计算两个指标：*精确率*`Precision`，即预测为正的样本中的正确率`TP/all detections`；---
+                    *召回率*`Recall`，即正确检测出的正样本占所有正样本的比例`TP/all ground truths`
+
+                        auc         曲线
+                </X.P>
+            </X.HighlightBlock>
         </X.BlogWrapper>
     );
 }
