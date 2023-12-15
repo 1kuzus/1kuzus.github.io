@@ -4,8 +4,8 @@ export default function Blog({blogTitle}) {
     return (
         <X.BlogWrapper>
             <X.Title>{blogTitle}</X.Title>
-            <X.H1>H1</X.H1>
-            <X.H2>H2</X.H2>
+            <X.H1>一级标题</X.H1>
+            <X.H2>二级标题</X.H2>
             <X.HighlightBlock bgcolor="gray">
                 <X.Uli>1</X.Uli>
                 <X.P noMarginBottom>p</X.P>
@@ -20,11 +20,8 @@ export default function Blog({blogTitle}) {
                     `}
                 />
                 <X.Formula text="1+1=2" />
-                {/* <X.Image src={require('./img.jpg')} width="100%" invertInDarkTheme/> */}
+                {/* <X.Image src={require('./fig1.jpg')} width="100%" invertInDarkTheme/> */}
             </X.FlexRow>
-
-            <X.H1>参考</X.H1>
-            https://www.bilibili.com/video/BV1zz4y1N73J/?spm_id_from=333.1007.top_right_bar_window_custom_collection.content.click&vd_source=49eaababd4d4f07b29fb6337d2397ed4
         </X.BlogWrapper>
     );
 }
