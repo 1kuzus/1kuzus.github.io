@@ -20,7 +20,7 @@ export default function Blog({blogTitle}) {
             </X.P>
             <X.P>
                 接下来计算两个指标：*查准率*或*精确率*`Precision`，即预测为正的样本中的正确率`TP/All Detections`；---
-                *查全率*或*召回率*`Recall`，即正确检测出的正样本占所有正样本的比例`TP/All Ground Truths`。\n
+                *查全率*或*召回率*`Recall`，即正确检测出的正样本占所有正样本的比例`TP/All Ground Truths`。
             </X.P>
             <X.P>对于上面的例子，按照置信度由高到低做出如下表格：</X.P>
             <X.Image src={require('./fig3.png')} width="80%" />
@@ -39,7 +39,7 @@ export default function Blog({blogTitle}) {
             <X.HighlightBlock bgcolor="gray">
                 <X.H3>个人理解</X.H3>
                 <X.P>
-                    当我们说在一个类别上预测精度是`80%`时，直观上的体会是“模型的`10`个预测框中，大约有`8`个是对目标的正确预测”。---
+                    当我们说模型在一个类别上预测精度是`80%`时，直观上的体会是“模型的`10`个预测框中，大约有`8`个是对目标的正确预测”。---
                     然而这并不能与`Precision`-`Recall`曲线下的面积建立起直观的联系。但注意到曲线的纵坐标的含义就是精度，从这个角度出发，以下是对`AP`指标的个人理解：
                 </X.P>
                 <X.P>
@@ -48,11 +48,13 @@ export default function Blog({blogTitle}) {
                 </X.P>
                 <X.Image src={require('./fig4.jpg')} width="40%" invertInDarkTheme />
                 <X.P>
-                    模型在平衡点处的精度与曲线下面积有没有联系呢？下图的蓝折线`D`将曲线`A`的平衡点两侧两段单调递减的曲线近似为直线，如果以折线`D`下面积作为曲线`A`下面积的近似，---
+                    模型在平衡点处的精度与曲线下面积有没有联系呢？下图的蓝色折线`D`将曲线`A`的平衡点两侧的两段单调递减的曲线近似为直线，如果以折线`D`下面积近似曲线`A`下面积，---
                     将黄色三角形补到右侧后，可以发现蓝色折线`D`下的面积恰好反映了平衡点处的精度。
                 </X.P>
                 <X.Image src={require('./fig5.jpg')} width="85%" invertInDarkTheme />
-                <X.P>因此可以认为，平均精度`AP`某种意义上是用`Precision`-`Recall`曲线下面积近似反映了平衡点处的`Precision`值。</X.P>
+                <X.P>
+                    因此可以认为，平均精度`AP`某种意义上是用`Precision`-`Recall`曲线下面积近似反映了平衡点处的`Precision`值。
+                </X.P>
             </X.HighlightBlock>
             <X.H1>全类平均精度mAP</X.H1>
             <X.P>上述步骤算出的是针对一个类别的平均精度`AP`，而全类平均精度`mAP`是所有检测到的类别的`AP`均值。</X.P>
@@ -62,12 +64,19 @@ export default function Blog({blogTitle}) {
                 当类别数量不平衡时，可能某个少样本类别的检测效果很差。如果混在一起计算，由于该类别样本数量较少，因此并不会对最终的结果产生很大的影响。---
                 此时对模型的性能评估是不准确的。因此需要逐类测量`AP`再取均值，作为最终的`mAP`检测结果。
             </X.P>
-            <X.H1>参考</X.H1>
-            <X.P>
-                @深动手学深度学习 - 计算机视觉[https://zh-v2.d2l.ai/chapter_computer-vision]@\n
-                @目标检测中的mAP是什么含义？[https://www.zhihu.com/question/53405779/answer/2481182203]@\n
-                @深入了解平均精度(mAP)：通过精确率-召回率曲线评估目标检测性能[https://baijiahao.baidu.com/s?id=1767101899839497831]@\n
-            </X.P>
+            <X.H1>参考资料</X.H1>
+            <X.P noMarginBottom>本文的部分内容、图片来源于：</X.P>
+            <X.Uli>
+                <X.P>@动手学深度学习 - 计算机视觉[https://zh-v2.d2l.ai/chapter_computer-vision]@</X.P>
+            </X.Uli>
+            <X.Uli>
+                <X.P>@目标检测中的mAP是什么含义？[https://www.zhihu.com/question/53405779/answer/2481182203]@</X.P>
+            </X.Uli>
+            <X.Uli>
+                <X.P>
+                    @深入了解平均精度(mAP)：通过精确率-召回率曲线评估目标检测性能[https://baijiahao.baidu.com/s?id=1767101899839497831]@
+                </X.P>
+            </X.Uli>
         </X.BlogWrapper>
     );
 }
