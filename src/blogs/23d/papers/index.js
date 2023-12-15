@@ -146,16 +146,6 @@ export default function Blog({blogTitle}) {
             />
             <X.HighlightBlock bgcolor="gray">
                 <X.H3>更多笔记</X.H3>
-                <X.P>
-                    *全类平均正确率*\n`(mean Average Precision, mAP)`用于评估目标检测模型性能。---
-                    *交并比*`(Intersection over Union, IoU)`是产生的检测框与真实检测框的交集与并集的比值。---
-                    对于一组图像的目标检测结果来说，假如规定`IoU`大于某一阈值就把检测结果视为真正例`TP`，否则视为假正例`FP`，并且如果出现多个检测重叠一个真值的情况，---
-                    只有最高置信度的检测框被视为`TP`；\n
-                    接下来计算两个指标：*精确率*`Precision`，即预测为正的样本中的正确率`TP/all detections`；---
-                    *召回率*`Recall`，即正确检测出的正样本占所有正样本的比例`TP/all ground truths`
-
-                        auc         曲线
-                </X.P>
             </X.HighlightBlock>
         </X.BlogWrapper>
     );
