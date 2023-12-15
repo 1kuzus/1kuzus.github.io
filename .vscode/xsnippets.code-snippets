@@ -97,6 +97,14 @@
 		],
 		"description": "X.HighlightBlock tag with bgcolor"
 	},
+	"X.Image tag": {
+		"scope": "javascript,typescript",
+		"prefix": "ximage",
+		"body": [	
+			"<X.Image src={require('./fig1.jpg')} width='' />"
+		],
+		"description": "X.Image tag"
+	},
 	"X.Table tag": {
 		"scope": "javascript,typescript",
 		"prefix": "xtable",
