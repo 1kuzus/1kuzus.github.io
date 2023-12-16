@@ -4,6 +4,7 @@ import Bj23k from './23c/jsarray';
 import Behwl from './23c/pattern_recognition1';
 import Bco21 from './23c/pattern_recognition2';
 import Bjjj5 from './23c/pattern_recognition3';
+import Beg4p from './23d/clipboardapi';
 import Bykl9 from './23d/db3nf';
 import B24fa from './23d/object_detection_map';
 import Bo8sr from './23d/papers';
@@ -54,6 +55,12 @@ const categories = [
                 path: '/bj23k/',
                 time: '2023-9-2',
                 component: <Bj23k />,
+            },
+            {
+                blogTitle: 'Clipboard API：实现一键复制',
+                path: '/beg4p/',
+                time: '2023-12-16',
+                component: <Beg4p />,
             },
         ],
     },
