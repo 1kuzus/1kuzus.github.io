@@ -22,15 +22,9 @@ export default function Blog({blogTitle}) {
             <X.P noMarginBottom>
                 `SpatioTemporalConv`卷积从外部看与`Conv3d`相同，均有`5`个超参数，区别在于其内部的结构：
             </X.P>
-            <X.Uli>
-                <X.P>大小为$(C_i,C,1,K_w,K_h)$的`Conv3d`</X.P>
-            </X.Uli>
-            <X.Uli>
-                <X.P>`BatchNorm`+`ReLU`</X.P>
-            </X.Uli>
-            <X.Uli>
-                <X.P>大小为$(C,C_o,K_t,1,1)$的`Conv3d`</X.P>
-            </X.Uli>
+            <X.Uli>大小为$(C_i,C,1,K_w,K_h)$的`Conv3d`</X.Uli>
+            <X.Uli>`BatchNorm`+`ReLU`</X.Uli>
+            <X.Uli>大小为$(C,C_o,K_t,1,1)$的`Conv3d`</X.Uli>
             <X.P withMarginTop>如果二者作用于相同的输出，得到的结果`shape`是一样的：</X.P>
             <X.CodeBlock
                 language="python"

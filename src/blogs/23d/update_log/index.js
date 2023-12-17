@@ -60,6 +60,7 @@ function UpdateLog() {
         {date: '2023-12-02', description: '图片组件新增可选的在暗色模式下自动反转颜色的功能'},
         {date: '2023-12-05', description: '标题组件`H1``H2``H3`支持超链接'},
         {date: '2023-12-06', description: '博客标题自动从分类目录文件同步'},
+        {date: '2023-12-17', description: '支持直接在列表项中写含有段落组件特殊格式的文本'},
     ];
     return (
         <>

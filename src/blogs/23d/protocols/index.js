@@ -256,10 +256,8 @@ export default function Blog({blogTitle}) {
                 若有，且原表项的下一跳路由器就是发来更新信息的路由器，则用新表项替换原表项，但距离要+1，且下一跳路由器应修改为自己；
             </X.Uli>
             <X.Uli>
-                <X.P>
-                    若有，且原表项的下一跳路由器不是发来更新信息的路由器，那么比较`原表项的距离`和`新表项的距离+1`，选择较小的。\n
-                    同上一条，填入新表项时距离要+1，下一跳路由器应修改为自己。
-                </X.P>
+                若有，且原表项的下一跳路由器不是发来更新信息的路由器，那么比较`原表项的距离`和`新表项的距离+1`，选择较小的。\n
+                同上一条，填入新表项时距离要+1，下一跳路由器应修改为自己。
             </X.Uli>
             <X.P withMarginTop>考虑一个例子：</X.P>
             <X.HighlightBlock bgcolor="gray">
@@ -328,10 +326,8 @@ export default function Blog({blogTitle}) {
                 允许多条相同开销的路径：当存在多条相等开销的路径时，无须仅选择单一的路径来承载所有的流量。（RIP协议只允许一条）
             </X.Uli>
             <X.Uli>
-                <X.P>
-                    对单播与多播路由选择的综合支持：*多播OSPF*`(MOSPF)`提供对OSPF的简单扩展，以便提供多播路由选择。---
-                    MOSPF使用现有的OSPF链路数据库，并为现有的OSPF链路状态广播机制增加了一种新型的链路状态通告。
-                </X.P>
+                对单播与多播路由选择的综合支持：*多播OSPF*`(MOSPF)`提供对OSPF的简单扩展，以便提供多播路由选择。---
+                MOSPF使用现有的OSPF链路数据库，并为现有的OSPF链路状态广播机制增加了一种新型的链路状态通告。
             </X.Uli>
             <X.Uli>支持在单个AS中的层次结构。</X.Uli>
             <X.H2>边界网关协议 - BGP</X.H2>
@@ -557,29 +553,17 @@ export default function Blog({blogTitle}) {
                 每个IPv6地址长度为`128`位，地址通常用`8`组四位十六进制数表示，例如`2001:0db8:86a3:08d3:1319:8a2e:0370:7344`。
             </X.P>
             <X.P noMarginBottom>IPv6的地址有时可以省略，具体规则是：</X.P>
-            <X.Uli>
-                <X.P>每组数字的前导`0`可以省略；</X.P>
-            </X.Uli>
-            <X.Uli>
-                <X.P>可以用`::`表示一组多组连续的`0`，但*只能出现一次*。</X.P>
-            </X.Uli>
+            <X.Uli>每组数字的前导`0`可以省略；</X.Uli>
+            <X.Uli>可以用`::`表示一组多组连续的`0`，但*只能出现一次*。</X.Uli>
             <X.P noMarginBottom withMarginTop>
                 例如下面的IPv6地址是等价的：
             </X.P>
-            <X.Uli>
-                <X.P>`2001:0db8:00de:0000:0000:0000:0000:2e13`</X.P>
-            </X.Uli>
-            <X.Uli>
-                <X.P>`2001:db8:de:0:0:0:0:2e13`</X.P>
-            </X.Uli>
-            <X.Uli>
-                <X.P>`2001:db8:de::2e13`</X.P>
-            </X.Uli>
+            <X.Uli>`2001:0db8:00de:0000:0000:0000:0000:2e13`</X.Uli>
+            <X.Uli>`2001:db8:de:0:0:0:0:2e13`</X.Uli>
+            <X.Uli>`2001:db8:de::2e13`</X.Uli>
             <X.H2>IPv6比IPv4的改进</X.H2>
             <X.Image src={require('./ip.png')} width="100%" />
-            <X.Uli>
-                <X.P>扩大了地址空间，从`8`位变为`32`位</X.P>
-            </X.Uli>
+            <X.Uli>扩大了地址空间，从`8`位变为`32`位</X.Uli>
             <X.Uli>IPv6移除了校验和字段，以减少每跳的处理时间</X.Uli>
             <X.Uli>
                 IPv6将可选字段移出首部字段，放在有效载荷的扩展首部中，路由器不对扩展首部进行检查，提高了处理效率
@@ -593,25 +577,17 @@ export default function Blog({blogTitle}) {
             </X.P>
             <X.P noMarginBottom>DHCP的四个步骤是：</X.P>
             <X.Uli>
-                <X.P>
-                    *DHCP发现*`(DHCP Discover)`\n
-                    新加入主机的首要任务是发现一个要与其交互的DHCP服务器，这可以通过生成一个目的地址为`255.255.255.255`或者一个子网广播地址的UDP包实现。
-                </X.P>
+                *DHCP发现*`(DHCP Discover)`\n
+                新加入主机的首要任务是发现一个要与其交互的DHCP服务器，这可以通过生成一个目的地址为`255.255.255.255`或者一个子网广播地址的UDP包实现。
+            </X.Uli>
+            <X.Uli>*DHCP提供*`(DHCP Offer)`\nDHCP服务器提供一个IP租约。服务器租用期通常设置为几小时或几天。</X.Uli>
+            <X.Uli>
+                *DHCP请求*`(DHCP Request)`\n
+                当客户主机从一个或多个DHCP服务器的提供中选择了一个IP租约时，它必须告诉其他的DHCP服务器它已经接受了一个租约提供。
             </X.Uli>
             <X.Uli>
-                <X.P>*DHCP提供*`(DHCP Offer)`\nDHCP服务器提供一个IP租约。服务器租用期通常设置为几小时或几天。</X.P>
-            </X.Uli>
-            <X.Uli>
-                <X.P>
-                    *DHCP请求*`(DHCP Request)`\n
-                    当客户主机从一个或多个DHCP服务器的提供中选择了一个IP租约时，它必须告诉其他的DHCP服务器它已经接受了一个租约提供。
-                </X.P>
-            </X.Uli>
-            <X.Uli>
-                <X.P>
-                    *DHCP确认*`(DHCP Acknowledge/ACK)`\n对DHCP
-                    Request报文进行响应，证实所要求的参数。一旦客户主机收到DHCP ACK后，配置过程就完成了。
-                </X.P>
+                *DHCP确认*`(DHCP Acknowledge/ACK)`\n对DHCP Request报文进行响应，证实所要求的参数。一旦客户主机收到DHCP
+                ACK后，配置过程就完成了。
             </X.Uli>
             <X.H2>地址解析协议 - ARP</X.H2>
             <X.P>
@@ -643,27 +619,17 @@ export default function Blog({blogTitle}) {
             </X.P>
             <X.P noMarginBottom>TCP首部由`20`字节固定首部和最大`40`字节的扩展首部构成。下面是对一些字段的解释：</X.P>
             <X.Uli>
-                <X.P>
-                    序号、确认号、`ACK`标志位（在Flags中）：用于实现TCP可靠传输；确认号指出期望收到对方下一个TCP报文段的数据载荷的第一个字节的序号，---
-                    同时也是对之前收到的所有数据的确认。只有当`ACK`取值为`1`时，确认号字段才有效。TCP规定在连接建立后所有传送的报文段都必须把`ACK`置`1`。
-                </X.P>
+                序号、确认号、`ACK`标志位（在Flags中）：用于实现TCP可靠传输；确认号指出期望收到对方下一个TCP报文段的数据载荷的第一个字节的序号，---
+                同时也是对之前收到的所有数据的确认。只有当`ACK`取值为`1`时，确认号字段才有效。TCP规定在连接建立后所有传送的报文段都必须把`ACK`置`1`。
             </X.Uli>
             <X.Uli>
-                <X.P>
-                    数据偏移：占`4`位，以`4`字节为单位，用来指出TCP报文段的数据载荷部分的起始处距离TCP报文段的起始处有多远；---
-                    这个字段实际上指出了TCP报文段的首部长度。
-                </X.P>
+                数据偏移：占`4`位，以`4`字节为单位，用来指出TCP报文段的数据载荷部分的起始处距离TCP报文段的起始处有多远；---
+                这个字段实际上指出了TCP报文段的首部长度。
             </X.Uli>
+            <X.Uli>`SYN`标志位（在Flags中）：在TCP连接建立时用来同步序号。</X.Uli>
+            <X.Uli>`FIN`标志位（在Flags中）：用来释放TCP连接。</X.Uli>
             <X.Uli>
-                <X.P>`SYN`标志位（在Flags中）：在TCP连接建立时用来同步序号。</X.P>
-            </X.Uli>
-            <X.Uli>
-                <X.P>`FIN`标志位（在Flags中）：用来释放TCP连接。</X.P>
-            </X.Uli>
-            <X.Uli>
-                <X.P>
-                    窗口：占`16`位，以字节为单位，用于流量控制；接收方给出的*接收窗口*值是发送方设置其发送窗口的依据之一（另一个是*拥塞窗口*）。
-                </X.P>
+                窗口：占`16`位，以字节为单位，用于流量控制；接收方给出的*接收窗口*值是发送方设置其发送窗口的依据之一（另一个是*拥塞窗口*）。
             </X.Uli>
             <X.H3>TCP连接建立</X.H3>
             <X.P>TCP通过三报文握手建立连接，目的是使双方能感知到对方的存在，同时协商一些参数。过程如下图所示：</X.P>
@@ -729,9 +695,7 @@ export default function Blog({blogTitle}) {
                     随着拥塞窗口增大，可能会有报文段发生丢失，引起发送方重传计时器超时。因此发送方判断网络可能出现了拥塞，此时会：
                 </X.P>
                 <X.Uli>将慢开始门限值更新为发生拥塞时拥塞窗口的一半</X.Uli>
-                <X.Uli>
-                    <X.P>将拥塞窗口置为`1`，并重新开始执行慢开始算法</X.P>
-                </X.Uli>
+                <X.Uli>将拥塞窗口置为`1`，并重新开始执行慢开始算法</X.Uli>
                 <X.Divider />
                 <X.P>
                     慢开始和拥塞避免算法是1988年`Tahoe`版本提出的TCP拥塞控制算法，1990年`Reno`版本又增加了快重传和快恢复。
@@ -746,12 +710,8 @@ export default function Blog({blogTitle}) {
             </X.HighlightBlock>
             <X.H1>参考资料</X.H1>
             <X.P noMarginBottom>本文的部分内容、图片来源于：</X.P>
-            <X.Uli>
-                <X.P>@Bilibili - 王道计算机考研 计算机网络[https://www.bilibili.com/video/BV19E411D78Q]@</X.P>
-            </X.Uli>
-            <X.Uli>
-                <X.P>@Bilibili - 计算机网络微课堂[https://www.bilibili.com/video/BV1c4411d7jb]@</X.P>
-            </X.Uli>
+            <X.Uli>@Bilibili - 王道计算机考研 计算机网络[https://www.bilibili.com/video/BV19E411D78Q]@</X.Uli>
+            <X.Uli>@Bilibili - 计算机网络微课堂[https://www.bilibili.com/video/BV1c4411d7jb]@</X.Uli>
             <X.Uli>《计算机网络自顶向下方法》（第七版）</X.Uli>
         </X.BlogWrapper>
     );
