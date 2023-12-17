@@ -6,6 +6,7 @@ import Bco21 from './23c/pattern_recognition2';
 import Bjjj5 from './23c/pattern_recognition3';
 import Beg4p from './23d/clipboardapi';
 import Bykl9 from './23d/db3nf';
+import Bnwt2 from './23d/lstm';
 import B24fa from './23d/object_detection_map';
 import Bo8sr from './23d/papers';
 import B2fph from './23d/pattern_recognition4';
@@ -44,6 +45,12 @@ const categories = [
                 path: '/b24fa/',
                 time: '2023-12-15',
                 component: <B24fa />,
+            },
+            {
+                blogTitle: 'LSTM',
+                path: '/bnwt2/',
+                time: '2023-12-17',
+                component: <Bnwt2 />,
             },
         ],
     },
