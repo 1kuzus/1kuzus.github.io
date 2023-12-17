@@ -37,6 +37,22 @@
 		],
 		"description": "X.P tag"
 	},
+	"withMarginTop props": {
+		"scope": "javascript,typescript",
+		"prefix": "wmt",
+		"body": [	
+			"withMarginTop"
+		],
+		"description": "withMarginTop props"
+	},
+	"noMarginBottom props": {
+		"scope": "javascript,typescript",
+		"prefix": "nmb",
+		"body": [	
+			"noMarginBottom"
+		],
+		"description": "noMarginBottom props"
+	},
 	"X.Uli tag": {
 		"scope": "javascript,typescript",
 		"prefix": "xuli",
@@ -104,6 +120,14 @@
 			"<X.Image src={require('./fig1.jpg')} width='' />"
 		],
 		"description": "X.Image tag"
+	},
+	"invertInDarkTheme props": {
+		"scope": "javascript,typescript",
+		"prefix": "iidt",
+		"body": [	
+			"invertInDarkTheme"
+		],
+		"description": "invertInDarkTheme props"
 	},
 	"X.Table tag": {
 		"scope": "javascript,typescript",
