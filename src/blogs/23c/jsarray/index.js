@@ -100,23 +100,15 @@ export default function Blog({blogTitle}) {
                 `}
             />
             <X.H1>find系列</X.H1>
+            <X.Uli>`find()`方法返回数组中满足提供的测试函数的第一个元素的值。否则返回`undefined`。</X.Uli>
             <X.Uli>
-                <X.P>`find()`方法返回数组中满足提供的测试函数的第一个元素的值。否则返回`undefined`。</X.P>
+                `findIndex()`方法返回数组中满足提供的测试函数的第一个元素的索引。若没有找到对应元素则返回`-1`。
             </X.Uli>
             <X.Uli>
-                <X.P>
-                    `findIndex()`方法返回数组中满足提供的测试函数的第一个元素的索引。若没有找到对应元素则返回`-1`。
-                </X.P>
+                `findLast()`方法反向迭代数组，并返回满足提供的测试函数的第一个元素的值。如果没有找到对应元素，则返回`undefined`。
             </X.Uli>
             <X.Uli>
-                <X.P>
-                    `findLast()`方法反向迭代数组，并返回满足提供的测试函数的第一个元素的值。如果没有找到对应元素，则返回`undefined`。
-                </X.P>
-            </X.Uli>
-            <X.Uli>
-                <X.P>
-                    `findLastIndex()`方法反向迭代数组，并返回满足所提供的测试函数的第一个元素的索引。若没有找到对应元素，则返回`-1`。
-                </X.P>
+                `findLastIndex()`方法反向迭代数组，并返回满足所提供的测试函数的第一个元素的索引。若没有找到对应元素，则返回`-1`。
             </X.Uli>
             <X.CodeBlock
                 language="js"
@@ -148,15 +140,9 @@ export default function Blog({blogTitle}) {
             <X.P noMarginBottom>
                 `callbackFn`为数组中每个元素执行的函数，并会丢弃它的返回值。该函数被调用时将传入以下参数：
             </X.P>
-            <X.Uli>
-                <X.P>`value`：数组中正在处理的当前元素</X.P>
-            </X.Uli>
-            <X.Uli>
-                <X.P>`index`：数组中正在处理的当前元素的索引</X.P>
-            </X.Uli>
-            <X.Uli>
-                <X.P>`array`：调用了`forEach()`的数组本身</X.P>
-            </X.Uli>
+            <X.Uli>`value`：数组中正在处理的当前元素</X.Uli>
+            <X.Uli>`index`：数组中正在处理的当前元素的索引</X.Uli>
+            <X.Uli>`array`：调用了`forEach()`的数组本身</X.Uli>
             <X.CodeBlock
                 language="js"
                 code={`
@@ -248,15 +234,9 @@ export default function Blog({blogTitle}) {
             <X.P noMarginBottom>
                 `callbackFn`为数组中每个元素执行的函数，它的返回值作为一个元素被添加为新数组中。该函数被调用时将传入以下参数：
             </X.P>
-            <X.Uli>
-                <X.P>`value`：数组中正在处理的当前元素</X.P>
-            </X.Uli>
-            <X.Uli>
-                <X.P>`index`：数组中正在处理的当前元素的索引</X.P>
-            </X.Uli>
-            <X.Uli>
-                <X.P>`array`：调用了`map()`的数组本身</X.P>
-            </X.Uli>
+            <X.Uli>`value`：数组中正在处理的当前元素</X.Uli>
+            <X.Uli>`index`：数组中正在处理的当前元素的索引</X.Uli>
+            <X.Uli>`array`：调用了`map()`的数组本身</X.Uli>
             <X.CodeBlock
                 language="js"
                 code={`
@@ -437,15 +417,9 @@ export default function Blog({blogTitle}) {
                 `}
             />
             <X.P noMarginBottom>参数说明：</X.P>
-            <X.Uli>
-                <X.P>`start`：表示要开始改变数组的位置</X.P>
-            </X.Uli>
-            <X.Uli>
-                <X.P>`deleteCount`：数组中要从`start`开始删除的元素数量</X.P>
-            </X.Uli>
-            <X.Uli>
-                <X.P>`item1 ... itemN`：从`start`开始要加入到数组中的元素</X.P>
-            </X.Uli>
+            <X.Uli>`start`：表示要开始改变数组的位置</X.Uli>
+            <X.Uli>`deleteCount`：数组中要从`start`开始删除的元素数量</X.Uli>
+            <X.Uli>`item1 ... itemN`：从`start`开始要加入到数组中的元素</X.Uli>
             <X.P>
                 如果省略了`deleteCount`，或者其值大于或等于由`start`指定的位置到数组末尾的元素数量，那么从`start`到数组末尾的所有元素将被删除。
             </X.P>
@@ -493,13 +467,9 @@ export default function Blog({blogTitle}) {
             />
             <X.P noMarginBottom>`Array.from()`可以通过以下方式来创建数组对象：</X.P>
             <X.Uli>
-                <X.P>
-                    可迭代对象（例如`@Map[https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Map]@`和`@Set[https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Set]@`对象）
-                </X.P>
+                可迭代对象（例如`@Map[https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Map]@`和`@Set[https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Set]@`对象）
             </X.Uli>
-            <X.Uli>
-                <X.P>类数组对象（带有`length`属性和索引元素的对象）</X.P>
-            </X.Uli>
+            <X.Uli>类数组对象（带有`length`属性和索引元素的对象）</X.Uli>
             <X.H1>Array.of()</X.H1>
             <X.P>
                 `Array.of()`静态方法通过可变数量的参数创建一个新的`Array`实例。\n

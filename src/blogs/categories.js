@@ -47,7 +47,7 @@ const categories = [
                 component: <B24fa />,
             },
             {
-                blogTitle: 'LSTM',
+                blogTitle: '学习RNN和LSTM',
                 path: '/bnwt2/',
                 time: '2023-12-17',
                 component: <Bnwt2 />,

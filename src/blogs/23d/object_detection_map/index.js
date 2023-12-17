@@ -66,16 +66,10 @@ export default function Blog({blogTitle}) {
             </X.P>
             <X.H1>参考资料</X.H1>
             <X.P noMarginBottom>本文的部分内容、图片来源于：</X.P>
+            <X.Uli>@动手学深度学习 - 计算机视觉[https://zh-v2.d2l.ai/chapter_computer-vision]@</X.Uli>
+            <X.Uli>@目标检测中的mAP是什么含义？[https://www.zhihu.com/question/53405779/answer/2481182203]@</X.Uli>
             <X.Uli>
-                <X.P>@动手学深度学习 - 计算机视觉[https://zh-v2.d2l.ai/chapter_computer-vision]@</X.P>
-            </X.Uli>
-            <X.Uli>
-                <X.P>@目标检测中的mAP是什么含义？[https://www.zhihu.com/question/53405779/answer/2481182203]@</X.P>
-            </X.Uli>
-            <X.Uli>
-                <X.P>
-                    @深入了解平均精度(mAP)：通过精确率-召回率曲线评估目标检测性能[https://baijiahao.baidu.com/s?id=1767101899839497831]@
-                </X.P>
+                @深入了解平均精度(mAP)：通过精确率-召回率曲线评估目标检测性能[https://baijiahao.baidu.com/s?id=1767101899839497831]@
             </X.Uli>
         </X.BlogWrapper>
     );

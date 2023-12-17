@@ -235,15 +235,9 @@ export default function Blog({blogTitle}) {
             <X.P>假设观测到的$N$个样本的均值为$m$，这里直接给出结论：</X.P>
             <X.Formula text="\hat{\mu} = \frac{N\sigma_0^2}{N\sigma_0^2+\sigma^2}m + \frac{\sigma^2}{N\sigma_0^2+\sigma^2}\mu_0" />
             <X.P noMarginBottom>可以看到贝叶斯估计结果由两部分构成，第一项是样本知识，第二项是先验知识。</X.P>
-            <X.Uli>
-                <X.P>样本数量为`0`时，估计值完全等于先验$\mu_0$；样本数量为`无穷`时，估计值趋于样本均值$m$；</X.P>
-            </X.Uli>
-            <X.Uli>
-                <X.P>若$\sigma_0^2=0$，则先验知识绝对可靠，样本不起作用；</X.P>
-            </X.Uli>
-            <X.Uli>
-                <X.P>若$\sigma_0 \gg \sigma$，则先验知识十分不确定，估计值近似等于样本均值。</X.P>
-            </X.Uli>
+            <X.Uli>样本数量为`0`时，估计值完全等于先验$\mu_0$；样本数量为`无穷`时，估计值趋于样本均值$m$；</X.Uli>
+            <X.Uli>若$\sigma_0^2=0$，则先验知识绝对可靠，样本不起作用；</X.Uli>
+            <X.Uli>若$\sigma_0 \gg \sigma$，则先验知识十分不确定，估计值近似等于样本均值。</X.Uli>
             <X.P withMarginTop>
                 贝叶斯估计的优势在于，可以结合样本信息和先验知识，并且根据`样本数量`和`先验知识的确定程度`调和两部分信息的相对贡献。
             </X.P>
