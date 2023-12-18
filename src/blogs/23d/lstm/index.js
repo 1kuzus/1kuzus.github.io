@@ -63,7 +63,7 @@ export default function Blog({blogTitle}) {
                         curr_state=self.tanh(
                             self.linear_ih(x)+self.linear_hh(prev_state)
                         )
-                        output=self.linear_ho(curr_state)
+                        output=self.linear_ho(curr_state).reshape(1)
                         return output,curr_state
 
                 hidden_size=12
@@ -74,14 +74,18 @@ export default function Blog({blogTitle}) {
             />
             <X.P>
                 这个是一个简单的RNN结构，从网络参数和结构来看很像一个`输入层-隐藏层-输出层`的感知机，但是多了一步`隐藏层-隐藏层`的连接，---
-                RNN的反馈结构就是由此体现的。并且，注意到`forward`函数的输入也需要两个参数：当前时刻输入`x`和前一时刻状态`prev_state`，---
-                同时也会把计算后的新状态`curr_state`和`output`一起返回，供下一次计算使用。
+                RNN的反馈结构就是由此体现的。
+            </X.P>
+            <X.P>
+                并且，注意到`forward`函数的输入也需要两个参数：当前时刻输入`x`和前一时刻状态`prev_state`，---
+                同时也会把计算后的新状态`curr_state`和`output`一起返回，供下一次计算使用。在这里，经过`linear_ho`后，`output`的`size`为`(1,1)`，---
+                考虑到它仅仅是一个标量，我们把它`resize`为`(1)`。
             </X.P>
             <X.P>接下来设置了一些超参数，隐藏层有`12`个神经元，损失函数使用`MSELoss()`。</X.P>
             <X.H2>训练</X.H2>
             <X.P>
                 首先定义这样的训练函数：它传入一个序列`train_seq`和目标`target`。`train_seq`的`size`应该为`(10,1)`，因为---
-                我们用前`10`个时间点的数据去预测下一个，而输入特征维度是`1`；`target`的`size`应该为`(1,1)`，因为输出是`1`个时刻的数据。---
+                我们用前`10`个时间点的数据去预测下一个，而输入特征维度是`1`；`target`的`size`应该为`(1)`，因为输出只是一个标量。---
                 注意我们循环依次输入`train_seq`中的`10`个数据，迭代更新`state`，用最后一次的`output`作为最终的输出计算损失。
             </X.P>
             <X.CodeBlock
@@ -156,7 +160,7 @@ export default function Blog({blogTitle}) {
                 train_datas=[]
                 for i in range(320-10):
                     train_seq=torch.from_numpy(y[i:i+10])
-                    target=torch.from_numpy(y[i+10]).reshape(1,1)
+                    target=torch.from_numpy(y[i+10])
                     train_datas.append((train_seq,target))
                 `}
             />
@@ -221,18 +225,17 @@ export default function Blog({blogTitle}) {
             <X.CodeBlock
                 language="python"
                 code={`
-                def pred(truth_seq,net):
+                def pred(truth_seq):
                     with torch.no_grad():
                         state=torch.zeros(1,hidden_size)
                         for x in truth_seq:
-                            output,state=net(x,state)
+                            output,state=my_rnn(x,state)
                         return output
 
                 preds=[]
                 for i in range(320-10,400-10):
-                    state=torch.zeros(1,hidden_size)
                     truth_seq=torch.from_numpy(y[i:i+10])
-                    preds.append(pred(truth_seq,my_rnn).numpy())
+                    preds.append(pred(truth_seq).numpy())
                 preds=numpy.array(preds).reshape(-1,1)
 
                 plt.subplot(212)
@@ -290,6 +293,109 @@ export default function Blog({blogTitle}) {
             <X.Image src={require('./fig2.png')} width="600px" invertInDarkTheme />
             <X.P>经过训练后，每次训练的`loss`和最终的预测：</X.P>
             <X.Image src={require('./fig3.png')} width="600px" invertInDarkTheme />
+
+            <X.H2>使用torch.nn.RNN</X.H2>
+            <X.P>
+                使用`torch.nn.RNN`模块时，与上面例子中手动实现的RNN有几处细小的区别，下面给出了使用`torch.nn.RNN`时需要做出的修改：
+            </X.P>
+            <X.Oli reset>
+                <X.P noMarginBottom>
+                    定义模型时，不再需要显式指定`linear_ih`和`linear_hh`两层，将由`nn.RNN`模块实现；`nn.RNN`模块没有定义输出层，因此输出层`linear_ho`需要设置。\n
+                    在`forward`函数中，手动实现时为了直观展示出RNN的迭代过程，只进行了一次隐藏状态的更新；而对于输入序列迭代更新隐藏状态是在训练和预测时实现的。---
+                    而`nn.RNN`模块的一次`forward`就已经完成了迭代更新，其输入是整个序列`seq`和`prev_state`，返回值是`output_hidden,curr_state`，对于不考虑---
+                    批量大小的数据，它们的`size`为：
+                </X.P>
+                <X.Uli>`seq`: `(sequence_length, input_size)`</X.Uli>
+                <X.Uli>`init_state`: `(1, hidden_size)`</X.Uli>
+                <X.Uli>`output_hidden`: `(sequence_length, hidden_size)`</X.Uli>
+                <X.Uli>`state`: `(1, hidden_size)`</X.Uli>
+                <X.P>
+                    最后在我们定义的`MyRNN`模块中，用`output_hidden`的最后一个时间点的输出，经过输出层得到最终的`output`。
+                </X.P>
+            </X.Oli>
+            <X.HighlightBlock bgcolor="gray">
+                <X.H3>手动实现</X.H3>
+                <X.CodeBlock
+                    language="python"
+                    code={`
+                    class MyRNN(nn.Module):
+                        def __init__(self,input_size,hidden_size,output_size):
+                            super().__init__()
+                            self.linear_ih=nn.Linear(input_size,hidden_size)
+                            self.linear_hh=nn.Linear(hidden_size,hidden_size)
+                            self.linear_ho=nn.Linear(hidden_size,output_size)
+                            self.tanh=nn.Tanh()
+                        def forward(self,x,prev_state):
+                            curr_state=self.tanh(
+                                self.linear_ih(x)+self.linear_hh(prev_state)
+                            )
+                            output=self.linear_ho(curr_state).reshape(1)
+                            return output,curr_state
+                    `}
+                />
+                <X.H3>使用torch.nn.RNN</X.H3>
+                <X.CodeBlock
+                    language="python"
+                    code={`
+                    class MyRNN(nn.Module):
+                        def __init__(self,input_size,hidden_size,output_size):
+                            super().__init__()
+                            self.rnn=nn.RNN(input_size=input_size,hidden_size=hidden_size,batch_first=True)
+                            self.linear_ho=nn.Linear(hidden_size,output_size)
+                        def forward(self,seq,init_state):
+                            output_hidden,tate=self.rnn(seq,init_state)
+                            output=self.linear_ho(output_hidden[-1,:]) #取最后一个时间点的输出
+                            return output,state
+                    `}
+                />
+            </X.HighlightBlock>
+            <X.Oli>训练和预测时，也不需要再遍历序列，迭代的过程已经在`nn.RNN`模块内部实现。</X.Oli>
+            <X.HighlightBlock bgcolor="gray">
+                <X.H3>手动实现</X.H3>
+                <X.CodeBlock
+                    language="python"
+                    code={`
+                    def train(train_seq,target):
+                        state=torch.zeros(1,hidden_size)
+                        for x in train_seq:
+                            output,state=my_rnn(x,state)
+                        loss=loss_func(output,target)
+                        # ......
+                    `}
+                />
+                <X.CodeBlock
+                    language="python"
+                    code={`
+                    def pred(truth_seq,net):
+                        with torch.no_grad():
+                            state=torch.zeros(1,hidden_size)
+                            for x in truth_seq:
+                                output,state=net(x,state)
+                            return output
+                    `}
+                />
+                <X.H3>使用torch.nn.RNN</X.H3>
+                <X.CodeBlock
+                    language="python"
+                    code={`
+                    def train(train_seq,target):
+                        state=torch.zeros(1,hidden_size)
+                        output,_=my_rnn(train_seq,state) #一次得到输出
+                        loss=loss_func(output,target)
+                        # ......
+                    `}
+                />
+                <X.CodeBlock
+                    language="python"
+                    code={`
+                    def pred(truth_seq):
+                        with torch.no_grad():
+                            state=torch.zeros(1,hidden_size)
+                            output,_=my_rnn(truth_seq,state) #一次得到输出
+                            return output
+                    `}
+                />
+            </X.HighlightBlock>
             <X.H2>FAQ</X.H2>
             <X.P>
                 初次了解RNN时，我在一些问题上困惑了很久。这个版块是对它们的再次整理。（尽管有些已经包含在上述例子中了！）
@@ -350,8 +456,32 @@ export default function Blog({blogTitle}) {
                 对于RNN来说，利用历史状态和输入得到新的状态，只经过一个简单的`tanh`激活层，而对于LSTM来说，它的示意图略显复杂：
             </X.P>
             <X.Image src={require('./lstm1.png')} width="600px" invertInDarkTheme />
-            <X.H2>LSTM背后的核心思想</X.H2>
-            
+            <X.P>
+                在上图中，每条线表示一个向量，粉红色圆圈表示逐点式操作，黄色的方框是神经网络的层。---
+                这看起来很眼晕，不过我们接下来会一点点的解释图里的内容。
+            </X.P>
+            <X.H2>门控单元</X.H2>
+            <X.P>下面的结构称为门控单元：</X.P>
+            <X.Image src={require('./lstm2.png')} width="100px" />
+            <X.P>门控单元控制信息量通过的多少，通过向量$z$来控制$x$通过的信息量：</X.P>
+            <X.Formula text="o=\sigma(z) \otimes x" />
+            <X.P>
+                式子中$\otimes$表示按位置相乘，$\sigma(z)$的每个元素输出范围是$[0,1]$，某个元素接近`1`，$x$对应位置保留的信息就越多，反之同理。
+            </X.P>
+            <X.H2>逐部分分析LSTM</X.H2>
+            <X.H3>遗忘门</X.H3>
+            <X.P>
+                LSTM的第一步是决定什么应该被遗忘，也就是对上一个*单元*`(cell)`状态信息选择性的遗忘。\n
+                这个操作由遗忘门$f_t$实现，将其$[0,1]$范围的输出按位置与单元上一时刻状态相乘。
+            </X.P>
+            <X.H3>输入门</X.H3>
+            <X.P>
+                下一步就是决定要在单元中存入什么新的信息。这一部分有两路：`tanh`这一路与普通RNN很像，生成一个中间状态；$\sigma$这一路被称为输入门$i_t$，---
+                控制这个中间状态有哪些、有多少信息被存入单元。
+            </X.P>
+            <X.P>经历这两步之后，便可以相加得到新的单元状态：</X.P>
+            <X.H3>输出门</X.H3>
+            <X.P>最后是决定</X.P>
         </X.BlogWrapper>
     );
 }
