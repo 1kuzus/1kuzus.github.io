@@ -462,11 +462,11 @@ export default function Blog({blogTitle}) {
             </X.P>
             <X.H2>门控单元</X.H2>
             <X.P>下面的结构称为门控单元：</X.P>
-            <X.Image src={require('./lstm2.png')} width="100px" />
+            <X.Image src={require('./lstm2.png')} width="100px" invertInDarkTheme />
             <X.P>门控单元控制信息量通过的多少，通过向量$z$来控制$x$通过的信息量：</X.P>
             <X.Formula text="o=\sigma(z) \otimes x" />
             <X.P>
-                式子中$\otimes$表示按位置相乘，$\sigma(z)$的每个元素输出范围是$[0,1]$，某个元素接近`1`，$x$对应位置保留的信息就越多，反之同理。
+                式子中$\otimes$表示按位置相乘，$\sigma(z)$的每个元素输出范围是$[0,1]$，某个元素接近`1`，$x$对应位置保留的信息就越多，反之就越少。
             </X.P>
             <X.H2>逐部分分析LSTM</X.H2>
             <X.H3>遗忘门</X.H3>
@@ -474,14 +474,41 @@ export default function Blog({blogTitle}) {
                 LSTM的第一步是决定什么应该被遗忘，也就是对上一个*单元*`(cell)`状态信息选择性的遗忘。\n
                 这个操作由遗忘门$f_t$实现，将其$[0,1]$范围的输出按位置与单元上一时刻状态相乘。
             </X.P>
+            <X.Image src={require('./lstm3.png')} width="600px" invertInDarkTheme />
+            <X.HighlightBlock bgcolor="gray">
+                <X.P>举一个概念性的例子：</X.P>
+                <X.P>
+                    考虑一个语言模型，输入一个句子：`Alice是一名女教师，她喜欢给学生讲课；Bob是一位男司机，他喝酒上瘾。`
+                </X.P>
+                <X.P>
+                    当模型看到`Alice是一名女教师，__`时，单元状态中可能存储了和主语`Alice`和`女教师`有关的语义信息，以便在后文输出合适的代词`她`；---
+                    然后，当模型看到`Alice是一名女教师，她喜欢给学生讲课；Bob是一位男司机，__`时，我们希望在看到新主语`Bob`和`男司机`之后，忘记此前---
+                    存储的旧主语的性别语义。也就是对旧单元状态{`$C_{t-1}$`}乘上较小的$f_t$。
+                </X.P>
+            </X.HighlightBlock>
             <X.H3>输入门</X.H3>
             <X.P>
                 下一步就是决定要在单元中存入什么新的信息。这一部分有两路：`tanh`这一路与普通RNN很像，生成一个中间状态；$\sigma$这一路被称为输入门$i_t$，---
-                控制这个中间状态有哪些、有多少信息被存入单元。
+                控制这个中间状态有多少信息被存入单元。
             </X.P>
+            <X.Image src={require('./lstm4.png')} width="600px" invertInDarkTheme />
             <X.P>经历这两步之后，便可以相加得到新的单元状态：</X.P>
+            <X.Image src={require('./lstm5.png')} width="600px" invertInDarkTheme />
+            <X.HighlightBlock bgcolor="gray">
+                <X.P>
+                    同理，当模型看到`Bob是一位男司机`时，我们可能会想丢掉此前的语义信息`女性`，并把新的语义信息`男性`存入单元状态，使得后文输出正确的代词`他`。
+                </X.P>
+            </X.HighlightBlock>
             <X.H3>输出门</X.H3>
-            <X.P>最后是决定</X.P>
+            <X.P>
+                最后是决定新的隐藏状态，这个输出会基于单元状态，但会经过门控单元。输出门$o_t$决定经过`tanh`的单元状态$C_t$有多少被输出到下一时刻的隐藏状态。
+            </X.P>
+            <X.Image src={require('./lstm6.png')} width="600px" invertInDarkTheme />
+            <X.HighlightBlock bgcolor="gray">
+                <X.P>
+                    当看到`Bob是一位男司机，他__`时，由于出现了主语`他`，模型可能会输出和`谓语动词`有关的语义信息。
+                </X.P>
+            </X.HighlightBlock>
         </X.BlogWrapper>
     );
 }
