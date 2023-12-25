@@ -445,13 +445,12 @@ export default function Blog({blogTitle}) {
                 `我出生在法国，…… ，我可以说流利的__`，这个情况下，---
                 随着前后文距离变大，RNN对长期依赖关系的学习会变得困难。
             </X.P>
-            <X.Image src={require('./rnn2.png')} width="600px" invertInDarkTheme />
             <X.H2>LSTM</X.H2>
             <X.P>
                 *长短期记忆网络*`(Long Short-Term Memory, LSTM)`是一种特殊的RNN，---
                 可以学习长期依赖。以RNN为例，循环神经网络随时间展开通常具有如下的示意图：
             </X.P>
-            <X.Image src={require('./rnn3.png')} width="600px" invertInDarkTheme />
+            <X.Image src={require('./rnn2.png')} width="600px" invertInDarkTheme />
             <X.P>
                 对于RNN来说，利用历史状态和输入得到新的状态，只经过一个简单的`tanh`激活层，而对于LSTM来说，它的示意图略显复杂：
             </X.P>
