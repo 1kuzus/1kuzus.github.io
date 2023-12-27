@@ -2,7 +2,6 @@ import './Table.css';
 
 export default function Table(props) {
     const {fromText, children} = props;
-
     if (fromText) {
         const trs = fromText.trim().split('\n');
         return (
@@ -22,7 +21,6 @@ export default function Table(props) {
             </table>
         );
     }
-
     return (
         <table className="x-table" cellSpacing="0">
             <tbody>{children}</tbody>
