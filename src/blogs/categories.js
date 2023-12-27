@@ -68,31 +68,31 @@ const categories = [
         categoryName: '课程',
         blogs: [
             {
-                blogTitle: '模式识别 · 统计决策方法',
+                blogTitle: '【模式识别】统计决策方法',
                 path: '/behwl/',
                 time: '2023-8-31',
                 component: <Behwl />,
             },
             {
-                blogTitle: '模式识别 · 参数估计',
+                blogTitle: '【模式识别】参数估计',
                 path: '/bco21/',
                 time: '2023-9-12',
                 component: <Bco21 />,
             },
             {
-                blogTitle: '模式识别 · 非参数估计',
+                blogTitle: '【模式识别】非参数估计',
                 path: '/bjjj5/',
                 time: '2023-9-19',
                 component: <Bjjj5 />,
             },
             {
-                blogTitle: '模式识别 · 线性学习器与线性分类器',
+                blogTitle: '【模式识别】线性学习器与线性分类器',
                 path: '/b2fph/',
                 time: '2023-10-24',
                 component: <B2fph />,
             },
             {
-                blogTitle: '计算机网络 · 协议总结',
+                blogTitle: '【计算机网络】协议总结',
                 path: '/blnrj/',
                 time: '2023-10-26',
                 component: <Blnrj />,
