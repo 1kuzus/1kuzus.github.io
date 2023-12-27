@@ -4,37 +4,21 @@ function PaperSummary(props) {
     const {topic, method, experiment, innovation, limitation} = props;
     return (
         <>
-            {X.Oli({reset: 0}) && false}
-            {/* todo: 可以写的更好看一点 */}
-            {topic && (
-                <X.Oli>
-                    <X.P noMarginBottom>*文章的主题 / 文章要解决什么问题？*</X.P>
-                    {typeof topic === 'string' ? <X.P>{topic}</X.P> : topic}
-                </X.Oli>
-            )}
-            {method && (
-                <X.Oli>
-                    <X.P noMarginBottom>*文章的核心方法 / 具体是如何做的？*</X.P>
-                    {typeof method === 'string' ? <X.P>{method}</X.P> : method}
-                </X.Oli>
-            )}
-            {experiment && (
-                <X.Oli>
-                    <X.P noMarginBottom>*做了什么实验，效果怎么样？*</X.P>
-                    {typeof experiment === 'string' ? <X.P>{experiment}</X.P> : experiment}
-                </X.Oli>
-            )}
-            {innovation && (
-                <X.Oli>
-                    <X.P noMarginBottom>*研究的创新点*</X.P>
-                    {typeof innovation === 'string' ? <X.P>{innovation}</X.P> : innovation}
-                </X.Oli>
-            )}
-            {limitation && (
-                <X.Oli>
-                    <X.P noMarginBottom>*有什么限制或可以改进的地方？*</X.P>
-                    {typeof limitation === 'string' ? <X.P>{limitation}</X.P> : limitation}
-                </X.Oli>
+            #{X.Oli({reset: 0}) && false /*在不确定第一个Oli的情况下，reset序号为0，使得下一项一定从1开始*/}
+            {[
+                [topic, '文章的主题 / 文章要解决什么问题？'],
+                [method, '文章的核心方法 / 具体是如何做的？'],
+                [experiment, '做了什么实验，效果怎么样？'],
+                [innovation, '研究的创新点'],
+                [limitation, '有什么限制或可以改进的地方？'],
+            ].map(
+                ([comp, text], index) =>
+                    comp && (
+                        <X.Oli key={index}>
+                            <X.P noMarginBottom>*{text}*</X.P>
+                            {typeof comp === 'string' ? <X.P>{comp}</X.P> : comp}
+                        </X.Oli>
+                    )
             )}
         </>
     );
@@ -130,7 +114,6 @@ export default function Blog({blogTitle}) {
                     稠密重建是假设相机参数已知的情况下，从不同视角的图像中找到匹配的对应点，对整个图像或图像中绝大部分像素进行重建。
                 </X.P>
             </X.HighlightBlock> */}
-
 
             <X.H1>学习</X.H1>
             <X.H2 href="https://www.cv-foundation.org/openaccess/content_cvpr_2014/papers/Girshick_Rich_Feature_Hierarchies_2014_CVPR_paper.pdf">
