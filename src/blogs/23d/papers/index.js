@@ -4,7 +4,7 @@ function PaperSummary(props) {
     const {topic, method, experiment, innovation, limitation} = props;
     return (
         <>
-            #{X.Oli({reset: 0}) && false /*在不确定第一个Oli的情况下，reset序号为0，使得下一项一定从1开始*/}
+            {X.Oli({reset: 0}) && false /*在不确定第一个Oli的情况下，reset序号为0，使得下一项一定从1开始*/}
             {[
                 [topic, '文章的主题 / 文章要解决什么问题？'],
                 [method, '文章的核心方法 / 具体是如何做的？'],
@@ -77,8 +77,8 @@ export default function Blog({blogTitle}) {
                 <X.P>
                     传统的场景重建与渲染：基于光场的，密集采样、非结构化捕获；*运动恢复结构*`(Structure from Motion,
                     SFM)`用一组照片估计稀疏点云合成新视图；*多视点立体视觉*`(Multi-View Stereo, MVS)`；\n
-                    神经渲染和辐射场：用CNN估计混合权重，用于纹理空间；`Soft3D`提出`Volumetric representations`；---
-                    `NeRF`提出重要性采样和位置编码来提高质量，但使用了大型多层感知器，对速度有负面影响；
+                    神经渲染和辐射场：用CNN估计混合权重，用于纹理空间；Soft3D提出`Volumetric representations`；---
+                    NeRF提出重要性采样和位置编码来提高质量，但使用了大型多层感知器，对速度有负面影响；
                 </X.P>
                 <X.H3>稀疏重建和稠密重建</X.H3>
                 <X.P>
@@ -103,6 +103,13 @@ export default function Blog({blogTitle}) {
                 【Instant NGP】Instant Neural Graphics Primitives with a Multiresolution Hash Encoding (2022)
             </X.H2>
             <PaperSummary topic="实现实时辐射场渲染，同时保持高质量的视觉效果，并且保持较短的训练时间" />
+            <X.HighlightBlock bgcolor="gray">
+                <X.H3>更多笔记</X.H3>
+                <X.H3>Instant NGP与NeRF的异同</X.H3>
+                <X.P noMarginBottom>转载自@知乎：从NeRF到Instant-NGP[https://zhuanlan.zhihu.com/p/631284285]@</X.P>
+                <X.Uli>同样基于体渲染</X.Uli>
+                <X.Uli>不同于NeRF的MLP，Instant NGP使用稀疏的参数化的`voxel grid`作为场景表达</X.Uli>
+            </X.HighlightBlock>
             {/* <X.H2 href="https://arxiv.org/pdf/2304.04395v3.pdf">
                 【Instance NeRF】Instance Neural Radiance Field (2023)
             </X.H2>

@@ -5,7 +5,7 @@ export default function Table(props) {
     if (fromText) {
         const trs = fromText.trim().split('\n');
         return (
-            <table className="x-table" cellSpacing="0">
+            <table className="x-table">
                 <tbody>
                     {trs.map((tr, tr_index) => (
                         <tr key={tr_index}>
@@ -22,7 +22,7 @@ export default function Table(props) {
         );
     }
     return (
-        <table className="x-table" cellSpacing="0">
+        <table className="x-table">
             <tbody>{children}</tbody>
         </table>
     );
