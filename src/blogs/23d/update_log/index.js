@@ -11,7 +11,7 @@ function Version() {
                     <X.FlexRow justifyContent="space-around">
                         <X.Image id="b0001-cheer-gif" src={require('./cheer.gif')} width="150" />
                         <div id="b0001-dance-version-wrapper">
-                            <X.Image src={require('./version.png')} width="100%" invertInDarkTheme />
+                            <X.Image id="b0001-version-png" src={require('./version.png')} width="100%" invertInDarkTheme />
                         </div>
                         <X.Image id="b0001-dance-gif" src={require('./dance.gif')} width="128" />
                     </X.FlexRow>
@@ -83,6 +83,7 @@ export default function Blog({blogTitle}) {
         const canvas = document.getElementById('b0001-canvas');
         const cheerGif = document.getElementById('b0001-cheer-gif');
         const danceGif = document.getElementById('b0001-dance-gif');
+        const versionPng = document.getElementById('b0001-version-png');
         const ctx = canvas.getContext('2d');
         canvas.width = document.documentElement.clientWidth;
         canvas.height = document.documentElement.clientHeight;
@@ -162,10 +163,11 @@ export default function Blog({blogTitle}) {
         let imageLoaded = 0;
         const onloadHandler = () => {
             imageLoaded++;
-            if (imageLoaded === 2) run();
+            if (imageLoaded === 3) run();
         };
         cheerGif.onload = onloadHandler;
         danceGif.onload = onloadHandler;
+        versionPng.onload = onloadHandler;
         const resizeHandler = () => {
             canvas.width = document.documentElement.clientWidth;
             canvas.height = document.documentElement.clientHeight;
