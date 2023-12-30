@@ -36,10 +36,15 @@
     height: 16px;
     transition: transform 200ms;
 }
+.sidebarlist-ul-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 200ms;
+}
 .sidebarlist-ul {
     opacity: 0;
     overflow: hidden;
-    transition: height 200ms, opacity 200ms;
+    transition: opacity 200ms;
 }
 .sidebarlist-li {
     box-sizing: content-box;
@@ -76,6 +81,9 @@
 }
 .sidebarlist.showlist .sidebarlist-title-rightarrow {
     transform: rotate(90deg);
+}
+.sidebarlist.showlist .sidebarlist-ul-wrapper {
+    grid-template-rows: 1fr;
 }
 .sidebarlist.showlist .sidebarlist-ul {
     opacity: 0.9;

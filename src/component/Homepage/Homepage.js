@@ -11,16 +11,18 @@ function BlogList(props) {
             <div className="bloglist-head" onClick={() => setShowList(!showList)}>
                 <h3 className="bloglist-title">{category.categoryName + ` (${category.blogs.length})`}</h3>
             </div>
-            <ul className="bloglist-ul" style={{height: showList ? 4 + 54 * category.blogs.length + 'px' : '0'}}>
-                {category.blogs.map((blog, index) => (
-                    <li key={index}>
-                        <Link className="bloglist-li" to={blog.path}>
-                            {blog.blogTitle}
-                            {blog.time && <span className="bloglist-time">{blog.time}</span>}
-                        </Link>
-                    </li>
-                ))}
-            </ul>
+            <div className="bloglist-ul-wrapper">
+                <ul className="bloglist-ul">
+                    {category.blogs.map((blog, index) => (
+                        <li key={index}>
+                            <Link className="bloglist-li" to={blog.path}>
+                                {blog.blogTitle}
+                                {blog.time && <span className="bloglist-time">{blog.time}</span>}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </div>
     );
 }

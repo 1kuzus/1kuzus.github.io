@@ -82,6 +82,11 @@
     border-bottom: 1px solid var(--gray-1);
     transition: color 200ms, flex-grow 200ms;
 }
+.bloglist-ul-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 200ms;
+}
 .bloglist-ul {
     display: flex;
     flex-direction: column;
@@ -89,7 +94,7 @@
     padding: 0 24px;
     opacity: 0;
     overflow: hidden;
-    transition: height 200ms, opacity 400ms;
+    transition: opacity 400ms;
 }
 .bloglist-li {
     display: flex;
@@ -128,6 +133,9 @@
 .bloglist.showlist .bloglist-title {
     flex-grow: 1;
     color: var(--title-color);
+}
+.bloglist.showlist .bloglist-ul-wrapper {
+    grid-template-rows: 1fr;
 }
 .bloglist.showlist .bloglist-ul {
     opacity: 0.9;

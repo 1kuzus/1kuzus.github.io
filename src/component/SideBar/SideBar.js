@@ -25,15 +25,20 @@ function SideBarList(props) {
                     <RightArrowIcon />
                 </div>
             </div>
-            <ul className="sidebarlist-ul" style={{height: showList ? 34 * category.blogs.length + 'px' : '0'}}>
-                {category.blogs.map((blog, index) => (
-                    <li key={index}>
-                        <Link className={`sidebarlist-li${currentPath === blog.path ? ' active' : ''}`} to={blog.path}>
-                            {blog.blogTitle}
-                        </Link>
-                    </li>
-                ))}
-            </ul>
+            <div className="sidebarlist-ul-wrapper">
+                <ul className="sidebarlist-ul">
+                    {category.blogs.map((blog, index) => (
+                        <li key={index}>
+                            <Link
+                                className={`sidebarlist-li${currentPath === blog.path ? ' active' : ''}`}
+                                to={blog.path}
+                            >
+                                {blog.blogTitle}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </div>
     );
 }
