@@ -70,6 +70,7 @@ function UpdateLog() {
         {date: '2023-12-06', description: '博客标题自动从分类目录文件同步'},
         {date: '2023-12-17', description: '支持直接在列表项中写含有段落组件特殊格式的文本'},
         {date: '2023-12-29', description: '更新了表格组件样式\\n优化了首页博客列表和侧栏列表高度自动过渡的实现方法'},
+        {date: '2023-12-30', description: '略微调整首页博客列表样式'},
     ];
     return (
         <>

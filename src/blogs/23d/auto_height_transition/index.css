@@ -1,0 +1,113 @@
+#bpbmq-wrapper1 {
+    width: 240px;
+    height: fit-content;
+    padding: 16px 24px;
+    border-radius: 12px;
+    background-color: var(--bg-transparent-golden);
+}
+#bpbmq-content1 p {
+    line-height: 32px;
+}
+#bpbmq-content1 {
+    height: 0;
+    overflow: hidden;
+    transition: height 500ms;
+}
+#bpbmq-wrapper1:hover #bpbmq-content1 {
+    height: auto;
+}
+
+#bpbmq-wrapper2 {
+    width: 240px;
+    height: fit-content;
+    padding: 16px 24px;
+    border-radius: 12px;
+    background-color: var(--bg-transparent-golden);
+}
+#bpbmq-content2 p {
+    line-height: 32px;
+}
+#bpbmq-content2 {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 500ms;
+}
+#bpbmq-wrapper2:hover #bpbmq-content2 {
+    max-height: 600px;
+}
+
+#bpbmq-wrapper3 {
+    width: 240px;
+    height: fit-content;
+    padding: 16px 24px;
+    border-radius: 12px;
+    background-color: var(--bg-transparent-golden);
+}
+#bpbmq-content3 p {
+    line-height: 32px;
+}
+#bpbmq-content3 {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 500ms;
+}
+#bpbmq-content3 > div {
+    grid-row: 1 / span 2;
+    overflow: hidden;
+}
+#bpbmq-wrapper3:hover #bpbmq-content3 {
+    grid-template-rows: 1fr;
+}
+
+#bpbmq-wrapper4 {
+    width: 240px;
+    height: fit-content;
+    padding: 16px 24px;
+    border-radius: 12px;
+    background-color: var(--bg-transparent-golden);
+}
+#bpbmq-content4 p {
+    line-height: 32px;
+}
+#bpbmq-content4 {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 3000ms;
+    background-color: var(--bg-transparent-gray);
+}
+#bpbmq-content4 > div {
+    overflow: hidden;
+    background-color: var(--bg-transparent-red);
+}
+#bpbmq-wrapper4:hover #bpbmq-content4 {
+    grid-template-rows: 1fr;
+}
+
+#bpbmq-wrapper5 {
+    width: 240px;
+    height: fit-content;
+    padding: 16px 24px;
+    border-radius: 12px;
+    background-color: var(--bg-transparent-golden);
+}
+#bpbmq-content5 p {
+    line-height: 32px;
+}
+#bpbmq-content5 {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 3000ms;
+    background-color: var(--bg-transparent-gray);
+}
+#bpbmq-content5 > div {
+    grid-row: 1 / span 2;
+    overflow: hidden;
+    background-color: var(--bg-transparent-red);
+}
+#bpbmq-wrapper5:hover #bpbmq-content5 {
+    grid-template-rows: 1fr;
+}
+
+#bpbmq-flex-spacer {
+    height: 214px;
+}
