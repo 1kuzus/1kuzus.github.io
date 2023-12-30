@@ -1,17 +1,18 @@
 import {cloneElement} from 'react';
-import B0000 from './23c/demo';
 import Bj23k from './23c/jsarray';
 import Behwl from './23c/pattern_recognition1';
 import Bco21 from './23c/pattern_recognition2';
 import Bjjj5 from './23c/pattern_recognition3';
+import Bpbmq from './23d/auto_height_transition';
 import Bykl9 from './23d/db3nf';
 import Bnwt2 from './23d/lstm';
 import B24fa from './23d/object_detection_map';
-import Bo8sr from './23d/papers';
 import B2fph from './23d/pattern_recognition4';
 import Blnrj from './23d/protocols';
 import B97t6 from './23d/r2plus1d';
-import B0001 from './23d/update_log';
+import B0000 from './longtime/demo';
+import Bo8sr from './longtime/papers';
+import B0001 from './longtime/update_log';
 
 const categories = [
     {
@@ -61,6 +62,12 @@ const categories = [
                 path: '/bj23k/',
                 time: '2023-9-2',
                 component: <Bj23k />,
+            },
+            {
+                blogTitle: 'CSS实现auto高度的过渡动画',
+                path: '/bpbmq/',
+                time: '2023-12-30',
+                component: <Bpbmq />,
             },
         ],
     },
