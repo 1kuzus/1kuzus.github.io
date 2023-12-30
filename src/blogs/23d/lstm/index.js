@@ -46,7 +46,7 @@ export default function Blog({blogTitle}) {
             <X.Image src={require('./fig1.png')} width="600px" invertInDarkTheme />
             <X.P noMarginBottom>现在明确一下我们的方案：</X.P>
             <X.Oli>使用前`80%`也就是前`320`个数据作为训练集，剩余的作为测试集，观察预测结果。</X.Oli>
-            <X.Oli>序列长度为`10`，也就是模型根据前`10`个时间点的数据去预测第`11`个时间点的数据。</X.Oli>
+            <X.Oli>序列长度为`10`，也就是模型根据前`10`个时间点的数据去预测下一个时间点的数据。</X.Oli>
             <X.Oli>这个例子中输入特征的维度是`1`，也就是只有`y`值一个指标。此外，也不考虑批量大小。</X.Oli>
             <X.H2>定义RNN网络</X.H2>
             <X.CodeBlock

@@ -202,7 +202,7 @@ export default function Blog({blogTitle}) {
                         <X.Uli>
                             <X.H3>一个标题</X.H3>
                         </X.Uli>
-                        <X.CodeBlock language="jsx" code="console.log('Hello, world!')" />
+                        <X.CodeBlock language="jsx" code="console.log('Hello, World!')" />
                     </X.Uli>
                     <X.Uli>
                         <X.P>注意第四项的代码块的\`margin-bottom\`被移除了</X.P>
@@ -219,7 +219,7 @@ export default function Blog({blogTitle}) {
                     <X.Uli>
                         <X.H3>一个标题</X.H3>
                     </X.Uli>
-                    <X.CodeBlock language="jsx" code="console.log('Hello, world!')" />
+                    <X.CodeBlock language="jsx" code="console.log('Hello, World!')" />
                 </X.Uli>
                 <X.Uli>
                     <X.P>注意第四项的代码块的`margin-bottom`被移除了</X.P>

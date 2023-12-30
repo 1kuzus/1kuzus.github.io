@@ -42,6 +42,7 @@
     transition: grid-template-rows 200ms;
 }
 .sidebarlist-ul {
+    grid-row: 1 / span 2;
     opacity: 0;
     overflow: hidden;
     transition: opacity 200ms;
