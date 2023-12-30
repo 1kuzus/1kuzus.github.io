@@ -11,7 +11,12 @@ function Version() {
                     <X.FlexRow justifyContent="space-around">
                         <X.Image id="b0001-cheer-gif" src={require('./cheer.gif')} width="150" />
                         <div id="b0001-dance-version-wrapper">
-                            <X.Image id="b0001-version-png" src={require('./version.png')} width="100%" invertInDarkTheme />
+                            <X.Image
+                                id="b0001-version-png"
+                                src={require('./version.png')}
+                                width="100%"
+                                invertInDarkTheme
+                            />
                         </div>
                         <X.Image id="b0001-dance-gif" src={require('./dance.gif')} width="128" />
                     </X.FlexRow>
@@ -55,13 +60,16 @@ function UpdateLog() {
         {date: '2023-10-17', description: '加入`vscode snippets`'},
         {date: '2023-10-22', description: '加入`Google Analytics`'},
         {date: '2023-11-15', description: '通过后部署脚本解决刷新404问题'},
-        {date: '2023-11-19', description: '后部署脚本中加入生成`@sitemap.xml[/sitemap.xml]@`\\n用`<noscript>`标签作为临时SEO方案'},
+        {
+            date: '2023-11-19',
+            description: '后部署脚本中加入生成`@sitemap.xml[/sitemap.xml]@`\\n用`<noscript>`标签作为临时SEO方案',
+        },
         {date: '2023-12-01', description: '优化目录生成逻辑，不要求同一博客内标题不重复'},
         {date: '2023-12-02', description: '图片组件新增可选的在暗色模式下自动反转颜色的功能'},
         {date: '2023-12-05', description: '标题组件`H1``H2``H3`支持超链接'},
         {date: '2023-12-06', description: '博客标题自动从分类目录文件同步'},
         {date: '2023-12-17', description: '支持直接在列表项中写含有段落组件特殊格式的文本'},
-        {date: '2023-12-29', description: '更新了表格组件样式'},
+        {date: '2023-12-29', description: '更新了表格组件样式\\n优化了首页博客列表和侧栏列表高度自动过渡的实现方法'},
     ];
     return (
         <>
