@@ -5,6 +5,7 @@ import Bco21 from './23c/pattern_recognition2';
 import Bjjj5 from './23c/pattern_recognition3';
 import Bpbmq from './23d/auto_height_transition';
 import Bykl9 from './23d/db3nf';
+import Bq2l8 from './23d/git_vendored_code';
 import Bnwt2 from './23d/lstm';
 import B24fa from './23d/object_detection_map';
 import B2fph from './23d/pattern_recognition4';
@@ -23,6 +24,12 @@ const categories = [
                 path: '/bykl9/',
                 time: '2023-10-17',
                 component: <Bykl9 />,
+            },
+            {
+                blogTitle: '不统计Github仓库某个文件夹下的语言',
+                path: '/bq2l8/',
+                time: '2023-12-31',
+                component: <Bq2l8 />,
             },
         ],
     },
