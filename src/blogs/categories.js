@@ -11,6 +11,7 @@ import B24fa from './23d/object_detection_map';
 import B2fph from './23d/pattern_recognition4';
 import Blnrj from './23d/protocols';
 import B97t6 from './23d/r2plus1d';
+import Bnoay from './24a/reproduce_nerf_rpn';
 import B0000 from './longtime/demo';
 import Bo8sr from './longtime/papers';
 import B0001 from './longtime/update_log';
@@ -58,6 +59,12 @@ const categories = [
                 path: '/bnwt2/',
                 time: '2023-12-17',
                 component: <Bnwt2 />,
+            },
+            {
+                blogTitle: '复盘：复现NeRF-RPN代码',
+                path: '/bnoay/',
+                time: '2024-01-01',
+                component: <Bnoay />,
             },
         ],
     },
