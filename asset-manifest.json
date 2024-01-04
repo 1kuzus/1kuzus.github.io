@@ -1,7 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.39d68e71.css",
-    "main.js": "/static/js/main.48aae67c.js",
+    "main.css": "/static/css/main.537669bb.css",
+    "main.js": "/static/js/main.44188c52.js",
+    "static/media/fig2.jpg": "/static/media/fig2.87777273f1ed833f729b.jpg",
+    "static/media/fig1.jpg": "/static/media/fig1.8b70e663b8e58c4db1ce.jpg",
     "static/media/sw.png": "/static/media/sw.6c99883b5301d8cc7c4d.png",
     "static/media/csma1.png": "/static/media/csma1.2a11daa6d5a2b4dea4fe.png",
     "static/media/lstm1.png": "/static/media/lstm1.8d9261d2af3d24b9b049.png",
@@ -15,14 +17,12 @@
     "static/media/rnn2.png": "/static/media/rnn2.fa69f5128a81f0a65cb5.png",
     "static/media/KaTeX_Main-Bold.ttf": "/static/media/KaTeX_Main-Bold.8169508bf58f8bd92ad8.ttf",
     "static/media/rcnn.jpg": "/static/media/rcnn.b2dfd79c8026243a9b0d.jpg",
-    "static/media/fig1.jpg": "/static/media/fig1.8b70e663b8e58c4db1ce.jpg",
     "static/media/tcp1.jpg": "/static/media/tcp1.5ac0f05b271071a7f481.jpg",
     "static/media/fig4.png": "/static/media/fig4.5ffe0e6d17015730957f.png",
     "static/media/tcpudp.jpg": "/static/media/tcpudp.1d957344327214e5afb4.jpg",
     "static/media/fig5.png": "/static/media/fig5.04c460a1eaa5d7b35aaf.png",
     "static/media/fastrcnn.jpg": "/static/media/fastrcnn.98e804c88224ff75662e.jpg",
     "static/media/fig2.png": "/static/media/fig2.18bcc6feb2f94607eedc.png",
-    "static/media/fig2.jpg": "/static/media/fig2.87777273f1ed833f729b.jpg",
     "static/media/gbn2.png": "/static/media/gbn2.8cfedf7f71174edbda04.png",
     "static/media/fig1.png": "/static/media/fig1.ac0c93fcf50ca93e9432.png",
     "static/media/rnn1.png": "/static/media/rnn1.b3c9ddf03092ac5d3039.png",
@@ -107,11 +107,11 @@
     "static/media/KaTeX_Size3-Regular.woff": "/static/media/KaTeX_Size3-Regular.7947224e8a9914fa332b.woff",
     "static/media/KaTeX_Size3-Regular.woff2": "/static/media/KaTeX_Size3-Regular.e1951519f6f0596f7356.woff2",
     "index.html": "/index.html",
-    "main.39d68e71.css.map": "/static/css/main.39d68e71.css.map",
-    "main.48aae67c.js.map": "/static/js/main.48aae67c.js.map"
+    "main.537669bb.css.map": "/static/css/main.537669bb.css.map",
+    "main.44188c52.js.map": "/static/js/main.44188c52.js.map"
   },
   "entrypoints": [
-    "static/css/main.39d68e71.css",
-    "static/js/main.48aae67c.js"
+    "static/css/main.537669bb.css",
+    "static/js/main.44188c52.js"
   ]
 }
