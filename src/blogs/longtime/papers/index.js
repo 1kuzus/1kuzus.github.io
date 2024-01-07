@@ -86,6 +86,17 @@ export default function Blog({blogTitle}) {
                     稠密重建是假设相机参数已知的情况下，从不同视角的图像中找到匹配的对应点，对整个图像或图像中绝大部分像素进行重建。
                 </X.P>
             </X.HighlightBlock>
+            <X.H2 href="https://arxiv.org/pdf/2201.05989.pdf">
+                【Instant NGP】Instant Neural Graphics Primitives with a Multiresolution Hash Encoding (2022)
+            </X.H2>
+            <PaperSummary topic="实现实时辐射场渲染，同时保持高质量的视觉效果，并且保持较短的训练时间" />
+            <X.HighlightBlock bgcolor="gray">
+                <X.H3>更多笔记</X.H3>
+                <X.H3>Instant NGP与NeRF的异同</X.H3>
+                <X.P noMarginBottom>转载自@知乎：从NeRF到Instant-NGP[https://zhuanlan.zhihu.com/p/631284285]@</X.P>
+                <X.Uli>同样基于体渲染</X.Uli>
+                <X.Uli>不同于NeRF的MLP，Instant NGP使用稀疏的参数化的`voxel grid`作为场景表达</X.Uli>
+            </X.HighlightBlock>
             <X.H2 href="https://arxiv.org/pdf/2211.11646.pdf">
                 【NeRF RPN】NeRF-RPN: A general framework for object detection in NeRFs (2022)
             </X.H2>
@@ -99,21 +110,10 @@ export default function Blog({blogTitle}) {
                 }
                 innovation="第一次将RPN引入NeRF以进行3D物体检测和相关任务\n利用Hypersim和3D-FRONT数据集构建了第一个用于3D目标检测的NeRF数据集"
             />
-            <X.H2 href="https://arxiv.org/pdf/2201.05989.pdf">
-                【Instant NGP】Instant Neural Graphics Primitives with a Multiresolution Hash Encoding (2022)
-            </X.H2>
-            <PaperSummary topic="实现实时辐射场渲染，同时保持高质量的视觉效果，并且保持较短的训练时间" />
-            <X.HighlightBlock bgcolor="gray">
-                <X.H3>更多笔记</X.H3>
-                <X.H3>Instant NGP与NeRF的异同</X.H3>
-                <X.P noMarginBottom>转载自@知乎：从NeRF到Instant-NGP[https://zhuanlan.zhihu.com/p/631284285]@</X.P>
-                <X.Uli>同样基于体渲染</X.Uli>
-                <X.Uli>不同于NeRF的MLP，Instant NGP使用稀疏的参数化的`voxel grid`作为场景表达</X.Uli>
-            </X.HighlightBlock>
-            {/* <X.H2 href="https://arxiv.org/pdf/2304.04395v3.pdf">
+            <X.H2 href="https://arxiv.org/pdf/2304.04395v3.pdf">
                 【Instance NeRF】Instance Neural Radiance Field (2023)
             </X.H2>
-            <PaperSummary topic="输入一个以多视图RGB图像预训练的NeRF，学习给定场景的3D实例分割" /> */}
+            <PaperSummary topic="输入一个以多视图RGB图像预训练的NeRF，学习给定场景的3D实例分割" />
             {/* <X.HighlightBlock bgcolor="gray">
                 <X.H3>更多笔记</X.H3>
                 <X.P>
