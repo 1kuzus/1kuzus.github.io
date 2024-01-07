@@ -11,6 +11,8 @@ import B24fa from './23d/object_detection_map';
 import B2fph from './23d/pattern_recognition4';
 import Blnrj from './23d/protocols';
 import B97t6 from './23d/r2plus1d';
+import Bkdzq from './24a/games101_1';
+import Brro7 from './24a/machine_learning_exercises';
 import Bnoay from './24a/reproduce_nerf_rpn';
 import B0000 from './longtime/demo';
 import Bo8sr from './longtime/papers';
@@ -117,6 +119,18 @@ const categories = [
                 path: '/blnrj/',
                 time: '2023-10-26',
                 component: <Blnrj />,
+            },
+            {
+                blogTitle: '【机器学习】习题',
+                path: '/brro7/',
+                time: '2024-01-07',
+                component: <Brro7 />,
+            },
+            {
+                blogTitle: '【GAMES101】Transformation',
+                path: '/bkdzq/',
+                time: '2024-01-07',
+                component: <Bkdzq />,
             },
         ],
     },
