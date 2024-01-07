@@ -113,15 +113,33 @@ export default function Blog({blogTitle}) {
             <X.H2 href="https://arxiv.org/pdf/2304.04395v3.pdf">
                 【Instance NeRF】Instance Neural Radiance Field (2023)
             </X.H2>
-            <PaperSummary topic="输入一个以多视图RGB图像预训练的NeRF，学习给定场景的3D实例分割" />
-            {/* <X.HighlightBlock bgcolor="gray">
+            <PaperSummary
+                topic={
+                    <>
+                        <X.P>输入一个以多视图RGB图像预训练的NeRF，学习给定场景的3D实例分割</X.P>
+                        <X.P noMarginBottom>文章的主要贡献：</X.P>
+                        <X.Uli>第一个在NeRF中进行3D实例分割的尝试之一，而没有使用真实分割标签作为输入</X.Uli>
+                        <X.Uli>
+                            提出`Neural Instance Field`的结构和训练方法，可以产生*多视图一致*的2D分割和连续的3D分割
+                        </X.Uli>
+                        <X.Uli>对合成室内NeRF数据集进行实验和消融研究</X.Uli>
+                    </>
+                }
+                method={
+                    <>
+                        <X.P>Instance NeRF有两个组件：预训练的NeRF模型、和文中提出的`Instance Field`。</X.P>
+                        <X.P>`Instance Field`的训练过程如下：</X.P>
+                        <X.Image src={require('./instance_field.jpg')} width="96%" />
+                    </>
+                }
+            />
+            <X.HighlightBlock bgcolor="gray">
                 <X.H3>更多笔记</X.H3>
-                <X.P>
-                    *稀疏重建和稠密重建*\n稀疏重建主要用于定位，得到每张图片的相机参数，提取特征点，例如SFM；---
-                    稠密重建是假设相机参数已知的情况下，从不同视角的图像中找到匹配的对应点，对整个图像或图像中绝大部分像素进行重建。
-                </X.P>
-            </X.HighlightBlock> */}
-
+                <X.H3>包围体：AABB和OBB</X.H3>
+                <X.P>*AABB*：轴对齐包围盒`(Axis-Aligned Bounding Box)`\n*OBB*：有向包围盒`(Oriented Bounding Box)`</X.P>
+                <X.P>下图展示了更多种类的包围体：</X.P>
+                <X.Image src={require('./bounding_volumes.png')} width="100%" />
+            </X.HighlightBlock>
             <X.H1>学习</X.H1>
             <X.H2 href="https://www.cv-foundation.org/openaccess/content_cvpr_2014/papers/Girshick_Rich_Feature_Hierarchies_2014_CVPR_paper.pdf">
                 【R-CNN】Rich Feature Hierarchies for Accurate Object Detection and Semantic Segmentation (2014)
@@ -138,8 +156,11 @@ export default function Blog({blogTitle}) {
                     区域卷积神经网络系列[https://zh-v2.d2l.ai/chapter_computer-vision/rcnn.html]@
                 </X.P>
                 <X.H3>R-CNN</X.H3>
+                <X.Uli>R-CNN使用启发式搜索算法`selective search`（之前人们通常也是这样做的）来选择锚框</X.Uli>
+                <X.Uli>用预训练的模型，对每一个锚框抽取特征</X.Uli>
+                <X.Uli>训练一个SVM来对类别分类</X.Uli>
+                <X.Uli>训练一个线性回归模型来预测边缘框</X.Uli>
                 <X.P>
-                    R-CNN先从输入图像中选取若干（例如2000个）提议区域，然后用卷积神经网络对每个提议区域进行前向传播以抽取其特征。接下来，用每个提议区域的特征来预测类别和边界框。---
                     R-CNN的速度很慢，因为可能从一张图像中选出上千个提议区域，这需要上千次的卷积神经网络的前向传播来执行目标检测。这种庞大的计算量使得R-CNN在现实世界中难以被广泛应用。
                 </X.P>
                 <X.Image src={require('./rcnn.jpg')} width="600px" />
@@ -150,17 +171,43 @@ export default function Blog({blogTitle}) {
                     *兴趣区域池化*`(ROI Pooling)`，将卷积神经网络的输出和提议区域作为输入，---
                     输出连结后的各个提议区域抽取的特征。
                 </X.P>
+                <X.P>
+                    兴趣区域池化层可以给出固定大小的输出：把给定的锚框均匀分割成$n \times m$块，---
+                    输出每块里的最大值，这样无论锚框多大，总是输出$nm$个值。
+                </X.P>
+                <X.P>
+                    Fast R-CNN先对图片用CNN抽取特征，然后将`selective
+                    search`给出的原图上的提议区域映射到CNN特征图上，再经过`ROI Pooling`就可以得到维度对齐的特征。
+                </X.P>
                 <X.Image src={require('./fastrcnn.jpg')} width="400px" />
                 <X.H3>Faster R-CNN</X.H3>
                 <X.P>
-                    与Fast R-CNN相比，Faster R-CNN将生成提议区域的方法从选择性搜索改为了*区域提议网络*`(Region Proposal
-                    Network, RPN)`，模型的其余部分保持不变。区域提议网络作为Faster
-                    R-CNN模型的一部分，是和整个模型一起训练得到的。换句话说，Faster
-                    R-CNN的目标函数不仅包括目标检测中的类别和边界框预测，还包括区域提议网络中锚框的二元类别和边界框预测。---
-                    作为端到端训练的结果，区域提议网络能够学习到如何生成高质量的提议区域，---
+                    与Fast R-CNN相比，Faster R-CNN将生成提议区域的方法从`selective search`改为了*区域提议网络*`(Region
+                    Proposal Network, RPN)`，模型的其余部分保持不变。区域提议网络作为Faster R-CNN模型的一部分，---
+                    是和整个模型一起训练得到的。换句话说，Faster R-CNN的目标函数不仅包括目标检测中的类别和边界框---
+                    预测，还包括区域提议网络中锚框的二元类别和边界框预测。作为端到端训练的结果，区域提议网络能够学习到如何生成高质量的提议区域，---
                     从而在减少了从数据中学习的提议区域的数量的情况下，仍保持目标检测的精度。
                 </X.P>
                 <X.Image src={require('./fasterrcnn.jpg')} width="600px" />
+            </X.HighlightBlock>
+            <X.H2 href="https://arxiv.org/pdf/1703.06870.pdf">【Mask R-CNN】Mask R-CNN (2017)</X.H2>
+            <X.HighlightBlock bgcolor="gray">
+                <X.H3>更多笔记</X.H3>
+                <X.P>神经辐射场用于从2D的图片重建3D的场景。</X.P>
+                <X.P noMarginBottom>文中出现的三个指标：PSNR、SSIM、LPIPS</X.P>
+                <X.Uli>
+                    *峰值信噪比*`(Peak Signal to Noise Ratio, PSNR)`：---
+                    用于衡量图像恢复的质量，数值越高表示图像质量越好。接近`50 dB`代表误差非常小，大于`30 dB`---
+                    人眼难察觉差异。
+                </X.Uli>
+                <X.Uli>
+                    *结构相似性*`(Structural Similarity Index Measure, SSIM)`：---
+                    用于衡量图像的结构相似性，得分通常在`0`~`1`之间，数值越高表示图像结构越相似。相较于PSNR在图像质量的衡量上更能符合人眼对图像质量的判断。
+                </X.Uli>
+                <X.Uli>
+                    *基于学习的感知图像质量评价*`(Learned Perceptual Image Patch Similarity, LPIPS)`：---
+                    测量从预训练网络中提取的两个图像的特征之间的相似性，得分通常在`0`~`1`之间，数值越低表示感知质量越高。
+                </X.Uli>
             </X.HighlightBlock>
         </X.BlogWrapper>
     );
