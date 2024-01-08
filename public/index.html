@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-45BYSZ6WPY"></script>
-	    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
-            function gtag() {dataLayer.push(arguments);}
+            function gtag() {
+                dataLayer.push(arguments);
+            }
             gtag('js', new Date());
             gtag('config', 'G-45BYSZ6WPY');
+            if (!localStorage.getItem('theme')) localStorage.setItem('theme', 'light');
+            document.documentElement.setAttribute('class', localStorage.getItem('theme'));
         </script>
         <title>铃木的网络日记</title>
     </head>
     <body>
-        <div id="noscript"></div>
         <div id="root"></div>
     </body>
 </html>
