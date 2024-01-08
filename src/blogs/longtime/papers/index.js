@@ -138,7 +138,7 @@ export default function Blog({blogTitle}) {
                 <X.H3>包围体：AABB和OBB</X.H3>
                 <X.P>*AABB*：轴对齐包围盒`(Axis-Aligned Bounding Box)`\n*OBB*：有向包围盒`(Oriented Bounding Box)`</X.P>
                 <X.P>下图展示了更多种类的包围体：</X.P>
-                <X.Image src={require('./bounding_volumes.png')} width="100%" />
+                <X.Image src={require('./bounding_volumes.png')} width="100%" invertInDarkTheme />
             </X.HighlightBlock>
             <X.H1>学习</X.H1>
             <X.H2 href="https://www.cv-foundation.org/openaccess/content_cvpr_2014/papers/Girshick_Rich_Feature_Hierarchies_2014_CVPR_paper.pdf">
@@ -182,18 +182,45 @@ export default function Blog({blogTitle}) {
                 <X.Image src={require('./fastrcnn.jpg')} width="400px" />
                 <X.H3>Faster R-CNN</X.H3>
                 <X.P>
-                    与Fast R-CNN相比，Faster R-CNN将生成提议区域的方法从`selective search`改为了*区域提议网络*`(Region
-                    Proposal Network, RPN)`，模型的其余部分保持不变。区域提议网络作为Faster R-CNN模型的一部分，---
-                    是和整个模型一起训练得到的。换句话说，Faster R-CNN的目标函数不仅包括目标检测中的类别和边界框---
-                    预测，还包括区域提议网络中锚框的二元类别和边界框预测。作为端到端训练的结果，区域提议网络能够学习到如何生成高质量的提议区域，---
-                    从而在减少了从数据中学习的提议区域的数量的情况下，仍保持目标检测的精度。
+                    与Fast R-CNN相比，Faster R-CNN将生成提议区域的方法从`selective search`改为了---
+                    *区域提议网络*`(Region Proposal Network, RPN)`，模型的其余部分保持不变。区域提议网络作为Faster
+                    R-CNN模型的一部分，是和整个模型一起训练得到的。换句话说，Faster R-CNN---
+                    的目标函数不仅包括目标检测中的类别和边界框预测，还包括区域提议网络中锚框的二元类别和边界框预测。作为端到端训练的结果，---
+                    区域提议网络能够学习到如何生成高质量的提议区域，从而在减少了从数据中学习的提议区域的数量的情况下，仍保持目标检测的精度。
                 </X.P>
                 <X.Image src={require('./fasterrcnn.jpg')} width="600px" />
             </X.HighlightBlock>
             <X.H2 href="https://arxiv.org/pdf/1703.06870.pdf">【Mask R-CNN】Mask R-CNN (2017)</X.H2>
+            <PaperSummary
+                topic="目标检测&实例分割"
+                method={
+                    <>
+                        <X.P>
+                            基于Faster R-CNN，添加一个对每个ROI预测分割mask的分支。---
+                            这个分支可以与分类和边界框预测分支并行。
+                        </X.P>
+                        <X.Image src={require('./maskrcnn1.jpg')} width="600px" />
+                    </>
+                }
+                experiment={
+                    <>
+                        <X.Image src={require('./maskrcnn2.jpg')} width="600px" />
+                        <X.P>在COCO数据集上表现优异，超过了`2015`和`2016`年COCO分割任务的冠军。</X.P>
+                    </>
+                }
+                innovation="
+                `ROI Pooling`中发生了两次浮点数取整，第一次是将锚框均匀分割成$n \times m$块时，第二次是把提议区域映射回CNN特征图时。\n
+                分割任务的精细程度更高，因此文章提出了`ROI Align`，使用双线性插值来保留特征图上的空间信息。
+                "
+            />
             <X.HighlightBlock bgcolor="gray">
                 <X.H3>更多笔记</X.H3>
                 <X.H3>语义分割与实例分割</X.H3>
+                <X.Image src={require('./ss_and_is.jpg')} width="600px" />
+                <X.P noMarginBottom>
+                    *语义分割*`(semantic segmentation)`：为每一个像素分配一个类别，但不区分同一类别之间的对象。
+                </X.P>
+                <X.P>*实例分割*`(instance segmentation)`：会区分属于同一类别的不同实例。</X.P>
             </X.HighlightBlock>
         </X.BlogWrapper>
     );
