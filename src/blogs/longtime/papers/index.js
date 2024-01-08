@@ -193,21 +193,7 @@ export default function Blog({blogTitle}) {
             <X.H2 href="https://arxiv.org/pdf/1703.06870.pdf">【Mask R-CNN】Mask R-CNN (2017)</X.H2>
             <X.HighlightBlock bgcolor="gray">
                 <X.H3>更多笔记</X.H3>
-                <X.P>神经辐射场用于从2D的图片重建3D的场景。</X.P>
-                <X.P noMarginBottom>文中出现的三个指标：PSNR、SSIM、LPIPS</X.P>
-                <X.Uli>
-                    *峰值信噪比*`(Peak Signal to Noise Ratio, PSNR)`：---
-                    用于衡量图像恢复的质量，数值越高表示图像质量越好。接近`50 dB`代表误差非常小，大于`30 dB`---
-                    人眼难察觉差异。
-                </X.Uli>
-                <X.Uli>
-                    *结构相似性*`(Structural Similarity Index Measure, SSIM)`：---
-                    用于衡量图像的结构相似性，得分通常在`0`~`1`之间，数值越高表示图像结构越相似。相较于PSNR在图像质量的衡量上更能符合人眼对图像质量的判断。
-                </X.Uli>
-                <X.Uli>
-                    *基于学习的感知图像质量评价*`(Learned Perceptual Image Patch Similarity, LPIPS)`：---
-                    测量从预训练网络中提取的两个图像的特征之间的相似性，得分通常在`0`~`1`之间，数值越低表示感知质量越高。
-                </X.Uli>
+                <X.H3>语义分割与实例分割</X.H3>
             </X.HighlightBlock>
         </X.BlogWrapper>
     );
