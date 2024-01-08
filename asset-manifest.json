@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.537669bb.css",
-    "main.js": "/static/js/main.72996ff1.js",
+    "main.js": "/static/js/main.7dd45976.js",
     "static/media/fig2.jpg": "/static/media/fig2.fca0039b198d15e1d1ea.jpg",
     "static/media/fig1.jpg": "/static/media/fig1.8fbf2a01707f9a018b70.jpg",
     "static/media/sw.png": "/static/media/sw.6c99883b5301d8cc7c4d.png",
@@ -79,8 +79,8 @@
     "static/media/KaTeX_Math-Italic.woff2": "/static/media/KaTeX_Math-Italic.6d3d25f4820d0da8f01f.woff2",
     "static/media/KaTeX_Math-BoldItalic.woff2": "/static/media/KaTeX_Math-BoldItalic.dcbcbd93bac0470b462d.woff2",
     "static/media/KaTeX_Typewriter-Regular.woff": "/static/media/KaTeX_Typewriter-Regular.4c6b94fd1d07f8beff7c.woff",
-    "static/media/version.png": "/static/media/version.5614d381837856cb5cdc.png",
     "static/media/KaTeX_SansSerif-Bold.woff": "/static/media/KaTeX_SansSerif-Bold.b9cd458ac6d5889ff9c3.woff",
+    "static/media/version.png": "/static/media/version.359df96d30da1e5992cf.png",
     "static/media/KaTeX_SansSerif-Italic.woff": "/static/media/KaTeX_SansSerif-Italic.8d593cfaa96238d5e2f8.woff",
     "static/media/KaTeX_Typewriter-Regular.woff2": "/static/media/KaTeX_Typewriter-Regular.c295e7f71970f03c0549.woff2",
     "static/media/KaTeX_Fraktur-Bold.woff": "/static/media/KaTeX_Fraktur-Bold.354501bac435c3264834.woff",
@@ -114,10 +114,10 @@
     "static/media/KaTeX_Size3-Regular.woff2": "/static/media/KaTeX_Size3-Regular.e1951519f6f0596f7356.woff2",
     "index.html": "/index.html",
     "main.537669bb.css.map": "/static/css/main.537669bb.css.map",
-    "main.72996ff1.js.map": "/static/js/main.72996ff1.js.map"
+    "main.7dd45976.js.map": "/static/js/main.7dd45976.js.map"
   },
   "entrypoints": [
     "static/css/main.537669bb.css",
-    "static/js/main.72996ff1.js"
+    "static/js/main.7dd45976.js"
   ]
 }
