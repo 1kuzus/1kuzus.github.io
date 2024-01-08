@@ -60,7 +60,7 @@
     "workbox-webpack-plugin": "^6.4.1"
   },
   "scripts": {
-    "predeploy": "npm run build && node src/utils/afterBuild.js",
+    "predeploy": "npm run build && node src/utils/afterBuild.js && react-snap",
     "deploy": "gh-pages -d build",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
@@ -81,7 +81,8 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "gh-pages": "^5.0.0"
+    "gh-pages": "^5.0.0",
+    "react-snap": "^1.23.0"
   },
   "jest": {
     "roots": [

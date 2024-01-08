@@ -2,6 +2,7 @@ import {useRoutes} from 'react-router-dom';
 import Header from './component/Header/Header';
 import SideBar from './component/SideBar/SideBar';
 import Homepage from './component/Homepage/Homepage';
+import NotFound from './component/NotFound/NotFound';
 import {elements} from './blogs/categories';
 import 'prismjs/components/prism-c';
 import 'prismjs/components/prism-cpp';
@@ -34,7 +35,7 @@ const router = [
     })),
     {
         path: '*',
-        element: <Homepage />,
+        element: <NotFound />,
     },
 ];
 

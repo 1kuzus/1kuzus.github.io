@@ -53,6 +53,8 @@ export default function Header() {
         localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : true
     );
     useLayoutEffect(() => {
+        //预渲染时不加载色彩主题属性
+        if (navigator.userAgent === 'ReactSnap') return;
         if (isDarkTheme) {
             document.documentElement.setAttribute('class', 'dark');
             localStorage.setItem('theme', 'dark');
