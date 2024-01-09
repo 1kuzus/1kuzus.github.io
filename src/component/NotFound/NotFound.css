@@ -1,0 +1,20 @@
+#notfound {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    margin: 16vh auto 0;
+}
+#notfound-404 {
+    margin-left: 6px;
+    font-size: 100px;
+    font-weight: bold;
+    font-family: consolas;
+    letter-spacing: 0.1em;
+    color: var(--text-color-main);
+}
+#notfound-text {
+    font-size: 24px;
+    font-family: consolas;
+    color: var(--text-color-main);
+}
