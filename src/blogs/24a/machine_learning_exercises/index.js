@@ -280,7 +280,6 @@ export default function Blog({blogTitle}) {
             </X.Oli>
             <X.Br />
             <X.Oli>
-                {1 == []}
                 <X.P noMarginBottom>
                     考虑某个具体问题时，你可能只有少量数据来解决这个问题。不过幸运的是你有一个类似问题已经预先训练好的神经网络。---
                     可以用下面哪种方法来利用这个预先训练好的网络？
@@ -291,6 +290,36 @@ export default function Blog({blogTitle}) {
                 <X.P>`d.`对每一层模型进行评估，选择其中的少数来使用</X.P>
                 <X.P>答：`c`</X.P>
             </X.Oli>
+            <X.HighlightBlock bgcolor="red">
+                <X.P>在考虑微调时，根据新数据集的大小、新数据集与预训练模型数据集相似度，不同策略如下：</X.P>
+                <X.Table>
+                    <tr>
+                        <th></th>
+                        <th>数据量少</th>
+                        <th>数据量大</th>
+                    </tr>
+                    <tr>
+                        <th>相似度低</th>
+                        <td>
+                            <X.P>
+                                主干部分提取的特征是通用特征，可以冻结预训练模型的初始层（比如`k`层），并再次训练剩余的提取高层特征`n-k`层。
+                            </X.P>
+                        </td>
+                        <td>
+                            <X.P>根据数据从头开始训练神经网络`(training from scratch)`</X.P>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>相似度高</th>
+                        <td>
+                            <X.P>修改最后几层或输出层的输出类别</X.P>
+                        </td>
+                        <td>
+                            <X.P>这时是理想情况，保留预训练模型的结构和初始权重，再用数据来重新训练该模型</X.P>
+                        </td>
+                    </tr>
+                </X.Table>
+            </X.HighlightBlock>
             <X.Br />
             <X.Oli>
                 <X.P noMarginBottom>
@@ -331,23 +360,10 @@ export default function Blog({blogTitle}) {
             </X.Oli>
             <X.Br />
             <X.Oli>
-                <X.P noMarginBottom>
-                    Xavier初始化用来帮助信号能够在神经网络中传递得更深，是最为常用的神经网络权重初始化方法。
-                </X.P>
-                <X.Formula text="\text{Var}(W)=\frac{2}{n_in+n_out}" />
-                <X.P noMarginBottom>下面哪些叙述是对的？</X.P>
-                <X.P noMarginBottom>`1.`如果权重一开始很小，信号到达最后也会很小</X.P>
-                <X.P noMarginBottom>`2.`如果权重一开始很大，信号到达最后也会很大</X.P>
-                <X.P noMarginBottom>`3.`Xavier初始化是由高斯分布引出的</X.P>
-                <X.P>`4.`Xavier初始化可以帮助减少梯度弥散问题</X.P>
-                <X.P>答：</X.P>
-            </X.Oli>
-            <X.Br />
-            <X.Oli>
                 <X.P noMarginBottom>下面哪些叙述是对的？</X.P>
                 <X.P noMarginBottom>`1.`可以通过将所有权重初始化为$0$来训练网络</X.P>
                 <X.P>`2.`可以通过将偏差初始化为$0$来很好地训练网络</X.P>
-                <X.P>答：都不对</X.P>
+                <X.P>答：`2`</X.P>
             </X.Oli>
             <X.Br />
             <X.Oli>
@@ -367,7 +383,7 @@ export default function Blog({blogTitle}) {
                 <X.P noMarginBottom>`b.`限制输出过大或过小</X.P>
                 <X.P noMarginBottom>`c.`训练过慢</X.P>
                 <X.P>`d.`以上所有</X.P>
-                <X.P>答：`b`</X.P>
+                <X.P>答：`d`</X.P>
             </X.Oli>
             <X.Br />
             <X.Oli>
@@ -386,7 +402,7 @@ export default function Blog({blogTitle}) {
                 <X.P noMarginBottom>`b.`SVM</X.P>
                 <X.P noMarginBottom>`c.`树形模型</X.P>
                 <X.P>`d.`神经网络</X.P>
-                <X.P>答：`a`</X.P>
+                <X.P>答：`c`</X.P>
             </X.Oli>
             <X.Br />
             <X.Oli>
@@ -395,31 +411,146 @@ export default function Blog({blogTitle}) {
                     请写出经过批量归一化转换后的$x$表达式。
                 </X.P>
                 <X.P noMarginBottom>答：</X.P>
-                <X.Formula text="123" />
+                <X.Formula text="\text{BN}(x)=\gamma \cdot \frac{x-\text{E}(x)}{\text{Var}(x)} + \beta" />
             </X.Oli>
+            <X.HighlightBlock bgcolor="red">
+                <X.Uli>
+                    <X.P>分母常写为{`$\\sqrt{\\text{Var}(x)^2+\\epsilon}$`}</X.P>
+                </X.Uli>
+                <X.Uli>参数$\gamma$和$\beta$通常是向量，公式中的乘法应为按元素乘。</X.Uli>
+            </X.HighlightBlock>
             <X.Br />
             <X.Oli>
                 <X.P>批量归一化和Dropout一般不会同时使用，请简述原因。</X.P>
-                <X.P noMarginBottom>答：</X.P>
+                <X.P>答：</X.P>
                 <X.Formula text="123" />
             </X.Oli>
             <X.Br />
             <X.Oli>
                 <X.P>简述Dropout能够防止过拟合的原因。</X.P>
                 <X.P noMarginBottom>答：</X.P>
-                <X.Formula text="123" />
+                <X.Uli>
+                    模拟集成学习：在训练时，Dropout随机关闭网络中的一部分神经元，可以被看作是在训练每个小批量数据时都使用了一个略有不同的网络结构，这类似于训练多个不同的模型并进行集成学习。---
+                    在测试时，使用所有神经元，相当于对这些“模型”进行平均，这有助于提高泛化能力。
+                </X.Uli>
+                <X.Uli>
+                    减少复杂共适应性：在没有Dropout的情况下，网络的神经元可能会学会共同适应并对特定的训练数据过度拟合，即它们共同调整它们的行为来记住训练数据的特定特征。---
+                    使用Dropout意味着网络的神经元不能依赖于特定其他神经元的存在，因此，每个神经元必须学习更加鲁棒的特征，这些特征在各种不同的网络子集中都有用。
+                </X.Uli>
+                <X.Uli>
+                    正则化效果：从正则化的角度来看，Dropout可以被视为一种增加模型的随机性、降低模型复杂度的方式。
+                </X.Uli>
             </X.Oli>
             <X.Br />
             <X.Oli>
                 <X.P>假设Dropout概率为$p$，为了保证期望值不变，在测试时，该层模型权重$w$应该变为？</X.P>
-                <X.P noMarginBottom>答：</X.P>
+                <X.P>答：$(1-p)w$</X.P>
             </X.Oli>
             <X.Br />
             <X.Oli>
                 <X.P>更新两次之后的：</X.P>
-                <X.P noMarginBottom>答：</X.P>
+                <X.P>答：</X.P>
             </X.Oli>
             <X.H1>卷积神经网络</X.H1>
+            <X.Oli reset>
+                <X.P>填充在卷积操作中的作用是：</X.P>
+                <X.P>答：可以增加输出的大小，从而使得卷积层能够更好地保留输入数据的*边缘信息*。</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P>神经网络反向传播的过程中，梯度计算通常使用什么算法？</X.P>
+                <X.P>答：链式法则。</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P>在反向传播中，激活函数的导数被用来计算（）。</X.P>
+                <X.P>答：神经元的局部梯度。</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P>反向传播中的损失函数对于输出层的梯度计算通常使用（）。</X.P>
+                <X.P>答：交叉熵。</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P>
+                    Batch Normalization中反向传播的过程涉及到计算对于输入的梯度，---
+                    该梯度计算通常需要计算均值和方差的（）。
+                </X.P>
+                <X.P>答：梯度。</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P>反向传播中的优化算法，如随机梯度下降的更新规则是通过将参数沿着（）进行更新。</X.P>
+                <X.P>答：梯度的负方向。</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P noMarginBottom>卷积神经网络中的卷积层和池化层分别用于什么目的？</X.P>
+                <X.P noMarginBottom>`a.`特征提取和降采样</X.P>
+                <X.P noMarginBottom>`b.`特征降维和特征映射</X.P>
+                <X.P noMarginBottom>`c.`激活函数和正则化</X.P>
+                <X.P>`d.`参数初始化和反向传播</X.P>
+                <X.P>答：`a`</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P noMarginBottom>在卷积神经网络中，填充的作用是什么？</X.P>
+                <X.P noMarginBottom>`a.`增加输出特征图的尺寸</X.P>
+                <X.P noMarginBottom>`b.`防止卷积操作导致边缘信息丢失</X.P>
+                <X.P noMarginBottom>`c.`减少模型的参数数量</X.P>
+                <X.P>`d.`提高模型的训练速度</X.P>
+                <X.P>答：`b`</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P noMarginBottom>在卷积神经网络的反向传播中，梯度下降的目标是调整什么参数？</X.P>
+                <X.P noMarginBottom>`a.`输入数据</X.P>
+                <X.P noMarginBottom>`b.`权重和偏置</X.P>
+                <X.P noMarginBottom>`c.`激活函数的阈值</X.P>
+                <X.P>`d.`卷积核的尺寸</X.P>
+                <X.P>答：`b`</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P noMarginBottom>反向传播中的卷积操作涉及哪些参数的梯度更新？</X.P>
+                <X.P noMarginBottom>`a.`输入数据</X.P>
+                <X.P noMarginBottom>`b.`卷积核的权重</X.P>
+                <X.P noMarginBottom>`c.`池化层的输出</X.P>
+                <X.P>`d.`批量归一化的参数</X.P>
+                <X.P>答：`b`</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P noMarginBottom>反向传播中的池化层的梯度是如何传播的？</X.P>
+                <X.P>
+                    答：在最大池化中，反向传播时梯度会被传递给池化层输入中最大值所对应的位置，而其他位置的梯度为零；---
+                    在平均池化中，反向传播时梯度会均匀分配给池化层输入的所有元素。
+                </X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P noMarginBottom>判断：步幅越大，池化层输出的特征图尺寸越小。</X.P>
+                <X.P noMarginBottom>`a.`对</X.P>
+                <X.P>`b.`错</X.P>
+                <X.P>答：`a`</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P noMarginBottom>判断：在卷积神经网络中，通道数指的是卷积核的数量。</X.P>
+                <X.P noMarginBottom>`a.`对</X.P>
+                <X.P>`b.`错</X.P>
+                <X.P>答：`b`</X.P>
+            </X.Oli>
+            <X.HighlightBlock bgcolor="red">
+                <X.P>通常认为卷积核数量等于输出通道数。</X.P>
+            </X.HighlightBlock>
+            <X.Br />
+            <X.Oli>
+                <X.P>卷积神经网络的经典结构有哪些？简单介绍一下近年来具有代表性的深度卷积神经网络的设计思路：</X.P>
+                <X.P noMarginBottom>答：有LeNet、AlexNet、VGG、ResNet等。</X.P>
+                <X.Uli>LeNet：</X.Uli>
+            </X.Oli>
             <X.H1>循环神经网络</X.H1>
             <X.H1>生成对抗网络</X.H1>
         </X.BlogWrapper>
