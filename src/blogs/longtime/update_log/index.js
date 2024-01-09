@@ -74,6 +74,7 @@ function UpdateLog() {
         {date: '2023-12-30', description: '略微调整首页博客列表样式'},
         {date: '2023-12-31', description: '更新`Version 1.0`！'},
         {date: '2024-01-08', description: '新的SEO方案：使用`react-snap`作预渲染\\n加入`404`页面'},
+        {date: '2024-01-09', description: '更新`404`页面'},
     ];
     return (
         <>
