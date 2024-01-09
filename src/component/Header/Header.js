@@ -64,29 +64,26 @@ export default function Header() {
         }
     }, [isDarkTheme]);
     return (
-        <>
-            <div id="background" />
-            <div id="header">
-                <div
-                    id="header-logo-bg"
-                    onClick={() => {
-                        navigate('/');
-                        document.documentElement.scrollTo({top: 0});
-                    }}
-                >
-                    <LogoIcon />
-                </div>
-                <div id="header-right-wrapper">
-                    <div id="header-theme-bg" onClick={() => setIsDarkTheme(!isDarkTheme)}>
-                        {isDarkTheme ? <DarkThemeIcon /> : <LightThemeIcon />}
-                    </div>
-                    <a href="https://github.com/1kuzus/1kuzus.github.io" target="_blank" rel="noreferrer">
-                        <div id="header-github-bg">
-                            <GithubIcon />
-                        </div>
-                    </a>
-                </div>
+        <div id="header">
+            <div
+                id="header-logo-bg"
+                onClick={() => {
+                    navigate('/');
+                    document.documentElement.scrollTo({top: 0});
+                }}
+            >
+                <LogoIcon />
             </div>
-        </>
+            <div id="header-right-wrapper">
+                <div id="header-theme-bg" onClick={() => setIsDarkTheme(!isDarkTheme)}>
+                    {isDarkTheme ? <DarkThemeIcon /> : <LightThemeIcon />}
+                </div>
+                <a href="https://github.com/1kuzus/1kuzus.github.io" target="_blank" rel="noreferrer">
+                    <div id="header-github-bg">
+                        <GithubIcon />
+                    </div>
+                </a>
+            </div>
+        </div>
     );
 }
