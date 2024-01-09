@@ -138,7 +138,7 @@ export default function Blog({blogTitle}) {
             </X.HighlightBlock>
             <X.P>
                 理解这个长公式，先从两个概念入手：$\Sigma$矩阵代表什么？$\rho$似乎没有在通式中体现，其含义是什么？\n
-                对于二维正态分布例子中的两个变量来说，他们的*协方差*定义为：
+                对于二维正态分布例子中的两个变量来说，它们的*协方差*定义为：
             </X.P>
             <X.Formula text="cov(x_1,x_2)=E[(x_1-\mu_1)(x_2-\mu_2)]=E(x_1x_2)-\mu_1\mu_2" />
             <X.P>$\Sigma$矩阵的含义其实是两个变量的协方差矩阵，也就是：</X.P>

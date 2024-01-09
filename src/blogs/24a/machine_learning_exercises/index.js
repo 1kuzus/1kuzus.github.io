@@ -421,12 +421,6 @@ export default function Blog({blogTitle}) {
             </X.HighlightBlock>
             <X.Br />
             <X.Oli>
-                <X.P>批量归一化和Dropout一般不会同时使用，请简述原因。</X.P>
-                <X.P>答：</X.P>
-                <X.Formula text="123" />
-            </X.Oli>
-            <X.Br />
-            <X.Oli>
                 <X.P>简述Dropout能够防止过拟合的原因。</X.P>
                 <X.P noMarginBottom>答：</X.P>
                 <X.Uli>
@@ -443,13 +437,42 @@ export default function Blog({blogTitle}) {
             </X.Oli>
             <X.Br />
             <X.Oli>
+                <X.P>BN和Dropout一般不会同时使用，请简述原因。</X.P>
+                <X.P noMarginBottom>答：</X.P>
+                <X.Uli>
+                    目标冲突：BN希望保持激活值的分布稳定，而Dropout则通过引入噪声来增加网络的泛化能力，这在一定程度上是相互矛盾的。
+                </X.Uli>
+                <X.Uli>
+                    内部协变量偏移：批归一化通过规范化激活层的输出来减少内部协变量偏移。但是，当使用Dropout时，---
+                    由于随机关闭神经元，激活层的输出分布在每次迭代中都会发生变化，这可能会破坏批归一化试图解决的问题。
+                </X.Uli>
+                <X.Uli>
+                    影响训练：当同时使用这两种技术时，网络的训练可能会受到干扰。Dropout会改变网络中信息的流动方式，---
+                    而批归一化依赖于这些信息的稳定分布来进行有效的规范化。
+                </X.Uli>
+                <X.Uli>
+                    测试时行为不一致：当网络的状态从训练转移到测试时，以$p$概率关闭神经元的Dropout层计算时权重会乘$(1-p)$，---
+                    改变了输出的方差，而测试阶段BN保持了它的统计方差。这种方差的不一致性会影响预测的结果。
+                </X.Uli>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
                 <X.P>假设Dropout概率为$p$，为了保证期望值不变，在测试时，该层模型权重$w$应该变为？</X.P>
                 <X.P>答：$(1-p)w$</X.P>
             </X.Oli>
             <X.Br />
             <X.Oli>
-                <X.P>更新两次之后的：</X.P>
-                <X.P>答：</X.P>
+                <X.P>
+                    设模型初始参数$\theta_0=(0.1,0.2)^T$，学习率为$\eta=0.1$，---
+                    动量更新权重为$\lambda=1$，若模型在两次训练过程中的梯度依次为---
+                    $g_0=(2,-1)^T$、$g_1=(1,-2)^T$，求两次训练后模型的参数$\theta_2$。
+                </X.P>
+                <X.P>答：动量法参数更新公式为$m' \leftarrow \lambda m - \eta g, \; w' \leftarrow w + m$</X.P>
+                <X.P>
+                    第一次训练：\n$m_0=(0,0)^T$\n$m_1 = m_0 - 0.1g_0 = (-0.2,0.1)^T$\n$\theta_1 = \theta_0 + m_1 =
+                    (-0.1,0.3)^T$
+                </X.P>
+                <X.P>第二次训练：\n$m_2 = m_1 - 0.1g_1 = (-0.3,0.3)^T$\n$\theta_2 = \theta_1 + m_2 = (-0.4,0.6)^T$</X.P>
             </X.Oli>
             <X.H1>卷积神经网络</X.H1>
             <X.Oli reset>
@@ -549,7 +572,17 @@ export default function Blog({blogTitle}) {
             <X.Oli>
                 <X.P>卷积神经网络的经典结构有哪些？简单介绍一下近年来具有代表性的深度卷积神经网络的设计思路：</X.P>
                 <X.P noMarginBottom>答：有LeNet、AlexNet、VGG、ResNet等。</X.P>
-                <X.Uli>LeNet：</X.Uli>
+                <X.Uli>
+                    LeNet：可以达到手写数字识别在当时最好的结果，是卷积神经网络奠基性的工作，提出CNN的三个特性：局部感知、下采样、权值共享。
+                </X.Uli>
+                <X.Uli>
+                    AlexNet：使用`8`层卷积网络；Sigmoid激活函数改成了更加简单的ReLU；通过Dropout控制模型复杂度；引入大量图像增广的方法。
+                </X.Uli>
+                <X.Uli>
+                    VGG：提出了可以通过重复使用简单的基础块来构建深度模型的思路。使用三个`3`\*`3`卷积核代替`7`\*`7`卷积核，---
+                    使用两个`3`\*`3`卷积核代替`5`\*`5`卷积核，在保证具有相同感知野的条件下，提升了网络的深度，减小了网络参数，在一定程度上提升了神经网络的效果。
+                </X.Uli>
+                <X.Uli>ResNet：使用残差连接解决深度神经网络的退化问题。</X.Uli>
             </X.Oli>
             <X.H1>循环神经网络</X.H1>
             <X.H1>生成对抗网络</X.H1>

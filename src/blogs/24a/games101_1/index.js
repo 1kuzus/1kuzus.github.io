@@ -29,7 +29,7 @@ export default function Blog({blogTitle}) {
             <X.H2>旋转 Rotate</X.H2>
             <X.Formula
                 text="
-                \bm{R}(\theta)=
+                R(\theta)=
                 \begin{bmatrix}
                 \cos \theta & -\sin \theta \\
                 \sin \theta & \cos \theta
@@ -90,11 +90,11 @@ export default function Blog({blogTitle}) {
             </X.HighlightBlock>
             <X.H2>组合变换</X.H2>
             <X.P>
-                组合变换的矩阵顺序会影响结果，应该从右至左结合。\n 对于一点{`$\\bm{x}=(x,y,1)^T$`}先应用{`$\\bm{A}_1$`}
-                ，再应用{`$\\bm{A}_2 \\dots$`}，最后应用{`$\\bm{A}_n$`}，应该写为：
+                组合变换的矩阵顺序会影响结果，应该从右至左结合。\n对于一点{`$\\bm{x}=(x,y,1)^T$`}
+                先应用$A_1$，再应用$A_2\dots$，最后应用$A_n$，应该写为：
             </X.P>
             <X.HighlightBlock bgcolor="gray">
-                <X.Formula text="\bm{A}_n \dots \bm{A}_2 \bm{A}_1 \bm{x}" />
+                <X.Formula text="A_n \dots A_2 A_1 \bm{x}" />
             </X.HighlightBlock>
             <X.H1>3D变换</X.H1>
             <X.H2>一般形式</X.H2>
@@ -115,7 +115,7 @@ export default function Blog({blogTitle}) {
             <X.H3>绕坐标轴旋转</X.H3>
             <X.Formula
                 text="
-                \bm{R}_x(\theta)=
+                R_x(\theta)=
                 \begin{bmatrix}
                 1 & 0 & 0 & 0 \\
                 0 & \cos \theta & -\sin \theta & 0 \\
@@ -126,7 +126,7 @@ export default function Blog({blogTitle}) {
             />
             <X.Formula
                 text="
-                \bm{R}_y(\theta)=
+                R_y(\theta)=
                 \begin{bmatrix}
                 \cos \theta & 0 & \sin \theta & 0 \\
                 0 & 1 & 0 & 0 \\
@@ -137,7 +137,7 @@ export default function Blog({blogTitle}) {
             />
             <X.Formula
                 text="
-                \bm{R}_z(\theta)=
+                R_z(\theta)=
                 \begin{bmatrix}
                 \cos \theta & -\sin \theta & 0 & 0 \\
                 \sin \theta & \cos \theta & 0 & 0 \\
@@ -148,11 +148,11 @@ export default function Blog({blogTitle}) {
             />
             <X.H3>任意旋转</X.H3>
             <X.P>任何3D旋转都可以由上面三个基本矩阵得到：</X.P>
-            <X.Formula text="\bm{R}_{xyz}(\alpha,\beta,\gamma)=\bm{R}_x(\alpha)\bm{R}_y(\beta)\bm{R}_z(\gamma)" />
+            <X.Formula text="R_{xyz}(\alpha,\beta,\gamma)=R_x(\alpha)R_y(\beta)R_z(\gamma)" />
             <X.H3>罗德里格旋转公式</X.H3>
             <X.P>绕旋转轴{`$\\bm{n}=(n_x,n_y,n_z)^T$`}旋转$\theta$的旋转矩阵：</X.P>
             <X.Formula
-                text="\bm{R}(\bm{n},\theta)=\cos\theta\bm{I}+(1-\cos\theta)\bm{n}\bm{n}^T+\sin\theta     
+                text="R(\bm{n},\theta)=\cos\theta\bm{I}+(1-\cos\theta)\bm{n}\bm{n}^T+\sin\theta     
                 \begin{bmatrix}
                 0 & -n_z & n_y \\
                 n_z & 0 & -n_x \\
@@ -168,6 +168,44 @@ export default function Blog({blogTitle}) {
             <X.Uli>找到一个好场景，并安排好要拍照的人或物品（*模型变换*`Model Transformation`）</X.Uli>
             <X.Uli>找到一个好角度放置相机（*视图变换*`View Transformation`）</X.Uli>
             <X.Uli>按下快门，得到照片（*投影变换*`Projection Transformation`）</X.Uli>
+
+            <X.H2>标题</X.H2>
+            <X.P>
+                确定一个相机需要三个向量：\n相机位置{`$\\bm{e}$`}
+                、观测方向{`$\\bm{g}$`}（相机对着哪儿拍？）、向上方向{`$\\bm{t}$`}（横着，竖着，还是斜着拍？）
+            </X.P>
+            <X.P noMarginBottom>
+                通常约定相机固定在原点，观测{`$-\\bm{z}$`}方向，向上方向为{`$\\bm{y}$`}
+                。\n现在试着将上面描述的相机移动到约定位置，我们需要以下步骤：
+            </X.P>
+            <X.Uli>
+                <X.P>平移相机原本的中心点{`$\\bm{e}$`}到原点；</X.P>
+            </X.Uli>
+            <X.Uli>
+                <X.P>
+                    旋转观测方向{`$\\bm{g}$`}到{`$-\\bm{z}$`}；
+                </X.P>
+            </X.Uli>
+            <X.Uli>
+                <X.P>
+                    旋转向上方向{`$\\bm{t}$`}到{`$\\bm{y}$`}；
+                </X.P>
+            </X.Uli>
+            <X.P withMarginTop>
+                假设上述三个步骤可以用矩阵{`$M_{view}$`}表示，显然它们可以拆解为先平移、再旋转两步，也就是
+                {`$M_{view}=R_{view}T_{view}$`}；\n显然有：
+            </X.P>
+            <X.Formula
+                text="
+                T_{view}=
+                \begin{bmatrix}
+                1 & 0 & 0 & -x_e \\
+                0 & 1 & 0 & -y_e \\
+                0 & 0 & 1 & -z_e \\
+                0 & 0 & 0 & 1
+                \end{bmatrix}"
+            />
+            <X.P>接下来考虑旋转：</X.P>
         </X.BlogWrapper>
     );
 }
