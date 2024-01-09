@@ -28,8 +28,8 @@ function PaperSummary(props) {
 AI提问示例
 请分别回答下面五个问题：
 1.文章主要想解决什么问题？
-2.文章是如何做的，核心方法是什么？
-3.文章做了什么实验，效果怎么样？
+2.文章具体是如何做的，核心方法是什么？
+3.文章具体做了什么数据集上的实验，效果怎么样？
 4.研究有什么创新点？
 5.研究有什么限制或可以改进的地方？
 */
@@ -129,7 +129,11 @@ export default function Blog({blogTitle}) {
                     <>
                         <X.P>Instance NeRF有两个组件：预训练的NeRF模型、和文中提出的`Instance Field`。</X.P>
                         <X.P>`Instance Field`的训练过程如下：</X.P>
-                        <X.Image src={require('./instance_field.jpg')} width="96%" />
+                        <X.Image src={require('./instance_field.jpg')} width="96%" invertInDarkTheme />
+                        <X.P>
+                            NeRF-RCNN用预训练的NeRF提取的辐射场和密度场，为每个检测到的对象输出3D掩码；Mask2Former生成从NeRF渲染的图像的二维全景分割图---
+                            （跨视图的实例标签并不一定一致）。然后按照相机位置，投影3D掩码去匹配不同视图中的相同实例，去产生多视图一致的2D分割图。---
+                        </X.P>
                     </>
                 }
             />
@@ -140,6 +144,11 @@ export default function Blog({blogTitle}) {
                 <X.P>下图展示了更多种类的包围体：</X.P>
                 <X.Image src={require('./bounding_volumes.png')} width="100%" invertInDarkTheme />
             </X.HighlightBlock>
+            <X.H2 href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Cheng_CascadePSP_Toward_Class-Agnostic_and_Very_High-Resolution_Segmentation_via_Global_and_CVPR_2020_paper.pdf">
+                【CascadePSP】CascadePSP: Toward Class-Agnostic and Very High-Resolution Segmentation via Global and
+                Local Refinement (2020)
+            </X.H2>
+            <PaperSummary topic="提出一种不使用高分辨率训练数据，解决高分辨率分割问题的方法" method={<></>} />
             <X.H1>学习</X.H1>
             <X.H2 href="https://www.cv-foundation.org/openaccess/content_cvpr_2014/papers/Girshick_Rich_Feature_Hierarchies_2014_CVPR_paper.pdf">
                 【R-CNN】Rich Feature Hierarchies for Accurate Object Detection and Semantic Segmentation (2014)
@@ -163,7 +172,7 @@ export default function Blog({blogTitle}) {
                 <X.P>
                     R-CNN的速度很慢，因为可能从一张图像中选出上千个提议区域，这需要上千次的卷积神经网络的前向传播来执行目标检测。这种庞大的计算量使得R-CNN在现实世界中难以被广泛应用。
                 </X.P>
-                <X.Image src={require('./rcnn.jpg')} width="600px" />
+                <X.Image src={require('./rcnn.jpg')} width="600px" invertInDarkTheme />
                 <X.H3>Fast R-CNN</X.H3>
                 <X.P>
                     R-CNN的主要性能瓶颈在于，对每个提议区域，卷积神经网络的前向传播是独立的，而没有共享计算。由于这些区域通常有重叠，独立的特征抽取会导致重复的计算。---
@@ -179,7 +188,7 @@ export default function Blog({blogTitle}) {
                     Fast R-CNN先对图片用CNN抽取特征，然后将`selective
                     search`给出的原图上的提议区域映射到CNN特征图上，再经过`ROI Pooling`就可以得到维度对齐的特征。
                 </X.P>
-                <X.Image src={require('./fastrcnn.jpg')} width="400px" />
+                <X.Image src={require('./fastrcnn.jpg')} width="400px" invertInDarkTheme />
                 <X.H3>Faster R-CNN</X.H3>
                 <X.P>
                     与Fast R-CNN相比，Faster R-CNN将生成提议区域的方法从`selective search`改为了---
@@ -188,7 +197,7 @@ export default function Blog({blogTitle}) {
                     的目标函数不仅包括目标检测中的类别和边界框预测，还包括区域提议网络中锚框的二元类别和边界框预测。作为端到端训练的结果，---
                     区域提议网络能够学习到如何生成高质量的提议区域，从而在减少了从数据中学习的提议区域的数量的情况下，仍保持目标检测的精度。
                 </X.P>
-                <X.Image src={require('./fasterrcnn.jpg')} width="600px" />
+                <X.Image src={require('./fasterrcnn.jpg')} width="600px" invertInDarkTheme />
             </X.HighlightBlock>
             <X.H2 href="https://arxiv.org/pdf/1703.06870.pdf">【Mask R-CNN】Mask R-CNN (2017)</X.H2>
             <PaperSummary
@@ -204,7 +213,7 @@ export default function Blog({blogTitle}) {
                 }
                 experiment={
                     <>
-                        <X.Image src={require('./maskrcnn2.jpg')} width="600px" />
+                        <X.Image src={require('./maskrcnn2.jpg')} width="600px" invertInDarkTheme />
                         <X.P>在COCO数据集上表现优异，超过了`2015`和`2016`年COCO分割任务的冠军。</X.P>
                     </>
                 }
@@ -221,6 +230,33 @@ export default function Blog({blogTitle}) {
                     *语义分割*`(semantic segmentation)`：为每一个像素分配一个类别，但不区分同一类别之间的对象。
                 </X.P>
                 <X.P>*实例分割*`(instance segmentation)`：会区分属于同一类别的不同实例。</X.P>
+            </X.HighlightBlock>
+            <X.H2 href="https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Long_Fully_Convolutional_Networks_2015_CVPR_paper.pdf">
+                【FCN】Fully Convolutional Networks for Semantic Segmentation (2015)
+            </X.H2>
+            <PaperSummary
+                topic="使用全卷积网络进行语义分割"
+                method="
+                是将现有的分类网络（AlexNet、VGG Net、GoogLeNet）改造为全卷积网络，以便在语义分割任务上进行端到端（输入图像，输出分割掩码）的训练。\n
+                改造的方式是将最后的全连接层替换成卷积层。
+                "
+            />
+            <X.HighlightBlock bgcolor="gray">
+                <X.H3>更多笔记</X.H3>
+                <X.H3>转置卷积</X.H3>
+                <X.P>
+                    卷积通常不会增大输入的高宽，而是保持不变或降低。由于语义分割任务需要像素级别的输出，转置卷积被用来增大输入的高宽。
+                </X.P>
+                <X.Image src={require('./transpose_convolution.jpg')} width="600px" invertInDarkTheme />
+                <X.P>
+                    图片转载自@动手学深度学习 -
+                    转置卷积[https://zh-v2.d2l.ai/chapter_computer-vision/transposed-conv.html]@
+                </X.P>
+                <X.H3>FCN中的转置卷积</X.H3>
+                <X.P>
+                    例如对于ImageNet的图片输入，大小通常为`224`\*`224`\*`3`（RGB通道）；经过卷积后缩小宽高缩小`32`倍，通道增加到`512`，变成`7`\*`7`\*`512`的特征图。---
+                    此时FCN会先通过一个`1x1conv`进行通道降维，然后通过转置卷积将特征图的高度和宽度增加`32`倍，*输出通道数等于类别数*，相当于储存了对每一类的预测结果。
+                </X.P>
             </X.HighlightBlock>
         </X.BlogWrapper>
     );
