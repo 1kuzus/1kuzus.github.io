@@ -42,7 +42,7 @@ function UpdateLog() {
         {date: '2023-08-29', description: '由于`highlight.js`库对jsx的高亮支持不好，决定采用`prism.js`作为代码高亮库'},
         {
             date: '2023-08-30',
-            description: '新组件`Formula`，使用`katex`作为公式渲染库\\n修改路由表定义逻辑，根据分类目录文件导入路由项',
+            description: '新组件`Formula`，使用`Katex`作为公式渲染库\\n修改路由表定义逻辑，根据分类目录文件导入路由项',
         },
         {
             date: '2023-08-31',
@@ -64,26 +64,30 @@ function UpdateLog() {
             date: '2023-11-19',
             description: '后部署脚本中加入生成`@sitemap.xml[/sitemap.xml]@`\\n用`<noscript>`标签作为临时SEO方案',
         },
-        {date: '2023-12-01', description: '优化目录生成逻辑，不要求同一博客内标题不重复'},
+        {date: '2023-12-01', description: '优化目录生成逻辑，同一博客内标题可以重复'},
         {date: '2023-12-02', description: '图片组件新增可选的在暗色模式下自动反转颜色的功能'},
         {date: '2023-12-05', description: '标题组件`H1``H2``H3`支持超链接'},
         {date: '2023-12-06', description: '博客标题自动从分类目录文件同步'},
         {date: '2023-12-17', description: '支持直接在列表项中写含有段落组件特殊格式的文本'},
         {date: '2023-12-29', description: '更新了表格组件样式\\n优化了首页博客列表和侧栏列表高度自动过渡的实现方法'},
         {date: '2023-12-30', description: '略微调整首页博客列表样式'},
-        {date: '2023-12-30', description: '略微调整首页博客列表样式'},
-        {date: '2023-12-31', description: '更新`Version 1.0`！'},
+        {version: '1.0'},
         {date: '2024-01-08', description: '新的SEO方案：使用`react-snap`作预渲染\\n加入`404`页面'},
         {date: '2024-01-09', description: '更新`404`页面'},
+        {version: '1.1'},
     ];
     return (
         <>
             {logs.reverse().map((log, index) => (
                 <div key={index}>
-                    <X.FlexRow gap="16px">
-                        <X.P>`{log.date}`</X.P>
-                        <X.P>{log.description}</X.P>
-                    </X.FlexRow>
+                    {log.version ? (
+                        <X.H3>Version {log.version}</X.H3>
+                    ) : (
+                        <X.FlexRow gap="16px">
+                            <X.P>`{log.date}`</X.P>
+                            <X.P>{log.description}</X.P>
+                        </X.FlexRow>
+                    )}
                 </div>
             ))}
         </>
