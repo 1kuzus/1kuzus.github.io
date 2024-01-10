@@ -14,6 +14,7 @@ import B97t6 from './23d/r2plus1d';
 import Bkdzq from './24a/games101_1';
 import Brro7 from './24a/machine_learning_exercises';
 import Bnoay from './24a/reproduce_nerf_rpn';
+import Btkp2 from './24a/topk';
 import B0000 from './longtime/demo';
 import Bo8sr from './longtime/papers';
 import B0001 from './longtime/update_log';
@@ -67,6 +68,17 @@ const categories = [
                 path: '/bnoay/',
                 time: '2024-01-01',
                 component: <Bnoay />,
+            },
+        ],
+    },
+    {
+        categoryName: 'Python学习',
+        blogs: [
+            {
+                blogTitle: '在numpy和pytorch中取top-k值和索引',
+                path: '/btkp2/',
+                time: '2024-1-10',
+                component: <Btkp2 />,
             },
         ],
     },

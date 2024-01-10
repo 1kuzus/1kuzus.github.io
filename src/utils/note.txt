@@ -7,3 +7,6 @@ npm run rand
 npm run deploy
 npx gh-pages -d build
 node .\src\utils\afterBuild.js
+
+匹配非汉字/非汉字标点/非ASCII字符
+[^\u4e00-\u9fa5a\p{ASCII}\p{P}]

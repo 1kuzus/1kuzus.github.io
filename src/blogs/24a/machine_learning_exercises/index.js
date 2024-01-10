@@ -585,6 +585,74 @@ export default function Blog({blogTitle}) {
                 <X.Uli>ResNet：使用残差连接解决深度神经网络的退化问题。</X.Uli>
             </X.Oli>
             <X.H1>循环神经网络</X.H1>
+            <X.Oli reset>
+                <X.P>
+                    RNN的基本结构包括三个主要组件，其中（）接收输入序列，（）负责记忆和传递信息，（）产生最终输出。
+                </X.P>
+                <X.P>答：输入层、隐藏层、输出层。</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P>（）可能导致数值溢出，（）可能导致长时依赖问题。应对策略可能包括梯度截断、使用LSTM或GRU等。</X.P>
+                <X.P>答：梯度爆炸、梯度消失。</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P>LSTM中（）决定遗忘多少之前的记忆，（）决定存储多少新的信息，（）决定记忆细胞的哪部分被输出。</X.P>
+                <X.P>答：遗忘门、输入门、输出门。</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P noMarginBottom>为什么在某些任务中选择使用RNN而不是其他神经网络结构？</X.P>
+                <X.P noMarginBottom>`a.`处理序列数据</X.P>
+                <X.P noMarginBottom>`b.`具有记忆能力</X.P>
+                <X.P noMarginBottom>`c.`适用于时序关系建模</X.P>
+                <X.P>`d.`所有选项都正确</X.P>
+                <X.P>答：`d`</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P noMarginBottom>LSTM和GRU是RNN的两种常见变体，它们的主要区别是什么？</X.P>
+                <X.P noMarginBottom>`a.`LSTM有三个门，而GRU只有两个门</X.P>
+                <X.P noMarginBottom>`b.`LSTM具有记忆细胞和输入门</X.P>
+                <X.P noMarginBottom>`c.`GRU相对于LSTM参数更少</X.P>
+                <X.P>`d.`所有选项都正确</X.P>
+                <X.P>答：`d`</X.P>
+            </X.Oli>
+            <X.HighlightBlock bgcolor="red">
+                <X.P>
+                    *门控循环单元*`(Gated Recurrent Unit, GRU)`通过简化LSTM神经网络循环函数达到了类似的效果---
+                    并节省了计算成本。在GRU中，遗忘门和输入门合并成了一个新的重置门，且加入了一个更新门。
+                </X.P>
+            </X.HighlightBlock>
+            <X.Br />
+            <X.Oli>
+                <X.P noMarginBottom>在训练中，如果梯度爆炸发生，可能会导致什么问题？</X.P>
+                <X.P noMarginBottom>`a.`数值溢出</X.P>
+                <X.P noMarginBottom>`b.`模型参数不稳定</X.P>
+                <X.P noMarginBottom>`c.`训练无法收敛</X.P>
+                <X.P>`d.`所有选项都正确</X.P>
+                <X.P>答：`d`</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P noMarginBottom>对于长序列的处理，LSTM和GRU相对于传统RNN具有哪些优势？</X.P>
+                <X.P noMarginBottom>`a.`更好地捕捉长时依赖关系</X.P>
+                <X.P noMarginBottom>`b.`减缓梯度消失问题</X.P>
+                <X.P noMarginBottom>`c.`更适用于时间序列建模</X.P>
+                <X.P>`d.`所有选项都正确</X.P>
+                <X.P>答：`d`</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P>当训练长序列时，梯度爆炸和梯度消失问题可能变得更加显著。请简要解释为什么会出现这些问题。</X.P>
+                <X.P>答：在长序列中梯度反向传播的时候可能多次相乘，导致指数级增长或减小。</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P>在选择LSTM或GRU时，你会在什么情况下更倾向于选择其中之一？</X.P>
+                <X.P>答：需要更复杂建模能力时选择LSTM，当计算成本和参数量更为重要时选择GRU。</X.P>
+            </X.Oli>
             <X.H1>生成对抗网络</X.H1>
         </X.BlogWrapper>
     );
