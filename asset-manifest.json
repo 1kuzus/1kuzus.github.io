@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.537669bb.css",
-    "main.js": "/static/js/main.7dd45976.js",
+    "main.css": "/static/css/main.d9b1ff02.css",
+    "main.js": "/static/js/main.9a97426c.js",
     "static/media/fig2.jpg": "/static/media/fig2.fca0039b198d15e1d1ea.jpg",
     "static/media/fig1.jpg": "/static/media/fig1.8fbf2a01707f9a018b70.jpg",
     "static/media/sw.png": "/static/media/sw.6c99883b5301d8cc7c4d.png",
@@ -17,6 +17,7 @@
     "static/media/KaTeX_Main-Regular.ttf": "/static/media/KaTeX_Main-Regular.9eba1d77abcf2aa6e94e.ttf",
     "static/media/ip.png": "/static/media/ip.abb499878a29c8a3d493.png",
     "static/media/rnn2.png": "/static/media/rnn2.fa69f5128a81f0a65cb5.png",
+    "static/media/cascadepsp.jpg": "/static/media/cascadepsp.6e40ef664ae3ba942f27.jpg",
     "static/media/KaTeX_Main-Bold.ttf": "/static/media/KaTeX_Main-Bold.8169508bf58f8bd92ad8.ttf",
     "static/media/rcnn.jpg": "/static/media/rcnn.b2dfd79c8026243a9b0d.jpg",
     "static/media/tcp1.jpg": "/static/media/tcp1.5ac0f05b271071a7f481.jpg",
@@ -50,6 +51,7 @@
     "static/media/KaTeX_AMS-Regular.woff2": "/static/media/KaTeX_AMS-Regular.73ea273a72f4aca30ca5.woff2",
     "static/media/bgp1.png": "/static/media/bgp1.fa13363163d372089df8.png",
     "static/media/KaTeX_Typewriter-Regular.ttf": "/static/media/KaTeX_Typewriter-Regular.c5c02d763c89380dcb4e.ttf",
+    "static/media/transpose_convolution.jpg": "/static/media/transpose_convolution.4144b2ce80103d58de3c.jpg",
     "static/media/lstm6.png": "/static/media/lstm6.92c381737b838cd6a865.png",
     "static/media/KaTeX_Main-Regular.woff2": "/static/media/KaTeX_Main-Regular.f650f111a3b890d116f1.woff2",
     "static/media/KaTeX_Main-Bold.woff2": "/static/media/KaTeX_Main-Bold.39890742bc957b368704.woff2",
@@ -91,6 +93,7 @@
     "static/media/KaTeX_Size1-Regular.ttf": "/static/media/KaTeX_Size1-Regular.6de7d4b539221a49e9e2.ttf",
     "static/media/KaTeX_SansSerif-Bold.woff2": "/static/media/KaTeX_SansSerif-Bold.95591a929f0d32aa282a.woff2",
     "static/media/KaTeX_SansSerif-Italic.woff2": "/static/media/KaTeX_SansSerif-Italic.7d393d382f3e7fb1c637.woff2",
+    "static/media/cry.gif": "/static/media/cry.fe178b53921b433a7927.gif",
     "static/media/KaTeX_Size2-Regular.ttf": "/static/media/KaTeX_Size2-Regular.57f5c1837853986ea1db.ttf",
     "static/media/KaTeX_Fraktur-Bold.woff2": "/static/media/KaTeX_Fraktur-Bold.931d67ea207ab37ee693.woff2",
     "static/media/KaTeX_Fraktur-Regular.woff2": "/static/media/KaTeX_Fraktur-Regular.172d3529b26f8cedef6b.woff2",
@@ -113,11 +116,11 @@
     "static/media/KaTeX_Size3-Regular.woff": "/static/media/KaTeX_Size3-Regular.7947224e8a9914fa332b.woff",
     "static/media/KaTeX_Size3-Regular.woff2": "/static/media/KaTeX_Size3-Regular.e1951519f6f0596f7356.woff2",
     "index.html": "/index.html",
-    "main.537669bb.css.map": "/static/css/main.537669bb.css.map",
-    "main.7dd45976.js.map": "/static/js/main.7dd45976.js.map"
+    "main.d9b1ff02.css.map": "/static/css/main.d9b1ff02.css.map",
+    "main.9a97426c.js.map": "/static/js/main.9a97426c.js.map"
   },
   "entrypoints": [
-    "static/css/main.537669bb.css",
-    "static/js/main.7dd45976.js"
+    "static/css/main.d9b1ff02.css",
+    "static/js/main.9a97426c.js"
   ]
 }
