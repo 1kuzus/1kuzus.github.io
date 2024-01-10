@@ -148,7 +148,14 @@ export default function Blog({blogTitle}) {
                 【CascadePSP】CascadePSP: Toward Class-Agnostic and Very High-Resolution Segmentation via Global and
                 Local Refinement (2020)
             </X.H2>
-            <PaperSummary topic="提出一种不使用高分辨率训练数据，解决高分辨率分割问题的方法" method={<></>} />
+            <PaperSummary
+                topic={
+                    <>
+                        <X.P>提出一种不使用高分辨率训练数据，解决高分辨率分割问题的方法\n右图是改进后的结果：</X.P>
+                        <X.Image src={require('./cascadepsp.jpg')} width="400px" invertInDarkTheme />
+                    </>
+                }
+            />
             <X.H1>学习</X.H1>
             <X.H2 href="https://www.cv-foundation.org/openaccess/content_cvpr_2014/papers/Girshick_Rich_Feature_Hierarchies_2014_CVPR_paper.pdf">
                 【R-CNN】Rich Feature Hierarchies for Accurate Object Detection and Semantic Segmentation (2014)
