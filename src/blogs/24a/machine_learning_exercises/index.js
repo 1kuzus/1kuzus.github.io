@@ -654,11 +654,143 @@ export default function Blog({blogTitle}) {
                 <X.P>答：需要更复杂建模能力时选择LSTM，当计算成本和参数量更为重要时选择GRU。</X.P>
             </X.Oli>
             <X.H1>生成对抗网络</X.H1>
+            <X.Oli reset>
+                <X.P>目标函数的构造过程中，生成器的目标是最小化生成样本与（）之间的差异。</X.P>
+                <X.P>答：真实样本。</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P>在生成对抗网络的训练过程中，生成器通过（）来调整生成的样本。</X.P>
+                <X.P>答：梯度下降。</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P noMarginBottom>生成对抗网络的目标函数包括以下哪个部分？</X.P>
+                <X.P noMarginBottom>`a.`生成器误差</X.P>
+                <X.P noMarginBottom>`b.`判别器误差</X.P>
+                <X.P noMarginBottom>`c.`生成器和判别器误差</X.P>
+                <X.P>`d.`目标函数不包括误差</X.P>
+                <X.P>答：`c`</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P noMarginBottom>目标函数的全局最优解表示什么情况？</X.P>
+                <X.P noMarginBottom>`a.`生成器和判别器都失效</X.P>
+                <X.P noMarginBottom>`b.`生成器和判别器都取得最佳效果</X.P>
+                <X.P noMarginBottom>`c.`生成器失效，判别器最优</X.P>
+                <X.P>`d.`判别器失效，生成器最优</X.P>
+                <X.P>答：`b`</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P noMarginBottom>在生成对抗网络的训练中，判别器的任务是？</X.P>
+                <X.P noMarginBottom>`a.`最大化生成样本的相似度</X.P>
+                <X.P noMarginBottom>`b.`最小化生成样本的相似度</X.P>
+                <X.P noMarginBottom>`c.`区分真实样本和生成样本</X.P>
+                <X.P>`d.`不参与训练</X.P>
+                <X.P>答：`c`</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P noMarginBottom>生成对抗网络的训练过程中，生成器的优化目标是？</X.P>
+                <X.P noMarginBottom>`a.`最大化生成样本的相似度</X.P>
+                <X.P noMarginBottom>`b.`最小化生成样本的相似度</X.P>
+                <X.P noMarginBottom>`c.`欺骗判别器，使其无法区分真实样本和生成样本</X.P>
+                <X.P>`d.`保持生成样本的多样性</X.P>
+                <X.P>答：`c`</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P noMarginBottom>生成对抗网络的训练中，为什么需要协调生成器和判别器的训练？</X.P>
+                <X.P noMarginBottom>`a.`使生成器过拟合</X.P>
+                <X.P noMarginBottom>`b.`保持判别器过拟合</X.P>
+                <X.P noMarginBottom>`c.`实现平衡，避免其中一个过于强大</X.P>
+                <X.P>`d.`判别器不需要训练</X.P>
+                <X.P>答：`c`</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P noMarginBottom>在生成对抗网络中，使用哪种损失函数来衡量生成器生成样本的质量？</X.P>
+                <X.P noMarginBottom>`a.`交叉熵损失</X.P>
+                <X.P noMarginBottom>`b.`均方误差损失</X.P>
+                <X.P noMarginBottom>`c.`对抗损失</X.P>
+                <X.P>`d.`KL散度损失</X.P>
+                <X.P>答：`c`</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P>对传统生成对抗网络有哪些改进方法？</X.P>
+                <X.P noMarginBottom>答：传统GAN存在的问题：</X.P>
+                <X.Uli>
+                    <X.P noMarginBottom>
+                        梯度消失，JS散度的问题：只要两分布没有重叠部分或重叠部分可忽略，JS散度恒为$\log2$，目标函数为$0$。---
+                        当判别器最优时，生成器无法获得任何梯度信息，梯度消失，无法训练。
+                    </X.P>
+                    <X.P noMarginBottom>改进办法：</X.P>
+                    <X.Oli reset>不把判别器训练的太好；</X.Oli>
+                    <X.Oli>
+                        给生成数据和真实数据加噪声，强行让生成数据与真实数据在高维空间产生重叠，JS散度就可以发挥作用。
+                    </X.Oli>
+                </X.Uli>
+                <X.Uli>
+                    <X.P noMarginBottom>模式崩溃：生成图像中相同的图像多次出现，造成生成数据多样性不足。</X.P>
+                    <X.P noMarginBottom>改进办法：</X.P>
+                    <X.Oli reset>
+                        从目标函数考虑：经验发现，当GAN出现模式崩溃问题时，通常判别器在真实样本附近更新参数时，其梯度值非常大。---
+                        可对判别器在真实样本附近施加梯度惩罚项。试图在真实样本附近构建线性函数，因为线性函数为凸函数具有全局最优解。（DRAGAN）
+                    </X.Oli>
+                    <X.Oli>
+                        从网络架构考虑：即使单个生成器会产生模式崩溃的问题，但是如果同时构造多个生成器，且让每个生成器产生不同的模式，---
+                        则这样的多生成器结合起来也可以保证产生的样本具有多样性。（Multi-Agent Diverse GAN）
+                    </X.Oli>
+                </X.Uli>
+                <X.P noMarginBottom withMarginTop>
+                    一些其他的改进：
+                </X.P>
+                <X.Uli>
+                    Wasserstein GAN：提出是为了解决传统GAN遇到的梯度消失、训练时梯度不稳定以及模式崩溃等问题。---
+                    使用Wasserstein距离来衡量两分布之间的距离，抛弃了KL散度与JS散度。
+                </X.Uli>
+                <X.Uli>
+                    WGAN-GP`(gradient penalty)`：不再使用Wasserstein GAN中梯度裁剪的方式来粗暴地限制参数范围。
+                </X.Uli>
+            </X.Oli>
             <X.H1>强化学习</X.H1>
             <X.Oli reset>
                 <X.P>最优动作价值函数依赖于（）。</X.P>
                 <X.P>答：状态、行动。</X.P>
             </X.Oli>
+            <X.HighlightBlock bgcolor="red">
+                <X.Uli>
+                    *策略*：智能体根据状态进行下一步行动的函数。\n确定性策略：$\pi(s)=a$，即状态$s$下执行动作$a$\n
+                    随机性策略：$\pi(s,a)=p$，即在状态$s$下执行动作$a$的概率为$p$
+                </X.Uli>
+                <X.Uli>*奖励*`(reward)`：在$t$时刻得到的奖励$R_t$，$R_t$依赖于$s_t$和$a_t$。</X.Uli>
+                <X.Uli>
+                    <X.P>
+                        *回报*`(return)`：在$t$时刻的*折扣回报*是
+                        {`$U_t=R_t+\\gamma R_{t+1}+\\gamma^2 R_{t+2}+\\dots$`}
+                    </X.P>
+                </X.Uli>
+                <X.Uli>
+                    <X.P>
+                        *动作价值函数*：{`$Q_{\\pi}(s_t,a_t)=\\text{E}(U_t|s_t,a_t)$`}
+                        ，评估智能体在状态$s_t$时选择动作$a_t$有多好。
+                    </X.P>
+                </X.Uli>
+                <X.Uli>
+                    <X.P>
+                        *状态价值函数*：{`$V_{\\pi}(s_t)=\\text{E}(Q_{\\pi})=\\sum_a\\pi(s_t,a)Q_{\\pi}(s_t,a)$`}
+                        ，评估智能体在状态$s_t$有多好。
+                    </X.P>
+                </X.Uli>
+                <X.Uli>
+                    <X.P>
+                        *最优动作价值函数*：{`$Q^{\\ast}(s_t,a_t)=\\max_{\\pi}Q_{\\pi}(s_t,a_t)$`}
+                        ，无论采用何种策略在状态$s_t$下选择动作$a_t$的最优结果。
+                    </X.P>
+                </X.Uli>
+            </X.HighlightBlock>
             <X.Br />
             <X.Oli>
                 <X.P>DQN是对（）的近似。</X.P>
@@ -674,7 +806,7 @@ export default function Blog({blogTitle}) {
             </X.Oli>
             <X.Br />
             <X.Oli>
-                <X.P noMarginBottom>
+                <X.P>
                     设{`$A=\\{上,下,左,右\\}$`}为动作空间，$s_t$为当前状态，$\pi$为策略函数，其输出：\n
                     $\pi(上|s_t)=0.2$\n $\pi(下|s_t)=0.05$\n $\pi(左|s_t)=0.7$\n $\pi(右|s_t)=0.15$\n
                     请问，哪个动作会成为$a_t$?
@@ -682,7 +814,7 @@ export default function Blog({blogTitle}) {
                 <X.P noMarginBottom>`a.`下</X.P>
                 <X.P noMarginBottom>`b.`左</X.P>
                 <X.P>`c.`都有可能</X.P>
-                <X.P>答：`b`</X.P>
+                <X.P>答：`c`</X.P>
             </X.Oli>
             <X.Br />
             <X.Oli>
@@ -702,7 +834,7 @@ export default function Blog({blogTitle}) {
                 <X.P noMarginBottom>`b.`回报</X.P>
                 <X.P noMarginBottom>`c.`状态</X.P>
                 <X.P>`d.`动作</X.P>
-                <X.P>答：`d`</X.P>
+                <X.P>答：`b`</X.P>
             </X.Oli>
             <X.Br />
             <X.Oli>
@@ -714,45 +846,39 @@ export default function Blog({blogTitle}) {
                 <X.P noMarginBottom>`a.`上</X.P>
                 <X.P noMarginBottom>`b.`下</X.P>
                 <X.P>`c.`都有可能</X.P>
-                <X.P>答：`b`</X.P>
+                <X.P>答：`a`</X.P>
             </X.Oli>
             <X.Br />
             <X.Oli>
                 <X.P noMarginBottom>DQN的输出层用什么激活函数？</X.P>
-                <X.P noMarginBottom>`a.`不需要激活函数，因为Q值可正可负，没有取值范围</X.P>
-                <X.P noMarginBottom>`b.`用sigmoid激活函数，因为Q值介于0和1之间</X.P>
-                <X.P noMarginBottom>`c.`用ReLU激活函数，因为Q值非负</X.P>
+                <X.P noMarginBottom>`a.`不需要激活函数，因为$Q$值可正可负，没有取值范围</X.P>
+                <X.P noMarginBottom>`b.`用sigmoid激活函数，因为$Q$值介于$0$和$1$之间</X.P>
+                <X.P noMarginBottom>`c.`用ReLU激活函数，因为$Q$值非负</X.P>
                 <X.P>`d.`用SoftMax激活函数，因为DQN的输出是一个概率分布</X.P>
-                <X.P>答：`d`</X.P>
+                <X.P>答：`a`</X.P>
             </X.Oli>
-            <X.Br />
-            <X.Oli>
-                <X.P noMarginBottom>
-                    多臂赌博机是单步强化学习的经典范例，$\epsilon$贪心算法和softmax算法用于处理什么问题？{' '}
+            <X.HighlightBlock bgcolor="red">
+                <X.P>
+                    DQN的目标是估计每个可能动作的$Q$值（动作价值函数），而这些$Q$值可以是任意实数。如果在输出层使用了某种激活函数，它可能会对输出值进行限制，导致无法灵活地表示$Q$值。
                 </X.P>
-                <X.P noMarginBottom>`a.`探索-利用问题</X.P>
-                <X.P noMarginBottom>`b.`奖励函数优化问题</X.P>
-                <X.P noMarginBottom>`c.`动作选择问题</X.P>
-                <X.P>`d.`状态空间问题</X.P>
-                <X.P>答：`d`</X.P>
-            </X.Oli>
+            </X.HighlightBlock>
             <X.Br />
             <X.Oli>
                 <X.P noMarginBottom>DQN是基于什么的强化学习方法？</X.P>
-                <X.P noMarginBottom>`a.`基于值的方法</X.P>
+                <X.P noMarginBottom>`a.`基于价值的方法</X.P>
                 <X.P noMarginBottom>`b.`基于策略的方法</X.P>
                 <X.P noMarginBottom>`c.`基于模型的方法</X.P>
                 <X.P>`d.`基于探索的方法</X.P>
-                <X.P>答：`d`</X.P>
+                <X.P>答：`a`</X.P>
             </X.Oli>
             <X.Br />
             <X.Oli>
                 <X.P noMarginBottom>TD gradient是与哪种强化学习方法相关的概念</X.P>
-                <X.P noMarginBottom>`a.`基于值的方法</X.P>
+                <X.P noMarginBottom>`a.`基于价值的方法</X.P>
                 <X.P noMarginBottom>`b.`基于策略的方法</X.P>
                 <X.P noMarginBottom>`c.`基于模型的方法</X.P>
                 <X.P>`d.`基于探索的方法</X.P>
-                <X.P>答：`d`</X.P>
+                <X.P>答：`a`</X.P>
             </X.Oli>
             <X.Br />
             <X.Oli>
