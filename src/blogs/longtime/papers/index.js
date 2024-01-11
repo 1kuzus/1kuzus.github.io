@@ -133,6 +133,7 @@ export default function Blog({blogTitle}) {
                         <X.P>
                             NeRF-RCNN用预训练的NeRF提取的辐射场和密度场，为每个检测到的对象输出3D掩码；Mask2Former生成从NeRF渲染的图像的二维全景分割图---
                             （跨视图的实例标签并不一定一致）。然后按照相机位置，投影3D掩码去匹配不同视图中的相同实例，去产生多视图一致的2D分割图。---
+                            CascadePSP用于细化2D mask。
                         </X.P>
                     </>
                 }

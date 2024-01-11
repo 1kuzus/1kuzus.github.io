@@ -156,17 +156,12 @@
 		],
 		"description": "X.Table tag"
 	},
-	"X.Table from text": {
+	"inline latex": {
 		"scope": "javascript,typescript",
-		"prefix": "xtft",
+		"prefix": "il",
 		"body": [
-			"<X.Table",
-			"\tfromText={`",
-			"\t$1||",
-			"\t||",
-			"\t`}",
-			"/>",
+			"{`$$1$`}",
 		],
-		"description": "X.Table from text"
+		"description": "inline latex"
 	}
 }

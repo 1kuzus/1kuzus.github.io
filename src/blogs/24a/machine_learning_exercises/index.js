@@ -14,7 +14,7 @@ export default function Blog({blogTitle}) {
                 <X.P>
                     正样本点是$x_1=(3,3)^T$和$x_2=(4,3)^T$，负样本点是$x_3=(1,1)^T$，用梯度下降求解感知机模型，初始参数取$0$。
                 </X.P>
-                <X.P>答：维度增广：$x_1=(3,3,1)^T$，$x_2=(4,3,1)^T$，$x_3=(1,1,1)^T$</X.P>
+                <X.P>答：维度增广：$x_1=(3,3,1)^T$、$x_2=(4,3,1)^T$、$x_3=(1,1,1)^T$</X.P>
                 <X.Table>
                     <tr>
                         <th>次数</th>
@@ -654,6 +654,115 @@ export default function Blog({blogTitle}) {
                 <X.P>答：需要更复杂建模能力时选择LSTM，当计算成本和参数量更为重要时选择GRU。</X.P>
             </X.Oli>
             <X.H1>生成对抗网络</X.H1>
+            <X.H1>强化学习</X.H1>
+            <X.Oli reset>
+                <X.P>最优动作价值函数依赖于（）。</X.P>
+                <X.P>答：状态、行动。</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P>DQN是对（）的近似。</X.P>
+                <X.P>答：Q函数。</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P>
+                    驾车按照“甲、乙、丙”行驶，从甲地出发，模型预计需要行驶$20$小时，实际行驶$6$小时到达乙地，模型预计还需$12$个小时到达丙地，---
+                    如果我们用TD算法更新模型，TD目标$y$小时，TD绝对误差值$|\delta|$小时。$y$和$|\delta|$是多少？
+                </X.P>
+                <X.P>答：$y=18$、$|\delta|=2$。</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P noMarginBottom>
+                    设{`$A=\\{上,下,左,右\\}$`}为动作空间，$s_t$为当前状态，$\pi$为策略函数，其输出：\n
+                    $\pi(上|s_t)=0.2$\n $\pi(下|s_t)=0.05$\n $\pi(左|s_t)=0.7$\n $\pi(右|s_t)=0.15$\n
+                    请问，哪个动作会成为$a_t$?
+                </X.P>
+                <X.P noMarginBottom>`a.`下</X.P>
+                <X.P noMarginBottom>`b.`左</X.P>
+                <X.P>`c.`都有可能</X.P>
+                <X.P>答：`b`</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P noMarginBottom>设随机变量$U_t$为$t$时刻的回报，请问$U_t$依赖于哪些变量？</X.P>
+                <X.P noMarginBottom>`a.`$t$时刻的状态$S_t$</X.P>
+                <X.P noMarginBottom>`b.`$t$时刻的动作$A_t$</X.P>
+                <X.P noMarginBottom>`c.`$S_t$和$A_t$</X.P>
+                <X.P>
+                    `d.`{`$S_t,S_{t+1},S_{t+2}\\dots$`}和{`$A_t,A_{t+1},A_{t+2}\\dots$`}
+                </X.P>
+                <X.P>答：`d`</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P noMarginBottom>动作价值函数是什么的期望？</X.P>
+                <X.P noMarginBottom>`a.`奖励</X.P>
+                <X.P noMarginBottom>`b.`回报</X.P>
+                <X.P noMarginBottom>`c.`状态</X.P>
+                <X.P>`d.`动作</X.P>
+                <X.P>答：`d`</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P noMarginBottom>
+                    设{`$A=\\{上,下,左,右\\}$`}为动作空间，$s_t$为当前状态，$Q^\ast$为最优动作价值函数，其输出：\n
+                    $Q^\ast(s_t,上)=930$\n$Q^\ast(s_t,下)=-60$\n$Q^\ast(s_t,左)=120$\n$Q^\ast(s_t,右)=321$\n
+                    请问，哪个动作会成为$a_t$?
+                </X.P>
+                <X.P noMarginBottom>`a.`上</X.P>
+                <X.P noMarginBottom>`b.`下</X.P>
+                <X.P>`c.`都有可能</X.P>
+                <X.P>答：`b`</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P noMarginBottom>DQN的输出层用什么激活函数？</X.P>
+                <X.P noMarginBottom>`a.`不需要激活函数，因为Q值可正可负，没有取值范围</X.P>
+                <X.P noMarginBottom>`b.`用sigmoid激活函数，因为Q值介于0和1之间</X.P>
+                <X.P noMarginBottom>`c.`用ReLU激活函数，因为Q值非负</X.P>
+                <X.P>`d.`用SoftMax激活函数，因为DQN的输出是一个概率分布</X.P>
+                <X.P>答：`d`</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P noMarginBottom>
+                    多臂赌博机是单步强化学习的经典范例，$\epsilon$贪心算法和softmax算法用于处理什么问题？{' '}
+                </X.P>
+                <X.P noMarginBottom>`a.`探索-利用问题</X.P>
+                <X.P noMarginBottom>`b.`奖励函数优化问题</X.P>
+                <X.P noMarginBottom>`c.`动作选择问题</X.P>
+                <X.P>`d.`状态空间问题</X.P>
+                <X.P>答：`d`</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P noMarginBottom>DQN是基于什么的强化学习方法？</X.P>
+                <X.P noMarginBottom>`a.`基于值的方法</X.P>
+                <X.P noMarginBottom>`b.`基于策略的方法</X.P>
+                <X.P noMarginBottom>`c.`基于模型的方法</X.P>
+                <X.P>`d.`基于探索的方法</X.P>
+                <X.P>答：`d`</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P noMarginBottom>TD gradient是与哪种强化学习方法相关的概念</X.P>
+                <X.P noMarginBottom>`a.`基于值的方法</X.P>
+                <X.P noMarginBottom>`b.`基于策略的方法</X.P>
+                <X.P noMarginBottom>`c.`基于模型的方法</X.P>
+                <X.P>`d.`基于探索的方法</X.P>
+                <X.P>答：`d`</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P noMarginBottom>在强化学习中，基于策略的方法主要关注什么？</X.P>
+                <X.P noMarginBottom>`a.`最大化奖励</X.P>
+                <X.P noMarginBottom>`b.`最小化损失</X.P>
+                <X.P noMarginBottom>`c.`直接学习值函数</X.P>
+                <X.P>`d.`直接学习策略函数</X.P>
+                <X.P>答：`d`</X.P>
+            </X.Oli>
         </X.BlogWrapper>
     );
 }
