@@ -12,6 +12,7 @@ import B2fph from './23d/pattern_recognition4';
 import Blnrj from './23d/protocols';
 import B97t6 from './23d/r2plus1d';
 import Bkdzq from './24a/games101_1';
+import Bcrce from './24a/games101_2';
 import Brro7 from './24a/machine_learning_exercises';
 import Bnoay from './24a/reproduce_nerf_rpn';
 import Btkp2 from './24a/topk';
@@ -143,6 +144,12 @@ const categories = [
                 path: '/bkdzq/',
                 time: '2024-01-07',
                 component: <Bkdzq />,
+            },
+            {
+                blogTitle: '【GAMES101】Rasterization',
+                path: '/bcrce/',
+                time: '2024-01-13',
+                component: <Bcrce />,
             },
         ],
     },
