@@ -160,7 +160,7 @@ export default function Blog({blogTitle}) {
                 \end{bmatrix}
                 "
             />
-            <X.H1>视图变换</X.H1>
+            <X.H1>MVP变换</X.H1>
             <X.H2>引入</X.H2>
             <X.P noMarginBottom>
                 图形学中将3D空间的物体展现在2D屏幕上有十分重要的三个变换，以拍照片为例子，三个步骤是：
@@ -168,8 +168,8 @@ export default function Blog({blogTitle}) {
             <X.Uli>找到一个好场景，并安排好要拍照的人或物品（*模型变换*`Model Transformation`）</X.Uli>
             <X.Uli>找到一个好角度放置相机（*视图变换*`View Transformation`）</X.Uli>
             <X.Uli>按下快门，得到照片（*投影变换*`Projection Transformation`）</X.Uli>
-
-            <X.H2>标题</X.H2>
+            <X.H2>模型变换</X.H2>
+            <X.H2>视图变换</X.H2>
             <X.P>
                 确定一个相机需要三个向量：\n相机位置{`$\\bm{e}$`}
                 、观测方向{`$\\bm{g}$`}（相机对着哪儿拍？）、向上方向{`$\\bm{t}$`}（横着，竖着，还是斜着拍？）
@@ -205,7 +205,36 @@ export default function Blog({blogTitle}) {
                 0 & 0 & 0 & 1
                 \end{bmatrix}"
             />
-            <X.P>接下来考虑旋转：</X.P>
+            <X.P>
+                接下来考虑旋转：我们想把{`$\\bm{g}$`}方向旋转到{`$-\\bm{z}$`}，{`$\\bm{t}$`}到{`$\\bm{y}$`}
+                ，那么同时也会把{`$\\bm{g}\\times\\bm{t}$`}方向旋转到{`$\\bm{x}$`}
+                。然而这个变换并不好直接写出。因此我们现在考虑旋转操作的逆变换{`$R_{view}^{-1}$`}：
+            </X.P>
+            <X.P>
+                {`$R_{view}^{-1}$`}的操作就是把{`$\\bm{x}$`}方向旋转到{`$\\bm{g}\\times\\bm{t}$`}，{`$\\bm{y}$`}到
+                {`$\\bm{t}$`}，{`$\\bm{z}$`}到{`$-\\bm{g}$`}：
+            </X.P>
+            <X.Formula
+                text="
+                R_{view}^{-1}=
+                \begin{bmatrix}
+                x_{\bm{g}\times\bm{t}} & x_{\bm{t}} & x_{-\bm{g}} & 0 \\
+                y_{\bm{g}\times\bm{t}} & y_{\bm{t}} & y_{-\bm{g}} & 0 \\
+                z_{\bm{g}\times\bm{t}} & z_{\bm{t}} & z_{-\bm{g}} & 0 \\
+                0 & 0 & 0 & 1
+                \end{bmatrix}"
+            />
+            <X.P>旋转矩阵是正交阵，其转置等于逆，因此有：</X.P>
+            <X.Formula
+                text="
+                R_{view}=
+                \begin{bmatrix}
+                x_{\bm{g}\times\bm{t}} & y_{\bm{g}\times\bm{t}} & z_{\bm{g}\times\bm{t}} & 0 \\
+                x_{\bm{t}} & y_{\bm{t}} & z_{\bm{t}} & 0 \\
+                x_{-\bm{g}} & y_{-\bm{g}} & z_{-\bm{g}} & 0 \\
+                0 & 0 & 0 & 1
+                \end{bmatrix}"
+            />
         </X.BlogWrapper>
     );
 }
