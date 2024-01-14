@@ -368,7 +368,7 @@ export default function Blog({blogTitle}) {
             <X.Br />
             <X.Oli>
                 <X.P noMarginBottom>
-                    如果我们希望预测$n$个类的概率使得所有概率和等于1，那么下列哪个函数可以用作输出层中的激活函数？
+                    如果我们希望预测$n$个类的概率使得所有概率和等于$1$，那么下列哪个函数可以用作输出层中的激活函数？
                 </X.P>
                 <X.P noMarginBottom>`a.`Softmax</X.P>
                 <X.P noMarginBottom>`b.`ReLU</X.P>
