@@ -1,3 +1,4 @@
+:root,
 :root.light {
     --color-main: #30303c;
     --bg-color-1: #fcfcfc;
@@ -42,7 +43,7 @@
 
     /*仅暗色模式*/
     --logopart-shadow: 0 0 48px 4px #00e8f4a0;
-} 
+}
 
 *::-webkit-scrollbar {
     width: 8px;
@@ -61,14 +62,14 @@
     padding: 0;
 }
 
+body {
+    font-size: 16px;
+    background-color: var(--bg-color-2);
+}
 div,
 li,
 a {
     -webkit-tap-highlight-color: transparent;
-}
-body {
-    font-size: 16px;
-    background-color: var(--bg-color-2);
 }
 li {
     list-style: none;
