@@ -924,6 +924,51 @@ export default function Blog({blogTitle}) {
                     优点是可以扩充训练数据，引入额外信息；但是要注意误差传播的问题。
                 </X.P>
             </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P noMarginBottom>在半监督学习中，使用无标签数据的目的是什么？</X.P>
+                <X.P noMarginBottom>`a.`提高模型的泛化能力</X.P>
+                <X.P noMarginBottom>`b.`提高模型的复杂性</X.P>
+                <X.P noMarginBottom>`c.`减少训练时间</X.P>
+                <X.P>`d.`提高模型的准确性</X.P>
+                <X.P>答：`a`</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P noMarginBottom>自训练中的熵正则化的主要目的是什么？</X.P>
+                <X.P noMarginBottom>`a.`降低模型的泛化能力</X.P>
+                <X.P noMarginBottom>`b.`提高模型的复杂性</X.P>
+                <X.P noMarginBottom>`c.`减少模型对于伪标签的过度自信</X.P>
+                <X.P>`d.`增加模型对于有标签数据的权重</X.P>
+                <X.P>答：`c`</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P noMarginBottom>在半监督SVM中，无标签数据如何被整合到模型训练中？</X.P>
+                <X.P noMarginBottom>`a.`忽略无标签数据</X.P>
+                <X.P noMarginBottom>`b.`将无标签数据视为异常数据</X.P>
+                <X.P noMarginBottom>`c.`使用无标签数据构造额外的约束条件</X.P>
+                <X.P>`d.`仅使用无标签数据进行训练</X.P>
+                <X.P>答：`c`</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P noMarginBottom>图半监督学习中，如何利用无标签节点的信息？</X.P>
+                <X.P noMarginBottom>`a.`忽略无标签节点</X.P>
+                <X.P noMarginBottom>`b.`使用无标签节点的邻居信息</X.P>
+                <X.P noMarginBottom>`c.`将无标签节点视为噪声</X.P>
+                <X.P>`d.`使用无标签节点的标签进行训练</X.P>
+                <X.P>答：`b`</X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P noMarginBottom>基于分歧的半监督学习中，分歧是指什么？</X.P>
+                <X.P noMarginBottom>`a.`模型的复杂度</X.P>
+                <X.P noMarginBottom>`b.`模型的准确性</X.P>
+                <X.P noMarginBottom>`c.`模型在相似输入上的不一致性</X.P>
+                <X.P>`d.`模型的泛化能力</X.P>
+                <X.P>答：`c`</X.P>
+            </X.Oli>
             <X.H1>迁移学习</X.H1>
             <X.Oli reset>
                 <X.P>什么是迁移学习？请简要描述其定义和主要思想。</X.P>
