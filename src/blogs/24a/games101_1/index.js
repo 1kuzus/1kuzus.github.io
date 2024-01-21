@@ -173,7 +173,10 @@ export default function Blog({blogTitle}) {
             <X.P>
                 3D物体有基于自身的坐标系表示，原点是只与这个物体有关的某个指定参考点。其他顶点的坐标值都是相对于这个原点而言的。
             </X.P>
+            <X.P>然后，将模型摆放到世界空间中指定的位置，需要依次进行缩放、旋转、平移操作，也就是：</X.P>
+            <X.Formula text="M_{model}=TRS" />
             <X.HighlightBlock>
+                <X.Formula text="\bm{p}_{world}=M_{model}\bm{p}_{local}" />
                 <X.P>变换前：*模型空间*`(Local Space)`\n变换后：*世界空间*`(World Space)`</X.P>
             </X.HighlightBlock>
             <X.H2>视图变换</X.H2>
@@ -213,7 +216,8 @@ export default function Blog({blogTitle}) {
                 0 & 1 & 0 & -y_e \\
                 0 & 0 & 1 & -z_e \\
                 0 & 0 & 0 & 1
-                \end{bmatrix}"
+                \end{bmatrix}
+                "
             />
             <X.P>
                 接下来考虑旋转：我们想把{`$\\bm{g}$`}方向旋转到{`$-\\bm{z}$`}，{`$\\bm{t}$`}到{`$\\bm{y}$`}
@@ -234,7 +238,8 @@ export default function Blog({blogTitle}) {
                 y_{\bm{g}\times\bm{t}} & y_{\bm{t}} & y_{-\bm{g}} & 0 \\
                 z_{\bm{g}\times\bm{t}} & z_{\bm{t}} & z_{-\bm{g}} & 0 \\
                 0 & 0 & 0 & 1
-                \end{bmatrix}"
+                \end{bmatrix}
+                "
             />
             <X.P>旋转矩阵是正交阵，其转置等于逆，因此有：</X.P>
             <X.Formula
@@ -245,8 +250,113 @@ export default function Blog({blogTitle}) {
                 x_{\bm{t}} & y_{\bm{t}} & z_{\bm{t}} & 0 \\
                 x_{-\bm{g}} & y_{-\bm{g}} & z_{-\bm{g}} & 0 \\
                 0 & 0 & 0 & 1
-                \end{bmatrix}"
+                \end{bmatrix}
+                "
             />
+            <X.HighlightBlock>
+                <X.Formula text="\bm{p}_{view}=M_{view}\bm{p}_{world}" />
+                <X.P>变换前：*世界空间*`(World Space)`\n变换后：*观察空间*`(View Space)`</X.P>
+            </X.HighlightBlock>
+            <X.H2>投影变换</X.H2>
+            <X.Image src={require('./fig5.jpg')} width="100%" invertInDarkTheme />
+            <X.P>
+                投影变换有如上图两种：*正交投影*`(Orthographic Projection)`和*透视投影*`(Perspective Projection)`。
+            </X.P>
+            <X.H3>正交投影</X.H3>
+            <X.P>简单理解来说，正交投影的结果相当于直接丢弃了$z$坐标，“拍扁”在$xy$平面上。</X.P>
+            <X.P>
+                正交投影更正式的做法是，我们希望将一个空间中$[l,r]\times[b,t]\times[f,n]$的立方体变换至$[-1,1]^3$。
+            </X.P>
+            <X.P>
+                这个过程可以分解为两步：先将立方体移动至中心与原点重合，再将各轴缩放至$[-1,1]$范围。用矩阵表示为：
+            </X.P>
+            <X.Formula
+                text="
+                M_{ortho}=
+                \begin{bmatrix}
+                2/(r-l) & 0 & 0 & 0 \\
+                0 & 2/(t-b) & 0 & 0 \\
+                0 & 0 & 2/(n-f) & 0 \\
+                0 & 0 & 0 & 1
+                \end{bmatrix}
+                \begin{bmatrix}
+                1 & 0 & 0 & -(l+r)/2 \\
+                0 & 1 & 0 & -(b+t)/2 \\
+                0 & 0 & 1 & -(f+n)/2 \\
+                0 & 0 & 0 & 1
+                \end{bmatrix}
+                \\\
+                \\ \qquad \quad =
+                \begin{bmatrix}
+                \frac{2}{r-l} & 0 & 0 & \frac{l+r}{l-r} \\
+                \\
+                0 & \frac{2}{t-b} & 0 & \frac{b+t}{b-t} \\
+                \\
+                0 & 0 & \frac{2}{n-f} & \frac{f+n}{f-n} \\
+                \\
+                0 & 0 & 0 & 1
+                \end{bmatrix}
+                "
+            />
+            <X.H3>透视投影</X.H3>
+            <X.P>
+                透视投影符合近大远小的视觉效果，观感上更为自然。透视投影可以首先将*视锥体*`(View
+                Frustum)`“挤压”至长方体内，再应用正交投影：
+            </X.P>
+            <X.Image src={require('./fig6.jpg')} width="500px" invertInDarkTheme />
+            <X.Formula
+                text="
+                M_{persp \rightarrow ortho}=
+                \begin{bmatrix}
+                n & 0 & 0 & 0 \\
+                0 & n & 0 & 0 \\
+                0 & 0 & n+f & -nf \\
+                0 & 0 & 1 & 0
+                \end{bmatrix}
+                "
+            />
+            <X.Formula
+                text="
+                M_{persp}=
+                M_{ortho}M_{persp \rightarrow ortho}
+                \\\
+                \\ \qquad \quad =
+                \begin{bmatrix}
+                \frac{2n}{r-l} & 0 & \frac{l+r}{l-r} & 0 \\
+                \\
+                0 & \frac{2n}{t-b} & \frac{b+t}{b-t} & 0 \\
+                \\
+                0 & 0 & \frac{n+f}{n-f} & \frac{-2nf}{n-f} \\
+                \\
+                0 & 0 & 1 & 0
+                \end{bmatrix}
+                "
+            />
+            <X.HighlightBlock>
+                <X.P>变换前：*观察空间*`(View Space)`\n变换后：*裁剪空间*`(Clip Space)`</X.P>
+            </X.HighlightBlock>
+            <X.H1>视口变换</X.H1>
+            <X.P>视口变换希望在$xy$平面上将$[-1,1]^2$变换至屏幕上$[0,width]\times[0,height]$，这个矩阵是：</X.P>
+            <X.Formula
+                text="
+                M_{viewport}=
+                \begin{bmatrix}
+                \frac{width}{2} & 0 & 0 & \frac{width}{2} \\
+                \\
+                0 & \frac{height}{2} & 0 & \frac{height}{2} \\
+                \\
+                0 & 0 & 1 & 0 \\
+                \\
+                0 & 0 & 0 & 1
+                \end{bmatrix}
+                "
+            />
+            <X.HighlightBlock bgcolor="gray">
+                <X.P>无论正交投影还是透视投影，物体在视锥体之外的部分将会变得不可见，这也是*裁剪空间*的得名。</X.P>
+            </X.HighlightBlock>
+            <X.HighlightBlock>
+                <X.P>变换前：*裁剪空间*`(Clip Space)`\n变换后：*屏幕空间*`(Screen Space)`</X.P>
+            </X.HighlightBlock>
         </X.BlogWrapper>
     );
 }
