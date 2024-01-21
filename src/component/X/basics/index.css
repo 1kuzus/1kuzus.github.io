@@ -55,7 +55,7 @@
     margin: 0 4px;
     padding: 2px 4px;
     font-size: 14px;
-    font-family: Consolas, Menlo, 'Courier New', Courier, 'Ubuntu Mono', monospace;
+    font-family: var(--font-code);
     white-space: nowrap;
     color: var(--inline-highlight-color-text);
     border-radius: 4px;

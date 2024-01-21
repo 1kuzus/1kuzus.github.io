@@ -5,9 +5,10 @@
     z-index: 200;
     pointer-events: none;
 }
-#b0001-dance-version-wrapper {
+#b0001-version {
     align-self: center;
-    max-width: 360px;
+    font-size: 44px;
+    font-family: var(--font-consolas);
 }
 #b0001-dance-gif {
     padding-top: 32px;

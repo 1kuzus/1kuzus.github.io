@@ -19,7 +19,7 @@
 #notfound-4r {
     font-size: 100px;
     font-weight: bold;
-    font-family: consolas;
+    font-family: var(--font-consolas);
     color: var(--text-color-main);
 }
 #notfound-4l {
@@ -31,7 +31,7 @@
 #notfound-text {
     margin-left: 8px;
     font-size: 24px;
-    font-family: consolas;
+    font-family: var(--font-consolas);
     letter-spacing: 0.1em;
     color: var(--text-color-main);
 }
