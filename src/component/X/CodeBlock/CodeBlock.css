@@ -11,6 +11,6 @@
     line-height: 24px;
     padding: 24px 32px;
     font-size: 95%;
-    font-family: Consolas, Menlo, 'Courier New', Courier, 'Ubuntu Mono', monospace;
+    font-family: var(--font-code);
     color: var(--text-color-main);
 }

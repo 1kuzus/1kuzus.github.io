@@ -10,13 +10,14 @@ function Version() {
                 <X.HighlightBlock>
                     <X.FlexRow justifyContent="space-around">
                         <X.Image id="b0001-cheer-gif" src={require('./cheer.gif')} width="150" />
-                        <div id="b0001-dance-version-wrapper">
-                            <X.Image
+                         <div id="b0001-version">
+                            {/* <X.Image
                                 id="b0001-version-png"
                                 src={require('./version.png')}
                                 width="100%"
                                 invertInDarkTheme
-                            />
+                            /> */}
+                            Version 1.2
                         </div>
                         <X.Image id="b0001-dance-gif" src={require('./dance.gif')} width="128" />
                     </X.FlexRow>
@@ -100,7 +101,7 @@ export default function Blog({blogTitle}) {
         const canvas = document.getElementById('b0001-canvas');
         const cheerGif = document.getElementById('b0001-cheer-gif');
         const danceGif = document.getElementById('b0001-dance-gif');
-        const versionPng = document.getElementById('b0001-version-png');
+        // const versionPng = document.getElementById('b0001-version-png');
         const ctx = canvas.getContext('2d');
         canvas.width = document.documentElement.clientWidth;
         canvas.height = document.documentElement.clientHeight;
@@ -184,7 +185,7 @@ export default function Blog({blogTitle}) {
         };
         cheerGif.onload = onloadHandler;
         danceGif.onload = onloadHandler;
-        versionPng.onload = onloadHandler;
+        // versionPng.onload = onloadHandler;
         const resizeHandler = () => {
             canvas.width = document.documentElement.clientWidth;
             canvas.height = document.documentElement.clientHeight;
