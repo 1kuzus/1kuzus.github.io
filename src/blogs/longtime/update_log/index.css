@@ -1,0 +1,17 @@
+#b0001-canvas {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 200;
+    pointer-events: none;
+}
+#b0001-version {
+    align-self: center;
+    line-height: 160px;
+    font-size: 44px;
+    font-family: var(--font-consolas);
+    user-select: none;
+}
+#b0001-dance-gif {
+    padding-top: 32px;
+}

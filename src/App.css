@@ -1,38 +1,108 @@
-.App {
-  text-align: center;
+@font-face {
+    font-family: 'Consolas_Latin_Subset';
+    src: url(assets/fonts/Consolas_Latin.woff2) format('woff2'), url(assets/fonts/Consolas_Latin.woff) format('woff'),
+        url(assets/fonts/Consolas_Latin.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Consolas_Latin_Subset';
+    src: url(assets/fonts/Consolas_Latin-Bold.woff2) format('woff2'),
+        url(assets/fonts/Consolas_Latin-Bold.woff) format('woff'),
+        url(assets/fonts/Consolas_Latin-Bold.ttf) format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+    --font-code: Menlo, Consolas, 'Courier New', Courier, 'Ubuntu Mono', monospace;
+    --font-consolas: Consolas, Consolas_Latin_Subset;
+}
+:root,
+:root.light {
+    --color-main: #30303c;
+    --bg-color-1: #fcfcfc;
+    --bg-color-2: #f4f4f4;
+    --bg-transparent-golden: #ffb80018;
+    --bg-transparent-red: #ff380018;
+    --bg-transparent-gray: #a0a0a018;
+    --bg-icon-color: #30303c;
+    --bg-scrollbar-thumb-color: #cccccc;
+    --bg-th-color: #90909028;
+    --bg-td-color: #c0c0c020;
+    --hover-scrollbar-thumb-color: #bcbcbc;
+    --title-color: #00a8c4;
+    --text-color-main: #30303c;
+    --text-color-active: #0088ac;
+    --inline-highlight-color-text: #50505a;
+    --inline-highlight-color-bg: #50505c18;
+    --logopart-vr-color: #30303c;
+    --gray-1: #d4d4d4;
+
+    /*仅亮色模式*/
+}
+:root.dark {
+    --color-main: #fcfcfc;
+    --bg-color-1: #202026;
+    --bg-color-2: #28282e;
+    --bg-transparent-golden: #c08a0020;
+    --bg-transparent-red: #c02a0020;
+    --bg-transparent-gray: #80808018;
+    --bg-icon-color: #383844;
+    --bg-th-color: #60606c28;
+    --bg-td-color: #48485420;
+    --bg-scrollbar-thumb-color: #383844;
+    --hover-scrollbar-thumb-color: #484854;
+    --title-color: #00b8d0;
+    --text-color-main: #fcfcfc;
+    --text-color-active: #00a8c4;
+    --inline-highlight-color-text: #ececec;
+    --inline-highlight-color-bg: #ececec18;
+    --logopart-vr-color: #40404c;
+    --gray-1: #50505c;
+
+    /*仅暗色模式*/
+    --logopart-shadow: 0 0 48px 4px #00e8f4a0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: var(--bg-scrollbar-thumb-color);
+}
+*::-webkit-scrollbar-thumb:hover {
+    background-color: var(--hover-scrollbar-thumb-color);
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body {
+    font-size: 16px;
+    background-color: var(--bg-color-2);
+}
+div,
+li,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+img {
+    -webkit-user-drag: none;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#root {
+    padding-top: 64px;
 }

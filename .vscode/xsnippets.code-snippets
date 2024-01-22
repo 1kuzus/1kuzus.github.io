@@ -1,0 +1,167 @@
+{
+	// Place your Githubio 工作区 snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	"X.H1 tag": {
+		"scope": "javascript,typescript",
+		"prefix": "xh1",
+		"body": [
+			"<X.H1>$1</X.H1>",
+		],
+		"description": "X.H1 tag"
+	},
+	"X.H2 tag": {
+		"scope": "javascript,typescript",
+		"prefix": "xh2",
+		"body": [
+			"<X.H2>$1</X.H2>",
+		],
+		"description": "X.H2 tag"
+	},
+	"X.H3 tag": {
+		"scope": "javascript,typescript",
+		"prefix": "xh3",
+		"body": [
+			"<X.H3>$1</X.H3>",
+		],
+		"description": "X.H3 tag"
+	},
+	"X.P tag": {
+		"scope": "javascript,typescript",
+		"prefix": "xp",
+		"body": [
+			"<X.P>$1</X.P>",
+		],
+		"description": "X.P tag"
+	},
+	"withMarginTop props": {
+		"scope": "javascript,typescript",
+		"prefix": "wmt",
+		"body": [	
+			"withMarginTop"
+		],
+		"description": "withMarginTop props"
+	},
+	"noMarginBottom props": {
+		"scope": "javascript,typescript",
+		"prefix": "nmb",
+		"body": [	
+			"noMarginBottom"
+		],
+		"description": "noMarginBottom props"
+	},
+	"X.Uli tag": {
+		"scope": "javascript,typescript",
+		"prefix": "xuli",
+		"body": [
+			"<X.Uli>$1</X.Uli>",
+		],
+		"description": "X.Uli tag"
+	},
+	"X.Oli tag": {
+		"scope": "javascript,typescript",
+		"prefix": "xoli",
+		"body": [
+			"<X.Oli>$1</X.Oli>",
+		],
+		"description": "X.Oli tag"
+	},
+	"X.CodeBlock tag": {
+		"scope": "javascript,typescript",
+		"prefix": "xc",
+		"body": [
+			"<X.CodeBlock",
+			"\tlanguage='$1'",
+			"\tcode={`",
+			"\t`}",
+			"/>",
+		],
+		"description": "X.CodeBlock tag"
+	},
+	"X.CodeBlock tag for Python": {
+		"scope": "javascript,typescript",
+		"prefix": "xcpy",
+		"body": [
+			"<X.CodeBlock",
+			"\tlanguage='python'",
+			"\tcode={`$1",
+			"\t`}",
+			"/>",
+		],
+		"description": "X.CodeBlock tag for Python"
+	},
+	"X.FlexRow tag": {
+		"scope": "javascript,typescript",
+		"prefix": "xflex",
+		"body": [
+			"<X.FlexRow>$1</X.FlexRow>",
+		],
+		"description": "X.FlexRow tag"
+	},
+	"X.Formula tag": {
+		"scope": "javascript,typescript",
+		"prefix": "xformula",
+		"body": [
+			"<X.Formula text=\"$1\" />",
+		],
+		"description": "X.Formula tag"
+	},
+	"X.HighlightBlock tag": {
+		"scope": "javascript,typescript",
+		"prefix": "xh",
+		"body": [
+			"<X.HighlightBlock>$1</X.HighlightBlock>",
+		],
+		"description": "X.HighlightBlock tag"
+	},
+	"X.HighlightBlock tag with bgcolor": {
+		"scope": "javascript,typescript",
+		"prefix": "xhbg",
+		"body": [
+			"<X.HighlightBlock bgcolor=\"$1\"></X.HighlightBlock>",
+		],
+		"description": "X.HighlightBlock tag with bgcolor"
+	},
+	"X.Image tag": {
+		"scope": "javascript,typescript",
+		"prefix": "ximage",
+		"body": [	
+			"<X.Image src={require('./fig1.jpg')} width='' />"
+		],
+		"description": "X.Image tag"
+	},
+	"invertInDarkTheme props": {
+		"scope": "javascript,typescript",
+		"prefix": "iidt",
+		"body": [	
+			"invertInDarkTheme"
+		],
+		"description": "invertInDarkTheme props"
+	},
+	"X.Table tag": {
+		"scope": "javascript,typescript",
+		"prefix": "xtable",
+		"body": [
+			"<X.Table>",
+			"\t<tr>",
+			"\t\t<th>$1</th>",
+			"\t</tr>",
+			"\t<tr>",
+			"\t\t<td></td>",
+			"\t</tr>",
+			"</X.Table>",
+		],
+		"description": "X.Table tag"
+	},
+	"inline latex": {
+		"scope": "javascript,typescript",
+		"prefix": "il",
+		"body": [
+			"{`$$1$`}",
+		],
+		"description": "inline latex"
+	}
+}

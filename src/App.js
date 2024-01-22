@@ -1,25 +1,51 @@
-import logo from './logo.svg';
+import {useRoutes} from 'react-router-dom';
+import Header from './component/Header/Header';
+import SideBar from './component/SideBar/SideBar';
+import Homepage from './component/Homepage/Homepage';
+import NotFound from './component/NotFound/NotFound';
+import {elements} from './blogs/categories';
+import 'prismjs/components/prism-c';
+import 'prismjs/components/prism-cpp';
+import 'prismjs/components/prism-java';
+import 'prismjs/components/prism-python';
+import 'prismjs/components/prism-markdown';
+import 'prismjs/components/prism-javascript';
+import 'prismjs/components/prism-typescript';
+import 'prismjs/components/prism-jsx';
+import 'prismjs/components/prism-tsx';
+import 'prismjs/components/prism-diff';
+import 'prismjs/components/prism-bash';
+import './assets/prism.scss';
+import './assets/katex.css';
 import './App.css';
 
+const router = [
+    {
+        path: '/',
+        element: <Homepage />,
+    },
+    ...elements.map(({path, element}) => ({
+        path,
+        element: (
+            <>
+                <SideBar />
+                {element}
+            </>
+        ),
+    })),
+    {
+        path: '*',
+        element: <NotFound />,
+    },
+];
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <>
+            <Header />
+            {useRoutes(router)}
+        </>
+    );
 }
 
 export default App;

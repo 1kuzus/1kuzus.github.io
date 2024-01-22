@@ -1,0 +1,41 @@
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 64px;
+    padding: 0 180px;
+    background-color: var(--bg-color-1);
+    user-select: none;
+}
+#header-right-wrapper {
+    display: flex;
+}
+#header-logo-bg {
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+}
+#header-theme-bg {
+    width: 36px;
+    height: 36px;
+    margin-right: 24px;
+    padding: 8px;
+    border-radius: 50%;
+    background-color: var(--bg-icon-color);
+    cursor: pointer;
+}
+#header-github-bg {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--bg-icon-color);
+}
+#header-theme-bg:hover,
+#header-github-bg:hover {
+    background-color: #484854;
+}

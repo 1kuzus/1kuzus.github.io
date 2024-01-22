@@ -1,0 +1,16 @@
+.x-codeblock {
+    margin: 24px 0;
+    border-radius: 12px;
+    background-color: var(--bg-color-1);
+    box-shadow: var(--codeblock-shadow);
+    overflow-x: auto;
+}
+.x-codeblock pre code[class*='language-'] {
+    display: block;
+    width: fit-content;
+    line-height: 24px;
+    padding: 24px 32px;
+    font-size: 95%;
+    font-family: var(--font-code);
+    color: var(--text-color-main);
+}

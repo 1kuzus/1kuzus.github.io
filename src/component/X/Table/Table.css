@@ -1,0 +1,22 @@
+.x-table {
+    height: fit-content;
+    margin-bottom: 24px;
+    color: var(--text-color-main);
+    border-collapse: separate;
+    border-spacing: 3px;
+}
+.x-table th {
+    background-color: var(--bg-th-color);
+}
+.x-table td {
+    background-color: var(--bg-td-color);
+}
+.x-table th,
+.x-table td {
+    padding: 8px 12px;
+    text-align: center;
+}
+.x-table th > *,
+.x-table td > * {
+    margin: 0;
+}
