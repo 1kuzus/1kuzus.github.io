@@ -10,15 +10,7 @@ function Version() {
                 <X.HighlightBlock>
                     <X.FlexRow justifyContent="space-around">
                         <X.Image id="b0001-cheer-gif" src={require('./cheer.gif')} width="150" />
-                         <div id="b0001-version">
-                            {/* <X.Image
-                                id="b0001-version-png"
-                                src={require('./version.png')}
-                                width="100%"
-                                invertInDarkTheme
-                            /> */}
-                            Version 1.2
-                        </div>
+                        <div id="b0001-version">Version 1.1</div>
                         <X.Image id="b0001-dance-gif" src={require('./dance.gif')} width="128" />
                     </X.FlexRow>
                 </X.HighlightBlock>
@@ -74,7 +66,7 @@ function UpdateLog() {
         {date: '2023-12-30', description: '略微调整首页博客列表样式'},
         {version: '1.0'},
         {date: '2024-01-08', description: '新的SEO方案：使用`react-snap`作预渲染\\n加入`404`页面'},
-        {date: '2024-01-09', description: '更新`404`页面'},
+        {date: '2024-01-22', description: '更新`404`页面'},
         {version: '1.1'},
     ];
     return (
@@ -101,7 +93,6 @@ export default function Blog({blogTitle}) {
         const canvas = document.getElementById('b0001-canvas');
         const cheerGif = document.getElementById('b0001-cheer-gif');
         const danceGif = document.getElementById('b0001-dance-gif');
-        // const versionPng = document.getElementById('b0001-version-png');
         const ctx = canvas.getContext('2d');
         canvas.width = document.documentElement.clientWidth;
         canvas.height = document.documentElement.clientHeight;
@@ -181,11 +172,10 @@ export default function Blog({blogTitle}) {
         let imageLoaded = 0;
         const onloadHandler = () => {
             imageLoaded++;
-            if (imageLoaded === 3) run();
+            if (imageLoaded === 2) run();
         };
         cheerGif.onload = onloadHandler;
         danceGif.onload = onloadHandler;
-        // versionPng.onload = onloadHandler;
         const resizeHandler = () => {
             canvas.width = document.documentElement.clientWidth;
             canvas.height = document.documentElement.clientHeight;
