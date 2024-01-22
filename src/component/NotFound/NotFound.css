@@ -1,0 +1,30 @@
+#notfound {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    margin: 120px auto;
+}
+#notfound * {
+    user-select: none;
+}
+#notfound img {
+    width: 126px;
+    height: 120px;
+    margin-bottom: -20px;
+}
+#notfound-404 {
+    padding-left: 0.2em;
+    font-size: 100px;
+    font-weight: bold;
+    font-family: var(--font-consolas);
+    letter-spacing: 0.2em;
+    color: var(--text-color-main);
+}
+#notfound-text {
+    padding-left: 0.05em;
+    font-size: 24px;
+    font-family: var(--font-consolas);
+    letter-spacing: 0.05em;
+    color: var(--text-color-main);
+}

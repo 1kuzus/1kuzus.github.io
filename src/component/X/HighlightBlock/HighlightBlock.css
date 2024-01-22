@@ -1,0 +1,20 @@
+.x-highlightblock {
+    margin: 24px 0;
+    padding: 24px 32px;
+    border-radius: 12px;
+}
+.x-highlightblock > :first-child {
+    margin-top: 0;
+}
+.x-highlightblock > :last-child {
+    margin-bottom: 0;
+}
+.x-highlightblock.highlight-background-golden {
+    background-color: var(--bg-transparent-golden);
+}
+.x-highlightblock.highlight-background-red {
+    background-color: var(--bg-transparent-red);
+}
+.x-highlightblock.highlight-background-gray {
+    background-color: var(--bg-transparent-gray);
+}

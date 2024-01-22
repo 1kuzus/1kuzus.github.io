@@ -1,0 +1,16 @@
+.behwl-boxes {
+    display: flex;
+    margin: 24px;
+}
+.behwl-boxes .behwl-box {
+    width: 28px;
+    height: 28px;
+    margin: 8px;
+    border: 3px solid var(--color-main);
+}
+.behwl-circle {
+    border-radius: 50%;
+}
+.behwl-fill {
+    background-color: var(--color-main);
+}
