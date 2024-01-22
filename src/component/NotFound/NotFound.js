@@ -3,15 +3,12 @@ import './NotFound.css';
 
 export default function Homepage() {
     useLayoutEffect(() => {
-        document.title = '找不到页面';
+        document.title = '找不到页面 - 铃木的网络日记';
     }, []);
     return (
         <div id="notfound">
-            <div id="notfound-404">
-                <span id="notfound-4l">4</span>
-                <img alt="0" src={require('./cry.gif')} />
-                <span id="notfound-4r">4</span>
-            </div>
+            <img alt="img" src={require('./cry.gif')} />
+            <div id="notfound-404">404</div>
             <div id="notfound-text">Page Not Found</div>
         </div>
     );
