@@ -14,11 +14,11 @@
     margin-bottom: -20px;
 }
 #notfound-404 {
-    padding-left: 0.2em;
+    padding-left: 0.16em;
     font-size: 100px;
     font-weight: bold;
     font-family: var(--font-consolas);
-    letter-spacing: 0.2em;
+    letter-spacing: 0.16em;
     color: var(--text-color-main);
 }
 #notfound-text {
