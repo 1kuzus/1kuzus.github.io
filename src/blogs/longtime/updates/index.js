@@ -61,13 +61,14 @@ function UpdateLog() {
         {date: '2023-12-02', description: '图片组件新增可选的在暗色模式下自动反转颜色的功能'},
         {date: '2023-12-05', description: '标题组件`H1``H2``H3`支持超链接'},
         {date: '2023-12-06', description: '博客标题自动从分类目录文件同步'},
-        {date: '2023-12-17', description: '支持直接在列表项中写含有段落组件特殊格式的文本'},
+        {date: '2023-12-17', description: '支持直接在列表项中写含有段落组件特殊格式的纯字符串`children`'},
         {date: '2023-12-29', description: '更新了表格组件样式\\n优化了首页博客列表和侧栏列表高度自动过渡的实现方法'},
         {date: '2023-12-30', description: '略微调整首页博客列表样式'},
         {version: '1.0'},
         {date: '2024-01-08', description: '新的SEO方案：使用`react-snap`作预渲染\\n加入`404`页面'},
         {date: '2024-01-22', description: '更新`404`页面'},
         {date: '2024-01-26', description: '使用语义化更佳的路由方案'},
+        {date: '2024-01-27', description: '支持直接在列表项中写含有jsx表达式的`children`'},
         {version: '1.1'},
     ];
     return (

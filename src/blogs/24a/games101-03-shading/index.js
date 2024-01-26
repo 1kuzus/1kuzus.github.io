@@ -15,12 +15,8 @@ export default function Blog({blogTitle}) {
                 <div>
                     <X.P>着色模型考虑一个点，在这个点处小范围表面被近似看作平面：</X.P>
                     <X.P noMarginBottom>模型的输入：</X.P>
-                    <X.Uli>
-                        <X.P>观察方向{`$\\bm{v}$`}</X.P>
-                    </X.Uli>
-                    <X.Uli>
-                        <X.P>法线方向{`$\\bm{n}$`}</X.P>
-                    </X.Uli>
+                    <X.Uli>观察方向{`$\\bm{v}$`}</X.Uli>
+                    <X.Uli>法线方向{`$\\bm{n}$`}</X.Uli>
                     <X.Uli>光照方向{`$\\bm{l}$`}</X.Uli>
                     <X.Uli>这一点处表面的固有性质（颜色等）</X.Uli>
                 </div>

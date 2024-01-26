@@ -414,9 +414,7 @@ export default function Blog({blogTitle}) {
                 <X.Formula text="\text{BN}(x)=\gamma \cdot \frac{x-\text{E}(x)}{\text{Var}(x)} + \beta" />
             </X.Oli>
             <X.HighlightBlock bgcolor="red">
-                <X.Uli>
-                    <X.P>分母常写为{`$\\sqrt{\\text{Var}(x)^2+\\epsilon}$`}</X.P>
-                </X.Uli>
+                <X.Uli>分母常写为{`$\\sqrt{\\text{Var}(x)^2+\\epsilon}$`}</X.Uli>
                 <X.Uli>参数$\gamma$和$\beta$通常是向量，公式中的乘法应为按元素乘。</X.Uli>
             </X.HighlightBlock>
             <X.Br />
@@ -767,28 +765,20 @@ export default function Blog({blogTitle}) {
                 </X.Uli>
                 <X.Uli>*奖励*`(reward)`：在$t$时刻得到的奖励$R_t$，$R_t$依赖于$s_t$和$a_t$。</X.Uli>
                 <X.Uli>
-                    <X.P>
-                        *回报*`(return)`：在$t$时刻的*折扣回报*是
-                        {`$U_t=R_t+\\gamma R_{t+1}+\\gamma^2 R_{t+2}+\\dots$`}
-                    </X.P>
+                    *回报*`(return)`：在$t$时刻的*折扣回报*是
+                    {`$U_t=R_t+\\gamma R_{t+1}+\\gamma^2 R_{t+2}+\\dots$`}
                 </X.Uli>
                 <X.Uli>
-                    <X.P>
-                        *动作价值函数*：{`$Q_{\\pi}(s_t,a_t)=\\text{E}(U_t|s_t,a_t)$`}
-                        ，评估智能体在状态$s_t$时选择动作$a_t$有多好。
-                    </X.P>
+                    *动作价值函数*：{`$Q_{\\pi}(s_t,a_t)=\\text{E}(U_t|s_t,a_t)$`}
+                    ，评估智能体在状态$s_t$时选择动作$a_t$有多好。
                 </X.Uli>
                 <X.Uli>
-                    <X.P>
-                        *状态价值函数*：{`$V_{\\pi}(s_t)=\\text{E}(Q_{\\pi})=\\sum_a\\pi(s_t,a)Q_{\\pi}(s_t,a)$`}
-                        ，评估智能体在状态$s_t$有多好。
-                    </X.P>
+                    *状态价值函数*：{`$V_{\\pi}(s_t)=\\text{E}(Q_{\\pi})=\\sum_a\\pi(s_t,a)Q_{\\pi}(s_t,a)$`}
+                    ，评估智能体在状态$s_t$有多好。
                 </X.Uli>
                 <X.Uli>
-                    <X.P>
-                        *最优动作价值函数*：{`$Q^{\\ast}(s_t,a_t)=\\max_{\\pi}Q_{\\pi}(s_t,a_t)$`}
-                        ，无论采用何种策略在状态$s_t$下选择动作$a_t$的最优结果。
-                    </X.P>
+                    *最优动作价值函数*：{`$Q^{\\ast}(s_t,a_t)=\\max_{\\pi}Q_{\\pi}(s_t,a_t)$`}
+                    ，无论采用何种策略在状态$s_t$下选择动作$a_t$的最优结果。
                 </X.Uli>
             </X.HighlightBlock>
             <X.Br />
