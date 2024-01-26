@@ -13,6 +13,7 @@ import Blog6be863 from './23d/protocols';
 import Blog9e7694 from './23d/r2plus1d';
 import Blog009c1d from './24a/games101-01-transformation';
 import Blog7fe954 from './24a/games101-02-rasterization';
+import Blog996037 from './24a/games101-03-shading';
 import Blog1e216d from './24a/machine-learning-exercises';
 import Blog492899 from './24a/reproduce-nerf-rpn';
 import Blog60c26d from './24a/torch-numpy-topk';
@@ -150,6 +151,12 @@ const categories = [
                 path: '/24a/games101-02-rasterization/',
                 time: '2024-01-13',
                 component: <Blog7fe954 />,
+            },
+            {
+                blogTitle: '【GAMES101】Shading',
+                path: '/24a/games101-03-shading/',
+                time: '2024-01-26',
+                component: <Blog996037 />,
             },
         ],
     },
