@@ -3,7 +3,7 @@ import './NotFound.css';
 
 export default function Homepage() {
     useLayoutEffect(() => {
-        document.title = '找不到页面 - 铃木的网络日记';
+        document.title = '404 - 铃木的网络日记';
     }, []);
     return (
         <div id="notfound">

@@ -2,7 +2,7 @@ import X from 'src/component/X';
 import './index.css';
 
 function DemoBox() {
-    return <div className="b0000-demo-box" />;
+    return <div className="blog120c66-demo-box" />;
 }
 
 export default function Blog({blogTitle}) {
@@ -231,7 +231,7 @@ export default function Blog({blogTitle}) {
             </X.P>
             <X.H3>省去段落组件</X.H3>
             <X.P>
-                经常遇到的情况是：段落组件是唯一的子元素。因此在@`2023-12-17`的更新[/b0001/]@中，支持了直接在列表项中写含有段落组件特殊格式的文本。---
+                经常遇到的情况是：段落组件是唯一的子元素。因此在@`2023-12-17`的更新[/longtime/updates/]@中，支持了直接在列表项中写含有段落组件特殊格式的文本。---
                 在解析时，如果子元素是`string`类型，会自动为其包裹一层段落组件。也就是说，以下两种写法是等价的：
             </X.P>
             <X.HighlightBlock bgcolor="gray">
