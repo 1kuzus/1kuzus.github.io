@@ -5,13 +5,13 @@ import './index.css';
 function Version() {
     return (
         <>
-            <canvas id="b0001-canvas" />
-            <div id="b0001-trigger">
+            <canvas id="blog75d1a6-canvas" />
+            <div id="blog75d1a6-trigger">
                 <X.HighlightBlock>
                     <X.FlexRow justifyContent="space-around">
-                        <X.Image id="b0001-cheer-gif" src={require('./cheer.gif')} width="150" />
-                        <div id="b0001-version">Version 1.1</div>
-                        <X.Image id="b0001-dance-gif" src={require('./dance.gif')} width="128" />
+                        <X.Image id="blog75d1a6-cheer-gif" src={require('./cheer.gif')} width="150" />
+                        <div id="blog75d1a6-version">Version 1.1</div>
+                        <X.Image id="blog75d1a6-dance-gif" src={require('./dance.gif')} width="128" />
                     </X.FlexRow>
                 </X.HighlightBlock>
             </div>
@@ -40,7 +40,7 @@ function UpdateLog() {
         {
             date: '2023-08-31',
             description:
-                '新组件`Br``Divider``Uli``Oli`\\n新组件`HighlightBlock`\\n创建第1篇博客 - @模式识别 · 统计决策方法[/behwl/]@',
+                '新组件`Br``Divider``Uli``Oli`\\n新组件`HighlightBlock`\\n创建第1篇博客 - @模式识别 · 统计决策方法[/23c/pattern-recognition-1/]@',
         },
         {date: '2023-09-02', description: '调整亮色、暗色两套代码高亮配色'},
         {date: '2023-09-03', description: '部署后遇到刷新404问题，将`BrowserRouter`改为`HashRouter`'},
@@ -67,6 +67,7 @@ function UpdateLog() {
         {version: '1.0'},
         {date: '2024-01-08', description: '新的SEO方案：使用`react-snap`作预渲染\\n加入`404`页面'},
         {date: '2024-01-22', description: '更新`404`页面'},
+        {date: '2024-01-26', description: '使用语义化更佳的路由方案'},
         {version: '1.1'},
     ];
     return (
@@ -89,10 +90,10 @@ function UpdateLog() {
 
 export default function Blog({blogTitle}) {
     useEffect(() => {
-        const trigger = document.getElementById('b0001-trigger');
-        const canvas = document.getElementById('b0001-canvas');
-        const cheerGif = document.getElementById('b0001-cheer-gif');
-        const danceGif = document.getElementById('b0001-dance-gif');
+        const trigger = document.getElementById('blog75d1a6-trigger');
+        const canvas = document.getElementById('blog75d1a6-canvas');
+        const cheerGif = document.getElementById('blog75d1a6-cheer-gif');
+        const danceGif = document.getElementById('blog75d1a6-dance-gif');
         const ctx = canvas.getContext('2d');
         canvas.width = document.documentElement.clientWidth;
         canvas.height = document.documentElement.clientHeight;

@@ -13,13 +13,13 @@ export default function Blog({blogTitle}) {
                     $P(\omega_i|x)$为`后验概率`，希望得到其值，并用于决策
                 </X.P>
             </X.HighlightBlock>
-            <X.P>考虑如下例子，记A为`抓到方形`，B为`抓到实心图形`：</X.P>
-            <div className="behwl-boxes">
-                <div className="behwl-box behwl-fill" />
-                <div className="behwl-box" />
-                <div className="behwl-box" />
-                <div className="behwl-box behwl-circle behwl-fill" />
-                <div className="behwl-box behwl-circle" />
+            <X.P>考虑如下例子，记$A$为`抓到方形`，$B$为`抓到实心图形`：</X.P>
+            <div className="blog72aa87-boxes">
+                <div className="blog72aa87-box blog72aa87-fill" />
+                <div className="blog72aa87-box" />
+                <div className="blog72aa87-box" />
+                <div className="blog72aa87-box blog72aa87-circle blog72aa87-fill" />
+                <div className="blog72aa87-box blog72aa87-circle" />
             </div>
             <X.Uli>
                 <X.Formula className=".x-text-active" text="P(A) = \frac{3}{5} \quad P(B) = \frac{2}{5}" />
