@@ -9,7 +9,7 @@ export default function Blog({blogTitle}) {
             <X.Uli>漫反射`(diffuse reflection)`：一根光线打过来，反射到四面八方</X.Uli>
             <X.Uli>高光`(specular highlights)`：一根光线打过来，反射方向与镜面反射方向相近</X.Uli>
             <X.Uli>环境光`(ambient lighting)`：环境中经过多次反射叠加的结果，认为是常量</X.Uli>
-            <X.H1>模型定义和说明</X.H1>
+            <X.H2>模型定义和说明</X.H2>
             <X.FlexRow gap="32px">
                 <X.Image src={require('./fig1.jpg')} width="400px" invertInDarkTheme />
                 <div>
@@ -28,36 +28,57 @@ export default function Blog({blogTitle}) {
                     <X.P>例如红色框部分是有些反直觉的。</X.P>
                 </div>
             </X.FlexRow>
-            <X.H1>漫反射</X.H1>
-            <X.H2>朗伯余弦定律</X.H2>
+            <X.H2>漫反射</X.H2>
+            <X.H3>光线衰减</X.H3>
+            <X.P>我们认为点光源发出的光的能量集中在一个球壳上，根据能量守恒，光强应与距离平方成反比。</X.P>
+            <X.P>如果在与中心距离$1$处光强为$I$，则在与中心距离$r$处光强为$I/r^2$。</X.P>
+            <X.H3>朗伯着色模型</X.H3>
             <X.FlexRow gap="32px">
                 <X.Image src={require('./fig3.jpg')} width="200px" invertInDarkTheme />
                 <div>
-                    <X.P>考虑一个点的着色，其漫反射部分可以接收到的光线占光源的比例为$\cos \theta$：</X.P>
-                    <X.Formula text="\cos \theta=\bm{l}\cdot\bm{n}" />
+                    <X.P>
+                        考虑一个点的着色，其漫反射部分可以接收到的光线占光源的比例为
+                        {`$\\cos\\theta=\\bm{l}\\cdot\\bm{n}$`}：
+                    </X.P>
+                    <X.P>漫反射部分$L_d$的计算公式为：</X.P>
+                    <X.Formula text="L_d=k_d(I/r^2)\max(0,\bm{l}\cdot\bm{n})" />
+                    <X.Uli>
+                        其中的$k_d$是漫反射常量，表示着色点对能量的吸收率，取决于物体材质。如果定义为具有`3`个分量的常向量，则可以表示不同的颜色。
+                    </X.Uli>
+                    <X.Uli>当光照方向和法线方向余弦值为负数的时候，认为光线不可到达此点，按$0$考虑。</X.Uli>
+                    <X.P withMarginTop>注意到漫反射是与观察方向{`$\\bm{v}$`}无关的。</X.P>
                 </div>
             </X.FlexRow>
-            <X.H2>光线衰减</X.H2>
-            <X.P>我们认为点光源发出的光的能量集中在一个球壳上，根据能量守恒，光强应与距离平方成反比。</X.P>
-            <X.P>如果在与中心距离$1$处光强为$I$，则在与中心距离$r$处光强为$I/r^2$。</X.P>
-            <X.H2>朗伯着色模型</X.H2>
-            <X.P>漫反射部分$L_d$的计算公式为：</X.P>
-            <X.Formula text="L_d=k_d(I/r^2)\max(0,\bm{l}\cdot\bm{n})" />
-            <X.Uli>
-                其中的$k_d$是漫反射常量，表示着色点对能量的吸收率，取决于物体材质。如果定义为具有`3`个分量的常向量，则可以表示不同的颜色。
-            </X.Uli>
-            <X.Uli>当光照方向和法线方向余弦值为负数的时候，认为光线不可到达此点，按$0$考虑。</X.Uli>
-            <X.P withMarginTop>注意到漫反射是与观察方向{`$\\bm{v}$`}无关的。</X.P>
-            <X.H1>高光</X.H1>
+            <X.H2>高光</X.H2>
             <X.P>高光的反射方向是接近镜面反射方向的。</X.P>
             <X.FlexRow gap="32px">
                 <X.Image src={require('./fig4.jpg')} width="400px" invertInDarkTheme />
                 <div>
-                    <X.P>我们观察到：如果反射方向与观察方向相近时，半程向量{`$\\bm{h}$`}应该与法线方向也相近。</X.P>
-                    <X.P>{`$\\bm{h}$`}是归一化后的观察方向与光照方向的和：</X.P>
+                    <X.P>
+                        我们观察到：如果反射方向与观察方向相近时，半程向量{`$\\bm{h}$`}应该与法线方向也相近，
+                        {`$\\bm{h}$`}是归一化后的观察方向与光照方向的和：
+                    </X.P>
                     <X.Formula text="\bm{h}=\frac{\bm{v}+\bm{l}}{\Vert\bm{v}+\bm{l}\Vert}" />
+                    <X.P>高光部分$L_s$的计算公式为：</X.P>
+                    <X.Formula text="L_s=k_s(I/r^2)\max(0,\bm{n}\cdot\bm{h})^p" />
+                    <X.Uli>其中的$k_s$通常接近$1$。</X.Uli>
+                    <X.Uli>
+                        指数$p$使得{`$\\bm{n}$`}、{`$\\bm{h}$`}向量夹角增大时，使$L_s$快速衰减。
+                    </X.Uli>
                 </div>
             </X.FlexRow>
+            <X.H2>环境光</X.H2>
+            <X.FlexRow gap="32px">
+                <X.Image src={require('./fig5.jpg')} width="400px" invertInDarkTheme />
+                <div>
+                    <X.P>我们假设在每一点处，来自环境中各处散射叠加而成的光强是相等的$I_a$。</X.P>
+                    <X.P>环境光部分$L_a$的计算公式为：</X.P>
+                    <X.Formula text="L_a=k_aI_a" />
+                </div>
+            </X.FlexRow>
+            <X.H2>结果</X.H2>
+            <X.Image src={require('./fig6.jpg')} width="100%" iidt />
+            <X.P>最后的计算结果为：$L=L_d+L_s+L_a$</X.P>
         </X.BlogWrapper>
     );
 }
