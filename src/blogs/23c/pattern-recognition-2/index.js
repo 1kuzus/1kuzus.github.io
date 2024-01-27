@@ -38,7 +38,11 @@ export default function Blog({blogTitle}) {
             <X.Formula text="l(\bm{\theta}) = \ln P = \sum_{k=1}^n \sum_{i=1}^d [x_{ki}\ln\theta_i + (1-x_{ki})\ln(1-\theta_i)]" />
             <X.P>求偏导得：</X.P>
             <X.Formula text="\frac{\partial l(\bm{\theta})}{\partial \theta_i} = \sum_{k=1}^n [\frac{x_{ki}}{\theta_i} - \frac{1-x_{ki}}{1-\theta_i}]" />
-            <X.Formula text="\frac{\partial l(\bm{\theta})}{\partial \theta_i} = 0 \; 得 \; \sum_{k=1}^n (x_{ki} - \theta_i) = 0，即\theta_i = \frac{1}{n} \sum_{k=1}^n x_{ki}" />
+            <X.P>
+                {`$\\frac{\\partial l(\\bm{\\theta})}{\\partial \\theta_i} = 0$`}得
+                {`$\\sum_{k=1}^n (x_{ki} - \\theta_i) = 0$`}，即
+                {`$\\theta_i = \\frac{1}{n} \\sum_{k=1}^n x_{ki}$`}
+            </X.P>
             <X.P>把每一个分量都叠加起来，就得到最终的参数估计：</X.P>
             <X.Formula text="\hat{\bm{\theta}} = \frac{1}{n} \sum_{k=1}^n \bm{X}_k" />
             <X.P>

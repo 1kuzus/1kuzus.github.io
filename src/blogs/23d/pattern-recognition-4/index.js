@@ -77,7 +77,7 @@ export default function Blog({blogTitle}) {
             <X.P>感知器的损失函数可以理解为错分样本的个数，数学形式如下：</X.P>
             <X.HighlightBlock bgcolor="gray">
                 <X.Formula
-                    text="\min L(\bm{W})=\frac{1}{N}\sum_{i=1}^Nl(i)，其中l(i)=
+                    text="\min L(\bm{W})=\frac{1}{N}\sum_{i=1}^Nl(i), \; l(i)=
                     \begin{cases}
                     1, \quad \text{sign}(y_i\bm{W}^T\bm{X_i}) < 0 \\
                     0, \quad 其他

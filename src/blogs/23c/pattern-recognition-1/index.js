@@ -21,18 +21,11 @@ export default function Blog({blogTitle}) {
                 <div className="blog72aa87-box blog72aa87-circle blog72aa87-fill" />
                 <div className="blog72aa87-box blog72aa87-circle" />
             </div>
-            <X.Uli>
-                <X.Formula className=".x-text-active" text="P(A) = \frac{3}{5} \quad P(B) = \frac{2}{5}" />
-            </X.Uli>
-            <X.Uli>
-                <X.Formula text="P(AB) = \frac{1}{5}" />
-            </X.Uli>
-            <X.Uli>
-                <X.Formula text="P(A|B，抓到实心图形时抓到的是方形) = \frac{1}{2}" />
-            </X.Uli>
-            <X.Uli>
-                <X.Formula text="P(B|A，抓到方形时抓到的是实心图形) = \frac{1}{3}" />
-            </X.Uli>
+            <X.P>
+                {`$P(A)=\\frac{3}{5}$`}，{`$P(B)=\\frac{2}{5}$`}，{`$P(AB)=\\frac{1}{5}$`}
+            </X.P>
+            <X.P>抓到实心图形时抓到的是方形：{`$P(A|B)=\\frac{1}{2}$`}</X.P>
+            <X.P>抓到方形时抓到的是实心图形：{`$P(B|A)=\\frac{1}{3}$`}</X.P>
             <X.P>\n结合上述例子理解贝叶斯公式的推导过程：</X.P>
             <X.Formula text="P(AB) = P(A|B) \cdot P(B)" />
             <X.Formula text="P(BA) = P(B|A) \cdot P(A)" />
@@ -40,7 +33,7 @@ export default function Blog({blogTitle}) {
             <X.H1>最小错误率贝叶斯决策</X.H1>
             <X.P>研究的类别有`c`个。</X.P>
             <X.HighlightBlock>
-                <X.Formula text="若P(\omega_i|x) = \max_{j=1,...,c} P(\omega_j|x)，则x属于\omega_i类" />
+                <X.P>若{`$P(\\omega_i|x)=\\max_{j=1,...,c}P(\\omega_j|x)$`}，则$x$属于$\omega_i$类</X.P>
             </X.HighlightBlock>
             <X.H2>两分类情况下，最小错误率决策的四种等价规则</X.H2>
             <X.Oli>
@@ -53,11 +46,11 @@ export default function Blog({blogTitle}) {
             </X.Oli>
             <X.Oli>
                 <X.P noMarginBottom>似然比$l$、似然比阈值$\lambda$</X.P>
-                <X.Formula text="l(x) = \frac{P(x|\omega_1)}{P(x|\omega_2)}，\lambda = \frac{P(\omega_2)}{P(\omega_1)}，l(x)>\lambda选\omega_1" />
+                <X.Formula text="l(x) = \frac{P(x|\omega_1)}{P(x|\omega_2)}, \; \lambda = \frac{P(\omega_2)}{P(\omega_1)}, \; l(x) > \lambda" />
             </X.Oli>
             <X.Oli>
                 <X.P noMarginBottom>对数似然比</X.P>
-                <X.Formula text="h(x)=-\ln [l(x)] \; 与 \; \ln\frac{P(\omega_1)}{P(\omega_2)} \; 比较，h(x)小选\omega_1" />
+                <X.Formula text="-\ln [l(x)] < \ln\frac{P(\omega_1)}{P(\omega_2)}" />
             </X.Oli>
             <X.HighlightBlock>
                 <X.P>
@@ -73,19 +66,29 @@ export default function Blog({blogTitle}) {
             <X.H2>最小风险贝叶斯决策</X.H2>
             <X.P>研究的类别有`c`个，做了`k`个决策。</X.P>
             <X.HighlightBlock>
-                <X.Formula text="若R(\alpha_i|x) = \min_{j=1,...,k} R(\alpha_j|x)，则采用决策\alpha_i，即x属于\omega_i类" />
+                <X.P>
+                    若{`$R(\\alpha_i|x)=\\min_{j=1,...,k}R(\\alpha_j|x)$`}，则采用决策$\alpha_i$，即$x$属于$\omega_i$类
+                </X.P>
             </X.HighlightBlock>
             <X.H2>两分类情况下的最小风险贝叶斯决策</X.H2>
             <X.P>简记$\lambda(\alpha_i,\omega_j)$为{`$\\lambda_{ij}$`}：</X.P>
             <X.Formula text="R(\alpha_1|x) = \lambda_{11}P(\omega_1|x) + \lambda_{12}P(\omega_2|x)" />
             <X.Formula text="R(\alpha_2|x) = \lambda_{21}P(\omega_1|x) + \lambda_{22}P(\omega_2|x)" />
-            <X.Formula text="若R(\alpha_1|x) < R(\alpha_2|x)则x属于\omega_1类" />
+            <X.P>若{`$R(\\alpha_1|x)<R(\\alpha_2|x)$`}，则$x$属于$\omega_1$类</X.P>
             <X.H2>最小风险贝叶斯决策的另两种形式</X.H2>
-            <X.Formula text="若(\lambda_{21} - \lambda_{11})P(\omega_1|x) > (\lambda_{12} - \lambda_{22})P(\omega_2|x)，则决策x \in \omega_1" />
-            <X.Formula text="若l(x)=\frac{P(x|\omega_1)}{P(x|\omega_2)} > \frac{\lambda_{12} - \lambda_{22}}{\lambda_{21} - \lambda_{11}} \cdot \frac{P(\omega_2)}{P(\omega_1)}，则决策x \in \omega_1" />
+            <X.P>
+                若{`$(\\lambda_{21} - \\lambda_{11})P(\\omega_1|x) > (\\lambda_{12} - \\lambda_{22})P(\\omega_2|x)$`}
+                ，则决策$x \in \omega_1$
+            </X.P>
+            <X.P>
+                若
+                {`$l(x)=\\frac{P(x|\\omega_1)}{P(x|\\omega_2)} > \\frac{\\lambda_{12} - \\lambda_{22}}{\\lambda_{21} - \\lambda_{11}} \\cdot \\frac{P(\\omega_2)}{P(\\omega_1)}$`}
+                ，则决策$x \in \omega_1$
+            </X.P>
             <X.HighlightBlock>
+                <X.P>设损失函数为：</X.P>
                 <X.Formula
-                    text="设损失函数为\lambda(\alpha_i,\omega_j)=
+                    text="\lambda(\alpha_i,\omega_j)=
                     \begin{cases}
                         0 \quad i=j \\ 
                         1 \quad i \neq j
@@ -111,13 +114,13 @@ export default function Blog({blogTitle}) {
                 \begin{bmatrix}
                 x_1 \\
                 x_2
-                \end{bmatrix}，
+                \end{bmatrix},
 
                 \bm{\mu}=
                 \begin{bmatrix}
                 \mu_1 \\
                 \mu_2
-                \end{bmatrix}，
+                \end{bmatrix},
 
                 \bm{\Sigma}=
                 \begin{bmatrix}
@@ -147,7 +150,7 @@ export default function Blog({blogTitle}) {
                 \begin{bmatrix}
                 cov(x_1,x_1) & cov(x_1,x_2) \\
                 cov(x_2,x_1) & cov(x_2,x_2)
-                \end{bmatrix}，有cov(x_1,x_1)=\sigma_1^2
+                \end{bmatrix},cov(x_1,x_1)=\sigma_1^2
                 "
             />
             <X.P>$\rho$的含义为两个变量的相关系数，以上述变量`x1`,`x2`为例，计算公式为：</X.P>
@@ -180,7 +183,10 @@ export default function Blog({blogTitle}) {
             <X.Formula text="g_i(\bm{X}) = -\frac{1}{2\sigma^2}\Vert\bm{X}-\bm{\mu_i}\Vert^2 +\ln P(\omega_i)" />
             <X.HighlightBlock>
                 <X.P>如果先验概率相等，则决策只与欧氏距离有关。此时决策为：</X.P>
-                <X.Formula text="若\Vert\bm{X}-\bm{\mu_i}\Vert^2 = \min_{j=1,...,c} \Vert\bm{X}-\bm{\mu_j}\Vert^2，则x属于\omega_i类" />
+                <X.P>
+                    若{`$\\Vert\\bm{X}-\\bm{\\mu_i}\\Vert^2 = \\min_{j=1,...,c} \\Vert\\bm{X}-\\bm{\\mu_j}\\Vert^2$`}
+                    ，则$x$属于$\omega_i$类
+                </X.P>
             </X.HighlightBlock>
             <X.HighlightBlock bgcolor="gray">
                 <X.P>
@@ -189,10 +195,19 @@ export default function Blog({blogTitle}) {
                 </X.P>
             </X.HighlightBlock>
             <X.P>如果对于上述判别函数{`$g(\\bm{X})$`}的欧式距离项展开，并删掉与类别无关的二次项，得：</X.P>
-            <X.Formula text="g_i(\bm{X}) = \bm{W_i}^T\bm{X} + b，其中\bm{W_i} = \frac{1}{\sigma^2}\bm{\mu_i}，b = -\frac{1}{2\sigma^2}\bm{\mu_i}^T\bm{\mu_i} + \ln P(\omega_i)" />
-            <X.P>判别函数是{`$\\bm{X}$`}的线性函数，称为`线性分类器`。\n接下来考虑决策面方程：</X.P>
+            <X.Formula text="g_i(\bm{X}) = \bm{W_i}^T\bm{X} + b" />
+            <X.P>
+                其中
+                {`$\\bm{W_i} = \\frac{1}{\\sigma^2}\\bm{\\mu_i}$`}，
+                {`$b = -\\frac{1}{2\\sigma^2}\\bm{\\mu_i}^T\\bm{\\mu_i} + \\ln P(\\omega_i)$`}
+            </X.P>
+            <X.P>判别函数是{`$\\bm{X}$`}的线性函数，称为`线性分类器`。</X.P>
+            <X.P>接下来考虑决策面方程：</X.P>
             <X.Formula text="g_i(\bm{X}) = g_j(\bm{X}) \; \Rightarrow \; \bm{W}^T(\bm{X}-\bm{X_0}) = 0" />
-            <X.Formula text="其中\bm{W} = \bm{\mu_i} - \bm{\mu_j}，\bm{X_0} = \frac{1}{2}(\bm{\mu_i} + \bm{\mu_j}) - \sigma^2\frac{\bm{\mu_i}-\bm{\mu_j}}{\Vert \bm{\mu_i}-\bm{\mu_j} \Vert^2}\ln\frac{P(\omega_i)}{P(\omega_j)}" />
+            <X.P>
+                其中{`$\\bm{W} = \\bm{\\mu_i} - \\bm{\\mu_j}$`}，
+                {`$\\bm{X_0} = \\frac{1}{2}(\\bm{\\mu_i} + \\bm{\\mu_j}) - \\sigma^2\\frac{\\bm{\\mu_i}-\\bm{\\mu_j}}{\\Vert \\bm{\\mu_i}-\\bm{\\mu_j} \\Vert^2}\\ln\\frac{P(\\omega_i)}{P(\\omega_j)}$`}
+            </X.P>
             <X.P>
                 这个方程确定了决策面是通过{`$\\bm{X}_0$`}并正交于向量{`$\\bm{W}$`}
                 的一个超平面。如果是二维平面上的点的分类问题，决策线过{`$\\bm{X}_0$`}
@@ -254,7 +269,10 @@ export default function Blog({blogTitle}) {
             <X.Formula text="g_i(\bm{X}) = -\frac{1}{2}r_i^2 + \ln P(\omega_i)" />
             <X.P>决策面方程：</X.P>
             <X.Formula text="\bm{W}^T(\bm{X}-\bm{X_0}) = 0" />
-            <X.Formula text="其中\bm{W} =\bm{\Sigma}^{-1} (\bm{\mu_i} - \bm{\mu_j})，\bm{X_0} = \frac{1}{2}(\bm{\mu_i} + \bm{\mu_j}) - \frac{\bm{\mu_i}-\bm{\mu_j}}{(\bm{\mu_i}-\bm{\mu_j})^T \bm{\Sigma}^{-1} (\bm{\mu_i}-\bm{\mu_j})}\ln\frac{P(\omega_i)}{P(\omega_j)}" />
+            <X.P>
+                其中{`$\\bm{W} =\\bm{\\Sigma}^{-1} (\\bm{\\mu_i} - \\bm{\\mu_j})$`}，
+                {`$\\bm{X_0} = \\frac{1}{2}(\\bm{\\mu_i} + \\bm{\\mu_j}) - \\frac{\\bm{\\mu_i}-\\bm{\\mu_j}}{(\\bm{\\mu_i}-\\bm{\\mu_j})^T \\bm{\\Sigma}^{-1} (\\bm{\\mu_i}-\\bm{\\mu_j})}\\ln\\frac{P(\\omega_i)}{P(\\omega_j)}$`}
+            </X.P>
             <X.P>此时，先验概率相等的前提下，决策线仍然过样本中心连线中点；但不一定垂直于样本中心的连线。</X.P>
             <X.Image src={require('./fig7.png')} width="500" invertInDarkTheme />
             <X.Oli>

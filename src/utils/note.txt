@@ -10,11 +10,10 @@ npx gh-pages -d build
 node .\src\utils\afterBuild.js
 
 匹配非汉字/非汉字标点/非ASCII字符
-[^\u4e00-\u9fa5a\p{ASCII}\p{P}]
+[^\u4e00-\u9fa5\p{ASCII}\p{P}]
 
-
-
-
+匹配公式内出现中文字符
+<X.Formula([\s\n]*?)text="([^"]*?)[\u4e00-\u9fa5]([^"]*?)"([\s\n]*?)/>
 
 
 是的，你可以编写一个函数来动态导入这些组件，并返回一个包含这些组件的数组。在现代的JavaScript中，你可以使用import()函数来动态导入模块。这个函数返回一个Promise，因此你可以使用Promise.all()来处理多个异步导入。

@@ -64,7 +64,9 @@ export default function Blog({blogTitle}) {
             </X.P>
             <X.Formula text="\hat{P}(x) = \frac{1}{n} \sum_{i=1}^n K(x,x_i)" />
             <X.P>窗函数只需要本身满足概率密度函数的要求即可：</X.P>
-            <X.Formula text="K(x,x_i) > 0 \; 且 \; \int K(x,x_i) dx = 1" />
+            <X.P>
+                {`$K(x,x_i)>0$`}且{`$\\int K(x,x_i)dx=1$`}
+            </X.P>
             <X.P>
                 下面列举几种常见的窗函数。上文中样本都简单地用$x$表示，下面仍然回到最一般的情况：\n
                 假设样本有$d$个维度，记样本为{`$\\bm{X}=[x_1, x_2, \\dots, x_d]^T$`}。
