@@ -5,6 +5,7 @@
 }
 .x-img-wrapper img {
     display: block;
+    max-width: 100%;
 }
 :root.dark .x-img-invert img {
     filter: invert(90%) hue-rotate(180deg) saturate(1.6);
