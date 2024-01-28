@@ -68,8 +68,8 @@ export default function Blog({blogTitle}) {
                 </div>
             </X.FlexRow>
             <X.H2>环境光</X.H2>
-            <X.FlexRow gap="32px">
-                <X.Image src={require('./fig5.jpg')} width="400px" invertInDarkTheme />
+            <X.FlexRow gap="32px" flex1>
+                <X.Image src={require('./fig5.jpg')}invertInDarkTheme />
                 <div>
                     <X.P>我们假设在每一点处，来自环境中各处散射叠加而成的光强是相等的$I_a$。</X.P>
                     <X.P>环境光部分$L_a$的计算公式为：</X.P>
@@ -77,8 +77,29 @@ export default function Blog({blogTitle}) {
                 </div>
             </X.FlexRow>
             <X.H2>结果</X.H2>
-            <X.Image src={require('./fig6.jpg')} width="100%" iidt />
+            <X.Image src={require('./fig6.jpg')} width="100%" />
             <X.P>最后的计算结果为：$L=L_d+L_s+L_a$</X.P>
+            <X.H1>纹理映射</X.H1>
+            <X.P>
+                纹理映射希望能够定义一个物体上面任意一点的不同属性（$k_d$等）。认为3D物体的表面是一张2D的图，---
+                纹理映射需要建立起3D物体表面上一点与纹理表面上的一点的一一对应关系。
+            </X.P>
+            <X.Image src={require('./fig7.jpg')} width="80%" />
+            <X.P>$u$、$v$通常都取值$[0,1]$。模型的每一个顶点都对应一个$(u,v)$。</X.P>
+            <X.P>纹理表面是如何得到的？美工画的！</X.P>
+            <X.H2>重心坐标</X.H2>
+            <X.FlexRow gap="32px">
+                <X.Image src={require('./fig8.jpg')} width="400px" invertInDarkTheme />
+                <div>
+                    <X.P>三角形所在平面上任何一点都可以用三角形顶点$A$、$B$、$C$来表示：</X.P>
+                    <X.HighlightBlock>
+                        <X.Formula text="(x,y)=\alpha A + \beta B + \gamma C, \; \alpha + \beta + \gamma = 1" />
+                    </X.HighlightBlock>
+                    <X.P>如果$(x,y)$在三角形内部，则有$\alpha$、$\beta$、$\gamma$均非负。</X.P>
+                    <X.Br />
+                    <X.P>当$\alpha=\beta=\gamma=1/3$时，$(x,y)$是三角形重心。</X.P>
+                </div>
+            </X.FlexRow>
         </X.BlogWrapper>
     );
 }
