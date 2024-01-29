@@ -127,6 +127,7 @@ export default function Blog({blogTitle}) {
                 <X.P>凹凸贴图`(bump mapping)`用一张灰度图存储高度的相对变化值。</X.P>
             </X.FlexRow>
             <X.H2>法线贴图</X.H2>
+            <X.P>法线贴图`(normal mapping)`直接将法线存储在贴图中。</X.P>
             <X.Image src={require('./fig12.jpg')} invertInDarkTheme width="800px" />
             <X.P noMarginBottom>
                 如图，改变后的法线方向垂直于$(1,dp)^T$，应为$(-dp,1)^T$。不过，上述是在平面上的简单示意图，实际情况下纹理是一个$u-v$平面，计算改变后的法线方向需要：
@@ -134,6 +135,22 @@ export default function Blog({blogTitle}) {
             <X.Uli>以原本的法线为$(0,0,1)^T$建立一个局部坐标系</X.Uli>
             <X.Uli>计算{`$\\bm{n}=(-dp/du,-dp/dv,1)^T$`}</X.Uli>
             <X.Uli>对{`$\\bm{n}$`}归一化即为所求</X.Uli>
+            <X.H2>位移贴图</X.H2>
+            <X.P>位移贴图`(displacement mapping)`会实际上真的移动顶点！</X.P>
+            <X.Image src={require('./fig13.jpg')} width="600px" />
+            <X.P>
+                由于凹凸贴图和法线贴图`(左图)`并不会真正的改变顶点，在一些细节上会与位移贴图`(右图)`有出入，例如物体的边缘和凸起部分的阴影。
+            </X.P>
+            <X.P>
+                位移贴图要求原图三角形的定义足够细致，也就是原物体顶点的采样率要高于凹凸纹理的采样率，---
+                否则就没办法通过移动顶点来实现纹理（就像很低分辨率的屏幕上不能很好的显示出高分辨率的图片）。
+            </X.P>
+            <X.H2>3D纹理</X.H2>
+            <X.Image src={require('./fig14.jpg')} width="600px" />
+            <X.P>
+                之前讨论的纹理都是2D的，但纹理也可以定义在3D空间中，例如上图的纹理是定义在3D空间中的噪声，空间中每一个点都有值（把花瓶切开，其内部也是有纹理的）。
+            </X.P>
+            <X.P>图中使用的是@柏林噪声[https://zh.m.wikipedia.org/wiki/Perlin%E5%99%AA%E5%A3%B0]@。</X.P>
         </X.BlogWrapper>
     );
 }
