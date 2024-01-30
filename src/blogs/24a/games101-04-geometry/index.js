@@ -21,6 +21,24 @@ export default function Blog({blogTitle}) {
                 显式`(explicit)`表示通过参数映射的方式，例如在3D空间中定义{`$f:\\mathbb{R}^2\\rightarrow\\mathbb{R}^3$`}
                 来描述一个几何体。这样求出构成几何体的点是容易的，只需要遍历函数定义域；但验证一点是否在表面上是困难的。
             </X.P>
+            <X.H1>更多隐式表示</X.H1>
+            <X.H2>代数曲面</X.H2>
+            <X.P>如前面所说的，代数曲面`(Algebraic Surfaces)`用数学公式来表达几何体。这种方法很难表示复杂的形体。</X.P>
+            <X.H2>构造实体几何 - CSG</X.H2>
+            <X.P>
+                构造实体几何`(Constructive Solid Geometry, CSG)`通过基本几何体的布尔运算---
+                （交、并、差等）来定义新的几何体。
+            </X.P>
+            <X.Image src={require('./fig2.jpg')} width="100%" />
+            <X.H2>距离函数</X.H2>
+            <X.P>距离函数定义空间中一点到要描述的表面的最短距离。</X.P>
+            <X.H2>分形</X.H2>
+            <X.P>分形`(Fractals)`具有自相似性。</X.P>
+            <X.FlexRow gap="32px">
+                <X.Image src={require('./fig3.jpg')} height="240px" invertInDarkTheme />
+                <X.Image src={require('./fig4.jpg')} height="240px" />
+            </X.FlexRow>
+            <X.P>分形的变化频率非常高，在渲染时会引发强烈的走样。</X.P>
         </X.BlogWrapper>
     );
 }
