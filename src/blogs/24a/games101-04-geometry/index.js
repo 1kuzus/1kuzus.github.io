@@ -4,24 +4,23 @@ export default function Blog({blogTitle}) {
     return (
         <X.BlogWrapper>
             <X.Title>{blogTitle}</X.Title>
-            <X.H1>一级标题</X.H1>
-            <X.H2>二级标题</X.H2>
-            <X.HighlightBlock bgcolor="gray">
-                <X.Uli>1</X.Uli>
-                <X.P noMarginBottom>p</X.P>
-                <X.Oli reset={2}>2</X.Oli>
-                <X.P withMarginTop>p</X.P>
-            </X.HighlightBlock>
-            <X.FlexRow gap="32px" width="50%">
-                <X.Table
-                    fromText={`
-                    A|B|C
-                    1|2|3
-                    `}
-                />
-                <X.Formula text="1+1=2" />
-                {/* <X.Image src={require('./fig1.jpg')} width="100%" invertInDarkTheme/> */}
+            <X.H1>几何的隐式和显式表示</X.H1>
+            <X.FlexRow gap="32px" alignItems="center">
+                <X.Image src={require('./fig1.jpg')} width="200px" />
+                <div>
+                    <X.P>隐式：$x^2+y^2+z^2-1=0$</X.P>
+                    <X.P>显式：$(u,v)\rightarrow(\cos u \sin v,\sin u \sin v,\cos v)$</X.P>
+                </div>
             </X.FlexRow>
+            <X.P>
+                隐式`(implicit)`表示就像数学中的隐函数，比如$f(x,y)=0$、$g(x,y,z)=0$，通过描述点满足的条件来表达几何体；---
+                这样的方式容易验证一点$(x_0,y_0,z_0)$是否在定义的面上，但求出构成形体的所有点是困难的，---
+                因为这需要求出方程的解。
+            </X.P>
+            <X.P>
+                显式`(explicit)`表示通过参数映射的方式，例如在3D空间中定义{`$f:\\mathbb{R}^2\\rightarrow\\mathbb{R}^3$`}
+                来描述一个几何体。这样求出构成几何体的点是容易的，只需要遍历函数定义域；但验证一点是否在表面上是困难的。
+            </X.P>
         </X.BlogWrapper>
     );
 }
