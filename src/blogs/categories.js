@@ -14,6 +14,7 @@ import Blog9e7694 from './23d/r2plus1d';
 import Blog009c1d from './24a/games101-01-transformation';
 import Blog7fe954 from './24a/games101-02-rasterization';
 import Blog996037 from './24a/games101-03-shading';
+import Blog3fd68a from './24a/games101-03-shading';
 import Blog1e216d from './24a/machine-learning-exercises';
 import Blog492899 from './24a/reproduce-nerf-rpn';
 import Blog60c26d from './24a/torch-numpy-topk';
@@ -79,7 +80,7 @@ const categories = [
             {
                 blogTitle: '在pytorch和numpy中取top-k值和索引',
                 path: '/24a/torch-numpy-topk/',
-                time: '2024-1-10',
+                time: '2024-01-10',
                 component: <Blog60c26d />,
             },
         ],
@@ -90,7 +91,7 @@ const categories = [
             {
                 blogTitle: 'JavaScript数组常用方法',
                 path: '/23c/js-array/',
-                time: '2023-9-2',
+                time: '2023-09-02',
                 component: <Blog08b1b6 />,
             },
             {
@@ -107,24 +108,24 @@ const categories = [
             {
                 blogTitle: '【模式识别】统计决策方法',
                 path: '/23c/pattern-recognition-1/',
-                time: '2023-8-31',
+                time: '2023-08-31',
                 component: <Blog72aa87 />,
             },
             {
                 blogTitle: '【模式识别】参数估计',
                 path: '/23c/pattern-recognition-2/',
-                time: '2023-9-12',
+                time: '2023-09-12',
                 component: <Blog699d42 />,
             },
             {
                 blogTitle: '【模式识别】非参数估计',
                 path: '/23c/pattern-recognition-3/',
-                time: '2023-9-19',
+                time: '2023-09-19',
                 component: <Blog2e5395 />,
             },
             {
                 blogTitle: '【模式识别】线性学习器与线性分类器',
-                path: '/23c/pattern-recognition-4/',
+                path: '/23d/pattern-recognition-4/',
                 time: '2023-10-24',
                 component: <Blog3992fa />,
             },
@@ -157,6 +158,12 @@ const categories = [
                 path: '/24a/games101-03-shading/',
                 time: '2024-01-26',
                 component: <Blog996037 />,
+            },
+            {
+                blogTitle: '【GAMES101】Geometry',
+                path: '/24a/games101-04-geometry/',
+                time: '2024-01-30',
+                component: <Blog3fd68a />,
             },
         ],
     },
