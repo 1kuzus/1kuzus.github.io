@@ -14,7 +14,7 @@ import Blog9e7694 from './23d/r2plus1d';
 import Blog009c1d from './24a/games101-01-transformation';
 import Blog7fe954 from './24a/games101-02-rasterization';
 import Blog996037 from './24a/games101-03-shading';
-import Blog3fd68a from './24a/games101-03-shading';
+import Blog3fd68a from './24a/games101-04-geometry';
 import Blog1e216d from './24a/machine-learning-exercises';
 import Blog492899 from './24a/reproduce-nerf-rpn';
 import Blog60c26d from './24a/torch-numpy-topk';
