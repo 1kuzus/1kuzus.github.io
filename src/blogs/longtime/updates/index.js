@@ -55,7 +55,7 @@ function UpdateLog() {
         {date: '2023-11-15', description: '通过后部署脚本解决刷新404问题'},
         {
             date: '2023-11-19',
-            description: '后部署脚本中加入生成`@sitemap.xml[/sitemap.xml]@`\\n用`<noscript>`标签作为临时SEO方案',
+            description: '后部署脚本中加入生成`@sitemap.xml[/sitemap.xml]@`\\n用`noscript`标签作为临时SEO方案',
         },
         {date: '2023-12-01', description: '优化目录生成逻辑，同一博客内标题可以重复'},
         {date: '2023-12-02', description: '图片组件新增可选的在暗色模式下自动反转颜色的功能'},
