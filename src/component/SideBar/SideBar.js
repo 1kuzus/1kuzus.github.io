@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import {useLocation, Link} from 'react-router-dom';
-import categories from '@/blogs/categories';
+import categories from 'src/blogs/categories';
 import './SideBar.css';
 
 function RightArrowIcon() {
