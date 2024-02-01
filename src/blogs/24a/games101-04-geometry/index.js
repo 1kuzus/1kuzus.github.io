@@ -85,6 +85,8 @@ export default function Blog({blogTitle}) {
                 `f`后面是顶点的索引。更详细的资料可以参考@维基百科[https://en.wikipedia.org/wiki/Wavefront_.obj_file]@。
             </X.P>
             <X.P>网站@ONLINE 3D VIEWER[https://3dviewer.net/]@可以在线查看各种格式定义的3D模型。</X.P>
+            <X.H1>曲线 - 贝塞尔曲线</X.H1>
+            <X.H1>曲面 - 更多</X.H1>
         </X.BlogWrapper>
     );
 }
