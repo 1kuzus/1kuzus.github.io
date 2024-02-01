@@ -3,7 +3,7 @@ import X from 'src/component/X';
 function PaperSummary(props) {
     const {topic, method, experiment, innovation, limitation} = props;
     return (
-        <>
+        <X.HighlightBlock bgcolor="gray">
             {X.Oli({reset: 0}) && false /*在不确定第一个Oli的情况下，reset序号为0，使得下一项一定从1开始*/}
             {[
                 [topic, '文章的主题 / 文章要解决什么问题？'],
@@ -20,7 +20,7 @@ function PaperSummary(props) {
                         </X.Oli>
                     )
             )}
-        </>
+        </X.HighlightBlock>
     );
 }
 
