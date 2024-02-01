@@ -158,6 +158,7 @@ export default function Blog({blogTitle}) {
                 }
             />
             <X.H2 href="https://arxiv.org/pdf/2312.00860.pdf">【SAGA】Segment Any 3D Gaussians (2023)</X.H2>
+            <PaperSummary topic="交互式3D分割" />
             <X.H1>学习</X.H1>
             <X.H2 href="https://www.cv-foundation.org/openaccess/content_cvpr_2014/papers/Girshick_Rich_Feature_Hierarchies_2014_CVPR_paper.pdf">
                 【R-CNN】Rich Feature Hierarchies for Accurate Object Detection and Semantic Segmentation (2014)
