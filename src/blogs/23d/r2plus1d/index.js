@@ -1,4 +1,4 @@
-import X from '@/component/X';
+import X from 'src/component/X';
 
 export default function Blog({blogTitle}) {
     return (

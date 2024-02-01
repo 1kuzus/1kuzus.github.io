@@ -18,3 +18,6 @@
 .x-highlightblock.highlight-background-gray {
     background-color: var(--bg-transparent-gray);
 }
+.x-highlightblock.highlight-background-blue {
+    background-color: var(--bg-transparent-blue);
+}

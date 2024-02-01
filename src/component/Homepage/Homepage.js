@@ -1,6 +1,6 @@
 import {useState, useLayoutEffect} from 'react';
 import {Link} from 'react-router-dom';
-import categories from '@/blogs/categories';
+import categories from 'src/blogs/categories';
 import './Homepage.css';
 
 function BlogList(props) {

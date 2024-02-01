@@ -1,8 +1,8 @@
-import X from '@/component/X';
+import X from 'src/component/X';
 import './index.css';
 
 function DemoBox() {
-    return <div className="b0000-demo-box" />;
+    return <div className="blog120c66-demo-box" />;
 }
 
 export default function Blog({blogTitle}) {
@@ -231,8 +231,8 @@ export default function Blog({blogTitle}) {
             </X.P>
             <X.H3>省去段落组件</X.H3>
             <X.P>
-                经常遇到的情况是：段落组件是唯一的子元素。因此在@`2023-12-17`的更新[/b0001/]@中，支持了直接在列表项中写含有段落组件特殊格式的文本。---
-                在解析时，如果子元素是`string`类型，会自动为其包裹一层段落组件。也就是说，以下两种写法是等价的：
+                经常遇到的情况是：段落组件是唯一的子元素。因此在@`2024-01-27`的更新[/longtime/updates/]@中，支持了直接在列表项中写含有段落组件特殊格式的文本。---
+                在解析时，如果子元素是`string | string[]`类型，--- 会自动为其包裹一层段落组件。
             </X.P>
             <X.HighlightBlock bgcolor="gray">
                 <X.H3>示例</X.H3>
@@ -242,14 +242,15 @@ export default function Blog({blogTitle}) {
                     <X.Uli>
                         <X.P>第\`1\`项</X.P>
                     </X.Uli>
-
                     <X.Uli>第\`2\`项</X.Uli>
+                    <X.Uli>第{\`$\\\\bm{3}$\`}项</X.Uli>
                     `}
                 />
                 <X.Uli>
                     <X.P>第`1`项</X.P>
                 </X.Uli>
                 <X.Uli>第`2`项</X.Uli>
+                <X.Uli>第{`$\\bm{3}$`}项</X.Uli>
             </X.HighlightBlock>
             <X.HighlightBlock>
                 <X.P>无序列表组件的上述特性同样适用于有序列表组件，因此下一节中不再重复。</X.P>
@@ -584,7 +585,7 @@ export default function Blog({blogTitle}) {
             <X.P>
                 高亮块组件只提供一个有背景色的容器，因此其内部可以嵌套其他组件。\n
                 高亮块会自动移除第一个子元素的`margin-top`和最后一个子元素的`margin-bottom`。\n
-                `bgcolor`的默认值是`golden`，可选值有`red`和`gray`。
+                `bgcolor`的默认值是`golden`，可选值有`red`、`gray`和`blue`。
             </X.P>
             <X.HighlightBlock bgcolor="gray">
                 <X.H3>示例</X.H3>
@@ -606,6 +607,10 @@ export default function Blog({blogTitle}) {
                             气象部门预测，未来几天可能会出现强风、暴雨、甚至可能的洪水等极端气象事件。
                         </X.P>
                     </X.HighlightBlock>
+
+                    <X.HighlightBlock bgcolor="blue">
+                        <X.P>在@\`2024-02-01\`的更新[/longtime/updates/]@中加入了蓝色背景。</X.P>
+                    </X.HighlightBlock>
                     `}
                 />
                 <X.HighlightBlock bgcolor="gray">
@@ -620,6 +625,9 @@ export default function Blog({blogTitle}) {
                         我们怀着极大的关切提醒您，当前我们所在地区可能会面临极端天气情况的威胁。---
                         气象部门预测，未来几天可能会出现强风、暴雨、甚至可能的洪水等极端气象事件。
                     </X.P>
+                </X.HighlightBlock>
+                <X.HighlightBlock bgcolor="blue">
+                    <X.P>在@`2024-02-01`的更新[/longtime/updates/]@中加入了蓝色背景。</X.P>
                 </X.HighlightBlock>
             </X.HighlightBlock>
             <X.H1>图片</X.H1>
