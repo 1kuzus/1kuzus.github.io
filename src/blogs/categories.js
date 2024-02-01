@@ -11,6 +11,7 @@ import Blog837b13 from './23d/object-detection-map';
 import Blog3992fa from './23d/pattern-recognition-4';
 import Blog6be863 from './23d/protocols';
 import Blog9e7694 from './23d/r2plus1d';
+import Blog9ade12 from './24a/deepl-shortcut-setting';
 import Blog009c1d from './24a/games101-01-transformation';
 import Blog7fe954 from './24a/games101-02-rasterization';
 import Blog996037 from './24a/games101-03-shading';
@@ -37,6 +38,12 @@ const categories = [
                 path: '/23d/github-linguist-vendored/',
                 time: '2023-12-31',
                 component: <Blog24ca9d />,
+            },
+            {
+                blogTitle: '解决：DeepL该快捷键已被使用',
+                path: '/24a/deepl-shortcut-setting/',
+                time: '2024-02-01',
+                component: <Blog9ade12 />,
             },
         ],
     },
