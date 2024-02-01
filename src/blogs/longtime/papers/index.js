@@ -49,7 +49,7 @@ export default function Blog({blogTitle}) {
                 innovation="将输入坐标位置编码，帮助MLP表示高频函数\n分层采样"
                 limitation="有效地优化和渲染神经辐射场\n可解释性"
             />
-            <X.HighlightBlock bgcolor="gray">
+            <X.HighlightBlock bgcolor="blue">
                 <X.H3>更多笔记</X.H3>
                 <X.P>神经辐射场用于从2D的图片重建3D的场景。</X.P>
                 <X.P noMarginBottom>文中出现的三个指标：PSNR、SSIM、LPIPS</X.P>
@@ -71,7 +71,7 @@ export default function Blog({blogTitle}) {
                 【3DGS】3D Gaussian Splatting for Real-Time Radiance Field Rendering (2023)
             </X.H2>
             <PaperSummary topic="实现实时辐射场渲染，同时保持高质量的视觉效果，并且保持较短的训练时间" />
-            <X.HighlightBlock bgcolor="gray">
+            <X.HighlightBlock bgcolor="blue">
                 <X.H3>更多笔记</X.H3>
                 <X.H3>文章的相关工作部分</X.H3>
                 <X.P>
@@ -90,7 +90,7 @@ export default function Blog({blogTitle}) {
                 【Instant NGP】Instant Neural Graphics Primitives with a Multiresolution Hash Encoding (2022)
             </X.H2>
             <PaperSummary topic="实现实时辐射场渲染，同时保持高质量的视觉效果，并且保持较短的训练时间" />
-            <X.HighlightBlock bgcolor="gray">
+            <X.HighlightBlock bgcolor="blue">
                 <X.H3>更多笔记</X.H3>
                 <X.H3>Instant NGP与NeRF的异同</X.H3>
                 <X.P noMarginBottom>转载自@知乎：从NeRF到Instant-NGP[https://zhuanlan.zhihu.com/p/631284285]@</X.P>
@@ -138,7 +138,7 @@ export default function Blog({blogTitle}) {
                     </>
                 }
             />
-            <X.HighlightBlock bgcolor="gray">
+            <X.HighlightBlock bgcolor="blue">
                 <X.H3>更多笔记</X.H3>
                 <X.H3>包围体：AABB和OBB</X.H3>
                 <X.P>*AABB*：轴对齐包围盒`(Axis-Aligned Bounding Box)`\n*OBB*：有向包围盒`(Oriented Bounding Box)`</X.P>
@@ -167,7 +167,7 @@ export default function Blog({blogTitle}) {
                 method="区域提议`(Region Proposals)`：使用`selective search`生成候选框"
                 experiment="在`PASCAL VOC 2012`取得`mAP 53.3%`，在`ILSVRC 2013`竞赛数据集取得`mAP 31.4%`"
             />
-            <X.HighlightBlock bgcolor="gray">
+            <X.HighlightBlock bgcolor="blue">
                 <X.H3>更多笔记</X.H3>
                 <X.P>
                     转载自@动手学深度学习 -
@@ -181,7 +181,7 @@ export default function Blog({blogTitle}) {
                 <X.P>
                     R-CNN的速度很慢，因为可能从一张图像中选出上千个提议区域，这需要上千次的卷积神经网络的前向传播来执行目标检测。这种庞大的计算量使得R-CNN在现实世界中难以被广泛应用。
                 </X.P>
-                <X.Image src={require('./rcnn.jpg')} width="600px" invertInDarkTheme />
+                <X.Image src={require('./rcnn.jpg')} width="600px" />
                 <X.H3>Fast R-CNN</X.H3>
                 <X.P>
                     R-CNN的主要性能瓶颈在于，对每个提议区域，卷积神经网络的前向传播是独立的，而没有共享计算。由于这些区域通常有重叠，独立的特征抽取会导致重复的计算。---
@@ -197,7 +197,7 @@ export default function Blog({blogTitle}) {
                     Fast R-CNN先对图片用CNN抽取特征，然后将`selective
                     search`给出的原图上的提议区域映射到CNN特征图上，再经过`ROI Pooling`就可以得到维度对齐的特征。
                 </X.P>
-                <X.Image src={require('./fastrcnn.jpg')} width="400px" invertInDarkTheme />
+                <X.Image src={require('./fastrcnn.jpg')} width="400px" />
                 <X.H3>Faster R-CNN</X.H3>
                 <X.P>
                     与Fast R-CNN相比，Faster R-CNN将生成提议区域的方法从`selective search`改为了---
@@ -206,7 +206,7 @@ export default function Blog({blogTitle}) {
                     的目标函数不仅包括目标检测中的类别和边界框预测，还包括区域提议网络中锚框的二元类别和边界框预测。作为端到端训练的结果，---
                     区域提议网络能够学习到如何生成高质量的提议区域，从而在减少了从数据中学习的提议区域的数量的情况下，仍保持目标检测的精度。
                 </X.P>
-                <X.Image src={require('./fasterrcnn.jpg')} width="600px" invertInDarkTheme />
+                <X.Image src={require('./fasterrcnn.jpg')} width="600px" />
             </X.HighlightBlock>
             <X.H2 href="https://arxiv.org/pdf/1703.06870.pdf">【Mask R-CNN】Mask R-CNN (2017)</X.H2>
             <PaperSummary
@@ -231,7 +231,7 @@ export default function Blog({blogTitle}) {
                 分割任务的精细程度更高，因此文章提出了`ROI Align`，使用双线性插值来保留特征图上的空间信息。
                 "
             />
-            <X.HighlightBlock bgcolor="gray">
+            <X.HighlightBlock bgcolor="blue">
                 <X.H3>更多笔记</X.H3>
                 <X.H3>语义分割与实例分割</X.H3>
                 <X.Image src={require('./ss_and_is.jpg')} width="600px" />
@@ -250,7 +250,7 @@ export default function Blog({blogTitle}) {
                 改造的方式是将最后的全连接层替换成卷积层。
                 "
             />
-            <X.HighlightBlock bgcolor="gray">
+            <X.HighlightBlock bgcolor="blue">
                 <X.H3>更多笔记</X.H3>
                 <X.H3>转置卷积</X.H3>
                 <X.P>

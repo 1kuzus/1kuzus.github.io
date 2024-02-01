@@ -28,6 +28,7 @@
     --bg-transparent-golden: #ffb80018;
     --bg-transparent-red: #ff380018;
     --bg-transparent-gray: #a0a0a018;
+    --bg-transparent-blue: #0080ff18;
     --bg-icon-color: #30303c;
     --bg-scrollbar-thumb-color: #cccccc;
     --bg-th-color: #90909028;
@@ -50,6 +51,7 @@
     --bg-transparent-golden: #c08a0020;
     --bg-transparent-red: #c02a0020;
     --bg-transparent-gray: #80808018;
+    --bg-transparent-blue: #0080ff10;
     --bg-icon-color: #383844;
     --bg-th-color: #60606c28;
     --bg-td-color: #48485420;
