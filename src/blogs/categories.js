@@ -16,6 +16,7 @@ import Blog009c1d from './24a/games101-01-transformation';
 import Blog7fe954 from './24a/games101-02-rasterization';
 import Blog996037 from './24a/games101-03-shading';
 import Blog3fd68a from './24a/games101-04-geometry';
+import Blog29491e from './24a/git–merge-allow-unrelated-histories/';
 import Blog1e216d from './24a/machine-learning-exercises';
 import Blog492899 from './24a/reproduce-nerf-rpn';
 import Blog60c26d from './24a/torch-numpy-topk';
@@ -34,7 +35,7 @@ const categories = [
                 component: <Blog2b385d />,
             },
             {
-                blogTitle: '不统计Github仓库某个文件夹下的语言',
+                blogTitle: '不统计Github仓库某个目录下的语言',
                 path: '/23d/github-linguist-vendored/',
                 time: '2023-12-31',
                 component: <Blog24ca9d />,
@@ -44,6 +45,12 @@ const categories = [
                 path: '/24a/deepl-shortcut-setting/',
                 time: '2024-02-01',
                 component: <Blog9ade12 />,
+            },
+            {
+                blogTitle: '记录：使用--allow-unrelated-histories',
+                path: '/24a/git–merge-allow-unrelated-histories/',
+                time: '2024-02-02',
+                component: <Blog29491e />,
             },
         ],
     },
@@ -74,7 +81,7 @@ const categories = [
                 component: <Blog56bda0 />,
             },
             {
-                blogTitle: '复盘：复现NeRF-RPN代码',
+                blogTitle: '记录：复现NeRF-RPN代码',
                 path: '/24a/reproduce-nerf-rpn/',
                 time: '2024-01-01',
                 component: <Blog492899 />,
