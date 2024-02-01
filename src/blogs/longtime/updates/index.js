@@ -67,6 +67,7 @@ function UpdateLog() {
         {version: '1.0'},
         {date: '2024-01-08', description: '新的SEO方案：使用`react-snap`作预渲染\\n加入`404`页面'},
         {date: '2024-01-22', description: '更新`404`页面'},
+        {date: '2024-01-23', description: '迁移项目到`non-ejected`版'},
         {date: '2024-01-26', description: '使用语义化更佳的路由方案'},
         {date: '2024-01-27', description: '支持直接在列表项中写含有jsx表达式的`children`'},
         {date: '2024-02-01', description: '`HighlightBlock`组件支持`bgcolor="blue"`'},
