@@ -16,10 +16,11 @@ import Blog009c1d from './24a/games101-01-transformation';
 import Blog7fe954 from './24a/games101-02-rasterization';
 import Blog996037 from './24a/games101-03-shading';
 import Blog3fd68a from './24a/games101-04-geometry';
-import Blog29491e from './24a/git–merge-allow-unrelated-histories/';
+import Blog29491e from './24a/git-merge-allow-unrelated-histories';
 import Blog1e216d from './24a/machine-learning-exercises';
 import Blog492899 from './24a/reproduce-nerf-rpn';
 import Blog60c26d from './24a/torch-numpy-topk';
+import Blog79acb2 from './24a/zzz';
 import Blog120c66 from './longtime/demo';
 import Blog32e936 from './longtime/papers';
 import Blog75d1a6 from './longtime/updates';
@@ -48,7 +49,7 @@ const categories = [
             },
             {
                 blogTitle: '记录：使用--allow-unrelated-histories',
-                path: '/24a/git–merge-allow-unrelated-histories/',
+                path: '/24a/git-merge-allow-unrelated-histories/',
                 time: '2024-02-02',
                 component: <Blog29491e />,
             },
@@ -113,6 +114,12 @@ const categories = [
                 path: '/23d/css-auto-height-transition/',
                 time: '2023-12-30',
                 component: <Blog660e89 />,
+            },
+            {
+                blogTitle: '目录测试',
+                path: '/24a/template/',
+                time: '2023-12-30',
+                component: <Blog79acb2 />,
             },
         ],
     },
