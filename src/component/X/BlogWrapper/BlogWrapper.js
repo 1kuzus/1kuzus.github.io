@@ -19,7 +19,7 @@ function BlogContent(props) {
                     <div
                         key={index}
                         className={`x-blogcontent-titletype-${type}${index === activeIdx ? ' active' : ''}`}
-                        onClick={() => document.documentElement.scrollTo({top: titleNode.offsetTop - 64 - 16})}
+                        onClick={() => document.documentElement.scrollTo({top: titleNode.offsetTop - 80})}
                     >
                         {text}
                     </div>
@@ -41,20 +41,20 @@ export default function BlogWrapper(props) {
         if (!titleNodes?.length) return;
         setTitles(titleNodes);
         const scrollHandler = () => {
-            const titleNodesOffsetTop = titleNodes.map((titleNode) => titleNode.offsetTop - 96);
+            const titleNodesOffsetTop = titleNodes.map((titleNode) => titleNode.offsetTop - 80);
             const containerScrollTop = Math.ceil(container.scrollTop);
 
-            // const line = (a, b, c, d, x) => ((d - b) / (c - a)) * (x - a) + b;
-            // const maxContainerScrollTop = container.scrollHeight - container.clientHeight;
-            // const ot_i_idx = titleNodesOffsetTop.findLastIndex((offset) => offset <= maxContainerScrollTop);
-            // const ot_i = ot_i_idx !== -1 ? titleNodesOffsetTop[ot_i_idx] : 0;
-            // const ot_n = titleNodesOffsetTop[titleNodes.length - 1];
-            // const threshold =
-            //     containerScrollTop < ot_i
-            //         ? containerScrollTop
-            //         : Math.max(containerScrollTop, line(ot_i, ot_i, maxContainerScrollTop, ot_n, containerScrollTop));
-
-            const threshold = containerScrollTop;
+            // 新版
+            const line = (a, b, c, d, x) => ((d - b) / (c - a)) * (x - a) + b;
+            const maxContainerScrollTop = container.scrollHeight - container.clientHeight;
+            const ot_i = titleNodesOffsetTop.findLast((offset) => offset <= maxContainerScrollTop) || 0;
+            const ot_n = titleNodesOffsetTop[titleNodes.length - 1];
+            const threshold =
+                containerScrollTop < ot_i || ot_i === ot_n
+                    ? containerScrollTop
+                    : line(ot_i, ot_i, maxContainerScrollTop, ot_n, containerScrollTop);
+            // 旧版
+            // const threshold = containerScrollTop;
             const lastIdx = titleNodesOffsetTop.findLastIndex((offset) => offset <= threshold);
             setActiveIdx(Math.max(0, lastIdx));
         };
