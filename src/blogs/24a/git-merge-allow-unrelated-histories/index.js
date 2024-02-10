@@ -1,9 +1,9 @@
 import X from 'src/component/X';
 
-export default function Blog({blogTitle}) {
+export default function Blog({title}) {
     return (
         <X.BlogWrapper>
-            <X.Title>{blogTitle}</X.Title>
+            <X.Title>{title}</X.Title>
             <X.H1>前情提要</X.H1>
             <X.P>这个博客网站是一个`Create React App`项目，因为只有我自己，就一直在Github仓库的`master`分支开发。</X.P>
             <X.P>

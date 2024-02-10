@@ -20,8 +20,8 @@ function SideBarList(props) {
     return (
         <div className={`sidebarlist${showList ? ' showlist' : ''}`}>
             <div className="sidebarlist-head" onClick={() => setShowList(!showList)}>
-                <h3 className="sidebarlist-title">{category.categoryName + ` (${category.blogs.length})`}</h3>
-                <div className="sidebarlist-title-rightarrow">
+                <h3 className="sidebarlist-category">{category.categoryName + ` (${category.blogs.length})`}</h3>
+                <div className="sidebarlist-category-rightarrow">
                     <RightArrowIcon />
                 </div>
             </div>
@@ -33,7 +33,7 @@ function SideBarList(props) {
                                 className={`sidebarlist-li${currentPath === blog.path ? ' active' : ''}`}
                                 to={blog.path}
                             >
-                                {blog.blogTitle}
+                                {blog.title}
                             </Link>
                         </li>
                     ))}

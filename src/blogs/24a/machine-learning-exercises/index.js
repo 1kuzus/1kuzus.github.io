@@ -1,9 +1,9 @@
 import X from 'src/component/X';
 
-export default function Blog({blogTitle}) {
+export default function Blog({title}) {
     return (
         <X.BlogWrapper>
-            <X.Title>{blogTitle}</X.Title>
+            <X.Title>{title}</X.Title>
             <X.H1>神经网络</X.H1>
             <X.Oli>
                 <X.P>试论述学习率的取值对神经网络训练的影响。</X.P>

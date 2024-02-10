@@ -1,10 +1,10 @@
 import X from 'src/component/X';
 import './index.css';
 
-export default function Blog({blogTitle}) {
+export default function Blog({title}) {
     return (
         <X.BlogWrapper>
-            <X.Title>{blogTitle}</X.Title>
+            <X.Title>{title}</X.Title>
             <X.H1>问题描述</X.H1>
             <X.P>下面是一个常见的效果，当鼠标悬浮时展开显示内容，离开时自动收回。</X.P>
             <X.FlexRow gap="32px">

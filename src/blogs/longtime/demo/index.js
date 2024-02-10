@@ -5,10 +5,10 @@ function DemoBox() {
     return <div className="blog120c66-demo-box" />;
 }
 
-export default function Blog({blogTitle}) {
+export default function Blog({title}) {
     return (
         <X.BlogWrapper>
-            <X.Title>{blogTitle}</X.Title>
+            <X.Title>{title}</X.Title>
             <X.H1>基础组件</X.H1>
             <X.H2>标题</X.H2>
             <X.P>此组件体系中标题分为三级，且只有一级和二级标题会展示在右侧目录中。</X.P>
@@ -917,13 +917,13 @@ export default function Blog({blogTitle}) {
                     return (
                         <div className={\`sidebarlist\${showList ? ' showlist' : ''}\`}>
                             <div className="sidebarlist-head" onClick={() => setShowList(!showList)}>
-                                <h3 className="sidebarlist-title">{category.categoryName + \` (\${category.blogs.length})\`}</h3>
-                                <img className="sidebarlist-title-rightarrow" src={RightArrowIcon} />
+                                <h3 className="sidebarlist-category">{category.categoryName + \` (\${category.blogs.length})\`}</h3>
+                                <img className="sidebarlist-category-rightarrow" src={RightArrowIcon} />
                             </div>
                             <ul className="sidebarlist-ul" style={{height: showList ? 34 * category.blogs.length + 'px' : '0'}}>
                                 {category.blogs.map((blog, index) => (
                                     <li key={index}>
-                                        <Link className={\`sidebarlist-li\${currentPath === blog.path ? ' active' : ''}\`} to={blog.path}>{blog.blogTitle}</Link>
+                                        <Link className={\`sidebarlist-li\${currentPath === blog.path ? ' active' : ''}\`} to={blog.path}>{blog.title}</Link>
                                     </li>
                                 ))}
                             </ul>

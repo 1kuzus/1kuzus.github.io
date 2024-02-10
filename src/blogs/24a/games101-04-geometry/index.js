@@ -1,9 +1,9 @@
 import X from 'src/component/X';
 
-export default function Blog({blogTitle}) {
+export default function Blog({title}) {
     return (
         <X.BlogWrapper>
-            <X.Title>{blogTitle}</X.Title>
+            <X.Title>{title}</X.Title>
             <X.H1>几何的隐式和显式表示</X.H1>
             <X.FlexRow gap="32px" alignItems="center">
                 <X.Image src={require('./fig1.jpg')} width="200px" />

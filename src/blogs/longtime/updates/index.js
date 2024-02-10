@@ -91,7 +91,7 @@ function UpdateLog() {
     );
 }
 
-export default function Blog({blogTitle}) {
+export default function Blog({title}) {
     useEffect(() => {
         const trigger = document.getElementById('blog75d1a6-trigger');
         const canvas = document.getElementById('blog75d1a6-canvas');
@@ -189,7 +189,7 @@ export default function Blog({blogTitle}) {
     }, []);
     return (
         <X.BlogWrapper>
-            <X.Title>{blogTitle}</X.Title>
+            <X.Title>{title}</X.Title>
             <Version />
             <X.H1>历史</X.H1>
             <UpdateLog />

@@ -1,9 +1,9 @@
 import X from 'src/component/X';
 
-export default function Blog({blogTitle}) {
+export default function Blog({title}) {
     return (
         <X.BlogWrapper>
-            <X.Title>{blogTitle}</X.Title>
+            <X.Title>{title}</X.Title>
             <X.H1>说明</X.H1>
             <X.P>复现仓库：@https://github.com/lyclyc52/NeRF_RPN[https://github.com/lyclyc52/NeRF_RPN]@</X.P>
             <X.P>

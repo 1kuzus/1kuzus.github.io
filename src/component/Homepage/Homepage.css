@@ -59,12 +59,11 @@
 }
 #bloglists {
     min-height: calc(100vh - 64px);
-    padding: 12px 120px 48px;
+    padding: 12px 24px 48px;
     overflow: hidden;
     user-select: none;
 }
 .bloglist {
-    min-width: 480px;
     max-width: 1024px;
     margin: 36px auto 0;
 }
@@ -72,7 +71,7 @@
     display: flex;
     cursor: pointer;
 }
-.bloglist-title {
+.bloglist-category {
     width: fit-content;
     padding: 12px 0;
     font-size: 24px;
@@ -87,24 +86,35 @@
 }
 .bloglist-ul {
     grid-row: 1 / span 2;
-    padding: 0 24px;
     opacity: 0;
     overflow: hidden;
     transition: opacity 200ms;
 }
 .bloglist-li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     height: 50px;
     margin-top: 8px;
     padding: 12px 24px;
-    font-size: 18px;
-    font-weight: bold;
-    color: var(--text-color-main);
     border-radius: 12px;
     cursor: pointer;
     transition: background-color 200ms;
+}
+.bloglist-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-color-main);
+}
+.bloglist-title {
+    font-size: 18px;
+    font-weight: bold;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+@media (max-width: 600px) {
+    .bloglist-time {
+        display: none;
+    }
 }
 .bloglist-time {
     opacity: 0;
@@ -119,12 +129,12 @@
 .bloglist-li:hover .bloglist-time {
     opacity: 0.5;
 }
-.bloglist-head:hover .bloglist-title {
+.bloglist-head:hover .bloglist-category {
     color: var(--title-color);
 }
 
 /*分类展开样式*/
-.bloglist.showlist .bloglist-title {
+.bloglist.showlist .bloglist-category {
     flex-grow: 1;
     color: var(--title-color);
 }

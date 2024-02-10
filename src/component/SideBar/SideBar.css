@@ -8,7 +8,7 @@
     overflow-x: hidden;
     user-select: none;
 }
-@media screen and (max-width: 1164px) {
+@media (max-width: 1164px) {
     #sidebar {
         display: none;
     }
@@ -22,7 +22,7 @@
     align-items: center;
     cursor: pointer;
 }
-.sidebarlist-title {
+.sidebarlist-category {
     box-sizing: content-box;
     height: 24px;
     line-height: 24px;
@@ -31,7 +31,7 @@
     font-size: 16px;
     color: var(--text-color-main);
 }
-.sidebarlist-title-rightarrow {
+.sidebarlist-category-rightarrow {
     width: 16px;
     height: 16px;
     transition: transform 200ms;
@@ -71,16 +71,16 @@
 .sidebarlist-li:hover {
     background-color: var(--bg-transparent-gray);
 }
-.sidebarlist-head:hover .sidebarlist-title {
+.sidebarlist-head:hover .sidebarlist-category {
     color: var(--title-color);
     transition: color 200ms;
 }
 
 /*分类展开样式*/
-.sidebarlist.showlist .sidebarlist-title {
+.sidebarlist.showlist .sidebarlist-category {
     color: var(--title-color);
 }
-.sidebarlist.showlist .sidebarlist-title-rightarrow {
+.sidebarlist.showlist .sidebarlist-category-rightarrow {
     transform: rotate(90deg);
 }
 .sidebarlist.showlist .sidebarlist-ul-wrapper {
