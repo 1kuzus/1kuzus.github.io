@@ -1,9 +1,9 @@
 import X from 'src/component/X';
 
-export default function Blog({blogTitle}) {
+export default function Blog({title}) {
     return (
         <X.BlogWrapper>
-            <X.Title>{blogTitle}</X.Title>
+            <X.Title>{title}</X.Title>
             <X.P>
                 为了减少数据冗余，设计数据表时必须遵循一定的规则，在关系型数据库中这种规则就称为范式。\n
                 严谨的定义可以参考维基百科---

@@ -5,7 +5,7 @@
     padding: 48px 420px 48px 480px;
     color: var(--text-color-main);
 }
-@media screen and (max-width: 1500px) {
+@media (max-width: 1500px) {
     .x-blogwrapper {
         padding: 48px 84px 48px 480px;
     }
@@ -13,7 +13,7 @@
         display: none;
     }
 }
-@media screen and (max-width: 1164px) {
+@media (max-width: 1164px) {
     .x-blogwrapper {
         max-width: 1128px;
         padding: 48px 64px;
@@ -41,6 +41,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    /*todo:css 顺序*/
     border-left: 4px solid transparent;
     border-radius: 4px;
     opacity: 0.9;

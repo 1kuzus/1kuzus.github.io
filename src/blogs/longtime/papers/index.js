@@ -34,10 +34,10 @@ AI提问示例
 5.研究有什么限制或可以改进的地方？
 */
 
-export default function Blog({blogTitle}) {
+export default function Blog({title}) {
     return (
         <X.BlogWrapper>
-            <X.Title>{blogTitle}</X.Title>
+            <X.Title>{title}</X.Title>
             <X.H1>研究</X.H1>
             <X.H2 href="https://arxiv.org/pdf/2003.08934.pdf">
                 【NeRF】NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis (2020)

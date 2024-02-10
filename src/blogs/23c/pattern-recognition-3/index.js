@@ -1,9 +1,9 @@
 import X from 'src/component/X';
 
-export default function Blog({blogTitle}) {
+export default function Blog({title}) {
     return (
         <X.BlogWrapper>
-            <X.Title>{blogTitle}</X.Title>
+            <X.Title>{title}</X.Title>
             <X.P>
                 本章讨论的是`非参数估计`。很多时候我们无法给出样本分布的函数形式，也就无法使用根据样本估计函数参数的思路。\n
                 非参数估计的思想是，直接根据样本，用数值方法估计出整个分布函数。

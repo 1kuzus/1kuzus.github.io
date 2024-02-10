@@ -1,9 +1,9 @@
 import X from 'src/component/X';
 
-export default function Blog({blogTitle}) {
+export default function Blog({title}) {
     return (
         <X.BlogWrapper>
-            <X.Title>{blogTitle}</X.Title>
+            <X.Title>{title}</X.Title>
             <X.H1>一级标题</X.H1>
             <X.H2>二级标题</X.H2>
             <X.HighlightBlock bgcolor="gray">

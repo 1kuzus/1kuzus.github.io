@@ -1,9 +1,9 @@
 import X from 'src/component/X';
 
-export default function Blog({blogTitle}) {
+export default function Blog({title}) {
     return (
         <X.BlogWrapper>
-            <X.Title>{blogTitle}</X.Title>
+            <X.Title>{title}</X.Title>
             <X.P>
                 参考：@https://github.com/github-linguist/linguist/blob/master/docs/overrides.md#vendored-code[https://github.com/github-linguist/linguist/blob/master/docs/overrides.md#vendored-code]@
             </X.P>

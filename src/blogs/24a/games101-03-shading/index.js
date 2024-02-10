@@ -1,9 +1,9 @@
 import X from 'src/component/X';
 
-export default function Blog({blogTitle}) {
+export default function Blog({title}) {
     return (
         <X.BlogWrapper>
-            <X.Title>{blogTitle}</X.Title>
+            <X.Title>{title}</X.Title>
             <X.H1>Blinn-Phong光照模型</X.H1>
             <X.P noMarginBottom>将环境光分为：</X.P>
             <X.Uli>漫反射`(diffuse reflection)`：一根光线打过来，反射到四面八方</X.Uli>

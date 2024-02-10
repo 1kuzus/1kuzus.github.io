@@ -1,9 +1,9 @@
 import X from 'src/component/X';
 
-export default function Blog({blogTitle}) {
+export default function Blog({title}) {
     return (
         <X.BlogWrapper>
-            <X.Title>{blogTitle}</X.Title>
+            <X.Title>{title}</X.Title>
             <X.P>
                 在2D屏幕上显示物体时，最终的图像是由一个一个像素构成的。光栅化需要解决的问题就是将连续的物体表示离散化。
             </X.P>

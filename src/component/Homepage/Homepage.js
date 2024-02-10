@@ -9,14 +9,14 @@ function BlogList(props) {
     return (
         <div className={`bloglist${showList ? ' showlist' : ''}`}>
             <div className="bloglist-head" onClick={() => setShowList(!showList)}>
-                <h3 className="bloglist-title">{category.categoryName + ` (${category.blogs.length})`}</h3>
+                <h3 className="bloglist-category">{category.categoryName + ` (${category.blogs.length})`}</h3>
             </div>
             <div className="bloglist-ul-wrapper">
                 <ul className="bloglist-ul">
                     {category.blogs.map((blog, index) => (
-                        <li key={index}>
-                            <Link className="bloglist-li" to={blog.path}>
-                                {blog.blogTitle}
+                        <li key={index} className="bloglist-li" >
+                            <Link className="bloglist-link" to={blog.path}>
+                                {<span className="bloglist-title">{blog.title}</span>}
                                 {blog.time && <span className="bloglist-time">{blog.time}</span>}
                             </Link>
                         </li>

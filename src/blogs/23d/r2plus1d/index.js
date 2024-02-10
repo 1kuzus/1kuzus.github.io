@@ -1,9 +1,9 @@
 import X from 'src/component/X';
 
-export default function Blog({blogTitle}) {
+export default function Blog({title}) {
     return (
         <X.BlogWrapper>
-            <X.Title>{blogTitle}</X.Title>
+            <X.Title>{title}</X.Title>
             <X.P>
                 论文@A Closer Look at Spatiotemporal Convolutions for Action
                 Recognition[https://arxiv.org/pdf/1711.11248.pdf]@讨论了几种用于行为识别的时空卷积网络。---
