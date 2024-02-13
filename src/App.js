@@ -1,4 +1,5 @@
 import {useRoutes} from 'react-router-dom';
+import {GlobalProvider} from './context/GlobalContext';
 import BlogLayout from './component/BlogLayout/BlogLayout';
 import Header from './component/Header/Header';
 import Homepage from './component/Homepage/Homepage';
@@ -36,10 +37,10 @@ const router = [
 
 function App() {
     return (
-        <>
+        <GlobalProvider>
             <Header />
             {useRoutes(router)}
-        </>
+        </GlobalProvider>
     );
 }
 

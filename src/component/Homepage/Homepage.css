@@ -114,15 +114,15 @@
     text-overflow: ellipsis;
     overflow: hidden;
 }
-@media (max-width: 600px) {
-    .blog-list-time {
-        display: none;
-    }
-}
 .blog-list-time {
     font-size: 14px;
     font-weight: normal;
     opacity: 0;
+}
+@media (max-width: 600px) {
+    .blog-list-time {
+        display: none;
+    }
 }
 
 /*hover样式*/
@@ -137,13 +137,13 @@
 }
 
 /*分类展开样式*/
-.blog-list.showlist .blog-list-category {
+.blog-list.show-list .blog-list-category {
     flex-grow: 1;
     color: var(--title-color);
 }
-.blog-list.showlist .blog-list-ul-wrapper {
+.blog-list.show-list .blog-list-ul-wrapper {
     grid-template-rows: 1fr;
 }
-.blog-list.showlist .blog-list-ul {
+.blog-list.show-list .blog-list-ul {
     opacity: 0.9;
 }

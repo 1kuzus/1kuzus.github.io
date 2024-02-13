@@ -7,7 +7,7 @@ function BlogList(props) {
     const {category} = props;
     const [showList, setShowList] = useState(true);
     return (
-        <div className={`blog-list${showList ? ' showlist' : ''}`}>
+        <div className={`blog-list${showList ? ' show-list' : ''}`}>
             <div className="blog-list-head" onClick={() => setShowList(!showList)}>
                 <h3 className="blog-list-category">{category.categoryName + ` (${category.blogs.length})`}</h3>
             </div>

@@ -10,6 +10,7 @@ const propertyOrderList = [
     'flex-direction',
     'justify-content',
     'align-items',
+    'gap',
     'align-self',
     'flex',
     'flex-grow',
@@ -121,6 +122,7 @@ console.log(`find ${cssFiles.length} css files`);
 cssFiles.forEach((cssFile) => {
     const cssContent = fs.readFileSync(cssFile, 'utf-8');
     const selectorAndProperties = cssContent
+        .replace(/\/\*(.*?)\*\//g, '')
         .split('}')
         .filter((i) => i.includes('{'))
         .map((i) => {
@@ -140,7 +142,7 @@ cssFiles.forEach((cssFile) => {
         propertyNames.forEach((propertyName) => {
             const idx = propertyOrderList.indexOf(propertyName);
             if (idx !== -1) propertyIndices.push(idx);
-            else console.log(`未定义属性${propertyName}的顺序`);
+            else console.log(`在${cssFile}中发现未定义顺序的属性${propertyName}`);
         });
         if (!propertyIndices.every((i, idx) => !idx || i >= propertyIndices[idx - 1])) {
             console.log(`\n在${cssFile}中发现属性顺序异常：`);

@@ -12,28 +12,58 @@
     background-color: var(--bg-color-1);
     user-select: none;
 }
+#header-left-wrapper,
 #header-right-wrapper {
     display: flex;
+    align-items: center;
+    gap: 24px;
 }
 #header-logo-bg {
     width: 36px;
     height: 36px;
     cursor: pointer;
 }
-#header-theme-bg {
-    width: 36px;
-    height: 36px;
-    margin-right: 24px;
-    padding: 8px;
-    border-radius: 50%;
-    background-color: var(--bg-icon-color);
+#header-archive {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80px;
+    padding: 8px 12px;
+    border-radius: 8px;
     cursor: pointer;
 }
+#header-archive:hover {
+    background-color: var(--bg-transparent-gray);
+}
+#header-archive-text {
+    height: 24px;
+    line-height: 24px;
+    font-size: 16px;
+    color: var(--title-color);
+}
+.header-archive-rightarrow {
+    width: 16px;
+    height: 16px;
+    transition: transform 200ms;
+}
+.header-archive-rightarrow.show-sidebar {
+    transform: rotate(90deg);
+}
+@media (min-width: 1000px) {
+    #header-archive {
+        display: none;
+    }
+}
+#header-theme-bg,
 #header-github-bg {
     width: 36px;
     height: 36px;
     border-radius: 50%;
     background-color: var(--bg-icon-color);
+    cursor: pointer;
+}
+#header-theme-bg {
+    padding: 8px;
 }
 #header-theme-bg:hover,
 #header-github-bg:hover {
