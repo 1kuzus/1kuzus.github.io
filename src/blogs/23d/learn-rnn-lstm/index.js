@@ -2,7 +2,7 @@ import X from 'src/component/X';
 
 export default function Blog({title}) {
     return (
-        <X.BlogWrapper>
+        <>
             <X.Title>{title}</X.Title>
             <X.H1>RNN：一个简单的例子</X.H1>
             <X.P>
@@ -507,6 +507,6 @@ export default function Blog({title}) {
                     当看到`Bob是一位男司机，他……`时，由于出现了主语`他`，模型可能会输出和`谓语动词`有关的语义信息。
                 </X.P>
             </X.HighlightBlock>
-        </X.BlogWrapper>
+        </>
     );
 }

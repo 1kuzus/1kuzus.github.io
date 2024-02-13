@@ -36,7 +36,7 @@ AI提问示例
 
 export default function Blog({title}) {
     return (
-        <X.BlogWrapper>
+        <>
             <X.Title>{title}</X.Title>
             <X.H1>研究</X.H1>
             <X.H2 href="https://arxiv.org/pdf/2003.08934.pdf">
@@ -268,6 +268,6 @@ export default function Blog({title}) {
                     此时FCN会先通过一个`1x1conv`进行通道降维，然后通过转置卷积将特征图的高度和宽度增加`32`倍，*输出通道数等于类别数*，相当于储存了对每一类的预测结果。
                 </X.P>
             </X.HighlightBlock>
-        </X.BlogWrapper>
+        </>
     );
 }

@@ -72,8 +72,8 @@
 #blog660e89-content4 {
     display: grid;
     grid-template-rows: 0fr;
-    transition: grid-template-rows 3000ms;
     background-color: var(--bg-transparent-gray);
+    transition: grid-template-rows 3000ms;
 }
 #blog660e89-content4 > div {
     overflow: hidden;
@@ -96,8 +96,8 @@
 #blog660e89-content5 {
     display: grid;
     grid-template-rows: 0fr;
-    transition: grid-template-rows 3000ms;
     background-color: var(--bg-transparent-gray);
+    transition: grid-template-rows 3000ms;
 }
 #blog660e89-content5 > div {
     grid-row: 1 / span 2;

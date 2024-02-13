@@ -2,7 +2,7 @@ import X from 'src/component/X';
 
 export default function Blog({title}) {
     return (
-        <X.BlogWrapper>
+        <>
             <X.Title>{title}</X.Title>
             <X.H1>Blinn-Phong光照模型</X.H1>
             <X.P noMarginBottom>将环境光分为：</X.P>
@@ -151,6 +151,6 @@ export default function Blog({title}) {
                 之前讨论的纹理都是2D的，但纹理也可以定义在3D空间中，例如上图的纹理是定义在3D空间中的噪声，空间中每一个点都有值（把花瓶切开，其内部也是有纹理的）。
             </X.P>
             <X.P>图中使用的是@柏林噪声[https://zh.m.wikipedia.org/wiki/Perlin%E5%99%AA%E5%A3%B0]@。</X.P>
-        </X.BlogWrapper>
+        </>
     );
 }

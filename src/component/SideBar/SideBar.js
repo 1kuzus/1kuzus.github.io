@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import {useLocation, Link} from 'react-router-dom';
 import categories from 'src/blogs/categories';
-import './SideBar.css';
+import './Sidebar.css';
 
 function RightArrowIcon() {
     return (
@@ -14,23 +14,23 @@ function RightArrowIcon() {
     );
 }
 
-function SideBarList(props) {
+function SidebarList(props) {
     const {category, currentPath} = props;
     const [showList, setShowList] = useState(true);
     return (
-        <div className={`sidebarlist${showList ? ' showlist' : ''}`}>
-            <div className="sidebarlist-head" onClick={() => setShowList(!showList)}>
-                <h3 className="sidebarlist-category">{category.categoryName + ` (${category.blogs.length})`}</h3>
-                <div className="sidebarlist-category-rightarrow">
+        <div className={`sidebar-list${showList ? ' showlist' : ''}`}>
+            <div className="sidebar-list-head" onClick={() => setShowList(!showList)}>
+                <h3 className="sidebar-list-category">{category.categoryName + ` (${category.blogs.length})`}</h3>
+                <div className="sidebar-list-category-rightarrow">
                     <RightArrowIcon />
                 </div>
             </div>
-            <div className="sidebarlist-ul-wrapper">
-                <ul className="sidebarlist-ul">
+            <div className="sidebar-list-ul-wrapper">
+                <ul className="sidebar-list-ul">
                     {category.blogs.map((blog, index) => (
                         <li key={index}>
                             <Link
-                                className={`sidebarlist-li${currentPath === blog.path ? ' active' : ''}`}
+                                className={`sidebar-list-li${currentPath === blog.path ? ' active' : ''}`}
                                 to={blog.path}
                             >
                                 {blog.title}
@@ -43,13 +43,13 @@ function SideBarList(props) {
     );
 }
 
-export default function SideBar() {
+export default function Sidebar() {
     const location = useLocation();
     return (
-        <div id="sidebar">
+        <>
             {categories.map((category, index) => (
-                <SideBarList key={index} category={category} currentPath={location.pathname} />
+                <SidebarList key={index} category={category} currentPath={location.pathname} />
             ))}
-        </div>
+        </>
     );
 }

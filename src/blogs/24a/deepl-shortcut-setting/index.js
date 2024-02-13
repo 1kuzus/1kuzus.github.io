@@ -2,7 +2,7 @@ import X from 'src/component/X';
 
 export default function Blog({title}) {
     return (
-        <X.BlogWrapper>
+        <>
             <X.Title>{title}</X.Title>
             <X.P>
                 最近使用DeepL，想配置截屏翻译的快捷键为`Ctrl`+`Shift`+`T`，结果在我的电脑上修改时不管按什么键，都显示“该快捷键已被使用”。
@@ -38,6 +38,6 @@ export default function Blog({title}) {
             </X.HighlightBlock>
             <X.P>修改以后保存、关闭、再打开DeepL就发现已经更改了，经测试可以正常使用。</X.P>
             <X.Image src={require('./img4.jpg')} width="100%" invertInDarkTheme />
-        </X.BlogWrapper>
+        </>
     );
 }

@@ -2,7 +2,7 @@ import X from 'src/component/X';
 
 export default function Blog({title}) {
     return (
-        <X.BlogWrapper>
+        <>
             <X.Title>{title}</X.Title>
             <X.H1>一级标题</X.H1>
             <X.H2>二级标题</X.H2>
@@ -22,6 +22,6 @@ export default function Blog({title}) {
                 <X.Formula text="1+1=2" />
                 {/* <X.Image src={require('./fig1.jpg')} width="100%" invertInDarkTheme/> */}
             </X.FlexRow>
-        </X.BlogWrapper>
+        </>
     );
 }

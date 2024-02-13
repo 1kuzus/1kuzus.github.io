@@ -69,9 +69,13 @@
     --logopart-shadow: 0 0 48px 4px #00e8f4a0;
 }
 
-*::-webkit-scrollbar {
+body::-webkit-scrollbar {
     width: 8px;
     height: 8px;
+}
+*::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
 }
 *::-webkit-scrollbar-thumb {
     border-radius: 4px;

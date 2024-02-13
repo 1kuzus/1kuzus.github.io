@@ -37,6 +37,16 @@
 
 
     
+const indexOfStr = (arr, str) => {
+    for (let i = 0; i < arr.length; i++) {
+        if (typeof arr[i] === 'string') {
+            if (arr[i] === str) return i;
+        } else {
+            if (arr[i].test(str)) return i;
+        }
+    }
+    return -1;
+};
     <link rel="preload" href="../src/assets/fonts/Consolas_Latin-Bold.woff2" as="font" crossorigin/>
     <link rel="preload" href="../src/assets/fonts/Consolas_Latin.woff2" as="font" crossorigin/>
     <link rel="preload" href="../src/assets/fonts/KaTeX_AMS-Regular.woff2" as="font" crossorigin/>

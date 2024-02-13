@@ -7,17 +7,17 @@ function BlogList(props) {
     const {category} = props;
     const [showList, setShowList] = useState(true);
     return (
-        <div className={`bloglist${showList ? ' showlist' : ''}`}>
-            <div className="bloglist-head" onClick={() => setShowList(!showList)}>
-                <h3 className="bloglist-category">{category.categoryName + ` (${category.blogs.length})`}</h3>
+        <div className={`blog-list${showList ? ' showlist' : ''}`}>
+            <div className="blog-list-head" onClick={() => setShowList(!showList)}>
+                <h3 className="blog-list-category">{category.categoryName + ` (${category.blogs.length})`}</h3>
             </div>
-            <div className="bloglist-ul-wrapper">
-                <ul className="bloglist-ul">
+            <div className="blog-list-ul-wrapper">
+                <ul className="blog-list-ul">
                     {category.blogs.map((blog, index) => (
-                        <li key={index} className="bloglist-li" >
-                            <Link className="bloglist-link" to={blog.path}>
-                                {<span className="bloglist-title">{blog.title}</span>}
-                                {blog.time && <span className="bloglist-time">{blog.time}</span>}
+                        <li key={index} className="blog-list-li">
+                            <Link className="blog-list-link" to={blog.path}>
+                                {<span className="blog-list-title">{blog.title}</span>}
+                                {blog.time && <span className="blog-list-time">{blog.time}</span>}
                             </Link>
                         </li>
                     ))}
@@ -29,7 +29,7 @@ function BlogList(props) {
 
 function BlogLists() {
     return (
-        <div id="bloglists">
+        <div id="blog-lists">
             {categories.map((category, index) => (
                 <BlogList key={index} category={category} />
             ))}

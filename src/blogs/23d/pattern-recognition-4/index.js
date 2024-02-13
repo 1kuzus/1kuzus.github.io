@@ -2,7 +2,7 @@ import X from 'src/component/X';
 
 export default function Blog({title}) {
     return (
-        <X.BlogWrapper>
+        <>
             <X.Title>{title}</X.Title>
             <X.H1>背景知识</X.H1>
             <X.H2>Sigmoid函数</X.H2>
@@ -129,6 +129,6 @@ export default function Blog({title}) {
             />
             <X.P>然后按照学习率$\eta$更新下一时刻参数：</X.P>
             <X.Formula text="\bm{W}_{t+1}=\bm{W}_t-\eta\nabla L" />
-        </X.BlogWrapper>
+        </>
     );
 }

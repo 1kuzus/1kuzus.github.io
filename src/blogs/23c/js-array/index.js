@@ -2,7 +2,7 @@ import X from 'src/component/X';
 
 export default function Blog({title}) {
     return (
-        <X.BlogWrapper>
+        <>
             <X.Title>{title}</X.Title>
             <X.H1>at()</X.H1>
             <X.P>
@@ -485,6 +485,6 @@ export default function Blog({title}) {
                 console.log(Array.of(98, 99)); //[98, 99]
                 `}
             />
-        </X.BlogWrapper>
+        </>
     );
 }

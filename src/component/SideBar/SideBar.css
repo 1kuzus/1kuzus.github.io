@@ -1,60 +1,48 @@
-#sidebar {
-    position: fixed;
-    z-index: 100;
-    width: 396px;
-    height: calc(100vh - 64px);
-    padding: 24px 0 24px 24px;
-    background-color: var(--bg-color-1);
-    overflow-x: hidden;
-    user-select: none;
+.sidebar-list {
+    width: calc(100% - 16px);
 }
-@media (max-width: 1164px) {
-    #sidebar {
-        display: none;
-    }
-}
-.sidebarlist {
-    width: 348px;
-}
-.sidebarlist-head {
+.sidebar-list-head {
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
 }
-.sidebarlist-category {
+.sidebar-list-category {
     box-sizing: content-box;
     height: 24px;
-    line-height: 24px;
     margin-bottom: 2px;
     padding: 4px 0;
+    line-height: 24px;
     font-size: 16px;
     color: var(--text-color-main);
 }
-.sidebarlist-category-rightarrow {
+.sidebar-list-category-rightarrow {
     width: 16px;
     height: 16px;
     transition: transform 200ms;
 }
-.sidebarlist-ul-wrapper {
+.sidebar-list-ul-wrapper {
     display: grid;
     grid-template-rows: 0fr;
     transition: grid-template-rows 200ms;
 }
-.sidebarlist-ul {
+.sidebar-list-ul {
     grid-row: 1 / span 2;
-    opacity: 0;
     overflow: hidden;
+    opacity: 0;
     transition: opacity 200ms;
 }
-.sidebarlist-li {
+.sidebar-list-li {
     box-sizing: content-box;
     display: block;
     height: 24px;
-    line-height: 24px;
     margin-bottom: 2px;
     padding: 4px 16px;
+    line-height: 24px;
     font-size: 16px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
     color: var(--text-color-main);
     border-radius: 8px;
     cursor: pointer;
@@ -62,30 +50,30 @@
 }
 
 /*active样式*/
-.sidebarlist-li.active {
+.sidebar-list-li.active {
     color: var(--text-color-active);
     background-color: var(--bg-transparent-gray);
 }
 
 /*hover样式*/
-.sidebarlist-li:hover {
+.sidebar-list-li:hover {
     background-color: var(--bg-transparent-gray);
 }
-.sidebarlist-head:hover .sidebarlist-category {
+.sidebar-list-head:hover .sidebar-list-category {
     color: var(--title-color);
     transition: color 200ms;
 }
 
 /*分类展开样式*/
-.sidebarlist.showlist .sidebarlist-category {
+.sidebar-list.showlist .sidebar-list-category {
     color: var(--title-color);
 }
-.sidebarlist.showlist .sidebarlist-category-rightarrow {
+.sidebar-list.showlist .sidebar-list-category-rightarrow {
     transform: rotate(90deg);
 }
-.sidebarlist.showlist .sidebarlist-ul-wrapper {
+.sidebar-list.showlist .sidebar-list-ul-wrapper {
     grid-template-rows: 1fr;
 }
-.sidebarlist.showlist .sidebarlist-ul {
+.sidebar-list.showlist .sidebar-list-ul {
     opacity: 0.9;
 }

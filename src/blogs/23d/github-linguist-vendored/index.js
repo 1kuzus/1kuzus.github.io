@@ -2,7 +2,7 @@ import X from 'src/component/X';
 
 export default function Blog({title}) {
     return (
-        <X.BlogWrapper>
+        <>
             <X.Title>{title}</X.Title>
             <X.P>
                 参考：@https://github.com/github-linguist/linguist/blob/master/docs/overrides.md#vendored-code[https://github.com/github-linguist/linguist/blob/master/docs/overrides.md#vendored-code]@
@@ -11,6 +11,6 @@ export default function Blog({title}) {
             <X.CodeBlock language="none" code="/path/to/dir/* linguist-vendored" />
             <X.P>如果想屏蔽某个目录下的`全部文件和目录`，则写入：</X.P>
             <X.CodeBlock language="none" code="/path/to/dir/** linguist-vendored" />
-        </X.BlogWrapper>
+        </>
     );
 }

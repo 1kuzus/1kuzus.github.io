@@ -2,7 +2,7 @@ import X from 'src/component/X';
 
 export default function Blog({title}) {
     return (
-        <X.BlogWrapper>
+        <>
             <X.Title>{title}</X.Title>
             <X.H1>神经网络</X.H1>
             <X.Oli>
@@ -1047,6 +1047,6 @@ export default function Blog({title}) {
                     三元组损失的目标是通过拉近锚点样本和正样本之间的距离，并推远锚点样本和负样本之间的距离，从而学到一个能够准确衡量相似性的模型。
                 </X.P>
             </X.Oli>
-        </X.BlogWrapper>
+        </>
     );
 }

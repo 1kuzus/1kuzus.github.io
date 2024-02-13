@@ -2,7 +2,7 @@ import X from 'src/component/X';
 
 export default function Blog({title}) {
     return (
-        <X.BlogWrapper>
+        <>
             <X.Title>{title}</X.Title>
             <X.P>
                 论文@A Closer Look at Spatiotemporal Convolutions for Action
@@ -52,6 +52,6 @@ export default function Blog({title}) {
             <X.Oli>增加了网络非线性层的层数</X.Oli>
             <X.Oli>优化更容易（实验结果：R(2+1)D网络的训练和测试误差都更小）</X.Oli>
             <X.Image src={require('./fig2.jpg')} width="600" invertInDarkTheme />
-        </X.BlogWrapper>
+        </>
     );
 }
