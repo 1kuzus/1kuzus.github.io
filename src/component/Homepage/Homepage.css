@@ -57,40 +57,43 @@
     background-color: var(--logopart-vr-color);
     transform: skewX(-21.8deg);
 }
-#bloglists {
+#blog-lists {
     min-height: calc(100vh - 64px);
     padding: 12px 24px 48px;
     overflow: hidden;
     user-select: none;
 }
-.bloglist {
+.blog-list {
     max-width: 1024px;
     margin: 36px auto 0;
 }
-.bloglist-head {
+.blog-list-head {
     display: flex;
     cursor: pointer;
 }
-.bloglist-category {
+.blog-list-category {
     width: fit-content;
     padding: 12px 0;
     font-size: 24px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
     color: var(--text-color-main);
     border-bottom: 1px solid var(--gray-1);
     transition: color 200ms, flex-grow 200ms;
 }
-.bloglist-ul-wrapper {
+.blog-list-ul-wrapper {
     display: grid;
     grid-template-rows: 0fr;
     transition: grid-template-rows 200ms;
 }
-.bloglist-ul {
+.blog-list-ul {
     grid-row: 1 / span 2;
-    opacity: 0;
     overflow: hidden;
+    opacity: 0;
     transition: opacity 200ms;
 }
-.bloglist-li {
+.blog-list-li {
     height: 50px;
     margin-top: 8px;
     padding: 12px 24px;
@@ -98,13 +101,13 @@
     cursor: pointer;
     transition: background-color 200ms;
 }
-.bloglist-link {
+.blog-list-link {
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: var(--text-color-main);
 }
-.bloglist-title {
+.blog-list-title {
     font-size: 18px;
     font-weight: bold;
     white-space: nowrap;
@@ -112,35 +115,35 @@
     overflow: hidden;
 }
 @media (max-width: 600px) {
-    .bloglist-time {
+    .blog-list-time {
         display: none;
     }
 }
-.bloglist-time {
-    opacity: 0;
+.blog-list-time {
     font-size: 14px;
     font-weight: normal;
+    opacity: 0;
 }
 
 /*hover样式*/
-.bloglist-li:hover {
+.blog-list-li:hover {
     background-color: var(--bg-transparent-gray);
 }
-.bloglist-li:hover .bloglist-time {
+.blog-list-li:hover .blog-list-time {
     opacity: 0.5;
 }
-.bloglist-head:hover .bloglist-category {
+.blog-list-head:hover .blog-list-category {
     color: var(--title-color);
 }
 
 /*分类展开样式*/
-.bloglist.showlist .bloglist-category {
+.blog-list.showlist .blog-list-category {
     flex-grow: 1;
     color: var(--title-color);
 }
-.bloglist.showlist .bloglist-ul-wrapper {
+.blog-list.showlist .blog-list-ul-wrapper {
     grid-template-rows: 1fr;
 }
-.bloglist.showlist .bloglist-ul {
+.blog-list.showlist .blog-list-ul {
     opacity: 0.9;
 }

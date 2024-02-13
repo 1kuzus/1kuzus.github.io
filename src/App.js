@@ -1,6 +1,6 @@
 import {useRoutes} from 'react-router-dom';
+import BlogLayout from './component/BlogLayout/BlogLayout';
 import Header from './component/Header/Header';
-import SideBar from './component/SideBar/SideBar';
 import Homepage from './component/Homepage/Homepage';
 import NotFound from './component/NotFound/NotFound';
 import {elements} from './blogs/categories';
@@ -26,12 +26,7 @@ const router = [
     },
     ...elements.map(({path, element}) => ({
         path,
-        element: (
-            <>
-                <SideBar />
-                {element}
-            </>
-        ),
+        element: <BlogLayout>{element}</BlogLayout>,
     })),
     {
         path: '*',

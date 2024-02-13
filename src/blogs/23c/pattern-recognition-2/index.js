@@ -2,7 +2,7 @@ import X from 'src/component/X';
 
 export default function Blog({title}) {
     return (
-        <X.BlogWrapper>
+        <>
             <X.Title>{title}</X.Title>
             <X.P>
                 上一篇提到的统计决策方法，类条件密度按已知处理。但实际问题中，往往只有已知样本，需要根据已知样本推测分布。\n
@@ -245,6 +245,6 @@ export default function Blog({title}) {
             <X.P withMarginTop>
                 贝叶斯估计的优势在于，可以结合样本信息和先验知识，并且根据`样本数量`和`先验知识的确定程度`调和两部分信息的相对贡献。
             </X.P>
-        </X.BlogWrapper>
+        </>
     );
 }

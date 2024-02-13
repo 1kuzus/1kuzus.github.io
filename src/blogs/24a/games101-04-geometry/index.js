@@ -2,7 +2,7 @@ import X from 'src/component/X';
 
 export default function Blog({title}) {
     return (
-        <X.BlogWrapper>
+        <>
             <X.Title>{title}</X.Title>
             <X.H1>几何的隐式和显式表示</X.H1>
             <X.FlexRow gap="32px" alignItems="center">
@@ -87,6 +87,6 @@ export default function Blog({title}) {
             <X.P>网站@ONLINE 3D VIEWER[https://3dviewer.net/]@可以在线查看各种格式定义的3D模型。</X.P>
             <X.H1>曲线 - 贝塞尔曲线</X.H1>
             <X.H1>曲面 - 更多</X.H1>
-        </X.BlogWrapper>
+        </>
     );
 }

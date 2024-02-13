@@ -3,7 +3,7 @@ import './index.css';
 
 export default function Blog({title}) {
     return (
-        <X.BlogWrapper>
+        <>
             <X.Title>{title}</X.Title>
             <X.H1>问题描述</X.H1>
             <X.P>下面是一个常见的效果，当鼠标悬浮时展开显示内容，离开时自动收回。</X.P>
@@ -236,6 +236,6 @@ export default function Blog({title}) {
                 这个问题是否发生似乎与浏览器的行为有关：在我测试时，使用Google Chrome和Microsoft
                 Edge时二者表现是不同的，但在Firefox中是相同的，即使不写`grid-row: 1 / span 2;`也不会引起这个问题。
             </X.P>
-        </X.BlogWrapper>
+        </>
     );
 }

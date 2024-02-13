@@ -2,7 +2,7 @@ import X from 'src/component/X';
 
 export default function Blog({title}) {
     return (
-        <X.BlogWrapper>
+        <>
             <X.Title>{title}</X.Title>
             <X.P>*全类平均精度*`(mean Average Precision, mAP)`用于评估目标检测模型性能。</X.P>
             <X.P>
@@ -71,6 +71,6 @@ export default function Blog({title}) {
             <X.Uli>
                 @深入了解平均精度(mAP)：通过精确率-召回率曲线评估目标检测性能[https://baijiahao.baidu.com/s?id=1767101899839497831]@
             </X.Uli>
-        </X.BlogWrapper>
+        </>
     );
 }

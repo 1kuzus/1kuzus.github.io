@@ -2,7 +2,7 @@ import X from 'src/component/X';
 
 export default function Blog({title}) {
     return (
-        <X.BlogWrapper>
+        <>
             <X.Title>{title}</X.Title>
             <X.P>
                 本章讨论的是`非参数估计`。很多时候我们无法给出样本分布的函数形式，也就无法使用根据样本估计函数参数的思路。\n
@@ -126,6 +126,6 @@ export default function Blog({title}) {
             </X.HighlightBlock>
             <X.P>下面是取{`$\\sigma=\\frac{32}{\\sqrt{n}}$`}的高斯窗的估计结果：</X.P>
             <X.Image src={require('./fig6.png')} width="100%" invertInDarkTheme />
-        </X.BlogWrapper>
+        </>
     );
 }

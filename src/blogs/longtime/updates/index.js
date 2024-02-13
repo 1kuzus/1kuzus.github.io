@@ -71,6 +71,7 @@ function UpdateLog() {
         {date: '2024-01-26', description: '使用语义化更佳的路由方案'},
         {date: '2024-01-27', description: '支持直接在列表项中写含有jsx表达式的`children`'},
         {date: '2024-02-01', description: '`HighlightBlock`组件支持`bgcolor="blue"`'},
+        {date: '2024-02-12', description: '不再使用`BlogWrapper`组件，改为`BlogLayout`\n响应式设计'},
         {version: '1.1'},
     ];
     return (
@@ -188,11 +189,11 @@ export default function Blog({title}) {
         return () => window.removeEventListener('resize', resizeHandler);
     }, []);
     return (
-        <X.BlogWrapper>
+        <>
             <X.Title>{title}</X.Title>
             <Version />
             <X.H1>历史</X.H1>
             <UpdateLog />
-        </X.BlogWrapper>
+        </>
     );
 }

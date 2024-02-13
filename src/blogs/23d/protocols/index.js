@@ -2,7 +2,7 @@ import X from 'src/component/X';
 
 export default function Blog({title}) {
     return (
-        <X.BlogWrapper>
+        <>
             <X.Title>{title}</X.Title>
             <X.HighlightBlock>
                 <X.P>文中各层出现的协议参考教程的教学顺序，不代表对协议所属层次的划分。</X.P>
@@ -713,6 +713,6 @@ export default function Blog({title}) {
             <X.Uli>@Bilibili - 王道计算机考研 计算机网络[https://www.bilibili.com/video/BV19E411D78Q]@</X.Uli>
             <X.Uli>@Bilibili - 计算机网络微课堂[https://www.bilibili.com/video/BV1c4411d7jb]@</X.Uli>
             <X.Uli>《计算机网络自顶向下方法》（第七版）</X.Uli>
-        </X.BlogWrapper>
+        </>
     );
 }

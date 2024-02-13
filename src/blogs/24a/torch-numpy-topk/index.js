@@ -2,7 +2,7 @@ import X from 'src/component/X';
 
 export default function Blog({title}) {
     return (
-        <X.BlogWrapper>
+        <>
             <X.Title>{title}</X.Title>
             <X.P>我们定义这样一个数组：</X.P>
             <X.CodeBlock
@@ -149,6 +149,6 @@ export default function Blog({title}) {
                 `argsort`对全部数组进行排序，而`argpartition`只进行一次类似快速排序算法中的划分操作，因此`argpartition`效率更高。---
                 对于`topk`函数想要实现的功能，尽管先全排序、再切片从代码上更好编写，但当`k`远小于`dim`维度大小时，是较为低效的做法。
             </X.P>
-        </X.BlogWrapper>
+        </>
     );
 }

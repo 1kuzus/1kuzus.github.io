@@ -2,7 +2,7 @@ import X from 'src/component/X';
 
 export default function Blog({title}) {
     return (
-        <X.BlogWrapper>
+        <>
             <X.Title>{title}</X.Title>
             <X.P>
                 在2D屏幕上显示物体时，最终的图像是由一个一个像素构成的。光栅化需要解决的问题就是将连续的物体表示离散化。
@@ -59,6 +59,6 @@ export default function Blog({title}) {
                 如果当前像素的深度值更小，则更新`Z-Buffer`中的值并将当前像素的颜色值渲染到屏幕上。
             </X.P>
             <X.Image src={require('./fig6.jpg')} width="600px" invertInDarkTheme />
-        </X.BlogWrapper>
+        </>
     );
 }

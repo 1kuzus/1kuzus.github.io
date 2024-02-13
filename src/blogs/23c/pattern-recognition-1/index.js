@@ -3,7 +3,7 @@ import './index.css';
 
 export default function Blog({title}) {
     return (
-        <X.BlogWrapper>
+        <>
             <X.Title>{title}</X.Title>
             <X.H1>贝叶斯公式</X.H1>
             <X.HighlightBlock>
@@ -285,6 +285,6 @@ export default function Blog({title}) {
                 <X.Image src={require('./fig9.png')} width="320px" invertInDarkTheme />
                 <X.Image src={require('./fig10.png')} width="320px" invertInDarkTheme />
             </X.FlexRow>
-        </X.BlogWrapper>
+        </>
     );
 }

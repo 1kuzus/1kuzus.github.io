@@ -7,7 +7,7 @@ function DemoBox() {
 
 export default function Blog({title}) {
     return (
-        <X.BlogWrapper>
+        <>
             <X.Title>{title}</X.Title>
             <X.H1>基础组件</X.H1>
             <X.H2>标题</X.H2>
@@ -1022,6 +1022,6 @@ export default function Blog({title}) {
                 }
                 `}
             />
-        </X.BlogWrapper>
+        </>
     );
 }

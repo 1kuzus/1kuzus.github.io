@@ -2,7 +2,7 @@ import X from 'src/component/X';
 
 export default function Blog({title}) {
     return (
-        <X.BlogWrapper>
+        <>
             <X.Title>{title}</X.Title>
             <X.H1>2D变换</X.H1>
             <X.H2>缩放 Scale</X.H2>
@@ -351,6 +351,6 @@ export default function Blog({title}) {
             <X.HighlightBlock>
                 <X.P>变换前：*裁剪空间*`(Clip Space)`\n变换后：*屏幕空间*`(Screen Space)`</X.P>
             </X.HighlightBlock>
-        </X.BlogWrapper>
+        </>
     );
 }

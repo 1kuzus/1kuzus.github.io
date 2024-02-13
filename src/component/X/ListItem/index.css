@@ -1,0 +1,36 @@
+.x-uli,
+.x-oli {
+    display: flex;
+    margin: 8px 0;
+    line-height: 28px;
+    color: var(--text-color-main);
+}
+.x-uli-marker,
+.x-oli-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 28px;
+}
+.x-oli-number {
+    color: var(--text-color-active);
+}
+.x-uli-marker-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--text-color-active);
+}
+.x-uli .x-uli-content-wrapper,
+.x-oli .x-oli-content-wrapper {
+    flex: 1;
+}
+.x-uli .x-uli-content-wrapper > :first-child,
+.x-oli .x-oli-content-wrapper > :first-child {
+    margin-top: 0;
+}
+.x-uli .x-uli-content-wrapper > :last-child,
+.x-oli .x-oli-content-wrapper > :last-child {
+    margin-bottom: 0;
+}
