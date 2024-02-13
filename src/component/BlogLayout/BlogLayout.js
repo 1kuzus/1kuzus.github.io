@@ -1,4 +1,5 @@
 import {useState, useLayoutEffect} from 'react';
+import {useGlobalContext} from 'src/context/GlobalContext';
 import Sidebar from '../Sidebar/Sidebar';
 import './BlogLayout.css';
 
@@ -35,6 +36,7 @@ function Contents(props) {
 
 export default function BlogLayout(props) {
     const {children} = props;
+    const {showSidebar, setShowSidebar} = useGlobalContext();
     const [activeIdx, setActiveIdx] = useState(0);
     const [titles, setTitles] = useState([]);
     oliIdx = 0;
@@ -42,8 +44,8 @@ export default function BlogLayout(props) {
         const container = document.documentElement;
         container.scrollTo({top: 0});
         const titleNodes = Array.from(document.querySelectorAll('#main>.x-h1,#main>.x-h2'));
-        if (!titleNodes?.length) return;
         setTitles(titleNodes);
+        if (!titleNodes?.length) return;
         const scrollHandler = () => {
             const titleNodesOffsetTop = titleNodes.map((titleNode) => titleNode.offsetTop - 80);
             const containerScrollTop = Math.ceil(container.scrollTop);
@@ -68,11 +70,18 @@ export default function BlogLayout(props) {
     }, [children]);
     return (
         <div id="blog-layout">
-            <div id="sidebar">
+            <div id="sidebar" className={showSidebar ? 'show-sidebar' : null}>
                 <Sidebar />
             </div>
             <div id="main">{children}</div>
             {titles?.length ? <Contents titles={titles} activeIdx={activeIdx} /> : null}
+            <div
+                id="sidebar-mask"
+                className={showSidebar ? 'show-sidebar' : null}
+                onClick={() => {
+                    setShowSidebar(!showSidebar);
+                }}
+            />
         </div>
     );
 }

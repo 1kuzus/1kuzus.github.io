@@ -65,15 +65,15 @@
 }
 
 /*分类展开样式*/
-.sidebar-list.showlist .sidebar-list-category {
+.sidebar-list.show-list .sidebar-list-category {
     color: var(--title-color);
 }
-.sidebar-list.showlist .sidebar-list-category-rightarrow {
+.sidebar-list.show-list .sidebar-list-category-rightarrow {
     transform: rotate(90deg);
 }
-.sidebar-list.showlist .sidebar-list-ul-wrapper {
+.sidebar-list.show-list .sidebar-list-ul-wrapper {
     grid-template-rows: 1fr;
 }
-.sidebar-list.showlist .sidebar-list-ul {
+.sidebar-list.show-list .sidebar-list-ul {
     opacity: 0.9;
 }
