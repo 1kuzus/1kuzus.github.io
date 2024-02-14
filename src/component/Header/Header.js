@@ -23,7 +23,7 @@ export default function Header() {
         }
     }, [isDarkTheme]);
     return (
-        <div id="header">
+        <div id="header" className={showSidebar ? ' show-sidebar' : ''}>
             <div id="header-left-wrapper">
                 <div
                     id="header-logo-bg"
@@ -42,7 +42,7 @@ export default function Header() {
                         }}
                     >
                         <h3 id="header-archive-text">归档</h3>
-                        <div className={`header-archive-rightarrow${showSidebar ? ' show-sidebar' : ''}`}>
+                        <div className="header-archive-rightarrow">
                             <RightArrowIcon />
                         </div>
                     </div>

@@ -71,11 +71,11 @@ export default function BlogLayout(props) {
     }, [children]);
     return (
         <div id="blog-layout">
+            <div id="main">{children}</div>
+            {titles?.length ? <Contents titles={titles} activeIdx={activeIdx} /> : null}
             <div id="sidebar" className={showSidebar ? 'show-sidebar' : null}>
                 <Sidebar />
             </div>
-            <div id="main">{children}</div>
-            {titles?.length ? <Contents titles={titles} activeIdx={activeIdx} /> : null}
             <div
                 id="sidebar-mask"
                 className={showSidebar ? 'show-sidebar' : null}

@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     padding: 64px 0;
-    background-color: var(--bg-color-1);
+    background-color: var(--bg-main);
 }
 #homepage-title {
     margin-top: 32px;

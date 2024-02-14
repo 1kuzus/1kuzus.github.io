@@ -8,5 +8,6 @@
     max-width: 100%;
 }
 :root.dark .x-image-invert img {
-    filter: invert(90%) hue-rotate(180deg) saturate(1.6);
+    /* filter: invert(90%) hue-rotate(180deg) saturate(1.6); */
+    filter:hue-rotate(180deg) sepia(10%) saturate(100%) invert(90%);
 }
