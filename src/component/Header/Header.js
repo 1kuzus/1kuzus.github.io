@@ -1,5 +1,5 @@
 import {useState, useLayoutEffect} from 'react';
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, useLocation} from 'react-router-dom';
 import {useGlobalContext} from 'src/context/GlobalContext';
 import {LogoIcon, LightThemeIcon, DarkThemeIcon, GithubIcon, RightArrowIcon} from 'src/assets/svgs';
 import './Header.css';
@@ -7,6 +7,7 @@ import './Header.css';
 export default function Header() {
     const {showSidebar, setShowSidebar} = useGlobalContext();
     const navigate = useNavigate();
+    const location = useLocation();
     const [isDarkTheme, setIsDarkTheme] = useState(
         localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : true
     );
@@ -33,17 +34,19 @@ export default function Header() {
                 >
                     <LogoIcon />
                 </div>
-                <div
-                    id="header-archive"
-                    onClick={() => {
-                        setShowSidebar(!showSidebar);
-                    }}
-                >
-                    <h3 id="header-archive-text">归档</h3>
-                    <div className={`header-archive-rightarrow${showSidebar ? ' show-sidebar' : ''}`}>
-                        <RightArrowIcon />
+                {location.pathname !== '/' ? (
+                    <div
+                        id="header-archive"
+                        onClick={() => {
+                            setShowSidebar(!showSidebar);
+                        }}
+                    >
+                        <h3 id="header-archive-text">归档</h3>
+                        <div className={`header-archive-rightarrow${showSidebar ? ' show-sidebar' : ''}`}>
+                            <RightArrowIcon />
+                        </div>
                     </div>
-                </div>
+                ) : null}
             </div>
             <div id="header-right-wrapper">
                 <div id="header-theme-bg" onClick={() => setIsDarkTheme(!isDarkTheme)}>
