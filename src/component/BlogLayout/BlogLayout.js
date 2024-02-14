@@ -43,6 +43,7 @@ export default function BlogLayout(props) {
     useLayoutEffect(() => {
         const container = document.documentElement;
         container.scrollTo({top: 0});
+        setShowSidebar(false);
         const titleNodes = Array.from(document.querySelectorAll('#main>.x-h1,#main>.x-h2'));
         setTitles(titleNodes);
         if (!titleNodes?.length) return;
