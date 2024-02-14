@@ -3,6 +3,7 @@
     flex-direction: row;
     max-width: 100%;
     margin: 24px 0;
+    padding: 4px;
     overflow-x: auto;
 }
 .x-flexrow > * {

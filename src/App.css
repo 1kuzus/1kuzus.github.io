@@ -23,16 +23,17 @@
 :root,
 :root.light {
     --color-main: #30303c;
-    --bg-color-1: #fcfcfc;
-    --bg-color-2: #f4f4f4;
+    --bg-main: #ffffff;
+    --bg-main-transparent: #ffffffcc;
+    --bg-body: #ffffff;
     --bg-transparent-golden: #ffb80018;
     --bg-transparent-red: #ff380018;
     --bg-transparent-gray: #a0a0a018;
     --bg-transparent-blue: #0080ff18;
     --bg-icon-color: #30303c;
     --bg-scrollbar-thumb-color: #cccccc;
-    --bg-th-color: #90909028;
-    --bg-td-color: #c0c0c020;
+    --bg-th-color: #f4f4f4cc;
+    --bg-td-color: #fcfcfccc;
     --hover-scrollbar-thumb-color: #bcbcbc;
     --title-color: #00a8c4;
     --text-color-main: #30303c;
@@ -43,11 +44,13 @@
     --gray-1: #d4d4d4;
 
     /*仅亮色模式*/
+    --light-theme-box-shadow: 0 0 4px 2px #00000008;
 }
 :root.dark {
     --color-main: #fcfcfc;
-    --bg-color-1: #202026;
-    --bg-color-2: #28282e;
+    --bg-main: #18181c;
+    --bg-main-transparent: #18181ccc;
+    --bg-body: #202024;
     --bg-transparent-golden: #c08a0020;
     --bg-transparent-red: #c02a0020;
     --bg-transparent-gray: #80808018;
@@ -92,7 +95,7 @@ body::-webkit-scrollbar {
 
 body {
     font-size: 16px;
-    background-color: var(--bg-color-2);
+    background-color: var(--bg-body);
 }
 div,
 li,

@@ -2,8 +2,8 @@
     margin: 24px 0;
     overflow-x: auto;
     border-radius: 12px;
-    background-color: var(--bg-color-1);
-    box-shadow: var(--codeblock-shadow);
+    background-color: var(--bg-main-transparent);
+    box-shadow: var(--light-theme-box-shadow);
 }
 .x-codeblock pre code[class*='language-'] {
     display: block;

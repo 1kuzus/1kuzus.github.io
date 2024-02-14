@@ -1,5 +1,5 @@
 #blog660e89-wrapper1 {
-    width: 240px;
+    min-width: 200px;
     height: fit-content;
     padding: 16px 24px;
     border-radius: 12px;
@@ -18,7 +18,7 @@
 }
 
 #blog660e89-wrapper2 {
-    width: 240px;
+    min-width: 200px;
     height: fit-content;
     padding: 16px 24px;
     border-radius: 12px;
@@ -37,7 +37,7 @@
 }
 
 #blog660e89-wrapper3 {
-    width: 240px;
+    min-width: 200px;
     height: fit-content;
     padding: 16px 24px;
     border-radius: 12px;
@@ -60,7 +60,7 @@
 }
 
 #blog660e89-wrapper4 {
-    width: 240px;
+    min-width: 200px;
     height: fit-content;
     padding: 16px 24px;
     border-radius: 12px;
@@ -84,7 +84,7 @@
 }
 
 #blog660e89-wrapper5 {
-    width: 240px;
+    min-width: 200px;
     height: fit-content;
     padding: 16px 24px;
     border-radius: 12px;

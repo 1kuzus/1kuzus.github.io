@@ -94,8 +94,9 @@ const propertyOrderList = [
     //其他
     'background',
     'background-color',
-    'box-shadow',
+    'backdrop-filter',
     'filter',
+    'box-shadow',
     'opacity',
     'transform',
     'cursor',
