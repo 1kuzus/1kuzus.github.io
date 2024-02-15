@@ -18,7 +18,7 @@ export default function Blog({title}) {
                 *停等协议*`(Stop and Wait, SW)`的发送方每发送一帧数据就停止，---
                 并等待接收方发送确认帧，收到确认后再发送下一帧。
             </X.P>
-            <X.Image src={require('./sw.png')} width="100%" />
+            <X.Image src={require('./sw.png')} width="100%" invertInDarkTheme />
             <X.H3>确认与否认、超时重传</X.H3>
             <X.P>
                 发送方发送数据后等待接收方`ACK`或`NAK`的响应，并启动超时计时器，如果一定时间收不到响应则启动超时重传。
@@ -43,7 +43,7 @@ export default function Blog({title}) {
                 同理，发送方收到了发送窗口中最早的那个序号对应分组的`ACK`，才会移动发送窗口。
             </X.P>
             <X.H3>累计确认</X.H3>
-            <X.Image src={require('./gbn1.png')} width="100%" />
+            <X.Image src={require('./gbn1.png')} width="100%" invertInDarkTheme />
             <X.P>
                 接收方不一定要对收到的数据逐个确认，也可以对最后一个分组进行确认。`ACK n`---
                 表示序号为`n`及其之前的分组都已经被正确接收。称这种方法为累计确认。---
@@ -51,7 +51,7 @@ export default function Blog({title}) {
                 发送方仍然可以根据收到的`ACK 4`判断`0`~`4`号分组都已经被正确接收。
             </X.P>
             <X.H3>有差错情况</X.H3>
-            <X.Image src={require('./gbn2.png')} width="100%" />
+            <X.Image src={require('./gbn2.png')} width="100%" invertInDarkTheme />
             <X.P>
                 例如发送方发送了`5`/`6`/`7`/`0`/`1`五个分组，但`5`号数据分组丢失，此时由于到达的四个分组都与接收窗口序号不匹配，---
                 接收方会将其丢弃，并重复响应`ACK 4`。
@@ -67,17 +67,17 @@ export default function Blog({title}) {
                 发送方收到未按序到达的确认分组时，对其进行记录，以防止其相应数据分组的超时重发，但发送窗口不能向前滑动。---
                 为了使发送方仅重传出现差错的分组，接收方不再采用累积确认，而是对每个正确接收的数据分组进行*逐一确认*。
             </X.P>
-            <X.Image src={require('./sr1.png')} width="100%" />
+            <X.Image src={require('./sr1.png')} width="100%" invertInDarkTheme />
             <X.P>
                 例如发送方发送了`0`/`1`/`2`/`3`四个分组，但`2`号数据分组丢失，此时`0`号、`1`号按序到达，接收窗口可以向前移动；---
                 而`3`号分组可以被接收，但接收窗口不能移动。
             </X.P>
-            <X.Image src={require('./sr2.png')} width="100%" />
+            <X.Image src={require('./sr2.png')} width="100%" invertInDarkTheme />
             <X.P>
                 返回的`ACK`到达发送方之后，发送方可以把发送窗口的起点移动到`2`号，同时记录`3`号分组已接收。---
                 移动发送窗口后，可以把新纳入窗口的`4`号、`5`号发送出去。
             </X.P>
-            <X.Image src={require('./sr3.png')} width="100%" />
+            <X.Image src={require('./sr3.png')} width="100%" invertInDarkTheme />
             <X.P>
                 如果`4`号、`5`号可以被正常接收，并且返回的`ACK 4`、`ACK 5`可以正确到达发送方，---
                 那么最后会使得发送窗口和接收窗口都卡在`2`的位置，并最终触发`2`号分组超时重传。
@@ -161,7 +161,7 @@ export default function Blog({title}) {
                 还要再继续发送`48`位的人为干扰信号，以便有足够多的碰撞信号使所有站点都能检测出碰撞。
             </X.P>
             <X.H3>争用期</X.H3>
-            <X.Image src={require('./csma1.png')} width="100%" />
+            <X.Image src={require('./csma1.png')} width="100%" invertInDarkTheme />
             <X.P>
                 图中$\tau$是单程传播时延，$\delta$并没有很强的物理含义，我们只是假设主机D发送数据后经过$\delta$时间检测到A的信号。---
                 这张图的重点是，在$\delta$趋近于0的情况下，A最长需要$2\tau$的时间检测到碰撞。---
@@ -174,7 +174,7 @@ export default function Blog({title}) {
                 中随机选出的数。当重传达`16`次仍不能成功时，则丢弃该帧，并向上层报告。
             </X.P>
             <X.H3>最小/最大帧长的由来</X.H3>
-            <X.Image src={require('./csma2.png')} width="600" />
+            <X.Image src={require('./csma2.png')} width="600" invertInDarkTheme />
             <X.P>
                 如果一个帧的长度太小，可能一个站点还没来得及检测到其发送的帧产生了碰撞，就已经将这个帧发送完毕了。---
                 帧的传输时间要大于争用期。对于`10 Mb/s`以太网，帧的最小长度为`64`字节。---
@@ -189,7 +189,7 @@ export default function Blog({title}) {
                 在无线局域网中可能会出现隐蔽站的问题，使用碰撞检测意义不大。---
                 不同于以太网，802.11标准使用*碰撞避免*`(Collision Avoidance, CA)`而不是碰撞检测。
             </X.P>
-            <X.Image src={require('./csma3.png')} width="600" />
+            <X.Image src={require('./csma3.png')} width="600" invertInDarkTheme />
             <X.H3>使用确认帧</X.H3>
             <X.P>
                 CSMA、CSMA/CD都没有使用确认帧机制。但因为无线信道的通信质量远不如有线信道，---
@@ -317,7 +317,7 @@ export default function Blog({title}) {
                 该主干总是包含本AS中的所有区域边界路由器、但也可能包含非边界路由器。在AS中的区域间的路由选择要求分组先路由到一个区域边界路由器（区域内路由选择），---
                 然后通过主干路由到位于目的区域的区域边界路由器进而再路由到最终目的地。
             </X.P>
-            <X.Image src={require('./ospf.png')} width="600" />
+            <X.Image src={require('./ospf.png')} width="600" invertInDarkTheme />
             <X.H3>OSPF 相较于 RIP 的优点</X.H3>
             <X.Uli>
                 安全：使用鉴别，仅有受信任的路由器能参于OSPF协议，可防止恶意入侵者将不正确的信息注入路由器表内。
@@ -333,14 +333,14 @@ export default function Blog({title}) {
             <X.H2>边界网关协议 - BGP</X.H2>
             <X.P>*边界网关协议*`(Border Gateway Protocol, BGP)`在这里只做简单的概念性介绍。</X.P>
             <X.FlexRow>
-                <X.Image src={require('./bgp1.png')} width="400" />
-                <X.Image src={require('./bgp2.png')} width="400" />
+                <X.Image src={require('./bgp1.png')} width="400" invertInDarkTheme />
+                <X.Image src={require('./bgp2.png')} width="400" invertInDarkTheme />
             </X.FlexRow>
             <X.P>
                 在不同自治系统内，度量路由的代价可能不同；自治系统之间的路由选择也需要考虑相关的政治、经济、安全因素。---
                 BGP只希望选择一条可达，无环路，且相对较优的路由。
             </X.P>
-            <X.Image src={require('./bgp3.png')} width="600" />
+            <X.Image src={require('./bgp3.png')} width="600" invertInDarkTheme />
             <X.P>
                 在配置BGP时，每个AS需要选择至少一个路由器作为*BGP发言人*，不同自治系统的BGP发言人要通过TCP连接交换路由信息。---
                 当BGP发言人互相交换了网络可达性信息后，各BGP发言人就根据自己的策略选择出到达各自治系统的较好的路由，也就是构造出树形结构、不存在回路的连通图。
@@ -562,7 +562,7 @@ export default function Blog({title}) {
             <X.Uli>`2001:db8:de:0:0:0:0:2e13`</X.Uli>
             <X.Uli>`2001:db8:de::2e13`</X.Uli>
             <X.H2>IPv6比IPv4的改进</X.H2>
-            <X.Image src={require('./ip.png')} width="100%" />
+            <X.Image src={require('./ip.png')} width="100%" invertInDarkTheme />
             <X.Uli>扩大了地址空间，从`8`位变为`32`位</X.Uli>
             <X.Uli>IPv6移除了校验和字段，以减少每跳的处理时间</X.Uli>
             <X.Uli>
@@ -611,7 +611,7 @@ export default function Blog({title}) {
                 UDP传输效率更高，其牺牲了可靠性来保证性能。UDP适用于实时应用，例如视频会议、电话等。\n
                 UDP首部开销小，只包括源端口、目的端口、长度、校验和共`8`字节。
             </X.P>
-            <X.Image src={require('./tcpudp.jpg')} width="600" />
+            <X.Image src={require('./tcpudp.jpg')} width="600" invertInDarkTheme />
             <X.H2>传输控制协议 - TCP</X.H2>
             <X.P>
                 *传输控制协议*`(Transmission Control Protocol, TCP)`---
@@ -633,14 +633,14 @@ export default function Blog({title}) {
             </X.Uli>
             <X.H3>TCP连接建立</X.H3>
             <X.P>TCP通过三报文握手建立连接，目的是使双方能感知到对方的存在，同时协商一些参数。过程如下图所示：</X.P>
-            <X.Image src={require('./tcp1.jpg')} width="100%" />
+            <X.Image src={require('./tcp1.jpg')} width="100%" invertInDarkTheme />
             <X.H3>TCP连接释放</X.H3>
             <X.P>
                 TCP通过四报文挥手释放连接。服务端响应客户端的释放请求后进入关闭等待状态，但如果TCP服务器进程还有数据要发送，服务端仍然会发送完最后的数据才会发送连接释放报文段。\n
                 客户端确认了连接释放报文段后，还要经过`2`倍*最长报文段寿命*`(Maximum Segment Lifetime, MSL)`---
                 才进入关闭状态，这是为了防止客户端确认报文丢失，如果直接进入关闭状态就无法接收到服务端重传的连接释放报文。过程如下图所示：
             </X.P>
-            <X.Image src={require('./tcp2.jpg')} width="100%" />
+            <X.Image src={require('./tcp2.jpg')} width="100%" invertInDarkTheme />
             <X.H3>TCP可靠传输</X.H3>
             <X.P>TCP综合了GBN和SR的一些机制来实现可靠传输。</X.P>
             <X.P>
@@ -684,7 +684,7 @@ export default function Blog({title}) {
             </X.HighlightBlock>
             <X.HighlightBlock bgcolor="gray">
                 <X.H3>拥塞控制的实现</X.H3>
-                <X.Image src={require('./tcp3.jpg')} width="600" />
+                <X.Image src={require('./tcp3.jpg')} width="600" invertInDarkTheme />
                 <X.H3>慢开始</X.H3>
                 <X.P>
                     执行慢开始算法时拥塞窗口初始大小为`1`，同时要设定慢开始门限值（图中是`8`），拥塞窗口将指数增大到门限值。

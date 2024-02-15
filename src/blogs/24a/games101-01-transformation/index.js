@@ -252,7 +252,7 @@ export default function Blog({title}) {
                 <X.P>变换前：*世界空间*`(World Space)`\n变换后：*观察空间*`(View Space)`</X.P>
             </X.HighlightBlock>
             <X.H2>投影变换</X.H2>
-            <X.Image src={require('./fig5.jpg')} width="100%" invertInDarkTheme />
+            <X.Image src={require('./fig5.jpg')} width="100%" />
             <X.P>
                 投影变换有如上图两种：*正交投影*`(Orthographic Projection)`和*透视投影*`(Perspective Projection)`。
             </X.P>
