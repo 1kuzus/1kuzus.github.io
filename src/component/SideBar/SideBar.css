@@ -13,7 +13,7 @@
     margin-bottom: 2px;
     padding: 4px 0;
     line-height: 24px;
-    font-size: 14px;
+    font-size: 16px;
     color: var(--text-color-main);
 }
 .sidebar-list-category-rightarrow {
@@ -39,7 +39,7 @@
     margin-bottom: 2px;
     padding: 4px 16px;
     line-height: 24px;
-    font-size: 14px;
+    font-size: 16px;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;

@@ -24,7 +24,7 @@
 :root.light {
     --color-main: #30303c;
     --bg-main: #ffffff;
-    --bg-main-transparent: #ffffffcc;
+    --bg-main-transparent: #ffffffc0;
     --bg-body: #ffffff;
     --bg-transparent-golden: #ffb80018;
     --bg-transparent-red: #ff380018;
@@ -44,13 +44,13 @@
     --gray-1: #d4d4d4;
 
     /*仅亮色模式*/
-    --light-theme-box-shadow: 0 0 4px 2px #00000008;
+    --light-theme-box-shadow: 0 0 4px 2px #0000000c;
 }
 :root.dark {
     --color-main: #fcfcfc;
-    --bg-main: #18181c;
-    --bg-main-transparent: #18181ccc;
-    --bg-body: #202024;
+    --bg-main: #141418;
+    --bg-main-transparent: #141418c0;
+    --bg-body: #1c1c20;
     --bg-transparent-golden: #c08a0020;
     --bg-transparent-red: #c02a0020;
     --bg-transparent-gray: #80808018;
@@ -110,8 +110,4 @@ a {
 }
 img {
     -webkit-user-drag: none;
-}
-
-#root {
-    padding-top: 64px;
 }
