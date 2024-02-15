@@ -6,10 +6,10 @@
     border-spacing: 3px;
 }
 .x-table th {
-    background-color: var(--bg-th-color);
+    background-color: var(--bg-th);
 }
 .x-table td {
-    background-color: var(--bg-td-color);
+    background-color: var(--bg-td);
 }
 .x-table th,
 .x-table td {
