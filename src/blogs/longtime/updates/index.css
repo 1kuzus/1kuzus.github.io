@@ -8,8 +8,8 @@
 #blog75d1a6-version {
     align-self: center;
     line-height: 160px;
-    font-size: 44px;
-    font-family: var(--font-consolas);
+    font-size: 40px;
+    font-family: var(--font-code);
     user-select: none;
 }
 #blog75d1a6-dance-gif {

@@ -17,8 +17,8 @@
 }
 
 :root {
-    --font-code: Menlo, Consolas, 'Courier New', Courier, 'Ubuntu Mono', monospace;
-    --font-consolas: Consolas, Consolas_Latin_Subset;
+    --font-code: Menlo, Consolas, Consolas_Latin_Subset, 'Courier New', Courier, 'Ubuntu Mono', monospace;
+    --border: 1px solid #80808040;
 }
 :root,
 :root.light {
@@ -48,8 +48,8 @@
 }
 :root.dark {
     --color-main: #fcfcfc;
-    --bg-main: #141418;
-    --bg-main-transparent: #141418c0;
+    --bg-main: #141416;
+    --bg-main-transparent: #141416d0;
     --bg-body: #1c1c20;
     --bg-transparent-golden: #c08a0020;
     --bg-transparent-red: #c02a0020;
