@@ -17,14 +17,14 @@
     padding-left: 0.16em;
     font-size: 100px;
     font-weight: bold;
-    font-family: var(--font-consolas);
+    font-family: var(--font-code);
     letter-spacing: 0.16em;
     color: var(--text-color-main);
 }
 #notfound-text {
     padding-left: 0.05em;
     font-size: 24px;
-    font-family: var(--font-consolas);
+    font-family: var(--font-code);
     letter-spacing: 0.05em;
     color: var(--text-color-main);
 }

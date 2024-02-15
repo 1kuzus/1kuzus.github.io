@@ -7,7 +7,7 @@
 }
 #homepage-title {
     margin-top: 32px;
-    font-size: 48px;
+    font-size: 40px;
     color: var(--text-color-main);
 }
 #logopart-wrapper {
@@ -79,7 +79,7 @@
     text-overflow: ellipsis;
     overflow: hidden;
     color: var(--text-color-main);
-    border-bottom: 1px solid var(--gray-1);
+    border-bottom: var(--border);
     transition: color 200ms, flex-grow 200ms;
 }
 .blog-list-ul-wrapper {
