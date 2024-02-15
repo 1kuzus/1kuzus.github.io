@@ -10,7 +10,7 @@ function Version() {
                 <X.HighlightBlock>
                     <X.FlexRow justifyContent="space-around">
                         <X.Image id="blog75d1a6-cheer-gif" src={require('./cheer.gif')} width="150" />
-                        <div id="blog75d1a6-version">Version 1.1</div>
+                        <div id="blog75d1a6-version">Version 2.0</div>
                         <X.Image id="blog75d1a6-dance-gif" src={require('./dance.gif')} width="128" />
                     </X.FlexRow>
                 </X.HighlightBlock>
@@ -71,7 +71,8 @@ function UpdateLog() {
         {date: '2024-01-26', description: '使用语义化更佳的路由方案'},
         {date: '2024-01-27', description: '支持直接在列表项中写含有jsx表达式的`children`'},
         {date: '2024-02-01', description: '`HighlightBlock`组件支持`bgcolor="blue"`'},
-        {date: '2024-02-12', description: '不再使用`BlogWrapper`组件，改为`BlogLayout`\\n响应式设计'},
+        {date: '2024-02-12', description: '不再使用`BlogWrapper`组件，改为`BlogLayout`\\n响应式设计移动端适配'},
+        {date: '2024-02-15', description: '调整了部分页面设计'},
         {version: '1.1'},
     ];
     return (
