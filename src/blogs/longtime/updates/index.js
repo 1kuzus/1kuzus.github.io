@@ -26,7 +26,7 @@ function UpdateLog() {
         {date: '2023-07-22', description: '搭建页面框架，测试路由'},
         {date: '2023-07-23', description: '设计首页logo和顶栏'},
         {date: '2023-07-29', description: '首页博客列表组件'},
-        {date: '2023-07-30', description: '博客页侧栏组件'},
+        {date: '2023-07-30', description: '博客页侧栏导航组件'},
         {date: '2023-08-03', description: '创建`X`组件库\\n新组件`Title``H1``H2``H3`'},
         {date: '2023-08-09', description: '开始设计暗色主题'},
         {date: '2023-08-13', description: '新组件`P`，自动解析行内高亮'},
@@ -62,7 +62,10 @@ function UpdateLog() {
         {date: '2023-12-05', description: '标题组件`H1``H2``H3`支持超链接'},
         {date: '2023-12-06', description: '博客标题自动从分类目录文件同步'},
         {date: '2023-12-17', description: '支持直接在列表项中写含有段落组件特殊格式的纯字符串`children`'},
-        {date: '2023-12-29', description: '更新了表格组件样式\\n优化了首页博客列表和侧栏列表高度自动过渡的实现方法'},
+        {
+            date: '2023-12-29',
+            description: '更新了表格组件样式\\n优化了首页博客列表和侧栏导航列表高度自动过渡的实现方法',
+        },
         {date: '2023-12-30', description: '略微调整首页博客列表样式'},
         {version: '1.0'},
         {date: '2024-01-08', description: '新的SEO方案：使用`react-snap`作预渲染\\n加入`404`页面'},
@@ -71,9 +74,13 @@ function UpdateLog() {
         {date: '2024-01-26', description: '使用语义化更佳的路由方案'},
         {date: '2024-01-27', description: '支持直接在列表项中写含有jsx表达式的`children`'},
         {date: '2024-02-01', description: '`HighlightBlock`组件支持`bgcolor="blue"`'},
-        {date: '2024-02-12', description: '不再使用`BlogWrapper`组件，改为`BlogLayout`\\n响应式设计移动端适配'},
-        {date: '2024-02-15', description: '调整了部分页面设计'},
+        {
+            date: '2024-02-12',
+            description: '删除了`BlogWrapper`组件，布局功能集成到新组件`BlogLayout`\\n响应式设计移动端适配',
+        },
+        {date: '2024-02-15', description: '调整了暗色模式配色等部分页面设计\\n顶栏新增半透明效果'},
         {version: '1.1'},
+        {date: '2024-02-17', description: '优化了侧栏导航布局'},
     ];
     return (
         <>
