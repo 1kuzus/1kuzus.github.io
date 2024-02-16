@@ -94,9 +94,7 @@
     transition: opacity 200ms;
 }
 .blog-list-li {
-    height: 50px;
     margin-top: 8px;
-    padding: 12px 24px;
     border-radius: 12px;
     cursor: pointer;
     transition: background-color 200ms;
@@ -105,6 +103,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 50px;
+    padding: 12px 24px;
     color: var(--text-color-main);
 }
 .blog-list-title {
