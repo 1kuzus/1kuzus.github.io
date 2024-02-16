@@ -1,5 +1,5 @@
 .sidebar-list {
-    width: calc(100% - 16px);
+    width: calc(var(--sidebar-width) - 48px);
 }
 .sidebar-list-head {
     display: flex;

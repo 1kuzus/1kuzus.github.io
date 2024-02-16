@@ -61,8 +61,7 @@
     top: 64px;
     left: 0;
     z-index: 100;
-    width: 30vw;
-    max-width: 396px;
+    width: var(--sidebar-width);
     height: calc(100vh - 64px);
     padding: 24px 0 24px 24px;
     overflow-y: auto;
@@ -70,6 +69,12 @@
     backdrop-filter: blur(5px) saturate(160%);
     user-select: none;
     transition: transform 200ms;
+}
+#sidebar::-webkit-scrollbar {
+    display: none;
+}
+#sidebar:hover::-webkit-scrollbar {
+    display: block;
 }
 #sidebar.show-sidebar {
     transform: translateX(0);
@@ -103,7 +108,6 @@
         padding: 48px 24px;
     }
     #sidebar {
-        width: 300px;
         transform: translateX(-100%);
     }
 }

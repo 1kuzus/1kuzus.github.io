@@ -19,7 +19,14 @@
 :root {
     --font-code: Menlo, Consolas, Consolas_Latin_Subset, 'Courier New', Courier, 'Ubuntu Mono', monospace;
     --border: 1px solid #80808040;
+    --sidebar-width: min(30vw, 396px);
 }
+@media (max-width: 1000px) {
+    :root {
+        --sidebar-width: 300px;
+    }
+}
+
 :root,
 :root.light {
     --color-main: #30303c;
