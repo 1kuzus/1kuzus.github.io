@@ -67,7 +67,7 @@
     padding: 24px 0 24px 24px;
     overflow-y: auto;
     background-color: var(--bg-main-transparent);
-    backdrop-filter: blur(5px) saturate(180%);
+    backdrop-filter: blur(5px) saturate(160%);
     user-select: none;
     transition: transform 200ms;
 }

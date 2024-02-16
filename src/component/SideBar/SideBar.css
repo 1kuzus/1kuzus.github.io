@@ -33,26 +33,31 @@
     transition: opacity 200ms;
 }
 .sidebar-list-li {
-    box-sizing: content-box;
-    display: block;
-    height: 24px;
     margin-bottom: 2px;
-    padding: 4px 16px;
-    line-height: 24px;
-    font-size: 16px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    color: var(--text-color-main);
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 200ms;
 }
+.sidebar-list-link {
+    display: flex;
+    align-items: center;
+    height: 32px;
+    padding: 4px 16px;
+    color: var(--text-color-main);
+}
+.sidebar-list-title {
+    font-size: 16px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
 
 /*active样式*/
 .sidebar-list-li.active {
-    color: var(--text-color-active);
     background-color: var(--bg-transparent-gray);
+}
+.sidebar-list-li.active .sidebar-list-link {
+    color: var(--text-color-active);
 }
 
 /*hover样式*/
