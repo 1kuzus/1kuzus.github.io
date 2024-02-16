@@ -85,8 +85,17 @@ export default function Blog({title}) {
                 `f`后面是顶点的索引。更详细的资料可以参考@维基百科[https://en.wikipedia.org/wiki/Wavefront_.obj_file]@。
             </X.P>
             <X.P>网站@ONLINE 3D VIEWER[https://3dviewer.net/]@可以在线查看各种格式定义的3D模型。</X.P>
-            <X.H1>曲线 - 贝塞尔曲线</X.H1>
-            <X.H1>曲面 - 更多</X.H1>
+            <X.H1>曲线和曲面</X.H1>
+            <X.H2>贝塞尔曲线</X.H2>
+            <X.Image src={require('./fig8.jpg')} width="400px" invertInDarkTheme />
+            <X.P>
+                我们可以通过三个控制点$b_0$、$b_1$、$b_2$来生成图中蓝色的曲线，具体做法是对于每个$t \in
+                [0,1]$：\n做出点$b_0^1$、$b_1^1$，满足$b_0b_0^1=tb_0b_1$、$b_1b_1^1=tb_1b_2$；\n再做出$b_0^2$，满足$b_0^1b_0^2=tb_0^1b_1^1$；
+            </X.P>
+            <X.P>每一个$t$对应的$b_0^2$就构成一条贝塞尔曲线，也就是图中蓝色的曲线。</X.P>
+            <X.H3>三阶贝塞尔曲线</X.H3>
+            <X.P>如果用四个控制点，同样通过类似的递归的方法，可以生成一条更高阶的贝塞尔曲线：</X.P>
+            <X.Image src={require('./fig9.jpg')} width="600px" invertInDarkTheme />
         </>
     );
 }
