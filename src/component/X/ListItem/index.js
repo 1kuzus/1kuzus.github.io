@@ -1,4 +1,4 @@
-import {addOliIdx, setOliIdx} from 'src/component/BlogLayout/BlogLayout';
+import {useGlobalContext} from 'src/context/GlobalContext';
 import P from '../Paragraph/Paragraph';
 import './index.css';
 
@@ -26,9 +26,10 @@ export function Uli(props) {
 
 export function Oli(props) {
     const {reset, children} = props;
+    const {addOliIndex, resetOliIndex} = useGlobalContext();
     return (
         <div className="x-oli">
-            <div className="x-oli-number">{(reset !== undefined ? setOliIdx(+reset) : addOliIdx(1)) + '.'}</div>
+            <div className="x-oli-number">{(reset !== undefined ? resetOliIndex(+reset) : addOliIndex()) + '.'}</div>
             <div className="x-oli-content-wrapper">
                 {isStringOrStringArray(children) ? <P>{children}</P> : children}
             </div>

@@ -1,25 +1,17 @@
-import {useLayoutEffect} from 'react';
+import {useLayoutEffect, useEffect} from 'react';
 import {useGlobalContext} from 'src/context/GlobalContext';
 import Contents from '../Contents/Contents';
 import Sidebar from '../Sidebar/Sidebar';
 import './BlogLayout.css';
 
-let oliIdx = 0;
-export function addOliIdx() {
-    return ++oliIdx;
-}
-export function setOliIdx(idx) {
-    return (oliIdx = idx);
-}
-
 export default function BlogLayout(props) {
     const {children} = props;
-    const {showSidebar, setShowSidebar, titleNodes} = useGlobalContext();
-    oliIdx = 0;
+    const {showSidebar, setShowSidebar, titleNodes, resetOliIndex} = useGlobalContext();
+    resetOliIndex(0); //react-like
     useLayoutEffect(() => {
         document.documentElement.scrollTo({top: 0});
         setShowSidebar(false);
-    }, []);
+    }, [children]);
     return (
         <div id="blog-layout">
             <div id="main">{children}</div>

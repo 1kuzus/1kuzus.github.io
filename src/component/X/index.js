@@ -4,7 +4,7 @@ import FlexRow from './FlexRow/FlexRow';
 import Formula from './Formula/Formula';
 import HighlightBlock from './HighlightBlock/HighlightBlock';
 import Image from './Image/Image';
-import * as ListItem from './ListItem';
+import {Uli, Oli} from './ListItem';
 import P from './Paragraph/Paragraph';
 import Table from './Table/Table';
 
@@ -15,7 +15,8 @@ const X = {
     Formula,
     HighlightBlock,
     Image,
-    ...ListItem,
+    Uli,
+    Oli,
     P,
     Table,
 };
