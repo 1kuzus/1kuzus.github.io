@@ -17,8 +17,8 @@
     z-index: 100;
     width: 300px;
     height: fit-content;
-    max-height: calc(100vh - 64px - 64px);
-    margin: 48px 64px 32px 0;
+    max-height: calc(100vh - 64px - 48px - 48px);
+    margin: 48px 64px 0 0;
     padding: 24px 0;
     font-size: 14px;
     overflow: auto;
@@ -26,6 +26,12 @@
     border-radius: 12px;
     background-color: var(--bg-main-transparent);
     box-shadow: var(--light-theme-box-shadow);
+}
+#contents::-webkit-scrollbar {
+    display: none;
+}
+#contents:hover::-webkit-scrollbar {
+    display: block;
 }
 #contents-header {
     padding: 4px 32px 4px 32px;
