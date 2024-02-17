@@ -11,41 +11,47 @@ export function Title(props) {
 
 export function H1(props) {
     const {href, children} = props;
-    if (href)
-        return (
-            <h2 className="x-h1">
+    return (
+        <h2 className="x-h1">
+            {href ? (
                 <a href={href} target="_blank" rel="noreferrer">
                     {children}
                 </a>
-            </h2>
-        );
-    return <h2 className="x-h1">{children}</h2>;
+            ) : (
+                children
+            )}
+        </h2>
+    );
 }
 
 export function H2(props) {
     const {href, children} = props;
-    if (href)
-        return (
-            <h3 className="x-h2">
+    return (
+        <h3 className="x-h2">
+            {href ? (
                 <a href={href} target="_blank" rel="noreferrer">
                     {children}
                 </a>
-            </h3>
-        );
-    else return <h3 className="x-h2">{children}</h3>;
+            ) : (
+                children
+            )}
+        </h3>
+    );
 }
 
 export function H3(props) {
     const {href, children} = props;
-    if (href)
-        return (
-            <h4 className="x-h3">
+    return (
+        <h4 className="x-h3">
+            {href ? (
                 <a href={href} target="_blank" rel="noreferrer">
                     {children}
                 </a>
-            </h4>
-        );
-    return <h4 className="x-h3">{children}</h4>;
+            ) : (
+                children
+            )}
+        </h4>
+    );
 }
 
 export function Br() {
