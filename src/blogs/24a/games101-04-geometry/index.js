@@ -85,7 +85,6 @@ export default function Blog({title}) {
                 `f`后面是顶点的索引。更详细的资料可以参考@维基百科[https://en.wikipedia.org/wiki/Wavefront_.obj_file]@。
             </X.P>
             <X.P>网站@ONLINE 3D VIEWER[https://3dviewer.net/]@可以在线查看各种格式定义的3D模型。</X.P>
-            <X.H1>曲线和曲面</X.H1>
             <X.H2>贝塞尔曲线</X.H2>
             <X.Image src={require('./fig8.jpg')} width="400px" invertInDarkTheme />
             <X.P>
@@ -109,6 +108,21 @@ export default function Blog({title}) {
                 <X.Image src={require('./fig10.jpg')} width="360px" invertInDarkTheme />
                 <X.Image src={require('./fig11.jpg')} width="360px" invertInDarkTheme />
             </X.FlexRow>
+            <X.P>@这个网站[https://math.hws.edu/eck/cs424/notes2013/canvas/bezier.html]@可以在线编辑贝塞尔曲线。</X.P>
+            <X.H2>贝塞尔曲面</X.H2>
+            <X.P>
+                描述一维贝塞尔曲线时需要一个参数$t$，自然地，对于贝塞尔曲面需要两个参数$u \in [0,1]$,$v \in [0,1]$。
+            </X.P>
+            <X.Image src={require('./fig12.jpg')} width="600px" invertInDarkTheme />
+            <X.P>
+                生成贝塞尔曲面的方式类似双线性插值：我们需要`16`个控制点排列成`4`*`4`，对于四个点组成的一列可以生成一个贝塞尔曲线（图中灰色线），---
+                指定了参数$u$后，可以分别得到四条曲线上的四个点（图中蓝色点）；以这四个蓝色点作为新的控制点，每一个参数$v$都会给出蓝色贝塞尔曲线上的一点（图中白色点）。
+            </X.P>
+            <X.P>这就是参数$(u,v)$到贝塞尔曲面上一点的一一对应关系。</X.P>
+            <X.H1>网格操作</X.H1>
+            <X.H2>网格细分</X.H2>
+            <X.P>网格细分`(mesh subdivision)`相当于上采样，可以增加分辨率。</X.P>
+            <X.Image src={require('./fig13.jpg')} width="600px" invertInDarkTheme />
         </>
     );
 }
