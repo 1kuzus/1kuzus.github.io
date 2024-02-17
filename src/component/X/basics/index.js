@@ -11,10 +11,11 @@ export function Title(props) {
 }
 
 export function H1(props) {
-    const {href, children} = props;
+    const {href, excludeFromContents, children} = props;
     const h1Ref = useRef();
     const {setTitleNodeRefs, removeTitleNodeRefs} = useGlobalContext();
     useLayoutEffect(() => {
+        if (excludeFromContents) return;
         setTitleNodeRefs((prev) => [...prev, h1Ref]);
         return () => removeTitleNodeRefs(h1Ref);
     }, [children]);
@@ -32,10 +33,11 @@ export function H1(props) {
 }
 
 export function H2(props) {
-    const {href, children} = props;
+    const {href, excludeFromContents, children} = props;
     const h2Ref = useRef();
     const {setTitleNodeRefs, removeTitleNodeRefs} = useGlobalContext();
     useLayoutEffect(() => {
+        if (excludeFromContents) return;
         setTitleNodeRefs((prev) => [...prev, h2Ref]);
         return () => removeTitleNodeRefs(h2Ref);
     }, [children]);
