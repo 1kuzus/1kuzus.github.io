@@ -1,4 +1,4 @@
-import {useLayoutEffect, useEffect} from 'react';
+import {useLayoutEffect} from 'react';
 import {useGlobalContext} from 'src/context/GlobalContext';
 import Contents from '../Contents/Contents';
 import Sidebar from '../Sidebar/Sidebar';
@@ -7,7 +7,7 @@ import './BlogLayout.css';
 export default function BlogLayout(props) {
     const {children} = props;
     const {showSidebar, setShowSidebar, titleNodes, resetOliIndex} = useGlobalContext();
-    resetOliIndex(0); //react-like
+    resetOliIndex(0); //todo: react-like
     useLayoutEffect(() => {
         document.documentElement.scrollTo({top: 0});
         setShowSidebar(false);
