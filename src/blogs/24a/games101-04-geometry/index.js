@@ -96,6 +96,19 @@ export default function Blog({title}) {
             <X.H3>三阶贝塞尔曲线</X.H3>
             <X.P>如果用四个控制点，同样通过类似的递归的方法，可以生成一条更高阶的贝塞尔曲线：</X.P>
             <X.Image src={require('./fig9.jpg')} width="600px" invertInDarkTheme />
+            <X.P>
+                对于三阶贝塞尔曲线上一点$b_0^3$，也就是图中标识的$x(t)$，尽管从演示上是通过中间点一步一步得到的，---
+                但实际给出四个控制点位置和$t$就可以唯一确定。
+            </X.P>
+            <X.P>
+                下图中左侧是常见的分段定义贝塞尔曲线的方法，每个顶点都延伸出两根“控制杆”，而实际上三阶贝塞尔曲线的四个控制点是图中标出的$b_0$~$b_3$，---
+                相当于省去了连线$b_1b_2$。
+            </X.P>
+            <X.P>如果希望分段贝塞尔曲线连续，则需要两侧的“控制杆”反向共线且等长，如下图中右侧所示。</X.P>
+            <X.FlexRow gap="32px">
+                <X.Image src={require('./fig10.jpg')} width="360px" invertInDarkTheme />
+                <X.Image src={require('./fig11.jpg')} width="360px" invertInDarkTheme />
+            </X.FlexRow>
         </>
     );
 }
