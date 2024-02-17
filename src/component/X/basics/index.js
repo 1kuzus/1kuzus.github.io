@@ -1,4 +1,5 @@
-import {useLayoutEffect} from 'react';
+import {useLayoutEffect, useRef} from 'react';
+import {useGlobalContext} from 'src/context/GlobalContext';
 import './index.css';
 
 export function Title(props) {
@@ -11,8 +12,14 @@ export function Title(props) {
 
 export function H1(props) {
     const {href, children} = props;
+    const h1Ref = useRef();
+    const {setTitleNodeRefs, removeTitleNodeRefs} = useGlobalContext();
+    useLayoutEffect(() => {
+        setTitleNodeRefs((prev) => [...prev, h1Ref]);
+        return () => removeTitleNodeRefs(h1Ref);
+    }, [children]);
     return (
-        <h2 className="x-h1">
+        <h2 className="x-h1" ref={h1Ref}>
             {href ? (
                 <a href={href} target="_blank" rel="noreferrer">
                     {children}
@@ -26,8 +33,14 @@ export function H1(props) {
 
 export function H2(props) {
     const {href, children} = props;
+    const h2Ref = useRef();
+    const {setTitleNodeRefs, removeTitleNodeRefs} = useGlobalContext();
+    useLayoutEffect(() => {
+        setTitleNodeRefs((prev) => [...prev, h2Ref]);
+        return () => removeTitleNodeRefs(h2Ref);
+    }, [children]);
     return (
-        <h3 className="x-h2">
+        <h3 className="x-h2" ref={h2Ref}>
             {href ? (
                 <a href={href} target="_blank" rel="noreferrer">
                     {children}
