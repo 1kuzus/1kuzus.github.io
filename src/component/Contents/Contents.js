@@ -30,7 +30,15 @@ export default function Contents(props) {
     }, [titleNodes]);
     return (
         <>
-            <h4 id="contents-header">本页目录</h4>
+            <h4
+                id="contents-header"
+                //todo: 更多交互提示
+                onClick={() => {
+                    document.documentElement.scrollTo({top: 0});
+                }}
+            >
+                本页目录
+            </h4>
             <ul>
                 {titleNodes.map((titleNode, index) => {
                     const {className: type, textContent: text} = titleNode;
