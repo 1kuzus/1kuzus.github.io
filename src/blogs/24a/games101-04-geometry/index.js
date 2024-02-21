@@ -123,6 +123,12 @@ export default function Blog({title}) {
             <X.H2>网格细分</X.H2>
             <X.P>网格细分`(mesh subdivision)`相当于上采样，可以增加分辨率。</X.P>
             <X.Image src={require('./fig13.jpg')} width="600px" invertInDarkTheme />
+            <X.H3>Loop细分</X.H3>
+            <X.P noMarginBottom>Loop细分分为两步操作：</X.P>
+            <X.Oli>将三角形细分：连接三角形三边中点，就可以把原来的一个三角形划分为四个</X.Oli>
+            <X.Oli>调整顶点的位置</X.Oli>
+            <X.P>其中第二步对于“新的”（新取的中点）顶点和“老的”（原本就有的）顶点</X.P>
+            <X.H3>Catmull-Clark细分</X.H3>
         </>
     );
 }
