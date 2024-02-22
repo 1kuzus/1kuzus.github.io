@@ -18,7 +18,7 @@ export function H1(props) {
         if (excludeFromContents) return;
         setTitleNodeRefs((prev) => [...prev, h1Ref]);
         return () => removeTitleNodeRefs(h1Ref);
-    }, [children]);
+    }, [children, excludeFromContents]);
     return (
         <h2 className="x-h1" ref={h1Ref}>
             {href ? (
@@ -40,7 +40,7 @@ export function H2(props) {
         if (excludeFromContents) return;
         setTitleNodeRefs((prev) => [...prev, h2Ref]);
         return () => removeTitleNodeRefs(h2Ref);
-    }, [children]);
+    }, [children, excludeFromContents]);
     return (
         <h3 className="x-h2" ref={h2Ref}>
             {href ? (
