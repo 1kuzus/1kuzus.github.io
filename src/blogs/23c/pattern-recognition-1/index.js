@@ -105,7 +105,8 @@ export default function Blog({title}) {
             <X.Formula
                 text="P(x_1,x_2) = \frac{1}{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}} \exp\{
                 -\frac{1}{2} \cdot \frac{1}{1-\rho^2} \cdot [(\frac{x_1-\mu_1}{\sigma_1})^2 - 2\rho\frac{(x_1-\mu_1)(x_2-\mu_2)}{\sigma_1\sigma_2} + (\frac{x_2-\mu_2}{\sigma_2})^2]
-                \}"
+                \}
+                "
             />
             <X.P>对于上述二维正态分布，记：</X.P>
             <X.Formula

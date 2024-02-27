@@ -79,7 +79,7 @@ export default function Blog({title}) {
                 \begin{cases}
                 \frac{1}{h^d}，\quad |\Delta x_i| < \frac{h}{2}\\
                 \\
-                0，\quad 其他
+                0，\quad \text{otherwise}
                 \end{cases}
                 "
             />
@@ -103,7 +103,7 @@ export default function Blog({title}) {
                 \begin{cases}
                 \frac{1}{V}，\quad \Vert \bm{X}-\bm{X}_i \Vert \leq {r}\\
                 \\
-                0，\quad 其他
+                0，\quad \text{otherwise}
                 \end{cases}
                 "
             />

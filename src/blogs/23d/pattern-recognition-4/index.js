@@ -80,7 +80,7 @@ export default function Blog({title}) {
                     text="\min L(\bm{W})=\frac{1}{N}\sum_{i=1}^Nl(i), \; l(i)=
                     \begin{cases}
                     1, \quad \text{sign}(y_i\bm{W}^T\bm{X_i}) < 0 \\
-                    0, \quad 其他
+                    0, \quad \text{otherwise}
                     \end{cases}
                     "
                 />
