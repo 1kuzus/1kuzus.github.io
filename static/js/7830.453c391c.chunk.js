@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkgithubiov2=self.webpackChunkgithubiov2||[]).push([[7830],{7830:(e,s,a)=>{e.exports=a.p+"static/media/cascadepsp.6e40ef664ae3ba942f27.jpg"}}]);

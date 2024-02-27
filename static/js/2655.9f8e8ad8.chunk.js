@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkgithubiov2=self.webpackChunkgithubiov2||[]).push([[2655],{2655:(e,i,b)=>{e.exports=b.p+"static/media/cheer.0a66bbeeb5dfc7c7d6f7.gif"}}]);
