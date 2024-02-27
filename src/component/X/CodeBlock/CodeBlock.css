@@ -1,14 +1,15 @@
 .x-codeblock {
     margin: 24px 0;
+    padding: 24px 0;
     overflow-x: auto;
     border-radius: 12px;
-    background-color: var(--bg-main-transparent);
+    background-color: var(--bg-main);
     box-shadow: var(--light-theme-box-shadow);
 }
 .x-codeblock pre code[class*='language-'] {
     display: block;
     width: fit-content;
-    padding: 24px 32px;
+    padding: 0 32px;
     line-height: 24px;
     font-size: 95%;
     font-family: var(--font-code);
