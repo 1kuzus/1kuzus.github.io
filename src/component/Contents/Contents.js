@@ -32,7 +32,6 @@ export default function Contents(props) {
         <>
             <h4
                 id="contents-header"
-                //todo: 更多交互提示
                 onClick={() => {
                     document.documentElement.scrollTo({top: 0});
                 }}
