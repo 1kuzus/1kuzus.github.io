@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkgithubiov2=self.webpackChunkgithubiov2||[]).push([[114],{114:(e,i,s)=>{e.exports=s.p+"static/media/bounding_volumes.b0427ddaf68c52436bfe.png"}}]);
