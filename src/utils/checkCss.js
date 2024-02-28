@@ -138,8 +138,8 @@ cssFiles.forEach((cssFile) => {
             };
         });
     selectorAndProperties.forEach(({selector, properties}) => {
-        propertyNames = properties.map((i) => i.split(':')[0]);
-        propertyIndices = [];
+        const propertyNames = properties.map((i) => i.split(':')[0]);
+        const propertyIndices = [];
         propertyNames.forEach((propertyName) => {
             const idx = propertyOrderList.indexOf(propertyName);
             if (idx !== -1) propertyIndices.push(idx);

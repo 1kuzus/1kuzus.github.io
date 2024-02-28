@@ -13,7 +13,7 @@ console.log('Writing sitemap.xml');
 const sitemapStream = new sitemap.SitemapStream({hostname: 'https://1kuzus.github.io'});
 sitemapStream.write({url: '/', lastmod: new Date().toISOString()});
 routes.forEach((route) => {
-    stats = fs.statSync(path.join('src', 'blogs', route, 'index.js'));
+    const stats = fs.statSync(path.join('src', 'blogs', route, 'index.js'));
     sitemapStream.write({url: route + '/', lastmod: stats.mtime});
 });
 sitemapStream.end();
