@@ -18,6 +18,7 @@ import Blog996037 from './24a/games101-03-shading';
 import Blog3fd68a from './24a/games101-04-geometry';
 import Blog29491e from './24a/git-merge-allow-unrelated-histories';
 import Blog1e216d from './24a/machine-learning-exercises';
+import Blog356342 from './24a/object-oriented-programming-python';
 import Blog492899 from './24a/reproduce-nerf-rpn';
 import Blog60c26d from './24a/torch-numpy-topk';
 import Blog120c66 from './longtime/demo';
@@ -96,6 +97,12 @@ const categories = [
                 path: '/24a/torch-numpy-topk/',
                 time: '2024-01-10',
                 component: <Blog60c26d />,
+            },
+            {
+                title: 'Python面向对象编程',
+                path: '/24a/object-oriented-programming-python/',
+                time: '2024-02-29',
+                component: <Blog356342 />,
             },
         ],
     },
