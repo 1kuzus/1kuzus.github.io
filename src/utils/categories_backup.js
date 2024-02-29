@@ -27,7 +27,7 @@
 import {lazy, Suspense} from 'react';
 function withLoadingComponent(Comp, title) {
     return (
-        <Suspense>
+        <Suspense fallback={null}>
             <Comp title={title} />
         </Suspense>
     );
@@ -215,8 +215,9 @@ export const elements = categories
         path: i.path,
         // element: cloneElement(i.component, {title: i.title}),
         // element: i.component,
+
         element: withLoadingComponent(
-            lazy(() => import('.' + i.path)),
+            lazy(() => import(/* webpackChunkName: "mychunkv1029v" */ '.' + i.path)),
             i.title
         ),
     }));

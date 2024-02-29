@@ -5,6 +5,7 @@ import Header from './component/Header/Header';
 import Homepage from './component/Homepage/Homepage';
 import NotFound from './component/NotFound/NotFound';
 import {elements} from './blogs/categories';
+import 'prismjs';
 import 'prismjs/components/prism-c';
 import 'prismjs/components/prism-cpp';
 import 'prismjs/components/prism-java';
