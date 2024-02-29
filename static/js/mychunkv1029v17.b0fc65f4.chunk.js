@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkgithubiov2=self.webpackChunkgithubiov2||[]).push([[9194],{2436:(u,e,s)=>{s.r(e),s.d(e,{default:()=>t});const t={}}}]);
