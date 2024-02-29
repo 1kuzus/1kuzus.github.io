@@ -4,9 +4,9 @@ import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-// if (window.history.scrollRestoration) {
-//     window.history.scrollRestoration = 'manual';
-// }
+if (window.history.scrollRestoration) {
+    window.history.scrollRestoration = 'manual';
+}
 
 root.render(
     <BrowserRouter>
