@@ -81,6 +81,7 @@ function UpdateLog() {
         {date: '2024-02-15', description: '调整了暗色模式配色等部分页面设计\\n顶栏新增半透明效果'},
         {version: '1.1'},
         {date: '2024-02-17', description: '优化了侧栏导航布局\\n`react-like`'},
+        {date: '2024-02-27', description: '`CodeBlock`组件支持代码行高亮'},
     ];
     return (
         <>
