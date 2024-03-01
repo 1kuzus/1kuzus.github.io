@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkgithubiov2=self.webpackChunkgithubiov2||[]).push([[5738],{8088:(i,e,s)=>{i.exports=s.p+"static/media/fig21.da9d5407c12104dbb616.jpg"}}]);
