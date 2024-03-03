@@ -15,7 +15,7 @@ export const GlobalProvider = (props) => {
     //用于目录
     const [titleNodeRefs, setTitleNodeRefs] = useState([]);
     const removeTitleNodeRefs = (ref) => {
-        setTitleNodeRefs((prev) => prev.filter((r) => r != ref));
+        setTitleNodeRefs((prev) => prev.filter((r) => r !== ref));
     };
 
     //用于有序列表项
