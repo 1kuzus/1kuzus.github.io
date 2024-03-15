@@ -11,11 +11,14 @@ import Blog837b13 from './23d/object-detection-map';
 import Blog3992fa from './23d/pattern-recognition-4';
 import Blog6be863 from './23d/protocols';
 import Blog9e7694 from './23d/r2plus1d';
+import Blog7eec29 from './24a/algorithm-summary';
+import Blog1802aa from './24a/cpp-stl';
 import Blog9ade12 from './24a/deepl-shortcut-setting';
 import Blog009c1d from './24a/games101-01-transformation';
 import Blog7fe954 from './24a/games101-02-rasterization';
 import Blog996037 from './24a/games101-03-shading';
 import Blog3fd68a from './24a/games101-04-geometry';
+import Blog9db08a from './24a/games101-05-ray-tracing';
 import Blog29491e from './24a/git-merge-allow-unrelated-histories';
 import Blog1e216d from './24a/machine-learning-exercises';
 import Blog356342 from './24a/object-oriented-programming-python';
@@ -52,6 +55,23 @@ const categories = [
                 path: '/24a/git-merge-allow-unrelated-histories/',
                 time: '2024-02-02',
                 component: <Blog29491e />,
+            },
+        ],
+    },
+    {
+        categoryName: '算法',
+        blogs: [
+            {
+                title: 'C++中STL的基本使用',
+                path: '/24a/cpp-stl/',
+                time: '2024-03-10',
+                component: <Blog1802aa />,
+            },
+            {
+                title: '对常见算法解决问题的摘要',
+                path: '/24a/algorithm-summary/',
+                time: '2024-03-11',
+                component: <Blog7eec29 />,
             },
         ],
     },
@@ -185,6 +205,12 @@ const categories = [
                 path: '/24a/games101-04-geometry/',
                 time: '2024-01-30',
                 component: <Blog3fd68a />,
+            },
+            {
+                title: '【GAMES101】Ray Tracing',
+                path: '/24a/games101-05-ray-tracing/',
+                time: '2024-03-09',
+                component: <Blog9db08a />,
             },
         ],
     },
