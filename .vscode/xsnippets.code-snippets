@@ -93,6 +93,18 @@
 		],
 		"description": "X.CodeBlock tag for Python"
 	},
+	"X.CodeBlock tag for C++": {
+		"scope": "javascript,typescript",
+		"prefix": "xccpp",
+		"body": [
+			"<X.CodeBlock",
+			"\tlanguage='cpp'",
+			"\tcode={`$1",
+			"\t`}",
+			"/>",
+		],
+		"description": "X.CodeBlock tag for Python"
+	},
 	"X.FlexRow tag": {
 		"scope": "javascript,typescript",
 		"prefix": "xflex",
