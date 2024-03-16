@@ -68,7 +68,7 @@ const categories = [
                 component: <Blog1802aa />,
             },
             {
-                title: '对常见算法解决问题的摘要',
+                title: '摘要：常见算法旨在解决的问题',
                 path: '/24a/algorithm-summary/',
                 time: '2024-03-11',
                 component: <Blog7eec29 />,

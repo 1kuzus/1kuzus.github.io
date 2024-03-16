@@ -211,17 +211,25 @@ export default function Blog({title}) {
                 `}
             />
             <X.H1>序列式容器：vector 动态数组</X.H1>
-            <X.H1>关于元组</X.H1>
-            <X.H2>pair 二元组</X.H2>
-            <X.P>`pair`将两个数据组合，它是由结构体实现，元素分别为`first`和`second`。</X.P>
             <X.CodeBlock
                 language="cpp"
                 code={`
-                //使用pair需要引入utility
-                #include <utility>
+                //需要引入vector
+                #include <vector>
+                ...
+                `}
+            />            
+            <X.H1>关于元组</X.H1>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                //需要引入tuple
+                #include <tuple>
                 ...
                 `}
             />
+            <X.H2>pair 二元组</X.H2>
+            <X.P>`pair`将两个数据组合，它是由结构体实现，元素分别为`first`和`second`。</X.P>
             <X.P>定义和初始化：</X.P>
             <X.CodeBlock
                 language="cpp"
@@ -253,14 +261,6 @@ export default function Blog({title}) {
                 `}
             />
             <X.P>C++中可以对元组进行解构赋值：</X.P>
-            <X.CodeBlock
-                language="cpp"
-                code={`
-                //使用tie()需要引入tuple
-                #include <tuple>
-                ...
-                `}
-            />
             <X.CodeBlock
                 language="cpp"
                 code={`
