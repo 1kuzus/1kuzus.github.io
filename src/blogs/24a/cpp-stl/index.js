@@ -113,8 +113,8 @@ export default function Blog({title}) {
                 `}
             />
             <X.H2>插入：insert()</X.H2>
-            <X.Uli>`str.insert(pos,n,ch)`：向`str`中插入`n`个字符`ch`，第一个字符的下标是`pos`</X.Uli>
-            <X.Uli>`str1.insert(pos,str2)`：向`str`中插入字符串`str2`，`str2`的首位在`str1`中下标是`pos`</X.Uli>
+            <X.Uli>`str.insert(pos,n,ch)`：向`str`中插入`n`个字符`ch`，第一个字符的下标是`pos`。</X.Uli>
+            <X.Uli>`str1.insert(pos,str2)`：向`str`中插入字符串`str2`，`str2`的首位在`str1`中下标是`pos`。</X.Uli>
             <X.CodeBlock
                 language="cpp"
                 code={`
@@ -125,8 +125,8 @@ export default function Blog({title}) {
                 `}
             />
             <X.H2>替换：replace()</X.H2>
-            <X.Uli>`str.replace(pos,n1,n2,ch)`：将`str`从下标`pos`开始连续的`n1`个字符替换成`n2`个`ch`</X.Uli>
-            <X.Uli>`str1.replace(pos,n,str2)`：将`str1`从下标`pos`开始连续的`n`个字符替换成`str2`</X.Uli>
+            <X.Uli>`str.replace(pos,n1,n2,ch)`：将`str`从下标`pos`开始连续的`n1`个字符替换成`n2`个`ch`。</X.Uli>
+            <X.Uli>`str1.replace(pos,n,str2)`：将`str1`从下标`pos`开始连续的`n`个字符替换成`str2`。</X.Uli>
             <X.CodeBlock
                 language="cpp"
                 code={`
@@ -138,7 +138,7 @@ export default function Blog({title}) {
                 `}
             />
             <X.H2>删除：erase()</X.H2>
-            <X.Uli>`str.erase(pos,n)`：将`str`从下标`pos`开始的`n`个字符删除</X.Uli>
+            <X.Uli>`str.erase(pos,n)`：将`str`从下标`pos`开始的`n`个字符删除。</X.Uli>
             <X.CodeBlock
                 language="cpp"
                 code={`
@@ -148,8 +148,8 @@ export default function Blog({title}) {
                 `}
             />
             <X.H2>切片：substr()</X.H2>
-            <X.Uli>`str.substr(pos)`：取`str`从下标`pos`开始到结尾的字符串</X.Uli>
-            <X.Uli>`str.substr(pos,n)`：取`str`从下标`pos`开始的`n`个字符</X.Uli>
+            <X.Uli>`str.substr(pos)`：取`str`从下标`pos`开始到结尾的字符串。</X.Uli>
+            <X.Uli>`str.substr(pos,n)`：取`str`从下标`pos`开始的`n`个字符。</X.Uli>
             <X.CodeBlock
                 language="cpp"
                 code={`
@@ -158,8 +158,8 @@ export default function Blog({title}) {
                 `}
             />
             <X.H2>查找：find()</X.H2>
-            <X.Uli>`str.find(sub)`：在`str`中查找`sub`第一次出现的位置</X.Uli>
-            <X.Uli>`str.find(sub,pos)`：在`str`中从下标`pos`开始查找`sub`第一次出现的位置</X.Uli>
+            <X.Uli>`str.find(sub)`：在`str`中查找`sub`第一次出现的位置。</X.Uli>
+            <X.Uli>`str.find(sub,pos)`：在`str`中从下标`pos`开始查找`sub`第一次出现的位置。</X.Uli>
             <X.CodeBlock
                 language="cpp"
                 code={`
@@ -714,6 +714,209 @@ export default function Blog({title}) {
             />
             <X.H1>关联式容器：set 集合</X.H1>
 
+            {/* 
+#include <iostream>
+#include <queue>
+using namespace std;
+struct DATE {
+	int y,m,d;
+	//默认的优先队列是大根堆，把小于号重载成"大于"的含义相当于打破这种默认，变成小根堆 
+	friend bool operator <(DATE a,DATE b)
+	{
+		if(a.y!=b.y) return a.y>b.y;
+		if(a.m!=b.m) return a.m>b.m;
+		return a.d>b.d;
+	}
+};
+int main()
+{
+	priority_queue<int> q1;
+	//size()  获取元素数量
+	//empty() 判空
+	//push(x) 插入一个元素x
+	//top()   返回堆顶元素 
+	//pop()   弹出堆顶元素 
+    q1.push(7); 
+    q1.push(2); 
+    q1.push(5); 
+    q1.push(6); 
+    q1.push(4); 
+    q1.push(1); 
+	q1.push(3);
+    while(!q1.empty())
+    {
+        int x=q1.top();
+        q1.pop();
+        cout<<x<<endl;
+    }
+    //默认是大根堆 
+    /*
+	7
+	6
+	5
+	4
+	3
+	2
+	1
+    / 
+    
+	priority_queue<DATE> q2;
+    q2.push({2028,12,23});
+    q2.push({2028,11,28});
+    q2.push({2035,1,1});
+    q2.push({2029,1,1});
+    q2.push({2028,12,25});
+    while(!q2.empty())
+    {
+    	DATE date=q2.top();
+    	q2.pop();
+    	cout<<date.y<<'-'<<date.m<<'-'<<date.d<<endl;
+    }
+    /*
+	2028-11-28
+	2028-12-23
+	2028-12-25
+	2029-1-1
+	2035-1-1
+    /
+	return 0;
+}
+
+*/}
+            <X.P>
+                使用`set`容器存储的各个键值对，要求键`key`和值`value`必须相等。实际上这可以看作，`set`容器只需要一个`key`信息，即可成功将元素存储起来。---
+                同样的，`set`也会对元素进行默认从小到大的排序。
+            </X.P>
+            <X.H2>初始化、访问、遍历</X.H2>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                set<string> s1={"a","world","b","hello","a"};
+                //也可以是set<string> s1{"a","world","b","hello","a"};
+                //也可以是set<string> s1({"a","world","b","hello","a"});
+
+                for(auto it=s1.begin();it!=s1.end();it++)
+                {
+                    cout<<*it<<endl;
+                }
+                /*
+                a
+                b
+                hello
+                world
+                */
+                `}
+            />
+            <X.H2>插入元素</X.H2>
+            <X.Uli>
+                `insert(x)`：插入一个元素`x`。\n如果成功，返回`(新插入的x的迭代器,true)`；\n如果失败，说明已经有元素`x`，返回`(x的迭代器,false)`。
+            </X.Uli>
+            <X.Uli>
+                `emplace(...args)`：传入键值对的构造参数即可。同样效率更高，不过`emplace()`每次只能插入一个元素。
+            </X.Uli>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                auto it1=s1.begin();
+                pair<decltype(s1)::iterator,bool> res;
+
+                res=s1.insert("c");
+                it1=res.first;
+                cout<<*it1<<' '<<res.second<<endl; //c 1
+
+                res=s1.emplace("c");
+                it1=res.first;
+                cout<<*it1<<' '<<res.second<<endl; //c 0
+                `}
+            />
+            <X.H2>删除元素与清空、判空</X.H2>
+            <X.Uli>`erase(x)`：删除元素`x`。</X.Uli>
+            <X.Uli>`clear()`：清空`set`。</X.Uli>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                cout<<s1.size()<<endl; //5
+
+                s1.erase("hello"); 
+                cout<<s1.size()<<endl; //4
+                cout<<s1.empty()<<endl; //0
+
+                s1.clear();
+                cout<<s1.size()<<endl; //0
+                cout<<s1.empty()<<endl; //1
+                `}
+            />
+            <X.H2>查找</X.H2>
+            <X.Uli>`find(x)`：查找元素`x`，返回该元素的迭代器，找不到则返回迭代器`end()`。</X.Uli>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                s1.insert("a");
+                s1.insert("b");
+                s1.insert("c");
+
+                it1=s1.find("a");
+                if(it1!=s1.end())
+                { 
+                    cout<<*it1<<endl; 
+                }
+                else
+                {
+                    cout<<"not found."<<endl;
+                }//a
+
+                it1=s1.find("d");
+                if(it1!=s1.end())
+                { 
+                    cout<<*it1<<endl; 
+                }
+                else
+                {
+                    cout<<"not found."<<endl;
+                }//not found.
+                `}
+            />
+            <X.H2>应用：数组去重</X.H2>
+            <X.HighlightBlock>
+                <X.P>这个方法去重顺便还排了序，注意效率！</X.P>
+            </X.HighlightBlock>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                vector<int> arr1={2,1,3,2,5,1,4,2,3,6,2,1,5,2,3,6,1};
+                for(auto v:arr1) cout<<v<<' '; //2 1 3 2 5 1 4 2 3 6 2 1 5 2 3 6 1
+                cout<<endl;
+                set<int> s_arr1(arr1.begin(),arr1.end());
+                vector<int> arr2(s_arr1.begin(),s_arr1.end());
+                for(auto v:arr2) cout<<v<<' '; //1 2 3 4 5 6
+                cout<<endl;
+                `}
+            />
+            <X.H2>multiset</X.H2>
+            <X.P>`multiset`允许元素重复。</X.P>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                multiset<int> ms1;
+                ms1.emplace(1);
+                ms1.emplace(2);
+                ms1.emplace(2);
+                ms1.emplace(2);
+                ms1.emplace(3);
+                `}
+            />
+            <X.P>`find()`、`count()`、`erase()`与`multimap`类似。</X.P>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                cout<<(ms1.find(1)==ms1.end())<<endl; //0
+                cout<<(ms1.find(5)==ms1.end())<<endl; //1
+                cout<<ms1.count(2)<<endl; //3
+                cout<<ms1.size()<<endl; //5
+                ms1.erase(2);
+                cout<<ms1.size()<<endl; //2
+                `}
+            />
             <X.H1>无序容器</X.H1>
             <X.P>无序容器也使用“键值对”的方式存储数据。由于不需要维持有序，无序容器的底层实现采用的是`哈希表`。</X.P>
             <X.P>
@@ -731,11 +934,11 @@ export default function Blog({title}) {
                 ...
                 `}
             />
-            <X.Uli>`size()`:获取元素数量</X.Uli>
-            <X.Uli>`empty()`:判空</X.Uli>
-            <X.Uli>`push(x)`:压入一个元素`x`</X.Uli>
-            <X.Uli>`top()`:返回栈顶元素</X.Uli>
-            <X.Uli>`pop()`:弹出栈顶元素</X.Uli>
+            <X.Uli>`size()`：获取元素数量。</X.Uli>
+            <X.Uli>`empty()`：判空。</X.Uli>
+            <X.Uli>`push(x)`：压入一个元素`x`。</X.Uli>
+            <X.Uli>`top()`：返回栈顶元素。</X.Uli>
+            <X.Uli>`pop()`：弹出栈顶元素。</X.Uli>
             <X.CodeBlock
                 language="cpp"
                 code={`
@@ -766,12 +969,12 @@ export default function Blog({title}) {
                 ...
                 `}
             />
-            <X.Uli>`size()`:获取元素数量</X.Uli>
-            <X.Uli>`empty()`:判空</X.Uli>
-            <X.Uli>`push(x)`:压入一个元素`x`</X.Uli>
-            <X.Uli>`front()`:返回队首元素</X.Uli>
-            <X.Uli>`back()`:返回队尾元素</X.Uli>
-            <X.Uli>`pop()`:弹出队首元素</X.Uli>
+            <X.Uli>`size()`：获取元素数量。</X.Uli>
+            <X.Uli>`empty()`：判空。</X.Uli>
+            <X.Uli>`push(x)`：压入一个元素`x`。</X.Uli>
+            <X.Uli>`front()`：返回队首元素。</X.Uli>
+            <X.Uli>`back()`：返回队尾元素。</X.Uli>
+            <X.Uli>`pop()`：弹出队首元素。</X.Uli>
             <X.CodeBlock
                 language="cpp"
                 code={`
@@ -794,6 +997,90 @@ export default function Blog({title}) {
                 `}
             />
             <X.H1>priority_queue 优先队列</X.H1>
+            <X.P>优先队列是一种特殊的队列，它的出队顺序是按照元素的优先级来的。优先队列默认是`大根堆`。</X.P>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                //需要引入queue
+                #include <queue>
+                ...
+                `}
+            />
+            <X.Uli>`size()`：获取元素数量。</X.Uli>
+            <X.Uli>`empty()`：判空。</X.Uli>
+            <X.Uli>`push(x)`：压入一个元素`x`。</X.Uli>
+            <X.Uli>`top()`：返回堆顶元素。</X.Uli>
+            <X.Uli>`pop()`：弹出堆顶元素。</X.Uli>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                priority_queue<int> q1;
+                q1.push(7); 
+                q1.push(2); 
+                q1.push(5); 
+                q1.push(6); 
+                q1.push(4); 
+                q1.push(1); 
+                q1.push(3);
+
+                while(!q1.empty())
+                {
+                    int x=q1.top();
+                    q1.pop();
+                    cout<<x<<endl;
+                }
+                /*
+                7
+                6
+                5
+                4
+                3
+                2
+                1
+                */
+                `}
+            />
+            <X.H2>对于结构体类型</X.H2>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                struct DATE {
+                    int y,m,d;
+                    //默认的优先队列是大根堆，把小于号重载成"大于"的含义相当于打破这种默认，变成小根堆 
+                    friend bool operator <(DATE a,DATE b)
+                    {
+                        if(a.y!=b.y) return a.y>b.y;
+                        if(a.m!=b.m) return a.m>b.m;
+                        return a.d>b.d;
+                    }
+                };
+                `}
+            />
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                priority_queue<DATE> q2;
+                q2.push({2028,12,23});
+                q2.push({2028,11,28});
+                q2.push({2035,1,1});
+                q2.push({2029,1,1});
+                q2.push({2028,12,25});
+
+                while(!q2.empty())
+                {
+                    DATE date=q2.top();
+                    q2.pop();
+                    cout<<date.y<<'-'<<date.m<<'-'<<date.d<<endl;
+                }
+                /*
+                2028-11-28
+                2028-12-23
+                2028-12-25
+                2029-1-1
+                2035-1-1
+                */
+                `}
+            />
         </>
     );
 }
