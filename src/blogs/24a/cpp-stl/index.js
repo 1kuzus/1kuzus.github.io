@@ -218,7 +218,160 @@ export default function Blog({title}) {
                 #include <vector>
                 ...
                 `}
-            />            
+            />
+            <X.H2>初始化、访问、遍历</X.H2>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                vector<int> v1;
+                vector<string> v2={"one","two","three"};
+                //也可以是vector<string> v2{"one","two","three"};
+                //也可以是vector<string> v2({"one","two","three"});
+
+                vector<int> v3(20); //创建20个元素，它们的默认初始值都为0
+                vector<int> v4(20,-1); //创建20个元素，它们的初始值都为-1
+
+                cout<<v2[1]<<' '<<v3[1]<<' '<<v4[1]<<endl; //two 0 -1
+                cout<<v2.back()<<endl; //three
+                `}
+            />
+            <X.P>也可以与`string`一样使用下标、迭代器和`auto`关键字访问。</X.P>
+            <X.H2>尾部添加元素</X.H2>
+            <X.P>
+                `push_back()`和C++11新增加的`emplace_back()`作用相同，但是底层实现的机制不同，`emplace_back()`效率更高。
+            </X.P>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                v1.push_back(123);
+                v1.emplace_back(456);
+                cout<<v1[0]<<' '<<v1[1]<<endl; //123 456
+                `}
+            />
+            <X.H2>插入元素</X.H2>
+            <X.Uli>`insert(it,x)`：在迭代器`it`指定的位置之前插入新元素`x`，并返回新插入元素位置的迭代器。</X.Uli>
+            <X.Uli>
+                `insert(it,n,x)`：在迭代器`it`指定的位置之前插入`n`个新元素`x`，并返回第一个新插入元素位置的迭代器。
+            </X.Uli>
+            <X.Uli>
+                `emplace(it,...args)`：和`insert(it,x)`用法类似，`...args`是与新插入元素的构造函数相对应的多个参数。同样效率更高，不过`emplace()`每次只能插入一个元素。
+            </X.Uli>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                v1={0,1,2,3,4,5,6};
+
+                auto it=v1.insert(v1.begin()+2,99);
+                for(auto v:v1) cout<<v<<' '; //0 1 99 2 3 4 5 6
+                cout<<endl<<*it<<endl; //99
+
+                it=v1.insert(v1.begin()+4,5,-1);
+                for(auto v:v1) cout<<v<<' '; //0 1 99 2 -1 -1 -1 -1 -1 3 4 5 6
+                cout<<endl<<*it<<endl; //-1
+
+                v1.emplace(v1.begin(),5);
+                cout<<v1[0]<<' '<<*it<<endl; //5 5
+                `}
+            />
+            <X.H2>关于内存管理和shrink_to_fit</X.H2>
+            <X.P>
+                vector可以看作是一个动态数组，会动态的申请内存空间。`size`是容器的实际大小，`capacity`是大小的上限。---
+                当`vector`满载需要进行扩容时，会完全弃用旧空间，申请更大的新空间，再将元素复制到新空间中。
+            </X.P>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                vector<int> v5;
+                for(int i=0;i<6;i++)
+                {
+                    v5.push_back(i);
+                    cout<<v5.size()<<' '<<v5.capacity()<<endl;
+                }
+                /*
+                1 1
+                2 2
+                3 4
+                4 4
+                5 8
+                6 8
+                */
+                `}
+            />
+            <X.P>因此，此前保存的迭代器可能在重新分配后失效！</X.P>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                it=v5.begin(); //假设我们保存了容器首部的迭代器
+                cout<<*it<<endl; //v[0]=0
+                cout<<v5.size()<<' '<<v5.capacity()<<endl; //6 8
+
+                v5.insert(it,3,0); //原来size=6，capacity=8，插入3个会引起扩容
+                cout<<v5.size()<<' '<<v5.capacity()<<endl; //9 12
+                cout<<*it<<endl; //14032400 失效了
+
+                //使用shrink_to_fit释放没有使用的内存(同样会完全重新分配内存)
+                v5.shrink_to_fit();
+                cout<<v5.size()<<' '<<v5.capacity()<<endl; //9 9
+                `}
+            />
+            <X.H2>删除元素与清空、判空</X.H2>
+            <X.Uli>
+                `pop_back()`：删除`vector`容器中最后一个元素。该容器的大小`size`会减`1`，但容量`capacity`不变。
+            </X.Uli>
+            <X.Uli>
+                `erase(it)`：删除`vector`容器中迭代器`it`指定的元素，并返回指向被删除元素下一个位置元素的迭代器。`size`会减`1`，但`capacity`不变。
+            </X.Uli>
+            <X.Uli>
+                `erase(it1,it2)`：删除`vector`容器中位于迭代器{'`[it1,it2)`'}
+                指定区域内的所有元素，并返回指向被删除区域下一个位置元素的迭代器。`size`会减小，但`capacity`不变。
+            </X.Uli>
+            <X.Uli>`clear()`：删除`vector`容器中所有的元素。`size`变为`0`，但`capacity`不变。</X.Uli>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                v1={0,1,2,3,4,5,6,7,8,9,10};
+
+                v1.pop_back();
+                cout<<v1.size()<<' '<<v1.capacity()<<endl; //10 14
+
+                it=v1.erase(v1.begin()+5);
+                for(auto v:v1) cout<<v<<' '; //0 1 2 3 4 6 7 8 9
+                cout<<endl<<*it<<endl; //6
+                cout<<v1.size()<<' '<<v1.capacity()<<endl; //9 14
+
+                it=v1.erase(v1.begin()+3,v1.begin()+6);
+                for(auto v:v1) cout<<v<<' '; //0 1 2 7 8 9
+                cout<<endl<<*it<<endl; //7
+                cout<<v1.size()<<' '<<v1.capacity()<<endl; //6 14
+                `}
+            />
+            <X.P>同样可以用`empty()`判空。</X.P>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                v1.clear();
+                cout<<v1.empty()<<endl; //1
+                cout<<v1.size()<<' '<<v1.capacity()<<endl; //0 14
+                `}
+            />
+            <X.H2>排序</X.H2>
+            <X.P>严格来说不属于C++ STL的范畴，需要用到`sort()`函数。</X.P>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                //需要引入algorithm
+                #include <algorithm>
+                ...
+                `}
+            />
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                v1={1,4,5,2,6,8};
+                sort(v1.begin(),v1.end());
+                for(auto v:v1) cout<<v<<' '; //1 2 4 5 6 8
+                `}
+            />
             <X.H1>关于元组</X.H1>
             <X.CodeBlock
                 language="cpp"
@@ -331,7 +484,236 @@ export default function Blog({title}) {
                 如果已知目标元素的键值，则直接通过键就可以找到目标元素，不需要遍历整个容器。
             </X.P>
             <X.P>关联式容器存储的元素，默认会根据键值做升序排序。STL标准库在实现时底层选用的数据结构是`红黑树`。</X.P>
+            <X.H2>初始化、访问、遍历</X.H2>
+            <X.P>`map`中的元素默认按照键的顺序进行*从小到大*排序</X.P>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                map<string,double> m1;
+                map<string,double> m2={
+                    {"one",1},
+                    {"two",2},
+                    {"three",3},
+                };
+                //也可以是map<string,double> m2{{"one",1},{"two",2},{"three",3}};
+                //也可以是map<string,double> m2({{"one",1},{"two",2},{"three",3}});
+
+                m1["a"]=6;
+                m1["b"]=5;
+                m1["c"]=4;
+                m1["d"]=3; //这里相当于创建了m1["d"]
+                m1["e"]=2;
+                m1["d"]=1; //这里相当于修改
+                //实际上只要使用[key]取值，并且传入的key是新键，就会创建一个新键值对，值为类型默认值
+
+                cout<<m1["c"]<<endl; //4
+
+                for(auto it1=m1.begin();it1!=m1.end();it1++)
+                {
+                    cout<<it1->first<<' '<<it1->second<<endl;
+                }
+                /*
+                a 6
+                b 5
+                c 4
+                d 1
+                e 2
+                */
+                `}
+            />
+            <X.H2>插入元素</X.H2>
+            <X.Uli>
+                `insert(pair)`：插入一个键值对`pair=(key,value)`。\n如果成功，返回`(新插入的val的迭代器,true)`；\n如果失败，说明已经有键为`key`的键值对，返回`(此元素的迭代器,false)`。
+            </X.Uli>
+            <X.Uli>
+                `emplace(...args)`：传入键值对的构造参数即可。同样效率更高，不过`emplace()`每次只能插入一个元素。
+            </X.Uli>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                auto it1=m1.begin();
+                pair<decltype(m1)::iterator,bool> res;
+            
+                res=m1.insert(make_pair("f",99));
+                it1=res.first;
+                cout<<it1->first<<' '<<it1->second; //f 99
+                cout<<' '<<res.second<<endl; //1
+            
+                res=m1.insert({"f",88});
+                it1=res.first;
+                cout<<it1->first<<' '<<it1->second; //f 99
+                cout<<' '<<res.second<<endl; //0
+            
+                res=m1.emplace("g",55);
+                it1=res.first;
+                cout<<it1->first<<' '<<it1->second; //g 55
+                cout<<' '<<res.second<<endl; //1
+                `}
+            />
+            <X.H2>删除元素与清空、判空</X.H2>
+            <X.Uli>`erase(key)`：删除`key`键对应的键值对。</X.Uli>
+            <X.Uli>`clear()`：清空`map`。</X.Uli>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                cout<<m1.size()<<endl; //7
+
+                m1.erase("g"); 
+                cout<<m1.size()<<endl; //6
+                cout<<m1.empty()<<endl; //0
+
+                m1.clear();
+                cout<<m1.size()<<endl; //0
+                cout<<m1.empty()<<endl; //1
+                `}
+            />
+            <X.H2>查找</X.H2>
+            <X.Uli>`find(key)`：查找键为`key`的元素，返回该元素的迭代器，找不到则返回迭代器`end()`。</X.Uli>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                m1["a"]=100;
+                m1["b"]=200;
+                m1["c"]=300;
+
+                it1=m1.find("a");
+                if(it1!=m1.end())
+                { 
+                    cout<<it1->first<<' '<<it1->second<<endl; 
+                }
+                else
+                {
+                    cout<<"not found."<<endl;
+                }//a 100
+
+                it1=m1.find("d");
+                if(it1!=m1.end())
+                { 
+                    cout<<it1->first<<' '<<it1->second<<endl; 
+                }
+                else
+                {
+                    cout<<"not found."<<endl;
+                }//not found.
+                `}
+            />
+            <X.H2>对于结构体类型</X.H2>
+            <X.P>如果`key`是结构体类型，需要定义比较函数。</X.P>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                struct POINT{
+                    double x,y;
+                    //假如想按照平方距离从大到小排序 
+                    //默认的排序方式是从小到大，把小于号重载成"大于"的含义相当于打破这种默认
+                    //或者理解为，排序方式是从小到大，那么我们就要把期望的结果定义为"小"的 
+                    friend bool operator <(POINT a,POINT b)
+                    {
+                        double da=a.x*a.x+a.y*a.y;
+                        double db=b.x*b.x+b.y*b.y;
+                        //我们期望"平方距离大"的元素在这种含义下是"小的" 
+                        //因此返回(da>db)的值，也就是这个条件为1的时候，我们认为前者是"小的" 
+                        return da>db; 
+                    }
+                };
+                struct POINTDETAIL{
+                    string name; //点的名字 
+                    vector<int> v; //假设每个点还对应了一些需要用vector储存的信息 
+                };
+                `}
+            />
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                map<POINT,POINTDETAIL> m3;
+
+                //不同的插入方式
+                m3[{3,4}]={"A点",{1,2,3}};
+                m3.insert(
+                    make_pair(
+                        (POINT){4,5},
+                        (POINTDETAIL){"B点",{4,5,6}}
+                    )
+                );
+                m3.insert(
+                    { {1,5},{"C点",{7,8,9,10}} }
+                );
+                m3.emplace(
+                    (POINT){4,4},
+                    (POINTDETAIL){"D点",{2,3,5,7}}
+                );
+
+                for(auto it1=m3.begin();it1!=m3.end();it1++)
+                {
+                    //it1指向一个键值对(key,val)
+                    //it1->first是键key，key是一个POINT类型，具有x,y属性
+                    //it1->second是值val，val是一个POINTDETAIL类型，具有name属性和v向量 
+                    cout<<it1->second.name<<": "<<it1->first.x<<' '<<it1->first.y;
+                    cout<<"   v=[";
+                    for(auto v:it1->second.v) cout<<v<<',';
+                    cout<<"\\b]"<<endl;
+                }
+                /*
+                B点: 4 5   v=[4,5,6]
+                D点: 4 4   v=[2,3,5,7]
+                C点: 1 5   v=[7,8,9,10]
+                A点: 3 4   v=[1,2,3]
+                */
+
+                m3[{4,3}]={"E点",{5,6,7}};//E点 
+                cout<<m3[{3,4}].name<<endl;
+                //因为定义的是平方和作为判断依据，{3,4}和{4,3}被视为同一个键而发生了重新赋值 
+                `}
+            />
+            <X.H2>multimap</X.H2>
+            <X.P>`multimap`允许键值重复。</X.P>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                multimap<string,int> mm1;
+                //multimap没有重载[]方法 
+                mm1.emplace("a",3);
+                mm1.emplace("a",1);
+                mm1.emplace("a",2);
+                mm1.emplace("b",4);
+                mm1.emplace("b",5);
+                `}
+            />
+            <X.P>`find(key)`返回找到的第一个值。</X.P>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                auto it2=mm1.find("a");
+                if(it2!=mm1.end())
+                {
+                    cout<<it2->first<<' '<<it2->second<<endl; 
+                }
+                else
+                {
+                    cout<<"not found."<<endl;
+                }//a 3
+                `}
+            />
+            <X.P>`count(key)`返回键的数量（这个普通的`map`也可以用）。</X.P>
+            <X.CodeBlock language="cpp" code={`cout<<mm1.count("a")<<endl; //3`} />
+            <X.P>`erase(key)`会擦除`key`对应的所有值。</X.P>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                mm1.erase("b");
+                it2=mm1.find("b");
+                if(it2!=mm1.end())
+                {
+                    cout<<it2->first<<' '<<it2->second<<endl; 
+                }
+                else
+                {
+                    cout<<"not found."<<endl;
+                }//not found.
+                `}
+            />
             <X.H1>关联式容器：set 集合</X.H1>
+
             <X.H1>无序容器</X.H1>
             <X.P>无序容器也使用“键值对”的方式存储数据。由于不需要维持有序，无序容器的底层实现采用的是`哈希表`。</X.P>
             <X.P>
