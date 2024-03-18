@@ -12,6 +12,11 @@ import Blog3992fa from './23d/pattern-recognition-4';
 import Blog6be863 from './23d/protocols';
 import Blog9e7694 from './23d/r2plus1d';
 import Blog7eec29 from './24a/algorithm-summary';
+import Blog3279dc from './24a/csp-2016-04';
+import Blogac15dc from './24a/csp-2018-03';
+import Blog135ac5 from './24a/csp-2020-06';
+import Blogd987f6 from './24a/csp-2020-09';
+import Blog6541ff from './24a/csp-2020-12';
 import Blog1802aa from './24a/cpp-stl';
 import Blog9ade12 from './24a/deepl-shortcut-setting';
 import Blog009c1d from './24a/games101-01-transformation';
@@ -67,11 +72,41 @@ const categories = [
                 time: '2024-03-10',
                 component: <Blog1802aa />,
             },
-            {
+          /*{
                 title: '摘要：常见算法旨在解决的问题',
                 path: '/24a/algorithm-summary/',
                 time: '2024-03-11',
                 component: <Blog7eec29 />,
+            },*/
+            {
+                title: 'CSP 201604 T1-T4题解',
+                path: '/24a/csp-2016-04/',
+                time: '2024-03-09',
+                component: <Blog3279dc />,
+            },
+            {
+                title: 'CSP 201803 T1-T4题解',
+                path: '/24a/csp-2018-03/',
+                time: '2024-03-10',
+                component: <Blogac15dc />,
+            },
+            {
+                title: 'CSP 202006 T1-T4题解',
+                path: '/24a/csp-2020-06/',
+                time: '2024-03-10',
+                component: <Blog135ac5 />,
+            },
+            {
+                title: 'CSP 202009 T1-T4题解',
+                path: '/24a/csp-2020-09/',
+                time: '2024-03-13',
+                component: <Blogd987f6 />,
+            },
+            {
+                title: 'CSP 202012 T1-T4题解',
+                path: '/24a/csp-2020-12/',
+                time: '2024-03-17',
+                component: <Blog6541ff />,
             },
         ],
     },

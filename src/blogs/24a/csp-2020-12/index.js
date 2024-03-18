@@ -39,7 +39,7 @@ export default function Blog({title}) {
                 */
                 `}
             />
-            <X.H1>T2 俄罗斯方块</X.H1>
+            <X.H1>俄罗斯方块</X.H1>
             <X.CodeBlock
                 language="cpp"
                 code={`
@@ -135,7 +135,7 @@ export default function Blog({title}) {
                 */
                 `}
             />
-            <X.H1>T3 路径解析</X.H1>
+            <X.H1>路径解析</X.H1>
             <X.CodeBlock
                 language="cpp"
                 code={`
@@ -262,7 +262,7 @@ export default function Blog({title}) {
                 */
                 `}
             />
-            <X.H1>T4 游戏</X.H1>
+            <X.H1>游戏</X.H1>
             <X.CodeBlock
                 language="cpp"
                 code={`
