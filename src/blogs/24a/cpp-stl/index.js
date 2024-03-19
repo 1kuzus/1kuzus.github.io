@@ -597,6 +597,33 @@ export default function Blog({title}) {
                 }//not found.
                 `}
             />
+            <X.H2>二分查找</X.H2>
+            <X.Uli>
+                `lower_bound(key)`返回指向第一个键值*大于等于*`key`的位置的迭代器，找不到则返回迭代器`end()`。
+            </X.Uli>
+            <X.Uli>`upper_bound(key)`返回指向第一个键值*大于*`key`的位置的迭代，找不到则返回迭代器`end()`。</X.Uli>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                m1.clear();
+                m1["a"]=1;
+                m1["b"]=2;
+                m1["c"]=3;
+                m1["x"]=4;
+                m1["y"]=5;
+
+                it1=m1.lower_bound("b");
+                cout<<it1->first<<' '<<it1->second<<endl;//b 2 
+                it1=m1.upper_bound("b");
+                cout<<it1->first<<' '<<it1->second<<endl;//c 3
+                it1=m1.lower_bound("j");
+                cout<<it1->first<<' '<<it1->second<<endl;//x 4
+                it1=m1.upper_bound("j");
+                cout<<it1->first<<' '<<it1->second<<endl;//x 4
+                it1=m1.upper_bound("y");
+                cout<<(it1==m1.end())<<endl;//1
+                `}
+            />
             <X.H2>对于结构体类型</X.H2>
             <X.P>如果`key`是结构体类型，需要定义比较函数。</X.P>
             <X.CodeBlock
@@ -713,76 +740,6 @@ export default function Blog({title}) {
                 `}
             />
             <X.H1>关联式容器：set 集合</X.H1>
-
-            {/* 
-#include <iostream>
-#include <queue>
-using namespace std;
-struct DATE {
-	int y,m,d;
-	//默认的优先队列是大根堆，把小于号重载成"大于"的含义相当于打破这种默认，变成小根堆 
-	friend bool operator <(DATE a,DATE b)
-	{
-		if(a.y!=b.y) return a.y>b.y;
-		if(a.m!=b.m) return a.m>b.m;
-		return a.d>b.d;
-	}
-};
-int main()
-{
-	priority_queue<int> q1;
-	//size()  获取元素数量
-	//empty() 判空
-	//push(x) 插入一个元素x
-	//top()   返回堆顶元素 
-	//pop()   弹出堆顶元素 
-    q1.push(7); 
-    q1.push(2); 
-    q1.push(5); 
-    q1.push(6); 
-    q1.push(4); 
-    q1.push(1); 
-	q1.push(3);
-    while(!q1.empty())
-    {
-        int x=q1.top();
-        q1.pop();
-        cout<<x<<endl;
-    }
-    //默认是大根堆 
-    /*
-	7
-	6
-	5
-	4
-	3
-	2
-	1
-    / 
-    
-	priority_queue<DATE> q2;
-    q2.push({2028,12,23});
-    q2.push({2028,11,28});
-    q2.push({2035,1,1});
-    q2.push({2029,1,1});
-    q2.push({2028,12,25});
-    while(!q2.empty())
-    {
-    	DATE date=q2.top();
-    	q2.pop();
-    	cout<<date.y<<'-'<<date.m<<'-'<<date.d<<endl;
-    }
-    /*
-	2028-11-28
-	2028-12-23
-	2028-12-25
-	2029-1-1
-	2035-1-1
-    /
-	return 0;
-}
-
-*/}
             <X.P>
                 使用`set`容器存储的各个键值对，要求键`key`和值`value`必须相等。实际上这可以看作，`set`容器只需要一个`key`信息，即可成功将元素存储起来。---
                 同样的，`set`也会对元素进行默认从小到大的排序。
@@ -876,6 +833,8 @@ int main()
                 }//not found.
                 `}
             />
+            <X.H2>二分查找</X.H2>
+            <X.P>用法与`map`一致，见`map`。</X.P>
             <X.H2>应用：数组去重</X.H2>
             <X.HighlightBlock>
                 <X.P>这个方法去重顺便还排了序，注意效率！</X.P>
