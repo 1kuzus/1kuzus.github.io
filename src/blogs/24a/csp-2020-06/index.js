@@ -191,7 +191,6 @@ export default function Blog({title}) {
                 vector<string> dbg_result;
                 void dbg_show_result()
                 {
-                    if(!dbg) return;
                     int line_id=1;//行号只补全一位，总行数最好不要超过100 
                     for(auto str:dbg_result)
                     {
