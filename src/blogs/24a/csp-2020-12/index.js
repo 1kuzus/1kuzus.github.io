@@ -31,7 +31,7 @@ export default function Blog({title}) {
                 0 0
                 -10 50
                 10 60
-                
+
                 out:
                 1220
                 */
@@ -96,10 +96,10 @@ export default function Blog({title}) {
                 3 1
                 5 1
                 7 1
-                
+
                 out:
                 3
-                
+
                 in:
                 8
                 5 1
@@ -110,7 +110,7 @@ export default function Blog({title}) {
                 4 0
                 100000000 1
                 1 0
-                
+
                 out:
                 100000000
                 */
@@ -397,7 +397,7 @@ export default function Blog({title}) {
                 Q / 0 1500
                 R /A/B
                 Q / 0 1
-                
+
                 out:
                 Y
                 Y
@@ -409,7 +409,7 @@ export default function Blog({title}) {
                 Y
                 Y
                 Y
-                
+
                 in:
                 9
                 Q /A/B 1030 2060
@@ -421,7 +421,7 @@ export default function Blog({title}) {
                 C /A/B/D/3 1024
                 C /A/C/4 1024
                 C /A/C/D/4 1024
-                
+
                 out:
                 N
                 Y
@@ -432,7 +432,7 @@ export default function Blog({title}) {
                 Y
                 N
                 N
-                
+
                 in:
                 17
                 C /A/B/1 1024
@@ -452,7 +452,7 @@ export default function Blog({title}) {
                 C /A/B/2 1000000000
                 C /A/B/3 900000000
                 C /A/B/4 1000000000
-                
+
                 out:
                 Y
                 Y
@@ -662,7 +662,7 @@ export default function Blog({title}) {
                 2 4 4
                 4 5 5
                 4 6 3
-                
+
                 out:
                 9
                 */

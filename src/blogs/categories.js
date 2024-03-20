@@ -17,6 +17,7 @@ import Blogac15dc from './24a/csp-2018-03';
 import Blog135ac5 from './24a/csp-2020-06';
 import Blogd987f6 from './24a/csp-2020-09';
 import Blog6541ff from './24a/csp-2020-12';
+import Blog7c0ac5 from './24a/csp-2023-09';
 import Blog1802aa from './24a/cpp-stl';
 import Blog9ade12 from './24a/deepl-shortcut-setting';
 import Blog009c1d from './24a/games101-01-transformation';
@@ -107,6 +108,12 @@ const categories = [
                 path: '/24a/csp-2020-12/',
                 time: '2024-03-17',
                 component: <Blog6541ff />,
+            },
+            {
+                title: 'CSP 202309 T1-T4题解',
+                path: '/24a/csp-2023-09/',
+                time: '2024-03-19',
+                component: <Blog7c0ac5 />,
             },
         ],
     },

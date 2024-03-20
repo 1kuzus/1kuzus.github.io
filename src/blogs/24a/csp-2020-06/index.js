@@ -59,7 +59,7 @@ export default function Blog({title}) {
                 0 2 -3
                 -3 0 2
                 -3 1 1
-                
+
                 out:
                 No
                 No
@@ -122,7 +122,7 @@ export default function Blog({title}) {
                 4 20
                 5 30
                 7 40
-                
+
                 out:
                 -20
                 */
@@ -331,21 +331,21 @@ export default function Blog({title}) {
                 in:
                 10
                 CSP
-                
+
                 CSP is
                 a real realrealrealrealreal 
                      competition.
-                
-                
+
+
                 Come   and   join   us    
-                
+
                 out:
                 10
-                
+
                 in:
                 10
                 * CSP
-                
+
                 *   CSP is
                   * a real  
                      competition.
@@ -354,7 +354,7 @@ export default function Blog({title}) {
                 *Tel:
                 * 12345
                 * 
-                
+
                 out:
                 14 
                 */
@@ -606,14 +606,14 @@ export default function Blog({title}) {
                 in:
                 9
                 26
-                
+
                 out:
                 5
-                
+
                 in:
                 2020
                 16
-                
+
                 out:
                 292008622
                 */

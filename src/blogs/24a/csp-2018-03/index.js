@@ -35,7 +35,7 @@ export default function Blog({title}) {
                 /*
                 in:
                 1 1 2 2 2 1 1 2 2 0
-                
+
                 out:
                 22
                 */
@@ -95,14 +95,14 @@ export default function Blog({title}) {
                 in:
                 3 10 5
                 4 6 8
-                
+
                 out:
                 7 9 9
-                
+
                 in:
                 10 22 30
                 14 12 16 6 10 2 8 20 18 4
-                
+
                 out:
                 6 6 8 2 4 0 4 12 10 2
                 */
@@ -231,7 +231,6 @@ export default function Blog({title}) {
                     ans.emplace(ans.begin(),r);
                     return ans;
                 }
-                
                 int main()
                 {
                     cin>>n>>m;
@@ -280,13 +279,13 @@ export default function Blog({title}) {
                 /articles/1985/09/aloha/
                 /articles/hello/
                 /static/js/jquery.js
-                
+
                 out:
                 year_archive 2004
                 article_detail 1985 9 aloha
                 404
                 static_serve js/jquery.js
-                
+
                 in:
                 5 3
                 /a/<int>/ a_int_slash
@@ -297,7 +296,7 @@ export default function Blog({title}) {
                 /a/000
                 /a/000/
                 /b/000
-                
+
                 out:
                 a_int 0
                 a_int_slash 0
@@ -407,7 +406,7 @@ export default function Blog({title}) {
                 0 0 0
                 0 0 0
                 0 0 0
-                
+
                 out:
                 3
                 -4
