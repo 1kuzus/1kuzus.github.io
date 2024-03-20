@@ -45,7 +45,7 @@ export default function Blog({title}) {
                 1 0
                 0 2
                 -1 2
-                
+
                 out:
                 2
                 4
@@ -105,7 +105,7 @@ export default function Blog({title}) {
                 10 60 14 62 18 66 22 74 26 86 30 100
                 90 31 94 35 98 39 102 43 106 47 110 51
                 0 20 4 20 8 20 12 20 16 20 20 20
-                
+
                 out:
                 3
                 2
@@ -424,12 +424,12 @@ export default function Blog({title}) {
                 5 1
                 1 3
                 3 -2
-                
+
                 out:
                 8.83711594354348
                 10.83711594354348
                 9.39104657990738
-                
+
                 in:
                 3 8
                 1
@@ -442,7 +442,7 @@ export default function Blog({title}) {
                 -1 0 -1
                 0 -1 -1
                 -1 -1 -1
-                
+
                 out:
                 14.12797001266400
                 14.12797001266400
