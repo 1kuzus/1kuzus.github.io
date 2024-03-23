@@ -306,7 +306,6 @@ export default function Blog({title}) {
             <X.CodeBlock
                 language="cpp"
                 code={`
-                #pragma GCC optimize(3,"Ofast","inline")
                 #include <iostream>
                 #include <vector>
                 #include <map>
@@ -451,7 +450,6 @@ export default function Blog({title}) {
 
                 out:
                 20
-                */
                 */
                 `}
             />
