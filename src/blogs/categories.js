@@ -17,6 +17,7 @@ import Blogac15dc from './24a/csp-2018-03';
 import Blog135ac5 from './24a/csp-2020-06';
 import Blogd987f6 from './24a/csp-2020-09';
 import Blog6541ff from './24a/csp-2020-12';
+import Blog35ab23 from './24a/csp-2023-05';
 import Blog7c0ac5 from './24a/csp-2023-09';
 import Blog1802aa from './24a/cpp-stl';
 import Blog9ade12 from './24a/deepl-shortcut-setting';
@@ -73,7 +74,7 @@ const categories = [
                 time: '2024-03-10',
                 component: <Blog1802aa />,
             },
-          /*{
+            /*{
                 title: '摘要：常见算法旨在解决的问题',
                 path: '/24a/algorithm-summary/',
                 time: '2024-03-11',
@@ -108,6 +109,12 @@ const categories = [
                 path: '/24a/csp-2020-12/',
                 time: '2024-03-17',
                 component: <Blog6541ff />,
+            },
+            {
+                title: 'CSP 202305 T1-T4题解',
+                path: '/24a/csp-2023-05/',
+                time: '2024-03-23',
+                component: <Blog35ab23 />,
             },
             {
                 title: 'CSP 202309 T1-T4题解',
