@@ -151,7 +151,7 @@ export default function Blog({title}) {
                     stack<POLYNODE*> s;
                     for(auto p:parts)
                     {
-                        POLYNODE* node=new(POLYNODE);
+                        POLYNODE *node=new(POLYNODE);
                         //运算符
                         if(p=="+"||p=="-"||p=="*")
                         {
