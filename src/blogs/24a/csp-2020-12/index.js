@@ -668,6 +668,385 @@ export default function Blog({title}) {
                 */
                 `}
             />
+            <X.H1>T5 星际旅行</X.H1>
+            <X.H2>运算符重载简化编码</X.H2>
+            <X.P>
+                线段树题，考虑到对三个坐标分开维护较为麻烦，考虑重载自定义`POS`类型的运算符，隐去三个坐标的内部逻辑，当作整体考虑：
+            </X.P>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                struct POS{
+                    long long x,y,z;
+                    friend POS operator +(POS a,POS b)
+                    {
+                        POS ans;
+                        ans.x=(a.x+b.x)%MOD;
+                        ans.y=(a.y+b.y)%MOD;
+                        ans.z=(a.z+b.z)%MOD;
+                        return ans;
+                    }
+                    friend POS operator *(POS a,long long k)
+                    {
+                        POS ans;
+                        ans.x=(a.x*k)%MOD;
+                        ans.y=(a.y*k)%MOD;
+                        ans.z=(a.z*k)%MOD;
+                        return ans;
+                    }
+                    friend POS operator <<(POS a,int k)
+                    {
+                        k=k%3;
+                        if(k==0) return a;
+                        else if(k==1)
+                        {
+                            POS ans;
+                            ans.x=a.y;
+                            ans.y=a.z;
+                            ans.z=a.x;
+                            return ans;
+                        }
+                        else if(k==2)
+                        {
+                            POS ans;
+                            ans.x=a.z;
+                            ans.y=a.x;
+                            ans.z=a.y;
+                            return ans;
+                        }
+                    }
+                };
+                `}
+            />
+            <X.P>
+                对于要维护的转向操作，实际上逻辑类似对`(x,y,z)`进行循环左移，这里就重载左移运算符来表示。根据题意，每次操作只会左移至多`1`位。
+            </X.P>
+            <X.H2>线段树懒标记优先级</X.H2>
+            <X.P>
+                线段树题中有一种类就是会有多个懒标记，需要我们指定优先级，例如经典的“先乘后加”@洛谷P3373【模板】线段树2[https://www.luogu.com.cn/problem/P3373]@。---
+                此题涉及了三种运算：乘、加、左移，需要保证先乘后加，左移的优先级任意。这里以*左移优先级最后*为例分析懒标记的合并。
+            </X.P>
+            <X.HighlightBlock>
+                <X.H3>个人理解</X.H3>
+                <X.P>
+                    事实上懒标记的优先级不存在严格正确的答案，只要可以推出合并公式，就是正确的方案。至于前面提到的为什么要“先乘后加”而不能“先加后乘”，这是因为---
+                    如果指定优先级为“先加后乘”，最后的合并公式中会出现分数。这在数学上其实是完全可行的，只是不方便编程实现，所以结论是一定要先做乘法。
+                </X.P>
+            </X.HighlightBlock>
+            {/* //原本TAG(*a,+b,<<c)，父亲分发下TAG(*g,+h,<<i) */}
+            {/* //现在TAG(*ag,+bg+（h<<(3-c),<<(c+i))  */}
+            <X.P noMarginBottom>
+                考虑自己当前的标记是*`(mul a,add b,lshift c)`*，---
+                注意这里`a`、`c`是常数，`b`是一个三维向量`(b1,b2,b3)`。这个标记作用于`p=(x,y,z)`，可以得到：
+            </X.P>
+            <X.Uli>先乘：`p=(ax,ay,az)`</X.Uli>
+            <X.Uli>再加：`p=(ax+b1,ay+b2,az+b3)`</X.Uli>
+            <X.Uli>最后左移（暂且假设`c=1`）：`p=(ay+b2,az+b3,ax+b1)`</X.Uli>
+            <X.P noMarginBottom withMarginTop>
+                接下来考虑父亲`pushdown`给自己另外一个标记*`(mul g,add h,lshift i)`*，--- 继续作用于`p`可以得到：
+            </X.P>
+            <X.Uli>先乘：`p=(g(ay+b2),g(az+b3),g(ax+b1))`</X.Uli>
+            <X.Uli>再加：`p=(g(ay+b2)+h1,g(az+b3)+h2,g(ax+b1)+h3)`</X.Uli>
+            <X.Uli>最后左移（暂且假设`i=1`）：`p=(g(az+b3)+h2,g(ax+b1)+h3,g(ay+b2)+h1)`</X.Uli>
+            <X.P withMarginTop>
+                合并公式就是在考虑，如何只用一个懒标记（也就是合并后的懒标记）去表示这两个懒标记的复合操作。
+            </X.P>
+            <X.P>观察乘法标记，显然合并后的乘法标记是*`mul ag`*；</X.P>
+            <X.P>
+                观察加法标记，注意`b1`是与`x`绑定的，加法项中一定有一项`bg`；再看`h`是发生了错位的，现在仔细考虑这个问题：\n
+                *h发生错位是因为操作*`lshift c`*，还是操作*`lshift i`*？*\n答案是`lshift c`。---
+                根据我们指定的优先级，左移操作在最后，在`add h`时显然还没有`lshift i`。
+            </X.P>
+            <X.P>
+                因为在`add h`之前`p`就发生了`lshift c`，那么相对地，此时在进行`add h`，相当于在没有位移时进行`add
+                (h&gt;&gt;c)`。当然，我们没定义右移，但可以用左移等价表示为`add (h&lt;&lt;(3-c))`。\n
+                因此合并后的加法标记是*`add bg+(h&lt;&lt;(3-c))`*；
+            </X.P>
+            <X.P>观察左移标记，显然合并后的左移标记是*`lshift (c+i)%3`*；</X.P>
+            <X.P>这就是最终的合并公式：*`(mul ag,add bg+(h&lt;&lt;(3-c)),lshift (c+i)%3)`*。</X.P>
+            <X.P>
+                如果你已经看晕了，只需要从`p=(x,y,z)`出发，验证只经过一次上述操作（先乘`ag`，再加`bg+(h&lt;&lt;(3-c))`，---
+                再左移`(c+i)%3`），即可得到`p=(g(az+b3)+h2,g(ax+b1)+h3,g(ay+b2)+h1)`。
+            </X.P>
+            <X.P>对应在代码中就是：</X.P>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                //合并tgv至 <管辖[l,r]区间的f节点> 的tag值，同时更新树上值 
+                void mergetag(int l,int r,int f,TAGVAL tgv)
+                {
+                    //原本TAG(*a,+b,<<c)，父亲分发下TAG(*g,+h,<<i)
+                    //现在TAG(*ag,+bg+(h<<(3-c)),<<(c+i)) 
+                    long long a=tree[f].tag.mul,g=tgv.mul;
+                    POS b=tree[f].tag.add,h=tgv.add;
+                    int c=tree[f].tag.rot,i=tgv.rot;
+
+                    //更新树上值
+                    int len=r2q[r]-r2q[l-(l&1^1)]+(l&1);
+                    tree[f].p=(tree[f].p*g+h*len)<<i;
+
+                    //更新懒标记
+                    tree[f].tag.mul=(a*g)%MOD;
+                    tree[f].tag.add=b*g+(h<<(3-c));
+                    tree[f].tag.rot=(c+i)%3;
+                    tree[f].flag=true;
+                    return;
+                }
+                `}
+            />
+            <X.H2>离散化</X.H2>
+            <X.P>题目给的数据范围需要离散化，这里我的方案是：</X.P>
+            <X.Image src={require('./fig1.png')} width="800px" />
+            <X.P>
+                考虑维护区间和时，我们需要得到区间长度。在不离散化时，长度就是`r-l+1`。现在我们记`f(x)`就是离散化值`x`对应的原始值，---
+                在代码中对应`r2q[x]`。在图中，`f(1)=a`、`f(2)=b-1`、`f(3)=b`、`f(4)=c-1`、`f(5)=c`……
+            </X.P>
+            <X.P noMarginBottom>查询离散区间`(x,y)`对应的原始区间长度，右侧一定是`f(y)`，左侧根据`x`的奇偶性，有：</X.P>
+            <X.Uli>`len=f(y)-f(x)+1`，`x`是奇数</X.Uli>
+            <X.Uli>`len=f(y)-f(x-1)`，`x`是偶数</X.Uli>
+            <X.P withMarginTop>也就是代码中的：</X.P>
+            <X.CodeBlock language="cpp" code={`int len=r2q[r]-r2q[l-!(l&1)]+(l&1);`} />
+            <X.H2>代码</X.H2>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                #define N 160005
+                #define MOD 1000000007
+                #include <iostream>
+                #include <vector>
+                #include <map>
+                #include <set>
+                using namespace std;
+                int n,m;
+                int opt[40005][6];//记录操作 
+                vector<int> raw;//原始的查询 
+                vector<int> r2q;//rank to query，r2q[i]是rank为i的查询 
+                map<int,int> q2r;//query to rank，q2r[q]是查询q对应的rank 
+                int lc(int f){return f<<1;}//左子 
+                int rc(int f){return f<<1|1;}//右子
+
+                struct POS{
+                    long long x,y,z;
+                    friend POS operator +(POS a,POS b)
+                    {
+                        POS ans;
+                        ans.x=(a.x+b.x)%MOD;
+                        ans.y=(a.y+b.y)%MOD;
+                        ans.z=(a.z+b.z)%MOD;
+                        return ans;
+                    }
+                    friend POS operator *(POS a,long long k)
+                    {
+                        POS ans;
+                        ans.x=(a.x*k)%MOD;
+                        ans.y=(a.y*k)%MOD;
+                        ans.z=(a.z*k)%MOD;
+                        return ans;
+                    }
+                    friend POS operator <<(POS a,int k)
+                    {
+                        k=k%3;
+                        if(k==0) return a;
+                        else if(k==1)
+                        {
+                            POS ans;
+                            ans.x=a.y;
+                            ans.y=a.z;
+                            ans.z=a.x;
+                            return ans;
+                        }
+                        else if(k==2)
+                        {
+                            POS ans;
+                            ans.x=a.z;
+                            ans.y=a.x;
+                            ans.z=a.y;
+                            return ans;
+                        }
+                    }
+                };
+                struct TAGVAL{
+                    long long mul;
+                    POS add;
+                    int rot; 
+                }DEFAULT_TAG{1,POS{0,0,0},0};
+                struct NODE{
+                    POS p;
+                    bool flag;//是否打了tag 
+                    TAGVAL tag;
+                }tree[4*N];
+
+                //合并tgv至 <管辖[l,r]区间的f节点> 的tag值，同时更新树上值 
+                void mergetag(int l,int r,int f,TAGVAL tgv)
+                {
+                    //原本TAG(*a,+b,<<c)，父亲分发下TAG(*g,+h,<<i)
+                    //现在TAG(*ag,+bg+(h<<(3-c)),<<(c+i)) 
+                    long long a=tree[f].tag.mul,g=tgv.mul;
+                    POS b=tree[f].tag.add,h=tgv.add;
+                    int c=tree[f].tag.rot,i=tgv.rot;
+
+                    int len=r2q[r]-r2q[l-!(l&1)]+(l&1);
+                    tree[f].p=(tree[f].p*g+h*len)<<i;
+                    tree[f].tag.mul=(a*g)%MOD;
+                    tree[f].tag.add=b*g+(h<<(3-c));
+                    tree[f].tag.rot=(c+i)%3;
+                    tree[f].flag=true;
+                    return;
+                }
+
+                //用子节点更新 <f节点>
+                void pushup(int f)
+                {
+                    tree[f].p=tree[lc(f)].p+tree[rc(f)].p;
+                    return;
+                }
+
+                //将 <管辖[l,r]区间的f节点> 的tag值下发至子节点 
+                void pushdown(int l,int r,int f)
+                {
+                    if(l==r) return;
+                    int mid=l+(r-l)/2;
+                    mergetag(l,mid,lc(f),tree[f].tag);
+                    mergetag(mid+1,r,rc(f),tree[f].tag);
+                    tree[f].tag=DEFAULT_TAG;
+                    tree[f].flag=false;
+                    return;
+                }
+
+                //在tree[f]建立一个管辖[l,r]的节点 
+                void build(int l,int r,int f)
+                {
+                    tree[f].flag=false;
+                    tree[f].tag=DEFAULT_TAG;
+                    if(l==r)
+                    {
+                        tree[f].p=POS{0,0,0};
+                        return;
+                    }
+                    int mid=l+(r-l)/2;
+                    build(l,mid,lc(f));
+                    build(mid+1,r,rc(f));
+                    pushup(f);
+                    return;
+                }
+
+                //将tgv合并至区间[ql,qr]的tag值，当前在管辖[l,r]区间的f节点 
+                void update(int ql,int qr,int l,int r,int f,TAGVAL tgv)
+                {
+                    //当前区间是查询区间的子集，修改 
+                    if(ql<=l&&r<=qr)
+                    {
+                        mergetag(l,r,f,tgv);
+                        return;
+                    }
+                    int mid=l+(r-l)/2;
+                    if(tree[f].flag) pushdown(l,r,f);//访问到有标记的节点就下放 
+                    if(ql<=mid) update(ql,qr,l,mid,lc(f),tgv);
+                    if(qr>mid) update(ql,qr,mid+1,r,rc(f),tgv);
+                    pushup(f);
+                    return;
+                }
+
+                //求区间[ql,qr]的和，当前在管辖[l,r]区间的f节点 
+                POS getsum(int ql,int qr,int l,int r,int f)
+                {
+                    //当前区间是查询区间的子集，返回 
+                    if(ql<=l&&r<=qr) return tree[f].p;
+                    int mid=l+(r-l)/2;
+                    if(tree[f].flag) pushdown(l,r,f);//访问到有标记的节点就下放
+                    POS ans={0,0,0};
+                    if(ql<=mid) ans=ans+getsum(ql,qr,l,mid,lc(f)); 
+                    if(qr>mid) ans=ans+getsum(ql,qr,mid+1,r,rc(f));
+                    return ans;
+                }
+
+                int main()
+                {
+                    ios::sync_with_stdio(false);
+                    cin>>n>>m;
+                    for(int i=0;i<m;i++)
+                    {
+                        int q;
+                        cin>>q;
+                        opt[i][0]=q;
+                        if(q==1)
+                        {
+                            cin>>opt[i][1]>>opt[i][2]>>opt[i][3]>>opt[i][4]>>opt[i][5];
+                        }
+                        else if(q==2)
+                        {
+                            cin>>opt[i][1]>>opt[i][2]>>opt[i][3];
+                        }
+                        else if(q==3)
+                        {
+                            cin>>opt[i][1]>>opt[i][2];
+                        }
+                        else
+                        {
+                            cin>>opt[i][1]>>opt[i][2];
+                        }
+                        raw.emplace_back(opt[i][1]);
+                        raw.emplace_back(opt[i][2]);
+                    }
+
+                    //离散化 
+                    set<int> tmp(raw.begin(),raw.end());
+                    raw.assign(tmp.begin(),tmp.end());//对raw去重+排序 
+                    for(int i=0;i<raw.size();i++)
+                    {
+                        r2q.emplace_back(raw[i]-1);
+                        r2q.emplace_back(raw[i]);
+                    }
+                    n=r2q.size()-1;//不计算0 
+                    for(int i=1;i<=n;i+=2) q2r[r2q[i]]=i;//通过真实查询值反查rank 
+
+                    build(1,n,1);
+                    for(int i=0;i<m;i++)
+                    {
+                        int q,l,r,a,b,c,k;
+                        q=opt[i][0];
+                        l=q2r[opt[i][1]];
+                        r=q2r[opt[i][2]];
+                        if(q==1)
+                        {
+                            a=opt[i][3];
+                            b=opt[i][4];
+                            c=opt[i][5];
+                            update(l,r,1,n,1,TAGVAL{1,POS{a,b,c},0});
+                        }
+                        else if(q==2)
+                        {
+                            k=opt[i][3];
+                            update(l,r,1,n,1,TAGVAL{k,POS{0,0,0},0});
+                        }
+                        else if(q==3)
+                        {
+                            update(l,r,1,n,1,TAGVAL{1,POS{0,0,0},1});
+                        }
+                        else
+                        {
+                            POS p=getsum(l,r,1,n,1);
+                            long long ans=p.x*p.x+p.y*p.y+p.z*p.z;
+                            cout<<ans%MOD<<'\\n';
+                        }
+                    }
+                    return 0;
+                }
+                /*
+                in:
+                5 5
+                1 2 4 5 6 7
+                3 5 5
+                2 1 2 4
+                4 1 3
+                4 2 5
+
+                out:
+                2750
+                3960
+                */
+                `}
+            />
         </>
     );
 }
