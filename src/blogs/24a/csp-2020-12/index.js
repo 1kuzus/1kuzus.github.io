@@ -865,11 +865,13 @@ export default function Blog({title}) {
                         }
                     }
                 };
+
                 struct TAGVAL{
                     long long mul;
                     POS add;
                     int rot; 
-                }DEFAULT_TAG{1,POS{0,0,0},0};
+                }const DEFAULT_TAG{1,POS{0,0,0},0};
+
                 struct NODE{
                     POS p;
                     bool flag;//是否打了tag 
