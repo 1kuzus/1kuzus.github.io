@@ -1,4 +1,5 @@
-import {useState, useRef, createContext, useContext} from 'react';
+'use client';
+import {useState, createContext, useContext} from 'react';
 
 const GlobalContext = createContext();
 
@@ -17,26 +18,16 @@ export const GlobalProvider = (props) => {
     const removeTitleNodeRefs = (ref) => {
         setTitleNodeRefs((prev) => prev.filter((r) => r !== ref));
     };
-
-    //用于有序列表项
-    const oliIndexRef = useRef(0);
-    const addOliIndex = () => {
-        oliIndexRef.current += 1;
-        return oliIndexRef.current;
-    };
-    const resetOliIndex = (idx) => {
-        oliIndexRef.current = idx;
-        return idx;
-    };
-
+    
     const value = {
         showSidebar,
         setShowSidebar,
         setTitleNodeRefs,
         removeTitleNodeRefs,
-        titleNodes: titleNodeRefs.map((r) => r.current).sort((i, j) => i.offsetTop - j.offsetTop),
-        addOliIndex,
-        resetOliIndex,
+        titleNodes: titleNodeRefs
+            .map((r) => r.current)
+            .filter((i) => i)
+            .sort((i, j) => i.offsetTop - j.offsetTop),
     };
     return <GlobalContext.Provider value={value}>{children}</GlobalContext.Provider>;
 };

@@ -1,8 +1,3 @@
-@media print {
-    #header {
-        display: none !important;
-    }
-}
 #header {
     display: flex;
     justify-content: space-between;
@@ -79,4 +74,20 @@
 #header-theme-bg:hover,
 #header-github-bg:hover {
     background-color: #484854;
+}
+:root #header-dark-theme-icon,
+:root.light #header-dark-theme-icon {
+    display: none;
+}
+:root.dark #header-light-theme-icon {
+    display: none;
+}
+:root.dark #header-dark-theme-icon {
+    display: block;
+}
+
+@media print {
+    #header {
+        display: none !important;
+    }
 }

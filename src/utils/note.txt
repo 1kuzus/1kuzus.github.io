@@ -1,54 +1,10 @@
-update blogs
-feat: ...
-fix: ...
-update: ...
-chore
+开发模式(port:3030)
+npm run dev
 
-npm run rand
-npm run deploy
-npx gh-pages -d build
-node .\src\utils\afterBuild.js
-node .\src\utils\checkCSS.js
+npm run build
 
-匹配非汉字/非汉字标点/非ASCII字符
-[^\u4e00-\u9fa5\p{ASCII}\p{P}]
+启动本地服务器(port:3029)
+npx serve build -p 3029
 
-匹配公式内出现中文字符
-<X.Formula([\s\n]*?)text="([^"]*?)[\u4e00-\u9fa5]([^"]*?)"([\s\n]*?)/>
-
-控制台打印内链
-[...document.querySelectorAll("a")].map(i=>i.href).forEach(i=>{console.log(i)})
-
-
-是的，你可以编写一个函数来动态导入这些组件，并返回一个包含这些组件的数组。在现代的JavaScript中，你可以使用import()函数来动态导入模块。这个函数返回一个Promise，因此你可以使用Promise.all()来处理多个异步导入。
-
-下面是一个简单的例子：
-
-javascript
-Copy code
-async function importComponents(paths) {
-  try {
-    const importPromises = paths.map(path => import(`${path}/index.js`));
-    const components = await Promise.all(importPromises);
-
-    return components.map(module => module.default || module);
-  } catch (error) {
-    console.error("Error importing components:", error);
-    return [];
-  }
-}
-
-const paths = [
-  './path1',
-  './path2',
-  './path3',
-  // Add more paths as needed
-];
-
-importComponents(paths).then(components => {
-  // 在这里你可以使用 components 数组，其中包含了导入的 React 组件
-  console.log(components);
-});
-在这个例子中，importComponents 函数接受一个包含路径的数组，然后通过import()动态导入每个组件。Promise.all()用于等待所有导入完成。最后，函数返回一个包含导入的组件的数组。
-
-请注意，如果你的组件使用了ES6模块语法并通过export default导出，那么在使用模块的default导出之前，你可能需要检查模块是否定义了default属性。这是因为import()返回的是一个包含所有导出的对象，而default是其中的一个属性。
+## 部署
+npx gh-pages -d build --dotfiles

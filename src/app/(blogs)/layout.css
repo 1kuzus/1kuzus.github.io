@@ -1,0 +1,46 @@
+#blog-layout {
+    margin-top: 64px;
+    padding: 48px 480px;
+}
+#main {
+    max-width: 1080px;
+    margin: 0 auto;
+    color: var(--text-color-main);
+}
+#main * {
+    word-break: break-word;
+}
+
+/*响应式*/
+@media (max-width: 1560px) {
+    #blog-layout {
+        padding: 48px 42px 48px calc(min(396px, 30vw) + 42px);
+    }
+    #contents {
+        display: none;
+    }
+}
+@media (max-width: 1000px) {
+    #blog-layout {
+        padding: 48px 24px;
+    }
+    #sidebar {
+        transform: translateX(-100%);
+    }
+}
+@media (min-width: 1000px) {
+    #sidebar-mask {
+        opacity: 0 !important;
+    }
+}
+
+@media print {
+    #contents,
+    #sidebar {
+        display: none !important;
+    }
+    #blog-layout {
+        margin-top: 64px;
+        padding: 48px !important;
+    }
+}

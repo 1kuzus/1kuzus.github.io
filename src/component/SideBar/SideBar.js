@@ -1,7 +1,10 @@
+'use client';
 import {useState} from 'react';
-import {useLocation, Link} from 'react-router-dom';
+import Link from 'next/link';
+import {usePathname} from 'next/navigation';
 import {RightArrowIcon} from 'src/assets/svgs';
-import categories from 'src/blogs/categories';
+import {useGlobalContext} from 'src/context/GlobalContext';
+import archives from 'src/app/_archives';
 import './Sidebar.css';
 
 function SidebarList(props) {
@@ -19,7 +22,7 @@ function SidebarList(props) {
                 <ul className="sidebar-list-ul">
                     {category.blogs.map((blog, index) => (
                         <li key={index} className={`sidebar-list-li${currentPath === blog.path ? ' active' : ''}`}>
-                            <Link className="sidebar-list-link" to={blog.path}>
+                            <Link className="sidebar-list-link" href={blog.path}>
                                 <span className="sidebar-list-title">{blog.title}</span>
                             </Link>
                         </li>
@@ -31,12 +34,22 @@ function SidebarList(props) {
 }
 
 export default function Sidebar() {
-    const location = useLocation();
+    const pathname = usePathname();
+    const {showSidebar, setShowSidebar} = useGlobalContext();
     return (
         <>
-            {categories.map((category, index) => (
-                <SidebarList key={index} category={category} currentPath={location.pathname} />
-            ))}
+            <div id="sidebar" className={showSidebar ? 'show-sidebar' : null}>
+                {archives.map((category, index) => (
+                    <SidebarList key={index} category={category} currentPath={pathname} />
+                ))}
+            </div>
+            <div
+                id="sidebar-mask"
+                className={showSidebar ? 'show-sidebar' : null}
+                onClick={() => {
+                    setShowSidebar((prev) => !prev);
+                }}
+            />
         </>
     );
 }

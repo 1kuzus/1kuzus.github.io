@@ -1,15 +1,11 @@
-import {useLayoutEffect, useRef} from 'react';
 import Katex from 'katex';
 import './Formula.css';
 
 export default function Formula(props) {
-    const elementRef = useRef();
     const {text = ''} = props;
-    useLayoutEffect(() => {
-        Katex.render(text, elementRef.current, {
-            output: 'html',
-            strict: false,
-        });
-    }, [text]);
-    return <div className="x-formula" ref={elementRef} />;
+    const renderedText = Katex.renderToString(text, {
+        output: 'html',
+        strict: false,
+    });
+    return <div className="x-formula" dangerouslySetInnerHTML={{__html: renderedText}} />;
 }

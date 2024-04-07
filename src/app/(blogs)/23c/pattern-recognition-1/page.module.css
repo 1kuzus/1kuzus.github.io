@@ -1,0 +1,16 @@
+.boxes {
+    display: flex;
+    margin: 24px;
+}
+.box {
+    width: 28px;
+    height: 28px;
+    margin: 8px;
+    border: 3px solid var(--color-main);
+}
+.circle {
+    border-radius: 50%;
+}
+.fill {
+    background-color: var(--color-main);
+}
