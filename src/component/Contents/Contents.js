@@ -1,9 +1,11 @@
-import {useState, useLayoutEffect} from 'react';
+'use client';
+import {useState,useEffect, useLayoutEffect} from 'react';
+import {useGlobalContext} from 'src/context/GlobalContext';
 import './Contents.css';
 
-export default function Contents(props) {
-    const {titleNodes} = props;
-    const [activeIndex, setActiveIndex] = useState(0);
+export default function Contents() {
+    const {titleNodes} = useGlobalContext();
+    const [activeIndex, setActiveIndex] = useState();
     const getMappedOffsetTop = (titleNodes, container) => {
         const titleNodesOffsetTop = titleNodes.map((titleNode) => titleNode.offsetTop - 80);
         // return titleNodesOffsetTop; //旧版
@@ -13,7 +15,7 @@ export default function Contents(props) {
         const line = (a, b, c, d, x) => ((d - b) / (c - a)) * (x - a) + b;
         return titleNodesOffsetTop.map((ot) => (ot <= ot_i ? ot : line(ot_i, ot_i, ot_n, maxContainerScrollTop, ot)));
     };
-    useLayoutEffect(() => {
+    useEffect(() => {
         const scrollHandler = () => {
             const mappedOffsetTop = getMappedOffsetTop(titleNodes, document.documentElement);
             const lastIdx = mappedOffsetTop.findLastIndex(
@@ -24,8 +26,8 @@ export default function Contents(props) {
         window.addEventListener('scroll', scrollHandler);
         return () => window.removeEventListener('scroll', scrollHandler);
     }, [titleNodes]);
-    return (
-        <>
+    return titleNodes?.length ? (
+        <div id="contents">
             <h4
                 id="contents-header"
                 onClick={() => {
@@ -36,7 +38,8 @@ export default function Contents(props) {
             </h4>
             <ul>
                 {titleNodes.map((titleNode, index) => {
-                    const {className: type, textContent: text} = titleNode;
+                    const {textContent: text} = titleNode;
+                    const {className: type} = titleNode.parentNode;
                     return (
                         <li
                             key={index}
@@ -51,6 +54,6 @@ export default function Contents(props) {
                     );
                 })}
             </ul>
-        </>
-    );
+        </div>
+    ) : null;
 }

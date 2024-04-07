@@ -1,9 +1,18 @@
-import {useLayoutEffect, useRef} from 'react';
 import Prism from 'prismjs';
+import 'prismjs/components/prism-c';
+import 'prismjs/components/prism-cpp';
+import 'prismjs/components/prism-java';
+import 'prismjs/components/prism-python';
+import 'prismjs/components/prism-markdown';
+import 'prismjs/components/prism-javascript';
+import 'prismjs/components/prism-typescript';
+import 'prismjs/components/prism-jsx';
+import 'prismjs/components/prism-tsx';
+import 'prismjs/components/prism-diff';
+import 'prismjs/components/prism-bash';
 import './CodeBlock.css';
 
 export default function CodeBlock(props) {
-    const elementRef = useRef();
     const {language, code, highlightLines} = props;
     //处理代码行，处理空白，统一缩进
     let lines = code.split('\n').map((line) => line.trimRight());
@@ -27,9 +36,7 @@ export default function CodeBlock(props) {
             )
             .join('') +
         ')';
-    useLayoutEffect(() => {
-        Prism.highlightElement(elementRef.current);
-    }, [code]);
+    const highlightedCode = Prism.highlight(lines.join('\n'), Prism.languages[language], language);
     return (
         <div className="x-codeblock">
             <pre
@@ -37,9 +44,7 @@ export default function CodeBlock(props) {
                     background: highlightLines ? backgroundStyle : null,
                 }}
             >
-                <code className={language && `lang-${language}`} ref={elementRef}>
-                    {lines.join('\n')}
-                </code>
+                <code dangerouslySetInnerHTML={{__html: highlightedCode}} />
             </pre>
         </div>
     );

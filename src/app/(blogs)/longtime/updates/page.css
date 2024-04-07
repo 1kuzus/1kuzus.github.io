@@ -1,0 +1,17 @@
+#confetto-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    pointer-events: none;
+}
+#current-version {
+    align-self: center;
+    line-height: 160px;
+    font-size: 40px;
+    font-family: var(--font-code);
+    user-select: none;
+}
+#dance-gif {
+    padding-top: 32px;
+}
