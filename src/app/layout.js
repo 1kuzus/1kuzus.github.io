@@ -4,11 +4,6 @@ import 'src/assets/prism.scss';
 import 'src/assets/katex.css';
 import './globals.css';
 
-export const metadata = {
-    title: '铃木的网络日记',
-    description: '...',
-};
-
 const scriptGA = `
 window.dataLayer = window.dataLayer || [];
 function gtag() {

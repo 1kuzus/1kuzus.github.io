@@ -1,6 +1,11 @@
 import BlogLists from 'src/component/BlogLists/BlogLists';
 import './page.css';
 
+export const metadata = {
+    title: '铃木的网络日记',
+    description: '铃木的网络日记',
+};
+
 export default function Homepage() {
     return (
         <>
