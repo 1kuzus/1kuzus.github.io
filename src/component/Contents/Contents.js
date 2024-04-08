@@ -1,5 +1,5 @@
 'use client';
-import {useState,useEffect, useLayoutEffect} from 'react';
+import {useState, useLayoutEffect} from 'react';
 import {useGlobalContext} from 'src/context/GlobalContext';
 import './Contents.css';
 
@@ -15,7 +15,7 @@ export default function Contents() {
         const line = (a, b, c, d, x) => ((d - b) / (c - a)) * (x - a) + b;
         return titleNodesOffsetTop.map((ot) => (ot <= ot_i ? ot : line(ot_i, ot_i, ot_n, maxContainerScrollTop, ot)));
     };
-    useEffect(() => {
+    useLayoutEffect(() => {
         const scrollHandler = () => {
             const mappedOffsetTop = getMappedOffsetTop(titleNodes, document.documentElement);
             const lastIdx = mappedOffsetTop.findLastIndex(
