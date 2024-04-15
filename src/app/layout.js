@@ -34,7 +34,7 @@ export default function RootLayout({children}) {
     return (
         <html lang="zh-CN" suppressHydrationWarning>
             <head>
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/favicon.ico" type="image/x-icon" />
                 <script async src="https://www.googletagmanager.com/gtag/js?id=G-45BYSZ6WPY" />
                 <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" />
                 <script dangerouslySetInnerHTML={{__html: scriptGA}} />
