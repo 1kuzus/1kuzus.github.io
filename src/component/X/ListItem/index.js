@@ -1,5 +1,3 @@
-//'use client';
-// import {useGlobalContext} from 'src/context/GlobalContext';
 import P from '../Paragraph/Paragraph';
 import './index.css';
 
@@ -29,12 +27,11 @@ let oliIndex = 0;
 function addOliIndex() {
     return ++oliIndex;
 }
-function resetOliIndex(idx) {
+export function resetOliIndex(idx) {
     return (oliIndex = idx);
 }
 export function Oli(props) {
     const {reset, children} = props;
-    // const {addOliIndex, resetOliIndex} = useGlobalContext();
     return (
         <div className="x-oli">
             <div className="x-oli-number">{(reset !== undefined ? resetOliIndex(+reset) : addOliIndex()) + '.'}</div>
