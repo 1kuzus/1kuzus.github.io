@@ -18,7 +18,7 @@ export const GlobalProvider = (props) => {
     const removeTitleNodeRefs = (ref) => {
         setTitleNodeRefs((prev) => prev.filter((r) => r !== ref));
     };
-    
+
     const value = {
         showSidebar,
         setShowSidebar,
