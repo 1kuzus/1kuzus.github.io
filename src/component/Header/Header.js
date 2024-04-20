@@ -28,7 +28,7 @@ export default function Header() {
     return (
         <div id="header" className={showSidebar ? 'show-sidebar' : ''}>
             <div id="header-left-wrapper">
-                <Link href="/">
+                <Link href="/" prefetch={false}>
                     <div id="header-logo-bg">
                         <LogoIcon />
                     </div>
