@@ -66,14 +66,16 @@ function UpdateLog() {
         {date: '2024-01-26', description: '使用语义化更佳的路由方案'},
         {date: '2024-01-27', description: '支持直接在列表项中写含有jsx表达式的`children`'},
         {date: '2024-02-01', description: '`HighlightBlock`组件支持`bgcolor="blue"`'},
+        {version: '1.1'},
         {
             date: '2024-02-12',
             description: '删除了`BlogWrapper`组件，布局功能集成到新组件`BlogLayout`\\n响应式设计移动端适配',
         },
         {date: '2024-02-15', description: '调整了暗色模式配色等部分页面设计\\n顶栏新增半透明效果'},
-        {version: '1.1'},
         {date: '2024-02-17', description: '优化了侧栏导航布局\\n`react-like`'},
         {date: '2024-02-27', description: '`CodeBlock`组件支持代码行高亮'},
+        {version: '1.2'},
+        {date: '2024-04-07', description: '使用`Next.js`重构'},
     ];
     return (
         <>
@@ -106,7 +108,6 @@ export default function Blog() {
                     </X.FlexRow>
                 </X.HighlightBlock>
             </Confetto>
-            <X.H1>历史</X.H1>
             <UpdateLog />
         </>
     );
