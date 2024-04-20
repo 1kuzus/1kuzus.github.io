@@ -186,6 +186,11 @@ const archives = [
                 path: '/24a/games101-05-ray-tracing/',
                 time: '2024-03-09',
             },
+            {
+                title: '八股',
+                path: '/24b/by-questions/',
+                time: '2024-04-18',
+            },
         ],
     },
     {
