@@ -24,6 +24,7 @@ export default function Contents() {
             setActiveIndex(lastIdx);
         };
         window.addEventListener('scroll', scrollHandler);
+        scrollHandler();
         return () => window.removeEventListener('scroll', scrollHandler);
     }, [titleNodes]);
     return titleNodes?.length ? (
