@@ -22,7 +22,7 @@ function SidebarList(props) {
                 <ul className="sidebar-list-ul">
                     {category.blogs.map((blog, index) => (
                         <li key={index} className={`sidebar-list-li${currentPath === blog.path ? ' active' : ''}`}>
-                            <Link className="sidebar-list-link" href={blog.path}>
+                            <Link className="sidebar-list-link" href={blog.path} prefetch={false}>
                                 <span className="sidebar-list-title">{blog.title}</span>
                             </Link>
                         </li>
