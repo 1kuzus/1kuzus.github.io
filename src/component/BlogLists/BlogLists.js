@@ -16,7 +16,7 @@ function BlogList(props) {
                 <ul className="blog-list-ul">
                     {category.blogs.map((blog, index) => (
                         <li key={index} className="blog-list-li">
-                            <Link className="blog-list-link" href={blog.path} prefetch={false}>
+                            <Link className="blog-list-link" href={blog.path} prefetch={true}>
                                 {<span className="blog-list-title">{blog.title}</span>}
                                 {blog.time && <span className="blog-list-time">{blog.time}</span>}
                             </Link>
