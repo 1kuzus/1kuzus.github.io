@@ -1,15 +1,15 @@
 .x-table-wrapper {
     width: fit-content;
     max-width: 100%;
-    overflow-x: auto;
     margin-bottom: 24px;
+    overflow-x: auto;
 }
 .x-table {
+    width: max-content;
     height: fit-content;
     color: var(--text-color-main);
     border-collapse: separate;
     border-spacing: 3px;
-    width: max-content;
 }
 .x-table th {
     background-color: var(--bg-th);
