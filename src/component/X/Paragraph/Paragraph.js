@@ -1,5 +1,5 @@
 import Katex from 'katex';
-import './Paragraph.css'
+import './Paragraph.css';
 
 export default function P(props) {
     /*
@@ -8,7 +8,7 @@ export default function P(props) {
         $content$   行内公式
         @text[url]@ 超链接
     */
-    const {withMarginTop = false, noMarginBottom = false, children = ''} = props;
+    const {withMarginTop = false, noMarginBottom = false, children = '', ...rest} = props;
     let htmlContent = Array.isArray(children) ? children.join('') : children;
     htmlContent = htmlContent
         .replace(/--- /g, '')
@@ -31,6 +31,7 @@ export default function P(props) {
         <p
             className={`x-p${withMarginTop ? ' with-margin-top' : ''}${noMarginBottom ? ' no-margin-bottom' : ''}`}
             dangerouslySetInnerHTML={{__html: htmlContent}}
+            {...rest}
         />
     );
 }

@@ -5,7 +5,7 @@
         padding: 48px 42px 48px calc(min(396px, 30vw) + 42px) !important;
     }
     #contents {
-        display: none;
+        display: none !important;
     }
 }
 
@@ -18,17 +18,21 @@
         padding: 32px 18px !important;
     }
     #sidebar {
-        transform: translateX(-100%);
+        transform: translateX(-100%) !important;
+    }
+    /*others*/
+    #cheer-gif {
+        display: none !important;
     }
 }
 
 /*width>1000px 隐藏折叠侧栏相关元素*/
 @media (min-width: 1000px) {
-    #sidebar-mask {
-        opacity: 0 !important;
-    }
     #header-archive {
         display: none !important;
+    }
+    #sidebar-mask {
+        opacity: 0 !important;
     }
 }
 
@@ -67,7 +71,7 @@
         max-width: 100% !important;
     }
     .blog-list-time {
-        display: none;
+        display: none !important;
     }
     /*component*/
     .x-codeblock pre code {
@@ -75,5 +79,17 @@
     }
     .x-highlightblock {
         padding: 24px 20px !important;
+    }
+    /*others*/
+    #current-version {
+        font-size: 24px !important;
+        line-height: 72px !important;
+    }
+    #cheer-gif {
+        display: none !important;
+    }
+    #dance-gif {
+        width: 72px !important;
+        padding-top: 0 !important;
     }
 }
