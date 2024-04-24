@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 128px 0 64px 0;
+    padding: 128px 0 24px 0;
     background-color: var(--bg-main);
 }
 #homepage-title {
@@ -18,10 +18,10 @@
 #logopart-x {
     position: absolute;
     top: 0;
-    left: 24px;
+    left: 20%;
     z-index: 3;
-    width: 24px;
-    height: 120px;
+    width: 20%;
+    height: 100%;
     background-color: #00f8ff;
     box-shadow: var(--logopart-shadow);
     transform: skewX(-21.8deg);
@@ -30,30 +30,30 @@
 #logopart-y {
     position: absolute;
     top: 0;
-    left: 60px;
+    left: 50%;
     z-index: 1;
-    width: 24px;
-    height: 60px;
+    width: 20%;
+    height: 50%;
     background-color: #00a8c4;
     transform: skewX(21.8deg);
 }
 #logopart-vl {
     position: absolute;
     top: 0;
-    left: 24px;
+    left: 20%;
     z-index: 2;
-    width: 24px;
-    height: 120px;
+    width: 20%;
+    height: 100%;
     background-color: #30303c;
     transform: skewX(21.8deg);
 }
 #logopart-vr {
     position: absolute;
     top: 0;
-    left: 72px;
+    left: 60%;
     z-index: 2;
-    width: 24px;
-    height: 120px;
+    width: 20%;
+    height: 100%;
     background-color: var(--logopart-vr-color);
     transform: skewX(-21.8deg);
 }
