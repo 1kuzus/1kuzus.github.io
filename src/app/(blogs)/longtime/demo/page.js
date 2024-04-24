@@ -242,7 +242,7 @@ export default function Blog() {
             </X.P>
             <X.H2>省去段落组件</X.H2>
             <X.P>
-                一个经常遇到的情况是：段落组件是列表项的唯一的子元素。因此在@`2024-01-27`的更新[/longtime/updates/]@中，支持了直接在列表项中写含有段落组件特殊格式的文本。---
+                一个经常遇到的情况是：段落组件是列表项的唯一的子元素。因此在`2024-01-27`的更新中，支持了直接在列表项中写含有段落组件特殊格式的文本。---
                 在解析时，如果子元素是`string | string[]`类型，--- 会自动为其包裹一层段落组件。
             </X.P>
             <X.HighlightBlock bgcolor="gray">
@@ -638,7 +638,7 @@ export default function Blog() {
                     </X.P>
                 </X.HighlightBlock>
                 <X.HighlightBlock bgcolor="blue">
-                    <X.P>在@`2024-02-01`的更新[/longtime/updates/]@中加入了蓝色背景。</X.P>
+                    <X.P>在`2024-02-01`的更新中加入了蓝色背景。</X.P>
                 </X.HighlightBlock>
             </X.HighlightBlock>
             <X.H1>图片</X.H1>

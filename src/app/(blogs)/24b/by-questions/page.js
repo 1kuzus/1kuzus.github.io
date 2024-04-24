@@ -30,14 +30,6 @@ export default function Blog() {
                 <X.P noMarginBottom>正负样本不均衡怎么办？</X.P>
                 <X.P>答：一个简单的做法是可以通过上采样和下采样，但下采样会导致数据的丢失，上采样可能导致过拟合；</X.P>
             </X.Oli>
-            <X.CodeBlock
-                language="diff-cpp"
-                code={`
-                #include <fdddddddddddddddddddducy> 
-                - int x=hello;
-                + double s=helsssssslo;
-                `}
-            />
         </>
     );
 }
