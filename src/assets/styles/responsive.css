@@ -15,7 +15,7 @@
         --sidebar-width: 300px !important;
     }
     #blog-layout {
-        padding: 48px 24px !important;
+        padding: 48px 18px !important;
     }
     #sidebar {
         transform: translateX(-100%);
@@ -32,7 +32,11 @@
     }
 }
 
+/*width<600px 移动端*/
 @media (max-width: 600px) {
+    .blog-list-title {
+        max-width: 100% !important;
+    }
     .blog-list-time {
         display: none;
     }

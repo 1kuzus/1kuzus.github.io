@@ -2,28 +2,27 @@ import './Table.css';
 
 export default function Table(props) {
     const {fromText, children} = props;
-    if (fromText) {
-        const trs = fromText.trim().split('\n');
-        return (
+    return (
+        <div className="x-table-wrapper">
             <table className="x-table">
                 <tbody>
-                    {trs.map((tr, tr_index) => (
-                        <tr key={tr_index}>
-                            {tr
-                                .trim()
-                                .split('|')
-                                .map((td, td_index) =>
-                                    tr_index ? <td key={td_index}>{td}</td> : <th key={td_index}>{td}</th>
-                                )}
-                        </tr>
-                    ))}
+                    {fromText
+                        ? fromText
+                              .trim()
+                              .split('\n')
+                              .map((tr, tr_index) => (
+                                  <tr key={tr_index}>
+                                      {tr
+                                          .trim()
+                                          .split('|')
+                                          .map((td, td_index) =>
+                                              tr_index ? <td key={td_index}>{td}</td> : <th key={td_index}>{td}</th>
+                                          )}
+                                  </tr>
+                              ))
+                        : children}
                 </tbody>
             </table>
-        );
-    }
-    return (
-        <table className="x-table">
-            <tbody>{children}</tbody>
-        </table>
+        </div>
     );
 }
