@@ -49,6 +49,7 @@
     color: var(--text-color-main);
 }
 .blog-list-title {
+    max-width: calc(100% - 104px);
     font-size: 18px;
     font-weight: bold;
     white-space: nowrap;
