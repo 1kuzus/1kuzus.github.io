@@ -1,0 +1,21 @@
+@media print {
+    #header {
+        display: none !important;
+    }
+    /*首页*/
+    #homepage-content {
+        padding: 0;
+    }
+    #logopart-wrapper {
+        display: none !important;
+    }
+    /*博客页*/
+    #blog-layout {
+        margin-top: 64px;
+        padding: 48px !important;
+    }
+    #contents,
+    #sidebar {
+        display: none !important;
+    }
+}

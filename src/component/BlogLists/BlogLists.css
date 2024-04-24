@@ -61,11 +61,6 @@
     opacity: 0;
     transition: opacity 200ms;
 }
-@media (max-width: 600px) {
-    .blog-list-time {
-        display: none;
-    }
-}
 
 /*hover样式*/
 .blog-list-li:hover {
