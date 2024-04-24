@@ -25,6 +25,7 @@
 .x-uli .x-uli-content-wrapper,
 .x-oli .x-oli-content-wrapper {
     flex: 1;
+    max-width: calc(100% - 32px);
 }
 .x-uli .x-uli-content-wrapper > :first-child,
 .x-oli .x-oli-content-wrapper > :first-child {

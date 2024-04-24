@@ -6,7 +6,7 @@
     background-color: var(--bg-main);
     box-shadow: var(--light-theme-box-shadow);
 }
-.x-codeblock pre code/*todo: why? [class*='language-']*/ {
+.x-codeblock pre code {
     display: block;
     width: fit-content;
     padding: 0 32px;
