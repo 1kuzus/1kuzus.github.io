@@ -5,6 +5,9 @@ fix: ...
 update: ...
 chore
 
+# utils脚本
+node .\src\utils\checkCSS.js
+
 # 一些正则
 * 匹配非汉字/非汉字标点/非ASCII字符
 ```
