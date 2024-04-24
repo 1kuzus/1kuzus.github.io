@@ -55,11 +55,6 @@
 #header.show-sidebar .header-archive-rightarrow {
     transform: rotate(90deg);
 }
-@media (min-width: 1000px) {
-    #header-archive {
-        display: none;
-    }
-}
 #header-theme-bg,
 #header-github-bg {
     width: 36px;
@@ -84,10 +79,4 @@
 }
 :root.dark #header-dark-theme-icon {
     display: block;
-}
-
-@media print {
-    #header {
-        display: none !important;
-    }
 }

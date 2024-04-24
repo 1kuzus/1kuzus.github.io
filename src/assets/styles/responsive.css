@@ -1,0 +1,39 @@
+/*响应式*/
+/*width<1560px 隐藏文章目录*/
+@media (max-width: 1560px) {
+    #blog-layout {
+        padding: 48px 42px 48px calc(min(396px, 30vw) + 42px) !important;
+    }
+    #contents {
+        display: none;
+    }
+}
+
+/*width<1000px 收起侧栏*/
+@media (max-width: 1000px) {
+    :root {
+        --sidebar-width: 300px !important;
+    }
+    #blog-layout {
+        padding: 48px 24px !important;
+    }
+    #sidebar {
+        transform: translateX(-100%);
+    }
+}
+
+/*width>1000px 隐藏折叠侧栏相关元素*/
+@media (min-width: 1000px) {
+    #sidebar-mask {
+        opacity: 0 !important;
+    }
+    #header-archive {
+        display: none !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .blog-list-time {
+        display: none;
+    }
+}

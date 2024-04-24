@@ -57,12 +57,3 @@
     background-color: var(--logopart-vr-color);
     transform: skewX(-21.8deg);
 }
-
-@media print {
-    #homepage-content {
-        padding: 0;
-    }
-    #logopart-wrapper {
-        display: none !important;
-    }
-}
