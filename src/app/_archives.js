@@ -58,6 +58,11 @@ const archives = [
                 time: '2024-03-17',
             },
             {
+                title: 'CSP 202206 T1-T5题解',
+                path: '/24a/csp-2022-06/',
+                time: '2024-03-15',
+            },
+            {
                 title: 'CSP 202305 T1-T4题解',
                 path: '/24a/csp-2023-05/',
                 time: '2024-03-23',
@@ -95,6 +100,11 @@ const archives = [
                 title: '记录：复现NeRF-RPN代码',
                 path: '/24a/reproduce-nerf-rpn/',
                 time: '2024-01-01',
+            },
+            {
+                title: '解决：nms_rotated报错"THC/THC.h": No such file or directory',
+                path: '/24b/yolov5-obb-nms-rotated/',
+                time: '2024-04-24',
             },
         ],
     },
