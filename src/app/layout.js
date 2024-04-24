@@ -1,7 +1,8 @@
 import {GlobalProvider} from 'src/context/GlobalContext';
 import Header from 'src/component/Header/Header';
-import 'src/assets/prism.scss';
-import 'src/assets/katex.css';
+import 'src/assets/styles/fonts.css';
+import 'src/assets/styles/katex.css';
+import 'src/assets/styles/prism.scss';
 import './globals.css';
 
 const scriptGA = `

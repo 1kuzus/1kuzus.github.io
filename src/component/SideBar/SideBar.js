@@ -10,6 +10,7 @@ import './Sidebar.css';
 function SidebarList(props) {
     const {category, currentPath} = props;
     const [showList, setShowList] = useState(true);
+    const {setShowSidebar} = useGlobalContext();
     return (
         <div className={`sidebar-list${showList ? ' show-list' : ''}`}>
             <div className="sidebar-list-head" onClick={() => setShowList(!showList)}>
@@ -21,7 +22,13 @@ function SidebarList(props) {
             <div className="sidebar-list-ul-wrapper">
                 <ul className="sidebar-list-ul">
                     {category.blogs.map((blog, index) => (
-                        <li key={index} className={`sidebar-list-li${currentPath === blog.path ? ' active' : ''}`}>
+                        <li
+                            key={index}
+                            className={`sidebar-list-li${currentPath === blog.path ? ' active' : ''}`}
+                            onClick={() => {
+                                setShowSidebar(false);
+                            }}
+                        >
                             <Link className="sidebar-list-link" href={blog.path} prefetch={true}>
                                 <span className="sidebar-list-title">{blog.title}</span>
                             </Link>
