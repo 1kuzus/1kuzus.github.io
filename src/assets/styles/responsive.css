@@ -89,7 +89,7 @@
         display: none !important;
     }
     #dance-gif {
-        width: 72px !important;
-        padding-top: 0 !important;
+        width: 64px !important;
+        padding-top: 8px !important;
     }
 }
