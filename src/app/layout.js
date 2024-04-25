@@ -14,8 +14,6 @@ function gtag() {
 }
 gtag('js', new Date());
 gtag('config', 'G-45BYSZ6WPY');
-if (!localStorage.getItem('theme')) localStorage.setItem('theme', 'light');
-document.documentElement.setAttribute('class', localStorage.getItem('theme'));
 `;
 
 /*
