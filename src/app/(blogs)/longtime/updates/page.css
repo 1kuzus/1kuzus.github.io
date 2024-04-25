@@ -13,5 +13,6 @@
     user-select: none;
 }
 #dance-gif {
+    width: 128px;
     padding-top: 32px;
 }

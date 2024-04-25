@@ -102,9 +102,9 @@ export default function Blog() {
             <Confetto>
                 <X.HighlightBlock>
                     <X.FlexRow justifyContent="space-around">
-                        <X.Image id="cheer-gif" src="cheer.gif" width="150" />
+                        <X.Image id="cheer-gif" src="cheer.gif" />
                         <div id="current-version">Version 2.0</div>
-                        <X.Image id="dance-gif" src="dance.gif" width="128" />
+                        <X.Image id="dance-gif" src="dance.gif" />
                     </X.FlexRow>
                 </X.HighlightBlock>
             </Confetto>
