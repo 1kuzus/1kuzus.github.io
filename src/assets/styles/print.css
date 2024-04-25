@@ -1,17 +1,18 @@
 @media print {
+    /*header*/
     #header {
         display: none !important;
     }
-    /*首页*/
+    /*homepage*/
     #homepage-content {
         padding: 0;
     }
     #logopart-wrapper {
         display: none !important;
     }
-    /*博客页*/
+    /*blogs*/
     #blog-layout {
-        margin-top: 64px;
+        margin-top: 0 !important;
         padding: 48px !important;
     }
     #contents,
