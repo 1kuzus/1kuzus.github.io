@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "new": "node src/utils/createNewPost.js",
     "dev": "next dev -p 3030",
     "build": "next build",
     "predeploy": "npm run build && next-sitemap && type nul > out/.nojekyll",
