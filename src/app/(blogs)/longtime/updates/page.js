@@ -76,6 +76,7 @@ function UpdateLog() {
         {date: '2024-02-27', description: '`CodeBlock`组件支持代码行高亮'},
         {version: '1.2'},
         {date: '2024-04-07', description: '使用`Next.js`重构'},
+        {date: '2024-04-24', description: '优化了部分移动端样式'},
     ];
     return (
         <>
