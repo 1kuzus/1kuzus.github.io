@@ -142,6 +142,11 @@ const archives = [
         categoryName: '课程',
         blogs: [
             {
+                title: '【线性代数】对秩不等式的理解',
+                path: '/24b/rank-inequality/',
+                time: '2024-04-27',
+            },
+            {
                 title: '【模式识别】统计决策方法',
                 path: '/23c/pattern-recognition-1/',
                 time: '2023-08-31',
