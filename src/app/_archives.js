@@ -25,6 +25,16 @@ const archives = [
         ],
     },
     {
+        categoryName: 'Web',
+        blogs: [
+            {
+                title: 'Python登录华科统一身份认证接口',
+                path: '/23d/hust-cas-login/',
+                time: '2023-12-29',
+            },
+        ],
+    },
+    {
         categoryName: '算法',
         blogs: [
             {
@@ -202,7 +212,7 @@ const archives = [
                 time: '2024-03-09',
             },
             {
-                title: '八股',
+                title: '专业课复习',
                 path: '/24b/by-questions/',
                 time: '2024-04-18',
             },

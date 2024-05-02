@@ -47,19 +47,19 @@ export default function Blog() {
             <X.H2>两分类情况下，最小错误率决策的四种等价规则</X.H2>
             <X.Oli>
                 <X.P noMarginBottom>后验概率判决</X.P>
-                <X.Formula text="P(\omega_1|x) > P(\omega_2|x)" />
+                <X.Formula text="P(\omega_1|x) \gt P(\omega_2|x)" />
             </X.Oli>
             <X.Oli>
                 <X.P noMarginBottom>后验概率判决，分母相同看分子</X.P>
-                <X.Formula text="P(x|\omega_1)P(\omega_1) > P(x|\omega_2)P(\omega_2)" />
+                <X.Formula text="P(x|\omega_1)P(\omega_1) \gt P(x|\omega_2)P(\omega_2)" />
             </X.Oli>
             <X.Oli>
                 <X.P noMarginBottom>似然比$l$、似然比阈值$\lambda$</X.P>
-                <X.Formula text="l(x) = \frac{P(x|\omega_1)}{P(x|\omega_2)}, \; \lambda = \frac{P(\omega_2)}{P(\omega_1)}, \; l(x) > \lambda" />
+                <X.Formula text="l(x) = \frac{P(x|\omega_1)}{P(x|\omega_2)}, \; \lambda = \frac{P(\omega_2)}{P(\omega_1)}, \; l(x) \gt \lambda" />
             </X.Oli>
             <X.Oli>
                 <X.P noMarginBottom>对数似然比</X.P>
-                <X.Formula text="-\ln [l(x)] < \ln\frac{P(\omega_1)}{P(\omega_2)}" />
+                <X.Formula text="-\ln [l(x)] \lt \ln\frac{P(\omega_1)}{P(\omega_2)}" />
             </X.Oli>
             <X.HighlightBlock>
                 <X.P>
@@ -83,15 +83,15 @@ export default function Blog() {
             <X.P>简记$\lambda(\alpha_i,\omega_j)$为{`$\\lambda_{ij}$`}：</X.P>
             <X.Formula text="R(\alpha_1|x) = \lambda_{11}P(\omega_1|x) + \lambda_{12}P(\omega_2|x)" />
             <X.Formula text="R(\alpha_2|x) = \lambda_{21}P(\omega_1|x) + \lambda_{22}P(\omega_2|x)" />
-            <X.P>若{`$R(\\alpha_1|x)<R(\\alpha_2|x)$`}，则$x$属于$\omega_1$类</X.P>
+            <X.P>若{`$R(\\alpha_1|x)\\lt R(\\alpha_2|x)$`}，则$x$属于$\omega_1$类</X.P>
             <X.H2>最小风险贝叶斯决策的另两种形式</X.H2>
             <X.P>
-                若{`$(\\lambda_{21} - \\lambda_{11})P(\\omega_1|x) > (\\lambda_{12} - \\lambda_{22})P(\\omega_2|x)$`}
+                若{`$(\\lambda_{21} - \\lambda_{11})P(\\omega_1|x) \\gt (\\lambda_{12} - \\lambda_{22})P(\\omega_2|x)$`}
                 ，则决策$x \in \omega_1$
             </X.P>
             <X.P>
                 若
-                {`$l(x)=\\frac{P(x|\\omega_1)}{P(x|\\omega_2)} > \\frac{\\lambda_{12} - \\lambda_{22}}{\\lambda_{21} - \\lambda_{11}} \\cdot \\frac{P(\\omega_2)}{P(\\omega_1)}$`}
+                {`$l(x)=\\frac{P(x|\\omega_1)}{P(x|\\omega_2)} \\gt \\frac{\\lambda_{12} - \\lambda_{22}}{\\lambda_{21} - \\lambda_{11}} \\cdot \\frac{P(\\omega_2)}{P(\\omega_1)}$`}
                 ，则决策$x \in \omega_1$
             </X.P>
             <X.HighlightBlock>
