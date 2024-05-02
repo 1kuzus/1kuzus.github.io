@@ -17,8 +17,8 @@ export default function Homepage() {
                         <div id="logopart-vl" />
                         <div id="logopart-vr" />
                     </div>
-                    <h1 style={{display: 'none'}}>铃木的网络日记</h1>
-                    <h1 id="homepage-title">スズキのBlogs</h1>
+                    <h1 id="homepage-title">铃木的网络日记</h1>
+                    <h1 style={{display: 'none'}}>スズキのBlogs</h1>
                 </div>
                 <BlogLists />
             </div>
