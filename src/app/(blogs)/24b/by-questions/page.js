@@ -152,24 +152,6 @@ export default function Blog() {
                 </X.P>
             </X.Oli>
             {/* 正定合同于I；合同的几何意义；AB=BA  , A-1=A（对合） ，相似唯一，合同唯一，XX^T有啥性质*/}
-            <X.H1>概率论</X.H1>
-            <X.H1>编程语言</X.H1>
-            <X.H1>算法与数据结构</X.H1>
-            <X.H1>计算机网络</X.H1>
-            <X.H1>机器学习与深度学习</X.H1>
-            <X.Oli reset={1}>
-                <X.P>正负样本不均衡怎么办？</X.P>
-                <X.P>一个简单的做法是可以通过上采样和下采样，但下采样会导致数据的丢失，上采样可能导致过拟合；</X.P>
-            </X.Oli>
-            <X.H1>杂题</X.H1>
-            <X.Oli reset={1}>
-                <X.P>
-                    只能用加、减、乘、除、乘方、开方六则运算，$x,y \gt
-                    0$，怎么从数学上近似表示$\max(x,y)$和$\min(x,y)$？
-                </X.P>
-                <X.Formula text="\lim_{n \to \infty} (x^n+y^n)^{1/n} = \max(x,y)" />
-                <X.Formula text="\lim_{n \to -\infty} (x^n+y^n)^{1/n} = \min(x,y)" />
-            </X.Oli>
         </>
     );
 }
