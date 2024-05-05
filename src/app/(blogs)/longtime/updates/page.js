@@ -74,7 +74,7 @@ function UpdateLog() {
         {date: '2024-02-15', description: '调整了暗色模式配色等部分页面设计\\n顶栏新增半透明效果'},
         {date: '2024-02-17', description: '优化了侧栏导航布局\\n`react-like`'},
         {date: '2024-02-27', description: '`CodeBlock`组件支持代码行高亮'},
-        {version: '1.2'},
+        {version: '2.0'},
         {date: '2024-04-07', description: '使用`Next.js`重构'},
         {date: '2024-04-24', description: '优化了部分移动端样式'},
     ];
@@ -104,7 +104,7 @@ export default function Blog() {
                 <X.HighlightBlock>
                     <X.FlexRow justifyContent="space-around">
                         <X.Image id="cheer-gif" src="cheer.gif" />
-                        <div id="current-version">Version 2.0</div>
+                        <div id="current-version">Version 3.0</div>
                         <X.Image id="dance-gif" src="dance.gif" />
                     </X.FlexRow>
                 </X.HighlightBlock>
