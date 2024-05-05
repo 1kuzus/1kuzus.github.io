@@ -10,7 +10,8 @@
     "deploy": "gh-pages -d out --dotfiles",
     "serve": "serve out -p 3039",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "update":"git add . && git commit -m 'update blogs'"
   },
   "dependencies": {
     "katex": "^0.16.10",
