@@ -14,7 +14,7 @@ export default function Blog() {
         <>
             <X.Title>{metas[pathname].blogtitle}</X.Title>
             <X.H1>前情提要</X.H1>
-            <X.P>这个博客网站是一个`Create React App`项目，因为只有我自己，就一直在Github仓库的`master`分支开发。</X.P>
+            <X.P>这个博客网站是一个`Create React App`项目，此前一直在Github仓库的`master`分支开发。</X.P>
             <X.P>
                 之前为了配置路径别名进行了`eject`，后来发现设置`jsconfig.json`就可以解决问题，于是一直想还原成没有`eject`的项目。---
                 当然，`eject`操作是不可逆的，于是我把原来的`master`分支备份到`v1`分支，再另建一个新项目，把旧代码迁移过来，---
@@ -22,7 +22,7 @@ export default function Blog() {
             </X.P>
             <X.H1>问题</X.H1>
             <X.P>
-                在新版本（暂且叫他`v2`）也就是现在的`master`分支上提交了数次`commit`后，我意识到一个问题：此前的做法导致原来`v1`---
+                在新版本（暂且叫它`v2`）也就是现在的`master`分支上提交了数次`commit`后，我意识到一个问题：此前的做法导致原来`v1`---
                 版本的提交记录并没有迁移到`master`分支中，当前的`master`分支相当于从零开始。
             </X.P>
             <X.Image src="fig1.png" width="600px" invertInDarkTheme />
