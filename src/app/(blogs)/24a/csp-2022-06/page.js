@@ -186,8 +186,8 @@ export default function Blog() {
                 POS affine(POS p,double a,double b,double c,double d,double e,double g)
                 {
                     //M=[a b c
-                    //   d e g 		(f变量名被占用了)
-                    //   0 0 1]		(省略了齐次坐标的第三行)
+                    //   d e g      (f变量名被占用了)
+                    //   0 0 1]     (省略了齐次坐标的第三行)
                     return POS{a*p.x+b*p.y+c,d*p.x+e*p.y+g};
                 }
 

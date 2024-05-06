@@ -31,7 +31,7 @@ export default function Blog() {
                         //希望label[i]与p[i][3]全相等或全相反
                         sum+=label[i]^p[i][2];
                     }
-                    return sum==0||sum==n;	
+                    return sum==0||sum==n;
                 }
                 int main()
                 {
@@ -269,7 +269,7 @@ export default function Blog() {
                         {
                             if(dbg)
                             {
-                                dbg_result.back()+=s.substr(str_p);	
+                                dbg_result.back()+=s.substr(str_p);
                             }
                             cursor+=sz-str_p;
                             break;
