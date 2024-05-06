@@ -287,9 +287,9 @@ export default function Blog() {
                     <X.P>模式识别非参数估计：直方图，k近邻，Parzen窗。</X.P>
                 </X.HighlightBlock>
             </X.Oli>
-            <X.H1>编程语言</X.H1>
             <X.H1>算法与数据结构</X.H1>
             <X.H1>计算机网络</X.H1>
+            <X.H1>编程语言</X.H1>
             <X.H1>机器学习与深度学习</X.H1>
             <X.Oli reset={1}>
                 <X.P>正负样本不均衡怎么办？</X.P>
