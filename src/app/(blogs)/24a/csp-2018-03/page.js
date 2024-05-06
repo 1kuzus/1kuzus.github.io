@@ -269,7 +269,7 @@ export default function Blog() {
                                     cout<<s<<' ';
                                 }
                                 cout<<endl;
-                                break;				
+                                break;
                             }
                         }
                         if(!hasMatch) cout<<"404\n";

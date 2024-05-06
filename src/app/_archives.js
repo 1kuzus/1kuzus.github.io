@@ -43,6 +43,11 @@ const archives = [
                 time: '2024-03-10',
             },
             {
+                title: '排序算法总结与代码实现',
+                path: '/24b/sorting-algorithm/',
+                time: '2024-05-06',
+            },
+            {
                 title: 'CSP 201604 T1-T4题解',
                 path: '/24a/csp-2016-04/',
                 time: '2024-03-09',
