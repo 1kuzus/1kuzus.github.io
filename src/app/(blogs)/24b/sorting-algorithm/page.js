@@ -14,36 +14,35 @@ export default function Blog() {
         <>
             <X.Title>{metas[pathname].blogtitle}</X.Title>
             <X.H1>汇总&前言</X.H1>
+            <X.P>以下表格中讨论的时空复杂度都是每种算法未加优化、最朴素的实现。\n是否稳定一栏，空白默认为稳定。</X.P>
             <X.Table>
                 <tr>
-                    <th rowSpan={7}>
-                        <X.P>基于\n比较</X.P>
-                    </th>
-                    <th rowSpan={3}>
-                        <X.P>基于\n比较</X.P>
-                    </th>
+                    <th></th>
                     <th>算法名称</th>
                     <th>平均时间</th>
                     <th>最好情况</th>
                     <th>最坏情况</th>
-                    <th>空间</th>
+                    <th>辅助空间</th>
                     <th>是否稳定</th>
                 </tr>
                 <tr>
+                    <th rowSpan={7}>
+                        <X.P>基于\n比较</X.P>
+                    </th>
                     <td>冒泡排序</td>
                     <td>
                         <X.P>$n^2$</X.P>
                     </td>
                     <td>
-                        <X.P>$n\log n$</X.P>
+                        <X.P>$n^2$</X.P>
                     </td>
                     <td>
-                        <X.P>$n\log n$</X.P>
+                        <X.P>$n^2$</X.P>
                     </td>
                     <td>
-                        <X.P>$n\log n$</X.P>
+                        <X.P>$1$</X.P>
                     </td>
-                    <td>是</td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>选择排序</td>
@@ -51,93 +50,156 @@ export default function Blog() {
                         <X.P>$n^2$</X.P>
                     </td>
                     <td>
-                        <X.P>$n\log n$</X.P>
+                        <X.P>$n^2$</X.P>
                     </td>
-                    <td>
-                        <X.P>$n\log n$</X.P>
-                    </td>
-                    <td>
-                        <X.P>$n\log n$</X.P>
-                    </td>
-                    <td>是</td>
-                </tr>
-                <tr>
-                    <td>冒泡排序</td>
                     <td>
                         <X.P>$n^2$</X.P>
                     </td>
                     <td>
-                        <X.P>$n\log n$</X.P>
+                        <X.P>$1$</X.P>
                     </td>
-                    <td>
-                        <X.P>$n\log n$</X.P>
-                    </td>
-                    <td>
-                        <X.P>$n\log n$</X.P>
-                    </td>
-                    <td>是</td>
+                    <td>否</td>
                 </tr>
                 <tr>
-                    <td>冒泡排序</td>
+                    <td>插入排序</td>
                     <td>
                         <X.P>$n^2$</X.P>
                     </td>
                     <td>
-                        <X.P>$n\log n$</X.P>
+                        <X.P>$n$</X.P>
                     </td>
-                    <td>
-                        <X.P>$n\log n$</X.P>
-                    </td>
-                    <td>
-                        <X.P>$n\log n$</X.P>
-                    </td>
-                    <td>是</td>
-                </tr>
-                <tr>
-                    <td>冒泡排序</td>
                     <td>
                         <X.P>$n^2$</X.P>
                     </td>
                     <td>
-                        <X.P>$n\log n$</X.P>
+                        <X.P>$1$</X.P>
                     </td>
-                    <td>
-                        <X.P>$n\log n$</X.P>
-                    </td>
-                    <td>
-                        <X.P>$n\log n$</X.P>
-                    </td>
-                    <td>是</td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <td>冒泡排序</td>
+                    <td>希尔排序</td>
+                    <td>
+                        <X.P>{`$n^{1.3}$`}</X.P>
+                    </td>
+                    <td>
+                        <X.P>$n\log n$</X.P>
+                    </td>
                     <td>
                         <X.P>$n^2$</X.P>
                     </td>
                     <td>
-                        <X.P>$n\log n$</X.P>
+                        <X.P>$1$</X.P>
                     </td>
-                    <td>
-                        <X.P>$n\log n$</X.P>
-                    </td>
-                    <td>
-                        <X.P>$n\log n$</X.P>
-                    </td>
-                    <td>是</td>
+                    <td>否</td>
                 </tr>
-                {/* 
-                冒泡排序
-                选择排序
-                插入排序
-                希尔排序
-                归并排序
-                快速排序
-                堆排序
-                计数排序
-                桶排序
-                基数排序
-                */}
+                <tr>
+                    <td>归并排序</td>
+                    <td>
+                        <X.P>$n\log n$</X.P>
+                    </td>
+                    <td>
+                        <X.P>$n\log n$</X.P>
+                    </td>
+                    <td>
+                        <X.P>$n\log n$</X.P>
+                    </td>
+                    <td>
+                        <X.P>$n$</X.P>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>快速排序</td>
+                    <td>
+                        <X.P>$n\log n$</X.P>
+                    </td>
+                    <td>
+                        <X.P>$n\log n$</X.P>
+                    </td>
+                    <td>
+                        <X.P>$n^2$</X.P>
+                    </td>
+                    <td>
+                        <X.P>$\log n$</X.P>
+                    </td>
+                    <td>否</td>
+                </tr>
+                <tr>
+                    <td>堆排序</td>
+                    <td>
+                        <X.P>$n\log n$</X.P>
+                    </td>
+                    <td>
+                        <X.P>$n\log n$</X.P>
+                    </td>
+                    <td>
+                        <X.P>$n\log n$</X.P>
+                    </td>
+                    <td>
+                        <X.P>$1$</X.P>
+                    </td>
+                    <td>否</td>
+                </tr>
+                <tr>
+                    <th rowSpan={3}>
+                        <X.P>不基于\n比较</X.P>
+                    </th>
+                    <td>计数排序</td>
+                    <td>
+                        <X.P>$n+k$</X.P>
+                    </td>
+                    <td>
+                        <X.P>$n+k$</X.P>
+                    </td>
+                    <td>
+                        <X.P>$n+k$</X.P>
+                    </td>
+                    <td>
+                        <X.P>$n+k$</X.P>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>桶排序</td>
+                    <td>
+                        <X.P>$n+k$</X.P>
+                    </td>
+                    <td>
+                        <X.P>$-$</X.P>
+                    </td>
+                    <td>
+                        <X.P>$-$</X.P>
+                    </td>
+                    <td>
+                        <X.P>$n+k$</X.P>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>基数排序</td>
+                    <td>
+                        <X.P>$dn$</X.P>
+                    </td>
+                    <td>
+                        <X.P>$dn$</X.P>
+                    </td>
+                    <td>
+                        <X.P>$dn$</X.P>
+                    </td>
+                    <td>
+                        <X.P>$n+d$</X.P>
+                    </td>
+                    <td></td>
+                </tr>
             </X.Table>
+            <X.P noMarginBottom>注：</X.P>
+            <X.Uli>希尔排序的时间复杂度与增量序列有关，表格给出的只是一组较为常见的数据。</X.Uli>
+            <X.Uli>计数排序中的$k$为数据最大值与最小值之差。</X.Uli>
+            <X.Uli>
+                桶排序中的$k$为桶的数量，当$k$近似等于元素数量时，桶排序时间复杂度是线性的。---
+                如果桶内排序使用稳定排序算法，则桶排序也是稳定的。
+            </X.Uli>
+            <X.Uli>基数排序中的$d$为数据的位数，当$d$较小时，基数排序时间复杂度是线性的。</X.Uli>
             <X.P>
                 本文会给出所有排序算法（从小到大升序排列）的代码实现，代码可以直接提交到@洛谷 -
                 P1177【模板】排序[https://www.luogu.com.cn/problem/P1177]@，其中的`sortArray`函数可以提交到@力扣 -
@@ -188,6 +250,10 @@ export default function Blog() {
                 `}
             />
             <X.P>测试结果：洛谷通过`1`/`5`；力扣通过`10`/`21`。</X.P>
+            <X.H2>优化</X.H2>
+            <X.P>
+                如果一次冒泡过程中没有发生交换，说明数组已经有序，可以提前结束排序。这样最好情况下时间复杂度是$O(n)$。
+            </X.P>
             <X.H1>选择排序</X.H1>
             <X.P>每次从未排序序列中找出最小的元素，放到已排序序列的末尾。</X.P>
             <X.CodeBlock
@@ -278,6 +344,11 @@ export default function Blog() {
             <X.HighlightBlock>
                 <X.P>在数组基本有序的情况下，插入排序的效率是非常高的。</X.P>
             </X.HighlightBlock>
+            <X.H2>优化</X.H2>
+            <X.P>
+                可以使用二分查找优化插入排序的查找过程，不过此时平均时间复杂度仍然是$O(n^2)$，因为平均情况下仍然会涉及到元素的移动。---
+                此优化只是常数优化。
+            </X.P>
             <X.H1>希尔排序</X.H1>
             <X.P>希尔排序每次将相隔`gap`的元素分为一组，对每一组进行插入排序，然后逐渐减半`gap`的值，直到`gap=1`。</X.P>
             <X.CodeBlock
@@ -562,6 +633,11 @@ export default function Blog() {
             <X.P>测试结果：洛谷通过`3`/`5`；力扣AC/`76ms`。</X.P>
             <X.P>
                 洛谷有两组数据极差较大，因此有两个测试点MLE；力扣数据范围小因此可以通过。计数排序时间效率是非常快的。
+            </X.P>
+            <X.H2>关于空间复杂度</X.H2>
+            <X.P>
+                在对整数排序的例子中，显然只需要$O(k)$的额外复杂度；不过考虑对结构体数组按键进行排序，此时就不能简单的用一个整数表示“该键出现了多少次”，---
+                需要额外的$O(n)$空间存储其他信息，比如结构体的地址，此时整体空间复杂度是$O(n+k)$的。
             </X.P>
             <X.H1>桶排序</X.H1>
             <X.P>
