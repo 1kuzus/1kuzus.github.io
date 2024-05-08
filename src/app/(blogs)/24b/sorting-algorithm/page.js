@@ -141,7 +141,7 @@ export default function Blog() {
                     <td>否</td>
                 </tr>
                 <tr>
-                    <th rowSpan={3}>
+                    <th rowSpan={4}>
                         <X.P>不基于\n比较</X.P>
                     </th>
                     <td>计数排序</td>
@@ -160,15 +160,31 @@ export default function Blog() {
                     <td></td>
                 </tr>
                 <tr>
-                    <td>桶排序</td>
+                    <td>桶排序/插入</td>
+                    <td>
+                        <X.P>$n^2/k$</X.P>
+                    </td>
                     <td>
                         <X.P>$n+k$</X.P>
                     </td>
                     <td>
-                        <X.P>$-$</X.P>
+                        <X.P>$n^2$</X.P>
                     </td>
                     <td>
-                        <X.P>$-$</X.P>
+                        <X.P>$n+k$</X.P>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>桶排序/归并</td>
+                    <td>
+                        <X.P>$n\log(n/k)$</X.P>
+                    </td>
+                    <td>
+                        <X.P>$n+k$</X.P>
+                    </td>
+                    <td>
+                        <X.P>$n\log n$</X.P>
                     </td>
                     <td>
                         <X.P>$n+k$</X.P>
@@ -196,7 +212,8 @@ export default function Blog() {
             <X.Uli>希尔排序的时间复杂度与增量序列有关，表格给出的只是一组较为常见的数据。</X.Uli>
             <X.Uli>计数排序中的$k$为数据最大值与最小值之差。</X.Uli>
             <X.Uli>
-                桶排序中的$k$为桶的数量，当$k$近似等于元素数量时，桶排序时间复杂度是线性的。---
+                桶排序中的$k$为桶的数量，对于最好情况，元素在桶中均匀分布且当$k$近似等于元素数量$n$时，桶排序时间复杂度是线性的；---
+                对于最坏情况，大多数元素都分布在一个桶里，此时桶排序时间复杂度取决于桶内排序算法。---
                 如果桶内排序使用稳定排序算法，则桶排序也是稳定的。
             </X.Uli>
             <X.Uli>基数排序中的$d$为数据的位数，当$d$较小时，基数排序时间复杂度是线性的。</X.Uli>
