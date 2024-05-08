@@ -590,7 +590,7 @@ export default function Blog() {
                 vector<int> sortArray(vector<int> &nums)
                 {
                     int k=100;//桶的大小 
-                    int mx=-2147483647,mi=-mx;
+                    int mx=nums[0],mi=nums[0];
                     for(auto x:nums)
                     {
                         if(x>mx) mx=x;
@@ -632,6 +632,64 @@ export default function Blog() {
                 `}
             />
             <X.P>测试结果：洛谷AC/`402ms`；力扣AC/`83ms`。</X.P>
+            <X.P>
+                注：可能因为STL容器常数较大，在洛谷只是初始化`buckets`就花费了较长时间（前两个元素范围较大的测试点约`100ms`）。
+            </X.P>
+            <X.H1>基数排序</X.H1>
+            <X.P>基数排序从低位到高位依次对每一位进行计数排序，最后得到有序序列。</X.P>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                #include <iostream>
+                #include <vector>
+                using namespace std;
+                vector<int> sortArray(vector<int> &nums)
+                {
+                    int mx=nums[0],mi=nums[0];
+                    for(auto x:nums)
+                    {
+                        if(x>mx) mx=x;
+                        if(x<mi) mi=x;
+                    }
+                    for(int i=0;i<nums.size();i++) nums[i]-=mi;//减掉最小值，这样可以排序负数 
+                    mx-=mi;
+                    vector<vector<int>> dgt(10);//每趟排序对一位进行计数排序 
+                    for(int exp=1;mx/exp>0;exp*=10)
+                    {
+                        for(auto x:nums)
+                        {
+                            dgt[(x/exp)%10].emplace_back(x);
+                        }
+                        nums.clear();
+                        for(int i=0;i<10;i++)
+                        {
+                            nums.insert(nums.end(),dgt[i].begin(),dgt[i].end());
+                            dgt[i].clear();
+                        }
+                    }
+                    for(int i=0;i<nums.size();i++) nums[i]+=mi;//还原 
+                    return nums;
+                }
+                int main()
+                {
+                    ios::sync_with_stdio(false);
+                    int n;
+                    cin>>n;
+                    vector<int> nums(n);
+                    for(int i=0;i<n;i++)
+                    {
+                        cin>>nums[i];
+                    }
+                    sortArray(nums);
+                    for(int i=0;i<n;i++)
+                    {
+                        cout<<nums[i]<<' ';
+                    }
+                    return 0;
+                }
+                `}
+            />
+            <X.P>测试结果：洛谷AC/`67ms`；力扣AC/`83ms`。</X.P>
         </>
     );
 }
