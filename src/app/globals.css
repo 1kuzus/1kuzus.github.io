@@ -7,7 +7,7 @@
 :root.light {
     --color-main: #30303c;
     --bg-main: #ffffff;
-    --bg-main-transparent: #ffffffc0;
+    --bg-main-transparent: #ffffffd0;
     --bg-body: #ffffff;
     --bg-transparent-golden: #ffb80018;
     --bg-transparent-red: #ff380018;
@@ -32,7 +32,7 @@
 :root.dark {
     --color-main: #fcfcfc;
     --bg-main: #141416;
-    --bg-main-transparent: #141416d0;
+    --bg-main-transparent: #141416e0;
     --bg-body: #1c1c1e;
     --bg-transparent-golden: #c08a0020;
     --bg-transparent-red: #c02a0020;
