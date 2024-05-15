@@ -14,7 +14,7 @@ export default function Blog() {
         <>
             <X.Title>{metas[pathname].blogtitle}</X.Title>
             <X.H1>前情提要</X.H1>
-            <X.P>这个博客网站是一个`Create React App`项目，此前一直在Github仓库的`master`分支开发。</X.P>
+            <X.P>这个博客网站曾经是一个`Create React App`项目，此前一直在Github仓库的`master`分支开发。</X.P>
             <X.P>
                 之前为了配置路径别名进行了`eject`，后来发现设置`jsconfig.json`就可以解决问题，于是一直想还原成没有`eject`的项目。---
                 当然，`eject`操作是不可逆的，于是我把原来的`master`分支备份到`v1`分支，再另建一个新项目，把旧代码迁移过来，---
