@@ -302,6 +302,8 @@ export default function Blog() {
                 </X.P>
             </X.Oli>
             <X.Br />
+
+
             <X.Oli>
                 <X.P>你电脑上发出去的数据，先被运输层包装，还是先被网络层包装？</X.P>
                 <X.P>先被运输层包装。对于发送方而言，从上到下层层包装；对于接收方而言，从下到上层层解开包装。</X.P>
@@ -309,7 +311,7 @@ export default function Blog() {
             <X.Br />
             <X.Oli>
                 <X.P>网络层为什么不面向连接？</X.P>
-                <X.P>阿迪斯v</X.P>
+                <X.P>无</X.P>
             </X.Oli>
 
             {/* <X.H1>编程语言</X.H1>
@@ -327,7 +329,14 @@ export default function Blog() {
                 <X.Formula text="\lim_{n \to \infty} (x^n+y^n)^{1/n} = \max(x,y)" />
                 <X.Formula text="\lim_{n \to -\infty} (x^n+y^n)^{1/n} = \min(x,y)" />
             </X.Oli>
-            {/* 说顶会名字 */}
+            <X.Br />
+            <X.Oli>
+                <X.P>说说你接触/听说过的研究方向，有哪些顶会顶刊？</X.P>
+                <X.P>
+                    计算机视觉：CVPR、ICCV、ECCV、TPAMI（顶刊）\n机器学习：ICML、ICLR、NIPS\n
+                    自然语言处理：ACL、NAACL、EMNLP\n安全：ACM CCS、NDSS、USENIX Security、IEEE S&P\n
+                </X.P>
+            </X.Oli>
         </>
     );
 }
