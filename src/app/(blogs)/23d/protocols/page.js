@@ -385,7 +385,7 @@ export default function Blog() {
                         <X.P>前`8`位</X.P>
                     </td>
                     <td>
-                        <X.P>后`32`位</X.P>
+                        <X.P>后`24`位</X.P>
                     </td>
                     <td>
                         <X.P>`0`~`127`</X.P>
@@ -408,10 +408,10 @@ export default function Blog() {
                 <tr>
                     <td>C</td>
                     <td>
-                        <X.P>前`8`位</X.P>
+                        <X.P>前`24`位</X.P>
                     </td>
                     <td>
-                        <X.P>后`32`位</X.P>
+                        <X.P>后`8`位</X.P>
                     </td>
                     <td>
                         <X.P>`192`~`223`</X.P>
