@@ -22,6 +22,11 @@ const archives = [
                 path: '/24a/git-merge-allow-unrelated-histories/',
                 time: '2024-02-02',
             },
+            {
+                title: '单射、满射、双射',
+                path: '/24b/injective-surjective-bijective/',
+                time: '2024-05-19',
+            },
         ],
     },
     {
