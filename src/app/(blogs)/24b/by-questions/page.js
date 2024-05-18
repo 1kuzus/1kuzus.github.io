@@ -370,6 +370,9 @@ export default function Blog() {
             </X.Oli>
             <X.Br />
             {/* IP。DHCP.ARP....... */}
+            {/* 
+            单射、满射、双射英文：injective-surjective-bijective
+            */}
 
             <X.Oli>
                 <X.P>说说TCP和UDP的区别？ </X.P>
