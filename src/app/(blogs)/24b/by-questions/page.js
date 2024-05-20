@@ -326,6 +326,17 @@ export default function Blog() {
             </X.Oli>
             <X.Br />
             <X.Oli>
+                <X.P>媒体接入控制是什么？有哪些方式？</X.P>
+                <X.P>
+                    当多个发送方和多个接收方共享一个信道时，需要协调对这个信道（物理媒介）的访问，这也是媒体接入控制旨在解决的问题。
+                </X.P>
+                <X.P>
+                    媒体介入控制大体可以分为两种：*静态划分信道*和*动态接入控制*，前者也就是多路复用技术，包括时/频/波/码分多路复用；后者通过协议来进行控制。\n
+                    动态接入控制又可以分为*轮询访问*和*随机访问*，轮询访问有令牌传递协议；随机访问包括ALOHA、CSMA、CSMA/CD、CSMA/CA协议等。
+                </X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
                 <X.P>CSMA/CD中文是什么？CSMA/CD相比CSMA有什么区别？</X.P>
                 <X.P>
                     CS：载波监听；MA：多路访问；CD：碰撞检测。\nCSMA发生冲突仍然会把数据帧发完，等待接收方响应NAK（或不响应），---
@@ -369,6 +380,35 @@ export default function Blog() {
                 </X.P>
             </X.Oli>
             <X.Br />
+            <X.Oli>
+                <X.P>升级到IPv6主要是为了解决什么问题？IPv6比IPv4有什么改进？</X.P>
+                <X.P>
+                    为了解决IPv4地址用尽。IPv6地址空间更大，且改进了报文头（例如移除了校验和字段、可选字段）以提高路由效率。
+                </X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+            <X.P>介绍一下DHCP协议？</X.P>
+                <X.P>
+                    为了解决IPv4地址用尽。IPv6地址空间更大，且改进了报文头（例如移除了校验和字段、可选字段）以提高路由效率。
+                </X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+            <X.P>介绍一下ICMP协议？</X.P>
+                <X.P>
+                    为了解决IPv4地址用尽。IPv6地址空间更大，且改进了报文头（例如移除了校验和字段、可选字段）以提高路由效率。
+                </X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+            <X.P>介绍一下ARP协议？</X.P>
+                <X.P>
+                    为了解决IPv4地址用尽。IPv6地址空间更大，且改进了报文头（例如移除了校验和字段、可选字段）以提高路由效率。
+                </X.P>
+            </X.Oli>
+            <X.Br />
+            {/* 路由器和交换机 */}
             {/* IP。DHCP.ARP....... */}
 
             <X.Oli>
@@ -428,6 +468,11 @@ export default function Blog() {
                     计算机视觉：CVPR、ICCV、ECCV、TPAMI（顶刊）\n机器学习：ICML、ICLR、NIPS\n
                     自然语言处理：ACL、NAACL、EMNLP\n安全：ACM CCS、NDSS、USENIX Security、IEEE S&P\n
                 </X.P>
+            </X.Oli>
+            <X.Br />
+            <X.Oli>
+                <X.P>怎么判断一个子网掩码是否合法？</X.P>
+                <X.P>二进制`32`位，且满足形式：连续的`1`后面跟随连续的`0`。</X.P>
             </X.Oli>
         </>
     );
