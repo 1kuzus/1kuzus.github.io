@@ -34,6 +34,9 @@ const metadata = {
     '/24b/rank-inequality/': {
         addition: 'r(A) + r(B) - n <= r(AB) <= min r(A), r(B)',
     },
+    '/24b/injective-surjective-bijective/': {
+        addition: 'injective surjective bijective',
+    },
 };
 
 const metas = archives
