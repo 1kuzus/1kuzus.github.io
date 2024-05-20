@@ -53,6 +53,11 @@ const archives = [
                 time: '2024-05-06',
             },
             {
+                title: '最小生成树与最短路算法',
+                path: '/24b/mst-and-sp/',
+                time: '2024-05-19',
+            },
+            {
                 title: 'CSP 201604 T1-T4题解',
                 path: '/24a/csp-2016-04/',
                 time: '2024-03-09',
