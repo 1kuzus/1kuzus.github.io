@@ -71,7 +71,7 @@ export default function Blog() {
                 </tr>
             </X.Table>
             <X.H1>最小生成树</X.H1>
-            <X.P noMarginBottom>最小生成树部分会分别给出可以提交到以下两道题的代码：</X.P>
+            <X.P noMarginBottom>最小生成树部分会分别给出可以提交到以下两道题目的代码：</X.P>
             <X.Uli>@洛谷 - P3366【模板】最小生成树[https://www.luogu.com.cn/problem/P3366]@</X.Uli>
             <X.Uli>
                 @力扣 -
@@ -220,13 +220,20 @@ export default function Blog() {
                 Prim算法的思想和Dijkstra算法很像，不同的是Prim算法是找到一个点加入集合，而Dijkstra算法将点加入集合后还要去松弛其他点。
             </X.P>
             <X.H1>单源最短路</X.H1>
-            <X.P noMarginBottom>单源最短路部分会给出可以提交到以下两道题目的代码（两道题目只是数据不同，代码是一样的）：</X.P>
+            <X.P noMarginBottom>
+                单源最短路部分会给出可以提交到以下两道题目的代码（两道题目只是数据不同，代码是一样的）：
+            </X.P>
             <X.Uli>@洛谷 - P3371【模板】单源最短路径（弱化版）[https://www.luogu.com.cn/problem/P3371]@</X.Uli>
             <X.Uli>@洛谷 - P4779【模板】单源最短路径（标准版）[https://www.luogu.com.cn/problem/P4779]@</X.Uli>
             <X.P noMarginBottom>对于Bellman-Ford算法，会给出判负环测试题目的代码：</X.P>
             <X.Uli>@洛谷 - P3385【模板】负环[https://www.luogu.com.cn/problem/P3385]@</X.Uli>
             <X.H2>Bellman-Ford</X.H2>
             <X.H2>Dijkstra</X.H2>
+            <X.H1>全源最短路</X.H1>
+            <X.P noMarginBottom>全源最短路部分会给出可以提交到以下题目的代码：</X.P>
+            <X.Uli>@洛谷 - P5905【模板】全源最短路[https://www.luogu.com.cn/problem/P5905]@</X.Uli>
+            <X.H2>Floyd</X.H2>
+            <X.H2>Johnson</X.H2>
         </>
     );
 }
