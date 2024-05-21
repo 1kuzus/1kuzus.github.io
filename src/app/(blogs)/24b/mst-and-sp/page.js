@@ -70,6 +70,8 @@ export default function Blog() {
                     </td>
                 </tr>
             </X.Table>
+            <X.P noMarginBottom>注：</X.P>
+            <X.Uli>本文用$V$表示顶点数，$E$表示边数。</X.Uli>
             <X.H1>最小生成树</X.H1>
             <X.P noMarginBottom>最小生成树部分会分别给出可以提交到以下两道题目的代码：</X.P>
             <X.Uli>@洛谷 - P3366【模板】最小生成树[https://www.luogu.com.cn/problem/P3366]@</X.Uli>
@@ -216,6 +218,8 @@ export default function Blog() {
                 将其加入最小生成树，并将这条边连接的另一个顶点加入$T$中，然后更新其他点到$T$的距离。
             </X.P>
             {/* <X.P>在编程实现时，维护一个数组$d$，$d[i]$表示$i$到集合$T$的最短距离，初始时$d[0]=0$。</X.P> */}
+            {/* auto & e */}
+            {/* u,v一起出现才用u,否则就用i */}
             <X.P>
                 Prim算法的思想和Dijkstra算法很像，不同的是Prim算法是找到一个点加入集合，而Dijkstra算法将点加入集合后还要去松弛其他点。
             </X.P>
@@ -228,12 +232,21 @@ export default function Blog() {
             <X.P noMarginBottom>对于Bellman-Ford算法，会给出判负环测试题目的代码：</X.P>
             <X.Uli>@洛谷 - P3385【模板】负环[https://www.luogu.com.cn/problem/P3385]@</X.Uli>
             <X.H2>Bellman-Ford</X.H2>
+            <X.P>
+                Bellman-Ford算法思想非常简单，由于源点到任意点的最短路径最多包含$V-1$条边，因此对所有边进行$V-1$次松弛操作，一定能得到最短路。---
+                $V-1$次循环后，如果还能存在能继续松弛的边，则说明存在负环。
+            </X.P>
             <X.H2>Dijkstra</X.H2>
             <X.H1>全源最短路</X.H1>
             <X.P noMarginBottom>全源最短路部分会给出可以提交到以下题目的代码：</X.P>
             <X.Uli>@洛谷 - P5905【模板】全源最短路[https://www.luogu.com.cn/problem/P5905]@</X.Uli>
             <X.H2>Floyd</X.H2>
+            <X.P>
+                Floyd算法基于动态规划，维护图`g[i][j]`，最外层用`k`次循环更新，每次循环`g[i][j]`的含义是：\n
+                从`i`到`j`，所有中间结点取自`1`~`k`的最短路。
+            </X.P>
             <X.H2>Johnson</X.H2>
+            <X.P>一个朴素的想法是对每个顶点都跑一次Dijkstra算法，但Dijkstra算法不能处理负权边。</X.P>
         </>
     );
 }
