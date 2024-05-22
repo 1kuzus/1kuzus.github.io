@@ -220,6 +220,7 @@ export default function Blog() {
             {/* <X.P>在编程实现时，维护一个数组$d$，$d[i]$表示$i$到集合$T$的最短距离，初始时$d[0]=0$。</X.P> */}
             {/* auto & e */}
             {/* u,v一起出现才用u,否则就用i */}
+            {/* 单行if */}
             <X.P>
                 Prim算法的思想和Dijkstra算法很像，不同的是Prim算法是找到一个点加入集合，而Dijkstra算法将点加入集合后还要去松弛其他点。
             </X.P>
