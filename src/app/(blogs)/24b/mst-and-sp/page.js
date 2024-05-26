@@ -24,35 +24,35 @@ export default function Blog() {
                     <td>最小生成树</td>
                     <td>Kruskal</td>
                     <td>
-                        <X.P>$n^2$</X.P>
+                        <X.P>$E\log E$</X.P>
                     </td>
                 </tr>
                 <tr>
                     <td>最小生成树</td>
                     <td>Prim（朴素）</td>
                     <td>
-                        <X.P>$n^2$</X.P>
+                        <X.P>$V^2$</X.P>
                     </td>
                 </tr>
                 <tr>
                     <td>最小生成树</td>
                     <td>Prim（优先队列）</td>
                     <td>
-                        <X.P>$n^2$</X.P>
+                        <X.P>$E\log E$</X.P>
                     </td>
                 </tr>
                 <tr>
                     <td>单源最短路</td>
                     <td>Bellman-Ford</td>
                     <td>
-                        <X.P>$n^2$</X.P>
+                        <X.P>$VE$</X.P>
                     </td>
                 </tr>
                 <tr>
                     <td>单源最短路</td>
                     <td>Dijkstra（优先队列）</td>
                     <td>
-                        <X.P>$n^2$</X.P>
+                        <X.P>$E\log E$</X.P>
                     </td>
                 </tr>
                 <tr>
@@ -72,6 +72,19 @@ export default function Blog() {
             </X.Table>
             <X.P noMarginBottom>注：</X.P>
             <X.Uli>本文用$V$表示顶点数，$E$表示边数。</X.Uli>
+            <X.Uli>
+                <X.P noMarginBottom>有的文章写优先队列实现的Dijkstra算法时间复杂度为$E\log V$，可以作如下理解：</X.P>
+                <X.Oli>
+                    数学角度，最坏情况对于稠密图仍有$E$接近$V^2$，$O(E\log E)=O(E\log V^2)=O(2E\log V)=O(E\log V)$。
+                </X.Oli>
+                <X.Oli>
+                    编程实现角度，对于本文给出的代码，优先队列中存在节点编号相同，但$d$值不同的元素；也就是说使用STL的优先队列---
+                    会有*节点编号重复*的元素，队列的长度可能达到$E$级别，因此单次操作也是$O(\log
+                    E)$的。如果优先队列使用其他实现方式，将元素总数维护在$V$级别，---
+                    对松弛操作修改已有节点，而不是插入新节点，此时单次操作时间复杂度就是$O(\log V)$。
+                </X.Oli>
+            </X.Uli>
+            <X.Uli>对于Prim算法时间复杂度的争论是类似的。</X.Uli>
             <X.H1>最小生成树</X.H1>
             <X.P noMarginBottom>最小生成树部分会分别给出可以提交到以下两道题目的代码：</X.P>
             <X.Uli>@洛谷 - P3366【模板】最小生成树[https://www.luogu.com.cn/problem/P3366]@</X.Uli>
@@ -81,10 +94,8 @@ export default function Blog() {
             </X.Uli>
             <X.H2>Kruskal</X.H2>
             <X.P>
-                将所有边按权值排序，然后从小到大考虑将边加入最小生成树，如果这条边加入后会形成环，就舍弃之。使用并查集判断是否会成环。
+                Kruskal算法将所有边按权值排序，然后从小到大考虑将边加入最小生成树，如果这条边加入后会形成环，就舍弃之。使用并查集判断是否会成环。
             </X.P>
-            {/* <X.P>测试结果：洛谷通过`2`/`5`；力扣通过`11`/`21`。</X.P>
-            <X.P>测试结果：洛谷AC/`342ms`；力扣AC/`136ms`。</X.P> */}
             <X.P>洛谷AC/`342ms`，代码如下：</X.P>
             <X.CodeBlock
                 language="cpp"
@@ -111,7 +122,7 @@ export default function Blog() {
                     ne++;
                     return;
                 }
-
+                
                 int f[N];
                 int find(int x)
                 {
@@ -126,7 +137,7 @@ export default function Blog() {
                 {
                     return find(x)==find(y);
                 }
-
+                
                 int main()
                 {
                     cin>>n>>m;
@@ -162,7 +173,7 @@ export default function Blog() {
                 #define N 1005
                 #define M 1000005
                 class Solution {
-                public:
+                    public:
                     int ne,ans;
                     struct EDGE{
                         int u,v;
@@ -180,12 +191,12 @@ export default function Blog() {
                         ne++;
                         return;
                     }
-
+                    
                     int f[N];
                     int find(int x){return (f[x]==x)?x:(f[x]=find(f[x]));}
                     void uni(int x,int y){f[find(x)]=find(y);return;}
                     bool connected(int x,int y){return find(x)==find(y);}
-
+                    
                     int minCostConnectPoints(vector<vector<int>>& points) {
                         int n=points.size();
                         for(int i=0;i<n;i++)
@@ -228,7 +239,7 @@ export default function Blog() {
                 int n,m,ans,cnt,d[N];
                 bool vis[N];//顶点是否在集合T中，把0作为起点 
                 int g[N][N];
-
+                
                 int main()
                 {
                     cin>>n>>m;
@@ -283,11 +294,11 @@ export default function Blog() {
                 #define N 1005
                 #define INF 2147483647
                 class Solution {
-                public:
+                    public:
                     int ans,cnt,d[N];
                     bool vis[N];
                     int g[N][N];
-
+                    
                     int minCostConnectPoints(vector<vector<int>>& points) {
                         int n=points.size();
                         for(int i=1;i<n;i++) d[i]=INF;
@@ -358,7 +369,7 @@ export default function Blog() {
                     }
                 };
                 priority_queue<NODE> q;
-
+                
                 int main()
                 {
                     cin>>n>>m;
@@ -403,7 +414,7 @@ export default function Blog() {
                 #define N 1005
                 #define INF 2147483647
                 class Solution {
-                public:
+                    public:
                     int ans,cnt,d[N];
                     bool vis[N];
                     struct EDGE{
@@ -423,7 +434,7 @@ export default function Blog() {
                         }
                     };
                     priority_queue<NODE> q;
-
+                    
                     int minCostConnectPoints(vector<vector<int>>& points) {
                         int n=points.size();
                         for(int i=1;i<n;i++) d[i]=INF;
@@ -460,6 +471,12 @@ export default function Blog() {
                 };
                 `}
             />
+            <X.H2>分析</X.H2>
+            <X.P>
+                洛谷题目的数据范围$N \leq 5000, M \leq 2 \times
+                10^5$，算是一张稀疏图，因此优先队列优化的Prim效率更优；---
+                力扣题目是一张完全图，此时朴素Prim反而效率更高。
+            </X.P>
             <X.H1>单源最短路</X.H1>
             <X.P noMarginBottom>
                 单源最短路部分会给出可以提交到以下两道题目的代码（两道题目只是数据不同，代码是一样的）：
@@ -473,7 +490,211 @@ export default function Blog() {
                 Bellman-Ford算法思想非常简单，由于源点到任意点的最短路径最多包含$V-1$条边，因此对所有边进行$V-1$次松弛操作，一定能得到最短路。---
                 $V-1$次循环后，如果还能存在能继续松弛的边，则说明存在负环。
             </X.P>
-            <X.H2>Dijkstra</X.H2>
+            <X.P>洛谷弱化版通过`7`/`10`，标准版通过`0`/`6`，代码如下：</X.P>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                #define N 100005
+                #define INF 2147483647
+                #include <iostream>
+                #include <vector>
+                using namespace std;
+                int n,m,s,d[N];
+                struct EDGE{
+                    int to,w;
+                };
+                vector<EDGE> g[N];
+                void addEdge(int u,int v,int w)
+                {
+                    g[u].emplace_back((EDGE){v,w});
+                    return;
+                }
+
+                int main()
+                {
+                    cin>>n>>m>>s;
+                    for(int i=0;i<n;i++) d[i]=INF;
+                    d[s-1]=0; 
+                    for(int i=0;i<m;i++)
+                    {
+                        int u,v,w;
+                        cin>>u>>v>>w;
+                        addEdge(u-1,v-1,w);
+                    }
+                    //每次循环都对全图所有边进行一次松弛操作，一共执行n-1次循环
+                    for(int t=0;t<n-1;t++)
+                    {
+                        //下面两重循环遍历了m条边 
+                        for(int u=0;u<n;u++)
+                        {
+                            for(EDGE e:g[u])
+                            {
+                                int v=e.to;
+                                if(d[v]-e.w>d[u])//注意加法可能溢出 
+                                {
+                                    d[v]=d[u]+e.w;
+                                }
+                            }
+                        }
+                    }
+                    for(int i=0;i<n;i++)
+                    {
+                        cout<<d[i]<<' ';
+                    }
+                    cout<<endl;
+                    return 0;
+                }
+                `}
+            />
+            <X.H2>Bellman-Ford（判负环）</X.H2>
+            <X.P>洛谷AC/`703ms`，代码如下：</X.P>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                #define N 2005
+                #define INF 1000000009
+                #include <iostream>
+                #include <vector>
+                using namespace std;
+                int T,n,m,d[N];
+                struct EDGE{
+                    int to,w;
+                };
+                vector<EDGE> g[N];
+                void addEdge(int u,int v,int w)
+                {
+                    g[u].emplace_back((EDGE){v,w});
+                    return;
+                }
+
+                int main()
+                {
+                    cin>>T;
+                    while(T--)
+                    {
+                        cin>>n>>m;		
+                        for(int i=0;i<n;i++) g[i].clear();
+                        for(int i=0;i<n;i++) d[i]=INF;
+                        d[0]=0;
+                        for(int i=0;i<m;i++)
+                        {
+                            int u,v,w;
+                            cin>>u>>v>>w;
+                            addEdge(u-1,v-1,w);
+                            if(w>=0) addEdge(v-1,u-1,w);//题目要求 
+                        }
+                        //每次循环都对全图所有边进行一次松弛操作，一共执行n-1次循环
+                        for(int i=0;i<n-1;i++)
+                        {
+                            //下面两重循环遍历了m条边 
+                            for(int u=0;u<n;u++)
+                            {
+                                for(EDGE e:g[u])
+                                {
+                                    int v=e.to;
+                                    if(d[v]>d[u]+e.w) 
+                                    {
+                                        d[v]=d[u]+e.w;
+                                    }
+                                }
+                            }
+                        }
+                        bool flag=false;
+                        for(int u=0;u<n;u++)
+                        {
+                            //题目要求判断是否存在从顶点1出发能到达的负环，因此d值过大的顶点视为不与1联通 
+                            if(d[u]>1e8) continue;
+                            for(EDGE e:g[u])
+                            {
+                                int v=e.to;
+                                //如果n-1轮松弛后，仍然有可以松弛的边，说明有负环 
+                                if(d[v]-e.w>d[u])
+                                {
+                                    flag=true;
+                                }
+                            }
+                        }
+                        cout<<(flag?"YES":"NO")<<endl;
+                    }
+                    return 0;
+                }
+                `}
+            />
+            <X.H2>Dijkstra（优先队列）</X.H2>
+            <X.P>
+                Dijkstra算法从源点开始，每次选择最短路估计距离最小的点进行松弛操作，并把这个点标记为已访问，直到所有点都被标记。
+            </X.P>
+            <X.P>
+                注意Dijkstra维护的$d$与Prim维护的$d$的含义不同，Prim维护的是$T$之外的点到$T$的最短距离，$d$值一定是一条边的长度；---
+                而Dijkstra维护的是源点到顶点的“最短路径估计”，$d$值是一条路径的长度。
+            </X.P>
+            <X.P>洛谷弱化版AC/`963ms`，标准版AC/`667ms`，代码如下：</X.P>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                #define N 100005
+                #define INF 2147483647
+                #include <iostream>
+                #include <vector>
+                #include <queue>
+                using namespace std;
+                int n,m,s,d[N];
+                bool vis[N];
+                struct EDGE{
+                    int to,w;
+                };
+                vector<EDGE> g[N];
+                void addEdge(int u,int v,int w)
+                {
+                    g[u].emplace_back((EDGE){v,w});
+                    return;
+                }
+                struct NODE{
+                    int id,d;
+                    friend bool operator <(NODE a,NODE b)
+                    {
+                        return a.d>b.d;
+                    }
+                };
+                priority_queue<NODE> q;
+
+                int main()
+                {
+                    cin>>n>>m>>s;
+                    for(int i=0;i<n;i++) d[i]=INF;
+                    d[s-1]=0;
+                    q.push((NODE){s-1,0});
+                    for(int i=0;i<m;i++)
+                    {
+                        int u,v,w;
+                        cin>>u>>v>>w;
+                        addEdge(u-1,v-1,w);
+                    }
+                    while(!q.empty())
+                    {
+                        int u=q.top().id;
+                        q.pop();
+                        if(vis[u]) continue;
+                        vis[u]=true;
+                        for(auto e:g[u])
+                        {
+                            int v=e.to;
+                            if(d[v]-e.w>d[u])
+                            {
+                                d[v]=d[u]+e.w;
+                                q.push((NODE){v,d[v]});
+                            }
+                        }
+                    }
+                    for(int i=0;i<n;i++)
+                    {
+                        cout<<d[i]<<' ';
+                    }
+                    cout<<endl;
+                    return 0;
+                }
+                `}
+            />
             <X.H1>全源最短路</X.H1>
             <X.P noMarginBottom>全源最短路部分会给出可以提交到以下题目的代码：</X.P>
             <X.Uli>@洛谷 - P5905【模板】全源最短路[https://www.luogu.com.cn/problem/P5905]@</X.Uli>
@@ -484,7 +705,6 @@ export default function Blog() {
             </X.P>
             <X.H2>Johnson</X.H2>
             <X.P>一个朴素的想法是对每个顶点都跑一次Dijkstra算法，但Dijkstra算法不能处理负权边。</X.P>
-            
 
             {/* <X.P>在编程实现时，维护一个数组$d$，$d[i]$表示$i$到集合$T$的最短距离，初始时$d[0]=0$。</X.P> */}
             {/* auto & e */}
