@@ -29,14 +29,14 @@ export default function Blog() {
                 </tr>
                 <tr>
                     <td>最小生成树</td>
-                    <td>朴素Prim</td>
+                    <td>Prim（朴素）</td>
                     <td>
                         <X.P>$n^2$</X.P>
                     </td>
                 </tr>
                 <tr>
                     <td>最小生成树</td>
-                    <td>堆优化Prim</td>
+                    <td>Prim（优先队列）</td>
                     <td>
                         <X.P>$n^2$</X.P>
                     </td>
@@ -50,7 +50,7 @@ export default function Blog() {
                 </tr>
                 <tr>
                     <td>单源最短路</td>
-                    <td>Dijkstra</td>
+                    <td>Dijkstra（优先队列）</td>
                     <td>
                         <X.P>$n^2$</X.P>
                     </td>
@@ -155,7 +155,7 @@ export default function Blog() {
                 }
                 `}
             />
-            <X.P>力扣AC/`1057ms`，代码如下：</X.P>
+            <X.P>力扣AC/`315ms`，代码如下：</X.P>
             <X.CodeBlock
                 language="cpp"
                 code={`
@@ -169,7 +169,7 @@ export default function Blog() {
                         int w;
                         friend bool operator <(EDGE a,EDGE b)
                         {
-                            return a.w<b.w; 
+                            return a.w<b.w;
                         }
                     }edge[M];
                     void addEdge(int u,int v,int w)
@@ -187,13 +187,13 @@ export default function Blog() {
                     bool connected(int x,int y){return find(x)==find(y);}
 
                     int minCostConnectPoints(vector<vector<int>>& points) {
-                        for(int i=0;i<points.size();i++)
+                        int n=points.size();
+                        for(int i=0;i<n;i++)
                         {
                             f[i]=i;//初始化并查集
-                            for(int j=i+1;j<points.size();j++)
+                            for(int j=i+1;j<n;j++)
                             {
                                 int w=abs(points[i][0]-points[j][0])+abs(points[i][1]-points[j][1]);
-                                cout<<w<<endl;
                                 addEdge(i,j,w);
                             }
                         }
@@ -201,10 +201,10 @@ export default function Blog() {
                         for(int i=0;i<ne;i++)
                         {
                             int u=edge[i].u,v=edge[i].v;
-                            if(!connected(u,v))//不成环就加入 
+                            if(!connected(u,v))//不成环就加入
                             {
                                 uni(u,v);
-                                ans+=edge[i].w;//不成环就加入 
+                                ans+=edge[i].w;//不成环就加入
                             }
                         }
                         return ans;
@@ -212,18 +212,254 @@ export default function Blog() {
                 };
                 `}
             />
-            <X.H2>Prim</X.H2>
+            <X.H2>Prim（朴素）</X.H2>
             <X.P>
                 Prim算法维护一个集合$T$，开始时$T$包含一个起点，结束时包含所有顶点。Prim算法的每一步在连接$T$和$T$之外的点的边中选择一条最短的边，---
                 将其加入最小生成树，并将这条边连接的另一个顶点加入$T$中，然后更新其他点到$T$的距离。
             </X.P>
-            {/* <X.P>在编程实现时，维护一个数组$d$，$d[i]$表示$i$到集合$T$的最短距离，初始时$d[0]=0$。</X.P> */}
-            {/* auto & e */}
-            {/* u,v一起出现才用u,否则就用i */}
-            {/* 单行if */}
-            <X.P>
-                Prim算法的思想和Dijkstra算法很像，不同的是Prim算法是找到一个点加入集合，而Dijkstra算法将点加入集合后还要去松弛其他点。
-            </X.P>
+            <X.P>洛谷AC/`812ms`，代码如下：</X.P>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                #define N 5005
+                #define INF 2147483647
+                #include <iostream>
+                using namespace std;
+                int n,m,ans,cnt,d[N];
+                bool vis[N];//顶点是否在集合T中，把0作为起点 
+                int g[N][N];
+
+                int main()
+                {
+                    cin>>n>>m;
+                    for(int i=1;i<n;i++) d[i]=INF;
+                    for(int i=0;i<n;i++)
+                    {
+                        for(int j=0;j<n;j++)
+                        {
+                            if(i!=j) g[i][j]=INF;
+                        }
+                    }
+                    for(int i=0;i<m;i++)
+                    {
+                        int u,v,w;
+                        cin>>u>>v>>w;
+                        if(w<g[u-1][v-1])//可能有重边 
+                        {
+                            g[u-1][v-1]=w;
+                            g[v-1][u-1]=w;
+                        }
+                    }
+                    for(int t=0;t<n;t++)
+                    {
+                        //选择不在T中的顶点中，d[u]最小的顶点u 
+                        int u=0,minval=INF;
+                        for(int i=0;i<n;i++)
+                        {
+                            if(vis[i]) continue;
+                            if(d[i]<minval)	minval=d[i],u=i;
+                        }
+                        if(minval==INF) break;//说明不连通 
+                        vis[u]=true;
+                        cnt++;
+                        ans+=minval;
+                        for(int v=0;v<n;v++)
+                        {
+                            if(vis[v]) continue;
+                            if(g[u][v]<d[v]) d[v]=g[u][v];
+                        }
+                    }
+                    //题目让判断图不连通的情况，因此检查得到的边数是否为顶点数-1 
+                    if(cnt==n) cout<<ans<<endl;
+                    else cout<<"orz"<<endl;
+                    return 0;
+                }
+                `}
+            />
+            <X.P>力扣AC/`44ms`，代码如下：</X.P>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                #define N 1005
+                #define INF 2147483647
+                class Solution {
+                public:
+                    int ans,cnt,d[N];
+                    bool vis[N];
+                    int g[N][N];
+
+                    int minCostConnectPoints(vector<vector<int>>& points) {
+                        int n=points.size();
+                        for(int i=1;i<n;i++) d[i]=INF;
+                        for(int i=0;i<n;i++)
+                        {
+                            for(int j=0;j<n;j++)
+                            {
+                                if(i!=j) g[i][j]=INF;
+                            }
+                        }
+                        for(int i=0;i<n;i++)
+                        {
+                            for(int j=i+1;j<n;j++)
+                            {
+                                int w=abs(points[i][0]-points[j][0])+abs(points[i][1]-points[j][1]);
+                                g[i][j]=w;
+                                g[j][i]=w;
+                            }
+                        }
+                        for(int t=0;t<n;t++)
+                        {
+                            int u=0,minval=INF;
+                            for(int i=0;i<n;i++)
+                            {
+                                if(vis[i]) continue;
+                                if(d[i]<minval)	minval=d[i],u=i;
+                            }
+                            vis[u]=true;
+                            cnt++;
+                            ans+=minval;
+                            for(int v=0;v<n;v++)
+                            {
+                                if(vis[v]) continue;
+                                if(g[u][v]<d[v]) d[v]=g[u][v];
+                            }
+                        }
+                        return ans;
+                    }
+                };
+                `}
+            />
+            <X.H2>Prim（优先队列）</X.H2>
+            <X.P>洛谷AC/`346ms`，代码如下：</X.P>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                #define N 5005
+                #define INF 2147483647
+                #include <iostream>
+                #include <queue>
+                using namespace std;
+                int n,m,ans,cnt,d[N];
+                bool vis[N];//顶点是否在集合T中，把0作为起点 
+                struct EDGE{
+                    int to,w;
+                };
+                vector<EDGE> g[N];
+                void addEdge(int u,int v,int w)
+                {
+                    g[u].emplace_back((EDGE){v,w});
+                    return;
+                }
+                struct NODE{
+                    int id,d;
+                    friend bool operator <(NODE a,NODE b)
+                    {
+                        return a.d>b.d;
+                    }
+                };
+                priority_queue<NODE> q;
+
+                int main()
+                {
+                    cin>>n>>m;
+                    for(int i=1;i<n;i++) d[i]=INF;
+                    q.push((NODE){0,0});
+                    for(int i=0;i<m;i++)
+                    {
+                        int u,v,w;
+                        cin>>u>>v>>w;
+                        addEdge(u-1,v-1,w);
+                        addEdge(v-1,u-1,w); 
+                    }
+                    while(!q.empty())
+                    {
+                        int u=q.top().id;
+                        q.pop();
+                        if(vis[u]) continue;
+                        vis[u]=true;
+                        cnt++;
+                        ans+=d[u];
+                        for(auto e:g[u])
+                        {
+                            int v=e.to;
+                            if(d[v]>e.w)
+                            {
+                                d[v]=e.w;
+                                q.push((NODE){v,d[v]});
+                            }
+                        }
+                    }
+                    //题目让判断图不连通的情况，因此检查得到的边数是否为顶点数-1 
+                    if(cnt==n) cout<<ans<<endl;
+                    else cout<<"orz"<<endl;
+                    return 0;
+                }
+                `}
+            />
+            <X.P>力扣AC/`113ms`，代码如下：</X.P>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                #define N 1005
+                #define INF 2147483647
+                class Solution {
+                public:
+                    int ans,cnt,d[N];
+                    bool vis[N];
+                    struct EDGE{
+                        int to,w;
+                    };
+                    vector<EDGE> g[N];
+                    void addEdge(int u,int v,int w)
+                    {
+                        g[u].emplace_back((EDGE){v,w});
+                        return;
+                    }
+                    struct NODE{
+                        int id,d;
+                        friend bool operator <(NODE a,NODE b)
+                        {
+                            return a.d>b.d;
+                        }
+                    };
+                    priority_queue<NODE> q;
+
+                    int minCostConnectPoints(vector<vector<int>>& points) {
+                        int n=points.size();
+                        for(int i=1;i<n;i++) d[i]=INF;
+                        q.push((NODE){0,0});
+                        for(int i=0;i<n;i++)
+                        {
+                            for(int j=i+1;j<n;j++)
+                            {
+                                int w=abs(points[i][0]-points[j][0])+abs(points[i][1]-points[j][1]);
+                                addEdge(i,j,w);
+                                addEdge(j,i,w);
+                            }
+                        }
+                        while(!q.empty())
+                        {
+                            int u=q.top().id;
+                            q.pop();
+                            if(vis[u]) continue;
+                            vis[u]=true;
+                            cnt++;
+                            ans+=d[u];
+                            for(auto e:g[u])
+                            {
+                                int v=e.to;
+                                if(d[v]>e.w)
+                                {
+                                    d[v]=e.w;
+                                    q.push((NODE){v,d[v]});
+                                }
+                            }
+                        }
+                        return ans;
+                    }
+                };
+                `}
+            />
             <X.H1>单源最短路</X.H1>
             <X.P noMarginBottom>
                 单源最短路部分会给出可以提交到以下两道题目的代码（两道题目只是数据不同，代码是一样的）：
@@ -248,6 +484,12 @@ export default function Blog() {
             </X.P>
             <X.H2>Johnson</X.H2>
             <X.P>一个朴素的想法是对每个顶点都跑一次Dijkstra算法，但Dijkstra算法不能处理负权边。</X.P>
+            
+
+            {/* <X.P>在编程实现时，维护一个数组$d$，$d[i]$表示$i$到集合$T$的最短距离，初始时$d[0]=0$。</X.P> */}
+            {/* auto & e */}
+            {/* u,v一起出现才用u,否则就用i */}
+            {/* 单行if */}
         </>
     );
 }
