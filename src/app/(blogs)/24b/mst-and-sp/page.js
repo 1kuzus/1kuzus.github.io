@@ -59,14 +59,14 @@ export default function Blog() {
                     <td>全源最短路</td>
                     <td>Floyd</td>
                     <td>
-                        <X.P>$n^2$</X.P>
+                        <X.P>$V^3$</X.P>
                     </td>
                 </tr>
                 <tr>
                     <td>全源最短路</td>
                     <td>Johnson</td>
                     <td>
-                        <X.P>$n^2$</X.P>
+                        <X.P>$VE\log E$</X.P>
                     </td>
                 </tr>
             </X.Table>
@@ -122,7 +122,7 @@ export default function Blog() {
                     ne++;
                     return;
                 }
-                
+
                 int f[N];
                 int find(int x)
                 {
@@ -137,7 +137,7 @@ export default function Blog() {
                 {
                     return find(x)==find(y);
                 }
-                
+
                 int main()
                 {
                     cin>>n>>m;
@@ -173,7 +173,7 @@ export default function Blog() {
                 #define N 1005
                 #define M 1000005
                 class Solution {
-                    public:
+                public:
                     int ne,ans;
                     struct EDGE{
                         int u,v;
@@ -191,12 +191,12 @@ export default function Blog() {
                         ne++;
                         return;
                     }
-                    
+
                     int f[N];
                     int find(int x){return (f[x]==x)?x:(f[x]=find(f[x]));}
                     void uni(int x,int y){f[find(x)]=find(y);return;}
                     bool connected(int x,int y){return find(x)==find(y);}
-                    
+
                     int minCostConnectPoints(vector<vector<int>>& points) {
                         int n=points.size();
                         for(int i=0;i<n;i++)
@@ -239,7 +239,7 @@ export default function Blog() {
                 int n,m,ans,cnt,d[N];
                 bool vis[N];//顶点是否在集合T中，把0作为起点 
                 int g[N][N];
-                
+
                 int main()
                 {
                     cin>>n>>m;
@@ -294,11 +294,11 @@ export default function Blog() {
                 #define N 1005
                 #define INF 2147483647
                 class Solution {
-                    public:
+                public:
                     int ans,cnt,d[N];
                     bool vis[N];
                     int g[N][N];
-                    
+
                     int minCostConnectPoints(vector<vector<int>>& points) {
                         int n=points.size();
                         for(int i=1;i<n;i++) d[i]=INF;
@@ -369,7 +369,7 @@ export default function Blog() {
                     }
                 };
                 priority_queue<NODE> q;
-                
+
                 int main()
                 {
                     cin>>n>>m;
@@ -414,7 +414,7 @@ export default function Blog() {
                 #define N 1005
                 #define INF 2147483647
                 class Solution {
-                    public:
+                public:
                     int ans,cnt,d[N];
                     bool vis[N];
                     struct EDGE{
@@ -434,7 +434,7 @@ export default function Blog() {
                         }
                     };
                     priority_queue<NODE> q;
-                    
+
                     int minCostConnectPoints(vector<vector<int>>& points) {
                         int n=points.size();
                         for(int i=1;i<n;i++) d[i]=INF;
@@ -700,16 +700,224 @@ export default function Blog() {
             <X.Uli>@洛谷 - P5905【模板】全源最短路[https://www.luogu.com.cn/problem/P5905]@</X.Uli>
             <X.H2>Floyd</X.H2>
             <X.P>
-                Floyd算法基于动态规划，维护图`g[i][j]`，最外层用`k`次循环更新，每次循环`g[i][j]`的含义是：\n
+                Floyd算法维护图`g[i][j]`，最外层用`k`次循环更新，每次循环`g[i][j]`的含义是：\n
                 从`i`到`j`，所有中间结点取自`1`~`k`的最短路。
             </X.P>
-            <X.H2>Johnson</X.H2>
-            <X.P>一个朴素的想法是对每个顶点都跑一次Dijkstra算法，但Dijkstra算法不能处理负权边。</X.P>
+            <X.P>洛谷通过`7`/`12`，代码如下：</X.P>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                #define N 3005
+                #define INF 1000000009
+                #include <iostream>
+                using namespace std;
+                int n,m;
+                int g[N][N];
 
-            {/* <X.P>在编程实现时，维护一个数组$d$，$d[i]$表示$i$到集合$T$的最短距离，初始时$d[0]=0$。</X.P> */}
-            {/* auto & e */}
-            {/* u,v一起出现才用u,否则就用i */}
-            {/* 单行if */}
+                int main()
+                {
+                    cin>>n>>m;
+                    for(int i=0;i<n;i++)
+                    {
+                        for(int j=0;j<n;j++)
+                        {
+                            if(i!=j) g[i][j]=INF;
+                        }
+                    }
+                    for(int i=0;i<m;i++)
+                    {
+                        int u,v,w;
+                        cin>>u>>v>>w;
+                        if(w<g[u-1][v-1]) g[u-1][v-1]=w;//可能存在重边 
+                    }
+                    //每个循环k，g[i][j]表示从i到j，所有中间结点取自集合{0,1,...,k-1}的最短路 
+                    for(int k=0;k<n;k++)
+                    {
+                        for(int i=0;i<n;i++)
+                        {
+                            for(int j=0;j<n;j++)
+                            {
+                                if(g[i][j]>g[i][k]+g[k][j])
+                                {
+                                    g[i][j]=g[i][k]+g[k][j];
+                                }
+                            }
+                        }
+                    }
+                    for(int i=0;i<n;i++)
+                    {
+                        long long ans=0;
+                        for(int j=0;j<n;j++)
+                        {
+                            int dis=g[i][j]>1e8?1e9:g[i][j];//题目要求不连通按1e9计算 
+                            ans+=(long long)(j+1)*dis;
+                        }
+                        cout<<ans<<endl;
+                    }
+                    return 0;
+                }
+                `}
+            />
+            <X.H2>Johnson</X.H2>
+            <X.P>
+                一个朴素的想法是对每个顶点都运行一次Dijkstra算法，但Dijkstra算法不能处理负权边。---
+                Johnson算法的思想是先把所有边权变为非负，然后就可以放心使用Dijkstra算法了。Johnson算法首先构造一个虚拟顶点，---
+                这个虚拟顶点通过一条权值为$0$的边与所有其他顶点都相连。然后，使用Bellman-Ford算法求出虚拟顶点到其他所有顶点的最短距离，---
+                这个距离称为“势函数”$h$，可以理解为取虚拟顶点为“零势能面”，其余顶点的势能就是虚拟顶点到其的最短路。
+            </X.P>
+            <X.P>
+                接下来对每条边进行操作：对于连接节点$u$和$v$，权重为$w$的边，更新其权重为$w'=w+h(u)-h(v)$。然后对每个顶点运行一次Dijkstra算法。
+            </X.P>
+            <X.HighlightBlock>
+                <X.P>严格的来说“势函数”应为$-h$。</X.P>
+            </X.HighlightBlock>
+            <X.HighlightBlock bgcolor="blue">
+                <X.Uli>
+                    <X.P noMarginBottom>为什么新的$w'$可以保证非负？</X.P>
+                    <X.P>
+                        由于势函数$h$的含义是最短路，考虑最短路的三角不等式，一定有$h(u)+w \geq h(v)$，移项即有$w' \geq
+                        0$。
+                    </X.P>
+                </X.Uli>
+                <X.Uli>
+                    <X.P noMarginBottom>为什么不能给每条边加上一个大正数来保证边权为正？</X.P>
+                    <X.P>
+                        这样操作会导致对最短路的影响取决于*最短路经过的边数*。原图中经过较多边的最短路，可能会因为相比其他路径增长的更多，变为非最短路，导致结果错误。
+                    </X.P>
+                </X.Uli>
+            </X.HighlightBlock>
+            <X.P>洛谷AC/`1.39s`，代码如下：</X.P>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                #define N 3005
+                #define INF 1000000009
+                #include <iostream>
+                #include <vector>
+                #include <queue>
+                using namespace std;
+                int n,m;
+                int h[N];//势函数 
+                struct EDGE{
+                    int to,w;//边的终点和边权 
+                };
+                vector<EDGE> g[N];
+                void addEdge(int u,int v,int w)
+                {
+                    g[u].emplace_back((EDGE){v,w});
+                    return;
+                }
+                struct NODE{
+                    int id,d;
+                    friend bool operator <(NODE a,NODE b)
+                    {
+                        return a.d>b.d;
+                    }
+                };
+
+                bool BellmanFord()//求出势函数，同时返回是否存在负环 
+                {
+                    //注意在这里n是加入了虚拟节点之后的
+                    for(int t=0;t<n;t++)
+                    {
+                        for(int u=0;u<=n;u++)
+                        {
+                            for(auto e:g[u])
+                            {
+                                int v=e.to;
+                                if(h[v]-e.w>h[u])
+                                {
+                                    h[v]=h[u]+e.w;
+                                }
+                            }
+                        }
+                    }
+                    for(int u=0;u<=n;u++)
+                    {
+                        for(auto e:g[u])
+                        {
+                            int v=e.to;
+                            if(h[v]-e.w>h[u])
+                            {
+                                return true;
+                            }
+                        }
+                    }
+                    return false;
+                }
+
+                long long Dijkstra(int s)
+                {
+                    priority_queue<NODE> q;
+                    int d[N]={}; 
+                    bool vis[N]={};
+                    for(int i=0;i<n;i++) d[i]=INF;
+                    d[s]=0;
+                    q.push((NODE){s,0});
+                    while(!q.empty())
+                    {
+                        int u=q.top().id;
+                        q.pop();
+                        if(vis[u]) continue;
+                        vis[u]=true;
+                        for(auto e:g[u])
+                        {
+                            int v=e.to;
+                            if(d[v]-e.w>d[u])
+                            {
+                                d[v]=d[u]+e.w;
+                                q.push((NODE){v,d[v]});
+                            }
+                        }
+                    }
+                    long long ans=0;
+                    for(int i=0;i<n;i++)
+                    {
+                        int dis=d[i]+h[i]-h[s];
+                        if(dis>1e8) dis=1e9;//题目要求不连通按1e9计算
+                        ans+=(long long)(i+1)*dis;
+                    }
+                    return ans;
+                }
+
+                int main()
+                {
+                    cin>>n>>m;
+                    for(int i=0;i<m;i++)
+                    {
+                        int u,v,w;
+                        cin>>u>>v>>w;
+                        addEdge(u-1,v-1,w);
+                    }
+                    //构造一个虚拟顶点n，其到所有顶点距离为0
+                    for(int i=0;i<n;i++)
+                    {
+                        addEdge(n,i,0);
+                    }
+                    //一次BellmanFord求出势函数，并判断负环 
+                    for(int i=0;i<n;i++) h[i]=INF;
+                    if(BellmanFord())
+                    {
+                        cout<<-1<<endl;
+                        return 0;
+                    }
+                    //调整边权为非负，然后跑n次Dijkstra 
+                    for(int u=0;u<n;u++)
+                    {
+                        for(auto &e:g[u])
+                        {
+                            int v=e.to;
+                            e.w=e.w+h[u]-h[v];
+                        }
+                    }
+                    for(int i=0;i<n;i++)
+                    {
+                        cout<<Dijkstra(i)<<endl;
+                    }
+                    return 0;
+                }
+                `}
+            />
         </>
     );
 }

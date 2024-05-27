@@ -742,8 +742,6 @@ export default function Blog() {
                     如果指定优先级为“先加后乘”，最后的合并公式中会出现分数。这在数学上其实是完全可行的，只是不方便编程实现，所以结论是一定要先做乘法。
                 </X.P>
             </X.HighlightBlock>
-            {/* //原本TAG(*a,+b,<<c)，父亲分发下TAG(*g,+h,<<i) */}
-            {/* //现在TAG(*ag,+bg+（h<<(3-c),<<(c+i))  */}
             <X.P noMarginBottom>
                 考虑自己当前的标记是*`(mul a,add b,lshift c)`*，---
                 注意这里`a`、`c`是常数，`b`是一个三维向量`(b1,b2,b3)`。这个标记作用于`p=(x,y,z)`，可以得到：
