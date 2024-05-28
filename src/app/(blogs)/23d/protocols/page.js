@@ -578,6 +578,18 @@ export default function Blog() {
                 IPv6将可选字段移出首部字段，放在有效载荷的扩展首部中，路由器不对扩展首部进行检查，提高了处理效率
             </X.Uli>
             <X.Uli>IPv6支持即插即用，不需要DHCP协议</X.Uli>
+            <X.H2>地址解析协议 - ARP</X.H2>
+            <X.P>
+                在以太网协议中规定，同一局域网中的一台主机要和另一台主机进行直接通信，必须要知道目标主机的MAC地址，而网络层和运输层只关心目标主机的IP地址。\n
+                *地址解析协议*`(Address Resolution Protocol, ARP)`---
+                用于完成网络层地址（例如IP地址）和链路层地址（即MAC地址）的转换。
+            </X.P>
+            <X.H2>互联网控制报文协议 - ICMP</X.H2>
+            <X.P>
+                *互联网控制报文协议*`(Internet Control Message Protocol, ICMP)`---
+                被主机和路由器用来彼此沟通网络层的信息，ICMP最典型的用途是差错报告，提供可能发生在通信环境中的各种问题反馈。---
+                通过这些信息，管理者可以对所发生的问题作出诊断，然后采取适当的措施解决。
+            </X.P>
             <X.H2>动态主机配置协议 - DHCP</X.H2>
             <X.P>
                 *动态主机配置协议*`(Dynamic Host Configuration Protocol, DHCP)`---
@@ -591,25 +603,13 @@ export default function Blog() {
             </X.Uli>
             <X.Uli>*DHCP提供*`(DHCP Offer)`\nDHCP服务器提供一个IP租约。服务器租用期通常设置为几小时或几天。</X.Uli>
             <X.Uli>
-                *DHCP请求*`(DHCP Request)`\n
+                *DHCP选择（请求）*`(DHCP Request)`\n
                 当客户主机从一个或多个DHCP服务器的提供中选择了一个IP租约时，它必须告诉其他的DHCP服务器它已经接受了一个租约提供。
             </X.Uli>
             <X.Uli>
                 *DHCP确认*`(DHCP Acknowledge/ACK)`\n对DHCP Request报文进行响应，证实所要求的参数。一旦客户主机收到DHCP
                 ACK后，配置过程就完成了。
             </X.Uli>
-            <X.H2>地址解析协议 - ARP</X.H2>
-            <X.P>
-                在以太网协议中规定，同一局域网中的一台主机要和另一台主机进行直接通信，必须要知道目标主机的MAC地址，而网络层和运输层只关心目标主机的IP地址。\n
-                *地址解析协议*`(Address Resolution Protocol, ARP)`---
-                用于完成网络层地址（例如IP地址）和链路层地址（即MAC地址）的转换。
-            </X.P>
-            <X.H2>互联网控制报文协议 - ICMP</X.H2>
-            <X.P>
-                *互联网控制报文协议*`(Internet Control Message Protocol, ICMP)`---
-                被主机和路由器用来彼此沟通网络层的信息，ICMP最典型的用途是差错报告，提供可能发生在通信环境中的各种问题反馈。---
-                通过这些信息，管理者可以对所发生的问题作出诊断，然后采取适当的措施解决。
-            </X.P>
             <X.H1>运输层</X.H1>
             <X.H2>用户数据报协议 - UDP</X.H2>
             <X.P>
