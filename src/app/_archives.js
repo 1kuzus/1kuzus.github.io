@@ -107,6 +107,11 @@ const archives = [
                 path: '/24b/leetcode-30/',
                 time: '2024-05-29',
             },
+            {
+                title: 'LeetCode 1739.放置盒子',
+                path: '/24b/leetcode-1739/',
+                time: '2024-05-29',
+            },
         ],
     },
     {

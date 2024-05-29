@@ -15,7 +15,7 @@ export default function Blog() {
             <X.Title>{metas[pathname].blogtitle}</X.Title>
             <X.HighlightBlock>
                 <X.P>
-                    原题链接：@串联所有单词的子串[https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words/]@
+                    原题链接：@串联所有单词的子串[https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words/description/]@
                 </X.P>
             </X.HighlightBlock>
             <X.P>
