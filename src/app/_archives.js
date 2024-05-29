@@ -97,6 +97,16 @@ const archives = [
                 path: '/24a/csp-2023-09/',
                 time: '2024-03-19',
             },
+            {
+                title: 'LeetCode 4.寻找两个正序数组的中位数',
+                path: '/24b/leetcode-4/',
+                time: '2024-05-29',
+            },
+            {
+                title: 'LeetCode 30.串联所有单词的子串',
+                path: '/24b/leetcode-30/',
+                time: '2024-05-29',
+            },
         ],
     },
     {
