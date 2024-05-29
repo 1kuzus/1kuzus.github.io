@@ -18,7 +18,7 @@ export default function Blog() {
                     原题链接：@寻找两个正序数组的中位数[https://leetcode.cn/problems/median-of-two-sorted-arrays/description/]@
                 </X.P>
             </X.HighlightBlock>
-            <X.P>题目要求`log`级别的算法，下面给出`log(min(m,n))`的解法，和官方题解的思路不太相同。</X.P>
+            <X.P>题目要求$\log$级别的算法，下面给出$\log(\min(m,n))$的解法，和官方题解的思路不太相同。</X.P>
             <X.P noMarginBottom>我的思路基于两个观察：</X.P>
             <X.Oli>
                 如果两个有序序列的中位数分别为$a$和$b$，那么合并后的序列的中位数一定在$a$和$b$（闭区间）之间。
