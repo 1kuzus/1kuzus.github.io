@@ -14,7 +14,7 @@ export default function Blog() {
         <>
             <X.Title>{metas[pathname].blogtitle}</X.Title>
             <X.HighlightBlock>
-                <X.P>原题链接：@放置盒子[https://leetcode-cn.com/problems/building-boxes/description/]@</X.P>
+                <X.P>原题链接：@放置盒子[https://leetcode.cn/problems/building-boxes/description/]@</X.P>
             </X.HighlightBlock>
             <X.P>
                 数学找规律题目，我推出了$O(1)$的函数$f(i)$，表示最下层有$i$个盒子时，最大的可能总盒子数。然而题目是想反求，因此可以使用二分。

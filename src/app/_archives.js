@@ -108,6 +108,11 @@ const archives = [
                 time: '2024-05-29',
             },
             {
+                title: 'LeetCode 60.排列序列',
+                path: '/24b/leetcode-60/',
+                time: '2024-05-30',
+            },
+            {
                 title: 'LeetCode 1739.放置盒子',
                 path: '/24b/leetcode-1739/',
                 time: '2024-05-29',
