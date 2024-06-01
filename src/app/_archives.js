@@ -108,9 +108,19 @@ const archives = [
                 time: '2024-05-29',
             },
             {
+                title: 'LeetCode 37.解数独',
+                path: '/24b/leetcode-37/',
+                time: '2024-06-01',
+            },
+            {
                 title: 'LeetCode 60.排列序列',
                 path: '/24b/leetcode-60/',
                 time: '2024-05-30',
+            },
+            {
+                title: 'LeetCode 65.有效数字',
+                path: '/24b/leetcode-65/',
+                time: '2024-05-31',
             },
             {
                 title: 'LeetCode 1739.放置盒子',
