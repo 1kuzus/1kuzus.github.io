@@ -1,13 +1,6 @@
 import P from '../Paragraph/Paragraph';
+import {isStringOrStringArray} from 'src/utils/utils';
 import './index.css';
-
-function isStringOrStringArray(x) {
-    if (typeof x === 'string') return true;
-    else if (Array.isArray(x)) {
-        return x.every((i) => typeof i === 'string');
-    }
-    return false;
-}
 
 export function Uli(props) {
     const {children} = props;
