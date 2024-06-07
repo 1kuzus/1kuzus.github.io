@@ -1,12 +1,12 @@
 .x-title {
     margin-bottom: 32px;
-    font-size: 30px;
+    font-size: 28px;
     color: var(--text-color-main);
 }
 .x-h1 {
     margin-top: 32px;
     margin-bottom: 24px;
-    font-size: 26px;
+    font-size: 24px;
     color: var(--text-color-main);
 }
 .x-h1::before {
@@ -17,7 +17,7 @@
 .x-h2 {
     margin-top: 24px;
     margin-bottom: 24px;
-    font-size: 22px;
+    font-size: 20px;
     color: var(--text-color-main);
 }
 .x-h3 {

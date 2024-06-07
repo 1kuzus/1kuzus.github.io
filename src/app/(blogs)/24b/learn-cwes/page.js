@@ -94,9 +94,9 @@ export default function Blog() {
                     ],
                 ]}
             />
-            <X.H1>View：CWE Top 25 (2023)</X.H1>
+            <X.H1>View: CWE Top 25 (2023)</X.H1>
             <X.P>
-                （2023年）前25个最危险的软件缺陷，按顺序排名。标题前的【`P`/`C`/`B`/`V`/`Comp`】标识了其抽象类型。
+                （2023年）前25个最危险的软件缺陷，按顺序排名。标题前的【`P`/`C`/`B`/`V`/`Compo`】标识了其抽象类型。
             </X.P>
             <X.H2 href="https://cwe.mitre.org/data/definitions/787.html">【B】CWE-787: Out-of-bounds Write</X.H2>
             <X.P>越界写入，在预期缓冲区末尾之后或开头之前写入。</X.P>
@@ -198,17 +198,99 @@ export default function Blog() {
             {/* todo */}
 
             <X.H2 href="https://cwe.mitre.org/data/definitions/416.html">【V】CWE-416: Use After Free</X.H2>
-            <X.P>使用`free`过的内存可能会导致未知的行为发生。</X.P>
+            <X.P>使用释放过的指针可能会导致未知的行为发生。</X.P>
             <X.H3>Example 1</X.H3>
             <X.CodeBlock
-                language='cpp'
+                language="c"
                 code={`
+                #include <stdio.h>
+                #include <unistd.h>
+                #define BUFSIZER1 512
+                #define BUFSIZER2 ((BUFSIZER1 / 2) - 8)
+                int main(int argc, char **argv)
+                {
+                    char *buf1R1;
+                    char *buf2R1;
+                    char *buf2R2;
+                    char *buf3R2;
+                    buf1R1 = (char *)malloc(BUFSIZER1);
+                    buf2R1 = (char *)malloc(BUFSIZER1);
+                    free(buf2R1);
+                    buf2R2 = (char *)malloc(BUFSIZER2);
+                    buf3R2 = (char *)malloc(BUFSIZER2);
+                    strncpy(buf2R1, argv[1], BUFSIZER1 - 1);
+                    free(buf1R1);
+                    free(buf2R2);
+                    free(buf3R2);
+                }
                 `}
             />
-            <X.H2 href="https://cwe.mitre.org/data/definitions/416.html">【V】CWE-416: Use After Free</X.H2>
+            <X.P>`buf2R1`已经被释放过了。</X.P>
+            <X.H3>Example 2</X.H3>
+            <X.CodeBlock
+                language="c"
+                code={`
+                char *ptr = (char *)malloc(SIZE);
+                if (err)
+                {
+                    abrt = 1;
+                    free(ptr);
+                }
+                ...
+                if (abrt)
+                {
+                    logError("operation aborted before commit", ptr);
+                }
+                `}
+            />
+            <X.P>在发生异常时指针已经释放，但随后又在`logError`错误地使用。</X.P>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/78.html">
+                【B】CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')
+            </X.H2>
             {/* todo */}
 
-            <X.H2 href="https://cwe.mitre.org/data/definitions/416.html">【V】CWE-416: Use After Free</X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/20.html">【C】CWE-20: Improper Input Validation</X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/125.html">【B】CWE-125: Out-of-bounds Read</X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/22.html">
+                【B】CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')
+            </X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/352.html">
+                【Compo】CWE-352: Cross-Site Request Forgery (CSRF)
+            </X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/434">
+                【B】CWE-434: Unrestricted Upload of File with Dangerous Type
+            </X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/862">【C】CWE-862: Missing Authorization</X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/476">【B】CWE-476: NULL Pointer Dereference</X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/287">【C】CWE-287: Improper Authentication</X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/190">【B】CWE-190: Integer Overflow or Wraparound</X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/502">
+                【B】CWE-502: Deserialization of Untrusted Data
+            </X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/77">
+                【C】CWE-77: Improper Neutralization of Special Elements used in a Command ('Command Injection')
+            </X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/119">
+                【C】CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer
+            </X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/798">【B】CWE-798: Use of Hard-coded Credentials</X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/918">
+                【B】CWE-918: Server-Side Request Forgery (SSRF)
+            </X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/306">
+                【B】CWE-306: Missing Authentication for Critical Function
+            </X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/362">
+                【C】CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race
+                Condition')
+            </X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/269">【C】CWE-269: Improper Privilege Management</X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/94">
+                【B】CWE-94: Improper Control of Generation of Code ('Code Injection')
+            </X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/863">【C】CWE-863: Incorrect Authorization</X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/276">【B】CWE-276: Incorrect Default Permissions</X.H2>
+
             {/* todo */}
 
             {/* real-world project */}
