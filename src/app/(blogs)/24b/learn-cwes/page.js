@@ -43,9 +43,23 @@ export default function Blog() {
                 </tr>
                 <tr>
                     <td>
-                        <X.Image src="pillar.png" width="16px" />
+                        <X.Image src="view.png" width="16px" center />
                     </td>
-                    <td>46w5</td>
+                    <td>
+                        <X.P>`View`，视图</X.P>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <X.Image src="category.png" width="16px" center />
+                    </td>
+                    <td>`Category`，分类，</td>
+                </tr>
+                <tr>
+                    <td>
+                        <X.Image src="pillar.png" width="16px" center />
+                    </td>
+                    <td>`Pillar`，最抽象的条目类型，但与Category相比仍然是一种在技术上描述</td>
                 </tr>
             </X.Table>
         </>
