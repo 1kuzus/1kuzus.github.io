@@ -38,7 +38,7 @@ const archives = [
                 time: '2023-12-29',
             },
             {
-                title: 'learn cwes',
+                title: 'Learn CWEs',
                 path: '/24b/learn-cwes/',
                 time: '2024-06-07',
             },

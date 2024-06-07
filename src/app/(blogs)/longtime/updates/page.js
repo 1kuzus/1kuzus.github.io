@@ -77,6 +77,7 @@ function UpdateLog() {
         {version: '2.0'},
         {date: '2024-04-07', description: '使用`Next.js`重构'},
         {date: '2024-04-24', description: '优化了部分移动端样式'},
+        {date: '2024-06-07', description: '`Image`组件支持`center`属性\n`Table`组件支持`fromJSX`属性'},
     ];
     return (
         <>
