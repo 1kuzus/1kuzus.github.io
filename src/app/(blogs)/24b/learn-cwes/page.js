@@ -45,9 +45,7 @@ export default function Blog() {
                     <td>
                         <X.Image src="view.png" width="16px" center />
                     </td>
-                    <td>
-                        <X.P>`View`，视图</X.P>
-                    </td>
+                    <td>`View`，视图</td>
                 </tr>
                 <tr>
                     <td>
@@ -62,6 +60,17 @@ export default function Blog() {
                     <td>`Pillar`，最抽象的条目类型，但与Category相比仍然是一种在技术上描述</td>
                 </tr>
             </X.Table>
+            <X.Table
+                fromJSX={[
+                    ['icon', '释义'],
+                    [<X.Image src="view.png" width="16px" center />, '`View`，视图'],
+                    [<X.Image src="category.png" width="16px" center />, '`Category`，分类，'],
+                    [
+                        <X.Image src="pillar.png" width="16px" center />,
+                        '`Pillar`，最抽象的条目类型，但与Category相比仍然是一种在技术上描述',
+                    ],
+                ]}
+            />
         </>
     );
 }
