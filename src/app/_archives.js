@@ -37,6 +37,11 @@ const archives = [
                 path: '/23d/hust-cas-login/',
                 time: '2023-12-29',
             },
+            {
+                title: 'learn cwes',
+                path: '/24b/learn-cwes/',
+                time: '2024-06-07',
+            },
         ],
     },
     {
