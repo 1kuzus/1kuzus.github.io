@@ -81,6 +81,30 @@
 		],
 		"description": "X.CodeBlock tag"
 	},
+	"X.CodeBlock tag for C": {
+		"scope": "javascript,typescript",
+		"prefix": "xcc",
+		"body": [
+			"<X.CodeBlock",
+			"\tlanguage='c'",
+			"\tcode={`$1",
+			"\t`}",
+			"/>",
+		],
+		"description": "X.CodeBlock tag for C"
+	},
+	"X.CodeBlock tag for C++": {
+		"scope": "javascript,typescript",
+		"prefix": "xccpp",
+		"body": [
+			"<X.CodeBlock",
+			"\tlanguage='cpp'",
+			"\tcode={`$1",
+			"\t`}",
+			"/>",
+		],
+		"description": "X.CodeBlock tag for C++"
+	},
 	"X.CodeBlock tag for Python": {
 		"scope": "javascript,typescript",
 		"prefix": "xcpy",
@@ -93,17 +117,17 @@
 		],
 		"description": "X.CodeBlock tag for Python"
 	},
-	"X.CodeBlock tag for C++": {
+	"X.CodeBlock tag for JavaScript": {
 		"scope": "javascript,typescript",
-		"prefix": "xccpp",
+		"prefix": "xcjs",
 		"body": [
 			"<X.CodeBlock",
-			"\tlanguage='cpp'",
+			"\tlanguage='js'",
 			"\tcode={`$1",
 			"\t`}",
 			"/>",
 		],
-		"description": "X.CodeBlock tag for Python"
+		"description": "X.CodeBlock tag for JavaScript"
 	},
 	"X.FlexRow tag": {
 		"scope": "javascript,typescript",

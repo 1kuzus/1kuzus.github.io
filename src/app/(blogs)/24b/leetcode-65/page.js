@@ -18,7 +18,7 @@ export default function Blog() {
             </X.HighlightBlock>
             <X.P>正则歪解一下。</X.P>
             <X.CodeBlock
-                language="javascript"
+                language="js"
                 code={`
                 /**
                  * @param {string} s
