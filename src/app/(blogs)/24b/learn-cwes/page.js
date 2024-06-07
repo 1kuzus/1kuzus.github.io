@@ -13,7 +13,7 @@ export default function Blog() {
     return (
         <>
             <X.Title>{metas[pathname].blogtitle}</X.Title>
-            <X.H1>关于CWE</X.H1>
+            <X.H1 href="https://cwe.mitre.org/index.html">关于CWE</X.H1>
             <X.P>
                 *通用缺陷枚举*`(Common Weakness Enumeration, CWE)`是针对硬件和软件弱点和漏洞的分类系统。---
                 该项目由美国国土安全部（DHS）网络安全和基础设施安全局（CISA）办公室赞助，由MITRE公司运营。
@@ -21,56 +21,197 @@ export default function Blog() {
             <X.P>
                 相比于CVE记录描述产品中出现的漏洞，侧重于漏洞利用的技术影响，CWE对可能导致漏洞的常见缺陷或弱点进行分类，描述漏洞发生的根本原因。
             </X.P>
+            <X.H2>术语</X.H2>
+            <X.P>
+                下面的内容译自@CWE Glossary[https://cwe.mitre.org/documents/glossary/]@，---
+                这里只列出了几个下文可能出现的术语：
+            </X.P>
+            <X.Uli>
+                <X.P noMarginBottom>`Behaviour`（行为）</X.P>
+                <X.P>产品采取的操作，通常以代码实现或以算法表示。也可以指系统以外的其他参与者的操作。</X.P>
+            </X.Uli>
+            <X.Uli>
+                <X.P noMarginBottom>`Resource`（资源）：</X.P>
+                <X.P>
+                    指在产品运行过程中被访问或修改的对象或实体，例如内存、CPU、文件或套接字。---
+                    资源可以是系统级（内存或CPU）、代码级（函数或变量）或应用程序级（cookie或消息）。
+                </X.P>
+            </X.Uli>
+            <X.Uli>
+                <X.P noMarginBottom>`Property`（属性）：</X.P>
+                <X.P>
+                    指某个对系统预期的安全模型很重要的资源或行为，可能随时间变化。比如用户的输入最初是不受信任的，---
+                    但经过系统的中和处理后，最终会被认为是受信任的。
+                </X.P>
+            </X.Uli>
             <X.H2>CWE分类系统</X.H2>
             <X.P>CWE有一套树型的分类系统，CWE提供了一些组织各个条目的结构化描述，例如视图和分类。</X.P>
             <X.P noMarginBottom>
-                CWE Views是针对特定目的或特定受众而组织的弱点集合，大多数视图是整个CWE列表的子集。---
-                例如@官网首页[https://cwe.mitre.org/]@中给出的：
+                CWE Views是针对特定目的或特定受众而组织的弱点集合，大多数视图是整个CWE列表的子集。例如@CWE
+                List[https://cwe.mitre.org/data/index.html]@中给出的：
             </X.P>
             <X.Uli>@View by Software Development[https://cwe.mitre.org/data/definitions/699.html]@</X.Uli>
             <X.Uli>@View by Hardware Design[https://cwe.mitre.org/data/definitions/1194.html]@</X.Uli>
             <X.Uli>@View by Research Concepts[https://cwe.mitre.org/data/definitions/1000.html]@</X.Uli>
             <X.P withMarginTop>CWE Categories是更细的划分，一个CWE分类可能包含一系列具有共同特征的CWE条目。</X.P>
             <X.P>
-                CWE的不同条目也具有不同的抽象程度，有些条目描述了具体的缺陷，有些则描述了更一般的问题。四种抽象程度如下图所示：
+                CWE的不同条目也具有不同的抽象程度，有些条目描述了具体的缺陷，有些则描述了更一般的问题。---
+                CWE的条目之间也存在父级子级的关系。四种抽象程度如下图所示：
             </X.P>
             <X.Image src="weakness_abstractions.png" width="600px" />
             <X.P>这些分级在官网上也有对应的图标表示，相应的释义为：</X.P>
-            <X.Table>
-                <tr>
-                    <th>icon</th>
-                    <th>释义</th>
-                </tr>
-                <tr>
-                    <td>
-                        <X.Image src="view.png" width="16px" center />
-                    </td>
-                    <td>`View`，视图</td>
-                </tr>
-                <tr>
-                    <td>
-                        <X.Image src="category.png" width="16px" center />
-                    </td>
-                    <td>`Category`，分类，</td>
-                </tr>
-                <tr>
-                    <td>
-                        <X.Image src="pillar.png" width="16px" center />
-                    </td>
-                    <td>`Pillar`，最抽象的条目类型，但与Category相比仍然是一种在技术上描述</td>
-                </tr>
-            </X.Table>
             <X.Table
                 fromJSX={[
                     ['icon', '释义'],
-                    [<X.Image src="view.png" width="16px" center />, '`View`，视图'],
-                    [<X.Image src="category.png" width="16px" center />, '`Category`，分类，'],
+                    [<X.Image src="view.png" width="16px" center />, '`View`，视图。'],
+                    [
+                        <X.Image src="category.png" width="16px" center />,
+                        '`Category`，分类，一系列有共同特征的CWE条目。',
+                    ],
                     [
                         <X.Image src="pillar.png" width="16px" center />,
-                        '`Pillar`，最抽象的条目类型，但与Category相比仍然是一种在技术上描述',
+                        '`Pillar`，最抽象的CWE条目类型，但与`Category`相比，仍然是从“技术上”对缺陷类型进行描述。',
+                    ],
+                    [
+                        <X.Image src="class.png" width="16px" center />,
+                        '`Class`，较为抽象的CWE条目类型，通常独立于特定的语言或技术。\\n`Class`级别的CWE通常从【行为、属性、资源】中的`1`~`2`个方面来描述问题。',
+                    ],
+                    [
+                        <X.Image src="base.png" width="16px" center />,
+                        '`Base`，较为抽象的CWE条目类型，通常也是独立于资源或技术。\\n`Base`级别的CWE通常从【行为、属性、技术、语言、资源】中的`2`~`3`个方面来描述问题。',
+                    ],
+                    [
+                        <X.Image src="variant.png" width="16px" center />,
+                        '`Variant`，通常与特定种类的产品有关系，一般包含特定的语言或技术。\\n`Variant`级别的CWE通常从【行为、属性、技术、语言、资源】中的`3`~`5`个方面来描述问题。',
+                    ],
+                    [
+                        <X.Image src="composite.png" width="16px" center />,
+                        '`Composite`，此类缺陷需要多种缺陷同时存在，才会引发潜在的安全漏洞。数量较少。',
+                    ],
+                    [
+                        <X.Image src="chain.png" width="30px" center />,
+                        '`Chain`，呈链式关系，例如缺陷X为缺陷Y的发生创造了条件。数量较少。\\n`Chain`可以涉及两个以上的弱点，在某些情况下也可能具有树状结构。',
                     ],
                 ]}
             />
+            <X.H1>View：CWE Top 25 (2023)</X.H1>
+            <X.P>
+                （2023年）前25个最危险的软件缺陷，按顺序排名。标题前的【`P`/`C`/`B`/`V`/`Comp`】标识了其抽象类型。
+            </X.P>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/787.html">【B】CWE-787: Out-of-bounds Write</X.H2>
+            <X.P>越界写入，在预期缓冲区末尾之后或开头之前写入。</X.P>
+            <X.H3>Example 1</X.H3>
+            <X.CodeBlock
+                language="c"
+                code={`
+                int id_sequence[3];
+
+                /* Populate the id array. */
+
+                id_sequence[0] = 123;
+                id_sequence[1] = 234;
+                id_sequence[2] = 345;
+                id_sequence[3] = 456;
+                `}
+            />
+            <X.P>写入`id_sequence[3]`越界了。</X.P>
+            <X.H3>Example 2</X.H3>
+            <X.CodeBlock
+                language="c"
+                code={`
+                int returnChunkSize(void *)
+                {
+                
+                    /* if chunk info is valid, return the size of usable memory,
+                
+                    * else, return -1 to indicate an error
+                
+                    */
+                    ...
+                }
+                int main()
+                {
+                    ...
+                    memcpy(destBuf, srcBuf, (returnChunkSize(destBuf) - 1));
+                    ...
+                }
+                `}
+            />
+            <X.P>
+                `returnChunkSize()`遇到错误会返回`-1`，但是`memcpy()`假定传入的参数是`unsigned`，---
+                此时负值会被转换成相当大的数值。
+            </X.P>
+            <X.H3>Example 3</X.H3>
+            <X.CodeBlock
+                language="c"
+                code={`
+                char *copy_input(char *user_supplied_string)
+                {
+                    int i, dst_index;
+                    char *dst_buf = (char *)malloc(4 * sizeof(char) * MAX_SIZE);
+                    if (MAX_SIZE <= strlen(user_supplied_string))
+                    {
+                        die("user string too long, die evil hacker!");
+                    }
+                    dst_index = 0;
+                    for (i = 0; i < strlen(user_supplied_string); i++)
+                    {
+                        if ('&' == user_supplied_string[i])
+                        {
+                            dst_buf[dst_index++] = '&';
+                            dst_buf[dst_index++] = 'a';
+                            dst_buf[dst_index++] = 'm';
+                            dst_buf[dst_index++] = 'p';
+                            dst_buf[dst_index++] = ';';
+                        }
+                        else if ('<' == user_supplied_string[i])
+                        {
+
+                            /* encode to &lt; */
+                        }
+                        else
+                            dst_buf[dst_index++] = user_supplied_string[i];
+                    }
+                    return dst_buf;
+                }
+                `}
+            />
+            <X.P>
+                虽然前面做了长度检查，但是后续的逻辑将`'&'`和`'&lt;'`转为HTML实体时，可能导致长度增长。---
+                如果恶意构造包含大量`'&'`的输入，可能导致越界写入。
+            </X.P>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/79.html">
+                【B】CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
+            </X.H2>
+            <X.P>跨站脚本（XSS）攻击，用户输入未被正确处理，导致恶意代码被执行。</X.P>
+            <X.P noMarginBottom>
+                XSS攻击分为三种：反射型、存储型、DOM型。反射型和存储型是服务器端的漏洞，DOM型是客户端的漏洞。具体如下：
+            </X.P>
+            <X.Uli>
+                <X.P>反射型`(Reflected XSS)`/非持久型`(Non-Persistent XSS)`</X.P>
+            </X.Uli>
+            {/* todo */}
+
+            <X.H2 href="https://cwe.mitre.org/data/definitions/89.html">
+                【B】CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+            </X.H2>
+            {/* todo */}
+
+            <X.H2 href="https://cwe.mitre.org/data/definitions/416.html">【V】CWE-416: Use After Free</X.H2>
+            <X.P>使用`free`过的内存可能会导致未知的行为发生。</X.P>
+            <X.H3>Example 1</X.H3>
+            <X.CodeBlock
+                language='cpp'
+                code={`
+                `}
+            />
+            <X.H2 href="https://cwe.mitre.org/data/definitions/416.html">【V】CWE-416: Use After Free</X.H2>
+            {/* todo */}
+
+            <X.H2 href="https://cwe.mitre.org/data/definitions/416.html">【V】CWE-416: Use After Free</X.H2>
+            {/* todo */}
+
+            {/* real-world project */}
         </>
     );
 }
