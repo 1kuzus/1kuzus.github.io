@@ -56,7 +56,7 @@ export default function Blog() {
                     fatal: fetch-pack: invalid index-pack output
                     `}
                 />
-                <X.P>解决：增大缓冲区(`1048576000`是`1G`)</X.P>
+                <X.P>解决：增大缓冲区（`1048576000`是`1G`）</X.P>
                 <X.CodeBlock language="bash" code="git config --global http.postBuffer 1048576000" />
                 <X.H3>子模块没有一次性下载成功</X.H3>
                 <X.P>解决：进入目录手动重新下载</X.P>
