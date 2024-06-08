@@ -121,11 +121,8 @@ export default function Blog() {
                 code={`
                 int returnChunkSize(void *)
                 {
-                
                     /* if chunk info is valid, return the size of usable memory,
-                
-                    * else, return -1 to indicate an error
-                
+                    * else, return -1 to indicate an error.
                     */
                     ...
                 }
@@ -166,7 +163,6 @@ export default function Blog() {
                         }
                         else if ('<' == user_supplied_string[i])
                         {
-
                             /* encode to &lt; */
                         }
                         else
@@ -263,7 +259,6 @@ export default function Blog() {
                     int value;
 
                     // check that the array index is less than the maximum
-
                     // length of the array
                     if (index < len)
                     {
@@ -271,8 +266,8 @@ export default function Blog() {
                         // get the value at the specified index of the array
                         value = array[index];
                     }
-                    // if array index is invalid then output error message
 
+                    // if array index is invalid then output error message
                     // and return value indicating error
                     else
                     {
@@ -344,13 +339,58 @@ export default function Blog() {
                 `bytesRec`定义为`short int`类型，当`MAXGET`很大时，很可能导致`bytesRec`溢出（永远小于`MAXGET`），---
                 循环不会终止，并不断地覆盖`buf`中的内容。
             </X.P>
-            {/* todo */}
-
             <X.H2 href="https://cwe.mitre.org/data/definitions/502">
                 【B】CWE-502: Deserialization of Untrusted Data
             </X.H2>
-            {/* todo */}
+            <X.P>反序列化不受信任的数据，也就是没有检查反序列化后的结果是否是有效的。</X.P>
+            <X.H3>Example 1</X.H3>
+            <X.CodeBlock
+                language="java"
+                code={`
+                try
+                {
+                    File file = new File("object.obj");
+                    ObjectInputStream in = new ObjectInputStream(new FileInputStream(file));
+                    javax.swing.JButton button = (javax.swing.JButton)in.readObject();
+                    in.close();
+                }
+                `}
+            />
+            <X.P>如果攻击者替换了文件内容，可能导致风险。`readObject()`应当做如下改进：</X.P>
+            <X.CodeBlock
+                language="java"
+                code={`
+                private final void readObject(ObjectInputStream in) throws java.io.IOException
+                {
+                    throw new java.io.IOException("Cannot be deserialized");
+                }
+                `}
+            />
+            <X.H3>Example 2</X.H3>
+            <X.CodeBlock
+                language="python"
+                code={`
+                class ExampleProtocol(protocol.Protocol):
+                    def dataReceived(self, data):
+                        # Code that would be here would parse the incoming data
+                        # After receiving headers, call confirmAuth() to authenticate
+                        pass
 
+                    def confirmAuth(self, headers):
+                        try:
+                            token = cPickle.loads(base64.b64decode(headers['AuthToken']))
+                            if not check_hmac(token['signature'], token['data'], getSecretKey()):
+                                raise AuthFail
+                            self.secure_data = token['data']
+                        except:
+                            raise AuthFail
+                `}
+            />
+            <X.P>
+                这段代码没有验证传入数据是否合法。攻击者可以构造一个非法的序列化对象`AuthToken`，该对象通过实例化Python的子进程之一来执行任意命令。---
+                例如，攻击者可以构建一个利用Python子进程模块的`pickle`，该模块会生成新进程并包含许多用于各种用途的参数。---
+                由于`Pickle`库允许对象定义如何`unpickle`，因此攻击者可以指示`unpickle`进程在子进程模块中调用`Popen`并执行`/bin/sh`。
+            </X.P>
             <X.H2 href="https://cwe.mitre.org/data/definitions/77">
                 【C】CWE-77: Improper Neutralization of Special Elements used in a Command ('Command Injection')
             </X.H2>
@@ -362,8 +402,47 @@ export default function Blog() {
             {/* todo */}
 
             <X.H2 href="https://cwe.mitre.org/data/definitions/798">【B】CWE-798: Use of Hard-coded Credentials</X.H2>
-            {/* todo */}
-
+            <X.P>使用硬编码的凭证，即凭证在源代码中直接出现。</X.P>
+            <X.H3>Example 1</X.H3>
+            <X.P>下面的代码硬编码了用户名和密码去连接数据库：</X.P>
+            <X.CodeBlock
+                language="java"
+                code={`
+                ...
+                DriverManager.getConnection(url, "scott", "tiger");
+                ...
+                `}
+            />
+            <X.P>
+                有权限访问到此源码的员工可以利用这点闯入系统。更坏的情况是如果攻击者能够访问到程序的字节码，---
+                可以使用`javap -c`命令反汇编，得到明文密码，例如：
+            </X.P>
+            <X.CodeBlock
+                language="text"
+                code={`
+                javap -c ConnMngr.class
+                22: ldc #36; //String jdbc:mysql://ixne.com/rxsql
+                24: ldc #38; //String scott
+                26: ldc #17; //String tiger
+                `}
+            />
+            <X.H3>Example 2</X.H3>
+            <X.P>硬编码的用于加密的密钥同样是有问题的。理由同上，只要在源程序中明文出现，都会有很大的风险。</X.P>
+            <X.CodeBlock
+                language="c"
+                code={`
+                int VerifyAdmin(char *password)
+                {
+                    if (strcmp(password, "68af404b513073584c4b6f22b6c63e6b"))
+                    {
+                        printf("Incorrect Password!\\n");
+                        return (0);
+                    }
+                    printf("Entering Diagnostic Mode...\\n");
+                    return (1);
+                }
+                `}
+            />
             <X.H2 href="https://cwe.mitre.org/data/definitions/918">
                 【B】CWE-918: Server-Side Request Forgery (SSRF)
             </X.H2>
@@ -372,13 +451,43 @@ export default function Blog() {
             <X.H2 href="https://cwe.mitre.org/data/definitions/306">
                 【B】CWE-306: Missing Authentication for Critical Function
             </X.H2>
-            {/* todo */}
+            <X.P>重要功能没有做权限认证。</X.P>
+            <X.H3>Example 1</X.H3>
+            <X.CodeBlock
+                language="java"
+                highlightLines="1,3-9,15"
+                code={`
+                private boolean isUserAuthentic = false;
 
-            <X.H2 href="https://cwe.mitre.org/data/definitions/362">
+                public boolean authenticateUser(String username, String password)
+                {
+                    // authenticate user,
+                    // if user is authenticated then set variable to true
+                    // otherwise set variable to false
+                    ...
+                }
+
+                public BankAccount createNewBankAccount(String accountNumber, String accountType, String accountName, String accountSSN, double balance)
+                {
+                    BankAccount account = null;
                 
+                    if (isUserAuthentic)
+                    {
+                        account = new BankAccount();
+                        account.setAccountNumber(accountNumber);
+                        account.setAccountType(accountType);
+                        account.setAccountOwnerName(accountName);
+                        account.setAccountOwnerSSN(accountSSN);
+                        account.setBalance(balance);
+                    }
+                    return account;
+                }
+                `}
+            />
+            <X.P>上面代码中高亮的部分是*正确*的做法。如果忽视了验证，就存在风险了。</X.P>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/362">
                 【C】CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race
                 Condition')
-
             </X.H2>
             {/* todo */}
 
@@ -394,7 +503,17 @@ export default function Blog() {
             {/* todo */}
 
             <X.H2 href="https://cwe.mitre.org/data/definitions/276">【B】CWE-276: Incorrect Default Permissions</X.H2>
-            {/* todo */}
+            <X.P>
+                错误的默认权限。指软件系统、应用程序、文件或资源在创建时被分配了不适当的默认权限。这些默认权限可能过于宽松，---
+                允许未授权的用户或进程进行不必要或有害的访问和操作，从而导致潜在的安全漏洞。
+            </X.P>
+            <X.H3>Example 1</X.H3>
+            <X.P>
+                软件在安装或初始化时，通常会创建一些文件、目录或资源。这些资源会被分配默认的权限（读、写、执行权限等）。
+            </X.P>
+            <X.P>
+                如果这些默认权限设置得过于宽松，比如允许所有用户都具有读写权限，那么未授权的用户可能会访问、修改或删除这些文件，导致数据泄露、篡改或破坏。
+            </X.P>
 
             {/* real-world project */}
         </>
