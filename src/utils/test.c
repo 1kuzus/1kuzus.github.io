@@ -1,11 +1,7 @@
-char *ptr = (char *)malloc(SIZE);
-if (err)
+short int bytesRec = 0;
+char buf[SOMEBIGNUM];
+
+while (bytesRec < MAXGET)
 {
-    abrt = 1;
-    free(ptr);
-}
-...
-if (abrt)
-{
-    logError("operation aborted before commit", ptr);
+    bytesRec += getFromInput(buf + bytesRec);
 }

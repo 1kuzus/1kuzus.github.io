@@ -250,47 +250,150 @@ export default function Blog() {
             {/* todo */}
 
             <X.H2 href="https://cwe.mitre.org/data/definitions/20.html">【C】CWE-20: Improper Input Validation</X.H2>
+            {/* todo */}
+
             <X.H2 href="https://cwe.mitre.org/data/definitions/125.html">【B】CWE-125: Out-of-bounds Read</X.H2>
+            <X.P>越界读取，在预期缓冲区末尾之后或开头之前读取。</X.P>
+            <X.H3>Example 1</X.H3>
+            <X.CodeBlock
+                language="c"
+                code={`
+                int getValueFromArray(int *array, int len, int index)
+                {
+                    int value;
+
+                    // check that the array index is less than the maximum
+
+                    // length of the array
+                    if (index < len)
+                    {
+                
+                        // get the value at the specified index of the array
+                        value = array[index];
+                    }
+                    // if array index is invalid then output error message
+
+                    // and return value indicating error
+                    else
+                    {
+                        printf("Value is: %d\\n", array[index]);
+                        value = -1;
+                    }
+
+                    return value;
+                }
+                `}
+            />
+            <X.P>这段代码只检查了`index &lt; len`的情况；在判断条件中还应加入`index &gt;= 0`。</X.P>
             <X.H2 href="https://cwe.mitre.org/data/definitions/22.html">
                 【B】CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')
             </X.H2>
+            {/* todo */}
+
             <X.H2 href="https://cwe.mitre.org/data/definitions/352.html">
                 【Compo】CWE-352: Cross-Site Request Forgery (CSRF)
             </X.H2>
+            {/* todo */}
+
             <X.H2 href="https://cwe.mitre.org/data/definitions/434">
                 【B】CWE-434: Unrestricted Upload of File with Dangerous Type
             </X.H2>
+            {/* todo */}
+
             <X.H2 href="https://cwe.mitre.org/data/definitions/862">【C】CWE-862: Missing Authorization</X.H2>
+            {/* todo */}
+
             <X.H2 href="https://cwe.mitre.org/data/definitions/476">【B】CWE-476: NULL Pointer Dereference</X.H2>
+            {/* todo */}
+
             <X.H2 href="https://cwe.mitre.org/data/definitions/287">【C】CWE-287: Improper Authentication</X.H2>
+            {/* todo */}
+
             <X.H2 href="https://cwe.mitre.org/data/definitions/190">【B】CWE-190: Integer Overflow or Wraparound</X.H2>
+            <X.P>
+                整数溢出或整数回绕，当有符号数相加超过正负值上限时可能发生溢出；当无符号数相加超过上限就会从`0`开始“回绕”；---
+                或者计算`unsigned(0) - 1`时，会得到最大值。
+            </X.P>
+            <X.H3>Example 1</X.H3>
+            <X.CodeBlock
+                language="c"
+                code={`
+                img_t table_ptr; /*struct containing img data, 10kB each*/
+                int num_imgs;
+                ...
+                num_imgs = get_num_imgs();
+                table_ptr = (img_t *)malloc(sizeof(img_t) * num_imgs);
+                ...
+                `}
+            />
+            <X.P>随着`num_imgs`增大，乘积计算结果可能发生回绕，导致最终分配了一个很小的内存空间。</X.P>
+            <X.H3>Example 2</X.H3>
+            <X.CodeBlock
+                language="c"
+                code={`
+                short int bytesRec = 0;
+                char buf[SOMEBIGNUM];
+
+                while (bytesRec < MAXGET)
+                {
+                    bytesRec += getFromInput(buf + bytesRec);
+                }
+                `}
+            />
+            <X.P>
+                `bytesRec`定义为`short int`类型，当`MAXGET`很大时，很可能导致`bytesRec`溢出（永远小于`MAXGET`），---
+                循环不会终止，并不断地覆盖`buf`中的内容。
+            </X.P>
+            {/* todo */}
+
             <X.H2 href="https://cwe.mitre.org/data/definitions/502">
                 【B】CWE-502: Deserialization of Untrusted Data
             </X.H2>
+            {/* todo */}
+
             <X.H2 href="https://cwe.mitre.org/data/definitions/77">
                 【C】CWE-77: Improper Neutralization of Special Elements used in a Command ('Command Injection')
             </X.H2>
+            {/* todo */}
+
             <X.H2 href="https://cwe.mitre.org/data/definitions/119">
                 【C】CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer
             </X.H2>
+            {/* todo */}
+
             <X.H2 href="https://cwe.mitre.org/data/definitions/798">【B】CWE-798: Use of Hard-coded Credentials</X.H2>
+            {/* todo */}
+
             <X.H2 href="https://cwe.mitre.org/data/definitions/918">
                 【B】CWE-918: Server-Side Request Forgery (SSRF)
             </X.H2>
+            {/* todo */}
+
             <X.H2 href="https://cwe.mitre.org/data/definitions/306">
                 【B】CWE-306: Missing Authentication for Critical Function
             </X.H2>
+            {/* todo */}
+
             <X.H2 href="https://cwe.mitre.org/data/definitions/362">
+                
                 【C】CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race
                 Condition')
+
             </X.H2>
+            {/* todo */}
+
             <X.H2 href="https://cwe.mitre.org/data/definitions/269">【C】CWE-269: Improper Privilege Management</X.H2>
+            {/* todo */}
+
             <X.H2 href="https://cwe.mitre.org/data/definitions/94">
                 【B】CWE-94: Improper Control of Generation of Code ('Code Injection')
             </X.H2>
-            <X.H2 href="https://cwe.mitre.org/data/definitions/863">【C】CWE-863: Incorrect Authorization</X.H2>
-            <X.H2 href="https://cwe.mitre.org/data/definitions/276">【B】CWE-276: Incorrect Default Permissions</X.H2>
+            {/* todo */}
 
+            <X.H2 href="https://cwe.mitre.org/data/definitions/863">【C】CWE-863: Incorrect Authorization</X.H2>
+            {/* todo */}
+
+            <X.H2 href="https://cwe.mitre.org/data/definitions/276">【B】CWE-276: Incorrect Default Permissions</X.H2>
             {/* todo */}
 
             {/* real-world project */}
