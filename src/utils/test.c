@@ -1,27 +1,9 @@
-private boolean isUserAuthentic = false;
-
-// authenticate user,
-
-// if user is authenticated then set variable to true
-
-// otherwise set variable to false
-public boolean authenticateUser(String username, String password)
+private void buildList(int untrustedListSize)
 {
-    ...
-}
-
-public BankAccount createNewBankAccount(String accountNumber, String accountType, String accountName, String accountSSN, double balance)
-{
-    BankAccount account = null;
-
-    if (isUserAuthentic)
+    if (0 > untrustedListSize)
     {
-        account = new BankAccount();
-        account.setAccountNumber(accountNumber);
-        account.setAccountType(accountType);
-        account.setAccountOwnerName(accountName);
-        account.setAccountOwnerSSN(accountSSN);
-        account.setBalance(balance);
+        die("Negative value supplied for list size, die evil hacker!");
     }
-    return account;
+    Widget[] list = new Widget[untrustedListSize];
+    list[0] = new Widget();
 }
