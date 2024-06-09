@@ -25,9 +25,10 @@
     margin-right: 6px;
     color: var(--text-color-active);
 }
+/* todo: 段落看起来距离更远，是因为字体的top-line不是盒子的上边界 */
 .x-h3 {
     margin-top: 24px;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     font-size: 18px;
     color: var(--text-color-main);
 }

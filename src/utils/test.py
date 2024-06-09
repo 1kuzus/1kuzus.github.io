@@ -1,16 +1,15 @@
-# try {
-class ExampleProtocol(protocol.Protocol):
-    def dataReceived(self, data):
+def makeNewUserDir(username):
+    if invalidUsername(username):
+        #avoid CWE-22 and CWE-78
+        print('Usernames cannot contain invalid characters')
+        return False
 
-# Code that would be here would parse the incoming data
-# After receiving headers, call confirmAuth() to authenticate
-        pass
-    def confirmAuth(self, headers):
-        try:
-            token = cPickle.loads(base64.b64decode(headers['AuthToken']))
-            if not check_hmac(token['signature'], token['data'], getSecretKey()):
-                raise AuthFail
-            self.secure_data = token['data']
-        except:
-            raise   AuthFail
-# }
+    try:
+        raisePrivileges()
+        os.mkdir('/home/' + username)
+        lowerPrivileges()
+    except OSError:
+        print('Unable to create new user directory for user:' + username)
+        return False
+
+    return True

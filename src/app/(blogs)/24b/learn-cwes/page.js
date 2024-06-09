@@ -187,12 +187,10 @@ export default function Blog() {
                 <X.P>反射型`(Reflected XSS)`/非持久型`(Non-Persistent XSS)`</X.P>
             </X.Uli>
             {/* todo */}
-
             <X.H2 href="https://cwe.mitre.org/data/definitions/89.html">
                 【B】CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
             </X.H2>
             {/* todo */}
-
             <X.H2 href="https://cwe.mitre.org/data/definitions/416.html">【V】CWE-416: Use After Free</X.H2>
             <X.P>使用释放过的指针可能会导致未知的行为发生。</X.P>
             <X.H3>Example 1</X.H3>
@@ -244,13 +242,12 @@ export default function Blog() {
                 【B】CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')
             </X.H2>
             {/* todo */}
-
             <X.H2 href="https://cwe.mitre.org/data/definitions/20.html">【C】CWE-20: Improper Input Validation</X.H2>
             <X.P>
                 输入验证不当，程序接收输入或数据，但没有验证或者错误地验证输入是否具有安全正确地处理数据所需的属性。
             </X.P>
             <X.H3>Example 1</X.H3>
-            <X.P>未作输入验证。</X.P>
+            <X.P>没有输入验证。</X.P>
             <X.CodeBlock
                 language="php"
                 code={`
@@ -270,6 +267,7 @@ export default function Blog() {
             </X.P>
             <X.P>XSS攻击或SQL注入只是输入验证不当可能出现的后果中的一小部分。</X.P>
             <X.H3>Example 2</X.H3>
+            <X.P>有问题的输入验证。</X.P>
             <X.CodeBlock
                 language="java"
                 code={`
@@ -322,27 +320,227 @@ export default function Blog() {
             <X.H2 href="https://cwe.mitre.org/data/definitions/22.html">
                 【B】CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')
             </X.H2>
-            {/* todo */}
+            <X.P>
+                “路径遍历”，产品使用外部输入来构建路径名，该路径名旨在识别位于受限父目录下的文件或目录。但通过使用特殊元素---
+                如`../`序列，如果没有经过中和处理，攻击者可能会访问到受限目录之外的文件。
+            </X.P>
+            <X.P>
+                上述风险称为“相对路径遍历”，路径遍历还包括使用绝对路径名，例如`/usr/local/bin`，这称为“绝对路径遍历”。
+            </X.P>
+            <X.P>
+                在许多编程语言中，注入空字节可能允许攻击者截断生成的文件名，以扩大攻击范围。例如，产品可能会将`".txt"`---
+                添加到路径名后以限制攻击者只能访问文本文件，但空注入可能会有效地消除此限制。
+            </X.P>
+            <X.H3>Example 1</X.H3>
+            <X.CodeBlock
+                language="perl"
+                code={`
+                my $dataPath = "/users/cwe/profiles";
+                my $username = param("user");
+                my $profilePath = $dataPath."/".$username;
 
+                open(my $fh, "<", $profilePath) || ExitError("profile read error: $profilePath");
+                print "<ul>\\n";
+                while (<$fh>)
+                {
+                    print "<li>$_</li>\\n";
+                }
+                print "</ul>\\n";
+                `}
+            />
+            <X.P>`$username`参数没有验证，攻击者可以构造：</X.P>
+            <X.CodeBlock language="text" code="user=../../../etc/passwd" />
+            <X.P>最终生成以下路径：</X.P>
+            <X.CodeBlock language="text" code="/users/cwe/profiles/../../../etc/passwd" />
+            <X.P>等同于访问`/etc/passwd`。</X.P>
+            <X.H3>Example 2</X.H3>
+            <X.CodeBlock
+                language="python"
+                code={`
+                import os
+                import sys
+                def main():
+                    filename = sys.argv[1]
+                    path = os.path.join(os.getcwd(), filename)
+                    try:
+                        with open(path,'r') as f:
+                            file_data = f.read()
+                    except FileNotFoundError as    e:
+                        print("Error - file not found")
+                main()
+                `}
+            />
+            <X.P>
+                上述代码会导致“绝对路径遍历”，`os.path.join`如果第二个参数传入绝对路径，则会弃用第一个参数`os.getcwd()`，---
+                直接使用第二个参数`filename`。那么传入`/etc/passwd`就可能导致同样的攻击。
+            </X.P>
+            <X.P>一个正确的做法是：</X.P>
+            <X.CodeBlock
+                language="python"
+                highlightLines="5"
+                code={`
+                import os
+                import sys
+                def main():
+                    filename = sys.argv[1]
+                    path = os.path.normpath(f"{os.getcwd()}{os.sep}{filename}")
+                    try:
+                        with open(path,'r') as f:
+                            file_data = f.read()
+                    except FileNotFoundError as    e:
+                        print("Error - file not found")
+                main()
+                `}
+            />
             <X.H2 href="https://cwe.mitre.org/data/definitions/352.html">
                 【Compo】CWE-352: Cross-Site Request Forgery (CSRF)
             </X.H2>
             {/* todo */}
-
             <X.H2 href="https://cwe.mitre.org/data/definitions/434.html">
                 【B】CWE-434: Unrestricted Upload of File with Dangerous Type
             </X.H2>
-            {/* todo */}
-
+            <X.P>缺少对上传文件类型的验证。</X.P>
+            <X.H3>Example 1</X.H3>
+            <X.P>
+                下面的代码中，前端希望用户上传一个图片，`upload_picture.php`处理上传的文件，并尝试储存在`pictures/`中。
+            </X.P>
+            <X.CodeBlock
+                language="html"
+                code={`
+                <form action="upload_picture.php" method="post" enctype="multipart/form-data">
+                    Choose a file to upload:
+                    <input type="file" name="filename"/>
+                    <br/>
+                    <input type="submit" name="submit" value="Submit"/>
+                </form>
+                `}
+            />
+            <X.CodeBlock
+                language="php"
+                code={`
+                //upload_picture.php
+                ...
+                // Define the target location where the picture being
+                // uploaded is going to be saved.
+                $target = "pictures/" . basename($_FILES['uploadedfile']['name']);
+                
+                // Move the uploaded file to the new location.
+                if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target))
+                {
+                    echo "The picture has been successfully uploaded.";
+                }
+                else
+                {
+                    echo "There was an error uploading the picture, please try again.";
+                }
+                `}
+            />
+            <X.P>
+                上述代码的问题是没有检查传入的文件类型，以至于攻击者可以上传一份`malicious.php`，并且用它来执行系统代码：
+            </X.P>
+            <X.CodeBlock
+                language="php"
+                code={`
+                <?php
+                    //malicious.php
+                    system($_GET['cmd']);
+                ?>
+                `}
+            />
+            <X.P>上传成功后通过类似以下形式的URL调用：</X.P>
+            <X.CodeBlock language="text" code="http://server.example.com/upload_dir/malicious.php?cmd=ls%20-l" />
             <X.H2 href="https://cwe.mitre.org/data/definitions/862.html">【C】CWE-862: Missing Authorization</X.H2>
-            {/* todo */}
-
+            <X.P>缺少授权，没有正确验证用户是否有权访问资源。</X.P>
+            <X.HighlightBlock>
+                <X.H3>Authentication & Authorization</X.H3>
+                <X.Uli>
+                    `Authentication (AuthN)`，身份认证，通常在授权之前完成，是验证“用户是谁”的过程。---
+                    一般通过账号密码、人脸识别的方式。\n例如：员工通过输入用户名和密码登录公司网络。
+                </X.Uli>
+                <X.Uli>
+                    `Authorization (AuthZ)`，授权，是确认用户是否有权访问资源。---
+                    一般通过角色规则（管理员、普通用户）等方式。\n
+                    例如：普通员工登录公司网络后，不能访问公司较为敏感的数据。
+                </X.Uli>
+            </X.HighlightBlock>
+            <X.H3>Example 1</X.H3>
+            <X.CodeBlock
+                language="php"
+                code={`
+                function runEmployeeQuery($dbName, $name)
+                {
+                    mysql_select_db($dbName,$globalDbHandle) or die("Could not open Database".$dbName);
+                    //Use a prepared statement to avoid CWE-89
+                    $preparedStatement = $globalDbHandle->prepare('SELECT * FROM employees WHERE name = :name');
+                    $preparedStatement->execute(array(':name' => $name));
+                    return $preparedStatement->fetchAll();
+                }
+                ...
+                $employeeRecord = runEmployeeQuery('EmployeeDB',$_GET['EmployeeName']);
+                `}
+            />
+            <X.P>
+                这段代码小心地检查了SQL注入风险（通过`prepare`函数），但却没有验证执行数据库操作的用户是否具有权限。
+            </X.P>
             <X.H2 href="https://cwe.mitre.org/data/definitions/476.html">【B】CWE-476: NULL Pointer Dereference</X.H2>
-            {/* todo */}
+            <X.P>对空指针解引用（取内容），也就是`*`运算符。</X.P>
+            <X.H3>Example 1</X.H3>
+            <X.CodeBlock
+                language="c"
+                code={`
+                void host_lookup(char *user_supplied_addr)
+                {
+                    struct hostent *hp;
+                    in_addr_t *addr;
+                    char hostname[64];
+                    in_addr_t inet_addr(const char *cp);
 
+                    /*routine that ensures user_supplied_addr is in the right format for conversion */
+
+                    validate_addr_form(user_supplied_addr);
+                    addr = inet_addr(user_supplied_addr);
+                    hp = gethostbyaddr(addr, sizeof(struct in_addr), AF_INET);
+                    strcpy(hostname, hp->h_name);
+                }
+                `}
+            />
+            <X.P>
+                如果`gethostbyaddr`返回`NULL`，`hp`就是空指针，`strcpy`会导致空指针解引用。程序缺少对其返回值的检查。
+            </X.P>
             <X.H2 href="https://cwe.mitre.org/data/definitions/287.html">【C】CWE-287: Improper Authentication</X.H2>
-            {/* todo */}
+            <X.P>身份认证不当，当声明拥有某个身份时，程序不足以证明该声明是正确的。</X.P>
+            <X.H3>Example 1</X.H3>
+            <X.CodeBlock
+                language="perl"
+                code={`
+                my $x = new CGI;
 
+                if ($x->cookie('loggedin') ne "true")
+                {
+                    if (!AuthenticateUser($x->param('username'), $x->param('password')))
+                    {
+                        ExitError("Error: you need to log in first");
+                    }
+                    else
+                    {
+                        #Set loggedin and user cookies.
+                        $x->cookie(
+                            -name = > 'loggedin',
+                            -value = > 'true');
+                
+                        $x->cookie(
+                            -name = > 'user',
+                            -value = > $x->param('username'));
+                    }
+                }
+
+                if ($x->cookie('user') eq "Administrator")
+                {
+                    DoAdministratorTasks();
+                }
+                `}
+            />
+            <X.P>使用cookie做认证，是可以直接被绕过的！</X.P>
             <X.H2 href="https://cwe.mitre.org/data/definitions/190.html">
                 【B】CWE-190: Integer Overflow or Wraparound
             </X.H2>
@@ -435,13 +633,47 @@ export default function Blog() {
             <X.H2 href="https://cwe.mitre.org/data/definitions/77.html">
                 【C】CWE-77: Improper Neutralization of Special Elements used in a Command ('Command Injection')
             </X.H2>
-            {/* todo */}
-
+            <X.P>命令注入，用户输入没有被中和，或错误地中和处理，导致执行的预期命令被修改。</X.P>
+            <X.P noMarginBottom>命令注入漏洞通常发生在以下情况：</X.P>
+            <X.Uli>数据从不受信任的来源进入应用程序。</X.Uli>
+            <X.Uli>数据是字符串的一部分，由应用程序作为命令执行。</X.Uli>
+            <X.Uli>通过执行命令，应用程序为攻击者提供了其原本无法拥有的权限或能力。</X.Uli>
+            <X.H3>Example 1</X.H3>
+            <X.CodeBlock
+                language="c"
+                code={`
+                int main(int argc, char **argv)
+                {
+                    char cmd[CMD_MAX] = "/usr/bin/cat ";
+                    strcat(cmd, argv[1]);
+                    system(cmd);
+                }
+                `}
+            />
+            <X.P>
+                上述程序出于对运维人员的教学目的将会以管理员权限执行。此时有命令注入的风险，例如传入`";rm -rf /"`。
+            </X.P>
+            <X.H3>Example 2</X.H3>
+            <X.CodeBlock
+                language="java"
+                code={String.raw`
+                String btype = request.getParameter("backuptype");
+                String cmd = new String("cmd.exe /K \" c:\\util\\rmanDB.bat "
+                    +btype+
+                    "&&c:\\utl\\cleanup.bat\""
+                )
+                
+                System.Runtime.getRuntime().exec(cmd);
+                `}
+            />
+            <X.P>原因是类似的，`btype`参数有被注入的风险。</X.P>
             <X.H2 href="https://cwe.mitre.org/data/definitions/119.html">
                 【C】CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer
             </X.H2>
-            {/* todo */}
-
+            <X.P>
+                缓冲区范围内的操作限制不当，产品对内存缓冲区执行操作，但它可以从缓冲区预期边界之外的内存位置读取或写入。
+            </X.P>
+            <X.P>包括前面提到的越界读取和越界写入。范围较为广泛，这里不详细展开了。</X.P>
             <X.H2 href="https://cwe.mitre.org/data/definitions/798.html">
                 【B】CWE-798: Use of Hard-coded Credentials
             </X.H2>
@@ -490,7 +722,6 @@ export default function Blog() {
                 【B】CWE-918: Server-Side Request Forgery (SSRF)
             </X.H2>
             {/* todo */}
-
             <X.H2 href="https://cwe.mitre.org/data/definitions/306.html">
                 【B】CWE-306: Missing Authentication for Critical Function
             </X.H2>
@@ -533,20 +764,80 @@ export default function Blog() {
                 Condition')
             </X.H2>
             {/* todo */}
-
             <X.H2 href="https://cwe.mitre.org/data/definitions/269.html">
                 【C】CWE-269: Improper Privilege Management
             </X.H2>
-            {/* todo */}
+            <X.P>权限管理不当，程序没有正确地管理用户的权限。</X.P>
+            <X.H3>Example 1</X.H3>
+            <X.CodeBlock
+                language="python"
+                code={`
+                def makeNewUserDir(username):
+                if invalidUsername(username):
+                    #avoid CWE-22 and CWE-78
+                    print('Usernames cannot contain invalid characters')
+                    return False
 
+                try:
+                    raisePrivileges()
+                    os.mkdir('/home/' + username)
+                    lowerPrivileges()
+                except OSError:
+                    print('Unable to create new user directory for user:' + username)
+                    return False
+
+                return True
+                `}
+            />
+            <X.P>
+                上述代码先提高权限以创建文件夹，然后立刻降回来。但如果`os.mkdir()`发生了异常，就不会调用`lowerPrivileges()`，---
+                这时程序会在提高的权限下运行，可能导致进一步被利用。
+            </X.P>
+            <X.H3>Example 2</X.H3>
+            <X.CodeBlock
+                language="java"
+                code={`
+                public enum Roles
+                {
+                    ADMIN,OPERATOR,USER,GUEST
+                }
+
+                public void resetPassword(User requestingUser, User user, String password)
+                {
+                    if (isAuthenticated(requestingUser))
+                    {
+                        switch (requestingUser.role)
+                        {
+                        case GUEST:
+                            System.out.println("You are not authorized to perform this command");
+                            break;
+                
+                        case USER:
+                            System.out.println("You are not authorized to perform this command");
+                            break;
+                
+                        default:
+                            setPassword(user, password);
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        System.out.println("You must be logged in to perform this command");
+                    }
+                }
+                `}
+            />
+            <X.P>
+                这个系统定义了不同等级的用户，`ADMIN`和`OPERATOR`都可以重置密码。系统设计的初衷是想让`OPERATOR`拥有稍弱于`ADMIN`的权限；---
+                然而既然`OPERATOR`可以修改密码，那么就可以通过重置`ADMIN`账号的密码来控制一个管理员账号。此例的权限管理是有缺陷的。
+            </X.P>
             <X.H2 href="https://cwe.mitre.org/data/definitions/94.html">
                 【B】CWE-94: Improper Control of Generation of Code ('Code Injection')
             </X.H2>
             {/* todo */}
-
             <X.H2 href="https://cwe.mitre.org/data/definitions/863.html">【C】CWE-863: Incorrect Authorization</X.H2>
             {/* todo */}
-
             <X.H2 href="https://cwe.mitre.org/data/definitions/276.html">
                 【B】CWE-276: Incorrect Default Permissions
             </X.H2>
@@ -561,7 +852,7 @@ export default function Blog() {
             <X.P>
                 如果这些默认权限设置得过于宽松，比如允许所有用户都具有读写权限，那么未授权的用户可能会访问、修改或删除这些文件，导致数据泄露、篡改或破坏。
             </X.P>
-
+            {/* highlight */}
             {/* real-world project */}
         </>
     );
