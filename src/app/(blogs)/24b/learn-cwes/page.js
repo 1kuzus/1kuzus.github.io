@@ -250,6 +250,7 @@ export default function Blog() {
                 输入验证不当，程序接收输入或数据，但没有验证或者错误地验证输入是否具有安全正确地处理数据所需的属性。
             </X.P>
             <X.H3>Example 1</X.H3>
+            <X.P>未作输入验证。</X.P>
             <X.CodeBlock
                 language="php"
                 code={`
@@ -258,9 +259,34 @@ export default function Blog() {
                 echo "生日：$birthday<br>主页：<a href=$homepage>点击此处</a>"
                 `}
             />
-            <X.P>这段程序展示用户的生日和主页，但由于这些来自于HTTP请求，</X.P>
-            {/* todo */}
-
+            <X.P>
+                这段程序展示用户的生日和主页，但由于这些参数来自于HTTP请求，攻击者可以构造一个含有`script`标签的钓鱼链接，---
+                并通过参数传入，导致恶意脚本在客户端上执行。
+            </X.P>
+            <X.P>尽管开发者可以限制输入为整数和破折号，攻击者仍有可能提供以下形式的字符串：</X.P>
+            <X.CodeBlock language="text" code="2009-01-09--" />
+            <X.P>
+                如果在SQL语句中使用这些数据，它会将语句的其余部分视为注释。注释可能会禁用语句中其他与安全相关的逻辑。
+            </X.P>
+            <X.P>XSS攻击或SQL注入只是输入验证不当可能出现的后果中的一小部分。</X.P>
+            <X.H3>Example 2</X.H3>
+            <X.CodeBlock
+                language="java"
+                code={`
+                private void buildList(int untrustedListSize)
+                {
+                    if (0 > untrustedListSize)
+                    {
+                        die("Negative value supplied for list size, die evil hacker!");
+                    }
+                    Widget[] list = new Widget[untrustedListSize];
+                    list[0] = new Widget();
+                }
+                `}
+            />
+            <X.P>
+                这个示例尝试根据用户指定的值构建列表，并判断了提供值为负的情况，但还是忽略了输入`0`值的情况，可能导致后续抛出异常。
+            </X.P>
             <X.H2 href="https://cwe.mitre.org/data/definitions/125.html">【B】CWE-125: Out-of-bounds Read</X.H2>
             <X.P>越界读取，在预期缓冲区末尾之后或开头之前读取。</X.P>
             <X.H3>Example 1</X.H3>
@@ -317,7 +343,9 @@ export default function Blog() {
             <X.H2 href="https://cwe.mitre.org/data/definitions/287.html">【C】CWE-287: Improper Authentication</X.H2>
             {/* todo */}
 
-            <X.H2 href="https://cwe.mitre.org/data/definitions/190.html">【B】CWE-190: Integer Overflow or Wraparound</X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/190.html">
+                【B】CWE-190: Integer Overflow or Wraparound
+            </X.H2>
             <X.P>
                 整数溢出或整数回绕，当有符号数相加超过正负值上限时可能发生溢出；当无符号数相加超过上限就会从`0`开始“回绕”；---
                 或者计算`unsigned(0) - 1`时，会得到最大值。
@@ -414,7 +442,9 @@ export default function Blog() {
             </X.H2>
             {/* todo */}
 
-            <X.H2 href="https://cwe.mitre.org/data/definitions/798.html">【B】CWE-798: Use of Hard-coded Credentials</X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/798.html">
+                【B】CWE-798: Use of Hard-coded Credentials
+            </X.H2>
             <X.P>使用硬编码的凭证，即凭证在源代码中直接出现。</X.P>
             <X.H3>Example 1</X.H3>
             <X.P>下面的代码硬编码了用户名和密码去连接数据库：</X.P>
@@ -504,7 +534,9 @@ export default function Blog() {
             </X.H2>
             {/* todo */}
 
-            <X.H2 href="https://cwe.mitre.org/data/definitions/269.html">【C】CWE-269: Improper Privilege Management</X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/269.html">
+                【C】CWE-269: Improper Privilege Management
+            </X.H2>
             {/* todo */}
 
             <X.H2 href="https://cwe.mitre.org/data/definitions/94.html">
@@ -515,7 +547,9 @@ export default function Blog() {
             <X.H2 href="https://cwe.mitre.org/data/definitions/863.html">【C】CWE-863: Incorrect Authorization</X.H2>
             {/* todo */}
 
-            <X.H2 href="https://cwe.mitre.org/data/definitions/276.html">【B】CWE-276: Incorrect Default Permissions</X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/276.html">
+                【B】CWE-276: Incorrect Default Permissions
+            </X.H2>
             <X.P>
                 错误的默认权限。指软件系统、应用程序、文件或资源在创建时被分配了不适当的默认权限。这些默认权限可能过于宽松，---
                 允许未授权的用户或进程进行不必要或有害的访问和操作，从而导致潜在的安全漏洞。
