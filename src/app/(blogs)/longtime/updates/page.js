@@ -40,7 +40,7 @@ function UpdateLog() {
         {date: '2023-09-06', description: '新组件`FlexRow``Image`'},
         {date: '2023-09-13', description: '段落组件支持解析行内公式'},
         {date: '2023-09-14', description: '取消了切换主题时背景颜色的过渡动画'},
-        {date: '2023-09-19', description: '解决代码编辑器里文本自动换行导致html文档插入空格'},
+        {date: '2023-09-19', description: '解决代码编辑器里文本自动换行导致HTML文档插入空格'},
         {date: '2023-09-27', description: '博客目录'},
         {date: '2023-10-17', description: '加入`vscode snippets`'},
         {date: '2023-10-22', description: '加入`Google Analytics`'},
