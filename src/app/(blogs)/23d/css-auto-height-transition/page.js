@@ -200,7 +200,7 @@ export default function Blog() {
                 </div>
             </X.FlexRow>
             <X.P>
-                注意在html结构中，要为`content`再添加一层子元素`div`，`display:
+                注意在HTML结构中，要为`content`再添加一层子元素`div`，`display:
                 grid;`和`grid-template-rows`属性仍然设置给`content`，但此时`overflow:
                 hidden;`要设置给`content`的子元素。
             </X.P>

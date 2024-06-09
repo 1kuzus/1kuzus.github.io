@@ -246,6 +246,19 @@ export default function Blog() {
             {/* todo */}
 
             <X.H2 href="https://cwe.mitre.org/data/definitions/20.html">【C】CWE-20: Improper Input Validation</X.H2>
+            <X.P>
+                输入验证不当，程序接收输入或数据，但没有验证或者错误地验证输入是否具有安全正确地处理数据所需的属性。
+            </X.P>
+            <X.H3>Example 1</X.H3>
+            <X.CodeBlock
+                language="php"
+                code={`
+                $birthday = $_GET['birthday'];
+                $homepage = $_GET['homepage'];
+                echo "生日：$birthday<br>主页：<a href=$homepage>点击此处</a>"
+                `}
+            />
+            <X.P>这段程序展示用户的生日和主页，但由于这些来自于HTTP请求，</X.P>
             {/* todo */}
 
             <X.H2 href="https://cwe.mitre.org/data/definitions/125.html">【B】CWE-125: Out-of-bounds Read</X.H2>
@@ -290,21 +303,21 @@ export default function Blog() {
             </X.H2>
             {/* todo */}
 
-            <X.H2 href="https://cwe.mitre.org/data/definitions/434">
+            <X.H2 href="https://cwe.mitre.org/data/definitions/434.html">
                 【B】CWE-434: Unrestricted Upload of File with Dangerous Type
             </X.H2>
             {/* todo */}
 
-            <X.H2 href="https://cwe.mitre.org/data/definitions/862">【C】CWE-862: Missing Authorization</X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/862.html">【C】CWE-862: Missing Authorization</X.H2>
             {/* todo */}
 
-            <X.H2 href="https://cwe.mitre.org/data/definitions/476">【B】CWE-476: NULL Pointer Dereference</X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/476.html">【B】CWE-476: NULL Pointer Dereference</X.H2>
             {/* todo */}
 
-            <X.H2 href="https://cwe.mitre.org/data/definitions/287">【C】CWE-287: Improper Authentication</X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/287.html">【C】CWE-287: Improper Authentication</X.H2>
             {/* todo */}
 
-            <X.H2 href="https://cwe.mitre.org/data/definitions/190">【B】CWE-190: Integer Overflow or Wraparound</X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/190.html">【B】CWE-190: Integer Overflow or Wraparound</X.H2>
             <X.P>
                 整数溢出或整数回绕，当有符号数相加超过正负值上限时可能发生溢出；当无符号数相加超过上限就会从`0`开始“回绕”；---
                 或者计算`unsigned(0) - 1`时，会得到最大值。
@@ -339,7 +352,7 @@ export default function Blog() {
                 `bytesRec`定义为`short int`类型，当`MAXGET`很大时，很可能导致`bytesRec`溢出（永远小于`MAXGET`），---
                 循环不会终止，并不断地覆盖`buf`中的内容。
             </X.P>
-            <X.H2 href="https://cwe.mitre.org/data/definitions/502">
+            <X.H2 href="https://cwe.mitre.org/data/definitions/502.html">
                 【B】CWE-502: Deserialization of Untrusted Data
             </X.H2>
             <X.P>反序列化不受信任的数据，也就是没有检查反序列化后的结果是否是有效的。</X.P>
@@ -391,17 +404,17 @@ export default function Blog() {
                 例如，攻击者可以构建一个利用Python子进程模块的`pickle`，该模块会生成新进程并包含许多用于各种用途的参数。---
                 由于`Pickle`库允许对象定义如何`unpickle`，因此攻击者可以指示`unpickle`进程在子进程模块中调用`Popen`并执行`/bin/sh`。
             </X.P>
-            <X.H2 href="https://cwe.mitre.org/data/definitions/77">
+            <X.H2 href="https://cwe.mitre.org/data/definitions/77.html">
                 【C】CWE-77: Improper Neutralization of Special Elements used in a Command ('Command Injection')
             </X.H2>
             {/* todo */}
 
-            <X.H2 href="https://cwe.mitre.org/data/definitions/119">
+            <X.H2 href="https://cwe.mitre.org/data/definitions/119.html">
                 【C】CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer
             </X.H2>
             {/* todo */}
 
-            <X.H2 href="https://cwe.mitre.org/data/definitions/798">【B】CWE-798: Use of Hard-coded Credentials</X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/798.html">【B】CWE-798: Use of Hard-coded Credentials</X.H2>
             <X.P>使用硬编码的凭证，即凭证在源代码中直接出现。</X.P>
             <X.H3>Example 1</X.H3>
             <X.P>下面的代码硬编码了用户名和密码去连接数据库：</X.P>
@@ -443,12 +456,12 @@ export default function Blog() {
                 }
                 `}
             />
-            <X.H2 href="https://cwe.mitre.org/data/definitions/918">
+            <X.H2 href="https://cwe.mitre.org/data/definitions/918.html">
                 【B】CWE-918: Server-Side Request Forgery (SSRF)
             </X.H2>
             {/* todo */}
 
-            <X.H2 href="https://cwe.mitre.org/data/definitions/306">
+            <X.H2 href="https://cwe.mitre.org/data/definitions/306.html">
                 【B】CWE-306: Missing Authentication for Critical Function
             </X.H2>
             <X.P>重要功能没有做权限认证。</X.P>
@@ -485,24 +498,24 @@ export default function Blog() {
                 `}
             />
             <X.P>上面代码中高亮的部分是*正确*的做法。如果忽视了验证，就存在风险了。</X.P>
-            <X.H2 href="https://cwe.mitre.org/data/definitions/362">
+            <X.H2 href="https://cwe.mitre.org/data/definitions/362.html">
                 【C】CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race
                 Condition')
             </X.H2>
             {/* todo */}
 
-            <X.H2 href="https://cwe.mitre.org/data/definitions/269">【C】CWE-269: Improper Privilege Management</X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/269.html">【C】CWE-269: Improper Privilege Management</X.H2>
             {/* todo */}
 
-            <X.H2 href="https://cwe.mitre.org/data/definitions/94">
+            <X.H2 href="https://cwe.mitre.org/data/definitions/94.html">
                 【B】CWE-94: Improper Control of Generation of Code ('Code Injection')
             </X.H2>
             {/* todo */}
 
-            <X.H2 href="https://cwe.mitre.org/data/definitions/863">【C】CWE-863: Incorrect Authorization</X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/863.html">【C】CWE-863: Incorrect Authorization</X.H2>
             {/* todo */}
 
-            <X.H2 href="https://cwe.mitre.org/data/definitions/276">【B】CWE-276: Incorrect Default Permissions</X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/276.html">【B】CWE-276: Incorrect Default Permissions</X.H2>
             <X.P>
                 错误的默认权限。指软件系统、应用程序、文件或资源在创建时被分配了不适当的默认权限。这些默认权限可能过于宽松，---
                 允许未授权的用户或进程进行不必要或有害的访问和操作，从而导致潜在的安全漏洞。

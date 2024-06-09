@@ -88,11 +88,11 @@ export default function Blog() {
             </X.HighlightBlock>
             <X.P>
                 言归正传，在没有预先知道参数含义的情况下，先从看起来是明文形式的后两个参数入手，直接搜索`_eventId`，---
-                找到了`html`中写表单的隐藏域（也就是`input type="hidden"`）的位置：
+                找到了HTML中写表单的隐藏域（也就是`input type="hidden"`）的位置：
             </X.P>
             <X.Image src="fig4.jpg" width="100%" />
             <X.P>
-                我们发现最后三个参数`value`值非空，是可以直接从`html`文档中读取的固定参数，尽管每次请求时他们可能不同。
+                我们发现最后三个参数`value`值非空，是可以直接从HTML文档中读取的固定参数，尽管每次请求时他们可能不同。
             </X.P>
             <X.P>到这里，我们只剩`ul`，`pl`，`code`参数需要构造，分别需要进行逆向和OCR。</X.P>
             <X.H1>逆向</X.H1>
