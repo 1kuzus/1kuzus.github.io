@@ -128,6 +128,11 @@ const archives = [
                 time: '2024-05-31',
             },
             {
+                title: 'LeetCode 312.戳气球',
+                path: '/24b/leetcode-312/',
+                time: '2024-06-09',
+            },
+            {
                 title: 'LeetCode 1373.二叉搜索子树的最大键值和',
                 path: '/24b/leetcode-1373/',
                 time: '2024-06-02',
