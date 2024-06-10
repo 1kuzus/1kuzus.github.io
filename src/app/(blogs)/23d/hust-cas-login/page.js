@@ -13,8 +13,8 @@ export default function Blog() {
     return (
         <>
             <X.Title>{metas[pathname].blogtitle}</X.Title>
-            <X.P>登录地址是@https://pass.hust.edu.cn/cas/login[https://pass.hust.edu.cn/cas/login]@。</X.P>
-            <X.P>程序的Github在@https://github.com/1kuzus/HustCASLogin[https://github.com/1kuzus/HustCASLogin]@。</X.P>
+            <X.P>登录地址是@[https://pass.hust.edu.cn/cas/login]@。</X.P>
+            <X.P>程序的Github在@[https://github.com/1kuzus/HustCASLogin]@。</X.P>
             <X.Image src="fig1.jpg" width="100%" />
             <X.H1>分析</X.H1>
             <X.P>
@@ -244,7 +244,7 @@ export default function Blog() {
             </X.HighlightBlock>
             <X.H1>OCR</X.H1>
             <X.P>
-                华科的验证码是一个四位数字，干扰比较小，属于非常简单的验证码。验证码请求的地址是@https://pass.hust.edu.cn/cas/code[https://pass.hust.edu.cn/cas/code]@。
+                华科的验证码是一个四位数字，干扰比较小，属于非常简单的验证码。验证码请求的地址是@[https://pass.hust.edu.cn/cas/code]@。
             </X.P>
             <X.P>核心的识别逻辑使用`ddddocr`库就可以了，不需要借助付费的打码平台。</X.P>
             <X.P noMarginBottom>验证码是`gif`格式，考虑将所有帧叠加，再做二值化：</X.P>

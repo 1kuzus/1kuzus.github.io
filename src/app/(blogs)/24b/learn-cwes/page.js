@@ -178,9 +178,11 @@ export default function Blog() {
             </X.P>
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>Example in real-world project</X.H3>
-                <X.P>
-                    详见@[https://github.com/zephyrproject-rtos/zephyr/security/advisories/GHSA-fj4r-373f-9456]@。
-                </X.P>
+                <X.Uli>OpenCVE：@CVE-2021-3330[https://www.opencve.io/cve/CVE-2021-3330]@</X.Uli>
+                <X.Uli>
+                    `Exploit``Patch`：@[https://github.com/zephyrproject-rtos/zephyr/security/advisories/GHSA-fj4r-373f-9456]@
+                </X.Uli>
+                {/* todo */}
             </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/79.html">
                 【B】CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
@@ -188,6 +190,31 @@ export default function Blog() {
             <X.P>跨站脚本攻击。</X.P>
             <X.HighlightBlock bgcolor="gray">
                 <X.P>详见@Learn XSS[/24b/cross-site-scripting/]@。</X.P>
+            </X.HighlightBlock>
+            <X.HighlightBlock bgcolor="blue">
+                <X.H3>Example in real-world project</X.H3>
+                <X.Uli>OpenCVE：@CVE-2014-8958[https://www.opencve.io/cve/CVE-2014-8958]@</X.Uli>
+                <X.Uli>
+                    `Patch`：@[https://github.com/phpmyadmin/phpmyadmin/commit/d32da348c4de2379482a48661ce968a55eebe5c4]@
+                </X.Uli>
+                <X.Uli>
+                    `Patch`：@[https://github.com/phpmyadmin/phpmyadmin/commit/2ffdbf2d7daa0b92541d8b754e2afac555d3ed21]@
+                </X.Uli>
+                <X.P withMarginTop>部分补丁的内容：通过`htmlspecialchars()`转义为HTML实体。</X.P>
+                <X.CodeBlock
+                    language="diff"
+                    code={`
+                    - $html .= '<td>' . $type . '<bdo dir="ltr"></bdo></td>';
+                    + $html .= '<td>' . htmlspecialchars($type) . '<bdo dir="ltr"></bdo></td>';
+                    `}
+                />
+                <X.CodeBlock
+                    language="diff"
+                    code={`
+                    - $current_size = $_COOKIE['pma_fontsize'];
+                    + $current_size = htmlspecialchars($_COOKIE['pma_fontsize']);
+                    `}
+                />
             </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/89.html">
                 【B】CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
@@ -238,6 +265,29 @@ export default function Blog() {
                 language="sql"
                 code="SELECT MessageID, Subject FROM messages WHERE MessageID = '1432' or '1' = '1'"
             />
+            <X.HighlightBlock bgcolor="blue">
+                <X.H3>Example in real-world project</X.H3>
+                <X.Uli>OpenCVE：@CVE-2018-1000869[https://www.opencve.io/cve/CVE-2018-1000869]@</X.Uli>
+                <X.Uli>`Exploit`：@[https://github.com/phpipam/phpipam/issues/2344]@</X.Uli>
+                <X.Uli>
+                    `Patch`：@[https://github.com/phpipam/phpipam/commit/856b10ca85a24c04ed8651f4e13f867ec78a353d]@
+                </X.Uli>
+                <X.P withMarginTop>补丁中加入对参数合法性的检验：</X.P>
+                <X.CodeBlock
+                    language="php"
+                    highlightLines="4-8"
+                    code={`
+                    $nat_id   = $_POST['id'];               // nat id
+                    $nat_type = $_POST['type'];             // src, dst
+
+                    // validate object type
+                    if (!in_array($obj_type, ['subnets', 'ipaddresses'])) { $Result->show("danger", _("Invalid object type"), true); }
+
+                    // validate object id
+                    if (!is_numeric($obj_id)) { $Result->show("danger", _("Invalid object id"), true); }
+                    `}
+                />
+            </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/416.html">【V】CWE-416: Use After Free</X.H2>
             <X.P>使用释放过的指针可能会导致未知的行为发生。</X.P>
             <X.H3>Example 1</X.H3>

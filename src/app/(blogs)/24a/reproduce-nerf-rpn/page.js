@@ -14,7 +14,7 @@ export default function Blog() {
         <>
             <X.Title>{metas[pathname].blogtitle}</X.Title>
             <X.H1>说明</X.H1>
-            <X.P>复现仓库：@https://github.com/lyclyc52/NeRF_RPN[https://github.com/lyclyc52/NeRF_RPN]@</X.P>
+            <X.P>复现仓库：@[https://github.com/lyclyc52/NeRF_RPN]@</X.P>
             <X.P>
                 这项研究在NeRF中引入RPN，用于3D物体检测和相关任务。作者提供了改写的Instant-NGP以供可视化3D提议框。---
                 我自己在尝试复现的时候绕了一些弯子，因此借这篇博客复盘一下当时的过程。仓库提供的脚本多为适用于linux系统的`.sh`文件，---
