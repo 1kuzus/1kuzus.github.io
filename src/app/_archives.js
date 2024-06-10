@@ -42,6 +42,16 @@ const archives = [
                 path: '/24b/learn-cwes/',
                 time: '2024-06-07',
             },
+            {
+                title: 'Learn XSS',
+                path: '/24b/cross-site-scripting/',
+                time: '2024-06-10',
+            },
+            {
+                title: 'Learn CSRF',
+                path: '/24b/cross-site-request-forgery/',
+                time: '2024-06-10',
+            },
         ],
     },
     {

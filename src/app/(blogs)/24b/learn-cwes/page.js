@@ -58,7 +58,7 @@ export default function Blog() {
                 CWE的不同条目也具有不同的抽象程度，有些条目描述了具体的缺陷，有些则描述了更一般的问题。---
                 CWE的条目之间也存在父级子级的关系。四种抽象程度如下图所示：
             </X.P>
-            <X.Image src="weakness_abstractions.png" width="600px" />
+            <X.Image src="weakness_abstractions.png" width="600px" invertInDarkTheme />
             <X.P>这些分级在官网上也有对应的图标表示，相应的释义为：</X.P>
             <X.Table
                 fromJSX={[
@@ -179,25 +179,10 @@ export default function Blog() {
             <X.H2 href="https://cwe.mitre.org/data/definitions/79.html">
                 【B】CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
             </X.H2>
-            <X.P>跨站脚本（XSS）攻击，用户输入未被正确处理，导致恶意代码被执行。</X.P>
-            <X.P noMarginBottom>
-                XSS攻击分为三种：反射型、存储型、DOM型。反射型和存储型是服务器端的漏洞，DOM型是客户端的漏洞。具体如下：
-            </X.P>
-            <X.Uli>
-                <X.P noMarginBottom>反射型`(Reflected XSS)`/非持久型`(Non-Persistent XSS)`：</X.P>
-                <X.P>
-                    服务器直接从HTTP请求中读取数据，并且返回到HTTP响应中；一般来说攻击者针对有漏洞的网站构造特定的URL，---
-                    例如网站将URL中的参数直接用来渲染页面，而构造的URL中包含`script`标签；当用户点击这个URL时，构造代码就会被执行。
-                </X.P>
-            </X.Uli>
-            <X.Uli>
-                <X.P noMarginBottom>存储型`(Stored XSS)`/持久型`(Persistent XSS)`：</X.P>
-                <X.P>网站将未正确过滤的数据储存在数据库中，例如论坛发言、用户评论等等；</X.P>
-            </X.Uli>
-            <X.Uli>
-                <X.P noMarginBottom>DOM型`(DOM-Based XSS)`：</X.P>
-            </X.Uli>
-            {/* todo */}
+            <X.P>跨站脚本攻击。</X.P>
+            <X.HighlightBlock bgcolor="gray">
+                <X.P>详见@Learn XSS[/24b/cross-site-scripting/]@。</X.P>
+            </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/89.html">
                 【B】CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
             </X.H2>
@@ -464,7 +449,10 @@ export default function Blog() {
             <X.H2 href="https://cwe.mitre.org/data/definitions/352.html">
                 【Compo】CWE-352: Cross-Site Request Forgery (CSRF)
             </X.H2>
-            {/* todo */}
+            <X.P>跨站请求伪造。</X.P>
+            <X.HighlightBlock bgcolor="gray">
+                <X.P>详见@Learn CSRF[/24b/cross-site-request-forgery/]@。</X.P>
+            </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/434.html">
                 【B】CWE-434: Unrestricted Upload of File with Dangerous Type
             </X.H2>
@@ -519,7 +507,7 @@ export default function Blog() {
             <X.P>上传成功后通过类似以下形式的URL调用：</X.P>
             <X.CodeBlock language="text" code="http://server.example.com/upload_dir/malicious.php?cmd=ls%20-l" />
             <X.H2 href="https://cwe.mitre.org/data/definitions/862.html">【C】CWE-862: Missing Authorization</X.H2>
-            <X.P>缺少授权，没有正确验证用户是否有权访问资源。</X.P>
+            <X.P>缺少授权，没有验证用户是否有权访问资源。</X.P>
             <X.HighlightBlock>
                 <X.H3>Authentication & Authorization</X.H3>
                 <X.Uli>
@@ -790,7 +778,11 @@ export default function Blog() {
             <X.H2 href="https://cwe.mitre.org/data/definitions/918.html">
                 【B】CWE-918: Server-Side Request Forgery (SSRF)
             </X.H2>
-            {/* todo */}
+            <X.P>
+                服务端请求伪造，攻击者通过伪造服务器发起的请求，使服务器端的应用程序访问受信任的第三方服务器或资源。---
+                通常，攻击者利用此漏洞访问内部系统。SSRF可以看作一种跳板攻击。
+            </X.P>
+            <X.Image src="ssrf.jpg" width="800px" invertInDarkTheme />
             <X.H2 href="https://cwe.mitre.org/data/definitions/306.html">
                 【B】CWE-306: Missing Authentication for Critical Function
             </X.H2>
@@ -884,7 +876,42 @@ export default function Blog() {
             <X.Oli>`PROGRAM-1`调用的`SendNewBalanceToDatabase(20.00)`提交到数据库。</X.Oli>
             <X.Oli>`PROGRAM-2`调用的`SendNewBalanceToDatabase(99.00)`提交到数据库。</X.Oli>
             <X.P withMarginTop>最后导致数据库记录的余额是错误的。</X.P>
-            {/* todo */}
+            <X.H3>Example 2</X.H3>
+            <X.CodeBlock
+                language="c"
+                code={`
+                void f(pthread_mutex_t *mutex)
+                {
+                    pthread_mutex_lock(mutex);
+                    
+                    /* access shared resource */ 
+                    
+                    pthread_mutex_unlock(mutex);
+                }
+                `}
+            />
+            <X.P>
+                上面的函数尝试获取锁，以便对共享资源执行操作。不过上述函数没有检查`pthread_mutex_lock()`是否正常返回。---
+                如果因为一些原因导致`pthread_mutex_lock()`失败，那么这个例子会导致数据竞争。
+            </X.P>
+            <X.P>正确的做法是：</X.P>
+            <X.CodeBlock
+                language="c"
+                code={`
+                int f(pthread_mutex_t *mutex)
+                {
+                    int result;
+                
+                    result = pthread_mutex_lock(mutex);
+                    if (0 != result)
+                        return result;
+                
+                    /* access shared resource */
+                
+                    return pthread_mutex_unlock(mutex);
+                }
+                `}
+            />
             <X.H2 href="https://cwe.mitre.org/data/definitions/269.html">
                 【C】CWE-269: Improper Privilege Management
             </X.H2>
@@ -894,20 +921,20 @@ export default function Blog() {
                 language="python"
                 code={`
                 def makeNewUserDir(username):
-                if invalidUsername(username):
-                    #avoid CWE-22 and CWE-78
-                    print('Usernames cannot contain invalid characters')
-                    return False
+                    if invalidUsername(username):
+                        #avoid CWE-22 and CWE-78
+                        print('Usernames cannot contain invalid characters')
+                        return False
 
-                try:
-                    raisePrivileges()
-                    os.mkdir('/home/' + username)
-                    lowerPrivileges()
-                except OSError:
-                    print('Unable to create new user directory for user:' + username)
-                    return False
+                    try:
+                        raisePrivileges()
+                        os.mkdir('/home/' + username)
+                        lowerPrivileges()
+                    except OSError:
+                        print('Unable to create new user directory for user:' + username)
+                        return False
 
-                return True
+                    return True
                 `}
             />
             <X.P>
@@ -956,9 +983,91 @@ export default function Blog() {
             <X.H2 href="https://cwe.mitre.org/data/definitions/94.html">
                 【B】CWE-94: Improper Control of Generation of Code ('Code Injection')
             </X.H2>
-            {/* todo */}
+            <X.P>
+                当产品允许用户输入包含代码语法的内容时，攻击者有可能以改变产品预期控制流的方式编写代码。这种改变可能导致任意代码的执行。
+            </X.P>
+            <X.H3>Example 1</X.H3>
+            <X.CodeBlock
+                language="php"
+                code={`
+                $MessageFile = "messages.out";
+                if ($_GET["action"] == "NewMessage")
+                {
+                    $name = $_GET["name"];
+                    $message = $_GET["message"];
+                    $handle = fopen($MessageFile, "a+");
+                    fwrite($handle, "<b>$name</b> says '$message'<hr>\n");
+                    fclose($handle);
+                    echo "Message Saved!<p>\n";
+                }
+                else if ($_GET["action"] == "ViewMessages")
+                {
+                    include($MessageFile);
+                }
+                `}
+            />
+            <X.P>
+                这段代码尝试将用户消息写入消息文件并允许用户查看它们。开发者可能希望文件只包含数据，然而攻击者可以构造以下参数：
+            </X.P>
+            <X.CodeBlock
+                language="text"
+                code={`
+                name=h4x0r
+                message=%3C?php%20system(%22/bin/ls%20-l%22);?%3E
+                `}
+            />
+            <X.P>这会被解析成：</X.P>
+            <X.CodeBlock language="php" code='<?php system("/bin/ls -l");?>' />
+            <X.P>这将导致用户查看他们的时候，PHP代码被解析执行。注意这种情况下，同样存在XSS漏洞风险。</X.P>
+            <X.H3>Example 2</X.H3>
+            <X.CodeBlock
+                language="python"
+                code={`
+                def main():
+                    sum = 0
+                    numbers = eval(input("Enter a space-separated list of numbers: "))
+                    for num in numbers:
+                        sum = sum + num
+                    print(f"Sum of {numbers} = {sum}")
+                main()
+                `}
+            />
+            <X.P>
+                `eval`函数会执行用户输入的代码，一个可以注入的载荷是`__import__('subprocess').getoutput('rm -r *')`。
+            </X.P>
             <X.H2 href="https://cwe.mitre.org/data/definitions/863.html">【C】CWE-863: Incorrect Authorization</X.H2>
-            {/* todo */}
+            <X.P>错误的授权，没有正确验证用户是否有权访问资源。</X.P>
+            <X.H3>Example 1</X.H3>
+            <X.CodeBlock
+                language="php"
+                highlightLines="1"
+                code={`
+                $role = $_COOKIES['role'];
+                if (!$role)
+                {
+                    $role = getRole('user');
+                    if ($role)
+                    {
+                        // save the cookie to send out in future responses
+                        setcookie("role", $role, time() + 60 * 60 * 2);
+                    }
+                    else
+                    {
+                        ShowLoginScreen();
+                        die("\\n");
+                    }
+                }
+                if ($role == 'Reader')
+                {
+                    DisplayMedicalHistory($_POST['patient_ID']);
+                }
+                else
+                {
+                    die("You are not Authorized to view this record\\n");
+                }
+                `}
+            />
+            <X.P>修改cookie即可绕过授权。</X.P>
             <X.H2 href="https://cwe.mitre.org/data/definitions/276.html">
                 【B】CWE-276: Incorrect Default Permissions
             </X.H2>
@@ -973,6 +1082,7 @@ export default function Blog() {
             <X.P>
                 如果这些默认权限设置得过于宽松，比如允许所有用户都具有读写权限，那么未授权的用户可能会访问、修改或删除这些文件，导致数据泄露、篡改或破坏。
             </X.P>
+            {/* xss，csrf portswig */}
             {/* highlight */}
             {/* real-world project */}
         </>
