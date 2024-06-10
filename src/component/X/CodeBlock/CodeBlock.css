@@ -6,6 +6,9 @@
     background-color: var(--bg-main);
     box-shadow: var(--light-theme-box-shadow);
 }
+.x-codeblock pre {
+    width: fit-content;
+}
 .x-codeblock pre code {
     display: block;
     width: fit-content;
