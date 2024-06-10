@@ -94,7 +94,7 @@ export default function Blog() {
                     ],
                 ]}
             />
-            <X.H1>View: CWE Top 25 (2023)</X.H1>
+            <X.H1>View of CWE Top 25 (2023)</X.H1>
             <X.P>
                 （2023年）前25个最危险的软件缺陷，按顺序排名。标题前的【`P`/`C`/`B`/`V`/`Compo`】标识了其抽象类型。
             </X.P>
@@ -184,13 +184,69 @@ export default function Blog() {
                 XSS攻击分为三种：反射型、存储型、DOM型。反射型和存储型是服务器端的漏洞，DOM型是客户端的漏洞。具体如下：
             </X.P>
             <X.Uli>
-                <X.P>反射型`(Reflected XSS)`/非持久型`(Non-Persistent XSS)`</X.P>
+                <X.P noMarginBottom>反射型`(Reflected XSS)`/非持久型`(Non-Persistent XSS)`：</X.P>
+                <X.P>
+                    服务器直接从HTTP请求中读取数据，并且返回到HTTP响应中；一般来说攻击者针对有漏洞的网站构造特定的URL，---
+                    例如网站将URL中的参数直接用来渲染页面，而构造的URL中包含`script`标签；当用户点击这个URL时，构造代码就会被执行。
+                </X.P>
+            </X.Uli>
+            <X.Uli>
+                <X.P noMarginBottom>存储型`(Stored XSS)`/持久型`(Persistent XSS)`：</X.P>
+                <X.P>网站将未正确过滤的数据储存在数据库中，例如论坛发言、用户评论等等；</X.P>
+            </X.Uli>
+            <X.Uli>
+                <X.P noMarginBottom>DOM型`(DOM-Based XSS)`：</X.P>
             </X.Uli>
             {/* todo */}
             <X.H2 href="https://cwe.mitre.org/data/definitions/89.html">
                 【B】CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
             </X.H2>
-            {/* todo */}
+            <X.P>
+                SQL注入，如果用户可控的输入没有被正确的过滤其中可能包含的SQL语法，那么用这部分输入作为完整SQL命令的一部分时，可能发生预期之外的结果。---
+                这可用于更改查询逻辑以绕过安全检查，或插入修改后端数据库的其他语句，包括执行系统命令。
+            </X.P>
+            <X.H3>Example 1</X.H3>
+            <X.P>如果一个SQL由用户输入拼接而成，最终的大致示意如下，其中`userName`是用户名，`itemName`由用户输入：</X.P>
+            <X.CodeBlock
+                language="text"
+                code="SELECT * FROM items WHERE owner = <userName> AND itemname = <itemName>;"
+            />
+            <X.P>此时如果用户名`wiley`输入的`itemName`是`name' OR 'a'='a`，则拼接后的SQL语句是：</X.P>
+            <X.CodeBlock
+                language="sql"
+                code="SELECT * FROM items WHERE owner = 'wiley' AND itemname = 'name' OR 'a'='a';"
+            />
+            <X.P>这条语句等价于：</X.P>
+            <X.CodeBlock language="sql" code="SELECT * FROM items;" />
+            <X.H3>Example 2</X.H3>
+            <X.P>
+                还是上面的例子，这次假设用户`wiley`输入的`itemName`是`name'; DELETE FROM items; --`，---
+                则SQL语句等价于下面的两个请求：
+            </X.P>
+            <X.CodeBlock
+                language="sql"
+                code={`
+                SELECT * FROM items WHERE owner = 'wiley' AND itemname = 'name';
+                DELETE FROM items;
+                --'
+                `}
+            />
+            <X.H3>Example 3</X.H3>
+            <X.CodeBlock
+                language="php"
+                code={`
+                $id = $_COOKIE["mid"];
+                mysql_query("SELECT MessageID, Subject FROM messages WHERE MessageID = '$id'");
+                `}
+            />
+            <X.P>
+                由于cookie是可以在本地修改的，这仍然是一个输入用户可控的例子。注意到PHP语句中的单引号包裹着`$id`，---
+                一个可以注入的载荷是`1432' or '1' = '1`。请求会变成：
+            </X.P>
+            <X.CodeBlock
+                language="sql"
+                code="SELECT MessageID, Subject FROM messages WHERE MessageID = '1432' or '1' = '1'"
+            />
             <X.H2 href="https://cwe.mitre.org/data/definitions/416.html">【V】CWE-416: Use After Free</X.H2>
             <X.P>使用释放过的指针可能会导致未知的行为发生。</X.P>
             <X.H3>Example 1</X.H3>
@@ -241,7 +297,20 @@ export default function Blog() {
             <X.H2 href="https://cwe.mitre.org/data/definitions/78.html">
                 【B】CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')
             </X.H2>
-            {/* todo */}
+            <X.P noMarginBottom>操作系统命令注入，类似地，只不过此时是操作系统命令。通常这有两种子类型：</X.P>
+            <X.Uli>程序执行某个固定的程序，但是接收外部输入作为程序的参数。</X.Uli>
+            <X.Uli>程序将整个输入作为命令重定向到操作系统。</X.Uli>
+            <X.H3>Example 1</X.H3>
+            <X.CodeBlock
+                language="php"
+                code={`
+                $userName = $_POST["user"];
+                $command = 'ls -l /home/' . $userName;
+                system($command);
+                `}
+            />
+            <X.P>如果缺乏相应的认证，攻击者可以通过命令分隔符执行攻击命令，例如参数传入`;rm -rf /`，命令就等价于：</X.P>
+            <X.CodeBlock language="bash" code="ls -l /home/;rm -rf /" />
             <X.H2 href="https://cwe.mitre.org/data/definitions/20.html">【C】CWE-20: Improper Input Validation</X.H2>
             <X.P>
                 输入验证不当，程序接收输入或数据，但没有验证或者错误地验证输入是否具有安全正确地处理数据所需的属性。
@@ -763,6 +832,58 @@ export default function Blog() {
                 【C】CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race
                 Condition')
             </X.H2>
+            <X.P>
+                数据竞争，某段代码需要对共享资源进行临时、独占访问，但存在一个时间窗口，在该时间窗口内共享资源可被同时运行的另一个代码片段修改。
+            </X.P>
+            <X.P noMarginBottom>数据竞争违反了以下两个原则：</X.P>
+            <X.Uli>
+                排他性：代码序列被赋予对共享资源的排他性访问权限，即在原始序列完成执行之前，其他代码序列不能修改共享资源的属性。
+            </X.Uli>
+            <X.Uli>
+                <X.P noMarginBottom>
+                    原子性：代码序列被视为一个单一的操作，即在执行期间不会被中断，也不会被其他代码序列中断。
+                </X.P>
+                <X.P>
+                    程序员可能会认为某些代码序列执行得太快，不会受到干扰代码序列的影响，但事实并非如此。---
+                    例如，单个`x++`语句在代码层可能看起来是原子的，但在指令层实际上是非原子的，因为它涉及读取`x`的原始值、---
+                    计算`x+1`、最后将结果赋值给`x`。
+                </X.P>
+            </X.Uli>
+            <X.P withMarginTop>
+                干扰代码序列可以是可信的或不可信的。受信任的干扰代码序列出现在产品内部，攻击者无法修改，只能间接调用。---
+                不受信任的干扰代码序列可由攻击者直接编写，通常在易受攻击产品的外部。
+            </X.P>
+            <X.H3>Example 1</X.H3>
+            <X.CodeBlock
+                language="perl"
+                code={`
+                $transfer_amount = GetTransferAmount();
+                $balance = GetBalanceFromDatabase();
+                
+                if ($transfer_amount < 0)
+                {
+                    FatalError("Bad Transfer Amount");
+                }
+                $newbalance = $balance - $transfer_amount;
+                if (($balance - $transfer_amount) < 0)
+                {
+                    FatalError("Insufficient Funds");
+                }
+                SendNewBalanceToDatabase($newbalance);
+                NotifyUser("Transfer of $transfer_amount succeeded.");
+                NotifyUser("New balance: $newbalance");
+                `}
+            />
+            <X.P>这个例子中`GetBalanceFromDatabase()`和`SendNewBalanceToDatabase()`可能会发生数据竞争。</X.P>
+            <X.P noMarginBottom>假设初始余额`balance`是`100.00`，一个攻击可以构造如下：</X.P>
+            <X.Oli>攻击者调起两个程序，`PROGRAM-1`和`PROGRAM-2`，使用同一账户。</X.Oli>
+            <X.Oli>`PROGRAM-1`请求转账`80.00`，此时`PROGRAM-1`计算出`$newbalance`为`20.00`。</X.Oli>
+            <X.Oli>`PROGRAM-1`调用`SendNewBalanceToDatabase(20.00)`，但是*受到了延迟*。</X.Oli>
+            <X.Oli>`PROGRAM-2`请求转账`1.00`，同理计算出`$newbalance`为`99.00`。</X.Oli>
+            <X.Oli>`PROGRAM-2`调用`SendNewBalanceToDatabase(99.00)`。</X.Oli>
+            <X.Oli>`PROGRAM-1`调用的`SendNewBalanceToDatabase(20.00)`提交到数据库。</X.Oli>
+            <X.Oli>`PROGRAM-2`调用的`SendNewBalanceToDatabase(99.00)`提交到数据库。</X.Oli>
+            <X.P withMarginTop>最后导致数据库记录的余额是错误的。</X.P>
             {/* todo */}
             <X.H2 href="https://cwe.mitre.org/data/definitions/269.html">
                 【C】CWE-269: Improper Privilege Management
