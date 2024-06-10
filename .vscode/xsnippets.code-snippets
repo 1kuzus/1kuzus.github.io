@@ -81,18 +81,6 @@
 		],
 		"description": "X.CodeBlock tag"
 	},
-	"X.CodeBlock tag for C": {
-		"scope": "javascript,typescript",
-		"prefix": "xcc",
-		"body": [
-			"<X.CodeBlock",
-			"\tlanguage='c'",
-			"\tcode={`$1",
-			"\t`}",
-			"/>",
-		],
-		"description": "X.CodeBlock tag for C"
-	},
 	"X.CodeBlock tag for C++": {
 		"scope": "javascript,typescript",
 		"prefix": "xccpp",
