@@ -176,6 +176,12 @@ export default function Blog() {
                 虽然前面做了长度检查，但是后续的逻辑将`'&'`和`'&lt;'`转为HTML实体时，可能导致长度增长。---
                 如果恶意构造包含大量`'&'`的输入，可能导致越界写入。
             </X.P>
+            <X.HighlightBlock bgcolor="blue">
+                <X.H3>Example in real-world project</X.H3>
+                <X.P>
+                    详见@[https://github.com/zephyrproject-rtos/zephyr/security/advisories/GHSA-fj4r-373f-9456]@。
+                </X.P>
+            </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/79.html">
                 【B】CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
             </X.H2>
