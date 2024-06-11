@@ -8,6 +8,7 @@
 }
 .x-codeblock pre {
     width: fit-content;
+    min-width: 100%;
 }
 .x-codeblock pre code {
     display: block;
