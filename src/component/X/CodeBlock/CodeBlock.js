@@ -63,6 +63,7 @@ export default function CodeBlock(props) {
     const highlightedCode = Prism.highlight(lines.join('\n'), Prism.languages[language], language);
     return (
         <div className="x-codeblock">
+            <div className="x-codeblock-header">123</div>
             <pre
                 style={{
                     background: allStartEnd.length ? backgroundStyle : null,
