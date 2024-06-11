@@ -16,21 +16,21 @@ import 'prismjs/components/prism-markup-templating';
 import './CodeBlock.css';
 
 export default function CodeBlock(props) {
-    const {language, code, highlightLines, diffAddedLines, diffRemovedLines} = props;
+    const {language, code, highlightLines, diffRemovedLines, diffAddedLines} = props;
     //处理代码行，处理空白，统一缩进
     let lines = code.split('\n').map((line) => line.trimRight());
     if (!lines[0]) lines = lines.slice(1);
     const indent = lines[0].length - lines[0].trimStart().length;
     lines = lines.map((line) => line.slice(indent));
-    //将普通高亮、diff增加、diff删除合并为三元组[start:number,end:number,type:'n'|'a'|'r']
+    //将普通高亮、diff增加、diff删除合并为三元组[start:number,end:number,type:'n'|'r'|'a']
     const processLines = (ls, t) =>
         ls
             ? ls.split(',').map((i) => (i.includes('-') ? [i.split('-')[0] - 1, +i.split('-')[1], t] : [i - 1, +i, t]))
             : [];
     const allStartEnd = [
         ...processLines(highlightLines, 'n'),
-        ...processLines(diffAddedLines, 'a'),
         ...processLines(diffRemovedLines, 'r'),
+        ...processLines(diffAddedLines, 'a'),
     ];
     allStartEnd.sort((a, b) => a[0] - b[0]);
     //检验区间是否重叠
@@ -46,8 +46,8 @@ export default function CodeBlock(props) {
     //渲染背景
     const colorMap = {
         n: 'var(--bg-transparent-golden)',
-        a: 'var(--bg-transparent-green)',
         r: 'var(--bg-transparent-red)',
+        a: 'var(--bg-transparent-green)',
     };
     const backgroundStyle =
         'linear-gradient(180deg' +
@@ -65,7 +65,7 @@ export default function CodeBlock(props) {
         <div className="x-codeblock">
             <pre
                 style={{
-                    background: highlightLines ? backgroundStyle : null,
+                    background: allStartEnd.length ? backgroundStyle : null,
                 }}
             >
                 <code dangerouslySetInnerHTML={{__html: highlightedCode}} />
