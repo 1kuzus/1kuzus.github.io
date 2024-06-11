@@ -1,4 +1,5 @@
 .x-codeblock {
+    /* position: relative; */
     margin: 24px 0;
     padding: 24px 0;
     overflow-x: auto;
@@ -19,3 +20,13 @@
     font-family: var(--font-code);
     color: var(--text-color-main);
 }
+/*todo: format&简化*/
+/* .x-codeblock div {
+    font-size: 95%;
+    line-height: 24px;
+    font-family: var(--font-code);
+    color: var(--text-color-main);
+    position: absolute;
+    left: 0;
+    top: 24px;
+} */
