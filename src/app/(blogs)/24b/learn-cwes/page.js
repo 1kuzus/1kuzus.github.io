@@ -202,17 +202,21 @@ export default function Blog() {
                 </X.Uli>
                 <X.P withMarginTop>部分补丁的内容：通过`htmlspecialchars()`转义为HTML实体。</X.P>
                 <X.CodeBlock
-                    language="diff"
+                    language="php"
+                    diffRemovedLines="1"
+                    diffAddedLines="2"
                     code={`
-                    - $html .= '<td>' . $type . '<bdo dir="ltr"></bdo></td>';
-                    + $html .= '<td>' . htmlspecialchars($type) . '<bdo dir="ltr"></bdo></td>';
+                    $html .= '<td>' . $type . '<bdo dir="ltr"></bdo></td>';
+                    $html .= '<td>' . htmlspecialchars($type) . '<bdo dir="ltr"></bdo></td>';
                     `}
                 />
                 <X.CodeBlock
-                    language="diff"
+                    language="php"
+                    diffRemovedLines="1"
+                    diffAddedLines="2"
                     code={`
-                    - $current_size = $_COOKIE['pma_fontsize'];
-                    + $current_size = htmlspecialchars($_COOKIE['pma_fontsize']);
+                    $current_size = $_COOKIE['pma_fontsize'];
+                    $current_size = htmlspecialchars($_COOKIE['pma_fontsize']);
                     `}
                 />
             </X.HighlightBlock>
