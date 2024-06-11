@@ -8,7 +8,6 @@ import 'prismjs/components/prism-sql';
 import 'prismjs/components/prism-java';
 import 'prismjs/components/prism-perl';
 import 'prismjs/components/prism-bash';
-import 'prismjs/components/prism-diff';
 import 'prismjs/components/prism-python';
 import 'prismjs/components/prism-markdown';
 import 'prismjs/components/prism-javascript';
@@ -17,25 +16,46 @@ import 'prismjs/components/prism-markup-templating';
 import './CodeBlock.css';
 
 export default function CodeBlock(props) {
-    const {language, code, highlightLines} = props;
+    const {language, code, highlightLines, diffAddedLines, diffRemovedLines} = props;
     //处理代码行，处理空白，统一缩进
     let lines = code.split('\n').map((line) => line.trimRight());
     if (!lines[0]) lines = lines.slice(1);
     const indent = lines[0].length - lines[0].trimStart().length;
     lines = lines.map((line) => line.slice(indent));
-    //处理高亮行，此处默认line-height=24px
-    const highlightStartEnd = highlightLines
-        ? highlightLines
-              .split(',')
-              .map((i) => (i.includes('-') ? [i.split('-')[0] - 1, +i.split('-')[1]] : [i - 1, +i]))
-        : [];
+    //将普通高亮、diff增加、diff删除合并为三元组[start:number,end:number,type:'n'|'a'|'r']
+    const processLines = (ls, t) =>
+        ls
+            ? ls.split(',').map((i) => (i.includes('-') ? [i.split('-')[0] - 1, +i.split('-')[1], t] : [i - 1, +i, t]))
+            : [];
+    const allStartEnd = [
+        ...processLines(highlightLines, 'n'),
+        ...processLines(diffAddedLines, 'a'),
+        ...processLines(diffRemovedLines, 'r'),
+    ];
+    allStartEnd.sort((a, b) => a[0] - b[0]);
+    //检验区间是否重叠
+    for (let i = 0; i < allStartEnd.length - 1; i++) {
+        if (allStartEnd[i][1] > allStartEnd[i + 1][0])
+            throw new Error(
+                '[in X.Codeblock]: highlight lines range overlap: ' +
+                    allStartEnd[i].slice(0, 2) +
+                    ' and ' +
+                    allStartEnd[i + 1].slice(0, 2)
+            );
+    }
+    //渲染背景
+    const colorMap = {
+        n: 'var(--bg-transparent-golden)',
+        a: 'var(--bg-transparent-green)',
+        r: 'var(--bg-transparent-red)',
+    };
     const backgroundStyle =
         'linear-gradient(180deg' +
-        highlightStartEnd
+        allStartEnd
             .map(
-                ([start, end]) =>
+                ([start, end, type]) =>
                     `, transparent ${start * 24}px, ` +
-                    `var(--bg-transparent-golden) ${start * 24}px ${end * 24}px, ` +
+                    `${colorMap[type]} ${start * 24}px ${end * 24}px, ` +
                     `transparent ${end * 24}px`
             )
             .join('') +

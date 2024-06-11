@@ -21,3 +21,6 @@
 .x-highlightblock.highlight-background-blue {
     background-color: var(--bg-transparent-blue);
 }
+.x-highlightblock.highlight-background-green {
+    background-color: var(--bg-transparent-green);
+}

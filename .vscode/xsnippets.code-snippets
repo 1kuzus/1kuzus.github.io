@@ -117,6 +117,30 @@
 		],
 		"description": "X.CodeBlock tag for JavaScript"
 	},
+	"highlightLines props": {
+		"scope": "javascript,typescript",
+		"prefix": "hll",
+		"body": [	
+			"highlightLines"
+		],
+		"description": "highlightLines props"
+	},
+	"diffAddedLines props": {
+		"scope": "javascript,typescript",
+		"prefix": "dal",
+		"body": [	
+			"diffAddedLines"
+		],
+		"description": "diffAddedLines props"
+	},
+	"diffRemovedLines props": {
+		"scope": "javascript,typescript",
+		"prefix": "drl",
+		"body": [	
+			"diffRemovedLines"
+		],
+		"description": "diffRemovedLines props"
+	},
 	"X.FlexRow tag": {
 		"scope": "javascript,typescript",
 		"prefix": "xflex",
