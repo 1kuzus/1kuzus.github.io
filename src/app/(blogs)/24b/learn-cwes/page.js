@@ -346,9 +346,11 @@ export default function Blog() {
                 <X.Uli>
                     `Patch`：@[https://github.com/FSMaxB/cJSON/commit/22a7d04fa004462e0dca35c3cc7809bea38e65f9]@
                 </X.Uli>
+                <X.P withMarginTop>补丁内容：</X.P>
                 <X.CodeBlock
                     language="c"
-                    diffRemovedLines
+                    diffRemovedLines="11-15,18-19,25-26,33-34"
+                    diffAddedLines="3-5,20-21,27-28,35,38-45"
                     code={`
                     static cJSON_bool add_item_to_object(cJSON * const object, const char * const string, cJSON * const item, const internal_hooks * const hooks, const cJSON_bool constant_key)
                     {

@@ -66,9 +66,18 @@ export default function CodeBlock(props) {
             <pre
                 style={{
                     background: allStartEnd.length ? backgroundStyle : null,
+                    // paddingLeft: n 'em',
                 }}
             >
                 <code dangerouslySetInnerHTML={{__html: highlightedCode}} />
+                {/*
+                todo: support +/- and line number
+                 <div>
+                    1322
+                    <br />
+                    1323
+                    {placeholder}
+                </div> */}
             </pre>
         </div>
     );
