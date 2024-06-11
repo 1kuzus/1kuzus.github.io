@@ -125,14 +125,6 @@
 		],
 		"description": "highlightLines props"
 	},
-	"diffAddedLines props": {
-		"scope": "javascript,typescript",
-		"prefix": "dal",
-		"body": [	
-			"diffAddedLines"
-		],
-		"description": "diffAddedLines props"
-	},
 	"diffRemovedLines props": {
 		"scope": "javascript,typescript",
 		"prefix": "drl",
@@ -140,6 +132,14 @@
 			"diffRemovedLines"
 		],
 		"description": "diffRemovedLines props"
+	},
+	"diffAddedLines props": {
+		"scope": "javascript,typescript",
+		"prefix": "dal",
+		"body": [	
+			"diffAddedLines"
+		],
+		"description": "diffAddedLines props"
 	},
 	"X.FlexRow tag": {
 		"scope": "javascript,typescript",
