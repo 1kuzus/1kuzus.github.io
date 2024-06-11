@@ -339,6 +339,67 @@ export default function Blog() {
                 `}
             />
             <X.P>在发生异常时指针已经释放，但随后又在`logError`错误地使用。</X.P>
+            <X.HighlightBlock bgcolor="blue">
+                <X.H3>Example in real-world project</X.H3>
+                <X.Uli>OpenCVE：@CVE-2018-1000217[https://www.opencve.io/cve/CVE-2018-1000217]@</X.Uli>
+                <X.Uli>`Exploit`：@[https://github.com/DaveGamble/cJSON/issues/248]@</X.Uli>
+                <X.Uli>
+                    `Patch`：@[https://github.com/FSMaxB/cJSON/commit/22a7d04fa004462e0dca35c3cc7809bea38e65f9]@
+                </X.Uli>
+                <X.CodeBlock
+                    language="c"
+                    diffRemovedLines
+                    code={`
+                    static cJSON_bool add_item_to_object(cJSON * const object, const char * const string, cJSON * const item, const internal_hooks * const hooks, const cJSON_bool constant_key)
+                    {
+                        char *new_key = NULL;
+                        int new_type = cJSON_Invalid;
+
+                        if ((object == NULL) || (string == NULL) || (item == NULL))
+                        {
+                            return false;
+                        }
+
+                        if (!(item->type & cJSON_StringIsConst) && (item->string != NULL))
+                        {
+                            hooks->deallocate(item->string);
+                        }
+
+                        if (constant_key)
+                        {
+                            item->string = (char*)cast_away_const(string);
+                            item->type |= cJSON_StringIsConst;
+                            new_key = (char*)cast_away_const(string);
+                            new_type = item->type | cJSON_StringIsConst;
+                        }
+                        else
+                        {
+                            char *key = (char*)cJSON_strdup((const unsigned char*)string, hooks);
+                            if (key == NULL)
+                            new_key = (char*)cJSON_strdup((const unsigned char*)string, hooks);
+                            if (new_key == NULL)
+                            {
+                                return false;
+                            }
+                    
+                            item->string = key;
+                            item->type &= ~cJSON_StringIsConst;
+                            new_type = item->type & ~cJSON_StringIsConst;
+                        }
+
+                        if (!(item->type & cJSON_StringIsConst) && (item->string != NULL))
+                        {
+                            hooks->deallocate(item->string);
+                        }
+
+                        item->string = new_key;
+                        item->type = new_type;
+
+                        return add_item_to_array(object, item);
+                    }
+                    `}
+                />
+            </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/78.html">
                 【B】CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')
             </X.H2>
