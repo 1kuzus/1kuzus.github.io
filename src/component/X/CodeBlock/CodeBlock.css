@@ -1,12 +1,22 @@
 .x-codeblock {
-    /* position: relative; */
+    position: relative;
     margin: 24px 0;
     padding: 24px 0;
     overflow-x: auto;
     border-radius: 12px;
     background-color: var(--bg-main);
     box-shadow: var(--light-theme-box-shadow);
+    line-height: 24px;
+    font-size: 95%;
+    font-family: var(--font-code);
+    color: var(--text-color-main);
 }
+/* .x-codeblock .x-codeblock-header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-right: 24px;
+} */
 .x-codeblock pre {
     width: fit-content;
     min-width: 100%;
@@ -15,10 +25,6 @@
     display: block;
     width: fit-content;
     padding: 0 32px;
-    line-height: 24px;
-    font-size: 95%;
-    font-family: var(--font-code);
-    color: var(--text-color-main);
 }
 /*todo: format&简化*/
 /* .x-codeblock div {
