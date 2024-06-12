@@ -1271,7 +1271,11 @@ export default function Blog() {
                     subprocess.run(run_cmd, env=env)
                     `}
                 />
-                {/* todo */}
+                <X.P>
+                    不加`shell=True`时，命令作为列表直接传递给操作系统，例如：`subprocess.run(['ls', '-l'])`；
+                    这是更安全的。\n使用`shell=True`时，命令通过解释器（例如`/bin/sh`或`cmd.exe`）运行，例如：---
+                    `subprocess.run('ls -l', shell=True)`；这可能导致命令注入。
+                </X.P>
             </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/119.html">
                 【C】CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer
@@ -1308,7 +1312,7 @@ export default function Blog() {
                 `}
             />
             <X.H3>Example 2</X.H3>
-            <X.P>硬编码的用于加密的密钥同样是有问题的。理由同上，只要在源程序中明文出现，都会有很大的风险。</X.P>
+            <X.P>硬编码加密后的密码同样是有问题的。理由同上，只要在源程序中明文出现，都会有很大的风险。</X.P>
             <X.CodeBlock
                 language="c"
                 code={`
@@ -1324,6 +1328,12 @@ export default function Blog() {
                 }
                 `}
             />
+            <X.HighlightBlock bgcolor="blue">
+                <X.H3>Example in real-world project</X.H3>
+                <X.Uli>OpenCVE：@CVE-2020-35296[https://www.opencve.io/cve/CVE-2020-35296]@</X.Uli>
+                <X.Uli>`Exploit`：@[https://github.com/Shrimant12/CVE-References/blob/main/CVE-2020-35296.md]@</X.Uli>
+                <X.P withMarginTop>管理员面板有默认账户`admin:admin`。</X.P>
+            </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/918.html">
                 【B】CWE-918: Server-Side Request Forgery (SSRF)
             </X.H2>
@@ -1332,6 +1342,28 @@ export default function Blog() {
                 通常，攻击者利用此漏洞访问内部系统。SSRF可以看作一种跳板攻击。
             </X.P>
             <X.Image src="ssrf.jpg" width="800px" invertInDarkTheme />
+            <X.HighlightBlock bgcolor="blue">
+                <X.H3>Example in real-world project</X.H3>
+                <X.Uli>OpenCVE：@CVE-2017-15644[https://www.opencve.io/cve/CVE-2017-15644]@</X.Uli>
+                <X.Uli>
+                    `Patch`：@[https://github.com/webmin/webmin/commit/0c58892732ee7610a7abba5507614366d382c9c9]@
+                </X.Uli>
+                <X.P withMarginTop>
+                    Webmin 1.850存在SSRF漏洞，例如可以通过GET请求`tunnel/link.cgi/http://INTRANET-IP:8000`。
+                </X.P>
+                <X.P>补丁中对一些输入做了`html_escape()`，例如：</X.P>
+                <X.CodeBlock
+                    language="python"
+                    diffRemovedLines="1"
+                    diffAddedLines="2-3"
+                    code={`
+                    else { &error("Invalid Location header $header{'location'}"); }
+                    else { &error("Invalid Location header ".
+                              &html_escape($header{'location'})); }
+                    `}
+                />
+                {/* todo */}
+            </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/306.html">
                 【B】CWE-306: Missing Authentication for Critical Function
             </X.H2>
@@ -1369,6 +1401,16 @@ export default function Blog() {
                 `}
             />
             <X.P>上面代码中高亮的部分是*正确*的做法。如果忽视了验证，就存在风险了。</X.P>
+            <X.HighlightBlock bgcolor="blue">
+                <X.H3>Example in real-world project</X.H3>
+                <X.Uli>OpenCVE：@CVE-2020-25966[https://www.opencve.io/cve/CVE-2020-25966]@</X.Uli>
+                <X.Uli>`Exploit`：@[https://gitlab.com/Gazzaz/Spectra_API_Issue/]@</X.Uli>
+                <X.P withMarginTop>
+                    Sectona Spectra 3.2.0存在一个易受攻击的SOAP API端点，---
+                    该端点会在未进行适当身份验证的情况下泄漏敏感信息。
+                </X.P>
+                <X.P>注：这个CVE是由于系统配置错误导致的。</X.P>
+            </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/362.html">
                 【C】CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race
                 Condition')
@@ -1461,6 +1503,14 @@ export default function Blog() {
                 }
                 `}
             />
+            <X.HighlightBlock bgcolor="blue">
+                <X.H3>Example in real-world project</X.H3>
+                <X.Uli>OpenCVE：@CVE-2024-24254[https://www.opencve.io/cve/CVE-2024-24254]@</X.Uli>
+                <X.Uli>
+                    `Exploit``Patch`：@[https://github.com/Drone-Lab/PX4-Autopilot/blob/report-can-not-pause-vulnerability/Multi-Threaded%20Race%20Condition%20bug%20found%20in%20PX4%20cause%20drone%20can%20not%20PAUSE.md]@
+                </X.Uli>
+                {/* TODO */}
+            </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/269.html">
                 【C】CWE-269: Improper Privilege Management
             </X.H2>
@@ -1529,6 +1579,56 @@ export default function Blog() {
                 这个系统定义了不同等级的用户，`ADMIN`和`OPERATOR`都可以重置密码。系统设计的初衷是想让`OPERATOR`拥有稍弱于`ADMIN`的权限；---
                 然而既然`OPERATOR`可以修改密码，那么就可以通过重置`ADMIN`账号的密码来控制一个管理员账号。此例的权限管理是有缺陷的。
             </X.P>
+            <X.HighlightBlock bgcolor="blue">
+                <X.H3>Example in real-world project</X.H3>
+                <X.Uli>OpenCVE：@CVE-2017-11747[https://www.opencve.io/cve/CVE-2017-11747]@</X.Uli>
+                <X.Uli>`Exploit`：@[https://github.com/tinyproxy/tinyproxy/issues/106]@</X.Uli>
+                <X.Uli>
+                    `Patch`：@[https://github.com/obnoxxx/tinyproxy/commit/fe4d29888306e62f3bbf964b3fdb8126ddbe8f6e]@
+                </X.Uli>
+                <X.P withMarginTop>
+                    Tinyproxy
+                    1.8.4及更早版本中的`main.c`会在向非`root`帐户下放权限后创建`/run/tinyproxy/tinyproxy.pid`文件，---
+                    这可能允许本地用户在`root`脚本执行`kill \`cat /run/tinyproxy/tinyproxy.pid\``命令之前，---
+                    利用访问该非`root`帐户的权限来修改`tinyproxy.pid`，从而杀死任意进程。
+                </X.P>
+                <X.CodeBlock
+                    language="c"
+                    diffRemovedLines="21-29"
+                    diffAddedLines="1-9"
+                    code={`
+                    /* Create pid file before we drop privileges */
+                    if (config.pidpath) {
+                            if (pidfile_create (config.pidpath) < 0) {
+                                    fprintf (stderr, "%s: Could not create PID file.\\n",
+                                             argv[0]);
+                                    exit (EX_OSERR);
+                            }
+                    }
+
+                    /* Switch to a different user if we're running as root */
+                    if (geteuid () == 0)
+                            change_user (argv[0]);
+                    else
+                            log_message (LOG_WARNING,
+                                         "Not running as root, so not changing UID/GID.");
+                    /* Create log file after we drop privileges */
+                    if (setup_logging ()) {
+                            exit (EX_SOFTWARE);
+                    }
+
+                    /* Create pid file after we drop privileges */
+                    if (config.pidpath) {
+                            if (pidfile_create (config.pidpath) < 0) {
+                                    fprintf (stderr, "%s: Could not create PID file.\\n",
+                                             argv[0]);
+                                    exit (EX_OSERR);
+                            }
+                    }
+            
+                    `}
+                />
+            </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/94.html">
                 【B】CWE-94: Improper Control of Generation of Code ('Code Injection')
             </X.H2>
@@ -1545,9 +1645,9 @@ export default function Blog() {
                     $name = $_GET["name"];
                     $message = $_GET["message"];
                     $handle = fopen($MessageFile, "a+");
-                    fwrite($handle, "<b>$name</b> says '$message'<hr>\n");
+                    fwrite($handle, "<b>$name</b> says '$message'<hr>\\n");
                     fclose($handle);
-                    echo "Message Saved!<p>\n";
+                    echo "Message Saved!<p>\\n";
                 }
                 else if ($_GET["action"] == "ViewMessages")
                 {
@@ -1584,6 +1684,56 @@ export default function Blog() {
             <X.P>
                 `eval`函数会执行用户输入的代码，一个可以注入的载荷是`__import__('subprocess').getoutput('rm -r *')`。
             </X.P>
+            <X.HighlightBlock bgcolor="blue">
+                <X.H3>Example in real-world project</X.H3>
+                <X.Uli>OpenCVE：@CVE-2023-1947[https://www.opencve.io/cve/CVE-2023-1947]@</X.Uli>
+                <X.Uli>`Exploit`：@[https://gitee.com/misak7in/cve/blob/master/taocms.md]@</X.Uli>
+                <X.P withMarginTop>taoCMS 3.0.2存在代码注入漏洞，发送请求：</X.P>
+                <X.CodeBlock
+                    language="text"
+                    code={`
+                    POST /admin/admin.php HTTP/1.1
+                    Host: www.taocms.com
+                    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0
+                    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+                    Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+                    Accept-Encoding: gzip, deflate
+                    Content-Type: application/x-www-form-urlencoded
+                    Content-Length: 161
+                    Origin: http://www.taocms.com
+                    Connection: close
+                    Referer: http://www.taocms.com/admin/admin.php?action=category&ctrl=add
+                    Cookie: PHPSESSID=3p2h8g38ejqf1402s5i384b7h0
+                    Upgrade-Insecure-Requests: 1
+                    X-Forwarded-For: 127.0.0.1
+                    X-Originating-IP: 127.0.0.1
+                    X-Remote-IP: 127.0.0.1
+                    X-Remote-Addr: 127.0.0.1
+                    
+                    name=%27%29%29%3Bphpinfo%28%29%3B%2F*&nickname=22&fid=&cattpl=&listtpl=&distpl=&intro=33&orders=&status=1&action=category&id=&ctrl=save&Submit=%E6%8F%90%E4%BA%A4
+                    `}
+                />
+                <X.P>请求的参数解析后是：</X.P>
+                <X.CodeBlock language="text" code="name='));phpinfo();/*&nickname=..." />
+                <X.P>内容会被写入`cat_array.inc`文件：</X.P>
+                <X.CodeBlock
+                    language="php"
+                    code={`
+                    <?php 
+                    $cats=array(
+                    0=>array(
+                    'name'=>'未分组',
+                    'status'=>0,
+                    'orders'=>0,
+                    'id'=>0),
+                    7=>array(
+                    'name'=>''));phpinfo();/*
+
+                    ...*/
+                    `}
+                />
+                <X.P>后面的内容被注释。文件在`/wap/index.php`被引入，从而可以获取系统配置。</X.P>
+            </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/863.html">【C】CWE-863: Incorrect Authorization</X.H2>
             <X.P>错误的授权，没有正确验证用户是否有权访问资源。</X.P>
             <X.H3>Example 1</X.H3>
@@ -1617,6 +1767,47 @@ export default function Blog() {
                 `}
             />
             <X.P>修改cookie即可绕过授权。</X.P>
+            <X.HighlightBlock bgcolor="blue">
+                <X.H3>Example in real-world project</X.H3>
+                <X.Uli>OpenCVE：@CVE-2024-22208[https://www.opencve.io/cve/CVE-2024-22208]@</X.Uli>
+                <X.Uli>
+                    `Exploit`：@[https://github.com/thorsten/phpMyFAQ/security/advisories/GHSA-9hhf-xmcw-r3xg]@
+                </X.Uli>
+                <X.Uli>
+                    `Patch`：@[https://github.com/thorsten/phpMyFAQ/commit/a34d94ab7b1be9256a9ef898f18ea6bfb63f6f1e]@
+                </X.Uli>
+                <X.P withMarginTop>
+                    phpMyFAQ v3.2.5前的`Sharing
+                    FAQ`功能可以给其他邮箱分享讯息，前端只有`5`个输入框（希望用户最多分享给`5`个邮箱），---
+                    然而后端并没有对数量做限制，攻击者可以构造请求发送大量邮件。
+                </X.P>
+                <X.P>部分补丁的内容：</X.P>
+                <X.CodeBlock
+                    language="php"
+                    diffRemovedLines="6"
+                    diffAddedLines="10-18"
+                    code={`
+                    case 'sendtofriends':
+                        $postData = json_decode(file_get_contents('php://input'), true, 512, JSON_THROW_ON_ERROR);
+
+                        $author = trim((string) Filter::filterVar($postData['name'], FILTER_SANITIZE_SPECIAL_CHARS));
+                        $email = Filter::filterVar($postData['email'], FILTER_VALIDATE_EMAIL);
+                        $link = trim((string) Filter::filterVar($postData['link'], FILTER_VALIDATE_URL));
+                        $attached = trim((string) Filter::filterVar($postData['message'], FILTER_SANITIZE_SPECIAL_CHARS));
+                        $mailto = Filter::filterArray($postData['mailto[]']);
+
+                        $faqLanguage = trim((string) Filter::filterVar($postData['lang'], FILTER_SANITIZE_SPECIAL_CHARS));
+                        $faqId = trim((string) Filter::filterVar($postData['faqId'], FILTER_VALIDATE_INT));
+                        $categoryId = trim((string) Filter::filterVar($postData['categoryId'], FILTER_VALIDATE_INT));
+
+                        if (is_array($mailto) && count($mailto) > 5) {
+                            $response->setStatusCode(Response::HTTP_BAD_REQUEST);
+                            $response->setData(['error' => Translation::get('err_sendMail')]);
+                            break;
+                        }
+                    `}
+                />
+            </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/276.html">
                 【B】CWE-276: Incorrect Default Permissions
             </X.H2>
@@ -1631,10 +1822,27 @@ export default function Blog() {
             <X.P>
                 如果这些默认权限设置得过于宽松，比如允许所有用户都具有读写权限，那么未授权的用户可能会访问、修改或删除这些文件，导致数据泄露、篡改或破坏。
             </X.P>
-            {/* 前面还有一个todo!!!!!!!!!!!第一个别空着 */}
+            <X.HighlightBlock bgcolor="blue">
+                <X.H3>Example in real-world project</X.H3>
+                <X.Uli>OpenCVE：@CVE-2005-1941[https://www.opencve.io/cve/CVE-2005-1941]@</X.Uli>
+                <X.Uli>`Exploit`：@[https://bugs.gentoo.org/93558]@</X.Uli>
+                <X.P withMarginTop>
+                    0.9.5-r1版本之前的SilverCity安装了`cgi-styler-form.py`、`cgistyler.py`和`source2html.py`，---
+                    具有`world writable`权限。
+                </X.P>
+                <X.CodeBlock
+                    language="text"
+                    code={`
+                    # ls -l /usr/bin/*.py
+                    -rwxrwxrwx  1 root root 4443 May 22 16:58 /usr/bin/cgi-styler-form.py
+                    -rwxrwxrwx  1 root root 2990 May 22 16:58 /usr/bin/cgi-styler.py
+                    -rwxrwxrwx  1 root root 3776 May 22 16:58 /usr/bin/source2html.py
+                    `}
+                />
+            </X.HighlightBlock>
+            {/* 前面还有一个td!!!!!!!!!!!第一个别空着 */}
             {/* xss，csrf portswig */}
             {/* highlight */}
-            {/* real-world project */}
         </>
     );
 }
