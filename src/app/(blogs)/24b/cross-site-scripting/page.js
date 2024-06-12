@@ -53,7 +53,42 @@ export default function Blog() {
             <X.Oli>诱骗用户打开链接；</X.Oli>
             <X.Oli>服务器正常返回数据；</X.Oli>
             <X.Oli>对请求参数的处理在前端完成，例如在前端通过`innerHTML`了操作DOM，由此导致恶意代码被执行。</X.Oli>
-
+            <X.H1>练习</X.H1>
+            <X.P>下文给出的PortSwigger靶场中有关XSS的Lab目标是使得网站调用`alert()`函数。</X.P>
+            <X.H2>Reflected XSS</X.H2>
+            <X.P>
+                @PortSwigger Lab: Reflected XSS into HTML context with nothing encoded---
+                [https://portswigger.net/web-security/cross-site-scripting/reflected/lab-html-context-nothing-encoded]@
+            </X.P>
+            <X.Oli reset={1}>随便搜索点什么，看到内容会反射到`h1`标题中。</X.Oli>
+            <X.Image src="1-1.jpg" width="100%" />
+            <X.Oli>尝试注入，搜索{'`<script>alert("hello");</script>`'}，完成。</X.Oli>
+            <X.Image src="1-2.jpg" width="100%" />
+            <X.H2>Stored XSS</X.H2>
+            <X.P>
+                @PortSwigger Lab: Stored XSS into HTML context with nothing encoded---
+                [https://portswigger.net/web-security/cross-site-scripting/stored/lab-html-context-nothing-encoded]@
+            </X.P>
+            <X.Oli reset={1}>网站有评论系统，直接留言{'`<script>alert("hello");</script>`'}。</X.Oli>
+            <X.Image src="2-1.jpg" width="100%" />
+            <X.Oli>完成，可以看到再次加载页面时，评论内容未经过滤直接加载到HTML文档。</X.Oli>
+            <X.Image src="2-2.jpg" width="100%" />
+            <X.Divider />
+            <X.Image src="2-3.jpg" width="100%" />
+            <X.H2>DOM-Based XSS</X.H2>
+            <X.P>
+                @PortSwigger Lab: DOM XSS in `document.write` sink using source `location.search`---
+                [https://portswigger.net/web-security/cross-site-scripting/dom-based/lab-document-write-sink]@
+            </X.P>
+            <X.Oli reset={1}>同样的搜索框，搜索{'`<script>alert("hello");</script>`'}，发现这次被转义了。</X.Oli>
+            <X.Image src="3-1.jpg" width="100%" />
+            <X.Oli>仔细看一下文档代码，发现一个`script`标签，类似用来追踪用户搜索行为的埋点。</X.Oli>
+            <X.Image src="3-2.jpg" width="100%" />
+            <X.Oli>
+                注意到URL参数中的`search`被直接写入`img`标签，因此这次搜索
+                {'`"/><script>alert("hello");</script>`'}，载荷最前面的{'`"/>`'}先让`img`闭合即可。
+            </X.Oli>
+            <X.Image src="3-3.jpg" width="100%" />
             <X.H1>参考资料</X.H1>
             <X.P noMarginBottom>本文的插图来源于：</X.P>
             <X.Uli>@Bilibili - XSS网络攻击 - 原理，类型和实践[https://www.bilibili.com/video/BV1rg411v7B8]@</X.Uli>

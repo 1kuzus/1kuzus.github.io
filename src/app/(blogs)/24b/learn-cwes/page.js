@@ -178,11 +178,36 @@ export default function Blog() {
             </X.P>
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>Example in real-world project</X.H3>
-                <X.Uli>OpenCVE：@CVE-2021-3330[https://www.opencve.io/cve/CVE-2021-3330]@</X.Uli>
-                <X.Uli>
-                    `Exploit``Patch`：@[https://github.com/zephyrproject-rtos/zephyr/security/advisories/GHSA-fj4r-373f-9456]@
-                </X.Uli>
-                {/* todo */}
+                <X.Uli>OpenCVE：@CVE-2023-0841[https://www.opencve.io/cve/CVE-2023-0841]@</X.Uli>
+                <X.Uli>`Exploit`：@[https://github.com/gpac/gpac/issues/2396]@</X.Uli>
+                <X.Uli>`Patch`：@[https://github.com/gpac/gpac/commit/851560e3dc8155d45ace4b0d77421f241ed71dc4]@</X.Uli>
+                <X.P withMarginTop>补丁：考虑`bytes_skipped`。</X.P>
+                <X.CodeBlock
+                    language="c"
+                    diffRemovedLines="2-3"
+                    diffAddedLines="4-5"
+                    code={`
+                    if (!ctx->in_seek) {
+                        if (size > remain) {
+                            GF_LOG(GF_LOG_WARNING, GF_LOG_MEDIA, ("[MP3Dmx] truncated frame of size %u (remains %u)\\n", size, remain));
+                        if (bytes_skipped + size > remain) {
+                            GF_LOG(GF_LOG_WARNING, GF_LOG_MEDIA, ("[MP3Dmx] truncated frame of size %u (remains %d)\\n", size, remain-bytes_skipped));
+                            break;
+                        }
+                        dst_pck = gf_filter_pck_new_alloc(ctx->opid, size, &output);
+                        if (!dst_pck) break;
+                        memcpy(output, sync, size);
+                        gf_filter_pck_set_cts(dst_pck, ctx->cts);
+                        gf_filter_pck_set_duration(dst_pck, nb_samp);
+                        gf_filter_pck_set_sap(dst_pck, GF_FILTER_SAP_1);
+                        gf_filter_pck_set_framing(dst_pck, GF_TRUE, GF_TRUE);
+                        if (ctx->byte_offset != GF_FILTER_NO_BO) {
+                            gf_filter_pck_set_byte_offset(dst_pck, ctx->byte_offset + bytes_skipped);
+                        }
+                        gf_filter_pck_send(dst_pck);
+                    }
+                    `}
+                />
             </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/79.html">
                 【B】CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
@@ -1344,25 +1369,149 @@ export default function Blog() {
             <X.Image src="ssrf.jpg" width="800px" invertInDarkTheme />
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>Example in real-world project</X.H3>
-                <X.Uli>OpenCVE：@CVE-2017-15644[https://www.opencve.io/cve/CVE-2017-15644]@</X.Uli>
+                <X.Uli>OpenCVE：@CVE-2024-3149[https://www.opencve.io/cve/CVE-2024-3149]@</X.Uli>
+                <X.Uli>`Exploit`：@[https://huntr.com/bounties/b230d76b-ae2d-440e-a25b-94ffaa7c4ff1]@</X.Uli>
                 <X.Uli>
-                    `Patch`：@[https://github.com/webmin/webmin/commit/0c58892732ee7610a7abba5507614366d382c9c9]@
+                    `Patch`：@[https://github.com/mintplex-labs/anything-llm/commit/f4088d9348fa86dcebe9f97a18d39c0a6e92f15e]@
                 </X.Uli>
                 <X.P withMarginTop>
-                    Webmin 1.850存在SSRF漏洞，例如可以通过GET请求`tunnel/link.cgi/http://INTRANET-IP:8000`。
+                    AnythingLLM的上传链接功能存在SSRF漏洞，该功能面向具有`manager`或`admin`角色的用户，---
+                    使用无头浏览器通过内部`collectorApi`处理上传的链接。
+                    攻击者可以通过托管恶意网站并使用该网站执行内部端口扫描、访问未对外公开的内部网络应用程序等操作来利用这一漏洞。
                 </X.P>
-                <X.P>补丁中对一些输入做了`html_escape()`，例如：</X.P>
+                <X.P>部署AnytingLLM后会有两个`express.js`节点运行，分别是`collector`和`server`。</X.P>
+                <X.P>
+                    补丁引入了`comKey`检验数据完整性，让攻击者无法构造出合法的请求头部。部分新增的内容如下：\n`collector/utils/comKey/index.js`：
+                </X.P>
                 <X.CodeBlock
-                    language="python"
-                    diffRemovedLines="1"
-                    diffAddedLines="2-3"
+                    language="js"
                     code={`
-                    else { &error("Invalid Location header $header{'location'}"); }
-                    else { &error("Invalid Location header ".
-                              &html_escape($header{'location'})); }
+                    const crypto = require("crypto");
+                    const fs = require("fs");
+                    const path = require("path");
+
+                    const keyPath =
+                      process.env.NODE_ENV === "development"
+                        ? path.resolve(__dirname, \`../../../server/storage/comkey\`)
+                        : path.resolve(process.env.STORAGE_DIR, \`comkey\`);
+                    
+                    class CommunicationKey {
+                      #pubKeyName = "ipc-pub.pem";
+                      #storageLoc = keyPath;
+
+                      constructor() {}
+
+                      log(text, ...args) {
+                        console.log(\`\\x1b[36m[CommunicationKeyVerify]\\x1b[0m \${text}\`, ...args);
+                      }
+
+                      #readPublicKey() {
+                        return fs.readFileSync(path.resolve(this.#storageLoc, this.#pubKeyName));
+                      }
+
+                      // Given a signed payload from private key from /app/server/ this signature should
+                      // decode to match the textData provided. This class does verification only in collector.
+                      // Note: The textData is typically the JSON stringified body sent to the document processor API.
+                      verify(signature = "", textData = "") {
+                        try {
+                          let data = textData;
+                          if (typeof textData !== "string") data = JSON.stringify(data);
+                          return crypto.verify(
+                            "RSA-SHA256",
+                            Buffer.from(data),
+                            this.#readPublicKey(),
+                            Buffer.from(signature, "hex")
+                          );
+                        } catch {}
+                        return false;
+                      }
+                    }
+
+                    module.exports = { CommunicationKey };
                     `}
                 />
-                {/* todo */}
+                <X.P>`server/utils/comKey/index.js`：</X.P>
+                <X.CodeBlock
+                    language="js"
+                    highlightLines="9-17"
+                    code={`
+                    const crypto = require("crypto");
+                    const fs = require("fs");
+                    const path = require("path");
+                    const keyPath =
+                      process.env.NODE_ENV === "development"
+                        ? path.resolve(__dirname, \`../../storage/comkey\`)
+                        : path.resolve(process.env.STORAGE_DIR, \`comkey\`);
+
+                    // What does this class do?
+                    // This class generates a hashed version of some text (typically a JSON payload) using a rolling RSA key
+                    // that can then be appended as a header value to do integrity checking on a payload. Given the
+                    // nature of this class and that keys are rolled constantly, this protects the request
+                    // integrity of requests sent to the collector as only the server can sign these requests.
+                    // This keeps accidental misconfigurations of AnythingLLM that leaving port 8888 open from
+                    // being abused or SSRF'd by users scraping malicious sites who have a loopback embedded in a <script>, for example.
+                    // Since each request to the collector must be signed to be valid, unsigned requests directly to the collector
+                    // will be dropped and must go through the /server endpoint directly.
+                    class CommunicationKey {
+                      #privKeyName = "ipc-priv.pem";
+                      #pubKeyName = "ipc-pub.pem";
+                      #storageLoc = keyPath;
+
+                      // Init the class and determine if keys should be rolled.
+                      // This typically occurs on boot up so key is fresh each boot.
+                      constructor(generate = false) {
+                        if (generate) this.#generate();
+                      }
+
+                      log(text, ...args) {
+                        console.log(\`\\x1b[36m[CommunicationKey]\\x1b[0m \${text}\`, ...args);
+                      }
+
+                      #readPrivateKey() {
+                        return fs.readFileSync(path.resolve(this.#storageLoc, this.#privKeyName));
+                      }
+
+                      #generate() {
+                        const keyPair = crypto.generateKeyPairSync("rsa", {
+                          modulusLength: 2048,
+                          publicKeyEncoding: {
+                            type: "pkcs1",
+                            format: "pem",
+                          },
+                          privateKeyEncoding: {
+                            type: "pkcs1",
+                            format: "pem",
+                          },
+                        });
+
+                        if (!fs.existsSync(this.#storageLoc))
+                          fs.mkdirSync(this.#storageLoc, { recursive: true });
+                        fs.writeFileSync(
+                          \`\${path.resolve(this.#storageLoc, this.#privKeyName)}\`,
+                          keyPair.privateKey
+                        );
+                        fs.writeFileSync(
+                          \`\${path.resolve(this.#storageLoc, this.#pubKeyName)}\`,
+                          keyPair.publicKey
+                        );
+                        this.log(
+                          "RSA key pair generated for signed payloads within AnythingLLM services."
+                        );
+                      }
+
+                      // This instance of ComKey on server is intended for generation of Priv/Pub key for signing and decoding.
+                      // this resource is shared with /collector/ via a class of the same name in /utils which does decoding/verification only
+                      // while this server class only does signing with the private key.
+                      sign(textData = "") {
+                        return crypto
+                          .sign("RSA-SHA256", Buffer.from(textData), this.#readPrivateKey())
+                          .toString("hex");
+                      }
+                    }
+
+                    module.exports = { CommunicationKey };
+                    `}
+                />
             </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/306.html">
                 【B】CWE-306: Missing Authentication for Critical Function
@@ -1509,7 +1658,7 @@ export default function Blog() {
                 <X.Uli>
                     `Exploit``Patch`：@[https://github.com/Drone-Lab/PX4-Autopilot/blob/report-can-not-pause-vulnerability/Multi-Threaded%20Race%20Condition%20bug%20found%20in%20PX4%20cause%20drone%20can%20not%20PAUSE.md]@
                 </X.Uli>
-                {/* TODO */}
+                {/* todo */}
             </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/269.html">
                 【C】CWE-269: Improper Privilege Management
