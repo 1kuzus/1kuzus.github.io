@@ -304,7 +304,7 @@ export default function Blog() {
                 <X.P withMarginTop>补丁中加入对参数合法性的检验：</X.P>
                 <X.CodeBlock
                     language="php"
-                    highlightLines="4-8"
+                    diffAddedLines="4-8"
                     code={`
                     $nat_id   = $_POST['id'];               // nat id
                     $nat_type = $_POST['type'];             // src, dst
@@ -1658,7 +1658,6 @@ export default function Blog() {
                 <X.Uli>
                     `Exploit``Patch`：@[https://github.com/Drone-Lab/PX4-Autopilot/blob/report-can-not-pause-vulnerability/Multi-Threaded%20Race%20Condition%20bug%20found%20in%20PX4%20cause%20drone%20can%20not%20PAUSE.md]@
                 </X.Uli>
-                {/* todo */}
             </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/269.html">
                 【C】CWE-269: Improper Privilege Management
@@ -1989,9 +1988,6 @@ export default function Blog() {
                     `}
                 />
             </X.HighlightBlock>
-            {/* 前面还有一个td!!!!!!!!!!!第一个别空着 */}
-            {/* xss，csrf portswig */}
-            {/* highlight */}
         </>
     );
 }
