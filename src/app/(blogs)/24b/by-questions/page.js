@@ -504,8 +504,38 @@ export default function Blog() {
             <X.Oli>
                 <X.P>C++的`new`和`malloc`有什么区别？</X.P>
                 <X.P>
-                    `new`会在堆区新建对象，并返回对象的指针，会调用构造函数；`malloc`只是分配内存，返回值也是`void*`类型，需要对返回值做强制类型转换。
+                    `new`会在堆区新建对象，并返回对象的指针，会调用构造函数；`malloc`只是在堆区分配内存，并不会初始化，返回值也是`void*`类型，需要对返回值做强制类型转换。
                 </X.P>
+                <X.CodeBlock
+                    language="cpp"
+                    code={`
+                    #include <iostream>
+                    using namespace std;
+                    struct POINT {
+                        int x,y;
+                        POINT(int x=10,int y=10):x(x),y(y)
+                        {
+                            cout<<"create point("<<x<<","<<y<<")\n";
+                        }
+                        ~POINT()
+                        {
+                            cout<<"destruction!";
+                        }
+                    };
+                    int main()
+                    {
+                        POINT *p1=new POINT;//create point(10,10)
+                        cout<<p1->x<<' '<<p1->y<<endl;//10 10
+                        
+                        POINT *p2=(POINT*)malloc(sizeof(POINT));
+                        cout<<p2->x<<' '<<p2->y<<endl;//12348784 0
+                    
+                        delete(p1);//destruction!
+                        free(p2); 
+                        return 0;
+                    }
+                    `}
+                />
             </X.Oli>
             <X.Br />
             <X.Oli>
