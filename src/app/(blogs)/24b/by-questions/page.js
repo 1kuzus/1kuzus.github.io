@@ -496,15 +496,15 @@ export default function Blog() {
             <X.Oli reset={1}>
                 <X.P>堆和栈的区别？</X.P>
                 <X.P>二者各有利弊：栈的内存分配更快，但只能对堆顶操作；堆允许随机分配和释放，但会带来更大的开销。</X.P>
-                <X.P>堆区：由人为分配释放；</X.P>
-                <X.P>栈区：由编译器自动分配释放；</X.P>
-                {/* todo */}
+                <X.P>
+                    堆区：由人为分配/释放；效率更慢；\n栈区：由编译器自动分配/释放；效率更快；栈区的大小在程序编译时确定，通常比较小。
+                </X.P>
             </X.Oli>
             <X.Br />
             <X.Oli>
                 <X.P>C++的`new`和`malloc`有什么区别？</X.P>
                 <X.P>
-                    `new`会在堆区新建对象，并返回对象的指针，会调用构造函数；`malloc`只是在堆区分配内存，并不会初始化，返回值也是`void*`类型，需要对返回值做强制类型转换。
+                    `new`会在堆区新建对象，并返回对象的指针，会调用构造函数；\n`malloc`只是在堆区分配内存，并不会初始化，返回值也是`void*`类型，需要对返回值做强制类型转换。
                 </X.P>
                 <X.CodeBlock
                     language="cpp"
@@ -515,7 +515,7 @@ export default function Blog() {
                         int x,y;
                         POINT(int x=10,int y=10):x(x),y(y)
                         {
-                            cout<<"create point("<<x<<","<<y<<")\n";
+                            cout<<"create point("<<x<<","<<y<<")\\n";
                         }
                         ~POINT()
                         {
@@ -526,10 +526,10 @@ export default function Blog() {
                     {
                         POINT *p1=new POINT;//create point(10,10)
                         cout<<p1->x<<' '<<p1->y<<endl;//10 10
-                        
+
                         POINT *p2=(POINT*)malloc(sizeof(POINT));
                         cout<<p2->x<<' '<<p2->y<<endl;//12348784 0
-                    
+
                         delete(p1);//destruction!
                         free(p2); 
                         return 0;
