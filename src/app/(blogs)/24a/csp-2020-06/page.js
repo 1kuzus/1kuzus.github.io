@@ -444,10 +444,10 @@ export default function Blog() {
             <X.CodeBlock
                 language="cpp"
                 code={`
-                #define N 4
-                #define MOD 998244353
                 #include <iostream>
                 #include <vector>
+                #define N 4
+                #define MOD 998244353
                 using namespace std;
                 int n,ans;
                 string s;
