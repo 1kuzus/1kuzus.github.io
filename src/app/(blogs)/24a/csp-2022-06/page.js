@@ -127,16 +127,164 @@ export default function Blog() {
                 */
                 `}
             />
+            <X.H1>T3 角色授权</X.H1>
+            <X.CodeBlock
+                language='cpp'
+                code={`
+                #include <iostream>
+                #include <unordered_set>
+                #include <unordered_map>
+                #define N 505
+                using namespace std;
+                int n,m,q;
+                string s;
+                struct USER{
+                    string username;
+                    int ng;
+                    unordered_set<string> gset;
+                };
+                struct ROLE{
+                    string rolename;
+                    int nv,no,nn;//操作、资源种类、资源名称 
+                    unordered_set<string> vset,oset,nset;
+                    bool vadmin,oadmin;//允许的操作/资源是否含有"*" 
+                }role[N];
+                struct RBAC{
+                    string rolename;
+                    int ns;
+                    unordered_set<string> sset_user;
+                    unordered_set<string> sset_group;
+                }rbac[N];//role-based access control
+                struct QUERY{
+                    USER user;
+                    string v,o,n;
+                };
+                unordered_map<string,int> rolemap;//角色名--id 
+                //判断一个角色能否对某个资源执行某个操作
+                bool check(int &roleid,string &qv,string &qo,string &qn)
+                {
+                    bool ok=true;
+                    ROLE &r=role[roleid];
+                    ok&=r.vadmin||r.vset.find(qv)!=r.vset.end();
+                    if(!ok) return false;
+                    ok&=r.oadmin||r.oset.find(qo)!=r.oset.end();
+                    if(!ok) return false;
+                    if(r.nn==0) return true;
+                    ok&=r.nset.find(qn)!=r.nset.end();
+                    return ok;
+                }
+                bool query(QUERY &q)
+                {
+                    for(int i=0;i<m;i++)
+                    {
+                        RBAC &ac=rbac[i];
+                        int roleid=rolemap[ac.rolename];
+                        if(ac.sset_user.find(q.user.username)==ac.sset_user.end())//q.user.username不在ac.sset_user中 
+                        {
+                            bool ok=false;
+                            for(auto &elem:ac.sset_group)
+                            {
+                                if(q.user.gset.find(elem)!=ac.sset_group.end())
+                                {
+                                    ok=true;
+                                    break;
+                                }
+                            }
+                            if(!ok) continue;//且q.user.gset与ac.sset_group没有交集，就跳过对这个角色检查 
+                        }
+                        if(check(roleid,q.v,q.o,q.n)) return true;
+                    }
+                    return false;
+                }
+                int main()
+                {
+                    ios::sync_with_stdio(false);
+                    cin>>n>>m>>q;
+                    for(int i=0;i<n;i++)
+                    {
+                        cin>>role[i].rolename;
+                        rolemap[role[i].rolename]=i;
+                        cin>>role[i].nv;
+                        for(int j=0;j<role[i].nv;j++)
+                        {
+                            cin>>s;
+                            role[i].vset.emplace(s);
+                            if(s=="*") role[i].vadmin=true;
+                        }
+                        cin>>role[i].no;
+                        for(int j=0;j<role[i].no;j++)
+                        {
+                            cin>>s;
+                            role[i].oset.emplace(s);
+                            if(s=="*") role[i].oadmin=true;
+                        }
+                        cin>>role[i].nn;
+                        for(int j=0;j<role[i].nn;j++)
+                        {
+                            cin>>s;
+                            role[i].nset.emplace(s);
+                        }
+                    }
+                    for(int i=0;i<m;i++)
+                    {
+                        cin>>rbac[i].rolename;
+                        cin>>rbac[i].ns;
+                        for(int j=0;j<rbac[i].ns;j++)
+                        {
+                            char typ;
+                            cin>>typ>>s;
+                            if(typ=='u')
+                            {
+                                rbac[i].sset_user.emplace(s);
+                            }
+                            else
+                            {
+                                rbac[i].sset_group.emplace(s);
+                            }
+                        }
+                    }
+                    for(int i=0;i<q;i++)
+                    {
+                        QUERY q; 
+                        cin>>q.user.username;
+                        cin>>q.user.ng;
+                        for(int j=0;j<q.user.ng;j++)
+                        {
+                            cin>>s;
+                            q.user.gset.emplace(s);
+                        }
+                        cin>>q.v>>q.o>>q.n;
+                        cout<<query(q)<<endl;
+                    }
+                    return 0;
+                }
+                /*
+                in:
+                1 2 3
+                op 1 open 1 door 0
+                op 1 g sre
+                op 1 u xiaop
+                xiaoc 2 sre ops open door room302
+                xiaop 1 ops open door room501
+                xiaoc 2 sre ops remove door room302
+
+                out:
+                1
+                1
+                0
+                */
+                `}
+            />
             <X.H1>T5 PS无限版</X.H1>
             <X.P noMarginBottom>线段树题，此题需要注意两点：</X.P>
             <X.Oli>因为涉及到查询平方和</X.Oli>
             <X.CodeBlock
                 language="cpp"
                 code={`
-                #define N 500005
                 #include <iostream>
                 #include <cmath>
                 #include <iomanip>
+                #define N 500005
                 using namespace std;
                 int n,m;
                 int lc(int f){return f<<1;}//左子 

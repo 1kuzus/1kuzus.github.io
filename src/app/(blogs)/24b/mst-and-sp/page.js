@@ -100,10 +100,10 @@ export default function Blog() {
             <X.CodeBlock
                 language="cpp"
                 code={`
-                #define N 5005
-                #define M 200005
                 #include <iostream>
                 #include <algorithm>
+                #define N 5005
+                #define M 200005
                 using namespace std;
                 int n,m,ne,ans,cnt;
                 struct EDGE{
@@ -232,9 +232,9 @@ export default function Blog() {
             <X.CodeBlock
                 language="cpp"
                 code={`
+                #include <iostream>
                 #define N 5005
                 #define INF 2147483647
-                #include <iostream>
                 using namespace std;
                 int n,m,ans,cnt,d[N];
                 bool vis[N];//顶点是否在集合T中，把0作为起点 
@@ -345,10 +345,10 @@ export default function Blog() {
             <X.CodeBlock
                 language="cpp"
                 code={`
-                #define N 5005
-                #define INF 2147483647
                 #include <iostream>
                 #include <queue>
+                #define N 5005
+                #define INF 2147483647
                 using namespace std;
                 int n,m,ans,cnt,d[N];
                 bool vis[N];//顶点是否在集合T中，把0作为起点 
@@ -494,10 +494,10 @@ export default function Blog() {
             <X.CodeBlock
                 language="cpp"
                 code={`
-                #define N 100005
-                #define INF 2147483647
                 #include <iostream>
                 #include <vector>
+                #define N 100005
+                #define INF 2147483647
                 using namespace std;
                 int n,m,s,d[N];
                 struct EDGE{
@@ -551,10 +551,10 @@ export default function Blog() {
             <X.CodeBlock
                 language="cpp"
                 code={`
-                #define N 2005
-                #define INF 1000000009
                 #include <iostream>
                 #include <vector>
+                #define N 2005
+                #define INF 1000000009
                 using namespace std;
                 int T,n,m,d[N];
                 struct EDGE{
@@ -632,11 +632,11 @@ export default function Blog() {
             <X.CodeBlock
                 language="cpp"
                 code={`
-                #define N 100005
-                #define INF 2147483647
                 #include <iostream>
                 #include <vector>
                 #include <queue>
+                #define N 100005
+                #define INF 2147483647
                 using namespace std;
                 int n,m,s,d[N];
                 bool vis[N];
@@ -707,9 +707,9 @@ export default function Blog() {
             <X.CodeBlock
                 language="cpp"
                 code={`
+                #include <iostream>
                 #define N 3005
                 #define INF 1000000009
-                #include <iostream>
                 using namespace std;
                 int n,m;
                 int g[N][N];
@@ -790,11 +790,11 @@ export default function Blog() {
             <X.CodeBlock
                 language="cpp"
                 code={`
-                #define N 3005
-                #define INF 1000000009
                 #include <iostream>
                 #include <vector>
                 #include <queue>
+                #define N 3005
+                #define INF 1000000009
                 using namespace std;
                 int n,m;
                 int h[N];//势函数 

@@ -130,10 +130,10 @@ export default function Blog() {
             <X.CodeBlock
                 language="cpp"
                 code={`
-                #define MOD 1000000007
                 #include <iostream>
                 #include <vector>
                 #include <stack>
+                #define MOD 1000000007
                 using namespace std;
                 struct POLYNODE{
                     int type;//0:运算符 1:xi 2:常数 

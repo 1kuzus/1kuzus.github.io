@@ -772,7 +772,7 @@ export default function Blog() {
             <X.P>观察左移标记，显然合并后的左移标记是*`lshift (c+i)%3`*；</X.P>
             <X.P>这就是最终的合并公式：*`(mul ag,add bg+(h&lt;&lt;(3-c)),lshift (c+i)%3)`*。</X.P>
             <X.P>
-                如果你已经看晕了，只需要从`p=(x,y,z)`出发，验证只经过一次上述操作（先乘`ag`，再加`bg+(h&lt;&lt;(3-c))`，---
+                如果不想看推导过程，只需要从`p=(x,y,z)`出发，验证只经过一次上述操作（先乘`ag`，再加`bg+(h&lt;&lt;(3-c))`，---
                 再左移`(c+i)%3`），即可得到`p=(g(az+b3)+h2,g(ax+b1)+h3,g(ay+b2)+h1)`。
             </X.P>
             <X.P>对应在代码中就是：</X.P>
@@ -817,12 +817,12 @@ export default function Blog() {
             <X.CodeBlock
                 language="cpp"
                 code={`
-                #define N 160005
-                #define MOD 1000000007
                 #include <iostream>
                 #include <vector>
                 #include <map>
                 #include <set>
+                #define N 160005
+                #define MOD 1000000007
                 using namespace std;
                 int n,m;
                 int opt[40005][6];//记录操作 

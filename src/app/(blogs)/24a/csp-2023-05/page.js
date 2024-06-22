@@ -380,13 +380,13 @@ export default function Blog() {
             <X.CodeBlock
                 language="cpp"
                 code={`
-                #define N 10005
-                #define INF 2147483647
-                #define MAX_NUM_REST_NODES 6
                 #include <iostream>
                 #include <cstring> 
                 #include <vector>
                 #include <map>
+                #define N 10005
+                #define INF 2147483647
+                #define MAX_NUM_REST_NODES 6
                 using namespace std;
                 int n,m,k;
                 int pow(int x,int n)
