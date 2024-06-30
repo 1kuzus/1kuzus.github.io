@@ -138,6 +138,11 @@ const archives = [
                 time: '2024-05-31',
             },
             {
+                title: 'LeetCode 84.柱状图中最大的矩形',
+                path: '/24b/leetcode-84/',
+                time: '2024-06-30',
+            },
+            {
                 title: 'LeetCode 312.戳气球',
                 path: '/24b/leetcode-312/',
                 time: '2024-06-09',
@@ -275,11 +280,6 @@ const archives = [
                 title: '【GAMES101】Geometry',
                 path: '/24a/games101-04-geometry/',
                 time: '2024-01-30',
-            },
-            {
-                title: '【GAMES101】Ray Tracing',
-                path: '/24a/games101-05-ray-tracing/',
-                time: '2024-03-09',
             },
             {
                 title: '专业课复习',
