@@ -31,7 +31,7 @@ const scriptTheme =
     "const a=z=>h.getItem(z),b=(y,z)=>h.setItem(y,z),c=(y,z)=>document.documentElement.setAttribute(y,z),d='theme',e='dark',f='light',g='class',h=localStorage;a(d)!==e&&a(d)!==f&&b(d,f);a(d)===e?c(g,e):c(g,f);";
 
 //兼容性
-if (!Array.prototype.callback) {
+if (!Array.prototype.findLast) {
     Array.prototype.findLast = function (callback) {
         for (let i = this.length - 1; i >= 0; i--) {
             if (callback(this[i])) return this[i];

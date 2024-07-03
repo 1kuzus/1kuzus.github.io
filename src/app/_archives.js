@@ -128,6 +128,11 @@ const archives = [
                 time: '2024-06-01',
             },
             {
+                title: 'LeetCode 42.接雨水',
+                path: '/24c/leetcode-42/',
+                time: '2024-07-02',
+            },
+            {
                 title: 'LeetCode 60.排列序列',
                 path: '/24b/leetcode-60/',
                 time: '2024-05-30',
@@ -141,6 +146,11 @@ const archives = [
                 title: 'LeetCode 84.柱状图中最大的矩形',
                 path: '/24b/leetcode-84/',
                 time: '2024-06-30',
+            },
+            {
+                title: 'LeetCode 85.最大矩形',
+                path: '/24c/leetcode-85/',
+                time: '2024-07-02',
             },
             /*todo:注释掉时因为读不到page.title导致不能build*/
             {
