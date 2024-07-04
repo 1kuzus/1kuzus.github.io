@@ -5,6 +5,7 @@ import './Contents.css';
 
 export default function Contents() {
     const {titleNodes} = useGlobalContext();
+    // const [titleNodes, setTitleNodes] = useState([]);
     const [activeIndex, setActiveIndex] = useState();
     const getMappedOffsetTop = (titleNodes, container) => {
         const titleNodesOffsetTop = titleNodes.map((titleNode) => titleNode.offsetTop - 80);
@@ -15,6 +16,10 @@ export default function Contents() {
         const line = (a, b, c, d, x) => ((d - b) / (c - a)) * (x - a) + b;
         return titleNodesOffsetTop.map((ot) => (ot <= ot_i ? ot : line(ot_i, ot_i, ot_n, maxContainerScrollTop, ot)));
     };
+    // useLayoutEffect(() => {
+    //     const ttitleNodes = Array.from(document.querySelectorAll('.x-h1, .x-h2'));
+    //     setTitleNodes(ttitleNodes);
+    // }, []);
     useLayoutEffect(() => {
         const scrollHandler = () => {
             const mappedOffsetTop = getMappedOffsetTop(titleNodes, document.documentElement);
@@ -41,6 +46,7 @@ export default function Contents() {
                 {titleNodes.map((titleNode, index) => {
                     const {textContent: text} = titleNode;
                     const {className: type} = titleNode.parentNode;
+                    // const {className: type} = titleNode;
                     return (
                         <li
                             key={index}
