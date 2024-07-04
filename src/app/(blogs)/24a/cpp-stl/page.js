@@ -13,6 +13,7 @@ export const metadata = {
 export default function Blog() {
     return (
         <>
+            <X.TOC />
             <X.Title>{metas[pathname].blogtitle}</X.Title>
             <X.H1>string 字符串</X.H1>
             <X.H2>初始化</X.H2>

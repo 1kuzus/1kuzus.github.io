@@ -12,6 +12,7 @@ export const metadata = {
 export default function Blog() {
     return (
         <>
+            <X.TOC />
             <X.Title>{metas[pathname].blogtitle}</X.Title>
             <X.H1>单射</X.H1>
             <X.P>函数$f$是单射当且仅当：若$f(a)=f(b)$，则$a=b$。</X.P>

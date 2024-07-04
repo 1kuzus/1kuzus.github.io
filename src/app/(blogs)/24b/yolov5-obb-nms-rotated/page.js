@@ -12,6 +12,7 @@ export const metadata = {
 export default function Blog() {
     return (
         <>
+            <X.TOC />
             <X.Title>{metas[pathname].blogtitle}</X.Title>
             <X.P>
                 使用`@yolov5_obb[https://github.com/hukaixuan19970627/yolov5_obb]@`时，我使用已有环境运行，此环境中的`pytorch`版本是`1.12.1`，---

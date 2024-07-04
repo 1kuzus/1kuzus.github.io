@@ -17,6 +17,7 @@ function DemoBox() {
 export default function Blog() {
     return (
         <>
+            <X.TOC />
             <X.Title>{metas[pathname].blogtitle}</X.Title>
             <X.H1>基础组件</X.H1>
             <X.H2>标题</X.H2>

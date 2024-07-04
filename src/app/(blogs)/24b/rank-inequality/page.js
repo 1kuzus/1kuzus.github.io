@@ -12,6 +12,7 @@ export const metadata = {
 export default function Blog() {
     return (
         <>
+            <X.TOC />
             <X.Title>{metas[pathname].blogtitle}</X.Title>
             <X.P>
                 这篇博客主要记录对秩不等式$r(A)+r(B)-n \leq r(AB) \leq \min(r(A),r(B))$的理解。\n

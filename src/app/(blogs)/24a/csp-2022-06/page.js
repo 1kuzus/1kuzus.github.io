@@ -12,6 +12,7 @@ export const metadata = {
 export default function Blog() {
     return (
         <>
+            <X.TOC />
             <X.Title>{metas[pathname].blogtitle}</X.Title>
             <X.H1>T1 归一化处理</X.H1>
             <X.P>用了一下方差的变形：</X.P>
@@ -129,7 +130,7 @@ export default function Blog() {
             />
             <X.H1>T3 角色授权</X.H1>
             <X.CodeBlock
-                language='cpp'
+                language="cpp"
                 code={`
                 #include <iostream>
                 #include <unordered_set>

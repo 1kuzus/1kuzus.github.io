@@ -12,6 +12,7 @@ export const metadata = {
 export default function Blog() {
     return (
         <>
+            <X.TOC />
             <X.Title>{metas[pathname].blogtitle}</X.Title>
             <X.P>
                 本文对面向对象的基本理论（为什么要有类、什么是属性、什么是方法等）不多做解释，重点在Python中的编程实现。

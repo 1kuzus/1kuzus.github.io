@@ -12,6 +12,7 @@ export const metadata = {
 export default function Blog() {
     return (
         <>
+            <X.TOC />
             <X.Title>{metas[pathname].blogtitle}</X.Title>
             <X.HighlightBlock>
                 <X.P>原题链接：@接雨水[https://leetcode.cn/problems/trapping-rain-water/description/]@</X.P>

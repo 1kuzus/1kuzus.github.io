@@ -12,6 +12,7 @@ export const metadata = {
 export default function Blog() {
     return (
         <>
+            <X.TOC />
             <X.Title>{metas[pathname].blogtitle}</X.Title>
             <X.H1>前情提要</X.H1>
             <X.P>这个博客网站曾经是一个`Create React App`项目，此前一直在Github仓库的`master`分支开发。</X.P>

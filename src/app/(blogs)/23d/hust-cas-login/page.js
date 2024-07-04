@@ -12,6 +12,7 @@ export const metadata = {
 export default function Blog() {
     return (
         <>
+            <X.TOC />
             <X.Title>{metas[pathname].blogtitle}</X.Title>
             <X.P>登录地址是@[https://pass.hust.edu.cn/cas/login]@。</X.P>
             <X.P>程序的Github在@[https://github.com/1kuzus/HustCASLogin]@。</X.P>
