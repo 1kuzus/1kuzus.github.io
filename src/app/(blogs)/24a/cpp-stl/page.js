@@ -3,6 +3,7 @@ import metas from 'src/app/_metas';
 
 const pathname = '/24a/cpp-stl/';
 export const metadata = {
+    //todo: getdata ,read from a json
     title: metas[pathname].pagetitle,
     alternates: {
         canonical: metas.baseurl + pathname,
