@@ -30,6 +30,7 @@ export const metadata = {
 export default function Blog() {
     return (
         <>
+            <X.TOC />
             <X.Title>{metas[pathname].blogtitle}</X.Title>
         </>
     );

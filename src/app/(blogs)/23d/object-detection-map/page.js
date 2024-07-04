@@ -12,6 +12,7 @@ export const metadata = {
 export default function Blog() {
     return (
         <>
+            <X.TOC />
             <X.Title>{metas[pathname].blogtitle}</X.Title>
             <X.P>*全类平均精度*`(mean Average Precision, mAP)`用于评估目标检测模型性能。</X.P>
             <X.P>

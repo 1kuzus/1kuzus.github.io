@@ -1,11 +1,9 @@
 'use client';
 import {useState, useLayoutEffect} from 'react';
-import {useGlobalContext} from 'src/context/GlobalContext';
-import './Contents.css';
+import './TOC.css';
 
 export default function Contents() {
-    const {titleNodes} = useGlobalContext();
-    // const [titleNodes, setTitleNodes] = useState([]);
+    const [titleNodes, setTitleNodes] = useState([]);
     const [activeIndex, setActiveIndex] = useState();
     const getMappedOffsetTop = (titleNodes, container) => {
         const titleNodesOffsetTop = titleNodes.map((titleNode) => titleNode.offsetTop - 80);
@@ -16,13 +14,10 @@ export default function Contents() {
         const line = (a, b, c, d, x) => ((d - b) / (c - a)) * (x - a) + b;
         return titleNodesOffsetTop.map((ot) => (ot <= ot_i ? ot : line(ot_i, ot_i, ot_n, maxContainerScrollTop, ot)));
     };
-    // useLayoutEffect(() => {
-    //     const ttitleNodes = Array.from(document.querySelectorAll('.x-h1, .x-h2'));
-    //     setTitleNodes(ttitleNodes);
-    // }, []);
     useLayoutEffect(() => {
+        const nodes = Array.from(document.querySelectorAll('.x-h1:not(.x-h1.x-h1-efc), .x-h2:not(.x-h2.x-h2-efc)'));
         const scrollHandler = () => {
-            const mappedOffsetTop = getMappedOffsetTop(titleNodes, document.documentElement);
+            const mappedOffsetTop = getMappedOffsetTop(nodes, document.documentElement);
             const lastIdx = mappedOffsetTop.findLastIndex(
                 (offset) => offset <= Math.ceil(document.documentElement.scrollTop)
             );
@@ -30,8 +25,9 @@ export default function Contents() {
         };
         window.addEventListener('scroll', scrollHandler);
         scrollHandler();
+        setTitleNodes(nodes);
         return () => window.removeEventListener('scroll', scrollHandler);
-    }, [titleNodes]);
+    }, []);
     return titleNodes?.length ? (
         <div id="contents">
             <h4
@@ -44,9 +40,7 @@ export default function Contents() {
             </h4>
             <ul>
                 {titleNodes.map((titleNode, index) => {
-                    const {textContent: text} = titleNode;
-                    const {className: type} = titleNode.parentNode;
-                    // const {className: type} = titleNode;
+                    const {textContent: text, className: type} = titleNode;
                     return (
                         <li
                             key={index}

@@ -12,6 +12,7 @@ export const metadata = {
 export default function Blog() {
     return (
         <>
+            <X.TOC />
             <X.Title>{metas[pathname].blogtitle}</X.Title>
             <X.H1>RNN：一个简单的例子</X.H1>
             <X.P>

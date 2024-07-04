@@ -12,6 +12,7 @@ export const metadata = {
 export default function Blog() {
     return (
         <>
+            <X.TOC />
             <X.Title>{metas[pathname].blogtitle}</X.Title>
             <X.H1>汇总&前言</X.H1>
             <X.P>以下表格中讨论的时空复杂度都是每种算法未加优化、最朴素的实现。\n是否稳定一栏，空白默认为稳定。</X.P>

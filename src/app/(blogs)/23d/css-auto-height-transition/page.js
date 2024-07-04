@@ -13,6 +13,7 @@ export const metadata = {
 export default function Blog() {
     return (
         <>
+            <X.TOC />
             <X.Title>{metas[pathname].blogtitle}</X.Title>
             <X.H1>问题描述</X.H1>
             <X.P>下面是一个常见的效果，当鼠标悬浮时展开显示内容，离开时自动收回。</X.P>

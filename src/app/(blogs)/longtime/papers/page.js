@@ -46,6 +46,7 @@ AI提问示例
 export default function Blog() {
     return (
         <>
+            <X.TOC />
             <X.Title>{metas[pathname].blogtitle}</X.Title>
             <X.H1>研究</X.H1>
             <X.H2 href="https://arxiv.org/pdf/2003.08934.pdf">

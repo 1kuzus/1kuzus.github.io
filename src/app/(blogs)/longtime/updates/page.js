@@ -82,6 +82,8 @@ function UpdateLog() {
             date: '2024-06-10',
             description: '`HighlightBlock`组件支持`bgcolor="green"`\\n通过高亮背景色作为`diff`高亮方案',
         },
+        {version: '3.0'},
+        {date: '2024-07-04', description: '更新目录生成逻辑'},
     ];
     return (
         <>
@@ -104,12 +106,13 @@ function UpdateLog() {
 export default function Blog() {
     return (
         <>
+            <X.TOC />
             <X.Title>{metas[pathname].blogtitle}</X.Title>
             <Confetto>
                 <X.HighlightBlock>
                     <X.FlexRow justifyContent="space-around">
                         <X.Image id="cheer-gif" src="cheer.gif" />
-                        <div id="current-version">Version 3.0</div>
+                        <div id="current-version">Version 3.1</div>
                         <X.Image id="dance-gif" src="dance.gif" />
                     </X.FlexRow>
                 </X.HighlightBlock>

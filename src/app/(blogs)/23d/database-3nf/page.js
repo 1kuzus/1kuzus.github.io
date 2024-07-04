@@ -12,6 +12,7 @@ export const metadata = {
 export default function Blog() {
     return (
         <>
+            <X.TOC />
             <X.Title>{metas[pathname].blogtitle}</X.Title>
             <X.P>
                 为了减少数据冗余，设计数据表时必须遵循一定的规则，在关系型数据库中这种规则就称为范式。\n

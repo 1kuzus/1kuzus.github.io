@@ -12,6 +12,7 @@ export const metadata = {
 export default function Blog() {
     return (
         <>
+            <X.TOC />
             <X.Title>{metas[pathname].blogtitle}</X.Title>
             <X.HighlightBlock>
                 <X.P>原题链接：@戳气球[https://leetcode.cn/problems/burst-balloons/description/]@</X.P>

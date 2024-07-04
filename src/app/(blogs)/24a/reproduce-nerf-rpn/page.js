@@ -12,6 +12,7 @@ export const metadata = {
 export default function Blog() {
     return (
         <>
+            <X.TOC />
             <X.Title>{metas[pathname].blogtitle}</X.Title>
             <X.H1>说明</X.H1>
             <X.P>复现仓库：@[https://github.com/lyclyc52/NeRF_RPN]@</X.P>

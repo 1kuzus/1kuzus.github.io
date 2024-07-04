@@ -12,6 +12,7 @@ export const metadata = {
 export default function Blog() {
     return (
         <>
+            <X.TOC />
             <X.Title>{metas[pathname].blogtitle}</X.Title>
             <X.H1 href="https://cwe.mitre.org/index.html">关于CWE</X.H1>
             <X.P>

@@ -7,6 +7,7 @@ import Image from './Image/Image';
 import {Uli, Oli} from './ListItem';
 import P from './Paragraph/Paragraph';
 import Table from './Table/Table';
+import TOC from './TOC/TOC';
 
 const X = {
     ...Basics,
@@ -19,6 +20,7 @@ const X = {
     Oli,
     P,
     Table,
+    TOC,
     // r: String.raw, [todo]
 };
 

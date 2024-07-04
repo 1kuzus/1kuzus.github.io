@@ -1,4 +1,3 @@
-import SyncWithTOC from './SyncWithTOC';
 import './index.css';
 
 export function Title(props) {
@@ -9,16 +8,14 @@ export function Title(props) {
 export function H1(props) {
     const {href, excludeFromContents, children} = props;
     return (
-        <h2 className="x-h1">
-            <SyncWithTOC excludeFromContents={excludeFromContents}>
-                {href ? (
-                    <a href={href} target="_blank" rel="noreferrer">
-                        {children}
-                    </a>
-                ) : (
-                    children
-                )}
-            </SyncWithTOC>
+        <h2 className={`x-h1${excludeFromContents ? ' x-h1-efc' : ''}`}>
+            {href ? (
+                <a href={href} target="_blank" rel="noreferrer">
+                    {children}
+                </a>
+            ) : (
+                children
+            )}
         </h2>
     );
 }
@@ -26,16 +23,14 @@ export function H1(props) {
 export function H2(props) {
     const {href, excludeFromContents, children} = props;
     return (
-        <h3 className="x-h2">
-            <SyncWithTOC excludeFromContents={excludeFromContents}>
-                {href ? (
-                    <a href={href} target="_blank" rel="noreferrer">
-                        {children}
-                    </a>
-                ) : (
-                    children
-                )}
-            </SyncWithTOC>
+        <h3 className={`x-h2${excludeFromContents ? ' x-h2-efc' : ''}`}>
+            {href ? (
+                <a href={href} target="_blank" rel="noreferrer">
+                    {children}
+                </a>
+            ) : (
+                children
+            )}
         </h3>
     );
 }

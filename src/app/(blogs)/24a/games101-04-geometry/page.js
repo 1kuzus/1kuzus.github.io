@@ -12,6 +12,7 @@ export const metadata = {
 export default function Blog() {
     return (
         <>
+            <X.TOC />
             <X.Title>{metas[pathname].blogtitle}</X.Title>
             <X.H1>几何的隐式和显式表示</X.H1>
             <X.FlexRow gap="32px" alignItems="center">
