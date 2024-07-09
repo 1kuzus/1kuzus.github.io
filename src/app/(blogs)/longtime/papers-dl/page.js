@@ -1,7 +1,7 @@
 import X from 'src/component/X';
 import metas from 'src/app/_metas';
 
-const pathname = '/longtime/papers/';
+const pathname = '/longtime/papers-dl/';
 export const metadata = {
     title: metas[pathname].pagetitle,
     alternates: {
