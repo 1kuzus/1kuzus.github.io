@@ -175,7 +175,7 @@ const archives = [
         blogs: [
             {
                 title: '论文速记',
-                path: '/longtime/papers/',
+                path: '/longtime/papers-dl/',
             },
             {
                 title: '行为识别R(2+1)D网络',
