@@ -81,6 +81,7 @@ body::-webkit-scrollbar {
 body {
     font-size: 16px;
     background-color: var(--bg-body);
+    padding-top: 64px;
 }
 div,
 li,
