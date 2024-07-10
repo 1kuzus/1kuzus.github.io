@@ -1,5 +1,38 @@
 const posts = require('./_posts.json');
 
+console.log(posts);
+
+a=[]
+for (const [key, value] of Object.entries(posts)) {
+    obj={path:key,title:value.title}
+    if(value.time){
+        obj.time=value.time
+    }
+    a.push(obj)
+}
+
+const stringCompare = (a, b) => {
+    return a.time > b.time ? -1 : 1;
+}
+
+
+a.sort((a,b)=>stringCompare(a,b))
+
+b={}
+
+for(let i=0;i<a.length;i++){
+    b[a[i].path]=a[i]
+    //remove key
+    delete b[a[i].path].path
+}
+
+//write a into _posts.json
+const fs = require('fs')
+fs.writeFileSync('./_posts2.json', JSON.stringify(b, null, 4))
+
+process.exit(0)
+
+
 const archives = [
     {
         categoryName: '网络杂识',
@@ -98,4 +131,4 @@ archives.forEach((category) => {
 
 console.log(archives[0]);
 
-export default archives;
+// export default archives;
