@@ -1,19 +1,14 @@
 import X from 'src/component/X';
 import metas from 'src/app/_metas';
 
-const pathname = '/23c/pattern-recognition-2/';
-export const metadata = {
-    title: metas[pathname].pagetitle,
-    alternates: {
-        canonical: metas.baseurl + pathname,
-    },
-};
+const path = '/23c/pattern-recognition-2/';
+export const {metadata} = metas[path];
 
 export default function Blog() {
     return (
         <>
             <X.TOC />
-            <X.Title>{metas[pathname].blogtitle}</X.Title>
+            <X.Title>{metas[path].title}</X.Title>
             <X.P>
                 上一篇提到的统计决策方法，类条件密度按已知处理。但实际问题中，往往只有已知样本，需要根据已知样本推测分布。\n
                 本章讨论的是`参数估计`，也就是分布的表达式形式是已知的，只是希望确定其中参数的值。

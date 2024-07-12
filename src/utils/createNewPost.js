@@ -19,19 +19,14 @@ fs.mkdirSync(dir, {recursive: true});
 const template = `import X from 'src/component/X';
 import metas from 'src/app/_metas';
 
-const pathname = '${postPath}';
-export const metadata = {
-    title: metas[pathname].pagetitle,
-    alternates: {
-        canonical: metas.baseurl + pathname,
-    },
-};
+const path = '${postPath}';
+export const {metadata} = metas[path];
 
 export default function Blog() {
     return (
         <>
             <X.TOC />
-            <X.Title>{metas[pathname].blogtitle}</X.Title>
+            <X.Title>{metas[path].title}</X.Title>
         </>
     );
 }

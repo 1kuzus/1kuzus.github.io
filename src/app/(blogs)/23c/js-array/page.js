@@ -1,19 +1,14 @@
 import X from 'src/component/X';
 import metas from 'src/app/_metas';
 
-const pathname = '/23c/js-array/';
-export const metadata = {
-    title: metas[pathname].pagetitle,
-    alternates: {
-        canonical: metas.baseurl + pathname,
-    },
-};
+const path = '/23c/js-array/';
+export const {metadata} = metas[path];
 
 export default function Blog() {
     return (
         <>
             <X.TOC />
-            <X.Title>{metas[pathname].blogtitle}</X.Title>
+            <X.Title>{metas[path].title}</X.Title>
             <X.H1>at()</X.H1>
             <X.P>
                 `at()`方法接收一个整数值并返回该索引对应的元素，允许正数和负数。负整数从数组中的最后一个元素开始倒数。

@@ -1,19 +1,14 @@
 import X from 'src/component/X';
 import metas from 'src/app/_metas';
 
-const pathname = '/24b/leetcode-4/';
-export const metadata = {
-    title: metas[pathname].pagetitle,
-    alternates: {
-        canonical: metas.baseurl + pathname,
-    },
-};
+const path = '/24b/leetcode-4/';
+export const {metadata} = metas[path];
 
 export default function Blog() {
     return (
         <>
             <X.TOC />
-            <X.Title>{metas[pathname].blogtitle}</X.Title>
+            <X.Title>{metas[path].title}</X.Title>
             <X.HighlightBlock>
                 <X.P>
                     原题链接：@寻找两个正序数组的中位数[https://leetcode.cn/problems/median-of-two-sorted-arrays/description/]@

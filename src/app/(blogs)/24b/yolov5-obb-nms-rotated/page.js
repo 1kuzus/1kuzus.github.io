@@ -1,19 +1,14 @@
 import X from 'src/component/X';
 import metas from 'src/app/_metas';
 
-const pathname = '/24b/yolov5-obb-nms-rotated/';
-export const metadata = {
-    title: metas[pathname].pagetitle,
-    alternates: {
-        canonical: metas.baseurl + pathname,
-    },
-};
+const path = '/24b/yolov5-obb-nms-rotated/';
+export const {metadata} = metas[path];
 
 export default function Blog() {
     return (
         <>
             <X.TOC />
-            <X.Title>{metas[pathname].blogtitle}</X.Title>
+            <X.Title>{metas[path].title}</X.Title>
             <X.P>
                 使用`@yolov5_obb[https://github.com/hukaixuan19970627/yolov5_obb]@`时，我使用已有环境运行，此环境中的`pytorch`版本是`1.12.1`，---
                 而在`1.11`版本已经弃用了`"THC/THC.h"`。

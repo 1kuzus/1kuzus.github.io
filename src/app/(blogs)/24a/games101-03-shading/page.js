@@ -1,19 +1,14 @@
 import X from 'src/component/X';
 import metas from 'src/app/_metas';
 
-const pathname = '/24a/games101-03-shading/';
-export const metadata = {
-    title: metas[pathname].pagetitle,
-    alternates: {
-        canonical: metas.baseurl + pathname,
-    },
-};
+const path = '/24a/games101-03-shading/';
+export const {metadata} = metas[path];
 
 export default function Blog() {
     return (
         <>
             <X.TOC />
-            <X.Title>{metas[pathname].blogtitle}</X.Title>
+            <X.Title>{metas[path].title}</X.Title>
             <X.H1>Blinn-Phong光照模型</X.H1>
             <X.P noMarginBottom>将环境光分为：</X.P>
             <X.Uli>漫反射`(diffuse reflection)`：一根光线打过来，反射到四面八方</X.Uli>

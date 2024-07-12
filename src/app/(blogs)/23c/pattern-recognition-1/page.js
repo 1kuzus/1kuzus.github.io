@@ -2,19 +2,14 @@ import X from 'src/component/X';
 import metas from 'src/app/_metas';
 import styles from './page.module.css';
 
-const pathname = '/23c/pattern-recognition-1/';
-export const metadata = {
-    title: metas[pathname].pagetitle,
-    alternates: {
-        canonical: metas.baseurl + pathname,
-    },
-};
+const path = '/23c/pattern-recognition-1/';
+export const {metadata} = metas[path];
 
 export default function Blog() {
     return (
         <>
             <X.TOC />
-            <X.Title>{metas[pathname].blogtitle}</X.Title>
+            <X.Title>{metas[path].title}</X.Title>
             <X.H1>贝叶斯公式</X.H1>
             <X.HighlightBlock>
                 <X.Formula text="P(\omega_i|x) = \frac{P(x|\omega_i) \cdot P(\omega_i)}{P(x)}" />

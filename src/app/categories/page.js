@@ -4,16 +4,16 @@ import posts from 'src/app/_archives.json';
 export default function Archives() {
     return (
         <>
-            <h1>Archives.</h1>
+            <h1>Categories.</h1>
             <ul className="blog-list-ul">
-                {Object.keys(posts).map((path, index) => (
+                {/* {Object.keys(posts).map((path, index) => (
                     <li key={index} className="blog-list-li">
                         <Link className="blog-list-link" href={path} prefetch={true}>
                             {<span className="blog-list-title">{posts[path].title}</span>}
                             {posts[path].time && <span className="blog-list-time">{posts[path].time}</span>}
                         </Link>
                     </li>
-                ))}
+                ))} */}
                 {/* <svg
                         xmlns="http://www.w3.org/2000/svg"
                         aria-hidden="true"

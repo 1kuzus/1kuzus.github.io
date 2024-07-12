@@ -1,19 +1,14 @@
 import X from 'src/component/X';
 import metas from 'src/app/_metas';
 
-const pathname = '/24b/sorting-algorithm/';
-export const metadata = {
-    title: metas[pathname].pagetitle,
-    alternates: {
-        canonical: metas.baseurl + pathname,
-    },
-};
+const path = '/24b/sorting-algorithm/';
+export const {metadata} = metas[path];
 
 export default function Blog() {
     return (
         <>
             <X.TOC />
-            <X.Title>{metas[pathname].blogtitle}</X.Title>
+            <X.Title>{metas[path].title}</X.Title>
             <X.H1>汇总&前言</X.H1>
             <X.P>以下表格中讨论的时空复杂度都是每种算法未加优化、最朴素的实现。\n是否稳定一栏，空白默认为稳定。</X.P>
             <X.Table>

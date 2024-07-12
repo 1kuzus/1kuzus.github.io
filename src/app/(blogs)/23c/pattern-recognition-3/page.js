@@ -1,19 +1,14 @@
 import X from 'src/component/X';
 import metas from 'src/app/_metas';
 
-const pathname = '/23c/pattern-recognition-3/';
-export const metadata = {
-    title: metas[pathname].pagetitle,
-    alternates: {
-        canonical: metas.baseurl + pathname,
-    },
-};
+const path = '/23c/pattern-recognition-3/';
+export const {metadata} = metas[path];
 
 export default function Blog() {
     return (
         <>
             <X.TOC />
-            <X.Title>{metas[pathname].blogtitle}</X.Title>
+            <X.Title>{metas[path].title}</X.Title>
             <X.P>
                 本章讨论的是`非参数估计`。很多时候我们无法给出样本分布的函数形式，也就无法使用根据样本估计函数参数的思路。\n
                 非参数估计的思想是，直接根据样本，用数值方法估计出整个分布函数。

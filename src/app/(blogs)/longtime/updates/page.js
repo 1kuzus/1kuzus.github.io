@@ -3,13 +3,8 @@ import Confetto from './Confetto';
 import metas from 'src/app/_metas';
 import './page.css';
 
-const pathname = '/longtime/updates/';
-export const metadata = {
-    title: metas[pathname].pagetitle,
-    alternates: {
-        canonical: metas.baseurl + pathname,
-    },
-};
+const path = '/longtime/updates/';
+export const {metadata} = metas[path];
 
 function UpdateLog() {
     const logs = [
@@ -107,7 +102,7 @@ export default function Blog() {
     return (
         <>
             <X.TOC />
-            <X.Title>{metas[pathname].blogtitle}</X.Title>
+            <X.Title>{metas[path].title}</X.Title>
             <Confetto>
                 <X.HighlightBlock>
                     <X.FlexRow justifyContent="space-around">

@@ -1,4 +1,5 @@
-import BlogLists from 'src/component/BlogLists/BlogLists';
+import CategoryCard from 'src/component/CategoryCard/CategoryCard';
+import categories from './_categories.json';
 import './page.css';
 
 export const metadata = {
@@ -18,9 +19,19 @@ export default function Homepage() {
                         <div id="logopart-vr" />
                     </div>
                     <h1 id="homepage-title">铃木的网络日记</h1>
-                    <h1 style={{display: 'none'}}>スズキのBlogs</h1>
+                    <div id="homepage-subtitle">Rage, Perfectionism, Geek.</div>
+                    <div id="homepage-navs">
+                        <a href="/categories" className="homepage-nav">
+                            <button>全部分类</button>
+                        </a>
+                        <a href="/archives" className="homepage-nav">
+                            <button>归档</button>
+                        </a>
+                    </div>
                 </div>
-                <BlogLists />
+                {categories.map((category) => (
+                    <CategoryCard category={category} />
+                ))}
             </div>
         </>
     );

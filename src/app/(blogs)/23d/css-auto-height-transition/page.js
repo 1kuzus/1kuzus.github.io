@@ -2,19 +2,14 @@ import X from 'src/component/X';
 import metas from 'src/app/_metas';
 import styles from './page.module.css';
 
-const pathname = '/23d/css-auto-height-transition/';
-export const metadata = {
-    title: metas[pathname].pagetitle,
-    alternates: {
-        canonical: metas.baseurl + pathname,
-    },
-};
+const path = '/23d/css-auto-height-transition/';
+export const {metadata} = metas[path];
 
 export default function Blog() {
     return (
         <>
             <X.TOC />
-            <X.Title>{metas[pathname].blogtitle}</X.Title>
+            <X.Title>{metas[path].title}</X.Title>
             <X.H1>问题描述</X.H1>
             <X.P>下面是一个常见的效果，当鼠标悬浮时展开显示内容，离开时自动收回。</X.P>
             <X.FlexRow gap="32px">

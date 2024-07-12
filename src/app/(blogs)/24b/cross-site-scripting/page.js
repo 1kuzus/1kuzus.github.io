@@ -1,19 +1,14 @@
 import X from 'src/component/X';
 import metas from 'src/app/_metas';
 
-const pathname = '/24b/cross-site-scripting/';
-export const metadata = {
-    title: metas[pathname].pagetitle,
-    alternates: {
-        canonical: metas.baseurl + pathname,
-    },
-};
+const path = '/24b/cross-site-scripting/';
+export const {metadata} = metas[path];
 
 export default function Blog() {
     return (
         <>
             <X.TOC />
-            <X.Title>{metas[pathname].blogtitle}</X.Title>
+            <X.Title>{metas[path].title}</X.Title>
             <X.H1>概念、分类与威胁模型</X.H1>
             <X.P>
                 *跨站脚本攻击*`(Cross-site Scripting, XSS)`是一种常见的网络安全漏洞，攻击者通过在网页中插入恶意脚本，---
