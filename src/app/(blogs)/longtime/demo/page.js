@@ -2,13 +2,8 @@ import X from 'src/component/X';
 import metas from 'src/app/_metas';
 import styles from './page.module.css';
 
-const pathname = '/longtime/demo/';
-export const metadata = {
-    title: metas[pathname].pagetitle,
-    alternates: {
-        canonical: metas.baseurl + pathname,
-    },
-};
+const path = '/longtime/demo/';
+export const {metadata} = metas[path];
 
 function DemoBox() {
     return <div className={styles['demo-box']} />;
@@ -18,7 +13,7 @@ export default function Blog() {
     return (
         <>
             <X.TOC />
-            <X.Title>{metas[pathname].blogtitle}</X.Title>
+            <X.Title>{metas[path].title}</X.Title>
             <X.H1>基础组件</X.H1>
             <X.H2>标题</X.H2>
             <X.P>此组件体系中标题分为三级，且只有一级和二级标题会展示在右侧目录中。</X.P>

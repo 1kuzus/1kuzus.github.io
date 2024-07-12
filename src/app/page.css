@@ -4,11 +4,29 @@
     align-items: center;
     padding: 64px 0 24px 0;
     background-color: var(--bg-main);
+    color: var(--text-color-main);
 }
 #homepage-title {
     margin-top: 32px;
     font-size: 32px;
+}
+#homepage-subtitle {
+    margin-top: 16px;
+    padding-left: 0.5em;
+    font-size: 20px;
+    font-family: var(--font-code);
+}
+#homepage-navs {
+    display: flex;
+    margin-top: 32px;
+    gap: 32px;
+}
+#homepage-navs a button {
+    padding: 8px 16px;
+    border-radius: 4px;
     color: var(--text-color-main);
+    background-color: var(--bg-transparent-gray);
+    box-shadow: var(--light-theme-box-shadow);
 }
 #logopart-wrapper {
     position: relative;

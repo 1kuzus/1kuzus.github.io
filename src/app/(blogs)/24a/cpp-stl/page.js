@@ -1,7 +1,7 @@
 import X from 'src/component/X';
 import metas from 'src/app/_metas';
 
-const pathname = '/24a/cpp-stl/';
+const path = '/24a/cpp-stl/';
 export const metadata = {
     //todo: getdata ,read from a json
     title: metas[pathname].pagetitle,
@@ -14,7 +14,7 @@ export default function Blog() {
     return (
         <>
             <X.TOC />
-            <X.Title>{metas[pathname].blogtitle}</X.Title>
+            <X.Title>{metas[path].title}</X.Title>
             <X.H1>string 字符串</X.H1>
             <X.H2>初始化</X.H2>
             <X.CodeBlock

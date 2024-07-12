@@ -1,19 +1,14 @@
 import X from 'src/component/X';
 import metas from 'src/app/_metas';
 
-const pathname = '/24b/rank-inequality/';
-export const metadata = {
-    title: metas[pathname].pagetitle,
-    alternates: {
-        canonical: metas.baseurl + pathname,
-    },
-};
+const path = '/24b/rank-inequality/';
+export const {metadata} = metas[path];
 
 export default function Blog() {
     return (
         <>
             <X.TOC />
-            <X.Title>{metas[pathname].blogtitle}</X.Title>
+            <X.Title>{metas[path].title}</X.Title>
             <X.P>
                 这篇博客主要记录对秩不等式$r(A)+r(B)-n \leq r(AB) \leq \min(r(A),r(B))$的理解。\n
                 不等式中假设矩阵$A$是$m \times n$，矩阵$B$是$n \times k$的。

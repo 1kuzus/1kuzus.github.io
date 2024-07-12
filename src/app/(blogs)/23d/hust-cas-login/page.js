@@ -1,19 +1,14 @@
 import X from 'src/component/X';
 import metas from 'src/app/_metas';
 
-const pathname = '/23d/hust-cas-login/';
-export const metadata = {
-    title: metas[pathname].pagetitle,
-    alternates: {
-        canonical: metas.baseurl + pathname,
-    },
-};
+const path = '/23d/hust-cas-login/';
+export const {metadata} = metas[path];
 
 export default function Blog() {
     return (
         <>
             <X.TOC />
-            <X.Title>{metas[pathname].blogtitle}</X.Title>
+            <X.Title>{metas[path].title}</X.Title>
             <X.P>登录地址是@[https://pass.hust.edu.cn/cas/login]@。</X.P>
             <X.P>程序的Github在@[https://github.com/1kuzus/HustCASLogin]@。</X.P>
             <X.Image src="fig1.jpg" width="100%" />

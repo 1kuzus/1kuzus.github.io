@@ -1,19 +1,14 @@
 import X from 'src/component/X';
 import metas from 'src/app/_metas';
 
-const pathname = '/24a/git-merge-allow-unrelated-histories/';
-export const metadata = {
-    title: metas[pathname].pagetitle,
-    alternates: {
-        canonical: metas.baseurl + pathname,
-    },
-};
+const path = '/24a/git-merge-allow-unrelated-histories/';
+export const {metadata} = metas[path];
 
 export default function Blog() {
     return (
         <>
             <X.TOC />
-            <X.Title>{metas[pathname].blogtitle}</X.Title>
+            <X.Title>{metas[path].title}</X.Title>
             <X.H1>前情提要</X.H1>
             <X.P>这个博客网站曾经是一个`Create React App`项目，此前一直在Github仓库的`master`分支开发。</X.P>
             <X.P>

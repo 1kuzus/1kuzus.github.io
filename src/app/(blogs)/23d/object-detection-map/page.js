@@ -1,19 +1,14 @@
 import X from 'src/component/X';
 import metas from 'src/app/_metas';
 
-const pathname = '/23d/object-detection-map/';
-export const metadata = {
-    title: metas[pathname].pagetitle,
-    alternates: {
-        canonical: metas.baseurl + pathname,
-    },
-};
+const path = '/23d/object-detection-map/';
+export const {metadata} = metas[path];
 
 export default function Blog() {
     return (
         <>
             <X.TOC />
-            <X.Title>{metas[pathname].blogtitle}</X.Title>
+            <X.Title>{metas[path].title}</X.Title>
             <X.P>*全类平均精度*`(mean Average Precision, mAP)`用于评估目标检测模型性能。</X.P>
             <X.P>
                 接下来围绕下面的例子逐步介绍`mAP`的计算。在下面的`7`张图片中共有`15`个目标，用绿色框标出；---

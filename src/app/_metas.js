@@ -1,5 +1,8 @@
-import archives from './_archives';
+import archives from './_archives.json';
 
+const BASE_URL = 'https://1kuzus.github.io';
+
+//其他metadata
 const metadata = {
     '/23d/protocols/': {
         addition: '链路层 网络层 运输层',
@@ -39,16 +42,30 @@ const metadata = {
     },
 };
 
-const metas = archives
-    .map((i) => i.blogs)
-    .reduce((acc, cur) => [...acc, ...cur])
-    .reduce((acc, cur) => {
-        acc[cur.path] = {
-            blogtitle: cur.title,
-            pagetitle: [cur.title, metadata?.[cur.path]?.addition, '铃木的网络日记'].filter((i) => i).join(' - '),
-        };
-        return acc;
-    }, {});
+const metas = {};
+for (let path in archives) {
+    metas[path] = {
+        title: archives[path].title, //post title
+        metadata: {
+            title: [archives[path].title, metadata?.[path]?.addition, '铃木的网络日记'].filter((i) => i).join(' - '), //page title
+            alternates: {
+                canonical: BASE_URL + path,
+            },
+        },
+    };
+}
+// };
+
+// const metas = archives
+//     .map((i) => i.blogs)
+//     .reduce((acc, cur) => [...acc, ...cur])
+//     .reduce((acc, cur) => {
+//         acc[cur.path] = {
+//             blogtitle: cur.title,
+//             pagetitle: [cur.title, metadata?.[cur.path]?.addition, '铃木的网络日记'].filter((i) => i).join(' - '),
+//         };
+//         return acc;
+//     }, {});
 
 metas.baseurl = 'https://1kuzus.github.io';
 

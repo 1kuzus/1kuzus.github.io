@@ -1,19 +1,14 @@
 import X from 'src/component/X';
 import metas from 'src/app/_metas';
 
-const pathname = '/23d/learn-rnn-lstm/';
-export const metadata = {
-    title: metas[pathname].pagetitle,
-    alternates: {
-        canonical: metas.baseurl + pathname,
-    },
-};
+const path = '/23d/learn-rnn-lstm/';
+export const {metadata} = metas[path];
 
 export default function Blog() {
     return (
         <>
             <X.TOC />
-            <X.Title>{metas[pathname].blogtitle}</X.Title>
+            <X.Title>{metas[path].title}</X.Title>
             <X.H1>RNN：一个简单的例子</X.H1>
             <X.P>
                 传统神经网络每次的输入是独立的，每次输出只依赖于当前的输入；但在某些任务中需要更好的处理序列信息，即前面的输入和后面的输入是有关系的；---
