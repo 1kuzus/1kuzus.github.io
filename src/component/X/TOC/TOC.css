@@ -11,7 +11,7 @@
     overflow-y: auto;
     color: var(--text-color-main);
     border-radius: 12px;
-    background-color: var(--bg-main-transparent);
+    background-color: var(--bg-main);
     box-shadow: var(--light-theme-box-shadow);
 }
 #contents::-webkit-scrollbar {
