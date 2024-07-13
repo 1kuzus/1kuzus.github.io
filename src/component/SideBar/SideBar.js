@@ -41,23 +41,24 @@ function SidebarList(props) {
 }
 
 export default function Sidebar() {
-    return;
     // const pathname = usePathname();
     // const {showSidebar, setShowSidebar} = useGlobalContext();
-    // return (
-    //     <>
-    //         <div id="sidebar" className={showSidebar ? 'show-sidebar' : null}>
-    //             {archives.map((category, index) => (
-    //                 <SidebarList key={index} category={category} currentPath={pathname} />
-    //             ))}
-    //         </div>
-    //         <div
-    //             id="sidebar-mask"
-    //             className={showSidebar ? 'show-sidebar' : null}
-    //             onClick={() => {
-    //                 setShowSidebar((prev) => !prev);
-    //             }}
-    //         />
-    //     </>
-    // );
+    const showSidebar = true;
+    return (
+        <>
+            <div id="sidebar" className={showSidebar ? 'show-sidebar' : null}>
+                {/*archives.map((category, index) => (
+                     <SidebarList key={index} category={category} currentPath={pathname} />
+                 ))*/}
+                123
+            </div>
+            <div
+                id="sidebar-mask"
+                className={showSidebar ? 'show-sidebar' : null}
+                onClick={() => {
+                    setShowSidebar((prev) => !prev);
+                }}
+            />
+        </>
+    );
 }
