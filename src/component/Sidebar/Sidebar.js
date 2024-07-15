@@ -45,7 +45,8 @@ function SidebarList(props) {
 export default function Sidebar() {
     // const pathname = usePathname();
     // const {showSidebar, setShowSidebar} = useGlobalContext();
-    const showSidebar = true;
+    // const showSidebar = true;
+    const [showSidebar, setShowSidebar] = useState(true);
     return (
         <>
             <div id="sidebar" className={showSidebar ? 'show-sidebar' : null}>
@@ -57,7 +58,7 @@ export default function Sidebar() {
                 id="sidebar-mask"
                 className={showSidebar ? 'show-sidebar' : null}
                 onClick={() => {
-                    // setShowSidebar((prev) => !prev);
+                    setShowSidebar((prev) => !prev);
                 }}
             />
         </>
