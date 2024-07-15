@@ -1,11 +1,16 @@
 import Link from 'next/link';
 import posts from 'src/app/_archives.json';
+import CategoryCard from 'src/component/CategoryCard/CategoryCard';
+import categories from 'src/app/_categories.json';
 
 export default function Categories() {
     return (
         <>
             <h1>Categories.</h1>
-            <ul className="blog-list-ul">
+            <ul className="blog-category-ul">
+                {categories.map((category) => (
+                    <CategoryCard category={category} />
+                ))}
                 {/* {Object.keys(posts).map((path, index) => (
                     <li key={index} className="blog-list-li">
                         <Link className="blog-list-link" href={path} prefetch={true}>

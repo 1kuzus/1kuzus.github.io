@@ -31,6 +31,7 @@ export default function Homepage() {
                 </div>
                 {categories
                     .filter((category) => category.pinned)
+                    .sort((a, b) => a.pinned - b.pinned)
                     .map((category) => (
                         <CategoryCard category={category} />
                     ))}

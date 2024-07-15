@@ -1,6 +1,7 @@
 [
     {
         "categoryName": "网络杂识",
+        "pinned": 2,
         "posts": [
             "/23d/database-3nf/",
             "/23d/github-linguist-vendored/",
@@ -11,7 +12,7 @@
     },
     {
         "categoryName": "Web",
-        "pinned": true,
+        "pinned": 3,
         "posts": [
             "/23d/hust-cas-login/",
             "/24b/learn-cwes/",
@@ -21,7 +22,7 @@
     },
     {
         "categoryName": "算法",
-        "pinned": true,
+        "pinned": 1,
         "posts": [
             "/24a/cpp-stl/",
             "/24b/sorting-algorithm/",
