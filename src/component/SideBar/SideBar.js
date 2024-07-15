@@ -56,7 +56,7 @@ export default function Sidebar() {
                 id="sidebar-mask"
                 className={showSidebar ? 'show-sidebar' : null}
                 onClick={() => {
-                    setShowSidebar((prev) => !prev);
+                    // setShowSidebar((prev) => !prev);
                 }}
             />
         </>
