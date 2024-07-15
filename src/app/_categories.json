@@ -57,7 +57,7 @@
         ]
     },
     {
-        "categoryName": "Python学习",
+        "categoryName": "Python",
         "posts": [
             "/24a/torch-numpy-topk/",
             "/24a/object-oriented-programming-python/"
