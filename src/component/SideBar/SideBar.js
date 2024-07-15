@@ -4,6 +4,8 @@ import Link from 'next/link';
 import {usePathname} from 'next/navigation';
 import {RightArrowIcon} from 'src/assets/svgs';
 import {useGlobalContext} from 'src/context/GlobalContext';
+import categories from 'src/app/_categories.json';
+import CategoryCard from '../CategoryCard/CategoryCard';
 // import archives from 'src/app/_archives';
 import './Sidebar.css';
 
@@ -47,10 +49,9 @@ export default function Sidebar() {
     return (
         <>
             <div id="sidebar" className={showSidebar ? 'show-sidebar' : null}>
-                {/*archives.map((category, index) => (
-                     <SidebarList key={index} category={category} currentPath={pathname} />
-                 ))*/}
-                123
+                {categories.map((category) => (
+                    <CategoryCard category={category} />
+                ))}
             </div>
             <div
                 id="sidebar-mask"
