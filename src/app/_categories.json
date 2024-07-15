@@ -11,6 +11,7 @@
     },
     {
         "categoryName": "Web",
+        "pinned": true,
         "posts": [
             "/23d/hust-cas-login/",
             "/24b/learn-cwes/",
@@ -21,7 +22,6 @@
     {
         "categoryName": "算法",
         "pinned": true,
-        
         "posts": [
             "/24a/cpp-stl/",
             "/24b/sorting-algorithm/",

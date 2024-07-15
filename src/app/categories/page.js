@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import posts from 'src/app/_archives.json';
 
-export default function Archives() {
+export default function Categories() {
     return (
         <>
             <h1>Categories.</h1>

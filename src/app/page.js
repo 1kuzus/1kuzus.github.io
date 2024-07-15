@@ -29,9 +29,11 @@ export default function Homepage() {
                         </a>
                     </div>
                 </div>
-                {categories.map((category) => (
-                    <CategoryCard category={category} />
-                ))}
+                {categories
+                    .filter((category) => category.pinned)
+                    .map((category) => (
+                        <CategoryCard category={category} />
+                    ))}
             </div>
         </>
     );
