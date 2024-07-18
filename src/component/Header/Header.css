@@ -15,9 +15,9 @@
     box-shadow: var(--light-theme-box-shadow);
     user-select: none;
 }
-#header.show-sidebar {
+/* #header.show-sidebar {
     box-shadow: none;
-}
+} */
 #header-left-wrapper,
 #header-right-wrapper {
     display: flex;

