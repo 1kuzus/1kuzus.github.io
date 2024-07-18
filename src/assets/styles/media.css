@@ -9,7 +9,7 @@
     }
 }
 
-/*width<1000px 收起侧栏*/
+/*width<1000px*/
 @media (max-width: 1000px) {
     :root {
         --sidebar-width: 300px !important;
@@ -17,9 +17,9 @@
     #blog-layout {
         padding: 32px 18px !important;
     }
-    #sidebar {
+    /* #sidebar {
         transform: translateX(-100%);
-    }
+    } */
     #header {
         background-color: var(--bg-main) !important;
     }
@@ -29,11 +29,11 @@
     }
 }
 
-/*width>1000px 隐藏折叠侧栏相关元素*/
+/*width>1000px*/
 @media (min-width: 1000px) {
-    #header-archive {
+    /* #header-archive {
         display: none !important;
-    }
+    } */
     #sidebar-mask {
         opacity: 0 !important;
     }
