@@ -28,7 +28,7 @@ export default function Contents() {
         setTitleNodes(nodes);
         return () => window.removeEventListener('scroll', scrollHandler);
     }, []);
-    return titleNodes?.length ? (
+    return (
         <div id="contents">
             <h4
                 id="contents-header"
@@ -38,23 +38,25 @@ export default function Contents() {
             >
                 本页目录
             </h4>
-            <ul>
-                {titleNodes.map((titleNode, index) => {
-                    const {textContent: text, className: type} = titleNode;
-                    return (
-                        <li
-                            key={index}
-                            className={`titletype-${type}${index === activeIndex ? ' active' : ''}`}
-                            onClick={() => {
-                                const mappedOffsetTop = getMappedOffsetTop(titleNodes, document.documentElement);
-                                document.documentElement.scrollTo({top: Math.ceil(mappedOffsetTop[index])});
-                            }}
-                        >
-                            {text}
-                        </li>
-                    );
-                })}
-            </ul>
+            {titleNodes?.length ? (
+                <ul>
+                    {titleNodes.map((titleNode, index) => {
+                        const {textContent: text, className: type} = titleNode;
+                        return (
+                            <li
+                                key={index}
+                                className={`titletype-${type}${index === activeIndex ? ' active' : ''}`}
+                                onClick={() => {
+                                    const mappedOffsetTop = getMappedOffsetTop(titleNodes, document.documentElement);
+                                    document.documentElement.scrollTo({top: Math.ceil(mappedOffsetTop[index])});
+                                }}
+                            >
+                                {text}
+                            </li>
+                        );
+                    })}
+                </ul>
+            ) : null}
         </div>
-    ) : null;
+    );
 }
