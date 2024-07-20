@@ -1,6 +1,10 @@
 #blog-layout {
     min-width: 240px;
-    padding: 48px 480px;
+    padding: 48px 420px 48px 60px;
+    transition: padding-left 200ms;
+}
+#blog-layout:has(#sidebar.show-sidebar) {
+    padding-left: 420px;
 }
 #main {
     max-width: 1080px;

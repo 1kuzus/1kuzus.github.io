@@ -1,7 +1,7 @@
 import X from 'src/component/X';
 import Confetto from './Confetto';
+import Version from './Version';
 import metas from 'src/app/_metas';
-import './page.css';
 
 const path = '/longtime/updates/';
 export const {metadata} = metas[path];
@@ -104,13 +104,7 @@ export default function Blog() {
             <X.TOC />
             <X.Title>{metas[path].title}</X.Title>
             <Confetto>
-                <X.HighlightBlock>
-                    <X.FlexRow justifyContent="space-around">
-                        <X.Image id="cheer-gif" src="cheer.gif" />
-                        <div id="current-version">Version 3.1</div>
-                        <X.Image id="dance-gif" src="dance.gif" />
-                    </X.FlexRow>
-                </X.HighlightBlock>
+                <Version />
             </Confetto>
             <UpdateLog />
         </>

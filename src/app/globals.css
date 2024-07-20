@@ -1,7 +1,6 @@
 :root {
     --font-code: Menlo, Consolas, Consolas_Latin_Subset, 'Courier New', Courier, 'Ubuntu Mono', monospace;
     --border: 1px solid #80808040;
-    --sidebar-width: min(30vw, 396px);
 }
 :root,
 :root.light {

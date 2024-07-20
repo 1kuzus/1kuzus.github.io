@@ -1,5 +1,6 @@
 'use client';
 import {useEffect} from 'react';
+import './Confetto.css';
 
 export default function Confetto(props) {
     const {children} = props;
