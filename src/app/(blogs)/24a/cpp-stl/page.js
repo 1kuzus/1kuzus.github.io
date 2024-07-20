@@ -2,13 +2,7 @@ import X from 'src/component/X';
 import metas from 'src/app/_metas';
 
 const path = '/24a/cpp-stl/';
-export const metadata = {
-    //todo: getdata ,read from a json
-    title: metas[pathname].pagetitle,
-    alternates: {
-        canonical: metas.baseurl + pathname,
-    },
-};
+export const {metadata} = metas[path];
 
 export default function Blog() {
     return (

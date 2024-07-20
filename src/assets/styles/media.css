@@ -1,46 +1,36 @@
 /*响应式*/
-/*width<1560px 隐藏文章目录*/
-@media (max-width: 1560px) {
+/*width<1440px 隐藏文章目录*/
+@media (max-width: 1440px) {
     #blog-layout {
-        padding: 48px 42px 48px calc(min(396px, 30vw) + 42px) !important;
+        padding: 48px !important;
     }
     #contents {
         display: none !important;
     }
-}
-
-/*width<1000px*/
-@media (max-width: 1000px) {
-    :root {
-        --sidebar-width: 300px !important;
-    }
-    #blog-layout {
-        padding: 32px 18px !important;
-    }
-    /* #sidebar {
-        transform: translateX(-100%);
-    } */
     #header {
         background-color: var(--bg-main) !important;
     }
     /*others*/
-    #cheer-gif {
-        display: none !important;
-    }
-}
-
-/*width>1000px*/
-@media (min-width: 1000px) {
-    /* #header-archive {
+    /*todo: version page /page moudle css导入 规范化*/
+    /* #cheer-gif {
         display: none !important;
     } */
+}
+
+/*width>1440px*/
+@media (min-width: 1440px) {
     #sidebar-mask {
         opacity: 0 !important;
+        pointer-events: none !important;
     }
 }
 
 /*width<600px 移动端*/
 @media (max-width: 600px) {
+    /*layout*/
+    #blog-layout {
+        padding: 32px 18px !important;
+    }
     /*header*/
     #header {
         padding: 0 18px !important;
@@ -88,7 +78,8 @@
         line-height: 72px !important;
     }
     #cheer-gif {
-        display: none !important;
+        width: 64px !important;
+        /* display: none !important; */
     }
     #dance-gif {
         width: 64px !important;
