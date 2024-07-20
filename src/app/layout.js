@@ -31,6 +31,7 @@ const scriptTheme =
     "const a=z=>h.getItem(z),b=(y,z)=>h.setItem(y,z),c=(y,z)=>document.documentElement.setAttribute(y,z),d='theme',e='dark',f='light',g='class',h=localStorage;a(d)!==e&&a(d)!==f&&b(d,f);a(d)===e?c(g,e):c(g,f);";
 
 //兼容性
+const scriptFindLast = `
 if (!Array.prototype.findLast) {
     Array.prototype.findLast = function (callback) {
         for (let i = this.length - 1; i >= 0; i--) {
@@ -47,6 +48,7 @@ if (!Array.prototype.findLastIndex) {
         return -1;
     };
 }
+`;
 
 export default function RootLayout({children}) {
     return (
@@ -57,6 +59,7 @@ export default function RootLayout({children}) {
                 <script async src="https://www.googletagmanager.com/gtag/js?id=G-45BYSZ6WPY" />
                 <script dangerouslySetInnerHTML={{__html: scriptGA}} />
                 <script dangerouslySetInnerHTML={{__html: scriptTheme}} />
+                <script dangerouslySetInnerHTML={{__html: scriptFindLast}} />
             </head>
             <body>
                 <GlobalProvider>
