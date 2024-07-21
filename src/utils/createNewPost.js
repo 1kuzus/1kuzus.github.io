@@ -42,7 +42,7 @@ import metas from 'src/app/_metas';
 const path = '${postPath}';
 export const {metadata} = metas[path];
 
-export default function Blog() {
+export default function Post() {
     return (
         <>
             <X.TOC />

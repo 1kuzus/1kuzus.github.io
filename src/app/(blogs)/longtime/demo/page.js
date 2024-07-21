@@ -9,7 +9,7 @@ function DemoBox() {
     return <div className={styles['demo-box']} />;
 }
 
-export default function Blog() {
+export default function Post() {
     return (
         <>
             <X.TOC />

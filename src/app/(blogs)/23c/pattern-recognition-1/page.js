@@ -5,7 +5,7 @@ import styles from './page.module.css';
 const path = '/23c/pattern-recognition-1/';
 export const {metadata} = metas[path];
 
-export default function Blog() {
+export default function Post() {
     return (
         <>
             <X.TOC />

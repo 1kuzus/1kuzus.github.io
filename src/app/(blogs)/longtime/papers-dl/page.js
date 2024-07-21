@@ -38,7 +38,7 @@ AI提问示例
 5.研究有什么限制或可以改进的地方？
 */
 
-export default function Blog() {
+export default function Post() {
     return (
         <>
             <X.TOC />
