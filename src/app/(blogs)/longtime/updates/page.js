@@ -79,6 +79,7 @@ function UpdateLog() {
         },
         {version: '3.0'},
         {date: '2024-07-04', description: '更新目录生成逻辑'},
+        {date: '2024-07-21', description: '创建`Y`组件库，作文章外的站点公用组件'},
     ];
     return (
         <>
