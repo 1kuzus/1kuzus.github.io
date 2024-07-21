@@ -5,6 +5,7 @@ export default function Archives() {
     return (
         <>
             <h1>Archives.</h1>
+            <h1>{Object.keys(posts).length}</h1>
             <ul className="blog-list-ul">
                 {Object.keys(posts).map((path, index) => (
                     <li key={index} className="blog-list-li">

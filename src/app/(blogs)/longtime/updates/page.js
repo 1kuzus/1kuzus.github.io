@@ -98,7 +98,7 @@ function UpdateLog() {
     );
 }
 
-export default function Blog() {
+export default function Post() {
     return (
         <>
             <X.TOC />
