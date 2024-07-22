@@ -6,12 +6,13 @@ export default function CategoryCard(props) {
     const {category} = props;
     return (
         <div className="category-card">
-            {category.categoryName}
+            <div className="category-name">{category.categoryName}</div>
             <ul>
                 {category.posts.map((path, index) => (
-                    <li key={index}>
-                        <Link className="sidebar-list-link" href={path} prefetch={true}>
-                            <span className="sidebar-list-title">{archives[path].title}</span>
+                    <li key={index} className="post-item">
+                        {/* todo: 起名字 */}
+                        <Link href={path} prefetch={true}>
+                            <span className="post-title">{archives[path].title}</span>
                         </Link>
                     </li>
                 ))}
