@@ -42,11 +42,3 @@
 .x-h3 a:hover {
     color: var(--text-color-active);
 }
-.x-br {
-    width: 0;
-    height: 24px;
-}
-.x-divider {
-    margin: 12px 0;
-    border-bottom: var(--border);
-}
