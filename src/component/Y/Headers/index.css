@@ -1,0 +1,40 @@
+.y-h1 {
+    /* margin-top: 32px;
+    margin-bottom: 24px; */
+    font-size: 32px;
+    font-family: var(--font-code);
+    color: var(--text-color-main);
+}
+/* 
+.x-h1::before {
+    content: '#';
+    margin-right: 8px;
+    color: var(--text-color-active);
+}
+.x-h2 {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    font-size: 20px;
+    color: var(--text-color-main);
+}
+.x-h2::before {
+    content: '##';
+    margin-right: 6px;
+    color: var(--text-color-active);
+}
+.x-h3 {
+    margin-top: 24px;
+    margin-bottom: 12px;
+    font-size: 18px;
+    color: var(--text-color-main);
+}
+.x-h1 a,
+.x-h2 a,
+.x-h3 a {
+    color: inherit;
+}
+.x-h1 a:hover,
+.x-h2 a:hover,
+.x-h3 a:hover {
+    color: var(--text-color-active);
+} */
