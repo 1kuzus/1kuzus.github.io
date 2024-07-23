@@ -1,12 +1,13 @@
 import Link from 'next/link';
+import Y from 'src/component/Y';
 import posts from 'src/app/_archives.json';
 import CategoryCard from 'src/component/CategoryCard/CategoryCard';
 import categories from 'src/app/_categories.json';
 
 export default function Categories() {
     return (
-        <>
-            <h1>Categories.</h1>
+        <Y.CenterWrapper>
+            <Y.H1>Categories.</Y.H1>
             <ul className="blog-category-ul">
                 {categories.map((category) => (
                     <CategoryCard category={category} />
@@ -32,6 +33,6 @@ export default function Categories() {
                         <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z"></path>
                     </svg> */}
             </ul>
-        </>
+        </Y.CenterWrapper>
     );
 }

@@ -1,15 +1,10 @@
 #blog-layout {
     min-width: 240px;
-    padding: 48px 420px 48px 60px;
+    padding-right: 360px;
     transition: padding-left 200ms;
 }
 #blog-layout:has(#sidebar.show-sidebar) {
-    padding-left: 420px;
-}
-#main {
-    max-width: 1080px;
-    margin: 0 auto;
-    color: var(--text-color-main);
+    padding-left: 360px;
 }
 #main * {
     word-break: break-word;

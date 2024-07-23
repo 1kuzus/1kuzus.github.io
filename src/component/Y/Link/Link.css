@@ -1,0 +1,19 @@
+.y-link {
+    display: block;
+    width: 100%;
+    color: var(--color-main);
+    padding: 0.4em 1em;
+    margin-top: 0.2em;
+    border-radius: 0.5em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    transition: color, background-color 200ms;
+}
+.y-link.active {
+    color: var(--text-color-active);
+    background-color: var(--bg-transparent-gray);
+}
+.y-link:hover {
+    background-color: var(--bg-transparent-gray);
+}
