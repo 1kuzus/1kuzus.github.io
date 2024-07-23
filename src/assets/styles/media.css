@@ -2,14 +2,14 @@
 /*width<1440px 隐藏文章目录*/
 @media (max-width: 1440px) {
     #blog-layout {
-        padding: 48px !important;
+        padding: 0 !important;
     }
     #contents {
         display: none !important;
     }
-    #header {
+    /* #header {
         background-color: var(--bg-main) !important;
-    }
+    } */
     /*others*/
     /*todo: version page /page moudle css导入 规范化*/
     /* #cheer-gif {
@@ -18,7 +18,7 @@
 }
 
 /*width>1440px*/
-@media (min-width: 1440px) {
+@media (min-width: 1441px) {
     #sidebar-mask {
         opacity: 0 !important;
         pointer-events: none !important;
@@ -28,9 +28,12 @@
 /*width<600px 移动端*/
 @media (max-width: 600px) {
     /*layout*/
-    #blog-layout {
+    .y-center-wrapper {
         padding: 32px 18px !important;
     }
+    /* #blog-layout {
+        
+    } */
     /*header*/
     #header {
         padding: 0 18px !important;
@@ -52,7 +55,7 @@
         width: 100px !important;
         height: 100px !important;
     }
-    .blog-list-category {
+    /* .blog-list-category {
         font-size: 20px !important;
     }
     .blog-list-link {
@@ -64,7 +67,7 @@
     }
     .blog-list-time {
         display: none !important;
-    }
+    } */
     /*component*/
     .x-codeblock pre code {
         padding: 0 20px !important;

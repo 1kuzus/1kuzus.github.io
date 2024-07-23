@@ -1,8 +1,61 @@
 .category-card {
-    width: 260px;
-    padding: 4px;
-    margin: 24px;
+    padding: 12px;
     border-radius: 4px;
-    border: var(--border);
+    background-color: var(--bg-main);
     color: var(--color-main);
+    box-shadow: var(--light-theme-box-shadow);
+    break-inside: avoid;
+    transition: height 1000ms;
+    margin-bottom: 32px;
 }
+.category-card.sidebar-card {
+    font-size: 14px;
+    box-shadow: none;
+    border-bottom: var(--border);
+    margin-bottom: 0;
+}
+.category-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.category-name {
+    font-weight: bold;
+    padding: 0.6em 1em;
+    color: var(--title-color);
+}
+.category-rightarrow {
+    width: 16px;
+    height: 16px;
+    margin-right: 0.6em;
+    transition: transform 200ms;
+}
+.category-card.show-list .category-rightarrow {
+    transform: rotate(90deg);
+}
+.category-card-ul-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 200ms;
+}
+.category-card-ul {
+    grid-row: 1 / span 2;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 200ms;
+}
+
+.category-card.show-list .category-card-ul-wrapper {
+    grid-template-rows: 1fr;
+}
+.category-card.show-list .category-card-ul {
+    opacity: 0.9;
+}
+
+.post-title {
+    color: var(--text-main);
+}
+
+/* .post-item:hover {
+    background-color: var(--bg-transparent-gray);
+} */

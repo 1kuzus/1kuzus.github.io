@@ -28,6 +28,21 @@
     background-color: var(--bg-transparent-gray);
     box-shadow: var(--light-theme-box-shadow);
 }
+#homepage-categories {
+    /* column-count: 3;
+    column-gap: 32px;
+    column-width: 300px;
+    column-fill: balance; */
+
+}
+/* #homepage-categories-wrapper {
+    margin: 64px auto;
+    max-width: 1080px;
+    column-count: 3;
+    column-gap: 32px;
+    column-width: 500px;
+    column-fill: balance;
+} */
 #logopart-wrapper {
     position: relative;
     width: 120px;
