@@ -23,7 +23,7 @@
 #contents-header {
     padding: 4px 32px 4px 32px;
     line-height: 20px;
-    color: var(--text-color-active);
+    color: var(--title-color);
     cursor: pointer;
     user-select: none;
 }
