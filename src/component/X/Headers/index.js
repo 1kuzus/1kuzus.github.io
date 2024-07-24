@@ -8,7 +8,7 @@ export function Title(props) {
 export function H1(props) {
     const {href, excludeFromContents, children} = props;
     return (
-        <h2 className={`x-h1${excludeFromContents ? ' x-h1-efc' : ''}`}>
+        <h2 className={`x-h1${excludeFromContents ? ' exclude-from-contents' : ''}`}>
             {href ? (
                 <a href={href} target="_blank" rel="noreferrer">
                     {children}
@@ -23,7 +23,7 @@ export function H1(props) {
 export function H2(props) {
     const {href, excludeFromContents, children} = props;
     return (
-        <h3 className={`x-h2${excludeFromContents ? ' x-h2-efc' : ''}`}>
+        <h3 className={`x-h2${excludeFromContents ? ' exclude-from-contents' : ''}`}>
             {href ? (
                 <a href={href} target="_blank" rel="noreferrer">
                     {children}
