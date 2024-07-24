@@ -75,6 +75,7 @@ body::-webkit-scrollbar {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    color: var(--text-color-main); /*todo:删掉其他多余的*/
 }
 
 body {

@@ -1,90 +1,50 @@
-#homepage-content {
+#homepage-banner {
     display: flex;
+    gap: 16px;
     flex-direction: column;
     align-items: center;
-    padding: 64px 0 24px 0;
+    padding: 64px 0;
     background-color: var(--bg-main);
-    color: var(--text-color-main);
 }
-#homepage-titlealex {
-    font-size: 56px;
-}
-#homepage-title {
-
-    padding: 0.4em 1em;
-    border-radius: 12px;
-    /* background-color: var(--bg-transparent-gray); */
-    margin-top: 64px;
-    font-size: 36px;
+#homepage-author {
+    width: fit-content;
+    font-size: 40px;
+    margin: 12px 0;
     font-family: var(--font-code);
-    line-height: 100px;
-    vertical-align: center;
 }
-#homepage-title2 {
-    margin-top: 24px;
-    font-size: 24px;
-}
-.span1 {
-    /* color: #168bca; */
-}
-.span3 {
-    font-size: 36px;
+.author {
     color: var(--text-color-active);
 }
-.homepage-nav-card {
-    padding: 24px;
+#homepage-title {
+    font-size: 24px;
 }
-.homepage-nav-card-title {
-    font-size: 20px;
-    font-family: var(--font-code);
-    color: var(--text-color-main);
-    margin: 12px;
-}
-
 #homepage-subtitle {
-    margin-top: 16px;
-    padding-left: 0.5em;
-    font-size: 20px;
+    font-size: 18px;
     font-family: var(--font-code);
 }
 #homepage-navs {
     display: flex;
-    margin-top: 32px;
-    gap: 32px;
+    justify-content: center;
+    gap: 64px;
 }
-#homepage-navs a button {
-    padding: 8px 16px;
-    border-radius: 4px;
-    color: var(--text-color-main);
-    background-color: var(--bg-transparent-gray);
-    box-shadow: var(--light-theme-box-shadow);
-}
-#homepage-categories {
-    /* column-count: 3;
-    column-gap: 32px;
-    column-width: 300px;
-    column-fill: balance; */
-}
-/* #homepage-categories-wrapper {
-    margin: 64px auto;
-    max-width: 1080px;
-    column-count: 3;
-    column-gap: 32px;
-    column-width: 500px;
-    column-fill: balance;
-} */
-
 .homepage-nav-card {
     width: 360px;
     height: 180px;
-    margin: 24px;
-    /* box-shadow: var(--light-theme-box-shadow); */
+    padding: 24px;
     background-color: var(--bg-transparent-gray);
     border-radius: 12px;
     transition: border 200ms;
     border: 1px solid transparent;
 }
+.homepage-nav-card-title-zh,
+.homepage-nav-card-title-en {
+    font-size: 20px;
+    font-family: var(--font-code);
+    color: var(--text-color-main);
+    margin: 12px;
+}
 .homepage-nav-card:hover {
+    cursor: pointer;
     border: 1px solid var(--title-color);
 }
 

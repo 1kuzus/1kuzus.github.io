@@ -1,6 +1,5 @@
+import NextLink from 'next/link';
 import Y from 'src/component/Y';
-import CategoryCard from 'src/component/CategoryCard/CategoryCard';
-import categories from './_categories.json';
 import './page.css';
 
 export const metadata = {
@@ -20,47 +19,36 @@ function Logo() {
 }
 
 function HomepageNavCard(props) {
+    const {titleZh, titleEn, href} = props;
     return (
-        <div className="homepage-nav-card">
-            <h3 className="homepage-nav-card-title">全部分类</h3>
-            <div className="homepage-nav-card-title">Categories.</div>
-        </div>
+        <NextLink href={href}>
+            <div className="homepage-nav-card">
+                <h3 className="homepage-nav-card-title-zh">{titleZh}</h3>
+                <div className="homepage-nav-card-title-en">{titleEn}</div>
+            </div>
+        </NextLink>
     );
 }
 
 export default function Homepage() {
     return (
         <div id="homepage">
-            <div id="homepage-content">
+            <div id="homepage-banner">
                 <Logo />
-                <h1 id="homepage-titlealex">1kuzus's Blog</h1>
-                <h1 id="homepage-title">
-                    <span className="span1">\author</span>
-                    <span className="span2">&#123;</span>
-                    <span className="span3">1kuzus</span>
-                    <span className="span4">&#125;</span>
-                </h1>
-                {/*
-                <h1 id="homepage-title2">铃木的网络日记</h1> */}
-                {/* <div id="homepage-subtitle">Rage, Perfectionism, Geek.</div> */}
-                <div id="homepage-navs">
-                    <a href="/categories" className="homepage-nav">
-                        <button>全部分类</button>
-                    </a>
-                    <a href="/archives" className="homepage-nav">
-                        <button>归档</button>
-                    </a>
-                </div>
+                <h2 id="homepage-author">
+                    <span>\author</span>
+                    <span>&#123;</span>
+                    <span className="author">1kuzus</span>
+                    <span>&#125;</span>
+                </h2>
+                <h1 id="homepage-title">铃木的网络日记</h1>
+                <div id="homepage-subtitle">&nbsp;Rage, Perfectionism, Geek.</div>
             </div>
             <Y.CenterWrapper id="homepage-categories">
-                <HomepageNavCard />
-                <HomepageNavCard />
-                {/* {categories
-                    .filter((category) => category.pinned)
-                    .sort((a, b) => a.pinned - b.pinned)
-                    .map((category) => (
-                        <CategoryCard category={category} />
-                    ))} */}
+                <div id="homepage-navs">
+                    <HomepageNavCard titleZh="全部分类" titleEn="Categories." href="/categories/" />
+                    <HomepageNavCard titleZh="归档" titleEn="Archives." href="/archives/" />
+                </div>
             </Y.CenterWrapper>
         </div>
     );
