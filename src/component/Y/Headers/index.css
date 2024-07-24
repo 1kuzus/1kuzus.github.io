@@ -1,7 +1,13 @@
 .y-h1 {
     /* margin-top: 32px;*/
-    margin-bottom: 24px; 
+    margin-bottom: 24px;
     font-size: 32px;
+    font-family: var(--font-code);
+    color: var(--text-color-main);
+}
+.y-h2 {
+    margin: 16px 0;
+    font-size: 24px;
     font-family: var(--font-code);
     color: var(--text-color-main);
 }
