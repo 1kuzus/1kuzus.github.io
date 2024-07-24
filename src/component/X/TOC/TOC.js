@@ -15,7 +15,9 @@ export default function Contents() {
         return titleNodesOffsetTop.map((ot) => (ot <= ot_i ? ot : line(ot_i, ot_i, ot_n, maxContainerScrollTop, ot)));
     };
     useLayoutEffect(() => {
-        const nodes = Array.from(document.querySelectorAll('.x-h1:not(.x-h1.x-h1-efc), .x-h2:not(.x-h2.x-h2-efc)'));
+        const nodes = Array.from(
+            document.querySelectorAll('.x-h1:not(.x-h1.exclude-from-contents), .x-h2:not(.x-h2.exclude-from-contents)')
+        );
         const scrollHandler = () => {
             const mappedOffsetTop = getMappedOffsetTop(nodes, document.documentElement);
             const lastIdx = mappedOffsetTop.findLastIndex(
