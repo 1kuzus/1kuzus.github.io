@@ -18,7 +18,7 @@ function UpdateLog() {
         {date: '2023-08-09', description: '开始设计暗色主题'},
         {date: '2023-08-13', description: '新组件`P`，自动解析行内高亮'},
         {date: '2023-08-16', description: '段落组件自动解析加粗、换行、超链接和转义字符'},
-        {date: '2023-08-20', description: '新组件`BlogWrapper``CodeBlock`'},
+        {date: '2023-08-20', description: '新组件`PostWrapper``CodeBlock`'},
         {date: '2023-08-29', description: '由于`highlight.js`库对jsx的高亮支持不好，决定采用`prism.js`作为代码高亮库'},
         {
             date: '2023-08-30',
@@ -64,7 +64,7 @@ function UpdateLog() {
         {version: '1.1'},
         {
             date: '2024-02-12',
-            description: '删除了`BlogWrapper`组件，布局功能集成到新组件`BlogLayout`\\n响应式设计移动端适配',
+            description: '删除了`PostWrapper`组件，布局功能集成到新组件`PostLayout`\\n响应式设计移动端适配',
         },
         {date: '2024-02-15', description: '调整了暗色模式配色等部分页面设计\\n顶栏新增半透明效果'},
         {date: '2024-02-17', description: '优化了侧栏导航布局\\n`react-like`'},

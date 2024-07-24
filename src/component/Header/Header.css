@@ -56,7 +56,7 @@
 #header-show-sidebar-button div.show-sidebar {
     border-left: 12px solid #fcfcfc;
 }
-body:not(:has(#blog-layout)) #header-show-sidebar-button {
+body:not(:has(#post-layout)) #header-show-sidebar-button {
     opacity: 0;
     pointer-events: none;
 }

@@ -1,9 +1,9 @@
-#blog-layout {
+#post-layout {
     min-width: 240px;
     padding-right: 360px;
     transition: padding-left 200ms;
 }
-#blog-layout:has(#sidebar.show-sidebar) {
+#post-layout:has(#sidebar.show-sidebar) {
     padding-left: 360px;
 }
 #main * {
