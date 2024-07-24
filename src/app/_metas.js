@@ -54,18 +54,6 @@ for (let path in archives) {
         },
     };
 }
-// };
-
-// const metas = archives
-//     .map((i) => i.blogs)
-//     .reduce((acc, cur) => [...acc, ...cur])
-//     .reduce((acc, cur) => {
-//         acc[cur.path] = {
-//             blogtitle: cur.title,
-//             pagetitle: [cur.title, metadata?.[cur.path]?.addition, '铃木的网络日记'].filter((i) => i).join(' - '),
-//         };
-//         return acc;
-//     }, {});
 
 metas.baseurl = 'https://1kuzus.github.io';
 

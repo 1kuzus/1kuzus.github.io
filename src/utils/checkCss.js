@@ -121,7 +121,7 @@ function findCssFiles(dir) {
 }
 
 const cssFiles = [
-    // ...findCssFiles(path.join('src', 'app', '(blogs)')),
+    // ...findCssFiles(path.join('src', 'app', '(posts)')),
     // ...findCssFiles(path.join('src', 'component')),
     ...findCssFiles('src'),
 ];

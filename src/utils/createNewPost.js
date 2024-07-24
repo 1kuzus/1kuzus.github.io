@@ -9,7 +9,7 @@ const m = date.getMonth();
 const mstr = String.fromCharCode(97 + m / 3);
 
 const postPath = `/${ystr + mstr}/${param}/`;
-const dir = path.join('src', 'app', '(blogs)', postPath);
+const dir = path.join('src', 'app', '(posts)', postPath);
 const filePath = path.join(dir, 'page.js');
 
 if (fs.existsSync(dir)) {
