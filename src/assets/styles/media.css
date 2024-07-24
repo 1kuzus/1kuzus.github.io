@@ -7,14 +7,6 @@
     #contents {
         display: none !important;
     }
-    /* #header {
-        background-color: var(--bg-main) !important;
-    } */
-    /*others*/
-    /*todo: version page /page moudle css导入 规范化*/
-    /* #cheer-gif {
-        display: none !important;
-    } */
 }
 
 /*width>1440px*/
@@ -55,19 +47,6 @@
         width: 100px !important;
         height: 100px !important;
     }
-    /* .blog-list-category {
-        font-size: 20px !important;
-    }
-    .blog-list-link {
-        padding: 12px 16px !important;
-    }
-    .blog-list-title {
-        font-size: 16px !important;
-        max-width: 100% !important;
-    }
-    .blog-list-time {
-        display: none !important;
-    } */
     /*component*/
     .x-codeblock pre code {
         padding: 0 20px !important;
@@ -103,7 +82,7 @@
     #logopart-wrapper {
         display: none !important;
     }
-    /*blogs*/
+    /*posts*/
     #post-layout {
         margin-top: 0 !important;
         padding: 18px !important;

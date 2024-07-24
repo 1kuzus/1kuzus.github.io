@@ -6,7 +6,7 @@ export default function Categories() {
     return (
         <Y.CenterWrapper>
             <Y.H1>Categories.</Y.H1>
-            <ul className="blog-category-ul">
+            <ul>
                 {categories.map((category) => (
                     <CategoryCard category={category} />
                 ))}
