@@ -12,9 +12,9 @@ export default function Sidebar() {
         <>
             <div id="sidebar" className={showSidebar ? 'show-sidebar' : null}>
                 <div id="sidebar-width-wrapper">
-                    {categories.map((category) => {
+                    {categories.map((category, index) => {
                         const activeIndex = category.posts.findIndex((path) => path === pathname);
-                        return <CategoryCard category={category} activeIndex={activeIndex} isSidebarCard />;
+                        return <CategoryCard key={index} category={category} activeIndex={activeIndex} isSidebarCard />;
                     })}
                 </div>
             </div>
