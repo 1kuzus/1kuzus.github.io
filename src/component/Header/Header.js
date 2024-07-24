@@ -1,5 +1,5 @@
 'use client';
-import Link from 'next/link';
+import NextLink from 'next/link';
 import {usePathname} from 'next/navigation';
 import {useGlobalContext} from 'src/context/GlobalContext';
 import {LogoIcon, LightThemeIcon, DarkThemeIcon, GithubIcon, RightArrowIcon} from 'src/assets/svgs';
@@ -7,11 +7,11 @@ import './Header.css';
 
 function LogoButton() {
     return (
-        <Link href="/">
+        <NextLink href="/">
             <div id="header-logo-bg">
                 <LogoIcon />
             </div>
-        </Link>
+        </NextLink>
     );
 }
 
