@@ -72,7 +72,7 @@
 #content4 {
     display: grid;
     grid-template-rows: 0fr;
-    background-color: var(--bg-transparent-gray);
+    background-color: var(--bg-transparent-gray-500);
     transition: grid-template-rows 3000ms;
 }
 #content4 > div {
@@ -96,7 +96,7 @@
 #content5 {
     display: grid;
     grid-template-rows: 0fr;
-    background-color: var(--bg-transparent-gray);
+    background-color: var(--bg-transparent-gray-500);
     transition: grid-template-rows 3000ms;
 }
 #content5 > div {

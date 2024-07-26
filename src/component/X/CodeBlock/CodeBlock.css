@@ -9,7 +9,6 @@
     line-height: 24px;
     font-size: 95%;
     font-family: var(--font-code);
-    color: var(--text-color-main);
 }
 /* .x-codeblock .x-codeblock-header {
     position: absolute;
@@ -31,7 +30,6 @@
     font-size: 95%;
     line-height: 24px;
     font-family: var(--font-code);
-    color: var(--text-color-main);
     position: absolute;
     left: 0;
     top: 24px;

@@ -14,13 +14,13 @@
     height: 28px;
 }
 .x-oli-number {
-    color: var(--text-color-active);
+    color: var(--brand-200);
 }
 .x-uli-marker-dot {
     width: 4px;
     height: 4px;
     border-radius: 50%;
-    background-color: var(--text-color-active);
+    background-color: var(--brand-200);
 }
 .x-uli .x-uli-content-wrapper,
 .x-oli .x-oli-content-wrapper {
