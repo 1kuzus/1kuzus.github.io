@@ -2,7 +2,7 @@
     padding: 12px;
     border-radius: 4px;
     background-color: var(--bg-main);
-    color: var(--color-main);
+    color: var(--fg-main);
     box-shadow: var(--light-theme-box-shadow);
     break-inside: avoid;
     transition: height 1000ms;
@@ -22,7 +22,7 @@
 .category-name {
     font-weight: bold;
     padding: 0.6em 1em;
-    color: var(--title-color);
+    color: var(--brand-100);
 }
 .category-rightarrow {
     width: 16px;
@@ -55,7 +55,3 @@
 .post-title {
     color: var(--text-main);
 }
-
-/* .post-item:hover {
-    background-color: var(--bg-transparent-gray);
-} */

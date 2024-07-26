@@ -7,15 +7,14 @@
 .x-table {
     width: max-content;
     height: fit-content;
-    color: var(--text-color-main);
     border-collapse: separate;
     border-spacing: 3px;
 }
 .x-table th {
-    background-color: var(--bg-th);
+    background-color: var(--bg-transparent-gray-600);
 }
 .x-table td {
-    background-color: var(--bg-td);
+    background-color: var(--bg-transparent-gray-300);
 }
 .x-table th,
 .x-table td {

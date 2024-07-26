@@ -18,10 +18,10 @@
 #homepage-navs {
     columns: 2;
     height: 25vh;
-    background-color: #dcdcdc;
+    background-color: var(--bg-gray-300);
 }
 .homepage-nav-card:nth-child(1) {
-    background-color: #ebebeb;
+    background-color: var(--bg-gray-500);
 }
 .homepage-nav-card {
     display: block;
@@ -30,11 +30,11 @@
 #homepage-title::before {
     content: '#';
     margin-right: 8px;
-    color: var(--text-color-active);
+    color: var(--brand-200);
 }
 #homepage-title {
     font-size: 20px;
-    color: var(--color-main);
+    color: var(--fg-main);
 }
 #homepage-subtitle {
     font-size: 20px;
@@ -55,7 +55,7 @@
     width: 20%;
     height: 100%;
     background-color: #00f8ff;
-    box-shadow: var(--logopart-shadow);
+    box-shadow: var(--dark-theme-logopart-shadow);
     transform: skewX(-21.8deg);
     transition: box-shadow 400ms;
 }
@@ -86,31 +86,31 @@
     z-index: 2;
     width: 20%;
     height: 100%;
-    background-color: var(--logopart-vr-color);
+    background-color: var(--low-contrast-gray-100);
     transform: skewX(-21.8deg);
 }
 #author-wrapper {
     font-family: var(--font-code);
 }
 #author {
-    color: var(--text-color-active);
+    color: var(--brand-200);
     /* animation: colorchange 10s infinite; */
 }
 /* 
 @keyframes colorchange {
     0% {
-        color: var(--text-color-active);
+        color: var(--brand-200);
     }
     25% {
-        color: var(--title-color);
+        color: var(--brand-100);
     }
     50% {
         color: #00f8ff;
     }
     75% {
-        color: var(--title-color);
+        color: var(--brand-100);
     }
     100% {
-        color: var(--text-color-active);
+        color: var(--brand-200);
     }
 } */

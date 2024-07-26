@@ -2,63 +2,97 @@
     --font-code: Menlo, Consolas, Consolas_Latin_Subset, 'Courier New', Courier, 'Ubuntu Mono', monospace;
     --border: 1px solid #80808040;
 }
+/* games101-03-shading/ img挤扁 */
 :root,
 :root.light {
-    
-
-
-
-
-    --color-main: #30303c;
+    /*背景色*/
     --bg-main: #ffffff;
-    /* --bg-main-transparent: #ffffffd0; */
     --bg-body: #ffffff;
-    --bg-transparent-golden: #ffb80018;
+
+    --bg-gray-100: #fcfcfc;
+    --bg-gray-200: #f4f4f4;
+    --bg-gray-300: #ececec;
+    --bg-gray-400: #e4e4e4;
+    --bg-gray-500: #dcdcdc;
+    --bg-gray-600: #d4d4d4;
+    --bg-gray-700: #cccccc;
+    --bg-gray-800: #c4c4c4;
+    --bg-gray-900: #bcbcbc;
+
+    --bg-transparent-gray-100: #cccccc10;
+    --bg-transparent-gray-200: #cccccc1c;
+    --bg-transparent-gray-300: #cccccc28;
+    --bg-transparent-gray-400: #cccccc34;
+    --bg-transparent-gray-500: #cccccc40;
+    --bg-transparent-gray-600: #cccccc4c;
+
     --bg-transparent-red: #ff380018;
-    --bg-transparent-gray: #c0c0c018;
     --bg-transparent-blue: #0080ff18;
     --bg-transparent-green: #00ff0020;
-    --bg-icon-color: #30303c;
-    --bg-th: #b8b8b828;
-    --bg-td: #e8e8e820;
-    --bg-scrollbar-thumb: #cccccc;
-    --bg-scrollbar-thumb-hover: #bcbcbc;
-    --title-color: #00a8c4;
-    --text-color-main: #30303c;
-    --text-color-active: #0088ac;
-    --inline-highlight-color-text: #50505a;
-    --inline-highlight-color-bg: #50505c18;
-    --logopart-vr-color: #30303c;
-    --gray-1: #d4d4d4;
+    --bg-transparent-golden: #ffb80018;
+
+    /*前景色*/
+    --fg-main: #30303c;
+    --fg-gray-100: #40404c;
+    --fg-gray-200: #50505c;
+    --fg-gray-300: #60606c;
+
+    /*主题色*/
+    --brand-100: #00a8c4;
+    --brand-200: #0088ac;
+
+    /*低对比度灰色*/
+    --low-contrast-gray-100: #30303c;
+    --low-contrast-gray-200: #40404c;
+    --low-contrast-gray-300: #50505c;
 
     /*仅亮色模式*/
     --light-theme-box-shadow: 0 0 4px 2px #0000000c;
 }
 :root.dark {
-    --color-main: #fcfcfc;
+    /*背景色*/
     --bg-main: #141416;
-    /* --bg-main-transparent: #141416e0; */
     --bg-body: #1c1c1e;
-    --bg-transparent-golden: #c08a0020;
+
+    --bg-gray-100: #202024;
+    --bg-gray-200: #28282c;
+    --bg-gray-300: #303034;
+    --bg-gray-400: #38383c;
+    --bg-gray-500: #404044;
+    --bg-gray-600: #48484c;
+    --bg-gray-700: #505054;
+    --bg-gray-800: #58585c;
+    --bg-gray-900: #606064;
+
+    --bg-transparent-gray-100: #60606410;
+    --bg-transparent-gray-200: #6060641c;
+    --bg-transparent-gray-300: #60606428;
+    --bg-transparent-gray-400: #60606434;
+    --bg-transparent-gray-500: #60606440;
+    --bg-transparent-gray-600: #6060644c;
+
     --bg-transparent-red: #c02a0020;
-    --bg-transparent-gray: #80808018;
-    --bg-transparent-blue: #0080ff10;
+    --bg-transparent-blue: #0080ff18;
     --bg-transparent-green: #80ff8018;
-    --bg-icon-color: #383844;
-    --bg-th: #60606c28;
-    --bg-td: #48485420;
-    --bg-scrollbar-thumb: #383844;
-    --bg-scrollbar-thumb-hover: #484854;
-    --title-color: #00b8d0;
-    --text-color-main: #fcfcfc;
-    --text-color-active: #00a8c4;
-    --inline-highlight-color-text: #ececec;
-    --inline-highlight-color-bg: #ececec18;
-    --logopart-vr-color: #40404c;
-    --gray-1: #50505c;
+    --bg-transparent-golden: #c08a0020;
+
+    /*前景色*/
+    --fg-main: #fcfcfc;
+    --fg-gray-100: #ececec;
+    --fg-gray-200: #dcdcdc;
+    --fg-gray-300: #cccccc;
+
+    /*主题色*/
+    --brand-100: #00b8d0;
+    --brand-200: #00a8c4;
+
+    /*低对比度灰色*/
+    --low-contrast-gray-100: #404044;
+    --low-contrast-gray-200: #48484c;
+    --low-contrast-gray-200: #505054;
 
     /*仅暗色模式*/
-    --logopart-shadow: 0 0 48px 4px #00e8f4a0;
+    --dark-theme-logopart-shadow: 0 0 48px 4px #00e8f4a0;
 }
 
 body::-webkit-scrollbar {
@@ -71,16 +105,16 @@ body::-webkit-scrollbar {
 }
 *::-webkit-scrollbar-thumb {
     border-radius: 4px;
-    background-color: var(--bg-scrollbar-thumb);
+    background-color: var(--bg-gray-500);
 }
 *::-webkit-scrollbar-thumb:hover {
-    background-color: var(--bg-scrollbar-thumb-hover);
+    background-color: var(--bg-gray-700);
 }
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: var(--text-color-main); /*todo:删掉其他多余的*/
+    color: var(--fg-main);
 }
 
 body {

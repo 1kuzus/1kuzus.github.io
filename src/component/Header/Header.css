@@ -31,11 +31,11 @@
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background-color: var(--bg-icon-color);
+    background-color: var(--low-contrast-gray-100);
     cursor: pointer;
 }
 .header-button-bg:hover {
-    background-color: #484854;
+    background-color: var(--low-contrast-gray-300);
 }
 #header-show-sidebar-button {
     padding: 9px 8px;

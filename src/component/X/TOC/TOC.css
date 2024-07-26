@@ -9,7 +9,6 @@
     padding: 24px 0;
     font-size: 14px;
     overflow-y: auto;
-    color: var(--text-color-main);
     border-radius: 12px;
     background-color: var(--bg-main);
     box-shadow: var(--light-theme-box-shadow);
@@ -23,7 +22,7 @@
 #contents-header {
     padding: 4px 32px 4px 32px;
     line-height: 20px;
-    color: var(--title-color);
+    color: var(--brand-100);
     cursor: pointer;
     user-select: none;
 }
@@ -46,8 +45,8 @@
 }
 #contents .titletype-x-h2.active,
 #contents .titletype-x-h1.active {
-    color: var(--text-color-active);
-    border-left: 4px solid var(--text-color-active);
-    background: linear-gradient(120deg, var(--bg-transparent-gray) 50%, transparent);
+    color: var(--brand-200);
+    border-left: 4px solid var(--brand-200);
+    background: linear-gradient(120deg, var(--bg-transparent-gray-300) 50%, transparent);
     opacity: 1;
 }

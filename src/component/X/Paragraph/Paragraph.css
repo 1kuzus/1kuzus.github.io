@@ -2,7 +2,6 @@
     margin-bottom: 24px;
     line-height: 28px;
     font-size: 16px;
-    color: var(--text-color-main);
 }
 .x-p.with-margin-top {
     margin-top: 24px;
@@ -20,20 +19,20 @@
     font-family: var(--font-code);
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
-    color: var(--inline-highlight-color-text);
+    color: var(--fg-gray-100);
     border-radius: 4px;
-    background-color: var(--inline-highlight-color-bg);
+    background-color: var(--bg-transparent-gray-600);
 }
 .x-inline-strong {
     font-weight: bold;
 }
 .x-inline-link {
-    color: var(--text-color-active);
+    color: var(--brand-200);
     border-bottom: 1px solid transparent;
 }
 .x-inline-link .x-inline-highlight {
-    color: var(--text-color-active);
+    color: var(--brand-200);
 }
 .x-inline-link:hover {
-    border-bottom: 1px solid var(--text-color-active);
+    border-bottom: 1px solid var(--brand-200);
 }
