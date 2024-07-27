@@ -13,7 +13,7 @@ export default function Confetto(props) {
         canvas.width = document.documentElement.clientWidth;
         canvas.height = document.documentElement.clientHeight;
         const confettiCount = 40;
-        const gravityConfetti = 0.3;
+        const gravityConfetti = 0.15;
         const dragConfetti = 0.04;
         const terminalVelocity = 3;
         let confetti = [];

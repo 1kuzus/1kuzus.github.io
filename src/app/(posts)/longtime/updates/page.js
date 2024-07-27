@@ -81,6 +81,8 @@ function UpdateLog() {
         {date: '2024-07-04', description: '更新目录生成逻辑'},
         {date: '2024-07-21', description: '创建`Y`组件库，作文章外的站点公用组件'},
         {date: '2024-07-24', description: '重构布局逻辑\\n`/categories`页与`/archives`页'},
+        {date: '2024-07-27', description: '重构主页\\n全局`css`变量从组件命名改为颜色命名'},
+        {version: '3.1'},
     ];
     return (
         <>
@@ -106,7 +108,7 @@ export default function Post() {
             <X.TOC />
             <X.Title>{metas[path].title}</X.Title>
             <Confetto>
-                <Version />
+                <Version version="3.2" />
             </Confetto>
             <UpdateLog />
         </>
