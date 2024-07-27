@@ -5,7 +5,7 @@
     justify-content: center;
     height: 80vh;
     background-color: var(--bg-main); */
-    min-height: 50px;
+    min-height: 500px;
 }
 #homepage-banner {
     display: flex;
@@ -14,7 +14,7 @@
     align-items: center;
     justify-content: center;
     height: calc(75vh - 64px);
-    min-height: calc(50px - 64px);
+    min-height: calc(500px - 64px);
 }
 #logopart-wrapper {
     position: relative;
@@ -65,19 +65,13 @@
 }
 @keyframes author-color {
     0% {
-        color: var(--brand-200);
-    }
-    12% {
-        color: var(--brand-100);
+        color: var(--brand-300);
     }
     50% {
         color: var(--brand-main);
     }
-    88% {
-        color: var(--brand-100);
-    }
     100% {
-        color: var(--brand-200);
+        color: var(--brand-300);
     }
 }
 #author-wrapper {
@@ -86,8 +80,8 @@
     font-family: var(--font-code);
 }
 #author {
-    color: var(--brand-200);
-    animation: author-color 10s infinite;
+    color: var(--brand-300);
+    animation: author-color 12s infinite;
 }
 #homepage-navs {
     columns: 2;
@@ -116,7 +110,7 @@
     transition: opacity 400ms;
 }
 .homepage-nav-card:nth-child(1)::after {
-    background-color: var(--brand-200);
+    background-color: var(--brand-300);
 }
 .homepage-nav-card:nth-child(2)::after {
     background-color: var(--brand-100);
@@ -142,7 +136,7 @@
 #homepage-title::before {
     content: '#';
     margin-right: 8px;
-    color: var(--brand-200);
+    color: var(--brand-300);
 }
 #homepage-title {
     font-size: 20px;

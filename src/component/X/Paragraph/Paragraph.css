@@ -27,12 +27,12 @@
     font-weight: bold;
 }
 .x-inline-link {
-    color: var(--brand-200);
+    color: var(--brand-300);
     border-bottom: 1px solid transparent;
 }
 .x-inline-link .x-inline-highlight {
-    color: var(--brand-200);
+    color: var(--brand-300);
 }
 .x-inline-link:hover {
-    border-bottom: 1px solid var(--brand-200);
+    border-bottom: 1px solid var(--brand-300);
 }

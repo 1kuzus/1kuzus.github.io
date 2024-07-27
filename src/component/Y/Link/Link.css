@@ -11,7 +11,7 @@
     transition: color, background-color 200ms;
 }
 .y-link.active {
-    color: var(--brand-200);
+    color: var(--brand-300);
     background-color: var(--bg-transparent-gray-300);
 }
 .y-link:hover {

@@ -64,26 +64,26 @@
 }
 @keyframes author-color {
     0% {
-        color: var(--brand-200);
+        color: var(--brand-300);
     }
     12% {
-        color: var(--brand-100);
+        color: var(--brand-200);
     }
     50% {
         color: var(--brand-main);
     }
     88% {
-        color: var(--brand-100);
+        color: var(--brand-200);
     }
     100% {
-        color: var(--brand-200);
+        color: var(--brand-300);
     }
 }
 #author-wrapper {
     font-family: var(--font-code);
 }
 #author {
-    color: var(--brand-200);
+    color: var(--brand-300);
     animation: author-color 10s infinite;
 }
 #homepage-navs {
@@ -100,18 +100,18 @@
     background-color: var(--bg-gray-400);
 }
 .homepage-nav-card:nth-child(1):hover {
-    background-color: var(--brand-200);
+    background-color: var(--brand-300);
 }
 .homepage-nav-card:nth-child(2) {
     background-color: var(--bg-gray-200);
 }
 .homepage-nav-card:nth-child(2):hover {
-    background-color: var(--brand-100);
+    background-color: var(--brand-200);
 }
 #homepage-title::before {
     content: '#';
     margin-right: 8px;
-    color: var(--brand-200);
+    color: var(--brand-300);
 }
 #homepage-title {
     color: var(--fg-main);

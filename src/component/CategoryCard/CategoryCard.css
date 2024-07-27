@@ -22,7 +22,7 @@
 .category-name {
     font-weight: bold;
     padding: 0.6em 1em;
-    color: var(--brand-100);
+    color: var(--brand-200);
 }
 .category-rightarrow {
     width: 16px;
