@@ -38,6 +38,7 @@
     --fg-gray-300: #60606c;
 
     /*主题色*/
+    --brand-main: #00f8ff;
     --brand-100: #00a8c4;
     --brand-200: #0088ac;
 
@@ -83,6 +84,7 @@
     --fg-gray-300: #cccccc;
 
     /*主题色*/
+    --brand-main: #00f8ff;
     --brand-100: #00b8d0;
     --brand-200: #00a8c4;
 
@@ -118,9 +120,9 @@ body::-webkit-scrollbar {
 }
 
 body {
+    padding-top: 64px;
     font-size: 16px;
     background-color: var(--bg-body);
-    padding-top: 64px;
 }
 div,
 li,

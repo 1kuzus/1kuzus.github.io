@@ -5,16 +5,15 @@
     justify-content: center;
     height: 80vh;
     background-color: var(--bg-main); */
-    min-height: 50px;
 }
 #homepage-banner {
+    /* width: 100%; */
     display: flex;
-    gap: 16px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: calc(75vh - 64px);
-    min-height: calc(50px - 64px);
+    /* background-color: pink; */
 }
 #logopart-wrapper {
     position: relative;
@@ -81,8 +80,6 @@
     }
 }
 #author-wrapper {
-    margin-top: 16px;
-    font-size: 24px;
     font-family: var(--font-code);
 }
 #author {
@@ -91,53 +88,25 @@
 }
 #homepage-navs {
     columns: 2;
-    gap: 0;
+    /* gap: 0; */
     height: calc(25vh);
 }
 .homepage-nav-card {
-    position: relative;
     display: block;
     height: 100%;
+    transition: background-color 400ms;
 }
 .homepage-nav-card:nth-child(1) {
     background-color: var(--bg-gray-400);
 }
+.homepage-nav-card:nth-child(1):hover {
+    background-color: var(--brand-200);
+}
 .homepage-nav-card:nth-child(2) {
     background-color: var(--bg-gray-200);
 }
-.homepage-nav-card::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0;
-    transition: opacity 400ms;
-}
-.homepage-nav-card:nth-child(1)::after {
-    background-color: var(--brand-200);
-}
-.homepage-nav-card:nth-child(2)::after {
+.homepage-nav-card:nth-child(2):hover {
     background-color: var(--brand-100);
-}
-.homepage-nav-card:hover::after {
-    opacity: 1;
-}
-.homepage-nav-card-title-zh,
-.homepage-nav-card-title-en {
-    position: absolute;
-    z-index: 1;
-    left: 48px;
-}
-.homepage-nav-card-title-zh {
-    top: 24px;
-    font-size: 18px;
-}
-.homepage-nav-card-title-en {
-    top: 48px;
-    font-family: var(--font-code);
-    font-size: 20px;
 }
 #homepage-title::before {
     content: '#';
@@ -145,10 +114,9 @@
     color: var(--brand-200);
 }
 #homepage-title {
-    font-size: 20px;
     color: var(--fg-main);
 }
 #homepage-subtitle {
-    font-size: 18px;
+    font-weight: 100;
     font-family: var(--font-code);
 }
