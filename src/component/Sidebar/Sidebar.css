@@ -6,7 +6,7 @@
     width: 360px;
     max-width: 80vw;
     height: calc(100vh - 64px);
-    padding: 24px 0 24px 24px;
+    padding: 18px 0 18px 18px;
     overflow-y: auto;
     background-color: var(--bg-main);
     backdrop-filter: blur(5px) saturate(160%);
@@ -25,7 +25,7 @@
     transform: translateX(0);
 }
 #sidebar-width-wrapper {
-    width: 300px;
+    width: 320px;
     max-width: calc(80vw - 60px);
 }
 #sidebar-mask {

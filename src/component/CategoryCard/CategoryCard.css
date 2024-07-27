@@ -1,18 +1,12 @@
 .category-card {
     padding: 12px;
     border-radius: 4px;
-    background-color: var(--bg-main);
     color: var(--fg-main);
-    box-shadow: var(--light-theme-box-shadow);
-    break-inside: avoid;
+    border-bottom: var(--border);
     transition: height 1000ms;
-    margin-bottom: 32px;
 }
 .category-card.sidebar-card {
     font-size: 14px;
-    box-shadow: none;
-    border-bottom: var(--border);
-    margin-bottom: 0;
 }
 .category-card-header {
     display: flex;
@@ -44,7 +38,6 @@
     opacity: 0;
     transition: opacity 200ms;
 }
-
 .category-card.show-list .category-card-ul-wrapper {
     grid-template-rows: 1fr;
 }
