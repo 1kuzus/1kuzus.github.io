@@ -20,10 +20,6 @@ export default function CategoryCard(props) {
                 <ul className="category-card-ul">
                     {category.posts.map((path, index) => (
                         <li key={index}>
-                            {/* todo: 起名字 */}
-                            {/* <Link href={path} prefetch={true}>
-                            <span className="post-title">{archives[path].title}</span>
-                        </Link> */}
                             <Y.Link href={path} active={activeIndex === index}>
                                 <span className="post-title">{archives[path].title}</span>
                             </Y.Link>

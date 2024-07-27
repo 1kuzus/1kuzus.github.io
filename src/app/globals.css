@@ -1,6 +1,5 @@
 :root {
     --font-code: Menlo, Consolas, Consolas_Latin_Subset, 'Courier New', Courier, 'Ubuntu Mono', monospace;
-    --border: 1px solid #80808040;
 }
 /* games101-03-shading/ img挤扁 */
 :root,
@@ -48,6 +47,9 @@
     --low-contrast-gray-200: #40404c;
     --low-contrast-gray-300: #50505c;
 
+    /*非颜色*/
+    --border: 1px solid #80808040;
+
     /*仅亮色模式*/
     --light-theme-box-shadow: 0 0 4px 2px #0000000c;
 }
@@ -94,6 +96,9 @@
     --low-contrast-gray-100: #404044;
     --low-contrast-gray-200: #48484c;
     --low-contrast-gray-200: #505054;
+
+    /*非颜色*/
+    --border: 1px solid #80808060;
 
     /*仅暗色模式*/
     --dark-theme-logopart-shadow: 0 0 48px 4px #00e8f4a0;
