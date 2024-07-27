@@ -13,7 +13,7 @@
     font-family: var(--font-code);
 }
 .author {
-    color: var(--brand-200);
+    color: var(--brand-300);
     animation: colorchange 6s infinite;
 }
 @keyframes colorchange {
@@ -21,13 +21,13 @@
         color: var(--fg-main);
     }
     25% {
-        color: var(--brand-200);
+        color: var(--brand-300);
     }
     50% {
         color: var(--title-color);
     }
     75% {
-        color: var(--brand-200);
+        color: var(--brand-300);
     }
     100% {
         color: var(--fg-main);
@@ -87,7 +87,7 @@
     width: 50%;
     height: 100%;
     float: left;
-    background-color: var(--brand-200);
+    background-color: var(--brand-300);
 }
 /* 
 .homepage-nav-card-icon {

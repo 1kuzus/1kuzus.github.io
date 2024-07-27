@@ -22,7 +22,7 @@
 #contents-header {
     padding: 4px 32px 4px 32px;
     line-height: 20px;
-    color: var(--brand-100);
+    color: var(--brand-200);
     cursor: pointer;
     user-select: none;
 }
@@ -45,8 +45,8 @@
 }
 #contents .titletype-x-h2.active,
 #contents .titletype-x-h1.active {
-    color: var(--brand-200);
-    border-left: 4px solid var(--brand-200);
+    color: var(--brand-300);
+    border-left: 4px solid var(--brand-300);
     background: linear-gradient(120deg, var(--bg-transparent-gray-300) 50%, transparent);
     opacity: 1;
 }

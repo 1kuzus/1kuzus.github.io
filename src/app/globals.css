@@ -39,8 +39,9 @@
 
     /*主题色*/
     --brand-main: #00f8ff;
-    --brand-100: #00a8c4;
-    --brand-200: #0088ac;
+    --brand-100: #00b8d0;
+    --brand-200: #00a8c4;
+    --brand-300: #0088ac;
 
     /*低对比度灰色*/
     --low-contrast-gray-100: #30303c;
@@ -85,8 +86,9 @@
 
     /*主题色*/
     --brand-main: #00f8ff;
-    --brand-100: #00b8d0;
-    --brand-200: #00a8c4;
+    --brand-100: #00c8dc;
+    --brand-200: #00b8d0;
+    --brand-300: #00a8c4;
 
     /*低对比度灰色*/
     --low-contrast-gray-100: #404044;

@@ -13,7 +13,7 @@
 .x-h1::before {
     content: '#';
     margin-right: 8px;
-    color: var(--brand-200);
+    color: var(--brand-300);
 }
 .x-h2 {
     margin-top: 24px;
@@ -23,7 +23,7 @@
 .x-h2::before {
     content: '##';
     margin-right: 6px;
-    color: var(--brand-200);
+    color: var(--brand-300);
 }
 .x-h3 {
     margin-top: 24px;
@@ -38,5 +38,5 @@
 .x-h1 a:hover,
 .x-h2 a:hover,
 .x-h3 a:hover {
-    color: var(--brand-200);
+    color: var(--brand-300);
 } */
