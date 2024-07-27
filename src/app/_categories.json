@@ -88,6 +88,12 @@
         ]
     },
     {
+        "categoryName": "杂记",
+        "posts": [
+            "/longtime/hundred-thousand/"
+        ]
+    },
+    {
         "categoryName": "其他",
         "posts": [
             "/longtime/demo/",
