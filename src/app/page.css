@@ -17,11 +17,11 @@
 }
 #homepage-navs {
     columns: 2;
-    height: 25vh;
-    background-color: var(--bg-gray-300);
+    height:  calc(25vh);
+    background-color: var(--bg-gray-200);
 }
 .homepage-nav-card:nth-child(1) {
-    background-color: var(--bg-gray-500);
+    background-color: var(--bg-gray-400);
 }
 .homepage-nav-card {
     display: block;

@@ -48,7 +48,6 @@
     border-left: 6px solid #fcfcfc;
     border-radius: 4px;
     transition: border-left 200ms;
-
     display: flex;
     flex-direction: column;
     gap: 2px;
