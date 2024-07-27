@@ -1,0 +1,14 @@
+
+#homepage-navs {
+    columns: 2;
+    height: 25vh;
+    background-color: pink;
+}
+.homepage-nav-card:nth-child(1) {
+    background-color: #ebebeb;
+}
+.homepage-nav-card {
+    display: block;
+    height: 100%;
+}
+

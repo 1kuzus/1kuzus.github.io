@@ -29,7 +29,6 @@ function HomepageNavCard(props) {
         <NextLink href={href} className="homepage-nav-card">
             <h3 className="homepage-nav-card-title-zh">{titleZh}</h3>
             <div className="homepage-nav-card-title-en">{titleEn}</div>
-            <div className="homepage-nav-card-icon">{/* <CategoriesIcon /> */}</div>
         </NextLink>
     );
 }
@@ -41,7 +40,7 @@ export default function Homepage() {
                 <Logo />
                 <Author />
                 <h1 id="homepage-title">铃木的网络日记</h1>
-                <div id="homepage-subtitle">Rage, Perfectionism, Geek.</div>
+                <div id="homepage-subtitle">&nbsp;Rage, Perfectionism, Geek.</div>
             </div>
             <div id="homepage-navs">
                 <HomepageNavCard titleZh="全部分类" titleEn="Categories." href="/categories/" />
