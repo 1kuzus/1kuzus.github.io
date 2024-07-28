@@ -242,9 +242,7 @@ export default function Post() {
             />
             <X.P>也可以与`string`一样使用下标、迭代器和`auto`关键字访问。</X.P>
             <X.H2>尾部添加元素</X.H2>
-            <X.P>
-                `push_back()`和C++11新增加的`emplace_back()`作用相同，但是底层实现的机制不同，`emplace_back()`效率更高。
-            </X.P>
+            <X.P>`push_back()`和C++11新增加的`emplace_back()`作用相同，但是底层实现的机制不同，`emplace_back()`效率更高。</X.P>
             <X.CodeBlock
                 language="cpp"
                 code={`
@@ -255,12 +253,8 @@ export default function Post() {
             />
             <X.H2>插入元素</X.H2>
             <X.Uli>`insert(it,x)`：在迭代器`it`指定的位置之前插入新元素`x`，并返回新插入元素位置的迭代器。</X.Uli>
-            <X.Uli>
-                `insert(it,n,x)`：在迭代器`it`指定的位置之前插入`n`个新元素`x`，并返回第一个新插入元素位置的迭代器。
-            </X.Uli>
-            <X.Uli>
-                `emplace(it,...args)`：和`insert(it,x)`用法类似，`...args`是与新插入元素的构造函数相对应的多个参数。同样效率更高，不过`emplace()`每次只能插入一个元素。
-            </X.Uli>
+            <X.Uli>`insert(it,n,x)`：在迭代器`it`指定的位置之前插入`n`个新元素`x`，并返回第一个新插入元素位置的迭代器。</X.Uli>
+            <X.Uli>`emplace(it,...args)`：和`insert(it,x)`用法类似，`...args`是与新插入元素的构造函数相对应的多个参数。同样效率更高，不过`emplace()`每次只能插入一个元素。</X.Uli>
             <X.CodeBlock
                 language="cpp"
                 code={`
@@ -279,10 +273,7 @@ export default function Post() {
                 `}
             />
             <X.H2>关于内存管理和shrink_to_fit</X.H2>
-            <X.P>
-                vector可以看作是一个动态数组，会动态的申请内存空间。`size`是容器的实际大小，`capacity`是大小的上限。---
-                当`vector`满载需要进行扩容时，会完全弃用旧空间，申请更大的新空间，再将元素复制到新空间中。
-            </X.P>
+            <X.P>vector可以看作是一个动态数组，会动态的申请内存空间。`size`是容器的实际大小，`capacity`是大小的上限。当`vector`满载需要进行扩容时，会完全弃用旧空间，申请更大的新空间，再将元素复制到新空间中。</X.P>
             <X.CodeBlock
                 language="cpp"
                 code={`
@@ -320,16 +311,9 @@ export default function Post() {
                 `}
             />
             <X.H2>删除元素与清空、判空</X.H2>
-            <X.Uli>
-                `pop_back()`：删除`vector`容器中最后一个元素。该容器的大小`size`会减`1`，但容量`capacity`不变。
-            </X.Uli>
-            <X.Uli>
-                `erase(it)`：删除`vector`容器中迭代器`it`指定的元素，并返回指向被删除元素下一个位置元素的迭代器。`size`会减`1`，但`capacity`不变。
-            </X.Uli>
-            <X.Uli>
-                `erase(it1,it2)`：删除`vector`容器中位于迭代器{'`[it1,it2)`'}
-                指定区域内的所有元素，并返回指向被删除区域下一个位置元素的迭代器。`size`会减小，但`capacity`不变。
-            </X.Uli>
+            <X.Uli>`pop_back()`：删除`vector`容器中最后一个元素。该容器的大小`size`会减`1`，但容量`capacity`不变。</X.Uli>
+            <X.Uli>`erase(it)`：删除`vector`容器中迭代器`it`指定的元素，并返回指向被删除元素下一个位置元素的迭代器。`size`会减`1`，但`capacity`不变。</X.Uli>
+            <X.Uli>`erase(it1,it2)`：删除`vector`容器中位于迭代器{'`[it1,it2)`'}指定区域内的所有元素，并返回指向被删除区域下一个位置元素的迭代器。`size`会减小，但`capacity`不变。</X.Uli>
             <X.Uli>`clear()`：删除`vector`容器中所有的元素。`size`变为`0`，但`capacity`不变。</X.Uli>
             <X.CodeBlock
                 language="cpp"
@@ -484,10 +468,7 @@ export default function Post() {
                 `}
             />
             <X.H1>关联式容器：map 映射</X.H1>
-            <X.P>
-                序列式容器`vector`储存的元素都是“值”的概念，关联式容器储存的元素是“键值对”的概念。---
-                如果已知目标元素的键值，则直接通过键就可以找到目标元素，不需要遍历整个容器。
-            </X.P>
+            <X.P>序列式容器`vector`储存的元素都是“值”的概念，关联式容器储存的元素是“键值对”的概念。如果已知目标元素的键值，则直接通过键就可以找到目标元素，不需要遍历整个容器。</X.P>
             <X.P>关联式容器存储的元素，默认会根据键值做升序排序。STL标准库在实现时底层选用的数据结构是`红黑树`。</X.P>
             <X.H2>初始化、访问、遍历</X.H2>
             <X.P>`map`中的元素默认按照键的顺序进行*从小到大*排序</X.P>
@@ -527,12 +508,8 @@ export default function Post() {
                 `}
             />
             <X.H2>插入元素</X.H2>
-            <X.Uli>
-                `insert(pair)`：插入一个键值对`pair=(key,value)`。\n如果成功，返回`(新插入的val的迭代器,true)`；\n如果失败，说明已经有键为`key`的键值对，返回`(此元素的迭代器,false)`。
-            </X.Uli>
-            <X.Uli>
-                `emplace(...args)`：传入键值对的构造参数即可。同样效率更高，不过`emplace()`每次只能插入一个元素。
-            </X.Uli>
+            <X.Uli>`insert(pair)`：插入一个键值对`pair=(key,value)`。\n如果成功，返回`(新插入的val的迭代器,true)`；\n如果失败，说明已经有键为`key`的键值对，返回`(此元素的迭代器,false)`。</X.Uli>
+            <X.Uli>`emplace(...args)`：传入键值对的构造参数即可。同样效率更高，不过`emplace()`每次只能插入一个元素。</X.Uli>
             <X.CodeBlock
                 language="cpp"
                 code={`
@@ -603,9 +580,7 @@ export default function Post() {
                 `}
             />
             <X.H2>二分查找</X.H2>
-            <X.Uli>
-                `lower_bound(key)`返回指向第一个键值*大于等于*`key`的位置的迭代器，找不到则返回迭代器`end()`。
-            </X.Uli>
+            <X.Uli>`lower_bound(key)`返回指向第一个键值*大于等于*`key`的位置的迭代器，找不到则返回迭代器`end()`。</X.Uli>
             <X.Uli>`upper_bound(key)`返回指向第一个键值*大于*`key`的位置的迭代，找不到则返回迭代器`end()`。</X.Uli>
             <X.CodeBlock
                 language="cpp"
@@ -745,10 +720,7 @@ export default function Post() {
                 `}
             />
             <X.H1>关联式容器：set 集合</X.H1>
-            <X.P>
-                使用`set`容器存储的各个键值对，要求键`key`和值`value`必须相等。实际上这可以看作，`set`容器只需要一个`key`信息，即可成功将元素存储起来。---
-                同样的，`set`也会对元素进行默认从小到大的排序。
-            </X.P>
+            <X.P>使用`set`容器存储的各个键值对，要求键`key`和值`value`必须相等。实际上这可以看作，`set`容器只需要一个`key`信息，即可成功将元素存储起来。同样的，`set`也会对元素进行默认从小到大的排序。</X.P>
             <X.H2>初始化、访问、遍历</X.H2>
             <X.CodeBlock
                 language="cpp"
@@ -770,12 +742,8 @@ export default function Post() {
                 `}
             />
             <X.H2>插入元素</X.H2>
-            <X.Uli>
-                `insert(x)`：插入一个元素`x`。\n如果成功，返回`(新插入的x的迭代器,true)`；\n如果失败，说明已经有元素`x`，返回`(x的迭代器,false)`。
-            </X.Uli>
-            <X.Uli>
-                `emplace(...args)`：传入键值对的构造参数即可。同样效率更高，不过`emplace()`每次只能插入一个元素。
-            </X.Uli>
+            <X.Uli>`insert(x)`：插入一个元素`x`。\n如果成功，返回`(新插入的x的迭代器,true)`；\n如果失败，说明已经有元素`x`，返回`(x的迭代器,false)`。</X.Uli>
+            <X.Uli>`emplace(...args)`：传入键值对的构造参数即可。同样效率更高，不过`emplace()`每次只能插入一个元素。</X.Uli>
             <X.CodeBlock
                 language="cpp"
                 code={`
@@ -883,12 +851,8 @@ export default function Post() {
             />
             <X.H1>无序容器</X.H1>
             <X.P>无序容器也使用“键值对”的方式存储数据。由于不需要维持有序，无序容器的底层实现采用的是`哈希表`。</X.P>
-            <X.P>
-                无序容器包括无序映射`unordered_map`和无序集合`unordered_set`等。它们用法与`map`和`set`类似，但是不会维持键值有序。
-            </X.P>
-            <X.P>
-                如果使用自定义结构体作为键值，需要提供一个哈希函数。C++标准库提供了`hash`模板类，可以用于自定义类型的哈希函数。本文不对无序容器进行展开介绍。
-            </X.P>
+            <X.P>无序容器包括无序映射`unordered_map`和无序集合`unordered_set`等。它们用法与`map`和`set`类似，但是不会维持键值有序。</X.P>
+            <X.P>如果使用自定义结构体作为键值，需要提供一个哈希函数。C++标准库提供了`hash`模板类，可以用于自定义类型的哈希函数。本文不对无序容器进行展开介绍。</X.P>
             <X.H1>stack 栈</X.H1>
             <X.CodeBlock
                 language="cpp"

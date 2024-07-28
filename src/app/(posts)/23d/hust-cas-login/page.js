@@ -13,10 +13,7 @@ export default function Post() {
             <X.P>程序的Github在@[https://github.com/1kuzus/HustCASLogin]@。</X.P>
             <X.Image src="fig1.jpg" width="100%" />
             <X.H1>分析</X.H1>
-            <X.P>
-                我们大概知道登录接口一定是带了参数的`POST`请求，核心是要构造出请求的参数。首先随便输入账号和密码，---
-                `F12`打开调试窗口网络面板，查看请求：
-            </X.P>
+            <X.P>我们大概知道登录接口一定是带了参数的`POST`请求，核心是要构造出请求的参数。首先随便输入账号和密码，`F12`打开调试窗口网络面板，查看请求：</X.P>
             <X.Image src="fig2.jpg" width="100%" />
             <X.P>显然我们要找的是`login`，点开详情：</X.P>
             <X.Image src="fig3.jpg" width="100%" />
@@ -76,25 +73,14 @@ export default function Post() {
                 </tr>
             </X.Table>
             <X.HighlightBlock>
-                <X.P>
-                    此处有一个历史缘故。在2023年1月的时候，`ul`和`pl`是明文的用户名和密码的字符串长度，---
-                    这也符合参数名`username length(ul)`，`rsa`是前端加密参数。后来华科登录接口似乎经历了一次改版，---
-                    弃置了`rsa`参数，`ul`和`pl`变成了现在的意义。
-                </X.P>
+                <X.P>此处有一个历史缘故。在2023年1月的时候，`ul`和`pl`是明文的用户名和密码的字符串长度，这也符合参数名`username length(ul)`，`rsa`是前端加密参数。后来华科登录接口似乎经历了一次改版，弃置了`rsa`参数，`ul`和`pl`变成了现在的意义。</X.P>
             </X.HighlightBlock>
-            <X.P>
-                言归正传，在没有预先知道参数含义的情况下，先从看起来是明文形式的后两个参数入手，直接搜索`_eventId`，---
-                找到了HTML中写表单的隐藏域（也就是`input type="hidden"`）的位置：
-            </X.P>
+            <X.P>言归正传，在没有预先知道参数含义的情况下，先从看起来是明文形式的后两个参数入手，直接搜索`_eventId`，找到了HTML中写表单的隐藏域（也就是`input type="hidden"`）的位置：</X.P>
             <X.Image src="fig4.jpg" width="100%" />
-            <X.P>
-                我们发现最后三个参数`value`值非空，是可以直接从HTML文档中读取的固定参数，尽管每次请求时他们可能不同。
-            </X.P>
+            <X.P>我们发现最后三个参数`value`值非空，是可以直接从HTML文档中读取的固定参数，尽管每次请求时他们可能不同。</X.P>
             <X.P>到这里，我们只剩`ul`，`pl`，`code`参数需要构造，分别需要进行逆向和OCR。</X.P>
             <X.H1>逆向</X.H1>
-            <X.P>
-                切换到源代码面板，新建一个`XHR/提取断点`，在“网址包含”填入主机`pass.hust.edu.cn`，这样在`POST`登录接口时一定会暂停：
-            </X.P>
+            <X.P>切换到源代码面板，新建一个`XHR/提取断点`，在“网址包含”填入主机`pass.hust.edu.cn`，这样在`POST`登录接口时一定会暂停：</X.P>
             <X.Image src="fig5.jpg" width="100%" />
             <X.P>这样做的目的是找到登录请求的调用链：</X.P>
             <X.Image src="fig6.jpg" width="100%" />
@@ -167,15 +153,9 @@ export default function Post() {
                 });
                 `}
             />
-            <X.P>
-                最外层是一个立即执行函数，参数列表`this`传给了`t`，后面一整个`function(t)`传给了`e`。---
-                分析一下第二个参数也就是函数`function(t)`的功能，在最后看到了`window.JSEncrypt=rt`和`t.JSEncrypt=rt`，---
-                再看注释中提示的用法:
-            </X.P>
+            <X.P>最外层是一个立即执行函数，参数列表`this`传给了`t`，后面一整个`function(t)`传给了`e`。分析一下第二个参数也就是函数`function(t)`的功能，在最后看到了`window.JSEncrypt=rt`和`t.JSEncrypt=rt`，再看注释中提示的用法:</X.P>
             <X.CodeBlock language="js" code="var encrypt = new JSEncrypt();" />
-            <X.P>
-                不难看出在浏览器环境中`rt`直接赋值给了`window.JSEncrypt`，同时我们的`node`环境如果想利用`rt`，就要从`t`中取出。
-            </X.P>
+            <X.P>不难看出在浏览器环境中`rt`直接赋值给了`window.JSEncrypt`，同时我们的`node`环境如果想利用`rt`，就要从`t`中取出。</X.P>
             <X.P>回到代码最前面，立即执行函数体可以删掉，改成如下内容：</X.P>
             <X.CodeBlock
                 language="js"
@@ -205,14 +185,10 @@ export default function Post() {
                 console.log(strEnc('test')) //I2ieJi6q7pnlVGytaeHMGr6ejhfyBSi7bjEYDSdf4OkgweOkO6cwNdsQawPdun3AQCYApG5XhT8+/KRq1GS30w==
                 `}
             />
-            <X.P>
-                可以得到加密的字符串。这里的`publicKey`是调试时复制来的值。我们不清楚这是不是一个固定的参数，因此同样分析一下这个参数的来源：
-            </X.P>
+            <X.P>可以得到加密的字符串。这里的`publicKey`是调试时复制来的值。我们不清楚这是不是一个固定的参数，因此同样分析一下这个参数的来源：</X.P>
             <X.Image src="fig11.jpg" width="100%" />
             <X.P>前面抓包时注意到有一个`XHR`请求，实际上这就是`publicKey`。</X.P>
-            <X.P>
-                至此我们已经可以在本地`node`环境跑通加密`js`，我们把它命名为`encrypt.js`并创建一个稍后服务于爬虫程序的模块`encrypt.py`：
-            </X.P>
+            <X.P>至此我们已经可以在本地`node`环境跑通加密`js`，我们把它命名为`encrypt.js`并创建一个稍后服务于爬虫程序的模块`encrypt.py`：</X.P>
             <X.CodeBlock
                 language="python"
                 code={`
@@ -232,16 +208,12 @@ export default function Post() {
                     return ul, pl                
                 `}
             />
-            <X.P>
-                这个模块根据传入的`public_key`替换`js`源代码中的部分，再编译，最后在`Python`环境中调用`js`代码得到加密结果。
-            </X.P>
+            <X.P>这个模块根据传入的`public_key`替换`js`源代码中的部分，再编译，最后在`Python`环境中调用`js`代码得到加密结果。</X.P>
             <X.HighlightBlock>
                 <X.P>到目前位置，`public_key`参数一直都是同一个值（`MFwwDQYJKo...`）。</X.P>
             </X.HighlightBlock>
             <X.H1>OCR</X.H1>
-            <X.P>
-                华科的验证码是一个四位数字，干扰比较小，属于非常简单的验证码。验证码请求的地址是@[https://pass.hust.edu.cn/cas/code]@。
-            </X.P>
+            <X.P>华科的验证码是一个四位数字，干扰比较小，属于非常简单的验证码。验证码请求的地址是@[https://pass.hust.edu.cn/cas/code]@。</X.P>
             <X.P>核心的识别逻辑使用`ddddocr`库就可以了，不需要借助付费的打码平台。</X.P>
             <X.P noMarginBottom>验证码是`gif`格式，考虑将所有帧叠加，再做二值化：</X.P>
             <X.Image src="fig12.jpg" width="160px" />

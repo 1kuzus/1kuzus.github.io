@@ -10,17 +10,10 @@ export default function Post() {
             <X.TOC />
             <X.Title>{metas[path].title}</X.Title>
             <X.HighlightBlock>
-                <X.P>
-                    原题链接：@柱状图中最大的矩形[https://leetcode.cn/problems/largest-rectangle-in-histogram/description/]@
-                </X.P>
+                <X.P>原题链接：@柱状图中最大的矩形[https://leetcode.cn/problems/largest-rectangle-in-histogram/description/]@</X.P>
             </X.HighlightBlock>
-            <X.P>
-                基本的思路是，对于每一个柱子，向左右两侧分别找到第一个高度小于自己的“边界”，求出当前柱子能延伸到的最大矩形面积，最后的答案就是其中的最大值。
-            </X.P>
-            <X.P>
-                使用单调栈可以在$O(n)$时间内分别求出左边/右边第一个更小元素的下标，做好预处理后再$O(n)$地求最大值即可。---
-                实际求解时，为了方便处理边界情况，在原数组两端各加一个高度为`0`的柱子。
-            </X.P>
+            <X.P>基本的思路是，对于每一个柱子，向左右两侧分别找到第一个高度小于自己的“边界”，求出当前柱子能延伸到的最大矩形面积，最后的答案就是其中的最大值。</X.P>
+            <X.P>使用单调栈可以在$O(n)$时间内分别求出左边/右边第一个更小元素的下标，做好预处理后再$O(n)$地求最大值即可。实际求解时，为了方便处理边界情况，在原数组两端各加一个高度为`0`的柱子。</X.P>
             <X.CodeBlock
                 language="cpp"
                 code={`

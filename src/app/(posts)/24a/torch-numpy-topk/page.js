@@ -28,9 +28,7 @@ export default function Post() {
                 tsr=torch.tensor(arr)
                 `}
             />
-            <X.P>
-                我们希望沿第`1`维度也就是列维度取前`3`大的数值，也就是其他维度保持不变，将列维度变为`3`，并且保留的是前三大的元素。
-            </X.P>
+            <X.P>我们希望沿第`1`维度也就是列维度取前`3`大的数值，也就是其他维度保持不变，将列维度变为`3`，并且保留的是前三大的元素。</X.P>
             <X.H1>pytorch</X.H1>
             <X.P>在pytorch中已经内置了`topk`函数：</X.P>
             <X.CodeBlock
@@ -54,10 +52,7 @@ export default function Post() {
             <X.P>`val`输出了前三大元素的值，`idx`是索引，这已经是想要的结果了。</X.P>
             <X.H1>numpy</X.H1>
             <X.P>numpy中没有直接实现`topk`功能的函数，需要多一些步骤：</X.P>
-            <X.P>
-                首先使用`numpy.argpartition`函数，这个函数会将下标为`kth`的元素排列到其正确位置并返回索引，---
-                保证其左边的元素都比它小，右边的元素都比它大，但左右两侧的序列并不一定是有序的。
-            </X.P>
+            <X.P>首先使用`numpy.argpartition`函数，这个函数会将下标为`kth`的元素排列到其正确位置并返回索引，保证其左边的元素都比它小，右边的元素都比它大，但左右两侧的序列并不一定是有序的。</X.P>
             <X.P>由于`numpy.argpartition`的排列顺序是从小到大，为了得到从大到小的索引，对输入`arr`取了负值。</X.P>
             <X.CodeBlock
                 language="python"
@@ -150,10 +145,7 @@ export default function Post() {
             />
             <X.H1>讨论</X.H1>
             <X.P>上述方法核心是*先切片、再排序*。这是由于`argpartition`和`argsort`的性能差异：</X.P>
-            <X.P>
-                `argsort`对全部数组进行排序，而`argpartition`只进行一次类似快速排序算法中的划分操作，因此`argpartition`效率更高。---
-                对于`topk`函数想要实现的功能，尽管先全排序、再切片从代码上更好编写，但当`k`远小于`dim`维度大小时，是较为低效的做法。
-            </X.P>
+            <X.P>`argsort`对全部数组进行排序，而`argpartition`只进行一次类似快速排序算法中的划分操作，因此`argpartition`效率更高。对于`topk`函数想要实现的功能，尽管先全排序、再切片从代码上更好编写，但当`k`远小于`dim`维度大小时，是较为低效的做法。</X.P>
         </>
     );
 }

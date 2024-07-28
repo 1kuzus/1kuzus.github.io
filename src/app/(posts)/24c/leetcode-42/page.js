@@ -12,11 +12,7 @@ export default function Post() {
             <X.HighlightBlock>
                 <X.P>原题链接：@接雨水[https://leetcode.cn/problems/trapping-rain-water/description/]@</X.P>
             </X.HighlightBlock>
-            <X.P>
-                维护一个单调递减栈（存放下标），考虑入栈元素$i$对应的高度$h_i$，大于等于栈顶元素$t$对应的高度$h_t$的情况，此时需要出栈：\n
-                如果栈中仅剩一个元素，那么无法形成凹槽，直接$t$出栈，$i$入栈；\n
-                如果栈中有多个元素，记$t$左侧的元素为$l$，则弹出$t$时要累计$l$和$i$之间的额外矩形“存水量”，这个矩形的高度为$\min(h_l,h_i)-h_t$，宽度为$i-l-1$。
-            </X.P>
+            <X.P>维护一个单调递减栈（存放下标），考虑入栈元素$i$对应的高度$h_i$，大于等于栈顶元素$t$对应的高度$h_t$的情况，此时需要出栈：\n如果栈中仅剩一个元素，那么无法形成凹槽，直接$t$出栈，$i$入栈；\n如果栈中有多个元素，记$t$左侧的元素为$l$，则弹出$t$时要累计$l$和$i$之间的额外矩形“存水量”，这个矩形的高度为$\min(h_l,h_i)-h_t$，宽度为$i-l-1$。</X.P>
             <X.CodeBlock
                 language="cpp"
                 code={`

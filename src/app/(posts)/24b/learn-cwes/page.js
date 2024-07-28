@@ -10,90 +10,47 @@ export default function Post() {
             <X.TOC />
             <X.Title>{metas[path].title}</X.Title>
             <X.H1 href="https://cwe.mitre.org/index.html">关于CWE</X.H1>
-            <X.P>
-                *通用缺陷枚举*`(Common Weakness Enumeration, CWE)`是针对硬件和软件弱点和漏洞的分类系统。---
-                该项目由美国国土安全部（DHS）网络安全和基础设施安全局（CISA）办公室赞助，由MITRE公司运营。
-            </X.P>
-            <X.P>
-                相比于CVE记录描述产品中出现的漏洞，侧重于漏洞利用的技术影响，CWE对可能导致漏洞的常见缺陷或弱点进行分类，描述漏洞发生的根本原因。
-            </X.P>
+            <X.P>*通用缺陷枚举*`(Common Weakness Enumeration, CWE)`是针对硬件和软件弱点和漏洞的分类系统。该项目由美国国土安全部（DHS）网络安全和基础设施安全局（CISA）办公室赞助，由MITRE公司运营。</X.P>
+            <X.P>相比于CVE记录描述产品中出现的漏洞，侧重于漏洞利用的技术影响，CWE对可能导致漏洞的常见缺陷或弱点进行分类，描述漏洞发生的根本原因。</X.P>
             <X.H2>术语</X.H2>
-            <X.P>
-                下面的内容译自@CWE Glossary[https://cwe.mitre.org/documents/glossary/]@，---
-                这里只列出了几个下文可能出现的术语：
-            </X.P>
+            <X.P>下面的内容译自@CWE Glossary[https://cwe.mitre.org/documents/glossary/]@，这里只列出了几个下文可能出现的术语：</X.P>
             <X.Uli>
                 <X.P noMarginBottom>`Behaviour`（行为）</X.P>
                 <X.P>产品采取的操作，通常以代码实现或以算法表示。也可以指系统以外的其他参与者的操作。</X.P>
             </X.Uli>
             <X.Uli>
                 <X.P noMarginBottom>`Resource`（资源）：</X.P>
-                <X.P>
-                    指在产品运行过程中被访问或修改的对象或实体，例如内存、CPU、文件或套接字。---
-                    资源可以是系统级（内存或CPU）、代码级（函数或变量）或应用程序级（cookie或消息）。
-                </X.P>
+                <X.P>指在产品运行过程中被访问或修改的对象或实体，例如内存、CPU、文件或套接字。资源可以是系统级（内存或CPU）、代码级（函数或变量）或应用程序级（cookie或消息）。</X.P>
             </X.Uli>
             <X.Uli>
                 <X.P noMarginBottom>`Property`（属性）：</X.P>
-                <X.P>
-                    指某个对系统预期的安全模型很重要的资源或行为，可能随时间变化。比如用户的输入最初是不受信任的，---
-                    但经过系统的中和处理后，最终会被认为是受信任的。
-                </X.P>
+                <X.P>指某个对系统预期的安全模型很重要的资源或行为，可能随时间变化。比如用户的输入最初是不受信任的，但经过系统的中和处理后，最终会被认为是受信任的。</X.P>
             </X.Uli>
             <X.H2>CWE分类系统</X.H2>
             <X.P>CWE有一套树型的分类系统，CWE提供了一些组织各个条目的结构化描述，例如视图和分类。</X.P>
-            <X.P noMarginBottom>
-                CWE Views是针对特定目的或特定受众而组织的弱点集合，大多数视图是整个CWE列表的子集。例如@CWE
-                List[https://cwe.mitre.org/data/index.html]@中给出的：
-            </X.P>
+            <X.P noMarginBottom>CWE Views是针对特定目的或特定受众而组织的弱点集合，大多数视图是整个CWE列表的子集。例如@CWE List[https://cwe.mitre.org/data/index.html]@中给出的：</X.P>
             <X.Uli>@View by Software Development[https://cwe.mitre.org/data/definitions/699.html]@</X.Uli>
             <X.Uli>@View by Hardware Design[https://cwe.mitre.org/data/definitions/1194.html]@</X.Uli>
             <X.Uli>@View by Research Concepts[https://cwe.mitre.org/data/definitions/1000.html]@</X.Uli>
             <X.P withMarginTop>CWE Categories是更细的划分，一个CWE分类可能包含一系列具有共同特征的CWE条目。</X.P>
-            <X.P>
-                CWE的不同条目也具有不同的抽象程度，有些条目描述了具体的缺陷，有些则描述了更一般的问题。---
-                CWE的条目之间也存在父级子级的关系。四种抽象程度如下图所示：
-            </X.P>
+            <X.P>CWE的不同条目也具有不同的抽象程度，有些条目描述了具体的缺陷，有些则描述了更一般的问题。CWE的条目之间也存在父级子级的关系。四种抽象程度如下图所示：</X.P>
             <X.Image src="weakness_abstractions.png" width="600px" invertInDarkTheme />
             <X.P>这些分级在官网上也有对应的图标表示，相应的释义为：</X.P>
             <X.Table
                 fromJSX={[
                     ['icon', '释义'],
                     [<X.Image src="view.png" width="16px" center />, '`View`，视图。'],
-                    [
-                        <X.Image src="category.png" width="16px" center />,
-                        '`Category`，分类，一系列有共同特征的CWE条目。',
-                    ],
-                    [
-                        <X.Image src="pillar.png" width="16px" center />,
-                        '`Pillar`，最抽象的CWE条目类型，但与`Category`相比，仍然是从“技术上”对缺陷类型进行描述。',
-                    ],
-                    [
-                        <X.Image src="class.png" width="16px" center />,
-                        '`Class`，较为抽象的CWE条目类型，通常独立于特定的语言或技术。\\n`Class`级别的CWE通常从【行为、属性、资源】中的`1`~`2`个方面来描述问题。',
-                    ],
-                    [
-                        <X.Image src="base.png" width="16px" center />,
-                        '`Base`，较为抽象的CWE条目类型，通常也是独立于资源或技术。\\n`Base`级别的CWE通常从【行为、属性、技术、语言、资源】中的`2`~`3`个方面来描述问题。',
-                    ],
-                    [
-                        <X.Image src="variant.png" width="16px" center />,
-                        '`Variant`，通常与特定种类的产品有关系，一般包含特定的语言或技术。\\n`Variant`级别的CWE通常从【行为、属性、技术、语言、资源】中的`3`~`5`个方面来描述问题。',
-                    ],
-                    [
-                        <X.Image src="composite.png" width="16px" center />,
-                        '`Composite`，此类缺陷需要多种缺陷同时存在，才会引发潜在的安全漏洞。数量较少。',
-                    ],
-                    [
-                        <X.Image src="chain.png" width="30px" center />,
-                        '`Chain`，呈链式关系，例如缺陷X为缺陷Y的发生创造了条件。数量较少。\\n`Chain`可以涉及两个以上的弱点，在某些情况下也可能具有树状结构。',
-                    ],
+                    [<X.Image src="category.png" width="16px" center />, '`Category`，分类，一系列有共同特征的CWE条目。'],
+                    [<X.Image src="pillar.png" width="16px" center />, '`Pillar`，最抽象的CWE条目类型，但与`Category`相比，仍然是从“技术上”对缺陷类型进行描述。'],
+                    [<X.Image src="class.png" width="16px" center />, '`Class`，较为抽象的CWE条目类型，通常独立于特定的语言或技术。\\n`Class`级别的CWE通常从【行为、属性、资源】中的`1`~`2`个方面来描述问题。'],
+                    [<X.Image src="base.png" width="16px" center />, '`Base`，较为抽象的CWE条目类型，通常也是独立于资源或技术。\\n`Base`级别的CWE通常从【行为、属性、技术、语言、资源】中的`2`~`3`个方面来描述问题。'],
+                    [<X.Image src="variant.png" width="16px" center />, '`Variant`，通常与特定种类的产品有关系，一般包含特定的语言或技术。\\n`Variant`级别的CWE通常从【行为、属性、技术、语言、资源】中的`3`~`5`个方面来描述问题。'],
+                    [<X.Image src="composite.png" width="16px" center />, '`Composite`，此类缺陷需要多种缺陷同时存在，才会引发潜在的安全漏洞。数量较少。'],
+                    [<X.Image src="chain.png" width="30px" center />, '`Chain`，呈链式关系，例如缺陷X为缺陷Y的发生创造了条件。数量较少。\\n`Chain`可以涉及两个以上的弱点，在某些情况下也可能具有树状结构。'],
                 ]}
             />
             <X.H1>View of CWE Top 25 (2023)</X.H1>
-            <X.P>
-                （2023年）前25个最危险的软件缺陷，按顺序排名。标题前的【`P`/`C`/`B`/`V`/`Compo`】标识了其抽象类型。
-            </X.P>
+            <X.P>（2023年）前25个最危险的软件缺陷，按顺序排名。标题前的【`P`/`C`/`B`/`V`/`Compo`】标识了其抽象类型。</X.P>
             <X.H2 href="https://cwe.mitre.org/data/definitions/787.html">【B】CWE-787: Out-of-bounds Write</X.H2>
             <X.P>越界写入，在预期缓冲区末尾之后或开头之前写入。</X.P>
             <X.H3>Example 1</X.H3>
@@ -130,10 +87,7 @@ export default function Post() {
                 }
                 `}
             />
-            <X.P>
-                `returnChunkSize()`遇到错误会返回`-1`，但是`memcpy()`假定传入的参数是`unsigned`，---
-                此时负值会被转换成相当大的数值。
-            </X.P>
+            <X.P>`returnChunkSize()`遇到错误会返回`-1`，但是`memcpy()`假定传入的参数是`unsigned`，此时负值会被转换成相当大的数值。</X.P>
             <X.H3>Example 3</X.H3>
             <X.CodeBlock
                 language="c"
@@ -168,10 +122,7 @@ export default function Post() {
                 }
                 `}
             />
-            <X.P>
-                虽然前面做了长度检查，但是后续的逻辑将`'&'`和`'&lt;'`转为HTML实体时，可能导致长度增长。---
-                如果恶意构造包含大量`'&'`的输入，可能导致越界写入。
-            </X.P>
+            <X.P>虽然前面做了长度检查，但是后续的逻辑将`'&'`和`'&lt;'`转为HTML实体时，可能导致长度增长。如果恶意构造包含大量`'&'`的输入，可能导致越界写入。</X.P>
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2023-0841[https://www.opencve.io/cve/CVE-2023-0841]@</X.Uli>
@@ -205,9 +156,7 @@ export default function Post() {
                     `}
                 />
             </X.HighlightBlock>
-            <X.H2 href="https://cwe.mitre.org/data/definitions/79.html">
-                【B】CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
-            </X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/79.html">【B】CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')</X.H2>
             <X.P>跨站脚本攻击。</X.P>
             <X.HighlightBlock bgcolor="gray">
                 <X.P>详见@Learn XSS[/24b/cross-site-scripting/]@。</X.P>
@@ -215,12 +164,8 @@ export default function Post() {
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2014-8958[https://www.opencve.io/cve/CVE-2014-8958]@</X.Uli>
-                <X.Uli>
-                    `Patch`：@[https://github.com/phpmyadmin/phpmyadmin/commit/d32da348c4de2379482a48661ce968a55eebe5c4]@
-                </X.Uli>
-                <X.Uli>
-                    `Patch`：@[https://github.com/phpmyadmin/phpmyadmin/commit/2ffdbf2d7daa0b92541d8b754e2afac555d3ed21]@
-                </X.Uli>
+                <X.Uli>`Patch`：@[https://github.com/phpmyadmin/phpmyadmin/commit/d32da348c4de2379482a48661ce968a55eebe5c4]@</X.Uli>
+                <X.Uli>`Patch`：@[https://github.com/phpmyadmin/phpmyadmin/commit/2ffdbf2d7daa0b92541d8b754e2afac555d3ed21]@</X.Uli>
                 <X.P withMarginTop>部分补丁的内容：通过`htmlspecialchars()`转义为HTML实体。</X.P>
                 <X.CodeBlock
                     language="php"
@@ -241,31 +186,17 @@ export default function Post() {
                     `}
                 />
             </X.HighlightBlock>
-            <X.H2 href="https://cwe.mitre.org/data/definitions/89.html">
-                【B】CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
-            </X.H2>
-            <X.P>
-                SQL注入，如果用户可控的输入没有被正确的过滤其中可能包含的SQL语法，那么用这部分输入作为完整SQL命令的一部分时，可能发生预期之外的结果。---
-                这可用于更改查询逻辑以绕过安全检查，或插入修改后端数据库的其他语句，包括执行系统命令。
-            </X.P>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/89.html">【B】CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')</X.H2>
+            <X.P>SQL注入，如果用户可控的输入没有被正确的过滤其中可能包含的SQL语法，那么用这部分输入作为完整SQL命令的一部分时，可能发生预期之外的结果。这可用于更改查询逻辑以绕过安全检查，或插入修改后端数据库的其他语句，包括执行系统命令。</X.P>
             <X.H3>Example 1</X.H3>
             <X.P>如果一个SQL由用户输入拼接而成，最终的大致示意如下，其中`userName`是用户名，`itemName`由用户输入：</X.P>
-            <X.CodeBlock
-                language="text"
-                code="SELECT * FROM items WHERE owner = <userName> AND itemname = <itemName>;"
-            />
+            <X.CodeBlock language="text" code="SELECT * FROM items WHERE owner = <userName> AND itemname = <itemName>;" />
             <X.P>此时如果用户名`wiley`输入的`itemName`是`name' OR 'a'='a`，则拼接后的SQL语句是：</X.P>
-            <X.CodeBlock
-                language="sql"
-                code="SELECT * FROM items WHERE owner = 'wiley' AND itemname = 'name' OR 'a'='a';"
-            />
+            <X.CodeBlock language="sql" code="SELECT * FROM items WHERE owner = 'wiley' AND itemname = 'name' OR 'a'='a';" />
             <X.P>这条语句等价于：</X.P>
             <X.CodeBlock language="sql" code="SELECT * FROM items;" />
             <X.H3>Example 2</X.H3>
-            <X.P>
-                还是上面的例子，这次假设用户`wiley`输入的`itemName`是`name'; DELETE FROM items; --`，---
-                则SQL语句等价于下面的两个请求：
-            </X.P>
+            <X.P>还是上面的例子，这次假设用户`wiley`输入的`itemName`是`name'; DELETE FROM items; --`，则SQL语句等价于下面的两个请求：</X.P>
             <X.CodeBlock
                 language="sql"
                 code={`
@@ -282,21 +213,13 @@ export default function Post() {
                 mysql_query("SELECT MessageID, Subject FROM messages WHERE MessageID = '$id'");
                 `}
             />
-            <X.P>
-                由于cookie是可以在本地修改的，这仍然是一个输入用户可控的例子。注意到PHP语句中的单引号包裹着`$id`，---
-                一个可以注入的载荷是`1432' or '1' = '1`。请求会变成：
-            </X.P>
-            <X.CodeBlock
-                language="sql"
-                code="SELECT MessageID, Subject FROM messages WHERE MessageID = '1432' or '1' = '1'"
-            />
+            <X.P>由于cookie是可以在本地修改的，这仍然是一个输入用户可控的例子。注意到PHP语句中的单引号包裹着`$id`，一个可以注入的载荷是`1432' or '1' = '1`。请求会变成：</X.P>
+            <X.CodeBlock language="sql" code="SELECT MessageID, Subject FROM messages WHERE MessageID = '1432' or '1' = '1'" />
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2018-1000869[https://www.opencve.io/cve/CVE-2018-1000869]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://github.com/phpipam/phpipam/issues/2344]@</X.Uli>
-                <X.Uli>
-                    `Patch`：@[https://github.com/phpipam/phpipam/commit/856b10ca85a24c04ed8651f4e13f867ec78a353d]@
-                </X.Uli>
+                <X.Uli>`Patch`：@[https://github.com/phpipam/phpipam/commit/856b10ca85a24c04ed8651f4e13f867ec78a353d]@</X.Uli>
                 <X.P withMarginTop>补丁中加入对参数合法性的检验：</X.P>
                 <X.CodeBlock
                     language="php"
@@ -364,12 +287,8 @@ export default function Post() {
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2018-1000217[https://www.opencve.io/cve/CVE-2018-1000217]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://github.com/DaveGamble/cJSON/issues/248]@</X.Uli>
-                <X.Uli>
-                    `Patch`：@[https://github.com/FSMaxB/cJSON/commit/22a7d04fa004462e0dca35c3cc7809bea38e65f9]@
-                </X.Uli>
-                <X.P withMarginTop>
-                    如果`item`的`string`属性恰好就是`add_item_to_object`的`string`参数的地址，且`constant`为`false`，`cJSON_strdup`会在释放后访问这个字符串。
-                </X.P>
+                <X.Uli>`Patch`：@[https://github.com/FSMaxB/cJSON/commit/22a7d04fa004462e0dca35c3cc7809bea38e65f9]@</X.Uli>
+                <X.P withMarginTop>如果`item`的`string`属性恰好就是`add_item_to_object`的`string`参数的地址，且`constant`为`false`，`cJSON_strdup`会在释放后访问这个字符串。</X.P>
                 <X.CodeBlock
                     language="c"
                     diffRemovedLines="11-15,18-19,25-26,33-34"
@@ -425,9 +344,7 @@ export default function Post() {
                     `}
                 />
             </X.HighlightBlock>
-            <X.H2 href="https://cwe.mitre.org/data/definitions/78.html">
-                【B】CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')
-            </X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/78.html">【B】CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')</X.H2>
             <X.P noMarginBottom>操作系统命令注入，类似地，只不过此时是操作系统命令。通常这有两种子类型：</X.P>
             <X.Uli>程序执行某个固定的程序，但是接收外部输入作为程序的参数。</X.Uli>
             <X.Uli>程序将整个输入作为命令重定向到操作系统。</X.Uli>
@@ -445,12 +362,8 @@ export default function Post() {
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2019-1010200[https://www.opencve.io/cve/CVE-2019-1010200]@</X.Uli>
-                <X.Uli>
-                    `patch`：@[https://github.com/google/voice-builder/commit/c145d4604df67e6fc625992412eef0bf9a85e26b]@
-                </X.Uli>
-                <X.P withMarginTop>
-                    原本的程序可以通过`req.query.text`注入`cmd`。补丁对字符串过滤特殊字符，并用`child.stdin.write(sanitizedText)`代替`echo`命令。
-                </X.P>
+                <X.Uli>`patch`：@[https://github.com/google/voice-builder/commit/c145d4604df67e6fc625992412eef0bf9a85e26b]@</X.Uli>
+                <X.P withMarginTop>原本的程序可以通过`req.query.text`注入`cmd`。补丁对字符串过滤特殊字符，并用`child.stdin.write(sanitizedText)`代替`echo`命令。</X.P>
                 <X.CodeBlock
                     language="js"
                     diffRemovedLines="4-5,8-12,22"
@@ -497,9 +410,7 @@ export default function Post() {
                 />
             </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/20.html">【C】CWE-20: Improper Input Validation</X.H2>
-            <X.P>
-                输入验证不当，程序接收输入或数据，但没有验证或者错误地验证输入是否具有安全正确地处理数据所需的属性。
-            </X.P>
+            <X.P>输入验证不当，程序接收输入或数据，但没有验证或者错误地验证输入是否具有安全正确地处理数据所需的属性。</X.P>
             <X.H3>Example 1</X.H3>
             <X.P>没有输入验证。</X.P>
             <X.CodeBlock
@@ -510,15 +421,10 @@ export default function Post() {
                 echo "生日：$birthday<br>主页：<a href=$homepage>点击此处</a>"
                 `}
             />
-            <X.P>
-                这段程序展示用户的生日和主页，但由于这些参数来自于HTTP请求，攻击者可以构造一个含有`script`标签的钓鱼链接，---
-                并通过参数传入，导致恶意脚本在客户端上执行。
-            </X.P>
+            <X.P>这段程序展示用户的生日和主页，但由于这些参数来自于HTTP请求，攻击者可以构造一个含有`script`标签的钓鱼链接，并通过参数传入，导致恶意脚本在客户端上执行。</X.P>
             <X.P>尽管开发者可以限制输入为整数和破折号，攻击者仍有可能提供以下形式的字符串：</X.P>
             <X.CodeBlock language="text" code="2009-01-09--" />
-            <X.P>
-                如果在SQL语句中使用这些数据，它会将语句的其余部分视为注释。注释可能会禁用语句中其他与安全相关的逻辑。
-            </X.P>
+            <X.P>如果在SQL语句中使用这些数据，它会将语句的其余部分视为注释。注释可能会禁用语句中其他与安全相关的逻辑。</X.P>
             <X.P>XSS攻击或SQL注入只是输入验证不当可能出现的后果中的一小部分。</X.P>
             <X.H3>Example 2</X.H3>
             <X.P>有问题的输入验证。</X.P>
@@ -536,17 +442,12 @@ export default function Post() {
                 }
                 `}
             />
-            <X.P>
-                这个示例尝试根据用户指定的值构建列表，并判断了提供值为负的情况，但还是忽略了输入`0`值的情况，可能导致后续抛出异常。
-            </X.P>
+            <X.P>这个示例尝试根据用户指定的值构建列表，并判断了提供值为负的情况，但还是忽略了输入`0`值的情况，可能导致后续抛出异常。</X.P>
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2008-2223[https://www.opencve.io/cve/CVE-2008-2223]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://www.exploit-db.com/exploits/5565]@</X.Uli>
-                <X.P withMarginTop>
-                    vShare YouTube Clone 2.6中的`group_posts.php`中的SQL注入漏洞，---
-                    远程攻击者可以通过`tid`参数执行任意SQL命令。
-                </X.P>
+                <X.P withMarginTop>vShare YouTube Clone 2.6中的`group_posts.php`中的SQL注入漏洞，远程攻击者可以通过`tid`参数执行任意SQL命令。</X.P>
                 <X.CodeBlock
                     language="perl"
                     highlightLines="16"
@@ -641,9 +542,7 @@ export default function Post() {
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2022-1452[https://www.opencve.io/cve/CVE-2022-1452]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://huntr.com/bounties/c8f4c2de-7d96-4ad4-857a-c099effca2d6]@</X.Uli>
-                <X.Uli>
-                    `Patch`：@[https://github.com/radareorg/radare2/commit/ecc44b6a2f18ee70ac133365de0e509d26d5e168]@
-                </X.Uli>
+                <X.Uli>`Patch`：@[https://github.com/radareorg/radare2/commit/ecc44b6a2f18ee70ac133365de0e509d26d5e168]@</X.Uli>
                 <X.CodeBlock
                     language="c"
                     diffAddedLines="5-8"
@@ -663,20 +562,10 @@ export default function Post() {
                     `}
                 />
             </X.HighlightBlock>
-            <X.H2 href="https://cwe.mitre.org/data/definitions/22.html">
-                【B】CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')
-            </X.H2>
-            <X.P>
-                “路径遍历”，产品使用外部输入来构建路径名，该路径名旨在识别位于受限父目录下的文件或目录。但通过使用特殊元素---
-                如`../`序列，如果没有经过中和处理，攻击者可能会访问到受限目录之外的文件。
-            </X.P>
-            <X.P>
-                上述风险称为“相对路径遍历”，路径遍历还包括使用绝对路径名，例如`/usr/local/bin`，这称为“绝对路径遍历”。
-            </X.P>
-            <X.P>
-                在许多编程语言中，注入空字节可能允许攻击者截断生成的文件名，以扩大攻击范围。例如，产品可能会将`".txt"`---
-                添加到路径名后以限制攻击者只能访问文本文件，但空注入可能会有效地消除此限制。
-            </X.P>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/22.html">【B】CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</X.H2>
+            <X.P>“路径遍历”，产品使用外部输入来构建路径名，该路径名旨在识别位于受限父目录下的文件或目录。但通过使用特殊元素如`../`序列，如果没有经过中和处理，攻击者可能会访问到受限目录之外的文件。</X.P>
+            <X.P>上述风险称为“相对路径遍历”，路径遍历还包括使用绝对路径名，例如`/usr/local/bin`，这称为“绝对路径遍历”。</X.P>
+            <X.P>在许多编程语言中，注入空字节可能允许攻击者截断生成的文件名，以扩大攻击范围。例如，产品可能会将`".txt"`添加到路径名后以限制攻击者只能访问文本文件，但空注入可能会有效地消除此限制。</X.P>
             <X.H3>Example 1</X.H3>
             <X.CodeBlock
                 language="perl"
@@ -716,10 +605,7 @@ export default function Post() {
                 main()
                 `}
             />
-            <X.P>
-                上述代码会导致“绝对路径遍历”，`os.path.join`如果第二个参数传入绝对路径，则会弃用第一个参数`os.getcwd()`，---
-                直接使用第二个参数`filename`。那么传入`/etc/passwd`就可能导致同样的攻击。
-            </X.P>
+            <X.P>上述代码会导致“绝对路径遍历”，`os.path.join`如果第二个参数传入绝对路径，则会弃用第一个参数`os.getcwd()`，直接使用第二个参数`filename`。那么传入`/etc/passwd`就可能导致同样的攻击。</X.P>
             <X.P>一个正确的做法是：</X.P>
             <X.CodeBlock
                 language="python"
@@ -741,16 +627,9 @@ export default function Post() {
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2023-35947[https://www.opencve.io/cve/CVE-2023-35947]@</X.Uli>
-                <X.Uli>
-                    `Patch`：@[https://github.com/gradle/gradle/commit/1096b309520a8c315e3b6109a6526de4eabcb879]@
-                </X.Uli>
-                <X.Uli>
-                    `Patch`：@[https://github.com/gradle/gradle/commit/2e5c34d57d0c0b7f0e8b039a192b91e5c8249d91]@
-                </X.Uli>
-                <X.P withMarginTop>
-                    Gradle是一款构建工具，侧重于构建自动化和多语言开发支持。在受影响的版本中，当解压Tar压缩包时，---
-                    Gradle不会检查文件是否可以写入解压位置之外。这可能导致重要文件在Gradle进程有写入权限的任何地方被覆盖。
-                </X.P>
+                <X.Uli>`Patch`：@[https://github.com/gradle/gradle/commit/1096b309520a8c315e3b6109a6526de4eabcb879]@</X.Uli>
+                <X.Uli>`Patch`：@[https://github.com/gradle/gradle/commit/2e5c34d57d0c0b7f0e8b039a192b91e5c8249d91]@</X.Uli>
+                <X.P withMarginTop>Gradle是一款构建工具，侧重于构建自动化和多语言开发支持。在受影响的版本中，当解压Tar压缩包时，Gradle不会检查文件是否可以写入解压位置之外。这可能导致重要文件在Gradle进程有写入权限的任何地方被覆盖。</X.P>
                 <X.P>部分补丁的内容：</X.P>
                 <X.CodeBlock
                     language="java"
@@ -761,11 +640,7 @@ export default function Post() {
                     String path = safeEntryName(tarEntry);
                     `}
                 />
-                <X.P>
-                    进一步去查找`safeEntryName()`的功能，溯源到---
-                    @PathTraversalChecker.java[https://github.com/gradle/gradle/blob/master/platforms/core-runtime/files/src/main/java/org/gradle/internal/file/PathTraversalChecker.java]@---
-                    中的以下代码：
-                </X.P>
+                <X.P>进一步去查找`safeEntryName()`的功能，溯源到@PathTraversalChecker.java[https://github.com/gradle/gradle/blob/master/platforms/core-runtime/files/src/main/java/org/gradle/internal/file/PathTraversalChecker.java]@中的以下代码：</X.P>
                 <X.CodeBlock
                     language="java"
                     highlightLines="21-27"
@@ -817,9 +692,7 @@ export default function Post() {
                 />
                 <X.P>其中的核心是高亮的`isUnsafePathName()`函数。</X.P>
             </X.HighlightBlock>
-            <X.H2 href="https://cwe.mitre.org/data/definitions/352.html">
-                【Compo】CWE-352: Cross-Site Request Forgery (CSRF)
-            </X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/352.html">【Compo】CWE-352: Cross-Site Request Forgery (CSRF)</X.H2>
             <X.P>跨站请求伪造。</X.P>
             <X.HighlightBlock bgcolor="gray">
                 <X.P>详见@Learn CSRF[/24b/cross-site-request-forgery/]@。</X.P>
@@ -828,19 +701,12 @@ export default function Post() {
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2009-3022[https://www.opencve.io/cve/CVE-2009-3022]@</X.Uli>
                 <X.Uli>报告：@[https://jvndb.jvn.jp/ja/contents/2009/JVNDB-2009-000058.html]@</X.Uli>
-                <X.P withMarginTop>
-                    在bingo!CMS 1.2及更早版本中存在CSRF漏洞，---
-                    远程攻击者可劫持其他用户对修改配置或更改内容请求的身份验证。
-                </X.P>
+                <X.P withMarginTop>在bingo!CMS 1.2及更早版本中存在CSRF漏洞，远程攻击者可劫持其他用户对修改配置或更改内容请求的身份验证。</X.P>
             </X.HighlightBlock>
-            <X.H2 href="https://cwe.mitre.org/data/definitions/434.html">
-                【B】CWE-434: Unrestricted Upload of File with Dangerous Type
-            </X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/434.html">【B】CWE-434: Unrestricted Upload of File with Dangerous Type</X.H2>
             <X.P>缺少对上传文件类型的验证。</X.P>
             <X.H3>Example 1</X.H3>
-            <X.P>
-                下面的代码中，前端希望用户上传一个图片，`upload_picture.php`处理上传的文件，并尝试储存在`pictures/`中。
-            </X.P>
+            <X.P>下面的代码中，前端希望用户上传一个图片，`upload_picture.php`处理上传的文件，并尝试储存在`pictures/`中。</X.P>
             <X.CodeBlock
                 language="html"
                 code={`
@@ -872,9 +738,7 @@ export default function Post() {
                 }
                 `}
             />
-            <X.P>
-                上述代码的问题是没有检查传入的文件类型，以至于攻击者可以上传一份`malicious.php`，并且用它来执行系统代码：
-            </X.P>
+            <X.P>上述代码的问题是没有检查传入的文件类型，以至于攻击者可以上传一份`malicious.php`，并且用它来执行系统代码：</X.P>
             <X.CodeBlock
                 language="php"
                 code={`
@@ -889,9 +753,7 @@ export default function Post() {
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2019-1010062[https://www.opencve.io/cve/CVE-2019-1010062]@</X.Uli>
-                <X.Uli>
-                    `Patch`：@[https://github.com/pluck-cms/pluck/commit/09f0ab871bf633973cfd9fc4fe59d4a912397cf8]@
-                </X.Uli>
+                <X.Uli>`Patch`：@[https://github.com/pluck-cms/pluck/commit/09f0ab871bf633973cfd9fc4fe59d4a912397cf8]@</X.Uli>
                 <X.CodeBlock
                     language="php"
                     diffAddedLines="4-8"
@@ -917,15 +779,8 @@ export default function Post() {
             <X.P>缺少授权，没有验证用户是否有权访问资源。</X.P>
             <X.HighlightBlock>
                 <X.H3>Authentication & Authorization</X.H3>
-                <X.Uli>
-                    `Authentication (AuthN)`，身份认证，通常在授权之前完成，是验证“用户是谁”的过程。---
-                    一般通过账号密码、人脸识别的方式。\n例如：员工通过输入用户名和密码登录公司网络。
-                </X.Uli>
-                <X.Uli>
-                    `Authorization (AuthZ)`，授权，是确认用户是否有权访问资源。---
-                    一般通过角色规则（管理员、普通用户）等方式。\n
-                    例如：普通员工登录公司网络后，不能访问公司较为敏感的数据。
-                </X.Uli>
+                <X.Uli>`Authentication (AuthN)`，身份认证，通常在授权之前完成，是验证“用户是谁”的过程。一般通过账号密码、人脸识别的方式。\n例如：员工通过输入用户名和密码登录公司网络。</X.Uli>
+                <X.Uli>`Authorization (AuthZ)`，授权，是确认用户是否有权访问资源。一般通过角色规则（管理员、普通用户）等方式。\n例如：普通员工登录公司网络后，不能访问公司较为敏感的数据。</X.Uli>
             </X.HighlightBlock>
             <X.H3>Example 1</X.H3>
             <X.CodeBlock
@@ -943,18 +798,12 @@ export default function Post() {
                 $employeeRecord = runEmployeeQuery('EmployeeDB',$_GET['EmployeeName']);
                 `}
             />
-            <X.P>
-                这段代码小心地检查了SQL注入风险（通过`prepare`函数），但却没有验证执行数据库操作的用户是否具有权限。
-            </X.P>
+            <X.P>这段代码小心地检查了SQL注入风险（通过`prepare`函数），但却没有验证执行数据库操作的用户是否具有权限。</X.P>
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2022-24730[https://www.opencve.io/cve/CVE-2022-24730]@</X.Uli>
                 <X.Uli>报告：@[https://github.com/argoproj/argo-cd/security/advisories/GHSA-r9cr-hvjj-496v]@</X.Uli>
-                <X.P withMarginTop>
-                    问题的大致描述为：从v1.3.0开始，未打补丁的Argo
-                    CD版本都容易受到路径遍历错误的影响，再加上不适当的访问控制错误，---
-                    可能允许具有只读存储库访问权限的恶意用户从Argo CD的存储库服务器中泄露敏感文件。
-                </X.P>
+                <X.P withMarginTop>问题的大致描述为：从v1.3.0开始，未打补丁的Argo CD版本都容易受到路径遍历错误的影响，再加上不适当的访问控制错误，可能允许具有只读存储库访问权限的恶意用户从Argo CD的存储库服务器中泄露敏感文件。</X.P>
                 <X.P>
                     有读权限的用户可以给{'`/api/v1/repositories/{repo_url}/appdetails`'}
                     发送带有恶意载荷请求以访问预期之外的文件。
@@ -962,9 +811,7 @@ export default function Post() {
                 <X.P noMarginBottom>补丁的作用：</X.P>
                 <X.Uli>防止路径遍历；</X.Uli>
                 <X.Uli>
-                    <X.P noMarginBottom>
-                        限制对{'`/api/v1/repositories/{repo_url}/appdetails`'}的访问权限，只有以下两类用户可以：
-                    </X.P>
+                    <X.P noMarginBottom>限制对{'`/api/v1/repositories/{repo_url}/appdetails`'}的访问权限，只有以下两类用户可以：</X.P>
                     <X.Oli>拥有`create`权限的用户</X.Oli>
                     <X.Oli>拥有`get`权限的用户，并且`repo_url`已经被给定的应用使用。</X.Oli>
                 </X.Uli>
@@ -991,16 +838,12 @@ export default function Post() {
                 }
                 `}
             />
-            <X.P>
-                如果`gethostbyaddr`返回`NULL`，`hp`就是空指针，`strcpy`会导致空指针解引用。程序缺少对其返回值的检查。
-            </X.P>
+            <X.P>如果`gethostbyaddr`返回`NULL`，`hp`就是空指针，`strcpy`会导致空指针解引用。程序缺少对其返回值的检查。</X.P>
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2008-5183[https://www.opencve.io/cve/CVE-2008-5183]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://www.exploit-db.com/exploits/7150]@</X.Uli>
-                <X.P withMarginTop>
-                    通过CSRF发出大量`add-rss-subscription`请求，触发空指针引用（此处没有找到源码），进而导致DoS攻击。
-                </X.P>
+                <X.P withMarginTop>通过CSRF发出大量`add-rss-subscription`请求，触发空指针引用（此处没有找到源码），进而导致DoS攻击。</X.P>
                 <X.CodeBlock
                     language="js"
                     code={`
@@ -1068,12 +911,8 @@ export default function Post() {
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2022-36436[https://www.opencve.io/cve/CVE-2022-36436]@</X.Uli>
-                <X.Uli>
-                    `Exploit`：@[https://cert.grnet.gr/en/blog/cve-2022-36436-twisted-vnc-authentication-proxy-authentication-bypass/]@
-                </X.Uli>
-                <X.Uli>
-                    `Patch`：@[https://github.com/osuosl/twisted_vncauthproxy/commit/edc149af29242178091b2d6fcd42c3ef0851644b]@
-                </X.Uli>
+                <X.Uli>`Exploit`：@[https://cert.grnet.gr/en/blog/cve-2022-36436-twisted-vnc-authentication-proxy-authentication-bypass/]@</X.Uli>
+                <X.Uli>`Patch`：@[https://github.com/osuosl/twisted_vncauthproxy/commit/edc149af29242178091b2d6fcd42c3ef0851644b]@</X.Uli>
                 <X.CodeBlock
                     language="python"
                     diffRemovedLines="9-10,29-31"
@@ -1115,17 +954,10 @@ export default function Post() {
                             self.transport.loseConnection()
                     `}
                 />
-                <X.P>
-                    `\x02\x01\x02`分别代表支持的列表长度、列表内容，原先可能因为某些原因支持无认证模式访问，存在漏洞利用风险。
-                </X.P>
+                <X.P>`\x02\x01\x02`分别代表支持的列表长度、列表内容，原先可能因为某些原因支持无认证模式访问，存在漏洞利用风险。</X.P>
             </X.HighlightBlock>
-            <X.H2 href="https://cwe.mitre.org/data/definitions/190.html">
-                【B】CWE-190: Integer Overflow or Wraparound
-            </X.H2>
-            <X.P>
-                整数溢出或整数回绕，当有符号数相加超过正负值上限时可能发生溢出；当无符号数相加超过上限就会从`0`开始“回绕”；---
-                或者计算`unsigned(0) - 1`时，会得到最大值。
-            </X.P>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/190.html">【B】CWE-190: Integer Overflow or Wraparound</X.H2>
+            <X.P>整数溢出或整数回绕，当有符号数相加超过正负值上限时可能发生溢出；当无符号数相加超过上限就会从`0`开始“回绕”；或者计算`unsigned(0) - 1`时，会得到最大值。</X.P>
             <X.H3>Example 1</X.H3>
             <X.CodeBlock
                 language="c"
@@ -1152,17 +984,12 @@ export default function Post() {
                 }
                 `}
             />
-            <X.P>
-                `bytesRec`定义为`short int`类型，当`MAXGET`很大时，很可能导致`bytesRec`溢出（永远小于`MAXGET`），---
-                循环不会终止，并不断地覆盖`buf`中的内容。
-            </X.P>
+            <X.P>`bytesRec`定义为`short int`类型，当`MAXGET`很大时，很可能导致`bytesRec`溢出（永远小于`MAXGET`），循环不会终止，并不断地覆盖`buf`中的内容。</X.P>
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2018-20330[https://www.opencve.io/cve/CVE-2018-20330]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://github.com/libjpeg-turbo/libjpeg-turbo/issues/304]@</X.Uli>
-                <X.Uli>
-                    `Patch`：@[https://github.com/libjpeg-turbo/libjpeg-turbo/commit/3d9c64e9f8aa1ee954d1d0bb3390fc894bb84da3]@
-                </X.Uli>
+                <X.Uli>`Patch`：@[https://github.com/libjpeg-turbo/libjpeg-turbo/commit/3d9c64e9f8aa1ee954d1d0bb3390fc894bb84da3]@</X.Uli>
                 <X.CodeBlock
                     language="c"
                     diffRemovedLines="2"
@@ -1177,9 +1004,7 @@ export default function Post() {
                     `}
                 />
             </X.HighlightBlock>
-            <X.H2 href="https://cwe.mitre.org/data/definitions/502.html">
-                【B】CWE-502: Deserialization of Untrusted Data
-            </X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/502.html">【B】CWE-502: Deserialization of Untrusted Data</X.H2>
             <X.P>反序列化不受信任的数据，也就是没有检查反序列化后的结果是否是有效的。</X.P>
             <X.H3>Example 1</X.H3>
             <X.CodeBlock
@@ -1224,24 +1049,13 @@ export default function Post() {
                             raise AuthFail
                 `}
             />
-            <X.P>
-                这段代码没有验证传入数据是否合法。攻击者可以构造一个非法的序列化对象`AuthToken`，该对象通过实例化Python的子进程之一来执行任意命令。---
-                例如，攻击者可以构建一个利用Python子进程模块的`pickle`，该模块会生成新进程并包含许多用于各种用途的参数。---
-                由于`Pickle`库允许对象定义如何`unpickle`，因此攻击者可以指示`unpickle`进程在子进程模块中调用`Popen`并执行`/bin/sh`。
-            </X.P>
+            <X.P>这段代码没有验证传入数据是否合法。攻击者可以构造一个非法的序列化对象`AuthToken`，该对象通过实例化Python的子进程之一来执行任意命令。例如，攻击者可以构建一个利用Python子进程模块的`pickle`，该模块会生成新进程并包含许多用于各种用途的参数。由于`Pickle`库允许对象定义如何`unpickle`，因此攻击者可以指示`unpickle`进程在子进程模块中调用`Popen`并执行`/bin/sh`。</X.P>
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2020-13091[https://www.opencve.io/cve/CVE-2020-13091]@</X.Uli>
-                <X.P withMarginTop>
-                    如果`__reduce__`调用了`os.system`，1.0.3版本的Python Pandas库可以从传递给---
-                    `read_pickle()`函数的不信任文件中反序列化，并执行命令。注意`read_pickle()`在---
-                    @文档[https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_pickle.html]@---
-                    中已经被标记为不安全的，用户有责任确保传入的文件是可信的。
-                </X.P>
+                <X.P withMarginTop>如果`__reduce__`调用了`os.system`，1.0.3版本的Python Pandas库可以从传递给`read_pickle()`函数的不信任文件中反序列化，并执行命令。注意`read_pickle()`在@文档[https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_pickle.html]@中已经被标记为不安全的，用户有责任确保传入的文件是可信的。</X.P>
             </X.HighlightBlock>
-            <X.H2 href="https://cwe.mitre.org/data/definitions/77.html">
-                【C】CWE-77: Improper Neutralization of Special Elements used in a Command ('Command Injection')
-            </X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/77.html">【C】CWE-77: Improper Neutralization of Special Elements used in a Command ('Command Injection')</X.H2>
             <X.P>命令注入，用户输入没有被中和，或错误地中和处理，导致执行的预期命令被修改。</X.P>
             <X.P noMarginBottom>命令注入漏洞通常发生在以下情况：</X.P>
             <X.Uli>数据从不受信任的来源进入应用程序。</X.Uli>
@@ -1259,9 +1073,7 @@ export default function Post() {
                 }
                 `}
             />
-            <X.P>
-                上述程序出于对运维人员的教学目的将会以管理员权限执行。此时有命令注入的风险，例如传入`";rm -rf /"`。
-            </X.P>
+            <X.P>上述程序出于对运维人员的教学目的将会以管理员权限执行。此时有命令注入的风险，例如传入`";rm -rf /"`。</X.P>
             <X.H3>Example 2</X.H3>
             <X.CodeBlock
                 language="java"
@@ -1279,9 +1091,7 @@ export default function Post() {
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2024-32027[https://www.opencve.io/cve/CVE-2024-32027]@</X.Uli>
-                <X.Uli>
-                    `Patch`：@[https://github.com/bmaltais/kohya_ss/commit/831af8babeb75faff62bcc6a8c6a4f80354f1ff1]@
-                </X.Uli>
+                <X.Uli>`Patch`：@[https://github.com/bmaltais/kohya_ss/commit/831af8babeb75faff62bcc6a8c6a4f80354f1ff1]@</X.Uli>
                 <X.P withMarginTop>此补丁移除了很多Python脚本中的`shell=True`：</X.P>
                 <X.CodeBlock
                     language="python"
@@ -1292,22 +1102,12 @@ export default function Post() {
                     subprocess.run(run_cmd, env=env)
                     `}
                 />
-                <X.P>
-                    不加`shell=True`时，命令作为列表直接传递给操作系统，例如：`subprocess.run(['ls', '-l'])`；
-                    这是更安全的。\n使用`shell=True`时，命令通过解释器（例如`/bin/sh`或`cmd.exe`）运行，例如：---
-                    `subprocess.run('ls -l', shell=True)`；这可能导致命令注入。
-                </X.P>
+                <X.P>不加`shell=True`时，命令作为列表直接传递给操作系统，例如：`subprocess.run(['ls', '-l'])`； 这是更安全的。\n使用`shell=True`时，命令通过解释器（例如`/bin/sh`或`cmd.exe`）运行，例如：`subprocess.run('ls -l', shell=True)`；这可能导致命令注入。</X.P>
             </X.HighlightBlock>
-            <X.H2 href="https://cwe.mitre.org/data/definitions/119.html">
-                【C】CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer
-            </X.H2>
-            <X.P>
-                缓冲区范围内的操作限制不当，产品对内存缓冲区执行操作，但它可以从缓冲区预期边界之外的内存位置读取或写入。
-            </X.P>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/119.html">【C】CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer</X.H2>
+            <X.P>缓冲区范围内的操作限制不当，产品对内存缓冲区执行操作，但它可以从缓冲区预期边界之外的内存位置读取或写入。</X.P>
             <X.P>包括前面提到的越界读取和越界写入。范围较为广泛，这里不详细展开了。</X.P>
-            <X.H2 href="https://cwe.mitre.org/data/definitions/798.html">
-                【B】CWE-798: Use of Hard-coded Credentials
-            </X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/798.html">【B】CWE-798: Use of Hard-coded Credentials</X.H2>
             <X.P>使用硬编码的凭证，即凭证在源代码中直接出现。</X.P>
             <X.H3>Example 1</X.H3>
             <X.P>下面的代码硬编码了用户名和密码去连接数据库：</X.P>
@@ -1319,10 +1119,7 @@ export default function Post() {
                 ...
                 `}
             />
-            <X.P>
-                有权限访问到此源码的员工可以利用这点闯入系统。更坏的情况是如果攻击者能够访问到程序的字节码，---
-                可以使用`javap -c`命令反汇编，得到明文密码，例如：
-            </X.P>
+            <X.P>有权限访问到此源码的员工可以利用这点闯入系统。更坏的情况是如果攻击者能够访问到程序的字节码，可以使用`javap -c`命令反汇编，得到明文密码，例如：</X.P>
             <X.CodeBlock
                 language="text"
                 code={`
@@ -1355,30 +1152,17 @@ export default function Post() {
                 <X.Uli>`Exploit`：@[https://github.com/Shrimant12/CVE-References/blob/main/CVE-2020-35296.md]@</X.Uli>
                 <X.P withMarginTop>管理员面板有默认账户`admin:admin`。</X.P>
             </X.HighlightBlock>
-            <X.H2 href="https://cwe.mitre.org/data/definitions/918.html">
-                【B】CWE-918: Server-Side Request Forgery (SSRF)
-            </X.H2>
-            <X.P>
-                服务端请求伪造，攻击者通过伪造服务器发起的请求，使服务器端的应用程序访问受信任的第三方服务器或资源。---
-                通常，攻击者利用此漏洞访问内部系统。SSRF可以看作一种跳板攻击。
-            </X.P>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/918.html">【B】CWE-918: Server-Side Request Forgery (SSRF)</X.H2>
+            <X.P>服务端请求伪造，攻击者通过伪造服务器发起的请求，使服务器端的应用程序访问受信任的第三方服务器或资源。通常，攻击者利用此漏洞访问内部系统。SSRF可以看作一种跳板攻击。</X.P>
             <X.Image src="ssrf.jpg" width="800px" invertInDarkTheme />
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2024-3149[https://www.opencve.io/cve/CVE-2024-3149]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://huntr.com/bounties/b230d76b-ae2d-440e-a25b-94ffaa7c4ff1]@</X.Uli>
-                <X.Uli>
-                    `Patch`：@[https://github.com/mintplex-labs/anything-llm/commit/f4088d9348fa86dcebe9f97a18d39c0a6e92f15e]@
-                </X.Uli>
-                <X.P withMarginTop>
-                    AnythingLLM的上传链接功能存在SSRF漏洞，该功能面向具有`manager`或`admin`角色的用户，---
-                    使用无头浏览器通过内部`collectorApi`处理上传的链接。
-                    攻击者可以通过托管恶意网站并使用该网站执行内部端口扫描、访问未对外公开的内部网络应用程序等操作来利用这一漏洞。
-                </X.P>
+                <X.Uli>`Patch`：@[https://github.com/mintplex-labs/anything-llm/commit/f4088d9348fa86dcebe9f97a18d39c0a6e92f15e]@</X.Uli>
+                <X.P withMarginTop>AnythingLLM的上传链接功能存在SSRF漏洞，该功能面向具有`manager`或`admin`角色的用户，使用无头浏览器通过内部`collectorApi`处理上传的链接。 攻击者可以通过托管恶意网站并使用该网站执行内部端口扫描、访问未对外公开的内部网络应用程序等操作来利用这一漏洞。</X.P>
                 <X.P>部署AnytingLLM后会有两个`express.js`节点运行，分别是`collector`和`server`。</X.P>
-                <X.P>
-                    补丁引入了`comKey`检验数据完整性，让攻击者无法构造出合法的请求头部。部分新增的内容如下：\n`collector/utils/comKey/index.js`：
-                </X.P>
+                <X.P>补丁引入了`comKey`检验数据完整性，让攻击者无法构造出合法的请求头部。部分新增的内容如下：\n`collector/utils/comKey/index.js`：</X.P>
                 <X.CodeBlock
                     language="js"
                     code={`
@@ -1509,9 +1293,7 @@ export default function Post() {
                     `}
                 />
             </X.HighlightBlock>
-            <X.H2 href="https://cwe.mitre.org/data/definitions/306.html">
-                【B】CWE-306: Missing Authentication for Critical Function
-            </X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/306.html">【B】CWE-306: Missing Authentication for Critical Function</X.H2>
             <X.P>重要功能没有做权限认证。</X.P>
             <X.H3>Example 1</X.H3>
             <X.CodeBlock
@@ -1550,37 +1332,18 @@ export default function Post() {
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2020-25966[https://www.opencve.io/cve/CVE-2020-25966]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://gitlab.com/Gazzaz/Spectra_API_Issue/]@</X.Uli>
-                <X.P withMarginTop>
-                    Sectona Spectra 3.2.0存在一个易受攻击的SOAP API端点，---
-                    该端点会在未进行适当身份验证的情况下泄漏敏感信息。
-                </X.P>
+                <X.P withMarginTop>Sectona Spectra 3.2.0存在一个易受攻击的SOAP API端点，该端点会在未进行适当身份验证的情况下泄漏敏感信息。</X.P>
                 <X.P>注：这个CVE是由于系统配置错误导致的。</X.P>
             </X.HighlightBlock>
-            <X.H2 href="https://cwe.mitre.org/data/definitions/362.html">
-                【C】CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race
-                Condition')
-            </X.H2>
-            <X.P>
-                数据竞争，某段代码需要对共享资源进行临时、独占访问，但存在一个时间窗口，在该时间窗口内共享资源可被同时运行的另一个代码片段修改。
-            </X.P>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/362.html">【C】CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')</X.H2>
+            <X.P>数据竞争，某段代码需要对共享资源进行临时、独占访问，但存在一个时间窗口，在该时间窗口内共享资源可被同时运行的另一个代码片段修改。</X.P>
             <X.P noMarginBottom>数据竞争违反了以下两个原则：</X.P>
+            <X.Uli>排他性：代码序列被赋予对共享资源的排他性访问权限，即在原始序列完成执行之前，其他代码序列不能修改共享资源的属性。</X.Uli>
             <X.Uli>
-                排他性：代码序列被赋予对共享资源的排他性访问权限，即在原始序列完成执行之前，其他代码序列不能修改共享资源的属性。
+                <X.P noMarginBottom>原子性：代码序列被视为一个单一的操作，即在执行期间不会被中断，也不会被其他代码序列中断。</X.P>
+                <X.P>程序员可能会认为某些代码序列执行得太快，不会受到干扰代码序列的影响，但事实并非如此。例如，单个`x++`语句在代码层可能看起来是原子的，但在指令层实际上是非原子的，因为它涉及读取`x`的原始值、计算`x+1`、最后将结果赋值给`x`。</X.P>
             </X.Uli>
-            <X.Uli>
-                <X.P noMarginBottom>
-                    原子性：代码序列被视为一个单一的操作，即在执行期间不会被中断，也不会被其他代码序列中断。
-                </X.P>
-                <X.P>
-                    程序员可能会认为某些代码序列执行得太快，不会受到干扰代码序列的影响，但事实并非如此。---
-                    例如，单个`x++`语句在代码层可能看起来是原子的，但在指令层实际上是非原子的，因为它涉及读取`x`的原始值、---
-                    计算`x+1`、最后将结果赋值给`x`。
-                </X.P>
-            </X.Uli>
-            <X.P withMarginTop>
-                干扰代码序列可以是可信的或不可信的。受信任的干扰代码序列出现在产品内部，攻击者无法修改，只能间接调用。---
-                不受信任的干扰代码序列可由攻击者直接编写，通常在易受攻击产品的外部。
-            </X.P>
+            <X.P withMarginTop>干扰代码序列可以是可信的或不可信的。受信任的干扰代码序列出现在产品内部，攻击者无法修改，只能间接调用。不受信任的干扰代码序列可由攻击者直接编写，通常在易受攻击产品的外部。</X.P>
             <X.H3>Example 1</X.H3>
             <X.CodeBlock
                 language="perl"
@@ -1626,10 +1389,7 @@ export default function Post() {
                 }
                 `}
             />
-            <X.P>
-                上面的函数尝试获取锁，以便对共享资源执行操作。不过上述函数没有检查`pthread_mutex_lock()`是否正常返回。---
-                如果因为一些原因导致`pthread_mutex_lock()`失败，那么这个例子会导致数据竞争。
-            </X.P>
+            <X.P>上面的函数尝试获取锁，以便对共享资源执行操作。不过上述函数没有检查`pthread_mutex_lock()`是否正常返回。如果因为一些原因导致`pthread_mutex_lock()`失败，那么这个例子会导致数据竞争。</X.P>
             <X.P>正确的做法是：</X.P>
             <X.CodeBlock
                 language="c"
@@ -1651,13 +1411,9 @@ export default function Post() {
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2024-24254[https://www.opencve.io/cve/CVE-2024-24254]@</X.Uli>
-                <X.Uli>
-                    `Exploit``Patch`：@[https://github.com/Drone-Lab/PX4-Autopilot/blob/report-can-not-pause-vulnerability/Multi-Threaded%20Race%20Condition%20bug%20found%20in%20PX4%20cause%20drone%20can%20not%20PAUSE.md]@
-                </X.Uli>
+                <X.Uli>`Exploit``Patch`：@[https://github.com/Drone-Lab/PX4-Autopilot/blob/report-can-not-pause-vulnerability/Multi-Threaded%20Race%20Condition%20bug%20found%20in%20PX4%20cause%20drone%20can%20not%20PAUSE.md]@</X.Uli>
             </X.HighlightBlock>
-            <X.H2 href="https://cwe.mitre.org/data/definitions/269.html">
-                【C】CWE-269: Improper Privilege Management
-            </X.H2>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/269.html">【C】CWE-269: Improper Privilege Management</X.H2>
             <X.P>权限管理不当，程序没有正确地管理用户的权限。</X.P>
             <X.H3>Example 1</X.H3>
             <X.CodeBlock
@@ -1680,10 +1436,7 @@ export default function Post() {
                     return True
                 `}
             />
-            <X.P>
-                上述代码先提高权限以创建文件夹，然后立刻降回来。但如果`os.mkdir()`发生了异常，就不会调用`lowerPrivileges()`，---
-                这时程序会在提高的权限下运行，可能导致进一步被利用。
-            </X.P>
+            <X.P>上述代码先提高权限以创建文件夹，然后立刻降回来。但如果`os.mkdir()`发生了异常，就不会调用`lowerPrivileges()`，这时程序会在提高的权限下运行，可能导致进一步被利用。</X.P>
             <X.H3>Example 2</X.H3>
             <X.CodeBlock
                 language="java"
@@ -1719,23 +1472,13 @@ export default function Post() {
                 }
                 `}
             />
-            <X.P>
-                这个系统定义了不同等级的用户，`ADMIN`和`OPERATOR`都可以重置密码。系统设计的初衷是想让`OPERATOR`拥有稍弱于`ADMIN`的权限；---
-                然而既然`OPERATOR`可以修改密码，那么就可以通过重置`ADMIN`账号的密码来控制一个管理员账号。此例的权限管理是有缺陷的。
-            </X.P>
+            <X.P>这个系统定义了不同等级的用户，`ADMIN`和`OPERATOR`都可以重置密码。系统设计的初衷是想让`OPERATOR`拥有稍弱于`ADMIN`的权限；然而既然`OPERATOR`可以修改密码，那么就可以通过重置`ADMIN`账号的密码来控制一个管理员账号。此例的权限管理是有缺陷的。</X.P>
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2017-11747[https://www.opencve.io/cve/CVE-2017-11747]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://github.com/tinyproxy/tinyproxy/issues/106]@</X.Uli>
-                <X.Uli>
-                    `Patch`：@[https://github.com/obnoxxx/tinyproxy/commit/fe4d29888306e62f3bbf964b3fdb8126ddbe8f6e]@
-                </X.Uli>
-                <X.P withMarginTop>
-                    Tinyproxy
-                    1.8.4及更早版本中的`main.c`会在向非`root`帐户下放权限后创建`/run/tinyproxy/tinyproxy.pid`文件，---
-                    这可能允许本地用户在`root`脚本执行`kill \`cat /run/tinyproxy/tinyproxy.pid\``命令之前，---
-                    利用访问该非`root`帐户的权限来修改`tinyproxy.pid`，从而杀死任意进程。
-                </X.P>
+                <X.Uli>`Patch`：@[https://github.com/obnoxxx/tinyproxy/commit/fe4d29888306e62f3bbf964b3fdb8126ddbe8f6e]@</X.Uli>
+                <X.P withMarginTop>Tinyproxy 1.8.4及更早版本中的`main.c`会在向非`root`帐户下放权限后创建`/run/tinyproxy/tinyproxy.pid`文件，这可能允许本地用户在`root`脚本执行`kill \`cat /run/tinyproxy/tinyproxy.pid\``命令之前，利用访问该非`root`帐户的权限来修改`tinyproxy.pid`，从而杀死任意进程。</X.P>
                 <X.CodeBlock
                     language="c"
                     diffRemovedLines="21-29"
@@ -1773,12 +1516,8 @@ export default function Post() {
                     `}
                 />
             </X.HighlightBlock>
-            <X.H2 href="https://cwe.mitre.org/data/definitions/94.html">
-                【B】CWE-94: Improper Control of Generation of Code ('Code Injection')
-            </X.H2>
-            <X.P>
-                当产品允许用户输入包含代码语法的内容时，攻击者有可能以改变产品预期控制流的方式编写代码。这种改变可能导致任意代码的执行。
-            </X.P>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/94.html">【B】CWE-94: Improper Control of Generation of Code ('Code Injection')</X.H2>
+            <X.P>当产品允许用户输入包含代码语法的内容时，攻击者有可能以改变产品预期控制流的方式编写代码。这种改变可能导致任意代码的执行。</X.P>
             <X.H3>Example 1</X.H3>
             <X.CodeBlock
                 language="php"
@@ -1799,9 +1538,7 @@ export default function Post() {
                 }
                 `}
             />
-            <X.P>
-                这段代码尝试将用户消息写入消息文件并允许用户查看它们。开发者可能希望文件只包含数据，然而攻击者可以构造以下参数：
-            </X.P>
+            <X.P>这段代码尝试将用户消息写入消息文件并允许用户查看它们。开发者可能希望文件只包含数据，然而攻击者可以构造以下参数：</X.P>
             <X.CodeBlock
                 language="text"
                 code={`
@@ -1825,9 +1562,7 @@ export default function Post() {
                 main()
                 `}
             />
-            <X.P>
-                `eval`函数会执行用户输入的代码，一个可以注入的载荷是`__import__('subprocess').getoutput('rm -r *')`。
-            </X.P>
+            <X.P>`eval`函数会执行用户输入的代码，一个可以注入的载荷是`__import__('subprocess').getoutput('rm -r *')`。</X.P>
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2023-1947[https://www.opencve.io/cve/CVE-2023-1947]@</X.Uli>
@@ -1914,17 +1649,9 @@ export default function Post() {
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2024-22208[https://www.opencve.io/cve/CVE-2024-22208]@</X.Uli>
-                <X.Uli>
-                    `Exploit`：@[https://github.com/thorsten/phpMyFAQ/security/advisories/GHSA-9hhf-xmcw-r3xg]@
-                </X.Uli>
-                <X.Uli>
-                    `Patch`：@[https://github.com/thorsten/phpMyFAQ/commit/a34d94ab7b1be9256a9ef898f18ea6bfb63f6f1e]@
-                </X.Uli>
-                <X.P withMarginTop>
-                    phpMyFAQ v3.2.5前的`Sharing
-                    FAQ`功能可以给其他邮箱分享讯息，前端只有`5`个输入框（希望用户最多分享给`5`个邮箱），---
-                    然而后端并没有对数量做限制，攻击者可以构造请求发送大量邮件。
-                </X.P>
+                <X.Uli>`Exploit`：@[https://github.com/thorsten/phpMyFAQ/security/advisories/GHSA-9hhf-xmcw-r3xg]@</X.Uli>
+                <X.Uli>`Patch`：@[https://github.com/thorsten/phpMyFAQ/commit/a34d94ab7b1be9256a9ef898f18ea6bfb63f6f1e]@</X.Uli>
+                <X.P withMarginTop>phpMyFAQ v3.2.5前的`Sharing FAQ`功能可以给其他邮箱分享讯息，前端只有`5`个输入框（希望用户最多分享给`5`个邮箱），然而后端并没有对数量做限制，攻击者可以构造请求发送大量邮件。</X.P>
                 <X.P>部分补丁的内容：</X.P>
                 <X.CodeBlock
                     language="php"
@@ -1952,28 +1679,16 @@ export default function Post() {
                     `}
                 />
             </X.HighlightBlock>
-            <X.H2 href="https://cwe.mitre.org/data/definitions/276.html">
-                【B】CWE-276: Incorrect Default Permissions
-            </X.H2>
-            <X.P>
-                错误的默认权限。指软件系统、应用程序、文件或资源在创建时被分配了不适当的默认权限。这些默认权限可能过于宽松，---
-                允许未授权的用户或进程进行不必要或有害的访问和操作，从而导致潜在的安全漏洞。
-            </X.P>
+            <X.H2 href="https://cwe.mitre.org/data/definitions/276.html">【B】CWE-276: Incorrect Default Permissions</X.H2>
+            <X.P>错误的默认权限。指软件系统、应用程序、文件或资源在创建时被分配了不适当的默认权限。这些默认权限可能过于宽松，允许未授权的用户或进程进行不必要或有害的访问和操作，从而导致潜在的安全漏洞。</X.P>
             <X.H3>Example 1</X.H3>
-            <X.P>
-                软件在安装或初始化时，通常会创建一些文件、目录或资源。这些资源会被分配默认的权限（读、写、执行权限等）。
-            </X.P>
-            <X.P>
-                如果这些默认权限设置得过于宽松，比如允许所有用户都具有读写权限，那么未授权的用户可能会访问、修改或删除这些文件，导致数据泄露、篡改或破坏。
-            </X.P>
+            <X.P>软件在安装或初始化时，通常会创建一些文件、目录或资源。这些资源会被分配默认的权限（读、写、执行权限等）。</X.P>
+            <X.P>如果这些默认权限设置得过于宽松，比如允许所有用户都具有读写权限，那么未授权的用户可能会访问、修改或删除这些文件，导致数据泄露、篡改或破坏。</X.P>
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2005-1941[https://www.opencve.io/cve/CVE-2005-1941]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://bugs.gentoo.org/93558]@</X.Uli>
-                <X.P withMarginTop>
-                    0.9.5-r1版本之前的SilverCity安装了`cgi-styler-form.py`、`cgistyler.py`和`source2html.py`，---
-                    具有`world writable`权限。
-                </X.P>
+                <X.P withMarginTop>0.9.5-r1版本之前的SilverCity安装了`cgi-styler-form.py`、`cgistyler.py`和`source2html.py`，具有`world writable`权限。</X.P>
                 <X.CodeBlock
                     language="text"
                     code={`

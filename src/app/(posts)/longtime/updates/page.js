@@ -26,8 +26,7 @@ function UpdateLog() {
         },
         {
             date: '2023-08-31',
-            description:
-                '新组件`Br``Divider``Uli``Oli`\\n新组件`HighlightBlock`\\n创建第1篇博客 - @模式识别 · 统计决策方法[/23c/pattern-recognition-1/]@',
+            description: '新组件`Br``Divider``Uli``Oli`\\n新组件`HighlightBlock`\\n创建第1篇博客 - @模式识别 · 统计决策方法[/23c/pattern-recognition-1/]@',
         },
         {date: '2023-09-02', description: '调整亮色、暗色两套代码高亮配色'},
         {date: '2023-09-03', description: '部署后遇到刷新404问题，将`BrowserRouter`改为`HashRouter`'},

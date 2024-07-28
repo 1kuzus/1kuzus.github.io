@@ -10,9 +10,7 @@ export default function Post() {
             <X.TOC />
             <X.Title>{metas[path].title}</X.Title>
             <X.H1>at()</X.H1>
-            <X.P>
-                `at()`方法接收一个整数值并返回该索引对应的元素，允许正数和负数。负整数从数组中的最后一个元素开始倒数。
-            </X.P>
+            <X.P>`at()`方法接收一个整数值并返回该索引对应的元素，允许正数和负数。负整数从数组中的最后一个元素开始倒数。</X.P>
             <X.CodeBlock
                 language="js"
                 code={`
@@ -62,9 +60,7 @@ export default function Post() {
                 `}
             />
             <X.H1>fill()</X.H1>
-            <X.P>
-                `fill()`方法用一个固定值填充数组中从起始索引（默认为`0`）到终止索引（默认为`array.length`）内的全部元素，返回修改后的数组。
-            </X.P>
+            <X.P>`fill()`方法用一个固定值填充数组中从起始索引（默认为`0`）到终止索引（默认为`array.length`）内的全部元素，返回修改后的数组。</X.P>
             <X.CodeBlock
                 language="js"
                 code={`
@@ -94,9 +90,7 @@ export default function Post() {
                 `}
             />
             <X.H1>filter()</X.H1>
-            <X.P>
-                `filter()`方法用一个固定值填充数组中从起始索引（默认为`0`）到终止索引（默认为`array.length`）内的全部元素，返回修改后的数组。
-            </X.P>
+            <X.P>`filter()`方法用一个固定值填充数组中从起始索引（默认为`0`）到终止索引（默认为`array.length`）内的全部元素，返回修改后的数组。</X.P>
             <X.CodeBlock
                 language="js"
                 code={`
@@ -106,15 +100,9 @@ export default function Post() {
             />
             <X.H1>find系列</X.H1>
             <X.Uli>`find()`方法返回数组中满足提供的测试函数的第一个元素的值。否则返回`undefined`。</X.Uli>
-            <X.Uli>
-                `findIndex()`方法返回数组中满足提供的测试函数的第一个元素的索引。若没有找到对应元素则返回`-1`。
-            </X.Uli>
-            <X.Uli>
-                `findLast()`方法反向迭代数组，并返回满足提供的测试函数的第一个元素的值。如果没有找到对应元素，则返回`undefined`。
-            </X.Uli>
-            <X.Uli>
-                `findLastIndex()`方法反向迭代数组，并返回满足所提供的测试函数的第一个元素的索引。若没有找到对应元素，则返回`-1`。
-            </X.Uli>
+            <X.Uli>`findIndex()`方法返回数组中满足提供的测试函数的第一个元素的索引。若没有找到对应元素则返回`-1`。</X.Uli>
+            <X.Uli>`findLast()`方法反向迭代数组，并返回满足提供的测试函数的第一个元素的值。如果没有找到对应元素，则返回`undefined`。</X.Uli>
+            <X.Uli>`findLastIndex()`方法反向迭代数组，并返回满足所提供的测试函数的第一个元素的索引。若没有找到对应元素，则返回`-1`。</X.Uli>
             <X.CodeBlock
                 language="js"
                 code={`
@@ -142,9 +130,7 @@ export default function Post() {
             <X.H1>forEach()</X.H1>
             <X.P>`forEach()`方法对数组的每个元素执行一次给定的函数。</X.P>
             <X.CodeBlock language="js" code="arr.forEach(callbackFn)" />
-            <X.P noMarginBottom>
-                `callbackFn`为数组中每个元素执行的函数，并会丢弃它的返回值。该函数被调用时将传入以下参数：
-            </X.P>
+            <X.P noMarginBottom>`callbackFn`为数组中每个元素执行的函数，并会丢弃它的返回值。该函数被调用时将传入以下参数：</X.P>
             <X.Uli>`value`：数组中正在处理的当前元素</X.Uli>
             <X.Uli>`index`：数组中正在处理的当前元素的索引</X.Uli>
             <X.Uli>`array`：调用了`forEach()`的数组本身</X.Uli>
@@ -201,9 +187,7 @@ export default function Post() {
                 `}
             />
             <X.H2>lastIndexOf()</X.H2>
-            <X.P>
-                `lastIndexOf()`方法返回数组中给定元素最后一次出现的索引，如果不存在则返回`-1`。该方法从`fromIndex`开始向前搜索数组。
-            </X.P>
+            <X.P>`lastIndexOf()`方法返回数组中给定元素最后一次出现的索引，如果不存在则返回`-1`。该方法从`fromIndex`开始向前搜索数组。</X.P>
             <X.CodeBlock
                 language="js"
                 code={`
@@ -221,9 +205,7 @@ export default function Post() {
                 `}
             />
             <X.H1>join()</X.H1>
-            <X.P>
-                `join()`方法将一个数组的所有元素连接成一个字符串并返回这个字符串，用逗号或指定的分隔符字符串分隔。如果数组只有一个元素，那么将返回该元素而不使用分隔符。
-            </X.P>
+            <X.P>`join()`方法将一个数组的所有元素连接成一个字符串并返回这个字符串，用逗号或指定的分隔符字符串分隔。如果数组只有一个元素，那么将返回该元素而不使用分隔符。</X.P>
             <X.CodeBlock
                 language="js"
                 code={`
@@ -236,9 +218,7 @@ export default function Post() {
             <X.H1>map()</X.H1>
             <X.P>`map()`方法创建一个*新数组*，这个新数组由原数组中的每个元素都调用一次提供的函数后的返回值组成。</X.P>
             <X.CodeBlock language="js" code="arr.map(callbackFn)" />
-            <X.P noMarginBottom>
-                `callbackFn`为数组中每个元素执行的函数，它的返回值作为一个元素被添加为新数组中。该函数被调用时将传入以下参数：
-            </X.P>
+            <X.P noMarginBottom>`callbackFn`为数组中每个元素执行的函数，它的返回值作为一个元素被添加为新数组中。该函数被调用时将传入以下参数：</X.P>
             <X.Uli>`value`：数组中正在处理的当前元素</X.Uli>
             <X.Uli>`index`：数组中正在处理的当前元素的索引</X.Uli>
             <X.Uli>`array`：调用了`map()`的数组本身</X.Uli>
@@ -253,10 +233,7 @@ export default function Post() {
                 `}
             />
             <X.H1>pop()和push()</X.H1>
-            <X.P>
-                `pop()`方法从数组中删除最后一个元素，并返回该元素的值。此方法会更改数组的长度。\n
-                `push()`方法将指定的元素添加到数组的末尾，并返回新的数组长度。
-            </X.P>
+            <X.P>`pop()`方法从数组中删除最后一个元素，并返回该元素的值。此方法会更改数组的长度。\n`push()`方法将指定的元素添加到数组的末尾，并返回新的数组长度。</X.P>
             <X.CodeBlock
                 language="js"
                 code={`
@@ -273,14 +250,8 @@ export default function Post() {
                 `}
             />
             <X.H1>reduce()</X.H1>
-            <X.P>
-                `reduce()`方法对数组中的每个元素按序执行一个提供的`reducer`函数，每一次运行`reducer`会将先前元素的计算结果作为参数传入，最后将其结果汇总为单个返回值。
-            </X.P>
-            <X.P>
-                第一次执行回调函数时，不存在“上一次的计算结果”。如果需要回调函数从数组索引为`0`的元素开始执行，则需要传递初始值。---
-                否则，数组索引为`0`的元素将被用作初始值，迭代器将从索引为`1`的元素开始执行。\n
-                下面是一个使用`reduce()`的例子，计算数组所有元素的总和：
-            </X.P>
+            <X.P>`reduce()`方法对数组中的每个元素按序执行一个提供的`reducer`函数，每一次运行`reducer`会将先前元素的计算结果作为参数传入，最后将其结果汇总为单个返回值。</X.P>
+            <X.P>第一次执行回调函数时，不存在“上一次的计算结果”。如果需要回调函数从数组索引为`0`的元素开始执行，则需要传递初始值。否则，数组索引为`0`的元素将被用作初始值，迭代器将从索引为`1`的元素开始执行。\n下面是一个使用`reduce()`的例子，计算数组所有元素的总和：</X.P>
             <X.CodeBlock
                 language="js"
                 code={`
@@ -291,10 +262,7 @@ export default function Post() {
                 `}
             />
             <X.H2>使用 .reduce() 替代 .filter().map()</X.H2>
-            <X.P>
-                使用`filter()`和`map()`会遍历数组两次，但是你可以使用`reduce()`只遍历一次并实现相同的效果。\n
-                下面这个例子中，希望筛选出数组中的正数并将其乘`2`：
-            </X.P>
+            <X.P>使用`filter()`和`map()`会遍历数组两次，但是你可以使用`reduce()`只遍历一次并实现相同的效果。\n下面这个例子中，希望筛选出数组中的正数并将其乘`2`：</X.P>
             <X.CodeBlock
                 language="js"
                 code={`
@@ -337,10 +305,7 @@ export default function Post() {
                 `}
             />
             <X.H1>shift()和unshift()</X.H1>
-            <X.P>
-                `shift()`方法从数组中删除第一个元素，并返回该元素的值。此方法会更改数组的长度。\n
-                `unshift()`方法将指定元素添加到数组的开头，并返回新的数组长度。
-            </X.P>
+            <X.P>`shift()`方法从数组中删除第一个元素，并返回该元素的值。此方法会更改数组的长度。\n`unshift()`方法将指定元素添加到数组的开头，并返回新的数组长度。</X.P>
             <X.CodeBlock
                 language="js"
                 code={`
@@ -425,9 +390,7 @@ export default function Post() {
             <X.Uli>`start`：表示要开始改变数组的位置</X.Uli>
             <X.Uli>`deleteCount`：数组中要从`start`开始删除的元素数量</X.Uli>
             <X.Uli>`item1 ... itemN`：从`start`开始要加入到数组中的元素</X.Uli>
-            <X.P>
-                如果省略了`deleteCount`，或者其值大于或等于由`start`指定的位置到数组末尾的元素数量，那么从`start`到数组末尾的所有元素将被删除。
-            </X.P>
+            <X.P>如果省略了`deleteCount`，或者其值大于或等于由`start`指定的位置到数组末尾的元素数量，那么从`start`到数组末尾的所有元素将被删除。</X.P>
             <X.CodeBlock
                 language="js"
                 code={`
@@ -455,14 +418,9 @@ export default function Post() {
                 console.log(Array.isArray('123')); //false
                 `}
             />
-            <X.P>
-                更多示例：`@Array.isArray()[https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray]@`
-            </X.P>
+            <X.P>更多示例：`@Array.isArray()[https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray]@`</X.P>
             <X.H1>Array.from()</X.H1>
-            <X.P>
-                `Array.from()`静态方法从可迭代或类数组对象创建一个新的浅拷贝的数组实例。\n
-                转换异步的可迭代对象到数组，可以使用`@Array.fromAsync()[https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/fromAsync]@`。
-            </X.P>
+            <X.P>`Array.from()`静态方法从可迭代或类数组对象创建一个新的浅拷贝的数组实例。\n转换异步的可迭代对象到数组，可以使用`@Array.fromAsync()[https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/fromAsync]@`。</X.P>
             <X.CodeBlock
                 language="js"
                 code={`
@@ -471,15 +429,10 @@ export default function Post() {
                 `}
             />
             <X.P noMarginBottom>`Array.from()`可以通过以下方式来创建数组对象：</X.P>
-            <X.Uli>
-                可迭代对象（例如`@Map[https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Map]@`和`@Set[https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Set]@`对象）
-            </X.Uli>
+            <X.Uli>可迭代对象（例如`@Map[https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Map]@`和`@Set[https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Set]@`对象）</X.Uli>
             <X.Uli>类数组对象（带有`length`属性和索引元素的对象）</X.Uli>
             <X.H1>Array.of()</X.H1>
-            <X.P>
-                `Array.of()`静态方法通过可变数量的参数创建一个新的`Array`实例。\n
-                `Array()`构造函数会因为参数数量不同导致重载，`Array.of()`行为更加统一。
-            </X.P>
+            <X.P>`Array.of()`静态方法通过可变数量的参数创建一个新的`Array`实例。\n`Array()`构造函数会因为参数数量不同导致重载，`Array.of()`行为更加统一。</X.P>
             <X.CodeBlock
                 language="js"
                 code={`

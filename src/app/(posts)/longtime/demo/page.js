@@ -64,18 +64,11 @@ export default function Post() {
             <X.P>最基本的用于展示文本的组件。</X.P>
             <X.HighlightBlock bgcolor="gray">
                 <X.H3>示例</X.H3>
-                <X.CodeBlock
-                    language="jsx"
-                    code="<X.P>夜晚的城市灯光璀璨夺目，高楼的霓虹灯在黑夜中闪烁不停，像是星空中的繁星在闪烁。</X.P>"
-                />
+                <X.CodeBlock language="jsx" code="<X.P>夜晚的城市灯光璀璨夺目，高楼的霓虹灯在黑夜中闪烁不停，像是星空中的繁星在闪烁。</X.P>" />
                 <X.P>夜晚的城市灯光璀璨夺目，高楼的霓虹灯在黑夜中闪烁不停，像是星空中的繁星在闪烁。</X.P>
             </X.HighlightBlock>
             <X.H2>灵活设置段落的上下外边距</X.H2>
-            <X.P>
-                段落组件默认的`margin-top`为`0`，`margin-bottom`为`24px`，但可以：\n
-                通过`withMarginTop`设置`margin-top`为`24px`；\n 通过`noMarginBottom`设置`margin-bottom`为`0`。\n
-                这样使得段落组件的使用更为灵活。
-            </X.P>
+            <X.P>段落组件默认的`margin-top`为`0`，`margin-bottom`为`24px`，但可以：\n通过`withMarginTop`设置`margin-top`为`24px`；\n通过`noMarginBottom`设置`margin-bottom`为`0`。\n这样使得段落组件的使用更为灵活。</X.P>
             <X.HighlightBlock bgcolor="gray">
                 <X.H3>示例</X.H3>
                 <X.CodeBlock
@@ -100,11 +93,7 @@ export default function Post() {
                 <X.P>`\*content\*`：实现*这样的*加粗效果</X.P>
             </X.Oli>
             <X.Oli>
-                <X.P>
-                    `\$content\$`：插入一个行内公式
-                    {`$\\int_{a}^{b} f(x)dx = \\lim_{n \\to \\infty} \\sum_{i=1}^n f(x_i) \\cdot \\Delta x$`}，
-                    或者一些简单的数学符号$\mu_1$、$\mu_2$等
-                </X.P>
+                <X.P>`\$content\$`：插入一个行内公式{`$\\int_{a}^{b} f(x)dx = \\lim_{n \\to \\infty} \\sum_{i=1}^n f(x_i) \\cdot \\Delta x$`}， 或者一些简单的数学符号$\mu_1$、$\mu_2$等</X.P>
             </X.Oli>
             <X.Oli>
                 <X.P>`\@text[url]\@`：这是一个指向@百度[https://www.baidu.com]@的超链接</X.P>
@@ -113,9 +102,7 @@ export default function Post() {
                 <X.P>复合使用`\`\@text[url]\@\``：这是一个指向`@百度[https://www.baidu.com]@`的超链接</X.P>
             </X.Oli>
             <X.Oli>
-                <X.P>
-                    在段落组件中可以使用一些转义字符，打出上述代表了特殊格式的符号如`\``、`\*`等；\n也可以通过`\\n`换行。
-                </X.P>
+                <X.P>在段落组件中可以使用一些转义字符，打出上述代表了特殊格式的符号如`\``、`\*`等；\n也可以通过`\\n`换行。</X.P>
             </X.Oli>
             <X.HighlightBlock bgcolor="gray">
                 <X.H3>示例</X.H3>
@@ -151,49 +138,8 @@ export default function Post() {
                     `}
                 />
             </X.HighlightBlock>
-            <X.H2>换行空格问题</X.H2>
-            <X.P>对于一个很长的段落，如果希望在代码编辑器中换行，可能会遇到被自动补一个空格的问题，例如：</X.P>
-            <X.HighlightBlock bgcolor="gray">
-                <X.H3>坏示例</X.H3>
-                <X.CodeBlock
-                    language="jsx"
-                    code={`
-                    <X.P>
-                        这是一句很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的话，注意*我的后面*
-                        是不是有一个空格？
-                    </X.P>
-                    `}
-                />
-                <X.P>
-                    这是一句很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的话，注意*我的后面*
-                    是不是有一个空格？
-                </X.P>
-            </X.HighlightBlock>
-            <X.P>
-                为了避免这个HTML文档自动将换行转换成的空格，需要在换行时在上一行的行末添加`---`，组件会自动处理掉这个换行产生的空格。\n
-                就像这样：
-            </X.P>
-            <X.HighlightBlock bgcolor="gray">
-                <X.H3>好示例</X.H3>
-                <X.CodeBlock
-                    language="jsx"
-                    code={`
-                    <X.P>
-                        这是一句很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的话，注意*我的后面*---
-                        是不是没有空格了？
-                    </X.P>
-                    `}
-                />
-                <X.P>
-                    这是一句很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的话，注意*我的后面*---
-                    是不是没有空格了？
-                </X.P>
-            </X.HighlightBlock>
             <X.H1>无序列表</X.H1>
-            <X.P>
-                无序列表的每一项可以是纯文本、段落组件、或者嵌套其他任何内容（但通常不是很推荐这样做）。\n
-                注意每一个列表项的`first-child`的`margin-top`和`last-child`的`margin-bottom`会被置为`0`。
-            </X.P>
+            <X.P>无序列表的每一项可以是纯文本、段落组件、或者嵌套其他任何内容（但通常不是很推荐这样做）。\n注意每一个列表项的`first-child`的`margin-top`和`last-child`的`margin-bottom`会被置为`0`。</X.P>
             <X.HighlightBlock bgcolor="gray">
                 <X.H3>示例</X.H3>
                 <X.CodeBlock
@@ -232,15 +178,9 @@ export default function Post() {
                     <X.P>注意第四项的代码块的`margin-bottom`被移除了</X.P>
                 </X.Uli>
             </X.HighlightBlock>
-            <X.P>
-                与HTML的`ul``li`标签不同的是，无序列表直接在任意位置写列表项组件即可，而不需要一个父组件包裹。---
-                这也是此组件体系的设计理念之一：尽量使得行文*线性化*，减少组件嵌套。
-            </X.P>
+            <X.P>与HTML的`ul``li`标签不同的是，无序列表直接在任意位置写列表项组件即可，而不需要一个父组件包裹。这也是此组件体系的设计理念之一：尽量使得行文*线性化*，减少组件嵌套。</X.P>
             <X.H2>省去段落组件</X.H2>
-            <X.P>
-                一个经常遇到的情况是：段落组件是列表项的唯一的子元素。因此在`2024-01-27`的更新中，支持了直接在列表项中写含有段落组件特殊格式的文本。---
-                在解析时，如果子元素是`string | string[]`类型，--- 会自动为其包裹一层段落组件。
-            </X.P>
+            <X.P>一个经常遇到的情况是：段落组件是列表项的唯一的子元素。因此在`2024-01-27`的更新中，支持了直接在列表项中写含有段落组件特殊格式的文本。在解析时，如果子元素是`string | string[]`类型，会自动为其包裹一层段落组件。</X.P>
             <X.HighlightBlock bgcolor="gray">
                 <X.H3>示例</X.H3>
                 <X.CodeBlock
@@ -263,10 +203,7 @@ export default function Post() {
                 <X.P>无序列表组件的上述特性同样适用于有序列表组件，因此下一节中不再重复。</X.P>
             </X.HighlightBlock>
             <X.H1>有序列表</X.H1>
-            <X.P>
-                有序列表项会自动渲染列表序号。然而正如前面提到的，列表项可以直接写在文档的任意位置，而渲染序号只是从头至尾机械地设置一个不断自增的变量。---
-                因此当文档中出现两处以上有序列表时，需要通过`reset`重置序号的渲染。
-            </X.P>
+            <X.P>有序列表项会自动渲染列表序号。然而正如前面提到的，列表项可以直接写在文档的任意位置，而渲染序号只是从头至尾机械地设置一个不断自增的变量。因此当文档中出现两处以上有序列表时，需要通过`reset`重置序号的渲染。</X.P>
             <X.HighlightBlock bgcolor="gray">
                 <X.H3>示例</X.H3>
                 <X.CodeBlock
@@ -292,10 +229,7 @@ export default function Post() {
                 <X.Oli>第二项</X.Oli>
             </X.HighlightBlock>
             <X.H2>关于reset的更多用法</X.H2>
-            <X.P>
-                在源码中，对于设置了`reset`属性的有序列表项，实际上是将列表序号变量设置为`reset`属性的整型值。---
-                因此作为布尔类型传递的`true`值恰好将序号重置为`1`，这符合绝大多数情况下的预期。然而，也可以将`reset`设为其他整数值，甚至是负数，以满足特殊的需求。
-            </X.P>
+            <X.P>在源码中，对于设置了`reset`属性的有序列表项，实际上是将列表序号变量设置为`reset`属性的整型值。因此作为布尔类型传递的`true`值恰好将序号重置为`1`，这符合绝大多数情况下的预期。然而，也可以将`reset`设为其他整数值，甚至是负数，以满足特殊的需求。</X.P>
             <X.HighlightBlock bgcolor="gray">
                 <X.H3>示例</X.H3>
                 <X.CodeBlock
@@ -401,10 +335,7 @@ export default function Post() {
                 </X.FlexRow>
             </X.HighlightBlock>
             <X.H3>均匀平分空间</X.H3>
-            <X.P>
-                有些场景例如双栏正文、双栏列表可能希望几个宽度不确定的元素均分水平宽度。这时可以用`flex1`属性。\n
-                注意下面示例中，使用和不使用`flex1`属性的区别：
-            </X.P>
+            <X.P>有些场景例如双栏正文、双栏列表可能希望几个宽度不确定的元素均分水平宽度。这时可以用`flex1`属性。\n注意下面示例中，使用和不使用`flex1`属性的区别：</X.P>
             <X.HighlightBlock bgcolor="gray">
                 <X.H3>示例</X.H3>
                 <X.CodeBlock
@@ -434,24 +365,12 @@ export default function Post() {
                     `}
                 />
                 <X.FlexRow gap={24}>
-                    <X.P>
-                        夜晚的城市灯光璀璨夺目，高楼的霓虹灯在黑夜中闪烁不停，像是星空中的繁星在闪烁。---
-                        摩天轮缓缓转动，将人们带入一个绚丽多彩的世界，让他们忘记日常的烦忧。---
-                        购物中心里，五颜六色的商品琳琅满目，人们拿着购物袋匆匆穿梭，寻找着自己心仪的物品。时尚与潮流在这里汇聚，流行的节奏从不停歇。
-                    </X.P>
-                    <X.P>
-                        浓郁的咖啡香气弥漫开来，与人们的谈笑声交织成一幅城市特有的画面。街头艺人弹奏着吉他，歌声飘荡在空气中，与城市的脉搏合奏出一曲动人的旋律。
-                    </X.P>
+                    <X.P>夜晚的城市灯光璀璨夺目，高楼的霓虹灯在黑夜中闪烁不停，像是星空中的繁星在闪烁。摩天轮缓缓转动，将人们带入一个绚丽多彩的世界，让他们忘记日常的烦忧。购物中心里，五颜六色的商品琳琅满目，人们拿着购物袋匆匆穿梭，寻找着自己心仪的物品。时尚与潮流在这里汇聚，流行的节奏从不停歇。</X.P>
+                    <X.P>浓郁的咖啡香气弥漫开来，与人们的谈笑声交织成一幅城市特有的画面。街头艺人弹奏着吉他，歌声飘荡在空气中，与城市的脉搏合奏出一曲动人的旋律。</X.P>
                 </X.FlexRow>
                 <X.FlexRow gap={24} flex1>
-                    <X.P>
-                        夜晚的城市灯光璀璨夺目，高楼的霓虹灯在黑夜中闪烁不停，像是星空中的繁星在闪烁。---
-                        摩天轮缓缓转动，将人们带入一个绚丽多彩的世界，让他们忘记日常的烦忧。---
-                        购物中心里，五颜六色的商品琳琅满目，人们拿着购物袋匆匆穿梭，寻找着自己心仪的物品。时尚与潮流在这里汇聚，流行的节奏从不停歇。
-                    </X.P>
-                    <X.P>
-                        浓郁的咖啡香气弥漫开来，与人们的谈笑声交织成一幅城市特有的画面。街头艺人弹奏着吉他，歌声飘荡在空气中，与城市的脉搏合奏出一曲动人的旋律。
-                    </X.P>
+                    <X.P>夜晚的城市灯光璀璨夺目，高楼的霓虹灯在黑夜中闪烁不停，像是星空中的繁星在闪烁。摩天轮缓缓转动，将人们带入一个绚丽多彩的世界，让他们忘记日常的烦忧。购物中心里，五颜六色的商品琳琅满目，人们拿着购物袋匆匆穿梭，寻找着自己心仪的物品。时尚与潮流在这里汇聚，流行的节奏从不停歇。</X.P>
+                    <X.P>浓郁的咖啡香气弥漫开来，与人们的谈笑声交织成一幅城市特有的画面。街头艺人弹奏着吉他，歌声飘荡在空气中，与城市的脉搏合奏出一曲动人的旋律。</X.P>
                 </X.FlexRow>
             </X.HighlightBlock>
             <X.HighlightBlock>
@@ -589,11 +508,7 @@ export default function Post() {
                 />
             </X.HighlightBlock>
             <X.H1>高亮块</X.H1>
-            <X.P>
-                高亮块组件只提供一个有背景色的容器，因此其内部可以嵌套其他组件。\n
-                高亮块会自动移除第一个子元素的`margin-top`和最后一个子元素的`margin-bottom`。\n
-                `bgcolor`的默认值是`golden`，可选值有`red`、`gray`和`blue`。
-            </X.P>
+            <X.P>高亮块组件只提供一个有背景色的容器，因此其内部可以嵌套其他组件。\n高亮块会自动移除第一个子元素的`margin-top`和最后一个子元素的`margin-bottom`。\n`bgcolor`的默认值是`golden`，可选值有`red`、`gray`和`blue`。</X.P>
             <X.HighlightBlock bgcolor="gray">
                 <X.H3>示例</X.H3>
                 <X.CodeBlock
@@ -628,10 +543,7 @@ export default function Post() {
                     <X.Formula text="\int_{a}^{b} f(x)dx = \lim_{n \to \infty} \sum_{i=1}^n f(x_i) \cdot \Delta x" />
                 </X.HighlightBlock>
                 <X.HighlightBlock bgcolor="red">
-                    <X.P>
-                        我们怀着极大的关切提醒您，当前我们所在地区可能会面临极端天气情况的威胁。---
-                        气象部门预测，未来几天可能会出现强风、暴雨、甚至可能的洪水等极端气象事件。
-                    </X.P>
+                    <X.P>我们怀着极大的关切提醒您，当前我们所在地区可能会面临极端天气情况的威胁。气象部门预测，未来几天可能会出现强风、暴雨、甚至可能的洪水等极端气象事件。</X.P>
                 </X.HighlightBlock>
                 <X.HighlightBlock bgcolor="blue">
                     <X.P>在`2024-02-01`的更新中加入了蓝色背景。</X.P>
@@ -666,9 +578,7 @@ export default function Post() {
                     `}
                 />
             </X.HighlightBlock>
-            <X.P>
-                如需合并单元格、在单元格中使用其他组件，可以使用html原生的表格结构。单元格所有直接子元素的外边距都会被移除。
-            </X.P>
+            <X.P>如需合并单元格、在单元格中使用其他组件，可以使用html原生的表格结构。单元格所有直接子元素的外边距都会被移除。</X.P>
             <X.HighlightBlock bgcolor="gray">
                 <X.H3>示例</X.H3>
                 <X.CodeBlock
@@ -765,10 +675,7 @@ export default function Post() {
             <X.H2>单行代码</X.H2>
             <X.HighlightBlock bgcolor="gray">
                 <X.H3>示例</X.H3>
-                <X.CodeBlock
-                    language="jsx"
-                    code={`<X.CodeBlock language="python" code='with open("./tool.js","r") as f:' />`}
-                />
+                <X.CodeBlock language="jsx" code={`<X.CodeBlock language="python" code='with open("./tool.js","r") as f:' />`} />
                 <X.CodeBlock language="python" code='with open("./tool.js","r") as f:' />
             </X.HighlightBlock>
             <X.P>更多语言：</X.P>
@@ -778,9 +685,7 @@ export default function Post() {
             <X.CodeBlock language="js" code="let entity = /&#x?[\da-f]{1,8};/;" />
             <X.CodeBlock language="ts" code="type SearchFunc = (source: string, subStr: string) => boolean;" />
             <X.H2>多行代码</X.H2>
-            <X.P>
-                对于出现转义字符如`\\t`，`\\n`的语言，可以使用`String.raw`标签函数保留原始字符串形式，或者将`\\`写为`\\\\`。
-            </X.P>
+            <X.P>对于出现转义字符如`\\t`，`\\n`的语言，可以使用`String.raw`标签函数保留原始字符串形式，或者将`\\`写为`\\\\`。</X.P>
             <X.HighlightBlock bgcolor="gray">
                 <X.H3>示例</X.H3>
                 <X.CodeBlock
