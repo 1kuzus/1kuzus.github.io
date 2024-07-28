@@ -23,9 +23,6 @@
     .y-center-wrapper {
         padding: 32px 18px !important;
     }
-    /* #post-layout {
-        
-    } */
     /*header*/
     #header {
         padding: 0 18px !important;
@@ -35,17 +32,6 @@
     }
     #header-right-wrapper {
         gap: 12px !important;
-    }
-    /*homepage*/
-    #homepage-content {
-        padding: 100px 0 0 0 !important;
-    }
-    #homepage-title {
-        font-size: 30px !important;
-    }
-    #logopart-wrapper {
-        width: 100px !important;
-        height: 100px !important;
     }
     /*component*/
     .x-codeblock pre code {
