@@ -11,7 +11,7 @@ export const GlobalProvider = (props) => {
     const {children} = props;
 
     //用于侧栏显示/隐藏
-    const [showSidebar, setShowSidebar] = useState(true);
+    const [showSidebar, setShowSidebar] = useState(false);
 
     const value = {
         showSidebar,
