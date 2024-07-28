@@ -12,10 +12,7 @@ export default function Post() {
             <X.HighlightBlock>
                 <X.P>原题链接：@戳气球[https://leetcode.cn/problems/burst-balloons/description/]@</X.P>
             </X.HighlightBlock>
-            <X.P>
-                区间DP，假设`dp[l][r]`表示戳破开区间$(l,r)$内的气球获得的最大硬币数。由于边界视作数值为`1`的气球，---
-                给数组`nums`的首尾都插入`1`，最后的答案也恰好是`dp[0][n+1]`（根据定义，不包含插入的两个端点）。
-            </X.P>
+            <X.P>区间DP，假设`dp[l][r]`表示戳破开区间$(l,r)$内的气球获得的最大硬币数。由于边界视作数值为`1`的气球，给数组`nums`的首尾都插入`1`，最后的答案也恰好是`dp[0][n+1]`（根据定义，不包含插入的两个端点）。</X.P>
             <X.P>转移方程为：</X.P>
             <X.Formula text="dp(l,r)=\max_{l \lt m \lt r}dp(l,m)+dp(m,r)+nums(l) \times nums(m) \times nums(r)" />
             <X.CodeBlock

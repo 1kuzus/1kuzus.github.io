@@ -370,9 +370,7 @@ export default function Post() {
             />
             <X.H1>T4 电力网络</X.H1>
             <X.P>思路受@CSDN - Pujx的题解[https://blog.csdn.net/qq_45123552/article/details/136783152]@启发。</X.P>
-            <X.P>
-                80分TLE被卡了好久。在暴力枚举的时候要尽可能优化单次的求解过程，最后我在剩余小于等于`6`个节点的时候重新建一张邻接矩阵图，再跑枚举，勉强`800ms`通过。
-            </X.P>
+            <X.P>80分TLE被卡了好久。在暴力枚举的时候要尽可能优化单次的求解过程，最后我在剩余小于等于`6`个节点的时候重新建一张邻接矩阵图，再跑枚举，勉强`800ms`通过。</X.P>
             <X.CodeBlock
                 language="cpp"
                 code={`

@@ -10,13 +10,9 @@ export default function Post() {
             <X.TOC />
             <X.Title>{metas[path].title}</X.Title>
             <X.HighlightBlock>
-                <X.P>
-                    原题链接：@二叉搜索子树的最大键值和[https://leetcode.cn/problems/maximum-sum-bst-in-binary-tree/description/]@
-                </X.P>
+                <X.P>原题链接：@二叉搜索子树的最大键值和[https://leetcode.cn/problems/maximum-sum-bst-in-binary-tree/description/]@</X.P>
             </X.HighlightBlock>
-            <X.P>
-                一次DFS即可，维护四个信息：子树和、子树节点的最大值、子树节点的最大值、子树是否是合法的二叉搜索树。
-            </X.P>
+            <X.P>一次DFS即可，维护四个信息：子树和、子树节点的最大值、子树节点的最大值、子树是否是合法的二叉搜索树。</X.P>
             <X.CodeBlock
                 language="cpp"
                 code={`

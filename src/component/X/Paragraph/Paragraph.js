@@ -11,7 +11,6 @@ export default function P(props) {
     const {withMarginTop = false, noMarginBottom = false, children = '', ...rest} = props;
     let htmlContent = Array.isArray(children) ? children.join('') : children;
     htmlContent = htmlContent
-        .replace(/--- /g, '')
         .replace(/</g, '&#60;')
         .replace(/>/g, '&#62;')
         .replace(/\\\\/g, '&#92;')
