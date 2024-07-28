@@ -272,8 +272,7 @@ export default function Post() {
                 `}
             />
             <X.H1>T5 PS无限版</X.H1>
-            <X.P noMarginBottom>线段树题，此题需要注意两点：</X.P>
-            <X.Oli>因为涉及到查询平方和</X.Oli>
+            <X.P>线段树题，因为涉及到查询平方和，还需要额外维护乘积交叉项；题目中涉及的二维坐标变换可以在齐次坐标下使用三阶矩阵表示，由于第三行总是$[0, 0, 1]$，在下面代码中省略，只用`mat[6]`表示一个三阶矩阵。</X.P>
             <X.CodeBlock
                 language="cpp"
                 code={`
@@ -500,7 +499,7 @@ export default function Post() {
                         else if(q==6)
                         {
                             POS sum=getsum(l,r,1,n,1);
-                            cout<<sum.x/(r-l+1)<<' '<<sum.y/(r-l+1)<<'\n';
+                            cout<<sum.x/(r-l+1)<<' '<<sum.y/(r-l+1)<<'\\n';
                         }
                         else if(q==7)
                         {
@@ -508,7 +507,7 @@ export default function Post() {
                             POS sum=getsum(l,r,1,n,1);
                             POS sqs=getsqs(l,r,1,n,1);
                             double ans=sqs.x+sqs.y-2*a*sum.x-2*b*sum.y+(a*a+b*b)*(r-l+1);
-                            cout<<ans<<'\n';
+                            cout<<ans<<'\\n';
                         }
                     }
                     return 0;
