@@ -6,6 +6,11 @@
 #post-layout:has(#sidebar.show-sidebar) {
     padding-left: 360px;
 }
+@media (max-width: 1440px) {
+    #post-layout {
+        padding: 0 !important;
+    }
+}
 #main * {
     word-break: break-word;
 }

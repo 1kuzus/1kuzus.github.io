@@ -11,8 +11,6 @@
     padding: 0 24px;
     border-bottom: var(--border);
     background-color: var(--bg-main);
-    /* background-color: var(--bg-main-transparent); */
-    /* backdrop-filter: blur(5px) saturate(160%); */
     box-shadow: var(--light-theme-box-shadow);
     user-select: none;
 }
