@@ -44,7 +44,3 @@
 .category-card.show-list .category-card-ul {
     opacity: 0.9;
 }
-
-.post-title {
-    color: var(--text-main);
-}

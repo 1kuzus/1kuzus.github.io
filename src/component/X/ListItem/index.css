@@ -3,7 +3,6 @@
     display: flex;
     margin: 8px 0;
     line-height: 28px;
-    color: var(--text-color-main);
 }
 .x-uli-marker,
 .x-oli-number {
