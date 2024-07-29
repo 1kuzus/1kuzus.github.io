@@ -19,9 +19,9 @@ export default function Post() {
                 class Solution {
                 public:
                     int visr[9],visc[9],viss[9];
-                    int rc2s(int r,int c) {return r/3*3+c/3;}//行列号转宫号
-                    int nxtr(int r,int c) {return c!=8?r:r+1;}
-                    int nxtc(int r,int c) {return c!=8?c+1:0;}
+                    int rc2s(int r,int c){return r/3*3+c/3;}//行列号转宫号
+                    int nxtr(int r,int c){return c!=8?r:r+1;}
+                    int nxtc(int r,int c){return c!=8?c+1:0;}
                     void vis(int r,int c,int x)
                     {
                         visr[r]|=(1<<x);
