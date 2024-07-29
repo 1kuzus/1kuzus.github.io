@@ -777,6 +777,10 @@ export default function Post() {
                     --heading-1: 30px/32px Helvetica, sans-serif;
                 }
 
+                #blur {
+                    backdrop-filter: blur(5px) saturate(160%);
+                }
+
                 @import url(print.css);
                 @media print {
                     a[href^='http']::after {

@@ -1,22 +1,3 @@
-/*响应式*/
-/*width<1440px 隐藏文章目录*/
-@media (max-width: 1440px) {
-    #post-layout {
-        padding: 0 !important;
-    }
-    #contents {
-        display: none !important;
-    }
-}
-
-/*width>1440px*/
-@media (min-width: 1441px) {
-    #sidebar-mask {
-        opacity: 0 !important;
-        pointer-events: none !important;
-    }
-}
-
 /*width<600px 移动端*/
 @media (max-width: 600px) {
     /*layout*/
@@ -26,9 +7,6 @@
     /*header*/
     #header {
         padding: 0 18px !important;
-    }
-    #header-left-wrapper {
-        gap: 0 !important;
     }
     #header-right-wrapper {
         gap: 12px !important;

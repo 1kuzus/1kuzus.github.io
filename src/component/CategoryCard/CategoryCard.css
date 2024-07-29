@@ -1,6 +1,5 @@
 .category-card {
     padding: 12px;
-    border-radius: 4px;
     color: var(--fg-main);
     border-bottom: var(--border);
     transition: height 1000ms;

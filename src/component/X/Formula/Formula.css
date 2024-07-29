@@ -1,5 +1,10 @@
 .x-formula {
     margin-top: 8px;
     margin-bottom: 24px;
+    overflow-x: auto;
+    overflow-y: hidden;
     user-select: none;
+}
+.x-formula * {
+    white-space: nowrap;
 }

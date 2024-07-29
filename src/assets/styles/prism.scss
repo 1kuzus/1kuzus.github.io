@@ -66,8 +66,9 @@
     .token.deleted {
         color: #e61919;
     }
+    .token.rule,
     .token.atrule {
-        color: #a626a4;
+        color: #b923b6;
     }
 }
 :root.dark {
@@ -126,6 +127,7 @@
     .token.deleted {
         color: #c86464;
     }
+    .token.rule,
     .token.atrule {
         color: #c586c0;
     }

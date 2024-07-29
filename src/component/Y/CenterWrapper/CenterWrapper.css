@@ -1,6 +1,7 @@
 .y-center-wrapper {
     box-sizing: content-box;
     max-width: 1080px;
+    min-width: 300px;
     padding: 48px 60px;
     margin: 0 auto;
 }
