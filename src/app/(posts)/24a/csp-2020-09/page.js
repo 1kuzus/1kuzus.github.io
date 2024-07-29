@@ -68,7 +68,7 @@ export default function Post() {
                 int n,k,t,xl,yd,xr,yu;
                 int ans_pass,ans_in;//经过和逗留人数 
                 int cnt_in[25],max_cnt_in[25];//每个人的逗留时长 
-                int max(int x,int y) {return x>y?x:y;}
+                int max(int x,int y){return x>y?x:y;}
                 //在高危区域内 
                 bool inArea(int x,int y)
                 {
