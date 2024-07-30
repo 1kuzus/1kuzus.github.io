@@ -10,6 +10,12 @@ export default function Post() {
             <X.TOC />
             <X.Title>{metas[path].title}</X.Title>
             <X.H1>Tech</X.H1>
+            <X.H2>GNU和GNU/Linux</X.H2>
+            <X.P>GNU的名字是“GNU's Not Unix”的递归缩写，这意味着GNU的设计类似于Unix，但不是Unix。</X.P>
+            <X.H2>Debian</X.H2>
+            <X.H2>GNOME</X.H2>
+            <X.H2>gcc和MinGW</X.H2>
+
             <X.H2>循环次数</X.H2>
             <X.P>电池的设计容量被完整放电一次的过程，电量使用总量达到`100%`完成一次循环。\nMac官网：循环次数超过上限以后（大约几百次，视机型而定），最高可保持初始充电容量的`80%`。</X.P>
             <X.H2>UI/UX</X.H2>

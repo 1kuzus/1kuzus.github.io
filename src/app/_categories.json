@@ -10,18 +10,19 @@
         ]
     },
     {
-        "categoryName": "Web",
+        "categoryName": "安全",
         "posts": [
+            "/longtime/papers-sec/",
             "/23d/hust-cas-login/",
             "/24b/learn-cwes/",
             "/24b/cross-site-scripting/",
-            "/24b/cross-site-request-forgery/"
+            "/24b/cross-site-request-forgery/",
+            "/24c/papers-sec-4d7653-2fa-consistency/"
         ]
     },
     {
         "categoryName": "算法",
         "posts": [
-            "/24a/cpp-stl/",
             "/24b/sorting-algorithm/",
             "/24b/mst-and-sp/",
             "/24a/csp-2016-04/",
@@ -57,16 +58,17 @@
         ]
     },
     {
-        "categoryName": "Python",
+        "categoryName": "编程语言",
         "posts": [
+            "/23c/js-array/",
+            "/24a/cpp-stl/",
             "/24a/torch-numpy-topk/",
             "/24a/object-oriented-programming-python/"
         ]
     },
     {
-        "categoryName": "前端与JavaScript",
+        "categoryName": "前端",
         "posts": [
-            "/23c/js-array/",
             "/23d/css-auto-height-transition/"
         ]
     },
