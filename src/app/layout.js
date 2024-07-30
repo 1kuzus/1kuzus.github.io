@@ -6,6 +6,7 @@ import 'src/assets/styles/media.css';
 import 'src/assets/styles/prism.scss';
 import './globals.css';
 
+// Google Analytics
 const scriptGA = `
 window.dataLayer = window.dataLayer || [];
 function gtag() {
@@ -15,6 +16,7 @@ gtag('js', new Date());
 gtag('config', 'G-45BYSZ6WPY');
 `;
 
+// 初始化色彩主题
 /*
 const currentTheme = localStorage.getItem('theme');
 if (currentTheme !== 'light' && currentTheme !== 'dark') {
@@ -26,11 +28,10 @@ if (localStorage.getItem('theme') === 'dark') {
     document.documentElement.setAttribute('class', 'light');
 }
 */
-//初始化色彩主题
 const scriptTheme =
     "const a=z=>h.getItem(z),b=(y,z)=>h.setItem(y,z),c=(y,z)=>document.documentElement.setAttribute(y,z),d='theme',e='dark',f='light',g='class',h=localStorage;a(d)!==e&&a(d)!==f&&b(d,f);a(d)===e?c(g,e):c(g,f);";
 
-//兼容性
+// 兼容性
 const scriptFindLast = `
 if (!Array.prototype.findLast) {
     Array.prototype.findLast = function (callback) {
