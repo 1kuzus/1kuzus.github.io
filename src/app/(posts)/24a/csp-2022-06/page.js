@@ -271,6 +271,190 @@ export default function Post() {
                 */
                 `}
             />
+            <X.H1>T4 光线追踪</X.H1>
+            <X.P>因为反射面的总长度$\lt 3 \times 10^5$，可以用`map`存整数格点，注意不存端点。</X.P>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                #include <iostream>
+                #include <map>
+                #include <unordered_map>
+                #define N 100005
+                using namespace std;
+                int m,mirrors[N][4];
+                struct RPOINT{
+                    //反射面上的点 
+                    int k;
+                    double a;
+                };
+                struct RAYPOS{
+                    int x,y,d;
+                    double I;
+                    int ttl;
+                };
+                unordered_map<int,map<int,RPOINT>> px,py;
+                int abs(int x){return x>0?x:-x;}
+                void add(int x1,int y1,int x2,int y2,double a)
+                {
+                    for(int x=x1,y=y1,dx=abs(x2-x1)/(x2-x1),dy=abs(y2-y1)/(y2-y1);;x+=dx,y+=dy)
+                    {
+                        if(x==x1) continue;
+                        if(x==x2) break;
+                        px[x][y]=(RPOINT){dy/dx,a};
+                        py[y][x]=(RPOINT){dy/dx,a};
+                    }
+                    return;
+                }
+                void del(int k)
+                {
+                    int x1=mirrors[k][0];
+                    int y1=mirrors[k][1];
+                    int x2=mirrors[k][2];
+                    int y2=mirrors[k][3];
+                    for(int x=x1,y=y1,dx=abs(x2-x1)/(x2-x1),dy=abs(y2-y1)/(y2-y1);;x+=dx,y+=dy)
+                    {
+                        if(x==x1) continue;
+                        if(x==x2) break;
+                        px[x].erase(y);
+                        py[y].erase(x);
+                    }
+                    return;
+                }
+                RAYPOS query(RAYPOS p)
+                {
+                    int x=p.x,y=p.y,d=p.d,ttl=p.ttl;
+                    double I=p.I; 
+                    if(I<1) return (RAYPOS){0,0,0,0,0};
+                    if(d==0)
+                    {
+                        auto it=py[y].upper_bound(x);
+                        if(it!=py[y].end())
+                        {
+                            int nx=it->first;
+                            int dt=nx-x;
+                            if(ttl<dt) return (RAYPOS){x+ttl,y,0,I,0};
+                            else
+                            {
+                                int k=it->second.k;
+                                double a=it->second.a;
+                                if(k==1) return query((RAYPOS){nx,y,1,I*a,ttl-dt});
+                                else return query((RAYPOS){nx,y,3,I*a,ttl-dt});
+                            }
+                        }
+                        else return (RAYPOS){x+ttl,y,0,I,0};
+                    }
+                    else if(d==1)
+                    {
+                        auto it=px[x].upper_bound(y);
+                        if(it!=px[x].end())
+                        {
+                            int ny=it->first;
+                            int dt=ny-y;
+                            if(ttl<dt) return (RAYPOS){x,y+ttl,0,I,0};
+                            else
+                            {
+                                int k=it->second.k;
+                                double a=it->second.a;
+                                if(k==1) return query((RAYPOS){x,ny,0,I*a,ttl-dt});
+                                else return query((RAYPOS){x,ny,2,I*a,ttl-dt});
+                            }
+                        }
+                        else return (RAYPOS){x,y+ttl,0,I,0};
+                    }
+                    else if(d==2)
+                    {
+                        auto it=py[y].lower_bound(x);
+                        if(it!=py[y].begin())
+                        {
+                            it--; 
+                            int nx=it->first;
+                            int dt=x-nx;
+                            if(ttl<dt) return (RAYPOS){x-ttl,y,0,I,0};
+                            else
+                            {
+                                int k=it->second.k;
+                                double a=it->second.a;
+                                if(k==1) return query((RAYPOS){nx,y,3,I*a,ttl-dt});
+                                else return query((RAYPOS){nx,y,1,I*a,ttl-dt});
+                            }
+                        }
+                        else return (RAYPOS){x-ttl,y,0,I,0};
+                    }
+                    else if(d==3)
+                    {
+                        auto it=px[x].lower_bound(y);
+                        if(it!=px[x].begin())
+                        {
+                            it--;
+                            int ny=it->first;
+                            int dt=y-ny;
+                            if(ttl<dt) return (RAYPOS){x,y-ttl,0,I,0};
+                            else
+                            {
+                                int k=it->second.k;
+                                double a=it->second.a;
+                                if(k==1) return query((RAYPOS){x,ny,2,I*a,ttl-dt});
+                                else return query((RAYPOS){x,ny,0,I*a,ttl-dt});
+                            }
+                        }
+                        else return (RAYPOS){x,y-ttl,0,I,0};
+                    }
+                }
+                int main()
+                {
+                    ios::sync_with_stdio(false);
+                    cin>>m;
+                    for(int i=0;i<m;i++)
+                    {
+                        int opt;
+                        cin>>opt;
+                        if(opt==1)
+                        {
+                            int x1,y1,x2,y2;
+                            double a;
+                            cin>>x1>>y1>>x2>>y2>>a;
+                            mirrors[i][0]=x1;
+                            mirrors[i][1]=y1;
+                            mirrors[i][2]=x2;
+                            mirrors[i][3]=y2;
+                            add(x1,y1,x2,y2,a);
+                        }
+                        else if(opt==2)
+                        {
+                            int k;
+                            cin>>k;
+                            del(k-1);
+                        }
+                        else if(opt==3)
+                        {
+                            int x,y,d,t;
+                            double I;
+                            cin>>x>>y>>d>>I>>t;
+                            RAYPOS ans=query((RAYPOS){x,y,d,I,t});
+                            cout<<ans.x<<' '<<ans.y<<' '<<int(ans.I)<<endl;
+                        }
+                    }
+                    return 0;
+                }
+                /*
+                in:
+                7
+                1 0 4 2 2 0.4
+                1 2 2 0 0 0.45
+                3 -1 3 0 6 5
+                3 1 5 3 2.4 5
+                3 0 2 0 3 4
+                2 1
+                3 1 5 3 2.4 5
+
+                out:
+                0 1 1
+                0 0 0
+                4 2 3
+                0 1 1
+                */
+                `}
+            />
             <X.H1>T5 PS无限版</X.H1>
             <X.P>线段树题，因为涉及到查询平方和，还需要额外维护乘积交叉项；题目中涉及的二维坐标变换可以在齐次坐标下使用三阶矩阵表示，由于第三行总是$[0, 0, 1]$，在下面代码中省略，只用`mat[6]`表示一个三阶矩阵。</X.P>
             <X.CodeBlock

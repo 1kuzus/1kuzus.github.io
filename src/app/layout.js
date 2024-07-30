@@ -1,5 +1,5 @@
-import {GlobalProvider} from 'src/context/GlobalContext';
 import Header from 'src/component/Header/Header';
+import {GlobalProvider} from 'src/context/GlobalContext';
 import 'src/assets/styles/fonts.css';
 import 'src/assets/styles/katex.css';
 import 'src/assets/styles/media.css';

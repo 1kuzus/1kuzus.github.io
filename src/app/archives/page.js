@@ -2,6 +2,10 @@ import Y from 'src/component/Y';
 import posts from 'src/app/_archives.json';
 import './page.css';
 
+export const metadata = {
+    title: '归档 - 铃木的网络日记',
+};
+
 export default function Archives() {
     const paths = Object.keys(posts);
     const postsByYears = {};
@@ -24,9 +28,7 @@ export default function Archives() {
                         {postsByYears[year].map((path, index) => (
                             <li key={index}>
                                 <Y.Link href={path} prefetch={true}>
-                                    {posts[path].time && (
-                                        <span className="archives-post-time">{posts[path].time.slice(5)}</span>
-                                    )}
+                                    {posts[path].time && <span className="archives-post-time">{posts[path].time.slice(5)}</span>}
                                     {<span className="archives-post-title">{posts[path].title}</span>}
                                 </Y.Link>
                             </li>

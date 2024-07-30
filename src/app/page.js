@@ -33,6 +33,10 @@ function HomepageNavCard(props) {
     );
 }
 
+export const metadata = {
+    title: '铃木的网络日记',
+};
+
 export default function Homepage() {
     return (
         <div id="homepage">
