@@ -55,6 +55,4 @@ for (let path in archives) {
     };
 }
 
-metas.baseurl = 'https://1kuzus.github.io';
-
 export default metas;
