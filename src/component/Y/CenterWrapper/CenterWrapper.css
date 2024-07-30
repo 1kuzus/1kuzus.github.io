@@ -1,9 +1,9 @@
 .y-center-wrapper {
     box-sizing: content-box;
-    max-width: 1080px;
     min-width: 300px;
-    padding: 48px 60px;
+    max-width: 1080px;
     margin: 0 auto;
+    padding: 48px 60px;
 }
 @media (max-width: 600px) {
     .y-center-wrapper {

@@ -14,8 +14,8 @@
 }
 @media (max-width: 600px) {
     #current-version {
-        font-size: 24px;
         line-height: 80px;
+        font-size: 24px;
     }
     #cheer-gif {
         width: 80px;
