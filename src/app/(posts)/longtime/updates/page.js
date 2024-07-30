@@ -88,7 +88,7 @@ function UpdateLog() {
             {logs.reverse().map((log, index) => (
                 <div key={index}>
                     {log.version ? (
-                        <X.H3>Version {log.version}</X.H3>
+                        <X.H3>Ver {log.version}</X.H3>
                     ) : (
                         <X.FlexRow gap="16px">
                             <X.P style={{minWidth: '96px'}}>`{log.date}`</X.P>

@@ -1,10 +1,4 @@
 #homepage {
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 80vh;
-    background-color: var(--bg-main); */
     min-height: 500px;
 }
 #homepage-banner {
@@ -129,7 +123,7 @@
     font-size: 18px;
 }
 .homepage-nav-card-title-en {
-    top: 48px;
+    top: 54px;
     font-family: var(--font-code);
     font-size: 20px;
 }
@@ -145,4 +139,16 @@
 #homepage-subtitle {
     font-size: 18px;
     font-family: var(--font-code);
+}
+@media (max-width: 600px) {
+    .homepage-nav-card-title-zh,
+    .homepage-nav-card-title-en {
+        left: 24px;
+    }
+    .homepage-nav-card-title-zh {
+        font-size: 16px;
+    }
+    .homepage-nav-card-title-en {
+        font-size: 18px;
+    }
 }
