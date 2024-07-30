@@ -80,7 +80,7 @@
         "time": "2024-04-24"
     },
     "/24b/by-questions/": {
-        "title": "专业课复习",
+        "title": "【升学面试】专业课复习",
         "time": "2024-04-18"
     },
     "/24a/csp-2023-05/": {
@@ -218,7 +218,10 @@
         "title": "更新日志"
     },
     "/longtime/papers-dl/": {
-        "title": "论文速记"
+        "title": "论文速记：深度学习"
+    },
+    "/longtime/papers-sec/": {
+        "title": "论文速记：安全"
     },
     "/longtime/hundred-thousand/": {
         "title": "十万"
