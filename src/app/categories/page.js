@@ -11,8 +11,10 @@ export default function Categories() {
         <Y.CenterWrapper>
             <Y.H1>全部分类</Y.H1>
             <ul>
-                {categories.map((category) => (
-                    <CategoryCard category={category} />
+                {categories.map((category, index) => (
+                    <li key={index}>
+                        <CategoryCard category={category} />
+                    </li>
                 ))}
             </ul>
         </Y.CenterWrapper>
