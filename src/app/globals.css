@@ -125,7 +125,6 @@ body::-webkit-scrollbar {
     padding: 0;
     color: var(--fg-main);
 }
-
 body {
     padding-top: 64px;
     font-size: 16px;
