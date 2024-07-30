@@ -78,14 +78,13 @@
     animation: author-color 12s infinite;
 }
 #homepage-navs {
-    gap: 0;
-    columns: 2;
-    height: calc(25vh);
+    display: flex;
+    height: 25vh;
 }
 .homepage-nav-card {
     display: block;
     position: relative;
-    height: 100%;
+    width: 50%;
 }
 .homepage-nav-card:nth-child(1) {
     background-color: var(--bg-gray-400);
