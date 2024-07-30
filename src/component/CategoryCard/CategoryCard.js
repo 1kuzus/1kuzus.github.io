@@ -11,7 +11,9 @@ export default function CategoryCard(props) {
     return (
         <div className={`category-card${isSidebarCard ? ' sidebar-card' : ''}${showList ? ' show-list' : ''}`}>
             <div className="category-card-header">
-                <div className="category-name">{category.categoryName}</div>
+                <div className="category-name">
+                    {category.categoryName} ({category.posts.length})
+                </div>
                 <div className="category-rightarrow" onClick={() => setShowList((prev) => !prev)}>
                     <RightArrowIcon />
                 </div>
