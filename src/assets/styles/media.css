@@ -1,23 +1,5 @@
 /*width<600px 移动端*/
 @media (max-width: 600px) {
-    /*layout*/
-    .y-center-wrapper {
-        padding: 32px 18px !important;
-    }
-    /*header*/
-    #header {
-        padding: 0 18px !important;
-    }
-    #header-right-wrapper {
-        gap: 12px !important;
-    }
-    /*component*/
-    .x-codeblock pre code {
-        padding: 0 20px !important;
-    }
-    .x-highlightblock {
-        padding: 24px 20px !important;
-    }
     /*others*/
     #current-version {
         font-size: 24px !important;

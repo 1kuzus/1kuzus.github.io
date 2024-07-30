@@ -5,3 +5,8 @@
     padding: 48px 60px;
     margin: 0 auto;
 }
+@media (max-width: 600px) {
+    .y-center-wrapper {
+        padding: 32px 18px;
+    }
+}

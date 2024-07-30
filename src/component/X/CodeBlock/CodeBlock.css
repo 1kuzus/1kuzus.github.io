@@ -25,6 +25,12 @@
     width: fit-content;
     padding: 0 32px;
 }
+@media (max-width: 600px) {
+    .x-codeblock pre code {
+        padding: 0 20px;
+    }
+}
+
 /*todo: format&简化*/
 /* .x-codeblock div {
     font-size: 95%;

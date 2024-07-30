@@ -3,6 +3,11 @@
     padding: 24px 32px;
     border-radius: 12px;
 }
+@media (max-width: 600px) {
+    .x-highlightblock {
+        padding: 24px 20px;
+    }
+}
 .x-highlightblock > :first-child {
     margin-top: 0;
 }
