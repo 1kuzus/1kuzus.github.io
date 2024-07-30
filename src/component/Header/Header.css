@@ -20,14 +20,6 @@
     align-items: center;
     gap: 24px;
 }
-@media (max-width: 600px) {
-    #header {
-        padding: 0 18px;
-    }
-    #header-right-wrapper {
-        gap: 12px;
-    }
-}
 #header-logo-bg {
     width: 36px;
     height: 36px;
@@ -49,14 +41,14 @@
     transition: opacity 200ms;
 }
 #header-show-sidebar-button div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
     height: 100%;
     border: 2px solid #fcfcfc;
     border-left: 6px solid #fcfcfc;
     border-radius: 4px;
     transition: border-left 200ms;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
 }
 #header-show-sidebar-button div.show-sidebar {
     border-left: 12px solid #fcfcfc;
@@ -80,4 +72,12 @@ body:not(:has(#post-layout)) #header-show-sidebar-button {
 }
 :root.dark #header-dark-theme-icon {
     display: block;
+}
+@media (max-width: 600px) {
+    #header {
+        padding: 0 18px;
+    }
+    #header-right-wrapper {
+        gap: 12px;
+    }
 }

@@ -22,10 +22,16 @@ const propertyOrderList = [
     //position系列
     'position',
     'top',
+    'right',
     'bottom',
     'left',
-    'right',
     'z-index',
+
+    //column系列
+    'columns',
+    'column-count',
+    'column-gap',
+    'column-fill',
 
     //宽高、内外边距系列
     'width',
@@ -63,6 +69,7 @@ const propertyOrderList = [
     'overflow-x',
     'overflow-y',
 
+    //color
     'color',
 
     //border系列
@@ -103,6 +110,7 @@ const propertyOrderList = [
     'user-select',
     'pointer-events',
     'transition',
+    'animation',
 ];
 
 const blacklist = ['src\\app\\globals.css', 'src\\assets\\styles\\katex.css', 'src\\assets\\styles\\fonts.css'];
@@ -150,7 +158,9 @@ cssFiles.forEach((cssFile) => {
         propertyNames.forEach((propertyName) => {
             const idx = propertyOrderList.indexOf(propertyName);
             if (idx !== -1) propertyIndices.push(idx);
-            else console.log(`在${cssFile}中发现未定义顺序的属性${propertyName}`);
+            else if (propertyName.slice(0, 2) !== '--')
+                // 排除css变量
+                console.log(`在${cssFile}中发现未定义顺序的属性${propertyName}`);
         });
         if (!propertyIndices.every((i, idx) => !idx || i >= propertyIndices[idx - 1])) {
             console.log(`\n在${cssFile}中发现属性顺序异常：`);

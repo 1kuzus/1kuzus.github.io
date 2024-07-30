@@ -2,13 +2,13 @@
     position: relative;
     margin: 24px 0;
     padding: 24px 0;
+    line-height: 24px;
+    font-size: 95%;
+    font-family: var(--font-code);
     overflow-x: auto;
     border-radius: 12px;
     background-color: var(--bg-main);
     box-shadow: var(--light-theme-box-shadow);
-    line-height: 24px;
-    font-size: 95%;
-    font-family: var(--font-code);
 }
 /* .x-codeblock .x-codeblock-header {
     position: absolute;
@@ -25,14 +25,9 @@
     width: fit-content;
     padding: 0 32px;
 }
-@media (max-width: 600px) {
-    .x-codeblock pre code {
-        padding: 0 18px;
-    }
-}
 
 /*todo: format&简化*/
-/* .x-codeblock div {
+/*.x-codeblock div {
     font-size: 95%;
     line-height: 24px;
     font-family: var(--font-code);
@@ -40,3 +35,9 @@
     left: 0;
     top: 24px;
 } */
+
+@media (max-width: 600px) {
+    .x-codeblock pre code {
+        padding: 0 18px;
+    }
+}

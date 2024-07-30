@@ -13,8 +13,8 @@
     align-items: center;
 }
 .category-name {
-    font-weight: bold;
     padding: 0.6em 1em;
+    font-weight: bold;
     color: var(--brand-200);
 }
 .category-rightarrow {
