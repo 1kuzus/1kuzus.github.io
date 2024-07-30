@@ -22,7 +22,7 @@
     display: none;
 }
 #sidebar:hover::-webkit-scrollbar {
-    display: block;
+    display: block; /*todo:safari无效*/
 }
 #sidebar.show-sidebar {
     transform: translateX(0);
