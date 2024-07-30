@@ -3,12 +3,14 @@ const path = require('path');
 const {exit} = require('process');
 
 const param = process.argv[2] || 'temp';
+const isLongTime = process.argv[3] === 'longtime';
+
 const date = new Date();
 const ystr = (date.getFullYear() % 100).toString();
 const m = date.getMonth();
 const mstr = String.fromCharCode(97 + m / 3);
 
-const postPath = `/${ystr + mstr}/${param}/`;
+const postPath = `/${isLongTime ? 'longtime' : ystr + mstr}/${param}/`;
 const dir = path.join('src', 'app', '(posts)', postPath);
 const filePath = path.join(dir, 'page.js');
 
@@ -22,13 +24,21 @@ const pad0 = (n) => (n < 10 ? '0' : '') + n;
 fs.writeFileSync(
     'src/app/_archives.json',
     JSON.stringify(
-        {
-            [postPath]: {
-                title: `Untitled__${param.replace('-', '_')}`,
-                time: `${date.getFullYear()}-${pad0(m + 1)}-${pad0(date.getDate())}`,
-            },
-            ...archives,
-        },
+        isLongTime
+            ? {
+                  ...archives,
+                  [postPath]: {
+                      title: `Untitled__${param.replace('-', '_')}`,
+                  },
+              }
+            : {
+                  [postPath]: {
+                      title: `Untitled__${param.replace('-', '_')}`,
+                      time: `${date.getFullYear()}-${pad0(m + 1)}-${pad0(date.getDate())}`,
+                  },
+                  ...archives,
+              },
+
         null,
         4
     )
