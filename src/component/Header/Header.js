@@ -1,8 +1,7 @@
 'use client';
 import NextLink from 'next/link';
-import {usePathname} from 'next/navigation';
 import {useGlobalContext} from 'src/context/GlobalContext';
-import {LogoIcon, LightThemeIcon, DarkThemeIcon, GithubIcon, RightArrowIcon} from 'src/assets/svgs';
+import {LogoIcon, LightThemeIcon, DarkThemeIcon, GithubIcon} from 'src/assets/svgs';
 import './Header.css';
 
 function LogoButton() {
