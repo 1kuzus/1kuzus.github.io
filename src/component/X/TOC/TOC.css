@@ -1,9 +1,10 @@
 #contents {
+    --contents-width: 300px;
     position: fixed;
     top: 64px;
     right: 0;
     z-index: 100;
-    width: 300px;
+    width: var(--contents-width);
     max-height: calc(100vh - 64px - 48px - 48px);
     margin: 48px 60px 0 0;
     padding: 24px 0;
@@ -30,6 +31,9 @@
     color: var(--brand-200);
     cursor: pointer;
     user-select: none;
+}
+#contents ul {
+    width: calc(var(--contents-width) - 4px);
 }
 #contents .titletype-x-h1,
 #contents .titletype-x-h2 {
