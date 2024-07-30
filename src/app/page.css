@@ -1,5 +1,5 @@
 #homepage {
-    min-height: 500px;
+    min-height: 360px;
 }
 #homepage-banner {
     display: flex;
@@ -8,7 +8,7 @@
     align-items: center;
     gap: 16px;
     height: calc(75vh - 64px);
-    min-height: calc(500px - 64px);
+    min-height: calc(360px - 64px);
 }
 #logopart-wrapper {
     position: relative;
