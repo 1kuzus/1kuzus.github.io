@@ -20,6 +20,14 @@
     align-items: center;
     gap: 24px;
 }
+@media (max-width: 600px) {
+    #header {
+        padding: 0 18px;
+    }
+    #header-right-wrapper {
+        gap: 12px;
+    }
+}
 #header-logo-bg {
     width: 36px;
     height: 36px;
