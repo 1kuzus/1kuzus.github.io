@@ -82,6 +82,7 @@ function UpdateLog() {
         {date: '2024-07-24', description: '重构布局逻辑\\n`/categories`页与`/archives`页'},
         {date: '2024-07-27', description: '重构主页\\n全局`css`变量从组件命名改为颜色命名'},
         {version: '3.1'},
+        {date: '2024-07-30', description: '规范化'},
     ];
     return (
         <>
