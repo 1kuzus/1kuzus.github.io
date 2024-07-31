@@ -17,7 +17,8 @@
             "/24b/learn-cwes/",
             "/24b/cross-site-scripting/",
             "/24b/cross-site-request-forgery/",
-            "/24c/papers-sec-4d7653-2fa-consistency/"
+            "/24c/papers-sec-4d7653-2fa-consistency/",
+            "/24c/pwn-lab-202407/"
         ]
     },
     {
@@ -92,7 +93,8 @@
     {
         "categoryName": "杂记",
         "posts": [
-            "/longtime/hundred-thousand/"
+            "/longtime/hundred-thousand/",
+            "/longtime/linux-commands/"
         ]
     },
     {
