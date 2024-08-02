@@ -11,7 +11,7 @@ export default function Post() {
             <X.Title>{metas[path].title}</X.Title>
             <X.H1>说明</X.H1>
             <X.P>复现仓库：@[https://github.com/lyclyc52/NeRF_RPN]@</X.P>
-            <X.P>这项研究在NeRF中引入RPN，用于3D物体检测和相关任务。作者提供了改写的Instant-NGP以供可视化3D提议框。我自己在尝试复现的时候绕了一些弯子，因此借这篇博客复盘一下当时的过程。仓库提供的脚本多为适用于linux系统的`.sh`文件，而我自己的设备是windows系统，因此示例中会给出适用于windows系统的相应指令。</X.P>
+            <X.P>这项研究在NeRF中引入RPN，用于3D物体检测和相关任务。作者提供了改写的Instant-NGP以供可视化3D提议框。我自己在尝试复现的时候绕了一些弯子，因此借这篇博客复盘一下当时的过程。仓库提供的脚本多为适用于Linux系统的`.sh`文件，而我自己的设备是Windows系统，因此示例中会给出适用于Windows系统的相应指令。</X.P>
             <X.H1>环境相关</X.H1>
             <X.H2>克隆仓库</X.H2>
             <X.CodeBlock language="bash" code="git clone https://github.com/lyclyc52/NeRF_RPN.git NeRFrpn" />
@@ -103,7 +103,14 @@ export default function Post() {
             <X.HighlightBlock>
                 <X.H3>遇到问题</X.H3>
                 <X.H3>CUDA device 不匹配</X.H3>
-                <X.P>报错：\nRuntimeError: Attempting to deserialize object on CUDA device 4 but torch.cuda.device_count() is 1. Please use torch.load with map_location to map your storages to an existing device.</X.P>
+                <X.P>报错：</X.P>
+                <X.CodeBlock
+                    language="text"
+                    code={`
+                    RuntimeError: Attempting to deserialize object on CUDA device 4 but torch.cuda.device_count() is 1.
+                    Please use torch.load with map_location to map your storages to an existing device.
+                    `}
+                />
                 <X.P>解决：在`run_rpn.py`找到下面这行代码：</X.P>
                 <X.CodeBlock language="python" code="checkpoint = torch.load(args.checkpoint)" />
                 <X.P>我的设备上只有一个GPU，因此修改为：</X.P>
