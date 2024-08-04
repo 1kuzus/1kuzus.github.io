@@ -26,7 +26,7 @@ export default function Post() {
             <X.H2>B端、C端</X.H2>
             <X.P>B端`(Business)`面向企业，注重产品的效率和业务逻辑，例如企业管理软件、云服务等；C端`(Consumer)`面向个人，产品主要解决一个具体的需求痛点（而B端产品通常需要解决一个需求面），更注重用户体验。</X.P>
             <X.H2>SP、SSP</X.H2>
-            <X.P>评到special offer、super special offer会比普通岗位有薪资加成。</X.P>
+            <X.P>评到SP`(special offer)`、SSP`(super special offer)`会比普通岗位有薪资加成。</X.P>
             <X.H1>Ency</X.H1>
             <X.H2>沉没成本、机会成本、边际成本</X.H2>
             <X.Uli>沉没成本：已经投入的资源，无论进一步如何决策，都不可挽回的成本。沉没成本不应该作为决策的参考。例如买票后发现演出很无聊，决定是否离开时，没必要再考虑已经花费的票价。</X.Uli>
