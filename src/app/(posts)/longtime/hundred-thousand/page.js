@@ -10,12 +10,19 @@ export default function Post() {
             <X.TOC />
             <X.Title>{metas[path].title}</X.Title>
             <X.H1>Tech</X.H1>
-            <X.H2>GNU和GNU/Linux</X.H2>
-            <X.P>GNU的名字是“GNU's Not Unix”的递归缩写，这意味着GNU的设计类似于Unix，但不是Unix。</X.P>
-            <X.H2>Debian</X.H2>
-            <X.H2>GNOME</X.H2>
-            <X.H2>gcc和MinGW</X.H2>
-
+            <X.H2>Unix、GNU和GNU/Linux</X.H2>
+            <X.P>1965年美国开始研发Multics系统，目的开发一个多用户、多任务、多进程的操作系统，来连接1000部终端机，支持300的用户同时上线。但因为研发进度极为缓慢，最后在1969年被放弃。1970年左右贝尔实验室的Ken Thompson和Dennis Ritchie为了运行Space Travel游戏，开始研发一个简化版的Multics系统，即Unics系统（Uni与Multi对应），后来改名为Unix。</X.P>
+            <X.P>最初Unix系统运行在PDP-7机器上，由汇编语言编写（为此，后来Thompson和Ritchie相继开发了B语言和C语言）。1973年，Unix系统被用C语言重写。</X.P>
+            <X.P>1979年加州大学伯克利分校的研究生Bill Joy为Unix添加了很多新功能，形成了BSD`(Berkeley Software Distribution)`系统。但后续因为AT&T公司对Unix的商业化，BSD系统陷入了版权纠纷，最终分裂成了FreeBSD、NetBSD、OpenBSD等，也因此错过了发展的黄金时期。</X.P>
+            <X.P>1983年，Richard Stallman发起了GNU`(GNU is Not Unix)`项目，目标是开发一个完整、开源的操作系统代替Unix。几年后GNU项目的大多组件如编译器、文本编辑器、shell等都已经完成，但唯独缺少内核。1991年，Linus Torvalds开发了Linux内核并于1992年发布，将其与GNU项目的组件结合，形成了一个完整的操作系统。Richard Stallman主张Linux系统因为使用了许多GNU组件，应该正式更名为GNU/Linux。</X.P>
+            <X.HighlightBlock>
+                <X.P>狭义上的Linux实际指的是Linux内核，而人们常常提及的“Linux系统”实际上大多是GNU/Linux系统，即Linux内核与GNU项目的组件结合而成的操作系统。</X.P>
+                <X.P>本段内容有参考视频@【技术杂谈】Unix 到 GNU/Linux的操作系统历史[https://www.bilibili.com/video/BV1Mv4y127wA/?spm_id_from=333.337.search-card.all.click&vd_source=49eaababd4d4f07b29fb6337d2397ed4]@。</X.P>
+            </X.HighlightBlock>
+            <X.H2>GCC和MinGW</X.H2>
+            <X.P>GNU编译器套件`(GNU Compiler Collection, GCC)`是GNU项目开发的编译器。MinGW`(Minimalist GNU for Windows)`是GCC在Windows平台上的移植版本。</X.P>
+            <X.H2>Intel、AMD、x86和ARM</X.H2>
+            <X.P>x86和ARM是两种不同的指令集架构。x86使用复杂指令集`(CISC)`，ARM使用精简指令集`(RISC)`。（单论功耗，ARM的功耗会更低）\nIntel和AMD是两家不同的芯片制造商。Intel的芯片使用x86架构，AMD的芯片两种架构都有生产。</X.P>
             <X.H2>循环次数</X.H2>
             <X.P>电池的设计容量被完整放电一次的过程，电量使用总量达到`100%`完成一次循环。\nMac官网：循环次数超过上限以后（大约几百次，视机型而定），最高可保持初始充电容量的`80%`。</X.P>
             <X.H2>UI/UX</X.H2>
