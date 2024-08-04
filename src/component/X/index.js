@@ -27,7 +27,6 @@ const X = {
     TOC,
     Br,
     Divider,
-    // r: String.raw, [todo]
 };
 
 export default X;
