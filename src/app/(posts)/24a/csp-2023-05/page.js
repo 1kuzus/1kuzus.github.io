@@ -613,6 +613,114 @@ export default function Post() {
                 */
                 `}
             />
+            <X.H1>T5 闪耀巡航</X.H1>
+            <X.CodeBlock
+                language="cpp"
+                code={`
+                #include <iostream>
+                #include <cstring>
+                #define INF 999999999
+                using namespace std;
+                int n,collect[100005];//collect[i]表示第i条航线的集章收集状态 
+                int dp[26][26][1024];//dp[u][v][s]表示从u以s=0出发，走到v，收集状态<至少>为s，需要的最短航线总长 
+                string t,lines[100005];
+                void getmin(int &x,int other){other<x&&(x=other);}
+                int main()
+                {
+                    ios::sync_with_stdio(false);
+                    memset(dp,0x3f,sizeof(dp));
+                    for(int i=0;i<26;i++) dp[i][i][0]=0;
+                    cin>>n>>t;
+                    //初始化 
+                    for(int i=0;i<n;i++)
+                    {
+                        string l;
+                        cin>>l;
+                        lines[i]=l;
+                        for(auto ch:l)
+                        {
+                            int pos=t.find(ch);
+                            if(pos!=-1) collect[i]|=(1<<pos);
+                        }
+                        int u=l[0]-'a',v=l.back()-'a';
+                        for(int e=collect[i];;e=(e-1)&collect[i])//e枚举表第i条航线全收集状态collect[i]的子集 
+                        {
+                            getmin(dp[u][v][e],l.size()-1);
+                            for(int w=0;w<26;w++)
+                            {
+                                getmin(dp[u][w][e],dp[u][v][e]+dp[v][w][0]);
+                            }
+                            if(e==0) break;
+                        }
+                    }
+                    //动态规划，类似Floyd的思想 
+                    for(int s=0;s<(1<<t.size());s++)
+                    {
+                        for(int k=0;k<26;k++)
+                        {
+                            for(int u=0;u<26;u++)
+                            {
+                                for(int v=0;v<26;v++)
+                                {
+                                    for(int e=s;;e=(e-1)&s)
+                                    {
+                                        getmin(dp[u][v][s],dp[u][k][e]+dp[k][v][s-e]);
+                                        if(e==0) break;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    for(int i=0;i<n;i++)
+                    {
+                        string l=lines[i];
+                        int ans=l.size()-1;//必须先走完第i条航线 
+                        int u=l[0]-'a',v=l.back()-'a';
+                        int s=(1<<t.size())-1-collect[i];//至少满足全集除去第i条航线的收集状态 
+                        ans+=dp[v][u][s];
+                        cout<<(ans<INF?ans:-1)<<endl;
+                    }
+                    return 0;
+                }
+                /*
+                in:
+                6 au
+                aqua
+                glass
+                hug
+                shiny
+                sparkling
+                youth
+
+                out:
+                3
+                14
+                14
+                14
+                26
+                14
+
+                in:
+                7 i
+                nonstop
+                perfect
+                rocket
+                thrilling
+                train
+                trapper
+                tripper
+
+                out:
+                16
+                16
+                11
+                -1
+                16
+                22
+                11 
+                */
+                `}
+            />
         </>
     );
 }
