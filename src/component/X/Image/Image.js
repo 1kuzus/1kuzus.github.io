@@ -13,6 +13,7 @@ export default function Image(props) {
         >
             <NextImage
                 src={require('src/assets/images' + pathname + src)}
+                // src={"/images" + pathname + src}
                 alt="img"
                 style={{width: width, height: 'auto'}}
                 {...rest}
