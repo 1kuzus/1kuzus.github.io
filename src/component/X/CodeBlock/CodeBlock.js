@@ -13,6 +13,7 @@ import 'prismjs/components/prism-markdown';
 import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-typescript';
 import 'prismjs/components/prism-markup-templating';
+import 'src/assets/prism/prism-asm8086';
 import './CodeBlock.css';
 
 export default function CodeBlock(props) {
