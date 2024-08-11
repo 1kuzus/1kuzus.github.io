@@ -9,7 +9,7 @@ export default function Post() {
         <>
             <X.TOC />
             <X.Title>{metas[path].title}</X.Title>
-            <X.H1>Tech</X.H1>
+            <X.H1>科技</X.H1>
             <X.H2>Unix、GNU和GNU/Linux</X.H2>
             <X.P>1965年美国开始研发Multics系统，目的开发一个多用户、多任务、多进程的操作系统，来连接1000部终端机，支持300的用户同时上线。但因为研发进度极为缓慢，最后在1969年被放弃。1970年左右贝尔实验室的Ken Thompson和Dennis Ritchie为了运行Space Travel游戏，开始研发一个简化版的Multics系统，即Unics系统（Uni与Multi对应），后来改名为Unix。</X.P>
             <X.P>最初Unix系统运行在PDP-7机器上，由汇编语言编写（为此，后来Thompson和Ritchie相继开发了B语言和C语言）。1973年，Unix系统被用C语言重写。</X.P>
@@ -29,12 +29,12 @@ export default function Post() {
             <X.Uli>UI：用户界面`(User Interface)`，用户与软件交互的界面，注重产品的视觉呈现。</X.Uli>
             <X.Uli>UX：用户体验`(User Experience)`，用户使用软件时的感受，注重产品的内在逻辑。</X.Uli>
             <X.Image src="uiux.jpg" width="600px" />
-            <X.H1>Soci</X.H1>
+            <X.H1>社会</X.H1>
             <X.H2>B端、C端</X.H2>
             <X.P>B端`(Business)`面向企业，注重产品的效率和业务逻辑，例如企业管理软件、云服务等；C端`(Consumer)`面向个人，产品主要解决一个具体的需求痛点（而B端产品通常需要解决一个需求面），更注重用户体验。</X.P>
             <X.H2>SP、SSP</X.H2>
             <X.P>评到SP`(special offer)`、SSP`(super special offer)`会比普通岗位有薪资加成。</X.P>
-            <X.H1>Ency</X.H1>
+            <X.H1>其他</X.H1>
             <X.H2>沉没成本、机会成本、边际成本</X.H2>
             <X.Uli>沉没成本：已经投入的资源，无论进一步如何决策，都不可挽回的成本。沉没成本不应该作为决策的参考。例如买票后发现演出很无聊，决定是否离开时，没必要再考虑已经花费的票价。</X.Uli>
             <X.Uli>机会成本：由于选择某种机会，而放弃其他机会可能带来的最高价值的成本。</X.Uli>

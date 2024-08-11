@@ -18,6 +18,8 @@ export default function Post() {
             <X.Uli>`u`：显示详细信息</X.Uli>
             <X.Uli>`x`：显示没有控制终端的进程</X.Uli>
             <X.H1>Mac OS</X.H1>
+            <X.H2>在当前路径打开访达</X.H2>
+            <X.CodeBlock language="bash" code="open ." />
             <X.H2>允许从任意来源安装</X.H2>
             <X.CodeBlock language="bash" code="sudo spctl --master-disable" />
             <X.H2>查看安装的pkg包</X.H2>
