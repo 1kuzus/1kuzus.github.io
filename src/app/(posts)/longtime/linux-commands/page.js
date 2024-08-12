@@ -26,6 +26,9 @@ export default function Post() {
             <X.CodeBlock language="bash" code="pkgutil --pkgs" />
             <X.P>查看包的详细信息：</X.P>
             <X.CodeBlock language="bash" code="pkgutil --info <com.xxx.pkg-name>" />
+            <X.H2>查看软件安装列表</X.H2>
+            <X.P>`系统信息`-`软件`-`安装`列表可能存在重复项（例如多次安装），编辑/查看方法为（这里以查看为例）：</X.P>
+            <X.CodeBlock language="bash" code="cat /Library/Receipts/InstallHistory.plist" />
         </>
     );
 }
