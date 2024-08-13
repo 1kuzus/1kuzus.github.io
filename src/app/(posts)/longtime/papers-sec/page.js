@@ -4,15 +4,16 @@ import metas from 'src/app/_metas';
 const path = '/longtime/papers-sec/';
 export const {metadata} = metas[path];
 
-// 2FA Scheme Failures
-// [Security’ 23] Security and Privacy Failures in Popular 2FA Apps
+// [Security’ 23] Security and Privacy Failures in Popular 2FA Apps https://www.usenix.org/system/files/sec23summer_198-gilsenan-prepub.pdf
+// Maginot Line: Assessing a New Cross-app Threat to PII-as-Factor Authentication in Chinese Mobile Apps
+// zxcvbn Low-Budget Password Strength Estimation https://www.usenix.org/system/files/conference/usenixsecurity16/sec16_paper_wheeler.pdf
 
 export default function Post() {
     return (
         <>
             <X.TOC />
             <X.Title>{metas[path].title}</X.Title>
-            <X.H1>未分类</X.H1>
+            <X.H1>2FA</X.H1>
             <X.H2 href="https://www.usenix.org/system/files/conference/usenixsecurity15/sec15-paper-karapanos.pdf">Sound-Proof: Usable Two-Factor Authentication Based on Ambient Sound (Security 2015)</X.H2>
             <X.HighlightBlock bgcolor="gray">
                 <X.P>论文提出Sound-Proof，一种新的2FA机制，通过比较两个设备的麦克风收集的环境噪声判断两个设备的接近度，以免除用户在传统2FA中不得不与手机交互，带来更大的便利。</X.P>
@@ -40,6 +41,12 @@ export default function Post() {
                 <X.P noMarginBottom>一些用户手机交互更少的2FA机制：</X.P>
                 <X.Uli>Sound-Proof</X.Uli>
                 <X.Uli>One-Button Authentication：一键认证，用户在PC登录时手机端会有提示，用户选择允许/拒绝即可；如果攻击者在短时间内同步登录，用户如果没有正确分辨出请求的发起方，可能存在安全问题。</X.Uli>
+            </X.HighlightBlock>
+            <X.H1>其他</X.H1>
+            <X.H2 href="https://www.usenix.org/system/files/sec22-sanusi-bohuk.pdf">Gossamer: Securely Measuring Password-based Logins (Security 2022)</X.H2>
+            <X.HighlightBlock bgcolor="gray">
+                <X.P>用户提交的登录信息（如密码）的特征对于制定更好的安全策略、提升系统的可用性以及检测攻击至关重要。然而，由于密码的高度敏感性，直接监测存在很大的安全风险，因此需要开发一种既能提供有用统计信息又能确保密码安全的测量基础设施。</X.P>
+                <X.P>论文设计了一个名为Gossamer的测量系统，可以安全地记录登录请求，包括提交的密码的统计数据。</X.P>
             </X.HighlightBlock>
         </>
     );
