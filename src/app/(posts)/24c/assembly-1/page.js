@@ -14,6 +14,7 @@ export default function Post() {
             <X.H1>环境配置</X.H1>
             <X.Uli>DOSBox：@[https://www.dosbox.com/]@</X.Uli>
             <X.Uli>MASM（民间版本）：@[https://github.com/froginwell/assembly/tree/master/software]@</X.Uli>
+            <X.Uli>MASM（@B站教学[https://www.bilibili.com/video/BV1Wu411B72F]@版本）：@8086汇编环境[/files/8086_asm_env.zip]@</X.Uli>
             <X.P withMarginTop>`dosbox.conf`文件拉到最下，`[autoexec]`部分添加：</X.P>
             <X.CodeBlock
                 language="text"
@@ -121,14 +122,16 @@ export default function Post() {
             <X.Uli>`t [=addr] [cnt]`：执行`cnt`步`addr`处的指令</X.Uli>
             <X.Image src="fig1.jpg" width="100%" />
             <X.H2>A+B</X.H2>
-            <X.P>使用`debug`编写、运行一个程序，计算`0789H + 0ABCH`的值。</X.P>
-            <X.Divider />
+            <X.HighlightBlock bgcolor="blue">
+                <X.P>使用`debug`编写、运行一个程序，计算`0789H + 0ABCH`的值。</X.P>
+            </X.HighlightBlock>
             <X.Image src="fig2.jpg" width="100%" />
             <X.P>运行后`AX`的值为`1245H`。</X.P>
             <X.H2>jmp指令</X.H2>
-            <X.P>编程实现下图所示的程序，并分析从`2000:0`开始的执行流程。</X.P>
-            <X.Image src="fig3.jpg" width="600px" />
-            <X.Divider />
+            <X.HighlightBlock bgcolor="blue">
+                <X.P>编程实现下图所示的程序，并分析从`2000:0`开始的执行流程。</X.P>
+                <X.Image src="fig3.jpg" width="600px" />
+            </X.HighlightBlock>
             <X.Oli>`mov ax,6622`</X.Oli>
             <X.Oli>`jmp 1000:3`（注意此时会把`CS`的值设为`1000H`）</X.Oli>
             <X.Oli>`mov ax,0000`</X.Oli>
@@ -137,55 +140,57 @@ export default function Post() {
             <X.Oli>`mov ax,0123`</X.Oli>
             <X.Oli>`mov ax,0000`（回到第三步，循环了）</X.Oli>
             <X.H2>从内存单元读取数据</X.H2>
-            <X.P>使用`debug`将内存单元赋值为：</X.P>
-            <X.CodeBlock
-                language="text"
-                code={`
-                10000H: 23H
-                10001H: 11H
-                10002H: 22H
-                10003H: 66H
-                `}
-            />
-            <X.P>然后运行以下指令，观察寄存器值的结果。</X.P>
-            <X.CodeBlock
-                language="asm8086"
-                code={`
-                mov ax,1000
-                mov ds,ax
-                mov ax,[0]
-                mov bx,[2]
-                mov cx,[1]
-                add bx,[1]
-                add cx,[2]
-                `}
-            />
-            <X.Divider />
+            <X.HighlightBlock bgcolor="blue">
+                <X.P>使用`debug`将内存单元赋值为：</X.P>
+                <X.CodeBlock
+                    language="text"
+                    code={`
+                    10000H: 23H
+                    10001H: 11H
+                    10002H: 22H
+                    10003H: 66H
+                    `}
+                />
+                <X.P>然后运行以下指令，观察寄存器值的结果。</X.P>
+                <X.CodeBlock
+                    language="asm8086"
+                    code={`
+                    mov ax,1000
+                    mov ds,ax
+                    mov ax,[0]
+                    mov bx,[2]
+                    mov cx,[1]
+                    add bx,[1]
+                    add cx,[2]
+                    `}
+                />
+            </X.HighlightBlock>
             <X.P>写入内存数据和代码：</X.P>
             <X.Image src="fig4.jpg" width="100%" />
             <X.P>执行`-t 7`后，使用`-r`查看寄存器值，`AX`为`1123H`，`BX`为`8833H`，`CX`为`8833H`。</X.P>
             <X.Image src="fig5.jpg" width="100%" />
             <X.P>注意操作对象是字型数据，一次操作`16`位数据，例如`mov cx,[1]`是将`2211H`送入寄存器`CX`。</X.P>
             <X.H2>栈操作</X.H2>
-            <X.P>使用`debug`编写、运行如下程序。</X.P>
-            <X.CodeBlock
-                language="asm8086"
-                code={`
-                mov ax,1000
-                mov ss,ax
-                mov sp,0010
+            <X.HighlightBlock bgcolor="blue">
+                <X.P>使用`debug`编写、运行如下程序，分析最终寄存器`AX`、`BX`的值。</X.P>
+                <X.CodeBlock
+                    language="asm8086"
+                    code={`
+                    mov ax,1000
+                    mov ss,ax
+                    mov sp,0010
 
-                mov ax,001a
-                mov bx,001b
+                    mov ax,001a
+                    mov bx,001b
 
-                push ax
-                push bx
+                    push ax
+                    push bx
 
-                pop ax
-                pop bx
-                `}
-            />
-            <X.Divider />
+                    pop ax
+                    pop bx
+                    `}
+                />
+            </X.HighlightBlock>
             <X.P>执行完两次`push`后，内存数据应为：</X.P>
             <X.CodeBlock
                 language="text"
