@@ -91,11 +91,11 @@ export default function Post() {
             <X.CodeBlock
                 language="asm8086"
                 code={`
-                mov ax,[7]     ; (ax)=7
-                mov ax,ds:[7]  ; (ax)=((ds)*16+7)
+                mov ax,[7]     ;(ax)=7
+                mov ax,ds:[7]  ;(ax)=((ds)*16+7)
 
-                mov ax,[bx]    ; (ax)=((ds)*16+(bx))
-                mov ax,ds:[bx] ; (ax)=((ds)*16+(bx))
+                mov ax,[bx]    ;(ax)=((ds)*16+(bx))
+                mov ax,ds:[bx] ;(ax)=((ds)*16+(bx))
                 `}
             />
             <X.H1>在代码段中使用数据</X.H1>
@@ -134,7 +134,7 @@ export default function Post() {
                 end                
                 `}
             />
-            <X.P noMarginBottom>上面的代码希望将数据通过栈倒序存放。使用`dw`关键字定义了一片数据空间，类似的操作有：</X.P>
+            <X.P noMarginBottom>上面的代码希望将数据通过栈倒序存放。使用`dw(define word)`关键字定义了一片数据空间，类似的操作还有：</X.P>
             <X.Uli>`db`：定义一个字节的数据</X.Uli>
             <X.Uli>`dw`：定义一个字的数据</X.Uli>
             <X.Uli>`dd`：定义一个双字的数据</X.Uli>
