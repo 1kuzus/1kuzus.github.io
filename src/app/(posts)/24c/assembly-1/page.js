@@ -35,6 +35,26 @@ export default function Post() {
             <X.Uli>指令指针寄存器：`IP`</X.Uli>
             <X.Uli>段寄存器：`CS`、`DS`、`SS`、`ES`</X.Uli>
             <X.Uli>标志寄存器：`PSW`</X.Uli>
+            <X.P withMarginTop>对应的名称及释义如下：</X.P>
+            <X.Table
+                fromJSX={[
+                    ['寄存器名', '英文', '解释'],
+                    ['`AX`', '`Accumulator`', '`累加器`'],
+                    ['`BX`', '`Base`', '`基址寄存器`'],
+                    ['`CX`', '`Counter`', '`计数寄存器`'],
+                    ['`DX`', '`Data`', '`数据寄存器`'],
+                    ['`SI`', '`Source Index`', '`源变址寄存器`'],
+                    ['`DI`', '`Destination Index`', '`目的变址寄存器`'],
+                    ['`SP`', '`Stack Pointer`', '`栈指针寄存器`'],
+                    ['`BP`', '`Base Pointer`', '`基址指针寄存器`'],
+                    ['`IP`', '`Instruction Pointer`', '`指令指针寄存器`'],
+                    ['`CS`', '`Code Segment`', '`代码段寄存器`'],
+                    ['`DS`', '`Data Segment`', '`数据段寄存器`'],
+                    ['`SS`', '`Stack Segment`', '`栈段寄存器`'],
+                    ['`ES`', '`Extra Segment`', '`附加段寄存器`'],
+                    ['`PSW`', '`Program Status Word`', '`程序状态字寄存器`'],
+                ]}
+            />
             <X.P withMarginTop>8086 CPU所有寄存器都是`16`位的，可以存放`2`个字节。有时还会见到`AH`、`AL`的表示方法，它们分别表示`AX`的高、低`8`位。</X.P>
             <X.H1>8086 CPU物理地址表示</X.H1>
             <X.P>8086 CPU有`20`位地址总线，最大寻址空间是`1MB`，但由于字长是`16`位，所以需要两个`16`位地址（*段地址*、*偏移地址*）相加合成一个`20`位地址。</X.P>
