@@ -108,7 +108,7 @@ export default function Post() {
                 code={`
                 const arr = [1, 15, 7, 33, 5, 66, 47, 9, 5];
                 const cond = (x) => x > 30;
-                
+
                 console.log(arr.find(cond)); //33
                 console.log(arr.findIndex(cond)); //3
                 console.log(arr.findLast(cond)); //47

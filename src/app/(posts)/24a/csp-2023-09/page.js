@@ -249,7 +249,7 @@ export default function Post() {
                     getline(cin,poly);//读回车 
                     getline(cin,poly);
                     POLYNODE *root=makePolyTree();
-                    
+
                     for(int i=0;i<m;i++)
                     {
                         cin>>xid;

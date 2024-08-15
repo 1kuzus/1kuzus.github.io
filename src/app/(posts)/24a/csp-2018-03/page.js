@@ -245,7 +245,7 @@ export default function Post() {
                         p.push_back(pi);
                         r.push_back(ri);
                     }
-                    
+
                     for(int i=0;i<m;i++)
                     {
                         cin>>qi;

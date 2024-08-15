@@ -686,11 +686,11 @@ export default function Post() {
                             /* An annoying "Hello World" example */
                             for (auto i = 0; i < 0xFFFF; i++)
                                 cout << "Hello, World!" << endl;
-                            
+
                             char c = '\\n';
                             unordered_map <string, vector<string>> m;
                             m["key"] = "\\\\"; // this is an error
-                            
+
                             return -2e3 + 12l;
                         }
                         \`}
@@ -733,10 +733,10 @@ export default function Post() {
                     if param1 > param2: # interesting
                         print 'Greater'
                     return (param2 - param1 + 1 + 0b10l) or None
-                
+
                 class SomeClass:
                     pass
-                
+
                 >>> message = '''interpreter
                 ... prompt'''
                 `}
@@ -747,13 +747,13 @@ export default function Post() {
                 code={`
                 <!DOCTYPE html>
                 <title>Title</title>
-                
+
                 <style>body {width: 500px;}</style>
-                
+
                 <script type="application/javascript">
                   function $init() {return true;}
                 </script>
-                
+
                 <body>
                   <p checked class="title" id='title'>Title&nbsp;</p>
                   <!-- here goes the rest of the page -->

@@ -151,7 +151,7 @@ export default function Post() {
             <X.H3>罗德里格旋转公式</X.H3>
             <X.P>绕旋转轴{`$\\bm{n}=(n_x,n_y,n_z)^T$`}旋转$\theta$的旋转矩阵：</X.P>
             <X.Formula
-                text="R(\bm{n},\theta)=\cos\theta\bm{I}+(1-\cos\theta)\bm{n}\bm{n}^T+\sin\theta     
+                text="R(\bm{n},\theta)=\cos\theta\bm{I}+(1-\cos\theta)\bm{n}\bm{n}^T+\sin\theta
                 \begin{bmatrix}
                 0 & -n_z & n_y \\
                 n_z & 0 & -n_x \\

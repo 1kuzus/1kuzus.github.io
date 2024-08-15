@@ -10,7 +10,8 @@ export default function Post() {
             <X.TOC />
             <X.Title>{metas[path].title}</X.Title>
             <X.H1>前言</X.H1>
-            <X.P>汇编指令（如`mov ax,bx`）是机器指令（`01`串）的助记符，汇编指令表达的语义与机器指令是一样的。汇编程序的主体是汇编指令。</X.P>
+            <X.P>汇编指令是机器指令的助记符，相当于把本是`01`串的机器指令，用便于人类理解的字符表示出来。汇编指令表达的语义与机器指令是一样的。汇编程序的主体是汇编指令。</X.P>
+            <X.P>对于不同的硬件平台，汇编指令集都是不同的。这里学习的是8086 CPU的汇编语言。</X.P>
             <X.H1>环境配置</X.H1>
             <X.Uli>DOSBox：@[https://www.dosbox.com/]@</X.Uli>
             <X.Uli>MASM（民间版本）：@[https://github.com/froginwell/assembly/tree/master/software]@</X.Uli>
@@ -73,6 +74,24 @@ export default function Post() {
             <X.Uli>`DS`：数据段寄存器</X.Uli>
             <X.Uli>`SS`：栈段寄存器</X.Uli>
             <X.Uli>`ES`：附加段寄存器</X.Uli>
+            <X.H1>mov指令</X.H1>
+            <X.CodeBlock
+                language="asm8086"
+                code={`
+                mov ax,1
+                mov bx,ax
+                `}
+            />
+            <X.P>`mov`指令的功能是将后一个操作数（数据的来源位置）送入前一个（数据的目标位置），上述指令的作用是将`1`送入`AX`，然后将`AX`的内容送入`BX`。</X.P>
+            <X.H1>add指令</X.H1>
+            <X.CodeBlock
+                language="asm8086"
+                code={`
+                add ax,1
+                add bx,ax
+                `}
+            />
+            <X.P>`add`指令的功能是将后一个操作数的值加到前一个操作数上，上述指令的作用是将`1`加到`AX`上，然后将`AX`的值加到`BX`上。</X.P>
             <X.H1>CS、IP寄存器与jmp指令</X.H1>
             <X.P>8086 CPU执行程序时，`CS`寄存器存放的是代码段的段地址，`IP`寄存器存放的是代码段中的偏移地址。\nCPU将内存中`CS:IP`指向的内容当作指令执行。</X.P>
             <X.P>既然执行何处的指令取决于`CS:IP`，那么就需要有一种方法可以改变`CS`和`IP`的值，这就是`jmp`指令。8086 CPU不支持用立即数修改`CS`和`IP`的值（例如`mov cs,2000`），但是可以通过转移指令`jmp`来实现。</X.P>
@@ -119,7 +138,7 @@ export default function Post() {
             <X.P>以上代码的作用是将`1000:0`也就是`10000H`中的数据读到`AL`中。</X.P>
             <X.P>`DS`也不支持立即数赋值，需要将数据先存入通用寄存器，再送入段寄存器。</X.P>
             <X.P>8086 CPU也可以一次性传输一个字，假如`DS`寄存器的值为`1000H`，则`mov ax,[0]`就表示将`1000:0`中的字送入`AX`中；`mov [0],cx`就表示将`CX`中的字送入`1000:0`中。</X.P>
-            <X.H1>栈操作相关</X.H1>
+            <X.H1>栈操作（push指令、pop指令）</X.H1>
             <X.P>基于8086 CPU编程，可以将一段内存当作栈来使用。8086 CPU有两个与栈相关的寄存器，`SS`存放栈顶的段地址，`SP`存放栈顶的偏移地址。在任意时刻，`SS:SP`指向栈顶元素。</X.P>
             <X.P noMarginBottom>`push`和`pop`指令用于栈操作：</X.P>
             <X.Uli>`push 寄存器`：`SP`自动减`2`，将寄存器的内容送入`SS:SP`，此时`SS:SP`指向新栈顶。</X.Uli>

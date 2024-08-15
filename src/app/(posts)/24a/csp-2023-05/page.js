@@ -198,7 +198,7 @@ export default function Post() {
                     //QK=matmul(Q,T(K,n,d),n,d,n);
                     //WQK=dot(QK,W,n);
                     //WQKV=matmul(WQK,V,n,n,d);
-                
+
                     //对顺序调整如下，先计算K*V 
                     vector<LL> KV(d*d),QKV(n*d),WQKV(n*d);
                     KV=matmul(T(K,n,d),V,d,n,d);
@@ -227,7 +227,7 @@ export default function Post() {
                 4 3
                 2 1
                 4 0 -5
-                
+
                 out:
                 480 240
                 0 0
@@ -347,7 +347,7 @@ export default function Post() {
                 0405060708090a0b
                 0c0d0e0fc603000d
                 78
-                
+
                 out:
                 0102030405060708
                 090a000102030405
@@ -607,7 +607,7 @@ export default function Post() {
                 1 2
                 3 4
                 0 1 1 2 3 4
-                
+
                 out:
                 5
                 */

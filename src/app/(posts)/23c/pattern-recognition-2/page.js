@@ -133,24 +133,24 @@ export default function Post() {
                 import matplotlib.pyplot as plt
                 import numpy
                 import math
-                
+
                 #生成样本集，样本集的真实均值为m=13
                 Xs=numpy.random.normal(13,3,100)
-                
+
                 #计算某个样本X出现的概率
                 def P(X,m,s=3):
                     return numpy.exp(-(X-m)**2/(2*s*s))/(s*numpy.sqrt(2*math.pi))
-                
+
                 #假设mX的先验分布也是一个正态分布，初始的均值m0=4、方差s0=4
                 m0=4
                 s0=4
-                
+
                 #mX的分布区间，理论上应该是(-inf,inf)，但由于两侧足够趋近于0，这里取(-40,40)
                 m_lim=numpy.arange(-40,40,0.01)
-                
+
                 #无样本时m的先验分布
                 pm=P(m_lim,m0,s0)
-                
+
                 #数值积分
                 def numint(f):
                     s=0
@@ -158,21 +158,21 @@ export default function Post() {
                     for i in range(len(m_lim)-1):
                         s+=step*f[i]
                     return s
-                
+
                 #逐个样本学习
                 for i,X in enumerate(Xs):
                     if (i+1)%20==0 or i<5:
                         plt.plot(m_lim,pm,label=f"epoch {i+1}")
-                
+
                     #样本出现概率，在参数m分布区间上对应的值
                     pX_m=P(X,m_lim)
-                
+
                     #用pX_m(数据)修正pm(先验)，得到pm_X(后验)
                     pm_X = pX_m*pm / numint(pX_m*pm)
-                
+
                     #把第i轮得到的后验分布，视作第i+1轮迭代的先验分布
                     pm=pm_X
-                
+
                 plt.legend()
                 plt.show()
                 `}

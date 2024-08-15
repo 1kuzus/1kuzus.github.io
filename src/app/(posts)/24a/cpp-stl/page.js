@@ -515,17 +515,17 @@ export default function Post() {
                 code={`
                 auto it1=m1.begin();
                 pair<decltype(m1)::iterator,bool> res;
-            
+
                 res=m1.insert(make_pair("f",99));
                 it1=res.first;
                 cout<<it1->first<<' '<<it1->second; //f 99
                 cout<<' '<<res.second<<endl; //1
-            
+
                 res=m1.insert({"f",88});
                 it1=res.first;
                 cout<<it1->first<<' '<<it1->second; //f 99
                 cout<<' '<<res.second<<endl; //0
-            
+
                 res=m1.emplace("g",55);
                 it1=res.first;
                 cout<<it1->first<<' '<<it1->second; //g 55

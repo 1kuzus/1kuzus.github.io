@@ -103,7 +103,7 @@ export default function Post() {
                     } finally {
                         // ...
                     }
-                }                
+                }
                 `}
             />
             <X.P>默认情况下`View`的`getAccessibilityNodeProvider()`会返回`null`，此时会调用`findViewsWithText()`。对于`View`，这个函数是仅在描述标签中搜索的，因此不会受到本文提出的攻击；然而其子类`TextView`重写了这个函数，使得其可以搜索自身的文本，并且`TextView`并没有重写`getAccessibilityNodeProvider()`（所以会进入`else if`逻辑），因此`TextView`和所有`TextView`的子类都会收到CONQUER攻击的影响。</X.P>
