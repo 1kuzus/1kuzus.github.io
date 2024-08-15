@@ -89,6 +89,37 @@ export default function Post() {
             <X.P>按照基址寄存器和变址寄存器分类，则`BX`和`BP`是基址寄存器，`SI`和`DI`是变址寄存器。在使用时，基址寄存器和变址寄存器可以任意组合，例如`[bx+si]`、`[bx+di]`、`[bp+si]`、`[bp+di]`，但内部不能互相组合，例如`[bx+bp]`、`[si+di]`是*错误的*写法。</X.P>
             <X.H2>总结</X.H2>
             <X.Image src="fig2.png" width="800px" invertInDarkTheme />
+            <X.H1>指明要访问数据的大小</X.H1>
+            <X.P>观察下面的代码：</X.P>
+            <X.CodeBlock
+                language="asm8086"
+                code={`
+                mov bx,0
+                mov [bx],100h
+                `}
+            />
+            <X.P>编译会报错！这是因为按照上面代码的参数，没有办法确定操作的数据是字型还是字节型（如果第二个操作数是寄存器，则可以根据是`AX`还是`AH`/`AL`判断）。因此，此时需要显式的指出操作的数据类型，语法为：</X.P>
+            <X.CodeBlock
+                language="asm8086"
+                code={`
+                mov word ptr [bx],100h
+                add byte ptr [bx],23h
+                `}
+            />
+            <X.H1>使用dup关键字设置重复数据</X.H1>
+            <X.P>在之前开辟数据空间或栈空间时，都是计算好大小后手动输入对应数量的`0`（或其他初值）；`dup`关键字可以简洁的完成设置重复数据的操作，格式为：`db/dw/dd 重复次数 dup(数据)`，例如：</X.P>
+            <X.CodeBlock
+                language="asm8086"
+                code={`
+                dd 4 dup('a')
+                dw 4 dup('b')
+                db 8 dup('c')
+                db 4 dup(1,2,3,4)
+                db 4 dup('asm',32,'8086')
+                `}
+            />
+            <X.P>初始化后的数据为：</X.P>
+            <X.Image src="fig5.jpg" width="100%" />
             <X.H1>练习</X.H1>
             <X.H2>大小写转换</X.H2>
             <X.HighlightBlock bgcolor="blue">
