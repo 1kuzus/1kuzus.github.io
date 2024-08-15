@@ -79,7 +79,7 @@ export default function Post() {
                 <X.Formula
                     text="\lambda(\alpha_i,\omega_j)=
                     \begin{cases}
-                        0 \quad i=j \\ 
+                        0 \quad i=j \\
                         1 \quad i \neq j
                     \end{cases}
                     "

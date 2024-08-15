@@ -23,7 +23,7 @@ export default function Post() {
                            mov bx,0456h
                            add ax,bx
                            add ax,ax
-                
+
                     ;程序返回的套路
                            mov ax,4c00h
                            int 21h
@@ -75,7 +75,7 @@ export default function Post() {
                            mov  cx,7
                     s:     add  ax,ax
                            loop s
-                
+
                            mov  ax,4c00h
                            int  21h
                 codesg ends
@@ -85,6 +85,9 @@ export default function Post() {
             <X.P noMarginBottom>`loop`指令功能是实现计数型循环，会*默认使用*`CX`寄存器的值作为循环计数器，当执行`loop`指令时会进行操作：</X.P>
             <X.Uli>`(CX)=(CX)-1`；</X.Uli>
             <X.Uli>判断`(CX)`是否为`0`，如果不为`0`，则跳转到标号处继续执行循环体；如果为`0`，则继续执行下一条指令。</X.Uli>
+            <X.H1>inc指令</X.H1>
+            <X.CodeBlock language="asm8086" code="inc ax  ;(ax)=(ax)+1" />
+            <X.P>`inc`指令的功能是自增。</X.P>
             <X.H1>段前缀</X.H1>
             <X.P>在`debug`中使用`-a`编写汇编代码访问内存时，可以直接使用`mov ax,[idata]`，但在汇编程序中，需要使用段前缀，写为`mov ax,ds:[idata]`。例如在汇编程序中，`mov ax,[7]`等同于`mov ax,7`，如果是想访问`ds:7`则需要改写为`mov ax,ds:[7]`。</X.P>
             <X.P>汇编程序也可以间接访问内存，例如`mov ax,[bx]`是没问题的，同时和`mov ax,ds:[bx]`也是等价的。</X.P>
@@ -131,7 +134,7 @@ export default function Post() {
                            mov  ax,4c00h
                            int  21h
                 codesg ends
-                end                
+                end
                 `}
             />
             <X.P noMarginBottom>上面的代码希望将数据通过栈倒序存放。使用`dw(define word)`关键字定义了一片数据空间，类似的操作还有：</X.P>
@@ -150,7 +153,8 @@ export default function Post() {
                            dw   0,0,0,0,0,0,0,0
                            dw   0,0,0,0,0,0,0,0
 
-                    start: mov  ax,cs
+                    start:
+                           mov  ax,cs
                            mov  ss,ax
                            mov  sp,30h
 
@@ -163,7 +167,7 @@ export default function Post() {
                            mov  ax,4c00h
                            int  21h
                 codesg ends
-                end start                
+                end start
                 `}
             />
             <X.Image src="fig7.jpg" width="100%" />
@@ -233,12 +237,12 @@ export default function Post() {
                            mov  bx,6
                            mov  ah,0
                            mov  al,[bx]
-                
+
                            mov  dx,0
                            mov  cx,3
                     s:     add  dx,ax
                            loop s
-                
+
                            mov  ax,4c00h
                            int  21h
                 codesg ends
@@ -267,7 +271,7 @@ export default function Post() {
                     s:     mov  ah,0
                            mov  al,[bx]      ;取出8位数据
                            add  dx,ax        ;计算16位数据
-                           inc  bx           ;自增指令
+                           inc  bx
                            loop s
 
                            mov  ax,4c00h
@@ -297,7 +301,7 @@ export default function Post() {
                            mov  cx,0ch        ;注意边界，(cx)=0bh+1=0ch
                     s:     mov  al,[bx]       ;默认ds为段地址
                            mov  es:[bx],al    ;这里使用es做段前缀
-                           inc  bx            ;自增指令
+                           inc  bx
                            loop s
 
                            mov  ax,4c00h

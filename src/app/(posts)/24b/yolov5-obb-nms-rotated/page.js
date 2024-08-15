@@ -238,7 +238,7 @@ export default function Post() {
 
                 //  mask_dev = (unsigned long long*) THCudaMalloc(state, boxes_num * col_blocks * sizeof(unsigned long long));
                     mask_dev = (unsigned long long *) c10::cuda::CUDACachingAllocator::raw_alloc(boxes_num * col_blocks * sizeof(unsigned long long));
-                
+
                 //  dim3 blocks(THCCeilDiv(boxes_num, threadsPerBlock),
                 //                THCCeilDiv(boxes_num, threadsPerBlock));
                     dim3 blocks(at::ceil_div(boxes_num, threadsPerBlock), at::ceil_div(boxes_num, threadsPerBlock));
@@ -248,7 +248,7 @@ export default function Post() {
                                                         nms_overlap_thresh,
                                                         boxes_dev,
                                                         mask_dev);
-                    
+
                     std::vector<unsigned long long> mask_host(boxes_num * col_blocks);
                 //  THCudaCheck(cudaMemcpyAsync(
                     AT_CUDA_CHECK(cudaMemcpyAsync(
@@ -258,7 +258,7 @@ export default function Post() {
                                             cudaMemcpyDeviceToHost,
                                 at::cuda::getCurrentCUDAStream()
                                 ));
-                    
+
                     std::vector<unsigned long long> remv(col_blocks);
                     memset(&remv[0], 0, sizeof(unsigned long long) * col_blocks);
 

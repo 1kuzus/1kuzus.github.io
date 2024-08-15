@@ -205,7 +205,7 @@ export default function Post() {
                     encrypt_js = execjs.compile(jscode)
                     ul = encrypt_js.call("strEnc", username)
                     pl = encrypt_js.call("strEnc", password)
-                    return ul, pl                
+                    return ul, pl
                 `}
             />
             <X.P>这个模块根据传入的`public_key`替换`js`源代码中的部分，再编译，最后在`Python`环境中调用`js`代码得到加密结果。</X.P>

