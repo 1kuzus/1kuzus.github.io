@@ -25,7 +25,7 @@ export default function Post() {
                         sum+=w*score;
                     }
                     cout<<(sum<0?0:sum)<<endl;
-                    return 0; 
+                    return 0;
                 }
                 /*
                 in:
@@ -51,7 +51,7 @@ export default function Post() {
                 using namespace std;
                 int n,y,res;
                 int best_score,best_theta,prev_theta;
-                int sum[100005];//第i大阈值(包含重复)res=1的总数 
+                int sum[100005];//第i大阈值(包含重复)res=1的总数
                 struct T{
                     int y,res;
                 }t[100005];
@@ -90,7 +90,7 @@ export default function Post() {
                         }
                     }
                     cout<<best_theta<<endl;
-                    return 0; 
+                    return 0;
                 }
                 /*
                 in:
@@ -151,16 +151,16 @@ export default function Post() {
                     res.push_back(str.substr(p,str.size()-p));
                     return res;
                 }
-                //检查current路径中，如果文件大小增加了file_size_change，是否还满足配额 
+                //检查current路径中，如果文件大小增加了file_size_change，是否还满足配额
                 bool checkCreateOrUpdateFile(NODE *current,long long file_size_change)
                 {
-                    //检查自身的目录配额 
+                    //检查自身的目录配额
                     if(current->ld&&current->dir_size+file_size_change>current->ld)
                     {
                         return false;
                     }
-                    //检查自身和祖先的后代配额 
-                    for(NODE *p=current;p!=NULL;p=p->father) 
+                    //检查自身和祖先的后代配额
+                    for(NODE *p=current;p!=NULL;p=p->father)
                     {
                         if(p->lr&&p->child_size+file_size_change>p->lr)
                         {
@@ -168,22 +168,22 @@ export default function Post() {
                         }
                     }
                     return true;
-                } 
-                //更新祖先的已有配额 
+                }
+                //更新祖先的已有配额
                 void updateLdAndLr(NODE *current,long long size_change)
                 {
                     bool isDir=current->isDir;
-                    //更新祖先的已有后代配额 
-                    for(NODE *p=current->father;p!=NULL;p=p->father) 
+                    //更新祖先的已有后代配额
+                    for(NODE *p=current->father;p!=NULL;p=p->father)
                     {
                         p->child_size+=size_change;
                     }
-                    //文件还会影响父亲的已有目录配额 
+                    //文件还会影响父亲的已有目录配额
                     if(!isDir)
                     {
                         current->father->dir_size+=size_change;
                     }
-                    return; 
+                    return;
                 }
                 /*
                 创建普通文件
@@ -202,37 +202,37 @@ export default function Post() {
                     vector<string> dirs=split(path,"/");
                     NODE *current=&root;
                     int i;
-                    //检查目录节点 
+                    //检查目录节点
                     for(i=1;i<dirs.size()-1;i++)
                     {
-                        //发现同名 
+                        //发现同名
                         if(current->childs[dirs[i]]!=NULL)
                         {
-                            //存在同名目录 
+                            //存在同名目录
                             if(current->childs[dirs[i]]->isDir)
                             {
-                                current=current->childs[dirs[i]];//进入下一级 
+                                current=current->childs[dirs[i]];//进入下一级
                             }
                             //存在同名文件
                             else
                             {
-                                return 'N'; 
-                            } 
+                                return 'N';
+                            }
                         }
-                        //不存在同名则考虑配额(决定要不要创建新目录) 
+                        //不存在同名则考虑配额(决定要不要创建新目录)
                         else
                         {
                             //配额检验
-                            //这一级一定是一个目录(这个for循环就是这样定义的)，因此不会对自身和任何祖先的已有目录配额产生影响 
+                            //这一级一定是一个目录(这个for循环就是这样定义的)，因此不会对自身和任何祖先的已有目录配额产生影响
                             //无论后面还有多少级别目录，都只有一个新文件，相当于使自身和所有祖先的已有后代配额增加文件大小
-                            for(NODE *p=current;p!=NULL;p=p->father) 
+                            for(NODE *p=current;p!=NULL;p=p->father)
                             {
                                 if(p->lr&&p->child_size+new_file_size>p->lr)
                                 {
                                     return 'N';
                                 }
                             }
-                            //通过配额检验，可以创建新目录 
+                            //通过配额检验，可以创建新目录
                             NODE *new_dir=new NODE();
                             new_dir->isDir=true;
                             new_dir->name=dirs[i];
@@ -245,10 +245,10 @@ export default function Post() {
                             current=new_dir;
                         }
                     }
-                    //尝试创建文件但发现同名 
+                    //尝试创建文件但发现同名
                     if(current->childs[dirs[i]]!=NULL)
                     {
-                        //存在同名目录 
+                        //存在同名目录
                         if(current->childs[dirs[i]]->isDir)
                         {
                             return 'N';
@@ -262,20 +262,20 @@ export default function Post() {
                             {
                                 return 'N';
                             }
-                            current->childs[dirs[i]]->file_size=new_file_size;//仅替换 
+                            current->childs[dirs[i]]->file_size=new_file_size;//仅替换
                             //更新祖先的已有配额
                             updateLdAndLr(current->childs[dirs[i]],new_file_size-old_file_size);
                         }
                     }
-                    //不存在同名则创建新文件 
+                    //不存在同名则创建新文件
                     else
                     {
                         //配额检验
-                        if(!checkCreateOrUpdateFile(current,new_file_size)) 
+                        if(!checkCreateOrUpdateFile(current,new_file_size))
                         {
                             return 'N';
                         }
-                        //通过配额检验，可以创建新文件 
+                        //通过配额检验，可以创建新文件
                         NODE *new_file=new NODE();
                         new_file->isDir=false;
                         new_file->name=dirs[i];
@@ -303,21 +303,21 @@ export default function Post() {
                     vector<string> dirs=split(path,"/");
                     NODE *current=&root;
                     int i;
-                    //检查节点  
+                    //检查节点
                     for(i=1;i<dirs.size();i++)
                     {
-                        //发现同名 
+                        //发现同名
                         if(current->childs[dirs[i]]!=NULL)
                         {
-                            current=current->childs[dirs[i]];//进入下一级 
+                            current=current->childs[dirs[i]];//进入下一级
                         }
-                        //不存在同名则不执行操作 
+                        //不存在同名则不执行操作
                         else
                         {
-                            return 'Y'; 
+                            return 'Y';
                         }
                     }
-                    //更新祖先的已有配额 
+                    //更新祖先的已有配额
                     updateLdAndLr(current,-(current->isDir?current->child_size:current->file_size));
                     //断开与父亲的连接(注意：对于删除目录的情况可能产生内存垃圾)
                     current->father->childs[dirs[i-1]]=NULL;
@@ -342,19 +342,19 @@ export default function Post() {
                     vector<string> dirs=split(path,"/");
                     NODE *current=&root;
                     int i;
-                    //检查节点 
+                    //检查节点
                     for(i=0;i<dirs.size();i++)
                     {
-                        if(dirs[i]=="") continue;//Q指令有可能输入根目录，此处特殊处理一下 
-                        //发现同名 
+                        if(dirs[i]=="") continue;//Q指令有可能输入根目录，此处特殊处理一下
+                        //发现同名
                         if(current->childs[dirs[i]]!=NULL)
                         {
-                            current=current->childs[dirs[i]];//进入下一级 
+                            current=current->childs[dirs[i]];//进入下一级
                         }
-                        //不存在同名则退出 
+                        //不存在同名则退出
                         else
                         {
-                            return 'N'; 
+                            return 'N';
                         }
                     }
                     if(!current->isDir) return 'N';
@@ -383,12 +383,12 @@ export default function Post() {
                         }
                         else if(opt=='Q')
                         {
-                            cin>>path>>ld>>lr; 
+                            cin>>path>>ld>>lr;
                             cout<<Q(path,ld,lr)<<endl;
                         }
                     }
                     return 0;
-                } 
+                }
                 /*
                 in:
                 10
@@ -503,12 +503,12 @@ export default function Post() {
                 #include <vector>
                 using namespace std;
                 int n,m,k;
-                bool need[105][15];//need[i][j]：第i个酒店是否需要第j种食材 
-                int tree[105][105];//n较小，用邻接矩阵存树 
+                bool need[105][15];//need[i][j]：第i个酒店是否需要第j种食材
+                int tree[105][105];//n较小，用邻接矩阵存树
                 bool visit[105];
-                int t_return[105];//往返时间，t_return[i]：从i出发遍历子树所有需要某种食材的酒店再回到i的时间 
-                int t_single[105];//单程时间，t_single[i]：从i出发遍历子树所有需要某种食材的酒店，等待时间最长的酒店等待的最短时间 
-                int best[105][15];//best[i][j]：检查点设在第i个酒店时，运输第j种食材，等待时间最长的酒店等待的最短时间 
+                int t_return[105];//往返时间，t_return[i]：从i出发遍历子树所有需要某种食材的酒店再回到i的时间
+                int t_single[105];//单程时间，t_single[i]：从i出发遍历子树所有需要某种食材的酒店，等待时间最长的酒店等待的最短时间
+                int best[105][15];//best[i][j]：检查点设在第i个酒店时，运输第j种食材，等待时间最长的酒店等待的最短时间
                 int dfsReturn(int root,int j)
                 {
                     visit[root]=1;
@@ -545,7 +545,7 @@ export default function Post() {
                 //检查有没有可能在m行之内使得每列最小值的最大值<max_min_of_col
                 bool check(int max_min_of_col)
                 {
-                    int states[105]={}; 
+                    int states[105]={};
                     int dp[1<<10+5];
                     memset(dp,0x3f,sizeof(dp));
                     dp[0]=0;
@@ -582,23 +582,23 @@ export default function Post() {
                         tree[u-1][v-1]=w;
                         tree[v-1][u-1]=w;
                     }
-                    //第一步，求出best[i][j] 
+                    //第一步，求出best[i][j]
                     for(int i=0;i<n;i++)
                     {
                         for(int j=0;j<k;j++)
                         {
-                            //先求出针对第j种食材的往返时间t_return[i] 
+                            //先求出针对第j种食材的往返时间t_return[i]
                             memset(visit,0,sizeof(visit));
                             memset(t_return,0,sizeof(t_return));
                             dfsReturn(i,j);
-                            //然后求出针对第j种食材的单程时间 
+                            //然后求出针对第j种食材的单程时间
                             memset(visit,0,sizeof(visit));
                             for(int k=0;k<n;k++)
                             {
                                 t_single[k]=t_return[k];
                             }
                             dfsSingle(i,j);
-                            //t_single[i]就是对于第j种食材，检查点设在第i个酒店时，等待时间最长的酒店等待的最短时间 
+                            //t_single[i]就是对于第j种食材，检查点设在第i个酒店时，等待时间最长的酒店等待的最短时间
                             best[i][j]=t_single[i];
                         }
                     }
@@ -610,20 +610,20 @@ export default function Post() {
                     //b51 b52 b53
                     //这其中行代表酒店，列代表食材种类；
                     //我们希望取出m行，求出m行对应的k列的最小值，再求这k个最小值中的最大值，然后让这个最大值最小
-                    //我们用二分去找这个最大值，check(x)定义为：如果最后的最大值不能超过x，是否能找到小于等于m的行数 
+                    //我们用二分去找这个最大值，check(x)定义为：如果最后的最大值不能超过x，是否能找到小于等于m的行数
 
-                    //考虑check(x)函数的实现，我们对best中每一项是否小于x建立一个01矩阵，假设结果为 
+                    //考虑check(x)函数的实现，我们对best中每一项是否小于x建立一个01矩阵，假设结果为
                     //0 0 1
                     //0 0 0
                     //0 1 1
                     //0 1 0
                     //1 0 1
-                    //那么check(x)就是在问，是否能找到不超过m行，使得m行相或为全1 (重复覆盖问题) 
-                    //可以使用状态压缩dp求解 
+                    //那么check(x)就是在问，是否能找到不超过m行，使得m行相或为全1 (重复覆盖问题)
+                    //可以使用状态压缩dp求解
 
-                    //反向理解一下，如果能找到不超过m行，使得m行相或为全1，例如对于m=2找到了[0 1 1]和[1 0 1] 
+                    //反向理解一下，如果能找到不超过m行，使得m行相或为全1，例如对于m=2找到了[0 1 1]和[1 0 1]
                     //那么一定可以对于每一列j都选出一个值为1的行i，那么就可以使得第j种食材的检查点设在酒店i
-                    //值为1代表元素小于x，因为每列都至少有1个1，每列的最小值再求最大也一定小于x 
+                    //值为1代表元素小于x，因为每列都至少有1个1，每列的最小值再求最大也一定小于x
                     int l=0,r=1e9;
                     while(l+1<r)
                     {
@@ -730,11 +730,11 @@ export default function Post() {
             <X.CodeBlock
                 language="cpp"
                 code={`
-                //合并tgv至 <管辖[l,r]区间的f节点> 的tag值，同时更新树上值 
+                //合并tgv至 <管辖[l,r]区间的f节点> 的tag值，同时更新树上值
                 void mergetag(int l,int r,int f,TAGVAL tgv)
                 {
                     //原本TAG(*a,+b,<<c)，父亲分发下TAG(*g,+h,<<i)
-                    //现在TAG(*ag,+bg+(h<<(3-c)),<<(c+i)) 
+                    //现在TAG(*ag,+bg+(h<<(3-c)),<<(c+i))
                     long long a=tree[f].tag.mul,g=tgv.mul;
                     POS b=tree[f].tag.add,h=tgv.add;
                     int c=tree[f].tag.rot,i=tgv.rot;
@@ -773,11 +773,11 @@ export default function Post() {
                 #define MOD 1000000007
                 using namespace std;
                 int n,m;
-                int opt[40005][6];//记录操作 
-                vector<int> raw;//原始的查询 
-                vector<int> r2q;//rank to query，r2q[i]是rank为i的查询 
-                map<int,int> q2r;//query to rank，q2r[q]是查询q对应的rank 
-                int lc(int f){return f<<1;}//左子 
+                int opt[40005][6];//记录操作
+                vector<int> raw;//原始的查询
+                vector<int> r2q;//rank to query，r2q[i]是rank为i的查询
+                map<int,int> q2r;//query to rank，q2r[q]是查询q对应的rank
+                int lc(int f){return f<<1;}//左子
                 int rc(int f){return f<<1|1;}//右子
 
                 struct POS{
@@ -824,20 +824,20 @@ export default function Post() {
                 struct TAGVAL{
                     long long mul;
                     POS add;
-                    int rot; 
+                    int rot;
                 }const DEFAULT_TAG{1,POS{0,0,0},0};
 
                 struct NODE{
                     POS p;
-                    bool flag;//是否打了tag 
+                    bool flag;//是否打了tag
                     TAGVAL tag;
                 }tree[4*N];
 
-                //合并tgv至 <管辖[l,r]区间的f节点> 的tag值，同时更新树上值 
+                //合并tgv至 <管辖[l,r]区间的f节点> 的tag值，同时更新树上值
                 void mergetag(int l,int r,int f,TAGVAL tgv)
                 {
                     //原本TAG(*a,+b,<<c)，父亲分发下TAG(*g,+h,<<i)
-                    //现在TAG(*ag,+bg+(h<<(3-c)),<<(c+i)) 
+                    //现在TAG(*ag,+bg+(h<<(3-c)),<<(c+i))
                     long long a=tree[f].tag.mul,g=tgv.mul;
                     POS b=tree[f].tag.add,h=tgv.add;
                     int c=tree[f].tag.rot,i=tgv.rot;
@@ -858,7 +858,7 @@ export default function Post() {
                     return;
                 }
 
-                //将 <管辖[l,r]区间的f节点> 的tag值下发至子节点 
+                //将 <管辖[l,r]区间的f节点> 的tag值下发至子节点
                 void pushdown(int l,int r,int f)
                 {
                     if(l==r) return;
@@ -870,7 +870,7 @@ export default function Post() {
                     return;
                 }
 
-                //在tree[f]建立一个管辖[l,r]的节点 
+                //在tree[f]建立一个管辖[l,r]的节点
                 void build(int l,int r,int f)
                 {
                     tree[f].flag=false;
@@ -887,32 +887,32 @@ export default function Post() {
                     return;
                 }
 
-                //将tgv合并至区间[ql,qr]的tag值，当前在管辖[l,r]区间的f节点 
+                //将tgv合并至区间[ql,qr]的tag值，当前在管辖[l,r]区间的f节点
                 void update(int ql,int qr,int l,int r,int f,TAGVAL tgv)
                 {
-                    //当前区间是查询区间的子集，修改 
+                    //当前区间是查询区间的子集，修改
                     if(ql<=l&&r<=qr)
                     {
                         mergetag(l,r,f,tgv);
                         return;
                     }
                     int mid=l+(r-l)/2;
-                    if(tree[f].flag) pushdown(l,r,f);//访问到有标记的节点就下放 
+                    if(tree[f].flag) pushdown(l,r,f);//访问到有标记的节点就下放
                     if(ql<=mid) update(ql,qr,l,mid,lc(f),tgv);
                     if(qr>mid) update(ql,qr,mid+1,r,rc(f),tgv);
                     pushup(f);
                     return;
                 }
 
-                //求区间[ql,qr]的和，当前在管辖[l,r]区间的f节点 
+                //求区间[ql,qr]的和，当前在管辖[l,r]区间的f节点
                 POS getsum(int ql,int qr,int l,int r,int f)
                 {
-                    //当前区间是查询区间的子集，返回 
+                    //当前区间是查询区间的子集，返回
                     if(ql<=l&&r<=qr) return tree[f].p;
                     int mid=l+(r-l)/2;
                     if(tree[f].flag) pushdown(l,r,f);//访问到有标记的节点就下放
                     POS ans={0,0,0};
-                    if(ql<=mid) ans=ans+getsum(ql,qr,l,mid,lc(f)); 
+                    if(ql<=mid) ans=ans+getsum(ql,qr,l,mid,lc(f));
                     if(qr>mid) ans=ans+getsum(ql,qr,mid+1,r,rc(f));
                     return ans;
                 }
@@ -946,16 +946,16 @@ export default function Post() {
                         raw.emplace_back(opt[i][2]);
                     }
 
-                    //离散化 
+                    //离散化
                     set<int> tmp(raw.begin(),raw.end());
-                    raw.assign(tmp.begin(),tmp.end());//对raw去重+排序 
+                    raw.assign(tmp.begin(),tmp.end());//对raw去重+排序
                     for(int i=0;i<raw.size();i++)
                     {
                         r2q.emplace_back(raw[i]-1);
                         r2q.emplace_back(raw[i]);
                     }
-                    n=r2q.size()-1;//不计算0 
-                    for(int i=1;i<=n;i+=2) q2r[r2q[i]]=i;//通过真实查询值反查rank 
+                    n=r2q.size()-1;//不计算0
+                    for(int i=1;i<=n;i+=2) q2r[r2q[i]]=i;//通过真实查询值反查rank
 
                     build(1,n,1);
                     for(int i=0;i<m;i++)

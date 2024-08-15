@@ -16,7 +16,7 @@ export default function Post() {
                 #include <iostream>
                 using namespace std;
                 int cur,score;
-                int d=2;//下一次如果cur=2(跳到中心)，加的分数 
+                int d=2;//下一次如果cur=2(跳到中心)，加的分数
                 int main()
                 {
                     while(1)
@@ -32,11 +32,11 @@ export default function Post() {
                         {
                             score+=d;
                             d+=2;
-                        } 
+                        }
                     }
                     cout<<score<<endl;
                     return 0;
-                } 
+                }
                 /*
                 in:
                 1 1 2 2 2 1 1 2 2 0
@@ -69,12 +69,12 @@ export default function Post() {
                         for(int j=1;j<=n;j++)
                         {
                             a[j][0]+=a[j][1];
-                            //触碰边界 
+                            //触碰边界
                             if(a[j][0]==l) a[j][1]=-1;
                             else if(a[j][0]==0) a[j][1]=1;
                         }
                         //判断小球碰撞
-                        //如果有一个整数坐标上存在两个小球，就发生碰撞了 
+                        //如果有一个整数坐标上存在两个小球，就发生碰撞了
                         memset(visit,0,sizeof(visit));
                         for(int j=1;j<=n;j++)
                         {
@@ -84,7 +84,7 @@ export default function Post() {
                             }
                             else
                             {
-                                //检测到碰撞了，发生碰撞的球编号是j和visit[a[j][0]] 
+                                //检测到碰撞了，发生碰撞的球编号是j和visit[a[j][0]]
                                 a[j][1]=-a[j][1];
                                 a[visit[a[j][0]]][1]=-a[visit[a[j][0]]][1];
                             }
@@ -122,24 +122,24 @@ export default function Post() {
                 using namespace std;
                 int n,m;
                 string pi,ri,qi;
-                vector<string> p,r,q;//规则和名字 
-                //输入一个字符串，并按斜杠拆分成字符串数组 
+                vector<string> p,r,q;//规则和名字
+                //输入一个字符串，并按斜杠拆分成字符串数组
                 vector<string> splitSlash(string str)
                 {
-                    vector<string> parts; 
+                    vector<string> parts;
                     string part;
-                    for(int i=1;i<str.length();i++)//跳过第一位'/' 
+                    for(int i=1;i<str.length();i++)//跳过第一位'/'
                     {
                         if(str[i]=='/') parts.push_back(part),part="";
                         else part+=str[i];
                     }
-                    if(part.length()) parts.push_back(part);//最后一位不是'/'的情况 
+                    if(part.length()) parts.push_back(part);//最后一位不是'/'的情况
                     return parts;
                 }
                 bool isInt(string str)
                 {
                     bool ok=true;
-                    for(auto ch:str) ok&=('0'<=ch&&ch<='9'); 
+                    for(auto ch:str) ok&=('0'<=ch&&ch<='9');
                     return ok;
                 }
                 bool isValid(string str)
@@ -156,7 +156,7 @@ export default function Post() {
                 {
                     return isValid(str)&&str.find('/')==-1;
                 }
-                //删除字符串前导0 
+                //删除字符串前导0
                 string trimZero(string str)
                 {
                     int i=0;
@@ -165,19 +165,19 @@ export default function Post() {
                         if(ch=='0') i++;
                         else break;
                     }
-                    if(i==str.length()) return "0";//如果全是0，保留一个0 
+                    if(i==str.length()) return "0";//如果全是0，保留一个0
                     return str.substr(i);
                 }
-                //查询q是否匹配规则p，如果成果就返回r和参数 
+                //查询q是否匹配规则p，如果成果就返回r和参数
                 vector<string> checkMatch(string q,string p,string r)
                 {
                     vector<string> q_parts=splitSlash(q);
                     vector<string> p_parts=splitSlash(p);
                     vector<string> ans;
-                    if(!isValid(q)) return ans;//查询路径q不合法 
-                    if(q[q.length()-1]=='/'^p[p.length()-1]=='/') return ans;//规则路径p和查询路径q最后一位，如果一个是'/'另一个不是'/'，认为一定不匹配 
-                    if(p_parts.size()>q_parts.size()) return ans;//规则路径p深度大于查询路径q，显然不匹配 
-                    bool hasPath=false;//规则中存在<path> 
+                    if(!isValid(q)) return ans;//查询路径q不合法
+                    if(q[q.length()-1]=='/'^p[p.length()-1]=='/') return ans;//规则路径p和查询路径q最后一位，如果一个是'/'另一个不是'/'，认为一定不匹配
+                    if(p_parts.size()>q_parts.size()) return ans;//规则路径p深度大于查询路径q，显然不匹配
+                    bool hasPath=false;//规则中存在<path>
                     int i;
                     for(i=0;i<p_parts.size();i++)
                     {
@@ -204,7 +204,7 @@ export default function Post() {
                             for(int j=i;j<q_parts.size();j++)
                             {
                                 rest+=q_parts[j];
-                                //特殊处理最后一位的'/' 
+                                //特殊处理最后一位的'/'
                                 if(j!=q_parts.size()-1)
                                 {
                                     rest+="/";
@@ -321,7 +321,7 @@ export default function Post() {
                 map<string,int> m;
                 int max(int x,int y){return x>y?x:y;}
                 int min(int x,int y){return x<y?x:y;}
-                //判断一个状态是否是终止状态，返回评估得分；如果不是终止状态返回100 
+                //判断一个状态是否是终止状态，返回评估得分；如果不是终止状态返回100
                 int getScore(string state)
                 {
                     int ans=100,cnt_0=0;
@@ -342,7 +342,7 @@ export default function Post() {
                             ans=(cnt_0+1)*(ch=='1'?1:-1);
                         }
                     }
-                    if(ans==100&&cnt_0==0) return 0;//没有胜方也没有空格，说明棋盘下满，是平局 
+                    if(ans==100&&cnt_0==0) return 0;//没有胜方也没有空格，说明棋盘下满，是平局
                     else return ans;
                 }
                 int generateTree_dfs(string state,bool isAlice)
@@ -361,14 +361,14 @@ export default function Post() {
                             if(isAlice)
                             {
                                 new_state[i]='1';
-                                //下一步是Bob走，一开始假定Alice必胜，通过DFS逐渐找到Bob的最优解，降低Alice最大期望得分 
+                                //下一步是Bob走，一开始假定Alice必胜，通过DFS逐渐找到Bob的最优解，降低Alice最大期望得分
                                 m[new_state]=100;
                                 m[state]=max(m[state],generateTree_dfs(new_state,false));
                             }
                             else
                             {
                                 new_state[i]='2';
-                                //同理... 
+                                //同理...
                                 m[new_state]=-100;
                                 m[state]=min(m[state],generateTree_dfs(new_state,true));
                             }
@@ -388,7 +388,7 @@ export default function Post() {
                     cin>>n;
                     for(int i=0;i<n;i++)
                     {
-                        char ch; 
+                        char ch;
                         string state;
                         for(int j=0;j<9;j++)
                         {

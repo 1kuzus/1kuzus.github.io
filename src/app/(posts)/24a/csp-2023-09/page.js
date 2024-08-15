@@ -64,13 +64,13 @@ export default function Post() {
                     for(int i=1;i<=n;i++)
                     {
                         cin>>opt>>vi;
-                        //拉伸 
+                        //拉伸
                         if(opt==1)
                         {
                             k[i]=k[i-1]*vi;
                             theta[i]=theta[i-1];
                         }
-                        //旋转 
+                        //旋转
                         else
                         {
                             k[i]=k[i-1];
@@ -130,15 +130,15 @@ export default function Post() {
                 #define MOD 1000000007
                 using namespace std;
                 struct POLYNODE{
-                    int type;//0:运算符 1:xi 2:常数 
-                    int c;//常数值 
-                    int xid;//xi的i 
-                    string opt;//运算符 
-                    int val;//前向传播节点值 
-                    POLYNODE *lchild,*rchild; 
+                    int type;//0:运算符 1:xi 2:常数
+                    int c;//常数值
+                    int xid;//xi的i
+                    string opt;//运算符
+                    int val;//前向传播节点值
+                    POLYNODE *lchild,*rchild;
                 };
                 int n,m,xid;
-                string poly; 
+                string poly;
                 vector<string> split(string str,string sep)
                 {
                     vector<string> res;
@@ -174,7 +174,7 @@ export default function Post() {
                             node->xid=stoi(p.substr(1));
                             s.push(node);
                         }
-                        //常数 
+                        //常数
                         else
                         {
                             node->type=2;
@@ -246,7 +246,7 @@ export default function Post() {
                 int main()
                 {
                     cin>>n>>m;
-                    getline(cin,poly);//读回车 
+                    getline(cin,poly);//读回车
                     getline(cin,poly);
                     POLYNODE *root=makePolyTree();
 
@@ -317,14 +317,14 @@ export default function Post() {
                 int pos[100005][2];
                 int cos[8]={1,1,0,-1,-1,-1,0,1};
                 int sin[8]={0,1,1,1,0,-1,-1,-1};
-                vector<int> changes;//需要变换的员工的id 
+                vector<int> changes;//需要变换的员工的id
                 unordered_map<int,map<int,int>> dirs[4];
                 void addPos(int x,int y,int id)
                 {
                     dirs[0][y]  [x]=id;
-                    dirs[1][y-x][x]=id; 
+                    dirs[1][y-x][x]=id;
                     dirs[2][x]  [y]=id;
-                    dirs[3][y+x][x]=id; 
+                    dirs[3][y+x][x]=id;
                     return;
                 }
                 void deletePos(int x,int y)
@@ -339,11 +339,11 @@ export default function Post() {
                 {
                     int dx=x-u,dy=y-v;
                     int new_dx=dx*cos[t]-dy*sin[t],new_dy=dx*sin[t]+dy*cos[t];
-                    //非90度整数倍方向旋转非90度整数倍角单独修正 
+                    //非90度整数倍方向旋转非90度整数倍角单独修正
                     if(t%2&&dx&&dy) new_dx/=2,new_dy/=2;
                     return make_pair(u+new_dx,v+new_dy);
                 }
-                //检查一个新找到的员工能不能更新k 
+                //检查一个新找到的员工能不能更新k
                 void checkDirectionUpdate(map<int,int>::iterator it,int pos_val)
                 {
                     if(abs(it->first-pos_val)==k)
@@ -358,7 +358,7 @@ export default function Post() {
                     }
                     return;
                 }
-                //检查四个方向上能不能找到员工 
+                //检查四个方向上能不能找到员工
                 void checkDirection(int dir_id,int locator,int pos_val)
                 {
                     if(dirs[dir_id].find(locator)!=dirs[dir_id].end())
@@ -377,7 +377,7 @@ export default function Post() {
                     }
                     return;
                 }
-                void work(int u,int v,int t) 
+                void work(int u,int v,int t)
                 {
                     k=2147483647;
                     changes.clear();
@@ -385,7 +385,7 @@ export default function Post() {
                     checkDirection(1,v-u,u);
                     checkDirection(2,u  ,v);
                     checkDirection(3,v+u,u);
-                    //k不能大于到(u,v)到边界的位置 
+                    //k不能大于到(u,v)到边界的位置
                     if(k<=min(min(u-1,n-u),min(v-1,m-v)))
                     {
                         for(auto id:changes)

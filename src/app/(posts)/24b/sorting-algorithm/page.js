@@ -315,10 +315,10 @@ export default function Post() {
                 {
                     for(int i=0;i<nums.size();i++)
                     {
-                        int j,k=nums[i];//未排序序列第一个元素 
+                        int j,k=nums[i];//未排序序列第一个元素
                         for(j=i-1;j>=0&&nums[j]>k;j--)
                         {
-                            nums[j+1]=nums[j];//大于k的数都右移一位 
+                            nums[j+1]=nums[j];//大于k的数都右移一位
                         }
                         nums[j+1]=k;
                     }
@@ -366,7 +366,7 @@ export default function Post() {
                             int j,k=nums[i];
                             for(j=i-gap;j>=0&&nums[j]>k;j-=gap)
                             {
-                                nums[j+gap]=nums[j];//大于k的数都右移gap位 
+                                nums[j+gap]=nums[j];//大于k的数都右移gap位
                             }
                             nums[j+gap]=k;
                         }
@@ -401,22 +401,22 @@ export default function Post() {
                 #include <iostream>
                 #include <vector>
                 using namespace std;
-                void mergeSort(vector<int> &nums,vector<int> &aux,int l,int r)//排序[l,r] 
+                void mergeSort(vector<int> &nums,vector<int> &aux,int l,int r)//排序[l,r]
                 {
                     if(l>=r) return;
                     int m=l+(r-l)/2;
                     mergeSort(nums,aux,l,m);
                     mergeSort(nums,aux,m+1,r);
-                    //合并[l,m]和[m+1,r] 
+                    //合并[l,m]和[m+1,r]
                     int i=l,j=m+1;
-                    for(int k=l;k<=r;k++)//先在辅助空间中构造出合并后的序列 
+                    for(int k=l;k<=r;k++)//先在辅助空间中构造出合并后的序列
                     {
                         if(i>m)                 aux[k]=nums[j],j++;
                         else if(j>r)            aux[k]=nums[i],i++;
                         else if(nums[i]>nums[j])aux[k]=nums[j],j++;
                         else                    aux[k]=nums[i],i++;
                     }
-                    for(int k=l;k<=r;k++)//在辅助空间合并后复制给nums 
+                    for(int k=l;k<=r;k++)//在辅助空间合并后复制给nums
                     {
                         nums[k]=aux[k];
                     }
@@ -424,7 +424,7 @@ export default function Post() {
                 }
                 vector<int> sortArray(vector<int> &nums)
                 {
-                    vector<int> aux=nums;//辅助空间 
+                    vector<int> aux=nums;//辅助空间
                     mergeSort(nums,aux,0,nums.size()-1);
                     return nums;
                 }
@@ -459,10 +459,10 @@ export default function Post() {
                 void quickSort(vector<int> &nums,int l,int r)
                 {
                     if(l>=r) return;
-                    int lp=l,rp=l,tmp;//lp左侧的全部元素都小于主元 
+                    int lp=l,rp=l,tmp;//lp左侧的全部元素都小于主元
                     for(;rp<r;rp++)
                     {
-                        if(nums[rp]<nums[r])//选择nums[r]作为主元 
+                        if(nums[rp]<nums[r])//选择nums[r]作为主元
                         {
                             tmp=nums[rp],nums[rp]=nums[lp],nums[lp]=tmp;
                             lp++;
@@ -507,7 +507,7 @@ export default function Post() {
                 #include <iostream>
                 #include <vector>
                 using namespace std;
-                //如果越界返回下标0，nums[0]会被赋值成负无穷作为哨兵节点 
+                //如果越界返回下标0，nums[0]会被赋值成负无穷作为哨兵节点
                 int left(int i,int heapsize){return i*2<=heapsize?i*2:0;}
                 int right(int i,int heapsize){return i*2+1<=heapsize?i*2+1:0;}
                 void swap(vector<int> &nums,int i,int j)
@@ -517,12 +517,12 @@ export default function Post() {
                     nums[j]=tmp;
                     return;
                 }
-                //调用maxheapify时，i的左右子树都应该为最大堆 
+                //调用maxheapify时，i的左右子树都应该为最大堆
                 void maxheapify(vector<int> &nums,int heapsize,int i)
                 {
                     int l=left(i,heapsize),r=right(i,heapsize);
                     int rt=nums[i],lchild=nums[l],rchild=nums[r];
-                    if(rt>=lchild&&rt>=rchild) return;//根节点已经最大，返回 
+                    if(rt>=lchild&&rt>=rchild) return;//根节点已经最大，返回
                     else if(lchild>rchild)
                     {
                         swap(nums,l,i);
@@ -538,9 +538,9 @@ export default function Post() {
                 vector<int> sortArray(vector<int> &nums)
                 {
                     int heapsize=nums.size();//堆中元素从1开始编号
-                    nums.emplace(nums.begin(),-2147483647);//nums[0]作为哨兵 
+                    nums.emplace(nums.begin(),-2147483647);//nums[0]作为哨兵
                     //建堆
-                    //heapsize>>1是堆的第一个非叶子节点，从它开始向前依次调用一次maxheapify 
+                    //heapsize>>1是堆的第一个非叶子节点，从它开始向前依次调用一次maxheapify
                     for(int i=heapsize>>1;i>0;i--)
                     {
                         maxheapify(nums,heapsize,i);
@@ -550,9 +550,9 @@ export default function Post() {
                     {
                         swap(nums,1,heapsize);//将最大的元素换到最后
                         heapsize--;
-                        maxheapify(nums,heapsize,1); 
+                        maxheapify(nums,heapsize,1);
                     }
-                    nums.erase(nums.begin());//移除哨兵 
+                    nums.erase(nums.begin());//移除哨兵
                     return nums;
                 }
                 int main()
@@ -643,10 +643,10 @@ export default function Post() {
                 {
                     for(int i=0;i<nums.size();i++)
                     {
-                        int j,k=nums[i];//未排序序列第一个元素 
+                        int j,k=nums[i];//未排序序列第一个元素
                         for(j=i-1;j>=0&&nums[j]>k;j--)
                         {
-                            nums[j+1]=nums[j];//大于k的数都右移一位 
+                            nums[j+1]=nums[j];//大于k的数都右移一位
                         }
                         nums[j+1]=k;
                     }
@@ -654,7 +654,7 @@ export default function Post() {
                 }
                 vector<int> sortArray(vector<int> &nums)
                 {
-                    int k=100;//桶的大小 
+                    int k=100;//桶的大小
                     int mx=nums[0],mi=nums[0];
                     for(auto x:nums)
                     {
@@ -714,9 +714,9 @@ export default function Post() {
                         if(x>mx) mx=x;
                         if(x<mi) mi=x;
                     }
-                    for(int i=0;i<nums.size();i++) nums[i]-=mi;//减掉最小值，这样可以排序负数 
+                    for(int i=0;i<nums.size();i++) nums[i]-=mi;//减掉最小值，这样可以排序负数
                     mx-=mi;
-                    vector<vector<int>> dgt(10);//每趟排序对一位进行计数排序 
+                    vector<vector<int>> dgt(10);//每趟排序对一位进行计数排序
                     for(int exp=1;mx/exp>0;exp*=10)
                     {
                         for(auto x:nums)
@@ -730,7 +730,7 @@ export default function Post() {
                             dgt[i].clear();
                         }
                     }
-                    for(int i=0;i<nums.size();i++) nums[i]+=mi;//还原 
+                    for(int i=0;i<nums.size();i++) nums[i]+=mi;//还原
                     return nums;
                 }
                 int main()

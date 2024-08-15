@@ -95,7 +95,7 @@ export default function Post() {
                     int w;
                     friend bool operator <(EDGE a,EDGE b)
                     {
-                        return a.w<b.w; 
+                        return a.w<b.w;
                     }
                 }edge[M];
                 void addEdge(int u,int v,int w)
@@ -115,7 +115,7 @@ export default function Post() {
                 void uni(int x,int y)
                 {
                     f[find(x)]=find(y);
-                    return; 
+                    return;
                 }
                 bool connected(int x,int y)
                 {
@@ -125,25 +125,25 @@ export default function Post() {
                 int main()
                 {
                     cin>>n>>m;
-                    for(int i=0;i<n;i++) f[i]=i;//初始化并查集 
+                    for(int i=0;i<n;i++) f[i]=i;//初始化并查集
                     for(int i=0;i<m;i++)
                     {
                         int u,v,w;
                         cin>>u>>v>>w;
-                        addEdge(u-1,v-1,w);//输入是从1计数的 
+                        addEdge(u-1,v-1,w);//输入是从1计数的
                     }
-                    sort(edge,edge+m);//对边排序 
+                    sort(edge,edge+m);//对边排序
                     for(int i=0;i<m;i++)
                     {
                         int u=edge[i].u,v=edge[i].v;
-                        if(!connected(u,v))//不成环就加入 
+                        if(!connected(u,v))//不成环就加入
                         {
                             uni(u,v);
                             cnt++;
-                            ans+=edge[i].w;//不成环就加入 
+                            ans+=edge[i].w;//不成环就加入
                         }
                     }
-                    //题目让判断图不连通的情况，因此检查得到的边数是否为顶点数-1 
+                    //题目让判断图不连通的情况，因此检查得到的边数是否为顶点数-1
                     if(cnt==n-1) cout<<ans<<endl;
                     else cout<<"orz"<<endl;
                     return 0;
@@ -218,7 +218,7 @@ export default function Post() {
                 #define INF 2147483647
                 using namespace std;
                 int n,m,ans,cnt,d[N];
-                bool vis[N];//顶点是否在集合T中，把0作为起点 
+                bool vis[N];//顶点是否在集合T中，把0作为起点
                 int g[N][N];
 
                 int main()
@@ -236,7 +236,7 @@ export default function Post() {
                     {
                         int u,v,w;
                         cin>>u>>v>>w;
-                        if(w<g[u-1][v-1])//可能有重边 
+                        if(w<g[u-1][v-1])//可能有重边
                         {
                             g[u-1][v-1]=w;
                             g[v-1][u-1]=w;
@@ -244,14 +244,14 @@ export default function Post() {
                     }
                     for(int t=0;t<n;t++)
                     {
-                        //选择不在T中的顶点中，d[u]最小的顶点u 
+                        //选择不在T中的顶点中，d[u]最小的顶点u
                         int u=0,minval=INF;
                         for(int i=0;i<n;i++)
                         {
                             if(vis[i]) continue;
                             if(d[i]<minval)	minval=d[i],u=i;
                         }
-                        if(minval==INF) break;//说明不连通 
+                        if(minval==INF) break;//说明不连通
                         vis[u]=true;
                         cnt++;
                         ans+=minval;
@@ -261,7 +261,7 @@ export default function Post() {
                             if(g[u][v]<d[v]) d[v]=g[u][v];
                         }
                     }
-                    //题目让判断图不连通的情况，因此检查得到的边数是否为顶点数-1 
+                    //题目让判断图不连通的情况，因此检查得到的边数是否为顶点数-1
                     if(cnt==n) cout<<ans<<endl;
                     else cout<<"orz"<<endl;
                     return 0;
@@ -332,7 +332,7 @@ export default function Post() {
                 #define INF 2147483647
                 using namespace std;
                 int n,m,ans,cnt,d[N];
-                bool vis[N];//顶点是否在集合T中，把0作为起点 
+                bool vis[N];//顶点是否在集合T中，把0作为起点
                 struct EDGE{
                     int to,w;
                 };
@@ -361,7 +361,7 @@ export default function Post() {
                         int u,v,w;
                         cin>>u>>v>>w;
                         addEdge(u-1,v-1,w);
-                        addEdge(v-1,u-1,w); 
+                        addEdge(v-1,u-1,w);
                     }
                     while(!q.empty())
                     {
@@ -381,7 +381,7 @@ export default function Post() {
                             }
                         }
                     }
-                    //题目让判断图不连通的情况，因此检查得到的边数是否为顶点数-1 
+                    //题目让判断图不连通的情况，因此检查得到的边数是否为顶点数-1
                     if(cnt==n) cout<<ans<<endl;
                     else cout<<"orz"<<endl;
                     return 0;
@@ -486,7 +486,7 @@ export default function Post() {
                 {
                     cin>>n>>m>>s;
                     for(int i=0;i<n;i++) d[i]=INF;
-                    d[s-1]=0; 
+                    d[s-1]=0;
                     for(int i=0;i<m;i++)
                     {
                         int u,v,w;
@@ -496,13 +496,13 @@ export default function Post() {
                     //每次循环都对全图所有边进行一次松弛操作，一共执行n-1次循环
                     for(int t=0;t<n-1;t++)
                     {
-                        //下面两重循环遍历了m条边 
+                        //下面两重循环遍历了m条边
                         for(int u=0;u<n;u++)
                         {
                             for(EDGE e:g[u])
                             {
                                 int v=e.to;
-                                if(d[v]-e.w>d[u])//注意加法可能溢出 
+                                if(d[v]-e.w>d[u])//注意加法可能溢出
                                 {
                                     d[v]=d[u]+e.w;
                                 }
@@ -544,7 +544,7 @@ export default function Post() {
                     cin>>T;
                     while(T--)
                     {
-                        cin>>n>>m;		
+                        cin>>n>>m;
                         for(int i=0;i<n;i++) g[i].clear();
                         for(int i=0;i<n;i++) d[i]=INF;
                         d[0]=0;
@@ -553,18 +553,18 @@ export default function Post() {
                             int u,v,w;
                             cin>>u>>v>>w;
                             addEdge(u-1,v-1,w);
-                            if(w>=0) addEdge(v-1,u-1,w);//题目要求 
+                            if(w>=0) addEdge(v-1,u-1,w);//题目要求
                         }
                         //每次循环都对全图所有边进行一次松弛操作，一共执行n-1次循环
                         for(int i=0;i<n-1;i++)
                         {
-                            //下面两重循环遍历了m条边 
+                            //下面两重循环遍历了m条边
                             for(int u=0;u<n;u++)
                             {
                                 for(EDGE e:g[u])
                                 {
                                     int v=e.to;
-                                    if(d[v]>d[u]+e.w) 
+                                    if(d[v]>d[u]+e.w)
                                     {
                                         d[v]=d[u]+e.w;
                                     }
@@ -574,12 +574,12 @@ export default function Post() {
                         bool flag=false;
                         for(int u=0;u<n;u++)
                         {
-                            //题目要求判断是否存在从顶点1出发能到达的负环，因此d值过大的顶点视为不与1联通 
+                            //题目要求判断是否存在从顶点1出发能到达的负环，因此d值过大的顶点视为不与1联通
                             if(d[u]>1e8) continue;
                             for(EDGE e:g[u])
                             {
                                 int v=e.to;
-                                //如果n-1轮松弛后，仍然有可以松弛的边，说明有负环 
+                                //如果n-1轮松弛后，仍然有可以松弛的边，说明有负环
                                 if(d[v]-e.w>d[u])
                                 {
                                     flag=true;
@@ -692,9 +692,9 @@ export default function Post() {
                     {
                         int u,v,w;
                         cin>>u>>v>>w;
-                        if(w<g[u-1][v-1]) g[u-1][v-1]=w;//可能存在重边 
+                        if(w<g[u-1][v-1]) g[u-1][v-1]=w;//可能存在重边
                     }
-                    //每个循环k，g[i][j]表示从i到j，所有中间结点取自集合{0,1,...,k-1}的最短路 
+                    //每个循环k，g[i][j]表示从i到j，所有中间结点取自集合{0,1,...,k-1}的最短路
                     for(int k=0;k<n;k++)
                     {
                         for(int i=0;i<n;i++)
@@ -713,7 +713,7 @@ export default function Post() {
                         long long ans=0;
                         for(int j=0;j<n;j++)
                         {
-                            int dis=g[i][j]>1e8?1e9:g[i][j];//题目要求不连通按1e9计算 
+                            int dis=g[i][j]>1e8?1e9:g[i][j];//题目要求不连通按1e9计算
                             ans+=(long long)(j+1)*dis;
                         }
                         cout<<ans<<endl;
@@ -749,9 +749,9 @@ export default function Post() {
                 #define INF 1000000009
                 using namespace std;
                 int n,m;
-                int h[N];//势函数 
+                int h[N];//势函数
                 struct EDGE{
-                    int to,w;//边的终点和边权 
+                    int to,w;//边的终点和边权
                 };
                 vector<EDGE> g[N];
                 void addEdge(int u,int v,int w)
@@ -767,7 +767,7 @@ export default function Post() {
                     }
                 };
 
-                bool BellmanFord()//求出势函数，同时返回是否存在负环 
+                bool BellmanFord()//求出势函数，同时返回是否存在负环
                 {
                     //注意在这里n是加入了虚拟节点之后的
                     for(int t=0;t<n;t++)
@@ -801,7 +801,7 @@ export default function Post() {
                 long long Dijkstra(int s)
                 {
                     priority_queue<NODE> q;
-                    int d[N]={}; 
+                    int d[N]={};
                     bool vis[N]={};
                     for(int i=0;i<n;i++) d[i]=INF;
                     d[s]=0;
@@ -846,14 +846,14 @@ export default function Post() {
                     {
                         addEdge(n,i,0);
                     }
-                    //一次BellmanFord求出势函数，并判断负环 
+                    //一次BellmanFord求出势函数，并判断负环
                     for(int i=0;i<n;i++) h[i]=INF;
                     if(BellmanFord())
                     {
                         cout<<-1<<endl;
                         return 0;
                     }
-                    //调整边权为非负，然后跑n次Dijkstra 
+                    //调整边权为非负，然后跑n次Dijkstra
                     for(int u=0;u<n;u++)
                     {
                         for(auto &e:g[u])

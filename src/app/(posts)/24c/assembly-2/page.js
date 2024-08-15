@@ -190,7 +190,7 @@ export default function Post() {
                 stcksg ends
 
                 codesg segment
-                    start: 
+                    start:
                     ;初始化寄存器
                     ;由于程序至少要有一个代码段，所以会自动给CS赋值
                     ;此处不需要手动初始化CS
@@ -217,7 +217,7 @@ export default function Post() {
                            mov  ax,4c00h
                            int  21h
                 codesg ends
-                end start                          
+                end start
                 `}
             />
             <X.P>注意现在入栈、出栈操作时段地址寄存器是`DS`。</X.P>

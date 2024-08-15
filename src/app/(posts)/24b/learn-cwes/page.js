@@ -762,7 +762,7 @@ export default function Post() {
                         //Check if the file is JPG, PNG or GIF.
                         if (in_array($_FILES['imagefile']['type'], array('image/pjpeg', 'image/jpeg','image/png', 'image/gif'))) {
                             /* fix issue 44. Thanks to Klaus.  */
-                            $imagewhitelist = array('jfif', '.png', '.jpg', '.gif', 'jpeg');  
+                            $imagewhitelist = array('jfif', '.png', '.jpg', '.gif', 'jpeg');
                             if (!in_array(strtolower(substr($_FILES['imagefile']['name'], -4)), $imagewhitelist))
                                 show_error($lang['general']['upload_failed'], 1);
                             /* end of fix issue 44. Thanks to Klaus.  */
@@ -1383,7 +1383,7 @@ export default function Post() {
                 {
                     pthread_mutex_lock(mutex);
 
-                    /* access shared resource */ 
+                    /* access shared resource */
 
                     pthread_mutex_unlock(mutex);
                 }
@@ -1598,7 +1598,7 @@ export default function Post() {
                 <X.CodeBlock
                     language="php"
                     code={`
-                    <?php 
+                    <?php
                     $cats=array(
                     0=>array(
                     'name'=>'未分组',

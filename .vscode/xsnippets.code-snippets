@@ -1,9 +1,9 @@
 {
-	// Place your Githubio 工作区 snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
-	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
-	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
-	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
-	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Place your Githubio 工作区 snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
 	// Placeholders with the same ids are connected.
 	"X.H1 tag": {
 		"scope": "javascript,typescript",
@@ -40,7 +40,7 @@
 	"withMarginTop props": {
 		"scope": "javascript,typescript",
 		"prefix": "wmt",
-		"body": [	
+		"body": [
 			"withMarginTop"
 		],
 		"description": "withMarginTop props"
@@ -48,7 +48,7 @@
 	"noMarginBottom props": {
 		"scope": "javascript,typescript",
 		"prefix": "nmb",
-		"body": [	
+		"body": [
 			"noMarginBottom"
 		],
 		"description": "noMarginBottom props"
@@ -120,7 +120,7 @@
 	"highlightLines props": {
 		"scope": "javascript,typescript",
 		"prefix": "hll",
-		"body": [	
+		"body": [
 			"highlightLines"
 		],
 		"description": "highlightLines props"
@@ -128,7 +128,7 @@
 	"diffRemovedLines props": {
 		"scope": "javascript,typescript",
 		"prefix": "drl",
-		"body": [	
+		"body": [
 			"diffRemovedLines"
 		],
 		"description": "diffRemovedLines props"
@@ -136,7 +136,7 @@
 	"diffAddedLines props": {
 		"scope": "javascript,typescript",
 		"prefix": "dal",
-		"body": [	
+		"body": [
 			"diffAddedLines"
 		],
 		"description": "diffAddedLines props"
@@ -176,15 +176,15 @@
 	"X.Image tag": {
 		"scope": "javascript,typescript",
 		"prefix": "ximage",
-		"body": [	
-			"<X.Image src='fig1.jpg' width='$1' />"
+		"body": [
+			"<X.Image src='fig1.jpg' width='100%$1' />"
 		],
 		"description": "X.Image tag"
 	},
 	"invertInDarkTheme props": {
 		"scope": "javascript,typescript",
 		"prefix": "iidt",
-		"body": [	
+		"body": [
 			"invertInDarkTheme"
 		],
 		"description": "invertInDarkTheme props"

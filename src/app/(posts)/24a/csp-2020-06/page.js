@@ -17,7 +17,7 @@ export default function Post() {
                 using namespace std;
                 int n,m;
                 int p[1005][3];
-                int label[1005];//每个点根据直线的分类 
+                int label[1005];//每个点根据直线的分类
                 bool check(int t0,int t1,int t2)
                 {
                     int sum=0;
@@ -48,7 +48,7 @@ export default function Post() {
                         cout<<(check(t0,t1,t2)?"Yes":"No")<<endl;
                     }
                     return 0;
-                } 
+                }
                 /*
                 in:
                 9 3
@@ -104,7 +104,7 @@ export default function Post() {
                         {
                             ib++;
                         }
-                        else if(idxa<idxb) 
+                        else if(idxa<idxb)
                         {
                             ia++;
                         }
@@ -112,11 +112,11 @@ export default function Post() {
                         {
                             ans+=ma[idxa]*mb[idxb];
                             ia++,ib++;
-                        } 
+                        }
                     }
                     cout<<ans<<endl;
                     return 0;
-                } 
+                }
                 /*
                 in:
                 10 3 4
@@ -168,10 +168,10 @@ export default function Post() {
                 using namespace std;
                 int w;
                 string s;
-                int cursor;//光标位置，cursor<=w 
-                int line;//光标所在行 
+                int cursor;//光标位置，cursor<=w
+                int line;//光标所在行
                 int rendering=0;//0:等待新内容 1:正在渲染段落 2:正在渲染列表
-                //字符串工具 
+                //字符串工具
                 string replace(string str,string str1,string str2)
                 {
                     string res=str;
@@ -188,13 +188,13 @@ export default function Post() {
                     return true;
                 }
                 /***************************************************************/
-                //调试 
-                bool dbg=1;//输出最终渲染的结果 
-                bool dbg_show_enterer=0;//输出是谁调用了换行 
+                //调试
+                bool dbg=1;//输出最终渲染的结果
+                bool dbg_show_enterer=0;//输出是谁调用了换行
                 vector<string> dbg_result;
                 void dbg_show_result()
                 {
-                    int line_id=1;//行号只补全一位，总行数最好不要超过100 
+                    int line_id=1;//行号只补全一位，总行数最好不要超过100
                     for(auto str:dbg_result)
                     {
                         cout<<(line_id<10?"0":"")<<line_id<<"|"<<replace(str," ",".")<<endl;
@@ -218,8 +218,8 @@ export default function Post() {
                 {
                     while(s.back()==' ') s.pop_back();
                     int sz=s.size();
-                    int str_p=0;//字符串指针，str_p<str.size() 
-                    //输入只有*_ 
+                    int str_p=0;//字符串指针，str_p<str.size()
+                    //输入只有*_
                     if(sz==0&&padding)
                     {
                         if(dbg)
@@ -231,7 +231,7 @@ export default function Post() {
                     while(str_p<sz)
                     {
                         while(str_p<sz&&s[str_p]==' ') str_p++;
-                        //连续输入两行之间插入一个空格 
+                        //连续输入两行之间插入一个空格
                         if(0<cursor&&cursor<w)
                         {
                             if(dbg)
@@ -249,7 +249,7 @@ export default function Post() {
                             }
                             cursor=3;
                         }
-                        //剩余字符串还够渲染完当前行 
+                        //剩余字符串还够渲染完当前行
                         if(w-cursor<=sz-str_p)
                         {
                             if(dbg)
@@ -336,11 +336,11 @@ export default function Post() {
                 CSP
 
                 CSP is
-                a real realrealrealrealreal 
+                a real realrealrealrealreal
                      competition.
 
 
-                Come   and   join   us    
+                Come   and   join   us
 
                 out:
                 10
@@ -350,16 +350,16 @@ export default function Post() {
                 * CSP
 
                 *   CSP is
-                  * a real  
+                  * a real
                      competition.
-                * 
+                *
                   * Come!   and   join.
                 *Tel:
                 * 12345
-                * 
+                *
 
                 out:
-                14 
+                14
                 */
                 `}
             />
@@ -419,34 +419,34 @@ export default function Post() {
                 using namespace std;
                 int n,ans;
                 string s;
-                //0-15整数转2位字符串 
+                //0-15整数转2位字符串
                 string i2s(int x)
                 {
                     char chs[]={'1','2','4','6'};
                     return string(1,chs[x/4])+string(1,chs[x%4]);
                 }
-                //1位字符串转为0-3，2位字符串转为0-15 
+                //1位字符串转为0-3，2位字符串转为0-15
                 int s2i(string s)
                 {
                     int idx[]={0,0,1,0,2,0,3};
                     if(s.size()==1) return idx[s[0]-'0'];
                     return idx[s[0]-'0']*4+idx[s[1]-'0'];
                 }
-                //dt=1，四个数字的生成能力 
+                //dt=1，四个数字的生成能力
                 vector<int> G={
                     0,1,0,0,
                     0,0,1,0,
                     1,0,0,1,
                     0,0,1,1,
                 };
-                //矩阵减法 
+                //矩阵减法
                 vector<int> matsub(vector<int> A,vector<int> B)
                 {
                     vector<int> ans(N*N);
                     for(int i=0;i<N*N;i++) ans[i]=A[i]-B[i];
                     return ans;
                 }
-                //矩阵乘法，如果结果需要除以常数，则传入常数的逆元 
+                //矩阵乘法，如果结果需要除以常数，则传入常数的逆元
                 vector<int> matmul(vector<int> A,vector<int> B,int inv_c=1)
                 {
                     vector<int> ans(N*N);
@@ -459,7 +459,7 @@ export default function Post() {
                             {
                                 ansij+=((long long)A[i*N+k]*B[k*N+j])%MOD;
                             }
-                            ansij=(ansij*inv_c)%MOD;//除以常数 
+                            ansij=(ansij*inv_c)%MOD;//除以常数
                             ans[i*N+j]=(ansij+MOD)%MOD;
                         }
                     }
@@ -478,18 +478,18 @@ export default function Post() {
                     }
                     return ans;
                 }
-                //矩阵等比数列求和 A^t_start+A^(t_start-cyc)+A^(t_start-2*cyc)... (直到指数非正) 
+                //矩阵等比数列求和 A^t_start+A^(t_start-cyc)+A^(t_start-2*cyc)... (直到指数非正)
                 //生成数是4则循环周期cyc=2，生成数是6则循环周期cyc=6
                 vector<int> seqsum(vector<int> A,int t_start,int cyc)
                 {
                     int t_end=t_start-(t_start/cyc)*cyc;
                     vector<int> _9xinv2={-6,-3,-3,6,-3,-6,3,3,3,-3,-3,6,3,6,6,-3};//9*inv(G^2-I)
                     vector<int> _9xinv6={-7,-5,4,1,4,-7,-4,5,-4,4,-2,1,5,1,1,-2}; //9*inv(G^6-I)
-                    //逆矩阵还需要除以9，因此传入9对于MOD(998244353)的逆元443664157 
+                    //逆矩阵还需要除以9，因此传入9对于MOD(998244353)的逆元443664157
                     if(cyc==2) return matmul(_9xinv2,matsub(fmp(A,t_start+cyc),fmp(A,t_end)),443664157);
                     return matmul(_9xinv6,matsub(fmp(A,t_start+cyc),fmp(A,t_end)),443664157);
                 }
-                //判断是否为"整串"，即可以从左侧开始恰好找到对应的"生成串" 
+                //判断是否为"整串"，即可以从左侧开始恰好找到对应的"生成串"
                 bool isExact(string str)
                 {
                     for(int i=0;i<str.size();i++)
@@ -505,7 +505,7 @@ export default function Post() {
                     }
                     return true;
                 }
-                //返回"整串"的"生成串" 
+                //返回"整串"的"生成串"
                 string getGenerator(string str)
                 {
                     string ans;
@@ -518,7 +518,7 @@ export default function Post() {
                     }
                     return ans;
                 }
-                //返回2位字符串str在t=t0时出现的次数 
+                //返回2位字符串str在t=t0时出现的次数
                 int getAns(string str,int t0)
                 {
                     int t4[16]={0,0,0,1,0,0,0,2,0,0,0,3,0,0,0,4};
@@ -535,7 +535,7 @@ export default function Post() {
                         return t?seqsum(G,t0-t,6)[3]:0;
                     }
                 }
-                //对于长度大于等于3的字符串，dfs寻找其2位生成串 
+                //对于长度大于等于3的字符串，dfs寻找其2位生成串
                 void dfs(string str,int t)
                 {
                     if(str.size()==2) {

@@ -66,10 +66,10 @@ export default function Post() {
                 #include <algorithm>
                 using namespace std;
                 int n,k,t,xl,yd,xr,yu;
-                int ans_pass,ans_in;//经过和逗留人数 
-                int cnt_in[25],max_cnt_in[25];//每个人的逗留时长 
+                int ans_pass,ans_in;//经过和逗留人数
+                int cnt_in[25],max_cnt_in[25];//每个人的逗留时长
                 int max(int x,int y){return x>y?x:y;}
-                //在高危区域内 
+                //在高危区域内
                 bool inArea(int x,int y)
                 {
                     return xl<=x&&x<=xr&&yd<=y&&y<=yu;
@@ -125,17 +125,17 @@ export default function Post() {
                 #include <vector>
                 #include <queue>
                 using namespace std;
-                int Q,m,n,s; 
+                int Q,m,n,s;
                 struct INPUTNODE{
-                    vector<int> output_to;//输出到的节点的编号 
-                    int val;//输入信号值 
-                }; 
+                    vector<int> output_to;//输出到的节点的编号
+                    int val;//输入信号值
+                };
                 struct NODE{
                     string func;
-                    vector<int> output_to;//输出到的节点的编号 
-                    vector<int> inputs;//输入值的集合 
-                    int in_degree;//剩余入度 
-                    int val;//器件的输出值 
+                    vector<int> output_to;//输出到的节点的编号
+                    vector<int> inputs;//输入值的集合
+                    int in_degree;//剩余入度
+                    int val;//器件的输出值
                 };
                 int calc(string func,vector<int> inputs)
                 {
@@ -170,7 +170,7 @@ export default function Post() {
                 }
                 bool work(vector<INPUTNODE> inputs,vector<NODE> nodes,vector<int> query)
                 {
-                    //处理输入信号 
+                    //处理输入信号
                     for(auto input_node:inputs)
                     {
                         for(auto output_id:input_node.output_to)
@@ -179,13 +179,13 @@ export default function Post() {
                             nodes[output_id].inputs.emplace_back(input_node.val);
                         }
                     }
-                    //拓扑排序，队列中为剩余入度为0的器件编号 
+                    //拓扑排序，队列中为剩余入度为0的器件编号
                     queue<int> q;
                     for(int i=0;i<nodes.size();i++)
                     {
                         if(nodes[i].in_degree==0) q.push(i);
                     }
-                    //记录出队次数，如果这个cnt最后与器件数量不相同，就说明有逻辑环 
+                    //记录出队次数，如果这个cnt最后与器件数量不相同，就说明有逻辑环
                     int cnt=0;
                     while(!q.empty())
                     {
@@ -195,17 +195,17 @@ export default function Post() {
                         nodes[id].val=calc(nodes[id].func,nodes[id].inputs);
                         for(auto output_id:nodes[id].output_to)
                         {
-                            //处理当前器件的输出 
+                            //处理当前器件的输出
                             nodes[output_id].in_degree--;
                             nodes[output_id].inputs.emplace_back(nodes[id].val);
-                            //如果某个器件所需的全部输入已经集齐，也就是剩余入度为0了，就可以加入队列 
+                            //如果某个器件所需的全部输入已经集齐，也就是剩余入度为0了，就可以加入队列
                             if(nodes[output_id].in_degree==0)
                             {
                                 q.push(output_id);
                             }
                         }
                     }
-                    if(cnt<n) return false;//有环 
+                    if(cnt<n) return false;//有环
                     for(int i=0;i<query.size();i++)
                     {
                         cout<<nodes[query[i]].val<<' ';
@@ -219,8 +219,8 @@ export default function Post() {
                     while(Q--)
                     {
                         cin>>m>>n;
-                        vector<INPUTNODE> inputs(m);//输入信号 
-                        vector<NODE> nodes(n);//器件 
+                        vector<INPUTNODE> inputs(m);//输入信号
+                        vector<NODE> nodes(n);//器件
                         for(int i=0;i<n;i++)
                         {
                             int k;
@@ -230,9 +230,9 @@ export default function Post() {
                             nodes[i].func=func;
                             for(int j=0;j<k;j++)
                             {
-                                string pin;//输入引脚 
-                                cin>>pin; 
-                                int id=stoi(pin.substr(1))-1; 
+                                string pin;//输入引脚
+                                cin>>pin;
+                                int id=stoi(pin.substr(1))-1;
                                 if(pin[0]=='I')
                                 {
                                     inputs[id].output_to.emplace_back(i);
@@ -244,7 +244,7 @@ export default function Post() {
                             }
                         }
                         cin>>s;
-                        //保存s次运行的输入和查询 
+                        //保存s次运行的输入和查询
                         vector<vector<int>> all_inputs_val;
                         vector<vector<int>> all_query;
                         for(int i=0;i<s;i++)
@@ -264,13 +264,13 @@ export default function Post() {
                             for(int j=0;j<n_query;j++)
                             {
                                 cin>>query[j];
-                                query[j]--;//从0计数 
+                                query[j]--;//从0计数
                             }
                             all_query.emplace_back(query);
                         }
                         for(int i=0;i<s;i++)
                         {
-                            //初始化输入信号 
+                            //初始化输入信号
                             for(int j=0;j<all_inputs_val[i].size();j++)
                             {
                                 inputs[j].val=all_inputs_val[i][j];
@@ -322,12 +322,12 @@ export default function Post() {
                 #include <cmath>
                 using namespace std;
                 int n,m,r;
-                int c[105];//黑洞中心 
+                int c[105];//黑洞中心
                 int p[2005][105];
-                double d[2005][2005],d_o[2005]; 
+                double d[2005][2005],d_o[2005];
                 double ans[2005];
                 const double PI=2*asin(1);
-                //p1点到p2点的距离 
+                //p1点到p2点的距离
                 double getdis(int *p1,int *p2)
                 {
                     double ans=0;
@@ -337,13 +337,13 @@ export default function Post() {
                     }
                     return sqrt(ans);
                 }
-                //三角形面积 
+                //三角形面积
                 double s(double a,double b,double c)
                 {
-                    double d=(a+b+c)/2;//海伦-秦九韶公式的p 
+                    double d=(a+b+c)/2;//海伦-秦九韶公式的p
                     return sqrt(d*(d-a)*(d-b)*(d-c));
                 }
-                //求角度，对边长c，两邻边为a和b 
+                //求角度，对边长c，两邻边为a和b
                 double theta(double a,double b,double c)
                 {
                     double sin_theta=2*s(a,b,c)/(a*b);
@@ -356,16 +356,16 @@ export default function Post() {
                     {
                         return PI-asin(sin_theta);
                     }
-                    return asin(sin_theta); 
+                    return asin(sin_theta);
                 }
-                //计算pi和pj之间的最短曲线距离 
-                double calc(int i,int j) 
+                //计算pi和pj之间的最短曲线距离
+                double calc(int i,int j)
                 {
                     double dij=d[i][j];
                     double dio=d_o[i];
                     double djo=d_o[j];
-                    double h=2*s(dij,dio,djo)/dij;//黑洞中心到直线pipj的距离 
-                    //连线不经过黑洞 
+                    double h=2*s(dij,dio,djo)/dij;//黑洞中心到直线pipj的距离
+                    //连线不经过黑洞
                     if(h>r||theta(dij,djo,dio)>PI/2||theta(dij,dio,djo)>PI/2)
                     {
                         return dij;
@@ -377,7 +377,7 @@ export default function Post() {
                         double lj=sqrt(djo*djo-r*r);
                         double t=theta(dio,djo,dij)-theta(dio,r,li)-theta(djo,r,lj);
                         return li+lj+t*r;
-                    } 
+                    }
                 }
                 int main()
                 {
@@ -393,7 +393,7 @@ export default function Post() {
                             scanf("%d",&p[i][j]);
                         }
                     }
-                    //算直线距离比较花时间，先提前预处理好 
+                    //算直线距离比较花时间，先提前预处理好
                     for(int i=0;i<m;i++)
                     {
                         d_o[i]=getdis(p[i],c);
