@@ -176,7 +176,7 @@ export default function Post() {
                 <X.Image src="transpose_convolution.jpg" width="600px" invertInDarkTheme />
                 <X.P>图片转载自@动手学深度学习 - 转置卷积[https://zh-v2.d2l.ai/chapter_computer-vision/transposed-conv.html]@</X.P>
                 <X.H3>FCN中的转置卷积</X.H3>
-                <X.P>例如对于ImageNet的图片输入，大小通常为`224`\*`224`\*`3`（RGB通道）；经过卷积后缩小宽高缩小`32`倍，通道增加到`512`，变成`7`\*`7`\*`512`的特征图。此时FCN会先通过一个`1x1conv`进行通道降维，然后通过转置卷积将特征图的高度和宽度增加`32`倍，*输出通道数等于类别数*，相当于储存了对每一类的预测结果。</X.P>
+                <X.P>例如对于ImageNet的图片输入，大小通常为$224 \times 224 \times 3$（RGB通道）；经过卷积后缩小宽高缩小`32`倍，通道增加到`512`，变成$7 \times 7 \times 512$的特征图。此时FCN会先通过一个`1x1conv`进行通道降维，然后通过转置卷积将特征图的高度和宽度增加`32`倍，*输出通道数等于类别数*，相当于储存了对每一类的预测结果。</X.P>
             </X.HighlightBlock>
         </>
     );

@@ -58,7 +58,8 @@
             "/23d/object-detection-map/",
             "/23d/learn-rnn-lstm/",
             "/24a/reproduce-nerf-rpn/",
-            "/24b/yolov5-obb-nms-rotated/"
+            "/24b/yolov5-obb-nms-rotated/",
+            "/24c/winograd/"
         ]
     },
     {
