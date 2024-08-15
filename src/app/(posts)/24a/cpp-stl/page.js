@@ -19,7 +19,7 @@ export default function Post() {
                 char str3[10]="hello";
                 char str4[10]="hello";
 
-                //string类型可以用等号判断值相等，char数组不能 
+                //string类型可以用等号判断值相等，char数组不能
                 cout<<(str1==str2)<<endl; //1
                 cout<<(str3==str4)<<endl; //0
                 cout<<(str1==str3)<<endl; //1
@@ -69,7 +69,7 @@ export default function Post() {
                 code={`
                 for(auto it=str1.begin();it!=str1.end()-2;it++)
                 {
-                    //用法和指针一样 
+                    //用法和指针一样
                     cout<<*(it+2)<<' ';
                 }
                 //l l o
@@ -102,7 +102,7 @@ export default function Post() {
                     code={`
                     cout<<(str1.size()>-1)<<endl; //0
 
-                    //转成int类型就可以比了 
+                    //转成int类型就可以比了
                     int s1=str1.size();
                     cout<<(s1>-1)<<endl; //1
                     `}
@@ -158,7 +158,7 @@ export default function Post() {
             <X.CodeBlock
                 language="cpp"
                 code={`
-                cout<<str2.substr(2)<<endl; //lloworld 
+                cout<<str2.substr(2)<<endl; //lloworld
                 cout<<str2.substr(2,6)<<endl; //llowor
                 `}
             />
@@ -171,7 +171,7 @@ export default function Post() {
                 cout<<str2<<endl; //helloworld
                 cout<<str2.find("world")<<endl; //5 (5是'w'的在str2中的下标)
 
-                //没找到会返回string::npos，在int类型下是-1 
+                //没找到会返回string::npos，在int类型下是-1
                 cout<<str2.find("abc")<<' '<<string::npos<<endl; //18446744073709551615 18446744073709551615
                 int idx=str2.find("abc");
                 cout<<idx<<endl; //-1
@@ -418,7 +418,7 @@ export default function Post() {
             <X.CodeBlock
                 language="cpp"
                 code={`
-                //输入(x,y)，输出(y,x) 
+                //输入(x,y)，输出(y,x)
                 pair<int,int> swapxy(pair<int,int> p)
                 {
                     return make_pair(p.second,p.first);
@@ -428,7 +428,7 @@ export default function Post() {
             <X.CodeBlock
                 language="cpp"
                 code={`
-                //make_pair可以直接生成一个pair常量值 
+                //make_pair可以直接生成一个pair常量值
                 p1=swapxy(make_pair(2,7));
                 cout<<p1.first<<' '<<p1.second<<endl; //7 2
                 `}
@@ -453,7 +453,7 @@ export default function Post() {
                 code={`
                 //获取tuple大小
                 cout<<tuple_size<tuple<int,int,int>>::value<<endl; //3
-                //decltype(t1)实际是取了t1的类型 
+                //decltype(t1)实际是取了t1的类型
                 cout<<tuple_size<decltype(t1)>::value<<endl; //4
                 `}
             />
@@ -540,7 +540,7 @@ export default function Post() {
                 code={`
                 cout<<m1.size()<<endl; //7
 
-                m1.erase("g"); 
+                m1.erase("g");
                 cout<<m1.size()<<endl; //6
                 cout<<m1.empty()<<endl; //0
 
@@ -560,8 +560,8 @@ export default function Post() {
 
                 it1=m1.find("a");
                 if(it1!=m1.end())
-                { 
-                    cout<<it1->first<<' '<<it1->second<<endl; 
+                {
+                    cout<<it1->first<<' '<<it1->second<<endl;
                 }
                 else
                 {
@@ -570,8 +570,8 @@ export default function Post() {
 
                 it1=m1.find("d");
                 if(it1!=m1.end())
-                { 
-                    cout<<it1->first<<' '<<it1->second<<endl; 
+                {
+                    cout<<it1->first<<' '<<it1->second<<endl;
                 }
                 else
                 {
@@ -593,7 +593,7 @@ export default function Post() {
                 m1["y"]=5;
 
                 it1=m1.lower_bound("b");
-                cout<<it1->first<<' '<<it1->second<<endl;//b 2 
+                cout<<it1->first<<' '<<it1->second<<endl;//b 2
                 it1=m1.upper_bound("b");
                 cout<<it1->first<<' '<<it1->second<<endl;//c 3
                 it1=m1.lower_bound("j");
@@ -611,21 +611,21 @@ export default function Post() {
                 code={`
                 struct POINT{
                     double x,y;
-                    //假如想按照平方距离从大到小排序 
+                    //假如想按照平方距离从大到小排序
                     //默认的排序方式是从小到大，把小于号重载成"大于"的含义相当于打破这种默认
-                    //或者理解为，排序方式是从小到大，那么我们就要把期望的结果定义为"小"的 
+                    //或者理解为，排序方式是从小到大，那么我们就要把期望的结果定义为"小"的
                     friend bool operator <(POINT a,POINT b)
                     {
                         double da=a.x*a.x+a.y*a.y;
                         double db=b.x*b.x+b.y*b.y;
-                        //我们期望"平方距离大"的元素在这种含义下是"小的" 
-                        //因此返回(da>db)的值，也就是这个条件为1的时候，我们认为前者是"小的" 
-                        return da>db; 
+                        //我们期望"平方距离大"的元素在这种含义下是"小的"
+                        //因此返回(da>db)的值，也就是这个条件为1的时候，我们认为前者是"小的"
+                        return da>db;
                     }
                 };
                 struct POINTDETAIL{
-                    string name; //点的名字 
-                    vector<int> v; //假设每个点还对应了一些需要用vector储存的信息 
+                    string name; //点的名字
+                    vector<int> v; //假设每个点还对应了一些需要用vector储存的信息
                 };
                 `}
             />
@@ -654,7 +654,7 @@ export default function Post() {
                 {
                     //it1指向一个键值对(key,val)
                     //it1->first是键key，key是一个POINT类型，具有x,y属性
-                    //it1->second是值val，val是一个POINTDETAIL类型，具有name属性和v向量 
+                    //it1->second是值val，val是一个POINTDETAIL类型，具有name属性和v向量
                     cout<<it1->second.name<<": "<<it1->first.x<<' '<<it1->first.y;
                     cout<<"   v=[";
                     for(auto v:it1->second.v) cout<<v<<',';
@@ -667,9 +667,9 @@ export default function Post() {
                 A点: 3 4   v=[1,2,3]
                 */
 
-                m3[{4,3}]={"E点",{5,6,7}};//E点 
+                m3[{4,3}]={"E点",{5,6,7}};//E点
                 cout<<m3[{3,4}].name<<endl;
-                //因为定义的是平方和作为判断依据，{3,4}和{4,3}被视为同一个键而发生了重新赋值 
+                //因为定义的是平方和作为判断依据，{3,4}和{4,3}被视为同一个键而发生了重新赋值
                 `}
             />
             <X.H2>multimap</X.H2>
@@ -678,7 +678,7 @@ export default function Post() {
                 language="cpp"
                 code={`
                 multimap<string,int> mm1;
-                //multimap没有重载[]方法 
+                //multimap没有重载[]方法
                 mm1.emplace("a",3);
                 mm1.emplace("a",1);
                 mm1.emplace("a",2);
@@ -693,7 +693,7 @@ export default function Post() {
                 auto it2=mm1.find("a");
                 if(it2!=mm1.end())
                 {
-                    cout<<it2->first<<' '<<it2->second<<endl; 
+                    cout<<it2->first<<' '<<it2->second<<endl;
                 }
                 else
                 {
@@ -711,7 +711,7 @@ export default function Post() {
                 it2=mm1.find("b");
                 if(it2!=mm1.end())
                 {
-                    cout<<it2->first<<' '<<it2->second<<endl; 
+                    cout<<it2->first<<' '<<it2->second<<endl;
                 }
                 else
                 {
@@ -767,7 +767,7 @@ export default function Post() {
                 code={`
                 cout<<s1.size()<<endl; //5
 
-                s1.erase("hello"); 
+                s1.erase("hello");
                 cout<<s1.size()<<endl; //4
                 cout<<s1.empty()<<endl; //0
 
@@ -787,8 +787,8 @@ export default function Post() {
 
                 it1=s1.find("a");
                 if(it1!=s1.end())
-                { 
-                    cout<<*it1<<endl; 
+                {
+                    cout<<*it1<<endl;
                 }
                 else
                 {
@@ -797,8 +797,8 @@ export default function Post() {
 
                 it1=s1.find("d");
                 if(it1!=s1.end())
-                { 
-                    cout<<*it1<<endl; 
+                {
+                    cout<<*it1<<endl;
                 }
                 else
                 {
@@ -871,8 +871,8 @@ export default function Post() {
                 language="cpp"
                 code={`
                 stack<int> s;
-                s.push(1); 
-                s.push(2); 
+                s.push(1);
+                s.push(2);
                 s.push(3);
 
                 while(!s.empty())
@@ -885,7 +885,7 @@ export default function Post() {
                 3
                 2
                 1
-                */ 
+                */
                 `}
             />
             <X.H1>queue 队列</X.H1>
@@ -907,8 +907,8 @@ export default function Post() {
                 language="cpp"
                 code={`
                 queue<int> q;
-                q.push(1); 
-                q.push(2); 
+                q.push(1);
+                q.push(2);
                 q.push(3);
 
                 while(!q.empty())
@@ -921,7 +921,7 @@ export default function Post() {
                 1
                 2
                 3
-                */ 
+                */
                 `}
             />
             <X.H1>priority_queue 优先队列</X.H1>
@@ -943,12 +943,12 @@ export default function Post() {
                 language="cpp"
                 code={`
                 priority_queue<int> q1;
-                q1.push(7); 
-                q1.push(2); 
-                q1.push(5); 
-                q1.push(6); 
-                q1.push(4); 
-                q1.push(1); 
+                q1.push(7);
+                q1.push(2);
+                q1.push(5);
+                q1.push(6);
+                q1.push(4);
+                q1.push(1);
                 q1.push(3);
 
                 while(!q1.empty())
@@ -974,7 +974,7 @@ export default function Post() {
                 code={`
                 struct DATE {
                     int y,m,d;
-                    //默认的优先队列是大根堆，把小于号重载成"大于"的含义相当于打破这种默认，变成小根堆 
+                    //默认的优先队列是大根堆，把小于号重载成"大于"的含义相当于打破这种默认，变成小根堆
                     friend bool operator <(DATE a,DATE b)
                     {
                         if(a.y!=b.y) return a.y>b.y;

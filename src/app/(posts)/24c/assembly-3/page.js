@@ -31,7 +31,7 @@ export default function Post() {
                            mov ax,4c00h
                            int 21h
                 codesg ends
-                end start                
+                end start
                 `}
             />
             <X.P>常用`db`指令定义字符串。字符类型的数据会被编译器自动转为ASCII码。</X.P>
@@ -104,7 +104,7 @@ export default function Post() {
                     datasg ends
 
                     codesg segment
-                        start: 
+                        start:
                         ;...
                     codesg ends
                     end start
@@ -112,7 +112,7 @@ export default function Post() {
                 />
             </X.HighlightBlock>
             <X.CodeBlock
-                language='asm8086'
+                language="asm8086"
                 code={`
                 assume cs:codesg,ds:datasg
 
@@ -120,12 +120,12 @@ export default function Post() {
                            db 'BaSiC'
                            db 'AsSeMbLeR'
                 datasg ends
-                
+
                 codesg segment
-                    start: 
+                    start:
                            mov  ax,datasg
                            mov  ds,ax
-                
+
                            mov  bx,0
                            mov  cx,5
                     s1:    mov  al,[bx]
@@ -133,7 +133,7 @@ export default function Post() {
                            mov  [bx],al
                            inc  bx
                            loop s1
-                
+
                            mov  bx,5
                            mov  cx,9
                     s2:    mov  al,[bx]
@@ -141,13 +141,82 @@ export default function Post() {
                            mov  [bx],al
                            inc  bx
                            loop s2
-                
+
                            mov  ax,4c00h
                            int  21h
                 codesg ends
                 end start
                 `}
             />
+            <X.Image src="fig3.jpg" width="100%" />
+            <X.H2>二重循环将字符串全部转大写</X.H2>
+            <X.HighlightBlock bgcolor="blue">
+                <X.P>编程操作数据段中的字符串，把所有字母都改为大写。</X.P>
+                <X.CodeBlock
+                    language="asm8086"
+                    code={`
+                    assume cs:codesg,ds:datasg
+
+                    datasg segment
+                               db 'Hello           '
+                               db 'kitty           '
+                               db 'aBcDe           '
+                               db 'uCase           '
+                    datasg ends
+
+                    codesg segment
+                        start:
+                        ;...
+                    codesg ends
+                    end start
+                    `}
+                />
+            </X.HighlightBlock>
+            <X.CodeBlock
+                language="asm8086"
+                code={`
+                assume cs:codesg,ds:datasg,ss:stcksg
+
+                datasg segment
+                           db 'Hello           '
+                           db 'kitty           '
+                           db 'aBcDe           '
+                           db 'uCase           '
+                datasg ends
+
+                stcksg segment
+                           dw 0,0,0,0,0,0,0,0
+                stcksg ends
+
+                codesg segment
+                    start:
+                           mov  ax,datasg
+                           mov  ds,ax
+
+                           mov  bx,0
+                           mov  cx,4            ;遍历4个字符串
+                    str:   push cx              ;保存外层循环的CX
+
+                           mov  di,0
+                           mov  cx,5            ;遍历5个字符
+                    chr:   mov  al,[bx+di]
+                           and  al,11011111b
+                           mov  [bx+di],al
+                           inc  di
+                           loop chr
+
+                           add  bx,10h          ;下一个字符串的首字符的地址
+                           pop  cx              ;恢复外层循环的CX
+                           loop str
+
+                           mov  ax,4c00h
+                           int  21h
+                codesg ends
+                end start
+                `}
+            />
+            <X.P>由于字符串长度相同，考虑使用二重循环批量操作。然而由于只有一个寄存器`CX`控制着循环计数器，所以进入内层循环时需要先保存外层循环的`CX`，内层循环结束后再恢复外层循环的`CX`。保存的方式可以是借助其他寄存器例如`DX`，但由于寄存器资源比较宝贵，常见的做法是利用栈保存数据。</X.P>
+            <X.Image src="fig4.jpg" width="100%" />
         </>
     );
 }

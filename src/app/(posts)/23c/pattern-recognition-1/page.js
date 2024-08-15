@@ -123,7 +123,7 @@ export default function Post() {
             <X.HighlightBlock>
                 <X.Formula
                     text="P(\bm{X}) = \frac{1}{(2\pi)^{\frac{d}{2}}|\bm{\Sigma}|^\frac{1}{2}} \exp \{
-                    -\frac{1}{2} \cdot (\bm{X}-\bm{\mu})^T \bm{\Sigma}^{-1} (\bm{X}-\bm{\mu}) 
+                    -\frac{1}{2} \cdot (\bm{X}-\bm{\mu})^T \bm{\Sigma}^{-1} (\bm{X}-\bm{\mu})
                     \}
                     "
                 />

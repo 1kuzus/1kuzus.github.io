@@ -62,7 +62,7 @@ export default function Post() {
                 int n,l,s,ans;
                 int t[1005][2];//树的坐标
                 int g[55][55];//藏宝图
-                unordered_set<long long> st;//用一个long long存储坐标x*(1e9+1)+y 
+                unordered_set<long long> st;//用一个long long存储坐标x*(1e9+1)+y
                 bool check(int x,int y)
                 {
                     for(int i=0;i<=s;i++)
@@ -70,7 +70,7 @@ export default function Post() {
                         for(int j=0;j<=s;j++)
                         {
                             long long p=(1e9L+1)*(x+i)+y+j;
-                            //绿化图坐标(x+i,y+j)与藏宝图上坐标(i,j)不对应，匹配失败 
+                            //绿化图坐标(x+i,y+j)与藏宝图上坐标(i,j)不对应，匹配失败
                             if((st.find(p)!=st.end())^g[s-i][j])
                             {
                                 return false;
@@ -92,7 +92,7 @@ export default function Post() {
                     {
                         for(int j=0;j<=s;j++)
                         {
-                            cin>>g[i][j]; 
+                            cin>>g[i][j];
                         }
                     }
                     for(int i=0;i<n;i++)
@@ -141,9 +141,9 @@ export default function Post() {
                 };
                 struct ROLE{
                     string rolename;
-                    int nv,no,nn;//操作、资源种类、资源名称 
+                    int nv,no,nn;//操作、资源种类、资源名称
                     unordered_set<string> vset,oset,nset;
-                    bool vadmin,oadmin;//允许的操作/资源是否含有"*" 
+                    bool vadmin,oadmin;//允许的操作/资源是否含有"*"
                 }role[N];
                 struct RBAC{
                     string rolename;
@@ -155,7 +155,7 @@ export default function Post() {
                     USER user;
                     string v,o,n;
                 };
-                unordered_map<string,int> rolemap;//角色名--id 
+                unordered_map<string,int> rolemap;//角色名--id
                 //判断一个角色能否对某个资源执行某个操作
                 bool check(int &roleid,string &qv,string &qo,string &qn)
                 {
@@ -175,7 +175,7 @@ export default function Post() {
                     {
                         RBAC &ac=rbac[i];
                         int roleid=rolemap[ac.rolename];
-                        if(ac.sset_user.find(q.user.username)==ac.sset_user.end())//q.user.username不在ac.sset_user中 
+                        if(ac.sset_user.find(q.user.username)==ac.sset_user.end())//q.user.username不在ac.sset_user中
                         {
                             bool ok=false;
                             for(auto &elem:ac.sset_group)
@@ -186,7 +186,7 @@ export default function Post() {
                                     break;
                                 }
                             }
-                            if(!ok) continue;//且q.user.gset与ac.sset_group没有交集，就跳过对这个角色检查 
+                            if(!ok) continue;//且q.user.gset与ac.sset_group没有交集，就跳过对这个角色检查
                         }
                         if(check(roleid,q.v,q.o,q.n)) return true;
                     }
@@ -241,7 +241,7 @@ export default function Post() {
                     }
                     for(int i=0;i<q;i++)
                     {
-                        QUERY q; 
+                        QUERY q;
                         cin>>q.user.username;
                         cin>>q.user.ng;
                         for(int j=0;j<q.user.ng;j++)
@@ -283,7 +283,7 @@ export default function Post() {
                 using namespace std;
                 int m,mirrors[N][4];
                 struct RPOINT{
-                    //反射面上的点 
+                    //反射面上的点
                     int k;
                     double a;
                 };
@@ -323,7 +323,7 @@ export default function Post() {
                 RAYPOS query(RAYPOS p)
                 {
                     int x=p.x,y=p.y,d=p.d,ttl=p.ttl;
-                    double I=p.I; 
+                    double I=p.I;
                     if(I<1) return (RAYPOS){0,0,0,0,0};
                     if(d==0)
                     {
@@ -366,7 +366,7 @@ export default function Post() {
                         auto it=py[y].lower_bound(x);
                         if(it!=py[y].begin())
                         {
-                            it--; 
+                            it--;
                             int nx=it->first;
                             int dt=x-nx;
                             if(ttl<dt) return (RAYPOS){x-ttl,y,0,I,0};
@@ -466,7 +466,7 @@ export default function Post() {
                 #define N 500005
                 using namespace std;
                 int n,m;
-                int lc(int f){return f<<1;}//左子 
+                int lc(int f){return f<<1;}//左子
                 int rc(int f){return f<<1|1;}//右子
 
                 struct POS{
@@ -481,22 +481,22 @@ export default function Post() {
                 }a[N];
 
                 struct TAGVAL{
-                    double mat[6];//省略了齐次坐标的第三行[0 0 1] 
+                    double mat[6];//省略了齐次坐标的第三行[0 0 1]
                 }const I{1,0,0,0,1,0};
 
-                TAGVAL T(double dx,double dy){return TAGVAL{1,0,dx,0,1,dy};}//平移 
-                TAGVAL R(double t){return TAGVAL{cos(t),-sin(t),0,sin(t),cos(t),0};}//绕原点旋转 
-                TAGVAL S(double k){return TAGVAL{k,0,0,0,k,0};}//绕原点缩放 
+                TAGVAL T(double dx,double dy){return TAGVAL{1,0,dx,0,1,dy};}//平移
+                TAGVAL R(double t){return TAGVAL{cos(t),-sin(t),0,sin(t),cos(t),0};}//绕原点旋转
+                TAGVAL S(double k){return TAGVAL{k,0,0,0,k,0};}//绕原点缩放
 
                 struct NODE{
-                    POS sum;//和(x,y) 
-                    POS sqs;//平方和(x**2,y**2) 
+                    POS sum;//和(x,y)
+                    POS sqs;//平方和(x**2,y**2)
                     double xys;//交叉项和xy
-                    bool flag;//是否打了tag 
+                    bool flag;//是否打了tag
                     TAGVAL tag;
                 }tree[4*N];
 
-                //matmul 矩阵乘 
+                //matmul 矩阵乘
                 TAGVAL mm(TAGVAL A,TAGVAL B)
                 {
                     TAGVAL result;
@@ -509,7 +509,7 @@ export default function Post() {
                     return result;
                 }
 
-                //对向量p应用仿射变换M，变为Mp 
+                //对向量p应用仿射变换M，变为Mp
                 POS affine(POS p,double a,double b,double c,double d,double e,double g)
                 {
                     //M=[a b c
@@ -518,7 +518,7 @@ export default function Post() {
                     return POS{a*p.x+b*p.y+c,d*p.x+e*p.y+g};
                 }
 
-                //合并tgv至 <管辖[l,r]区间的f节点> 的tag值，同时更新树上值 
+                //合并tgv至 <管辖[l,r]区间的f节点> 的tag值，同时更新树上值
                 void mergetag(int l,int r,int f,TAGVAL tgv)
                 {
                     //原本TAG(M1)，父亲分发下TAG(M2)
@@ -545,7 +545,7 @@ export default function Post() {
                     return;
                 }
 
-                //将 <管辖[l,r]区间的f节点> 的tag值下发至子节点 
+                //将 <管辖[l,r]区间的f节点> 的tag值下发至子节点
                 void pushdown(int l,int r,int f)
                 {
                     if(l==r) return;
@@ -557,7 +557,7 @@ export default function Post() {
                     return;
                 }
 
-                //在tree[f]建立一个管辖[l,r]的节点 
+                //在tree[f]建立一个管辖[l,r]的节点
                 void build(int l,int r,int f)
                 {
                     tree[f].flag=false;
@@ -576,45 +576,45 @@ export default function Post() {
                     return;
                 }
 
-                //将tgv合并至区间[ql,qr]的tag值，当前在管辖[l,r]区间的f节点 
+                //将tgv合并至区间[ql,qr]的tag值，当前在管辖[l,r]区间的f节点
                 void update(int ql,int qr,int l,int r,int f,TAGVAL tgv)
                 {
-                    //当前区间是查询区间的子集，修改 
+                    //当前区间是查询区间的子集，修改
                     if(ql<=l&&r<=qr)
                     {
                         mergetag(l,r,f,tgv);
                         return;
                     }
                     int mid=l+(r-l)/2;
-                    if(tree[f].flag) pushdown(l,r,f);//访问到有标记的节点就下放 
+                    if(tree[f].flag) pushdown(l,r,f);//访问到有标记的节点就下放
                     if(ql<=mid) update(ql,qr,l,mid,lc(f),tgv);
                     if(qr>mid) update(ql,qr,mid+1,r,rc(f),tgv);
                     pushup(f);
                     return;
                 }
 
-                //求区间[ql,qr]的和，当前在管辖[l,r]区间的f节点 
+                //求区间[ql,qr]的和，当前在管辖[l,r]区间的f节点
                 POS getsum(int ql,int qr,int l,int r,int f)
                 {
-                    //当前区间是查询区间的子集，返回 
+                    //当前区间是查询区间的子集，返回
                     if(ql<=l&&r<=qr) return tree[f].sum;
                     int mid=l+(r-l)/2;
                     if(tree[f].flag) pushdown(l,r,f);//访问到有标记的节点就下放
                     POS ans={0,0};
-                    if(ql<=mid) ans=ans+getsum(ql,qr,l,mid,lc(f)); 
+                    if(ql<=mid) ans=ans+getsum(ql,qr,l,mid,lc(f));
                     if(qr>mid) ans=ans+getsum(ql,qr,mid+1,r,rc(f));
                     return ans;
                 }
 
-                //求区间[ql,qr]的平方和，当前在管辖[l,r]区间的f节点 
+                //求区间[ql,qr]的平方和，当前在管辖[l,r]区间的f节点
                 POS getsqs(int ql,int qr,int l,int r,int f)
                 {
-                    //当前区间是查询区间的子集，返回 
+                    //当前区间是查询区间的子集，返回
                     if(ql<=l&&r<=qr) return tree[f].sqs;
                     int mid=l+(r-l)/2;
                     if(tree[f].flag) pushdown(l,r,f);//访问到有标记的节点就下放
                     POS ans={0,0};
-                    if(ql<=mid) ans=ans+getsqs(ql,qr,l,mid,lc(f)); 
+                    if(ql<=mid) ans=ans+getsqs(ql,qr,l,mid,lc(f));
                     if(qr>mid) ans=ans+getsqs(ql,qr,mid+1,r,rc(f));
                     return ans;
                 }
@@ -645,7 +645,7 @@ export default function Post() {
                             cin>>a>>b>>theta;
                             TAGVAL tgv=I;
                             tgv=mm(T(-a,-b),tgv);
-                            tgv=mm(R(theta),tgv);//旋转 
+                            tgv=mm(R(theta),tgv);//旋转
                             tgv=mm(T(a,b),tgv);
                             update(l,r,1,n,1,tgv);
                         }
@@ -654,7 +654,7 @@ export default function Post() {
                             cin>>a>>b>>k;
                             TAGVAL tgv=I;
                             tgv=mm(T(-a,-b),tgv);
-                            tgv=mm(S(k),tgv);//缩放 
+                            tgv=mm(S(k),tgv);//缩放
                             tgv=mm(T(a,b),tgv);
                             update(l,r,1,n,1,tgv);
                         }

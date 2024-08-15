@@ -111,7 +111,7 @@ export default function Post() {
                 1
                 2
                 2
-                1 
+                1
                 */
                 `}
             />
@@ -161,7 +161,7 @@ export default function Post() {
                             }
                         }
                     }
-                    //复杂度 m*p*n 
+                    //复杂度 m*p*n
                     return ans;
                 }
                 int main()
@@ -193,13 +193,13 @@ export default function Post() {
                     {
                         cin>>W[i];
                     }
-                    //下面的代码完全按照题给出的矩阵相乘顺序，但需要计算出n*n矩阵，会被卡掉 
+                    //下面的代码完全按照题给出的矩阵相乘顺序，但需要计算出n*n矩阵，会被卡掉
                     //vector<LL> QK(n*n),WQK(n*n),WQKV(n*d);
                     //QK=matmul(Q,T(K,n,d),n,d,n);
                     //WQK=dot(QK,W,n);
                     //WQKV=matmul(WQK,V,n,n,d);
 
-                    //对顺序调整如下，先计算K*V 
+                    //对顺序调整如下，先计算K*V
                     vector<LL> KV(d*d),QKV(n*d),WQKV(n*d);
                     KV=matmul(T(K,n,d),V,d,n,d);
                     QKV=matmul(Q,KV,n,d,d);
@@ -248,7 +248,7 @@ export default function Post() {
                     p+=2;
                     return (cmp[p-1]<58?cmp[p-1]-48:cmp[p-1]-87)
                           +((cmp[p-2]<58?cmp[p-2]-48:cmp[p-2]-87)<<4);
-                } 
+                }
                 int readHead()
                 {
                     int len_raw=0;
@@ -273,13 +273,13 @@ export default function Post() {
                     }
                     raw+=s_ref;
                     return;
-                } 
+                }
                 void readBody()
                 {
                     while(p<cmp.size())
                     {
                         int b=readByte();
-                        //字面量 
+                        //字面量
                         if((b&3)==0)
                         {
                             int len_lit=b>>2;
@@ -296,14 +296,14 @@ export default function Post() {
                             raw+=cmp.substr(p,len_lit*2);
                             p+=len_lit*2;
                         }
-                        //短回溯 
+                        //短回溯
                         else if((b&3)==1)
                         {
                             int l=((b>>2)&7)+4;
                             int o=((b>>5)<<8)+readByte();
                             ref(o,l);
                         }
-                        //长回溯 
+                        //长回溯
                         else if((b&3)==2)
                         {
                             int l=(b>>2)+1;
@@ -375,7 +375,7 @@ export default function Post() {
                 language="cpp"
                 code={`
                 #include <iostream>
-                #include <cstring> 
+                #include <cstring>
                 #include <vector>
                 #include <map>
                 #define N 10005
@@ -399,7 +399,7 @@ export default function Post() {
                     int nval[10];
                 }nodes[N];
                 bool exist[N];//节点是否存在（有删除操作）
-                int num_rest_nodes,rest_nodes[MAX_NUM_REST_NODES];//最终剩余的节点数，根据题意知道不会大于6 
+                int num_rest_nodes,rest_nodes[MAX_NUM_REST_NODES];//最终剩余的节点数，根据题意知道不会大于6
                 struct EDGE{
                     int to;
                     int eval[10][10];
@@ -466,7 +466,7 @@ export default function Post() {
                                     eval_min_v2v1[i2*k+i1]=min_cost;
                                 }
                             }
-                            bool no_v1v2=true;//v1v2之间原本没有边相连 
+                            bool no_v1v2=true;//v1v2之间原本没有边相连
                             for(auto e:g[v1])
                             {
                                 if(e.to==v2) no_v1v2=false;
@@ -486,7 +486,7 @@ export default function Post() {
                                         {
                                             e.eval[i/k][i%k]+=eval_min_v1v2[i];
                                         }
-                                        break; 
+                                        break;
                                     }
                                 }
                                 for(auto &e:g[v2])
@@ -497,7 +497,7 @@ export default function Post() {
                                         {
                                             e.eval[i/k][i%k]+=eval_min_v2v1[i];
                                         }
-                                        break; 
+                                        break;
                                     }
                                 }
                                 nodes[v1].deg--;
@@ -578,7 +578,7 @@ export default function Post() {
                         {
                             cin>>nodes[i].nval[j];
                         }
-                        exist[i]=true; 
+                        exist[i]=true;
                     }
                     for(int i=0;i<m;i++)
                     {
@@ -600,7 +600,7 @@ export default function Post() {
                     while(merge());
                     cout<<work()<<endl;
                     return 0;
-                } 
+                }
                 /*
                 in:
                 2 1 2
@@ -621,8 +621,8 @@ export default function Post() {
                 #include <cstring>
                 #define INF 999999999
                 using namespace std;
-                int n,collect[100005];//collect[i]表示第i条航线的集章收集状态 
-                int dp[26][26][1024];//dp[u][v][s]表示从u以s=0出发，走到v，收集状态<至少>为s，需要的最短航线总长 
+                int n,collect[100005];//collect[i]表示第i条航线的集章收集状态
+                int dp[26][26][1024];//dp[u][v][s]表示从u以s=0出发，走到v，收集状态<至少>为s，需要的最短航线总长
                 string t,lines[100005];
                 void getmin(int &x,int other){other<x&&(x=other);}
                 int main()
@@ -631,7 +631,7 @@ export default function Post() {
                     memset(dp,0x3f,sizeof(dp));
                     for(int i=0;i<26;i++) dp[i][i][0]=0;
                     cin>>n>>t;
-                    //初始化 
+                    //初始化
                     for(int i=0;i<n;i++)
                     {
                         string l;
@@ -643,7 +643,7 @@ export default function Post() {
                             if(pos!=-1) collect[i]|=(1<<pos);
                         }
                         int u=l[0]-'a',v=l.back()-'a';
-                        for(int e=collect[i];;e=(e-1)&collect[i])//e枚举表第i条航线全收集状态collect[i]的子集 
+                        for(int e=collect[i];;e=(e-1)&collect[i])//e枚举表第i条航线全收集状态collect[i]的子集
                         {
                             getmin(dp[u][v][e],l.size()-1);
                             for(int w=0;w<26;w++)
@@ -653,7 +653,7 @@ export default function Post() {
                             if(e==0) break;
                         }
                     }
-                    //动态规划，类似Floyd的思想 
+                    //动态规划，类似Floyd的思想
                     for(int s=0;s<(1<<t.size());s++)
                     {
                         for(int k=0;k<26;k++)
@@ -674,9 +674,9 @@ export default function Post() {
                     for(int i=0;i<n;i++)
                     {
                         string l=lines[i];
-                        int ans=l.size()-1;//必须先走完第i条航线 
+                        int ans=l.size()-1;//必须先走完第i条航线
                         int u=l[0]-'a',v=l.back()-'a';
-                        int s=(1<<t.size())-1-collect[i];//至少满足全集除去第i条航线的收集状态 
+                        int s=(1<<t.size())-1-collect[i];//至少满足全集除去第i条航线的收集状态
                         ans+=dp[v][u][s];
                         cout<<(ans<INF?ans:-1)<<endl;
                     }
@@ -717,7 +717,7 @@ export default function Post() {
                 -1
                 16
                 22
-                11 
+                11
                 */
                 `}
             />

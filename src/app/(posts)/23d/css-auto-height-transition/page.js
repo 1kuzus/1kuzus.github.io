@@ -160,7 +160,7 @@ export default function Post() {
                         #content {
                             display: grid;
                             grid-template-rows: 0fr;
-                            transition: 
+                            transition:
                                 grid-template-rows 500ms;
                         }
                         #content > div {
