@@ -1,4 +1,8 @@
 {
+    "/24c/winograd/": {
+        "title": "Winograd算法",
+        "time": "2024-08-15"
+    },
     "/24c/assembly-3/": {
         "title": "【汇编语言】内存寻址方式",
         "time": "2024-08-14"
