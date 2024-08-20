@@ -34,7 +34,9 @@ export default function P(props) {
         );
     return (
         <p
-            className={`x-p${withMarginTop ? ' with-margin-top' : ''}${noMarginBottom ? ' no-margin-bottom' : ''}`}
+            //todo:
+            // className={`x-p${withMarginTop ? ' with-margin-top' : ''}${noMarginBottom ? ' no-margin-bottom' : ''}`}
+            className={`x-p with-margin-top`}
             dangerouslySetInnerHTML={{__html: htmlContent}}
             {...rest}
         />
