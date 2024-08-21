@@ -54,7 +54,7 @@ export default function Post() {
             </X.Oli>
             <X.Oli>考虑密码是`dot#COM`，`#`和`C`之间的切换间隔会干扰到期望得到的最一般情况下的输入间隔，因此计算`z score`时只包括字母输入的间隔，以进一步提高稳定性。</X.Oli>
             <X.H3>基于状态机的侧信道 - 恢复用户行为</X.H3>
-            <X.Image src="1.jpg" width="100%" />
+            <X.Image src="1.jpg" width="100%" invertInDarkTheme />
             <X.P>总体而言本节介绍一个利用有限自动机来恢复包含大小写切换的用户输入的方法。</X.P>
             <X.P noMarginBottom>基于时间维度的检测仍然有一些功能无法实现，例如无法区分是使用`CapsLock`还是`Shift`做切换。自动机设计了三种状态：</X.P>
             <X.Uli>小写状态`(Lowercase State)`：默认状态</X.Uli>

@@ -1,4 +1,8 @@
 {
+    "/24c/assembly-4/": {
+        "title": "【汇编语言】流程转移与子程序",
+        "time": "2024-08-20"
+    },
     "/24c/winograd/": {
         "title": "Winograd算法",
         "time": "2024-08-15"
@@ -98,6 +102,10 @@
     "/24b/mst-and-sp/": {
         "title": "最小生成树与最短路算法",
         "time": "2024-05-19"
+    },
+    "/24b/papers-sec-a80948-taintmini/": {
+        "title": "论文精读：TAINTMINI: Detecting Flow of Sensitive Data in Mini-Programs with Static Taint Analysis (ICSE 2023)",
+        "time": "2024-05-14"
     },
     "/24b/sorting-algorithm/": {
         "title": "排序算法总结与代码实现",

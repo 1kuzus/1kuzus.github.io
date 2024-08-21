@@ -299,8 +299,8 @@ export default function Post() {
 
                            mov  bx,0          ;第i个数
                            mov  cx,0ch        ;注意边界，(cx)=0bh+1=0ch
-                    s:     mov  al,[bx]       ;默认ds为段地址
-                           mov  es:[bx],al    ;这里使用es做段前缀
+                    s:     mov  al,[bx]       ;默认DS为段地址
+                           mov  es:[bx],al    ;这里使用ES做段前缀
                            inc  bx
                            loop s
 
