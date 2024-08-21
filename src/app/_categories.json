@@ -17,6 +17,7 @@
             "/24b/learn-cwes/",
             "/24b/cross-site-scripting/",
             "/24b/cross-site-request-forgery/",
+            "/24b/papers-sec-a80948-taintmini/",
             "/24c/papers-sec-4d7653-2fa-consistency/",
             "/24c/papers-sec-d5d218-conquer/"
         ]
@@ -94,7 +95,8 @@
             "/24b/by-questions/",
             "/24c/assembly-1/",
             "/24c/assembly-2/",
-            "/24c/assembly-3/"
+            "/24c/assembly-3/",
+            "/24c/assembly-4/"
         ]
     },
     {

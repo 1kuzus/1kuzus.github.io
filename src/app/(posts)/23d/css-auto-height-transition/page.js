@@ -14,7 +14,7 @@ export default function Post() {
             <X.P>下面是一个常见的效果，当鼠标悬浮时展开显示内容，离开时自动收回。</X.P>
             <X.FlexRow gap="32px">
                 <div>
-                    <X.H3>html</X.H3>
+                    <X.H3>HTML</X.H3>
                     <X.CodeBlock
                         language="html"
                         code={`
@@ -31,7 +31,7 @@ export default function Post() {
                     />
                 </div>
                 <div>
-                    <X.H3>css</X.H3>
+                    <X.H3>CSS</X.H3>
                     <X.CodeBlock
                         language="css"
                         code={`
@@ -70,7 +70,7 @@ export default function Post() {
             <X.P>一个常见方案是使用`max-height`控制。这样确实可以实现过渡动画效果，但并不是一个“完美”的动画：\n当过高的估计了`content`容器的最大可能高度时，鼠标移入时的动画会的变快，而移出时动画会有延迟。这是因为有一部分时间花在了`max-height`数值在`content`容器的真实高度和设定值之间的过渡上，而这部分过渡时间不会影响页面元素的样式。</X.P>
             <X.FlexRow gap="32px">
                 <div>
-                    <X.H3>html</X.H3>
+                    <X.H3>HTML</X.H3>
                     <X.CodeBlock
                         language="html"
                         code={`
@@ -87,7 +87,7 @@ export default function Post() {
                     />
                 </div>
                 <div>
-                    <X.H3>css</X.H3>
+                    <X.H3>CSS</X.H3>
                     <X.CodeBlock
                         language="css"
                         code={`
@@ -126,7 +126,7 @@ export default function Post() {
             <X.P>一个更完美的解决方案是使用网格布局：</X.P>
             <X.FlexRow gap="32px">
                 <div>
-                    <X.H3>html</X.H3>
+                    <X.H3>HTML</X.H3>
                     <X.CodeBlock
                         language="html"
                         code={`
@@ -145,7 +145,7 @@ export default function Post() {
                     />
                 </div>
                 <div>
-                    <X.H3>css</X.H3>
+                    <X.H3>CSS</X.H3>
                     <X.CodeBlock
                         language="css"
                         code={`
