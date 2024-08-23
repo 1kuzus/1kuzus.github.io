@@ -3,7 +3,7 @@ import {isStringOrStringArray} from 'src/utils/utils';
 import './Table.css';
 
 export default function Table(props) {
-    const {fromText, fromJSX, children} = props;
+    const {fromText, fromData, children} = props;
     if (fromText)
         return (
             <div className="x-table-wrapper">
@@ -26,12 +26,12 @@ export default function Table(props) {
                 </table>
             </div>
         );
-    if (fromJSX)
+    if (fromData)
         return (
             <div className="x-table-wrapper">
                 <table className="x-table">
                     <tbody>
-                        {fromJSX.map((tr, tr_index) => (
+                        {fromData.map((tr, tr_index) => (
                             <tr key={tr_index}>
                                 {tr.map((td, td_index) => {
                                     const child = isStringOrStringArray(td) ? <P>{td}</P> : td;

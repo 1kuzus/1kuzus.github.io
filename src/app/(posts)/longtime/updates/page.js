@@ -71,7 +71,7 @@ function UpdateLog() {
         {version: '2.0'},
         {date: '2024-04-07', description: '使用`Next.js`重构'},
         {date: '2024-04-24', description: '优化了部分移动端样式'},
-        {date: '2024-06-07', description: '`Image`组件支持`center`属性\\n`Table`组件支持`fromJSX`属性'},
+        {date: '2024-06-07', description: '`Image`组件支持`center`属性\\n`Table`组件支持`fromData`属性'},
         {
             date: '2024-06-10',
             description: '`HighlightBlock`组件支持`bgcolor="green"`\\n通过高亮背景色作为`diff`高亮方案',

@@ -38,7 +38,7 @@ export default function Post() {
             <X.Uli>标志寄存器：`PSW`</X.Uli>
             <X.P>对应的名称及释义如下：</X.P>
             <X.Table
-                fromJSX={[
+                fromData={[
                     ['寄存器名', '英文', '解释'],
                     ['`AX`', '`Accumulator`', '`累加器`'],
                     ['`BX`', '`Base`', '`基址寄存器`'],

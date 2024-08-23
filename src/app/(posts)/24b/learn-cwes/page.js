@@ -37,7 +37,7 @@ export default function Post() {
             <X.Image src="weakness_abstractions.png" width="600px" invertInDarkTheme />
             <X.P>这些分级在官网上也有对应的图标表示，相应的释义为：</X.P>
             <X.Table
-                fromJSX={[
+                fromData={[
                     ['icon', '释义'],
                     [<X.Image src="view.png" width="16px" center />, '`View`，视图。'],
                     [<X.Image src="category.png" width="16px" center />, '`Category`，分类，一系列有共同特征的CWE条目。'],
