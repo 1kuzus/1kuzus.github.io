@@ -39,19 +39,19 @@ export default function Post() {
             </X.HighlightBlock>
             <X.H2>两分类情况下，最小错误率决策的四种等价规则</X.H2>
             <X.Oli>
-                <X.P noMarginBottom>后验概率判决</X.P>
+                <X.P>后验概率判决</X.P>
                 <X.Formula text="P(\omega_1|x) \gt P(\omega_2|x)" />
             </X.Oli>
             <X.Oli>
-                <X.P noMarginBottom>后验概率判决，分母相同看分子</X.P>
+                <X.P>后验概率判决，分母相同看分子</X.P>
                 <X.Formula text="P(x|\omega_1)P(\omega_1) \gt P(x|\omega_2)P(\omega_2)" />
             </X.Oli>
             <X.Oli>
-                <X.P noMarginBottom>似然比$l$、似然比阈值$\lambda$</X.P>
+                <X.P>似然比$l$、似然比阈值$\lambda$</X.P>
                 <X.Formula text="l(x) = \frac{P(x|\omega_1)}{P(x|\omega_2)}, \; \lambda = \frac{P(\omega_2)}{P(\omega_1)}, \; l(x) \gt \lambda" />
             </X.Oli>
             <X.Oli>
-                <X.P noMarginBottom>对数似然比</X.P>
+                <X.P>对数似然比</X.P>
                 <X.Formula text="-\ln [l(x)] \lt \ln\frac{P(\omega_1)}{P(\omega_2)}" />
             </X.Oli>
             <X.HighlightBlock>

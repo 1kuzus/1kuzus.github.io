@@ -709,17 +709,15 @@ export default function Post() {
                 <X.H3>个人理解</X.H3>
                 <X.P>事实上懒标记的优先级不存在严格正确的答案，只要可以推出合并公式，就是正确的方案。至于前面提到的为什么要“先乘后加”而不能“先加后乘”，这是因为如果指定优先级为“先加后乘”，最后的合并公式中会出现分数。这在数学上其实是完全可行的，只是不方便编程实现，所以结论是一定要先做乘法。</X.P>
             </X.HighlightBlock>
-            <X.P noMarginBottom>考虑自己当前的标记是*`(mul a,add b,lshift c)`*，注意这里`a`、`c`是常数，`b`是一个三维向量`(b1,b2,b3)`。这个标记作用于`p=(x,y,z)`，可以得到：</X.P>
+            <X.P>考虑自己当前的标记是*`(mul a,add b,lshift c)`*，注意这里`a`、`c`是常数，`b`是一个三维向量`(b1,b2,b3)`。这个标记作用于`p=(x,y,z)`，可以得到：</X.P>
             <X.Uli>先乘：`p=(ax,ay,az)`</X.Uli>
             <X.Uli>再加：`p=(ax+b1,ay+b2,az+b3)`</X.Uli>
             <X.Uli>最后左移（暂且假设`c=1`）：`p=(ay+b2,az+b3,ax+b1)`</X.Uli>
-            <X.P noMarginBottom withMarginTop>
-                接下来考虑父亲`pushdown`给自己另外一个标记*`(mul g,add h,lshift i)`*，继续作用于`p`可以得到：
-            </X.P>
+            <X.P>接下来考虑父亲`pushdown`给自己另外一个标记*`(mul g,add h,lshift i)`*，继续作用于`p`可以得到：</X.P>
             <X.Uli>先乘：`p=(g(ay+b2),g(az+b3),g(ax+b1))`</X.Uli>
             <X.Uli>再加：`p=(g(ay+b2)+h1,g(az+b3)+h2,g(ax+b1)+h3)`</X.Uli>
             <X.Uli>最后左移（暂且假设`i=1`）：`p=(g(az+b3)+h2,g(ax+b1)+h3,g(ay+b2)+h1)`</X.Uli>
-            <X.P withMarginTop>合并公式就是在考虑，如何只用一个懒标记（也就是合并后的懒标记）去表示这两个懒标记的复合操作。</X.P>
+            <X.P>合并公式就是在考虑，如何只用一个懒标记（也就是合并后的懒标记）去表示这两个懒标记的复合操作。</X.P>
             <X.P>观察乘法标记，显然合并后的乘法标记是*`mul ag`*；</X.P>
             <X.P>观察加法标记，注意`b1`是与`x`绑定的，加法项中一定有一项`bg`；再看`h`是发生了错位的，现在仔细考虑这个问题：\n*h发生错位是因为操作*`lshift c`*，还是操作*`lshift i`*？*\n答案是`lshift c`。根据我们指定的优先级，左移操作在最后，在`add h`时显然还没有`lshift i`。</X.P>
             <X.P>因为在`add h`之前`p`就发生了`lshift c`，那么相对地，此时在进行`add h`，相当于在没有位移时进行`add (h&gt;&gt;c)`。当然，我们没定义右移，但可以用左移等价表示为`add (h&lt;&lt;(3-c))`。\n因此合并后的加法标记是*`add bg+(h&lt;&lt;(3-c))`*；</X.P>
@@ -756,10 +754,10 @@ export default function Post() {
             <X.P>题目给的数据范围需要离散化，这里我的方案是：</X.P>
             <X.Image src="fig1.png" width="800px" />
             <X.P>考虑维护区间和时，我们需要得到区间长度。在不离散化时，长度就是`r-l+1`。现在我们记`f(x)`就是离散化值`x`对应的原始值，在代码中对应`r2q[x]`。在图中，`f(1)=a`、`f(2)=b-1`、`f(3)=b`、`f(4)=c-1`、`f(5)=c`……</X.P>
-            <X.P noMarginBottom>查询离散区间`(x,y)`对应的原始区间长度，右侧一定是`f(y)`，左侧根据`x`的奇偶性，有：</X.P>
+            <X.P>查询离散区间`(x,y)`对应的原始区间长度，右侧一定是`f(y)`，左侧根据`x`的奇偶性，有：</X.P>
             <X.Uli>`len=f(y)-f(x)+1`，`x`是奇数</X.Uli>
             <X.Uli>`len=f(y)-f(x-1)`，`x`是偶数</X.Uli>
-            <X.P withMarginTop>也就是代码中的：</X.P>
+            <X.P>也就是代码中的：</X.P>
             <X.CodeBlock language="cpp" code={`int len=r2q[r]-r2q[l-!(l&1)]+(l&1);`} />
             <X.H2>代码</X.H2>
             <X.CodeBlock

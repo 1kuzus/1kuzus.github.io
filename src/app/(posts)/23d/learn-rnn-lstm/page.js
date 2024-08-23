@@ -38,7 +38,7 @@ export default function Post() {
             />
             <X.P>代码中我们在区间$[0,36]$取了`400`点数据，如果把横轴看成时间轴，可以认为数据集中有`400`个连续时间点的数据。</X.P>
             <X.Image src="fig1.png" width="600px" invertInDarkTheme />
-            <X.P noMarginBottom>现在明确一下我们的方案：</X.P>
+            <X.P>现在明确一下我们的方案：</X.P>
             <X.Oli>使用前`80%`也就是前`320`个数据作为训练集，剩余的作为测试集，观察预测结果。</X.Oli>
             <X.Oli>序列长度为`10`，也就是模型根据前`10`个时间点的数据去预测下一个时间点的数据。</X.Oli>
             <X.Oli>这个例子中输入特征的维度是`1`，也就是只有`y`值一个指标。此外，也不考虑批量大小。</X.Oli>
@@ -273,7 +273,7 @@ export default function Post() {
             <X.H2>使用torch.nn.RNN</X.H2>
             <X.P>使用`torch.nn.RNN`模块时，与上面例子中手动实现的RNN有几处细小的区别，下面给出了使用`torch.nn.RNN`时需要做出的修改：</X.P>
             <X.Oli reset>
-                <X.P noMarginBottom>定义模型时，不再需要显式指定`linear_ih`和`linear_hh`两层，将由`nn.RNN`模块实现；`nn.RNN`模块没有定义输出层，因此输出层`linear_ho`需要设置。\n在`forward`函数中，手动实现时为了直观展示出RNN的迭代过程，只进行了一次隐藏状态的更新；而对于输入序列迭代更新隐藏状态是在训练和预测时实现的。而`nn.RNN`模块的一次`forward`就已经完成了迭代更新，其输入是整个序列`seq`和`prev_state`，返回值是`output_hidden,curr_state`，对于不考虑批量大小的数据，它们的`size`为：</X.P>
+                <X.P>定义模型时，不再需要显式指定`linear_ih`和`linear_hh`两层，将由`nn.RNN`模块实现；`nn.RNN`模块没有定义输出层，因此输出层`linear_ho`需要设置。\n在`forward`函数中，手动实现时为了直观展示出RNN的迭代过程，只进行了一次隐藏状态的更新；而对于输入序列迭代更新隐藏状态是在训练和预测时实现的。而`nn.RNN`模块的一次`forward`就已经完成了迭代更新，其输入是整个序列`seq`和`prev_state`，返回值是`output_hidden,curr_state`，对于不考虑批量大小的数据，它们的`size`为：</X.P>
                 <X.Uli>`seq`: `(sequence_length, input_size)`</X.Uli>
                 <X.Uli>`init_state`: `(1, hidden_size)`</X.Uli>
                 <X.Uli>`output_hidden`: `(sequence_length, hidden_size)`</X.Uli>
@@ -372,23 +372,18 @@ export default function Post() {
             <X.H3>hidden_size=12，12是在哪里体现的？</X.H3>
             <X.P>`12`只是模型的超参数，和MLP中隐藏层大小一样，并没有太多的物理含义。</X.P>
             <X.H3>训练时，每次迭代用哪些数据？应该遍历几遍数据集？每个 epoch 会使用哪些数据进行参数优化？</X.H3>
-            <X.P noMarginBottom>在训练一个CNN网络时（例如一个图片分类网络），策略通常是：</X.P>
+            <X.P>在训练一个CNN网络时（例如一个图片分类网络），策略通常是：</X.P>
             <X.Oli reset>指定超参数`num_epoch`，在每个`epoch`中随机遍历训练集中的所有图像进行参数优化；</X.Oli>
             <X.Oli>重复执行`num_epoch`次。</X.Oli>
-            <X.P noMarginBottom withMarginTop>
-                然而对于RNN来说这个概念似乎并不清晰，例如上述例子的训练策略是：
-            </X.P>
+            <X.P>然而对于RNN来说这个概念似乎并不清晰，例如上述例子的训练策略是：</X.P>
             <X.Oli reset>从`0`到`(训练集大小 - 序列长度)`依次遍历起始时间`t`；</X.Oli>
             <X.Oli>对于每个起始时间`t`，将`y[t]`~`y[t+9]`为输入，`y[t+10]`为真值作为一组训练样本。</X.Oli>
             <X.Oli>第`1`步只遍历了一次！</X.Oli>
-            <X.P noMarginBottom withMarginTop>
-                或者：
-            </X.P>
-            <X.P noMarginBottom>...</X.P>
-            <X.Oli reset={3}>前两步同上，但多次遍历训练集。</X.Oli>
-            <X.P noMarginBottom withMarginTop>
-                另一个常用的策略是：
-            </X.P>
+            <X.P>或者：</X.P>
+            <X.Oli reset>...</X.Oli>
+            <X.Oli>...</X.Oli>
+            <X.Oli>前两步同上，但多次遍历训练集。</X.Oli>
+            <X.P>另一个常用的策略是：</X.P>
             <X.Oli reset>指定超参数：训练轮次`num_iter`；</X.Oli>
             <X.Oli>重复执行`num_iter`次，每次随机抽取一个起始时间`t`，并且将`y[t]`~`y[t+9]`为输入，`y[t+10]`为真值作为一组训练样本。</X.Oli>
             <X.H1>LSTM：一篇很好的博客</X.H1>

@@ -37,22 +37,6 @@
 		],
 		"description": "X.P tag"
 	},
-	"withMarginTop props": {
-		"scope": "javascript,typescript",
-		"prefix": "wmt",
-		"body": [
-			"withMarginTop"
-		],
-		"description": "withMarginTop props"
-	},
-	"noMarginBottom props": {
-		"scope": "javascript,typescript",
-		"prefix": "nmb",
-		"body": [
-			"noMarginBottom"
-		],
-		"description": "noMarginBottom props"
-	},
 	"X.Uli tag": {
 		"scope": "javascript,typescript",
 		"prefix": "xuli",

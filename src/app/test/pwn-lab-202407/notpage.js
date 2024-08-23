@@ -168,11 +168,11 @@ export default function Post() {
             <X.Uli>狭义：只包含机器码的文件（如`.out`、`.exe`）</X.Uli>
             <X.Uli>广义：数据是可执行代码的文件（如`.py`）</X.Uli>
             <X.H3>可执行文件的分类</X.H3>
-            <X.P noMarginBottom>Windows：`PE(Portable Executable)`</X.P>
+            <X.P>Windows：`PE(Portable Executable)`</X.P>
             <X.Uli>可执行程序：`.exe`</X.Uli>
             <X.Uli>动态链接库：`.dll`</X.Uli>
             <X.Uli>静态链接库：`.lib`</X.Uli>
-            <X.P noMarginBottom withMarginTop>
+            <X.P>
                 Linux：`ELF(Executable and Linkable Format)`
             </X.P>
             <X.Uli>可执行程序：`.out`</X.Uli>

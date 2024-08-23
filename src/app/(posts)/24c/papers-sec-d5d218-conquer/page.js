@@ -9,7 +9,7 @@ export default function Post() {
         <>
             <X.TOC />
             <X.Title>{metas[path].title}</X.Title>
-            <X.P noMarginBottom>论文链接：</X.P>
+            <X.P>论文链接：</X.P>
             <X.Uli>@Do Not Give A Dog Bread Every Time He Wags His Tail: Stealing Passwords through Content Queries (CONQUER) Attack[https://www.ndss-symposium.org/wp-content/uploads/2023/02/ndss2023_f5_paper.pdf]@</X.Uli>
             <X.H1>1.Introduction</X.H1>
             <X.P>论文提出了一种攻击方法：CONQUER`(*Con*tent *Quer*ies)`，利用Android系统辅助模式的`findAccessibilityNodeInfosByText(text)`API来查询密码输入框节点包含的文本，从而逐位枚举出用户输入的密码。</X.P>
@@ -39,30 +39,30 @@ export default function Post() {
             <X.P>前文提到的API在查询时不区分大小写；解决方案是利用其他的侧信道来重放用户的行为（如大小写切换），例如时间维度上输入一个大写字母后往往需要花费更多时间输入下一个字符。</X.P>
             <X.H1>5.Detail Design of CONQUER</X.H1>
             <X.H2>惰性查询算法</X.H2>
-            <X.P noMarginBottom>这里举一个例子来解释，考虑输入的密码是`tendollar`，有干扰的描述是`enter`：</X.P>
-            <X.Oli reset={1}>首先得到描述的字符集是{`$\\{e,n,r,t\\}$`}，记为$S_c$；</X.Oli>
+            <X.P>这里举一个例子来解释，考虑输入的密码是`tendollar`，有干扰的描述是`enter`：</X.P>
+            <X.Oli reset>首先得到描述的字符集是{`$\\{e,n,r,t\\}$`}，记为$S_c$；</X.Oli>
             <X.Oli>输入密码时在补集{`$\\bar{S_c}$`}中查找，显然密码的前三位`t`、`e`、`n`都找不到；</X.Oli>
             <X.Oli>再输入第四位`d`时，{`$\\bar{S_c}$`}命中；此时遍历$S_c$中的字符回推上一位，也就是查询`ed`、`nd`、`rd`、`td`，找到`nd`；</X.Oli>
             <X.Oli>重复此过程，最终找到`tend`。</X.Oli>
-            <X.P withMarginTop>注：仍需考虑一些罕见情况（如密码是描述的子串），此处略。</X.P>
+            <X.P>注：仍需考虑一些罕见情况（如密码是描述的子串），此处略。</X.P>
             <X.H2>主动查询以绕过防御</X.H2>
             <X.P>首先找到密码输入框并获取视图ID，然后通过`findAccessibilityNodeInfosByViewId(id)`找到，然后对这个节点（假设是`n`）重复调用`n.getText().length()`来判断用户输入。</X.P>
             <X.H2>侧信道</X.H2>
             <X.H3>基于时间的侧信道 - 检测大小写切换</X.H3>
-            <X.Oli reset={1}>
+            <X.Oli reset>
                 每个人的输入习惯都有很大差别，因此很难设定一个绝对的时间间隙作为标准；因此研究使用相对指标`z score`，如果向量{`$\\bm{t}$`}代表所有按键的时间间隔，那么`z score`为{`$\\frac{\\bm{t}-\\mu_{\\bm{t}}}{\\sigma_{\\bm{t}}}$`}，即“与均值相差几个标准差”。然后进一步定义了一个`z score`的阈值，使得大小写切换`(case switches)`真阳性率$TRPCS$和非大小写切换`(non case switches)`真阳性率$TPRNCS$的乘积最大。
             </X.Oli>
             <X.Oli>考虑密码是`dot#COM`，`#`和`C`之间的切换间隔会干扰到期望得到的最一般情况下的输入间隔，因此计算`z score`时只包括字母输入的间隔，以进一步提高稳定性。</X.Oli>
             <X.H3>基于状态机的侧信道 - 恢复用户行为</X.H3>
             <X.Image src="1.jpg" width="100%" invertInDarkTheme />
             <X.P>总体而言本节介绍一个利用有限自动机来恢复包含大小写切换的用户输入的方法。</X.P>
-            <X.P noMarginBottom>基于时间维度的检测仍然有一些功能无法实现，例如无法区分是使用`CapsLock`还是`Shift`做切换。自动机设计了三种状态：</X.P>
+            <X.P>基于时间维度的检测仍然有一些功能无法实现，例如无法区分是使用`CapsLock`还是`Shift`做切换。自动机设计了三种状态：</X.P>
             <X.Uli>小写状态`(Lowercase State)`：默认状态</X.Uli>
             <X.Uli>切换状态`(Switching State)`：单击`Shift`，下一个输入字符为大写，但输入完成后立即变为小写状态</X.Uli>
             <X.Uli>大写状态`(Uppercase State)`：双击`Shift`/按下`CapsLock`，后续输入的字符均为大写</X.Uli>
-            <X.P withMarginTop>要注意的是，状态机的初始状态不确定，检测到大小写切换后可能转移的状态也不唯一，为此会给每一种可能的状态都创建一个副本（类似树形增长）。论文在此处用数学方法证明了随着大小写切换被检测到的次数$n_s$增加，总的可能性增长规律符合斐波那契数列；不过此处想表达的中心思想是：尽管总的可能性呈指数增长，但前人关于密码习惯的调查表明通常大写字母是很少的，也就是$n_s$其实并不会很大。</X.P>
+            <X.P>要注意的是，状态机的初始状态不确定，检测到大小写切换后可能转移的状态也不唯一，为此会给每一种可能的状态都创建一个副本（类似树形增长）。论文在此处用数学方法证明了随着大小写切换被检测到的次数$n_s$增加，总的可能性增长规律符合斐波那契数列；不过此处想表达的中心思想是：尽管总的可能性呈指数增长，但前人关于密码习惯的调查表明通常大写字母是很少的，也就是$n_s$其实并不会很大。</X.P>
             <X.P>上图中的红色箭头标识一个键盘切换`(keyboard switches)`（有些复杂的密码可能需要在字母键盘和符合键盘等等之间反复切换），每次检测到键盘切换后，会为相同的当前密码创建三个不同状态的副本以覆盖所有的可能性。</X.P>
-            <X.P noMarginBottom>论文在@Rockyou[https://www.skullsecurity.org/wiki/Passwords]@数据集上观察到，对于`99.65%`的用户密码，大小写切换和键盘切换的次数都很少。此外，对于那些包含字母的密码，其中有`99.55%`都符合以下三个简单模式：</X.P>
+            <X.P>论文在@Rockyou[https://www.skullsecurity.org/wiki/Passwords]@数据集上观察到，对于`99.65%`的用户密码，大小写切换和键盘切换的次数都很少。此外，对于那些包含字母的密码，其中有`99.55%`都符合以下三个简单模式：</X.P>
             <X.Uli>全是小写字母</X.Uli>
             <X.Uli>全是大写字母</X.Uli>
             <X.Uli>仅首字母是大写的</X.Uli>

@@ -15,24 +15,24 @@ export default function Post() {
             <X.H2>术语</X.H2>
             <X.P>下面的内容译自@CWE Glossary[https://cwe.mitre.org/documents/glossary/]@，这里只列出了几个下文可能出现的术语：</X.P>
             <X.Uli>
-                <X.P noMarginBottom>`Behaviour`（行为）</X.P>
-                <X.P>产品采取的操作，通常以代码实现或以算法表示。也可以指系统以外的其他参与者的操作。</X.P>
+                <X.L>`Behaviour`（行为）：</X.L>
+                <X.L>产品采取的操作，通常以代码实现或以算法表示。也可以指系统以外的其他参与者的操作。</X.L>
             </X.Uli>
             <X.Uli>
-                <X.P noMarginBottom>`Resource`（资源）：</X.P>
-                <X.P>指在产品运行过程中被访问或修改的对象或实体，例如内存、CPU、文件或套接字。资源可以是系统级（内存或CPU）、代码级（函数或变量）或应用程序级（cookie或消息）。</X.P>
+                <X.L>`Resource`（资源）：</X.L>
+                <X.L>指在产品运行过程中被访问或修改的对象或实体，例如内存、CPU、文件或套接字。资源可以是系统级（内存或CPU）、代码级（函数或变量）或应用程序级（cookie或消息）。</X.L>
             </X.Uli>
             <X.Uli>
-                <X.P noMarginBottom>`Property`（属性）：</X.P>
+                <X.L>`Property`（属性）：</X.L>
                 <X.P>指某个对系统预期的安全模型很重要的资源或行为，可能随时间变化。比如用户的输入最初是不受信任的，但经过系统的中和处理后，最终会被认为是受信任的。</X.P>
             </X.Uli>
             <X.H2>CWE分类系统</X.H2>
             <X.P>CWE有一套树型的分类系统，CWE提供了一些组织各个条目的结构化描述，例如视图和分类。</X.P>
-            <X.P noMarginBottom>CWE Views是针对特定目的或特定受众而组织的弱点集合，大多数视图是整个CWE列表的子集。例如@CWE List[https://cwe.mitre.org/data/index.html]@中给出的：</X.P>
+            <X.P>CWE Views是针对特定目的或特定受众而组织的弱点集合，大多数视图是整个CWE列表的子集。例如@CWE List[https://cwe.mitre.org/data/index.html]@中给出的：</X.P>
             <X.Uli>@View by Software Development[https://cwe.mitre.org/data/definitions/699.html]@</X.Uli>
             <X.Uli>@View by Hardware Design[https://cwe.mitre.org/data/definitions/1194.html]@</X.Uli>
             <X.Uli>@View by Research Concepts[https://cwe.mitre.org/data/definitions/1000.html]@</X.Uli>
-            <X.P withMarginTop>CWE Categories是更细的划分，一个CWE分类可能包含一系列具有共同特征的CWE条目。</X.P>
+            <X.P>CWE Categories是更细的划分，一个CWE分类可能包含一系列具有共同特征的CWE条目。</X.P>
             <X.P>CWE的不同条目也具有不同的抽象程度，有些条目描述了具体的缺陷，有些则描述了更一般的问题。CWE的条目之间也存在父级子级的关系。四种抽象程度如下图所示：</X.P>
             <X.Image src="weakness_abstractions.png" width="600px" invertInDarkTheme />
             <X.P>这些分级在官网上也有对应的图标表示，相应的释义为：</X.P>
@@ -128,7 +128,7 @@ export default function Post() {
                 <X.Uli>OpenCVE：@CVE-2023-0841[https://www.opencve.io/cve/CVE-2023-0841]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://github.com/gpac/gpac/issues/2396]@</X.Uli>
                 <X.Uli>`Patch`：@[https://github.com/gpac/gpac/commit/851560e3dc8155d45ace4b0d77421f241ed71dc4]@</X.Uli>
-                <X.P withMarginTop>补丁：考虑`bytes_skipped`。</X.P>
+                <X.P>补丁：考虑`bytes_skipped`。</X.P>
                 <X.CodeBlock
                     language="c"
                     diffRemovedLines="2-3"
@@ -166,7 +166,7 @@ export default function Post() {
                 <X.Uli>OpenCVE：@CVE-2014-8958[https://www.opencve.io/cve/CVE-2014-8958]@</X.Uli>
                 <X.Uli>`Patch`：@[https://github.com/phpmyadmin/phpmyadmin/commit/d32da348c4de2379482a48661ce968a55eebe5c4]@</X.Uli>
                 <X.Uli>`Patch`：@[https://github.com/phpmyadmin/phpmyadmin/commit/2ffdbf2d7daa0b92541d8b754e2afac555d3ed21]@</X.Uli>
-                <X.P withMarginTop>部分补丁的内容：通过`htmlspecialchars()`转义为HTML实体。</X.P>
+                <X.P>部分补丁的内容：通过`htmlspecialchars()`转义为HTML实体。</X.P>
                 <X.CodeBlock
                     language="php"
                     diffRemovedLines="1"
@@ -220,7 +220,7 @@ export default function Post() {
                 <X.Uli>OpenCVE：@CVE-2018-1000869[https://www.opencve.io/cve/CVE-2018-1000869]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://github.com/phpipam/phpipam/issues/2344]@</X.Uli>
                 <X.Uli>`Patch`：@[https://github.com/phpipam/phpipam/commit/856b10ca85a24c04ed8651f4e13f867ec78a353d]@</X.Uli>
-                <X.P withMarginTop>补丁中加入对参数合法性的检验：</X.P>
+                <X.P>补丁中加入对参数合法性的检验：</X.P>
                 <X.CodeBlock
                     language="php"
                     diffAddedLines="4-8"
@@ -288,7 +288,7 @@ export default function Post() {
                 <X.Uli>OpenCVE：@CVE-2018-1000217[https://www.opencve.io/cve/CVE-2018-1000217]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://github.com/DaveGamble/cJSON/issues/248]@</X.Uli>
                 <X.Uli>`Patch`：@[https://github.com/FSMaxB/cJSON/commit/22a7d04fa004462e0dca35c3cc7809bea38e65f9]@</X.Uli>
-                <X.P withMarginTop>如果`item`的`string`属性恰好就是`add_item_to_object`的`string`参数的地址，且`constant`为`false`，`cJSON_strdup`会在释放后访问这个字符串。</X.P>
+                <X.P>如果`item`的`string`属性恰好就是`add_item_to_object`的`string`参数的地址，且`constant`为`false`，`cJSON_strdup`会在释放后访问这个字符串。</X.P>
                 <X.CodeBlock
                     language="c"
                     diffRemovedLines="11-15,18-19,25-26,33-34"
@@ -345,7 +345,7 @@ export default function Post() {
                 />
             </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/78.html">【B】CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')</X.H2>
-            <X.P noMarginBottom>操作系统命令注入，类似地，只不过此时是操作系统命令。通常这有两种子类型：</X.P>
+            <X.P>操作系统命令注入，类似地，只不过此时是操作系统命令。通常这有两种子类型：</X.P>
             <X.Uli>程序执行某个固定的程序，但是接收外部输入作为程序的参数。</X.Uli>
             <X.Uli>程序将整个输入作为命令重定向到操作系统。</X.Uli>
             <X.H3>Example 1</X.H3>
@@ -363,7 +363,7 @@ export default function Post() {
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2019-1010200[https://www.opencve.io/cve/CVE-2019-1010200]@</X.Uli>
                 <X.Uli>`patch`：@[https://github.com/google/voice-builder/commit/c145d4604df67e6fc625992412eef0bf9a85e26b]@</X.Uli>
-                <X.P withMarginTop>原本的程序可以通过`req.query.text`注入`cmd`。补丁对字符串过滤特殊字符，并用`child.stdin.write(sanitizedText)`代替`echo`命令。</X.P>
+                <X.P>原本的程序可以通过`req.query.text`注入`cmd`。补丁对字符串过滤特殊字符，并用`child.stdin.write(sanitizedText)`代替`echo`命令。</X.P>
                 <X.CodeBlock
                     language="js"
                     diffRemovedLines="4-5,8-12,22"
@@ -447,7 +447,7 @@ export default function Post() {
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2008-2223[https://www.opencve.io/cve/CVE-2008-2223]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://www.exploit-db.com/exploits/5565]@</X.Uli>
-                <X.P withMarginTop>vShare YouTube Clone 2.6中的`group_posts.php`中的SQL注入漏洞，远程攻击者可以通过`tid`参数执行任意SQL命令。</X.P>
+                <X.P>vShare YouTube Clone 2.6中的`group_posts.php`中的SQL注入漏洞，远程攻击者可以通过`tid`参数执行任意SQL命令。</X.P>
                 <X.CodeBlock
                     language="perl"
                     highlightLines="16"
@@ -629,7 +629,7 @@ export default function Post() {
                 <X.Uli>OpenCVE：@CVE-2023-35947[https://www.opencve.io/cve/CVE-2023-35947]@</X.Uli>
                 <X.Uli>`Patch`：@[https://github.com/gradle/gradle/commit/1096b309520a8c315e3b6109a6526de4eabcb879]@</X.Uli>
                 <X.Uli>`Patch`：@[https://github.com/gradle/gradle/commit/2e5c34d57d0c0b7f0e8b039a192b91e5c8249d91]@</X.Uli>
-                <X.P withMarginTop>Gradle是一款构建工具，侧重于构建自动化和多语言开发支持。在受影响的版本中，当解压Tar压缩包时，Gradle不会检查文件是否可以写入解压位置之外。这可能导致重要文件在Gradle进程有写入权限的任何地方被覆盖。</X.P>
+                <X.P>Gradle是一款构建工具，侧重于构建自动化和多语言开发支持。在受影响的版本中，当解压Tar压缩包时，Gradle不会检查文件是否可以写入解压位置之外。这可能导致重要文件在Gradle进程有写入权限的任何地方被覆盖。</X.P>
                 <X.P>部分补丁的内容：</X.P>
                 <X.CodeBlock
                     language="java"
@@ -701,7 +701,7 @@ export default function Post() {
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2009-3022[https://www.opencve.io/cve/CVE-2009-3022]@</X.Uli>
                 <X.Uli>报告：@[https://jvndb.jvn.jp/ja/contents/2009/JVNDB-2009-000058.html]@</X.Uli>
-                <X.P withMarginTop>在bingo!CMS 1.2及更早版本中存在CSRF漏洞，远程攻击者可劫持其他用户对修改配置或更改内容请求的身份验证。</X.P>
+                <X.P>在bingo!CMS 1.2及更早版本中存在CSRF漏洞，远程攻击者可劫持其他用户对修改配置或更改内容请求的身份验证。</X.P>
             </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/434.html">【B】CWE-434: Unrestricted Upload of File with Dangerous Type</X.H2>
             <X.P>缺少对上传文件类型的验证。</X.P>
@@ -803,15 +803,15 @@ export default function Post() {
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2022-24730[https://www.opencve.io/cve/CVE-2022-24730]@</X.Uli>
                 <X.Uli>报告：@[https://github.com/argoproj/argo-cd/security/advisories/GHSA-r9cr-hvjj-496v]@</X.Uli>
-                <X.P withMarginTop>问题的大致描述为：从v1.3.0开始，未打补丁的Argo CD版本都容易受到路径遍历错误的影响，再加上不适当的访问控制错误，可能允许具有只读存储库访问权限的恶意用户从Argo CD的存储库服务器中泄露敏感文件。</X.P>
+                <X.P>问题的大致描述为：从v1.3.0开始，未打补丁的Argo CD版本都容易受到路径遍历错误的影响，再加上不适当的访问控制错误，可能允许具有只读存储库访问权限的恶意用户从Argo CD的存储库服务器中泄露敏感文件。</X.P>
                 <X.P>
                     有读权限的用户可以给{'`/api/v1/repositories/{repo_url}/appdetails`'}
                     发送带有恶意载荷请求以访问预期之外的文件。
                 </X.P>
-                <X.P noMarginBottom>补丁的作用：</X.P>
+                <X.P>补丁的作用：</X.P>
                 <X.Uli>防止路径遍历；</X.Uli>
                 <X.Uli>
-                    <X.P noMarginBottom>限制对{'`/api/v1/repositories/{repo_url}/appdetails`'}的访问权限，只有以下两类用户可以：</X.P>
+                    <X.P>限制对{'`/api/v1/repositories/{repo_url}/appdetails`'}的访问权限，只有以下两类用户可以：</X.P>
                     <X.Oli>拥有`create`权限的用户</X.Oli>
                     <X.Oli>拥有`get`权限的用户，并且`repo_url`已经被给定的应用使用。</X.Oli>
                 </X.Uli>
@@ -843,7 +843,7 @@ export default function Post() {
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2008-5183[https://www.opencve.io/cve/CVE-2008-5183]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://www.exploit-db.com/exploits/7150]@</X.Uli>
-                <X.P withMarginTop>通过CSRF发出大量`add-rss-subscription`请求，触发空指针引用（此处没有找到源码），进而导致DoS攻击。</X.P>
+                <X.P>通过CSRF发出大量`add-rss-subscription`请求，触发空指针引用（此处没有找到源码），进而导致DoS攻击。</X.P>
                 <X.CodeBlock
                     language="js"
                     code={`
@@ -1053,11 +1053,11 @@ export default function Post() {
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2020-13091[https://www.opencve.io/cve/CVE-2020-13091]@</X.Uli>
-                <X.P withMarginTop>如果`__reduce__`调用了`os.system`，1.0.3版本的Python Pandas库可以从传递给`read_pickle()`函数的不信任文件中反序列化，并执行命令。注意`read_pickle()`在@文档[https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_pickle.html]@中已经被标记为不安全的，用户有责任确保传入的文件是可信的。</X.P>
+                <X.P>如果`__reduce__`调用了`os.system`，1.0.3版本的Python Pandas库可以从传递给`read_pickle()`函数的不信任文件中反序列化，并执行命令。注意`read_pickle()`在@文档[https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_pickle.html]@中已经被标记为不安全的，用户有责任确保传入的文件是可信的。</X.P>
             </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/77.html">【C】CWE-77: Improper Neutralization of Special Elements used in a Command ('Command Injection')</X.H2>
             <X.P>命令注入，用户输入没有被中和，或错误地中和处理，导致执行的预期命令被修改。</X.P>
-            <X.P noMarginBottom>命令注入漏洞通常发生在以下情况：</X.P>
+            <X.P>命令注入漏洞通常发生在以下情况：</X.P>
             <X.Uli>数据从不受信任的来源进入应用程序。</X.Uli>
             <X.Uli>数据是字符串的一部分，由应用程序作为命令执行。</X.Uli>
             <X.Uli>通过执行命令，应用程序为攻击者提供了其原本无法拥有的权限或能力。</X.Uli>
@@ -1092,7 +1092,7 @@ export default function Post() {
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2024-32027[https://www.opencve.io/cve/CVE-2024-32027]@</X.Uli>
                 <X.Uli>`Patch`：@[https://github.com/bmaltais/kohya_ss/commit/831af8babeb75faff62bcc6a8c6a4f80354f1ff1]@</X.Uli>
-                <X.P withMarginTop>此补丁移除了很多Python脚本中的`shell=True`：</X.P>
+                <X.P>此补丁移除了很多Python脚本中的`shell=True`：</X.P>
                 <X.CodeBlock
                     language="python"
                     diffRemovedLines="1"
@@ -1150,7 +1150,7 @@ export default function Post() {
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2020-35296[https://www.opencve.io/cve/CVE-2020-35296]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://github.com/Shrimant12/CVE-References/blob/main/CVE-2020-35296.md]@</X.Uli>
-                <X.P withMarginTop>管理员面板有默认账户`admin:admin`。</X.P>
+                <X.P>管理员面板有默认账户`admin:admin`。</X.P>
             </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/918.html">【B】CWE-918: Server-Side Request Forgery (SSRF)</X.H2>
             <X.P>服务端请求伪造，攻击者通过伪造服务器发起的请求，使服务器端的应用程序访问受信任的第三方服务器或资源。通常，攻击者利用此漏洞访问内部系统。SSRF可以看作一种跳板攻击。</X.P>
@@ -1160,7 +1160,7 @@ export default function Post() {
                 <X.Uli>OpenCVE：@CVE-2024-3149[https://www.opencve.io/cve/CVE-2024-3149]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://huntr.com/bounties/b230d76b-ae2d-440e-a25b-94ffaa7c4ff1]@</X.Uli>
                 <X.Uli>`Patch`：@[https://github.com/mintplex-labs/anything-llm/commit/f4088d9348fa86dcebe9f97a18d39c0a6e92f15e]@</X.Uli>
-                <X.P withMarginTop>AnythingLLM的上传链接功能存在SSRF漏洞，该功能面向具有`manager`或`admin`角色的用户，使用无头浏览器通过内部`collectorApi`处理上传的链接。 攻击者可以通过托管恶意网站并使用该网站执行内部端口扫描、访问未对外公开的内部网络应用程序等操作来利用这一漏洞。</X.P>
+                <X.P>AnythingLLM的上传链接功能存在SSRF漏洞，该功能面向具有`manager`或`admin`角色的用户，使用无头浏览器通过内部`collectorApi`处理上传的链接。 攻击者可以通过托管恶意网站并使用该网站执行内部端口扫描、访问未对外公开的内部网络应用程序等操作来利用这一漏洞。</X.P>
                 <X.P>部署AnytingLLM后会有两个`express.js`节点运行，分别是`collector`和`server`。</X.P>
                 <X.P>补丁引入了`comKey`检验数据完整性，让攻击者无法构造出合法的请求头部。部分新增的内容如下：\n`collector/utils/comKey/index.js`：</X.P>
                 <X.CodeBlock
@@ -1332,18 +1332,18 @@ export default function Post() {
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2020-25966[https://www.opencve.io/cve/CVE-2020-25966]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://gitlab.com/Gazzaz/Spectra_API_Issue/]@</X.Uli>
-                <X.P withMarginTop>Sectona Spectra 3.2.0存在一个易受攻击的SOAP API端点，该端点会在未进行适当身份验证的情况下泄漏敏感信息。</X.P>
+                <X.P>Sectona Spectra 3.2.0存在一个易受攻击的SOAP API端点，该端点会在未进行适当身份验证的情况下泄漏敏感信息。</X.P>
                 <X.P>注：这个CVE是由于系统配置错误导致的。</X.P>
             </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/362.html">【C】CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')</X.H2>
             <X.P>数据竞争，某段代码需要对共享资源进行临时、独占访问，但存在一个时间窗口，在该时间窗口内共享资源可被同时运行的另一个代码片段修改。</X.P>
-            <X.P noMarginBottom>数据竞争违反了以下两个原则：</X.P>
+            <X.P>数据竞争违反了以下两个原则：</X.P>
             <X.Uli>排他性：代码序列被赋予对共享资源的排他性访问权限，即在原始序列完成执行之前，其他代码序列不能修改共享资源的属性。</X.Uli>
             <X.Uli>
-                <X.P noMarginBottom>原子性：代码序列被视为一个单一的操作，即在执行期间不会被中断，也不会被其他代码序列中断。</X.P>
+                <X.P>原子性：代码序列被视为一个单一的操作，即在执行期间不会被中断，也不会被其他代码序列中断。</X.P>
                 <X.P>程序员可能会认为某些代码序列执行得太快，不会受到干扰代码序列的影响，但事实并非如此。例如，单个`x++`语句在代码层可能看起来是原子的，但在指令层实际上是非原子的，因为它涉及读取`x`的原始值、计算`x+1`、最后将结果赋值给`x`。</X.P>
             </X.Uli>
-            <X.P withMarginTop>干扰代码序列可以是可信的或不可信的。受信任的干扰代码序列出现在产品内部，攻击者无法修改，只能间接调用。不受信任的干扰代码序列可由攻击者直接编写，通常在易受攻击产品的外部。</X.P>
+            <X.P>干扰代码序列可以是可信的或不可信的。受信任的干扰代码序列出现在产品内部，攻击者无法修改，只能间接调用。不受信任的干扰代码序列可由攻击者直接编写，通常在易受攻击产品的外部。</X.P>
             <X.H3>Example 1</X.H3>
             <X.CodeBlock
                 language="perl"
@@ -1366,7 +1366,7 @@ export default function Post() {
                 `}
             />
             <X.P>这个例子中`GetBalanceFromDatabase()`和`SendNewBalanceToDatabase()`可能会发生数据竞争。</X.P>
-            <X.P noMarginBottom>假设初始余额`balance`是`100.00`，一个攻击可以构造如下：</X.P>
+            <X.P>假设初始余额`balance`是`100.00`，一个攻击可以构造如下：</X.P>
             <X.Oli>攻击者调起两个程序，`PROGRAM-1`和`PROGRAM-2`，使用同一账户。</X.Oli>
             <X.Oli>`PROGRAM-1`请求转账`80.00`，此时`PROGRAM-1`计算出`$newbalance`为`20.00`。</X.Oli>
             <X.Oli>`PROGRAM-1`调用`SendNewBalanceToDatabase(20.00)`，但是*受到了延迟*。</X.Oli>
@@ -1374,7 +1374,7 @@ export default function Post() {
             <X.Oli>`PROGRAM-2`调用`SendNewBalanceToDatabase(99.00)`。</X.Oli>
             <X.Oli>`PROGRAM-1`调用的`SendNewBalanceToDatabase(20.00)`提交到数据库。</X.Oli>
             <X.Oli>`PROGRAM-2`调用的`SendNewBalanceToDatabase(99.00)`提交到数据库。</X.Oli>
-            <X.P withMarginTop>最后导致数据库记录的余额是错误的。</X.P>
+            <X.P>最后导致数据库记录的余额是错误的。</X.P>
             <X.H3>Example 2</X.H3>
             <X.CodeBlock
                 language="c"
@@ -1478,7 +1478,7 @@ export default function Post() {
                 <X.Uli>OpenCVE：@CVE-2017-11747[https://www.opencve.io/cve/CVE-2017-11747]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://github.com/tinyproxy/tinyproxy/issues/106]@</X.Uli>
                 <X.Uli>`Patch`：@[https://github.com/obnoxxx/tinyproxy/commit/fe4d29888306e62f3bbf964b3fdb8126ddbe8f6e]@</X.Uli>
-                <X.P withMarginTop>Tinyproxy 1.8.4及更早版本中的`main.c`会在向非`root`帐户下放权限后创建`/run/tinyproxy/tinyproxy.pid`文件，这可能允许本地用户在`root`脚本执行`kill \`cat /run/tinyproxy/tinyproxy.pid\``命令之前，利用访问该非`root`帐户的权限来修改`tinyproxy.pid`，从而杀死任意进程。</X.P>
+                <X.P>Tinyproxy 1.8.4及更早版本中的`main.c`会在向非`root`帐户下放权限后创建`/run/tinyproxy/tinyproxy.pid`文件，这可能允许本地用户在`root`脚本执行`kill \`cat /run/tinyproxy/tinyproxy.pid\``命令之前，利用访问该非`root`帐户的权限来修改`tinyproxy.pid`，从而杀死任意进程。</X.P>
                 <X.CodeBlock
                     language="c"
                     diffRemovedLines="21-29"
@@ -1567,7 +1567,7 @@ export default function Post() {
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2023-1947[https://www.opencve.io/cve/CVE-2023-1947]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://gitee.com/misak7in/cve/blob/master/taocms.md]@</X.Uli>
-                <X.P withMarginTop>taoCMS 3.0.2存在代码注入漏洞，发送请求：</X.P>
+                <X.P>taoCMS 3.0.2存在代码注入漏洞，发送请求：</X.P>
                 <X.CodeBlock
                     language="text"
                     code={`
@@ -1651,7 +1651,7 @@ export default function Post() {
                 <X.Uli>OpenCVE：@CVE-2024-22208[https://www.opencve.io/cve/CVE-2024-22208]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://github.com/thorsten/phpMyFAQ/security/advisories/GHSA-9hhf-xmcw-r3xg]@</X.Uli>
                 <X.Uli>`Patch`：@[https://github.com/thorsten/phpMyFAQ/commit/a34d94ab7b1be9256a9ef898f18ea6bfb63f6f1e]@</X.Uli>
-                <X.P withMarginTop>phpMyFAQ v3.2.5前的`Sharing FAQ`功能可以给其他邮箱分享讯息，前端只有`5`个输入框（希望用户最多分享给`5`个邮箱），然而后端并没有对数量做限制，攻击者可以构造请求发送大量邮件。</X.P>
+                <X.P>phpMyFAQ v3.2.5前的`Sharing FAQ`功能可以给其他邮箱分享讯息，前端只有`5`个输入框（希望用户最多分享给`5`个邮箱），然而后端并没有对数量做限制，攻击者可以构造请求发送大量邮件。</X.P>
                 <X.P>部分补丁的内容：</X.P>
                 <X.CodeBlock
                     language="php"
@@ -1688,7 +1688,7 @@ export default function Post() {
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2005-1941[https://www.opencve.io/cve/CVE-2005-1941]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://bugs.gentoo.org/93558]@</X.Uli>
-                <X.P withMarginTop>0.9.5-r1版本之前的SilverCity安装了`cgi-styler-form.py`、`cgistyler.py`和`source2html.py`，具有`world writable`权限。</X.P>
+                <X.P>0.9.5-r1版本之前的SilverCity安装了`cgi-styler-form.py`、`cgistyler.py`和`source2html.py`，具有`world writable`权限。</X.P>
                 <X.CodeBlock
                     language="text"
                     code={`

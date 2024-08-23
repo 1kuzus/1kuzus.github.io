@@ -92,7 +92,7 @@ function UpdateLog() {
                         <X.H3>Ver {log.version}</X.H3>
                     ) : (
                         <X.FlexRow gap="16px">
-                            <X.P style={{minWidth: '96px'}}>`{log.date}`</X.P>
+                            <X.P>`{log.date}`</X.P>
                             <X.P>{log.description}</X.P>
                         </X.FlexRow>
                     )}

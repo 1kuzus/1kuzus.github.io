@@ -48,7 +48,7 @@ export default function Post() {
             <X.HighlightBlock>
                 <X.H3>引入齐次坐标</X.H3>
                 <X.P>我们不希望将平移操作看待为一个特例，而是想要找到一个统一的、适用于各种变换的方法。\n这个解决方案就是引入*齐次坐标*`Homogeneous Coordinates`：</X.P>
-                <X.P noMarginBottom>现在我们用`3`个维度来表示一个2D的点或向量：</X.P>
+                <X.P>现在我们用`3`个维度来表示一个2D的点或向量：</X.P>
                 <X.Uli>2D点：$(x,y,1)^T$</X.Uli>
                 <X.Uli>2D向量：$(x,y,0)^T$</X.Uli>
                 <X.H3>理解最后一个维度</X.H3>
@@ -161,7 +161,7 @@ export default function Post() {
             />
             <X.H1>MVP变换</X.H1>
             <X.H2>引入</X.H2>
-            <X.P noMarginBottom>图形学中将3D空间的物体展现在2D屏幕上有十分重要的三个变换，以拍照片为例子，三个步骤是：</X.P>
+            <X.P>图形学中将3D空间的物体展现在2D屏幕上有十分重要的三个变换，以拍照片为例子，三个步骤是：</X.P>
             <X.Uli>找到一个好场景，并安排好要拍照的人或物品（*模型变换*`Model Transformation`）</X.Uli>
             <X.Uli>找到一个好角度放置相机（*视图变换*`View Transformation`）</X.Uli>
             <X.Uli>按下快门，得到照片（*投影变换*`Projection Transformation`）</X.Uli>
@@ -177,7 +177,7 @@ export default function Post() {
             <X.P>
                 确定一个相机需要三个向量：\n相机位置{`$\\bm{e}$`}、观测方向{`$\\bm{g}$`}（相机对着哪儿拍？）、向上方向{`$\\bm{t}$`}（横着，竖着，还是斜着拍？）
             </X.P>
-            <X.P noMarginBottom>
+            <X.P>
                 通常约定相机固定在原点，观测{`$-\\bm{z}$`}方向，向上方向为{`$\\bm{y}$`}。\n现在试着将上面描述的相机移动到约定位置，我们需要以下步骤：
             </X.P>
             <X.Uli>平移相机原本的中心点{`$\\bm{e}$`}到原点；</X.Uli>
@@ -187,7 +187,7 @@ export default function Post() {
             <X.Uli>
                 旋转向上方向{`$\\bm{t}$`}到{`$\\bm{y}$`}；
             </X.Uli>
-            <X.P withMarginTop>
+            <X.P>
                 假设上述三个步骤可以用矩阵{`$M_{view}$`}表示，显然它们可以拆解为先平移、再旋转两步，也就是{`$M_{view}=R_{view}T_{view}$`}；\n显然有：
             </X.P>
             <X.Formula

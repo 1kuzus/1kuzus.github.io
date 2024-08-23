@@ -131,7 +131,7 @@ export default function Post() {
             <X.P>Winograd算法通过减少乘法次数来实现提速，但是加法的数量会相应增加，也需要额外的变换计算及存储变换矩阵。随着卷积核和分块尺寸增大，需要考虑加法、变换和存储的代价，而且分块越大，变换矩阵越大，提效收益降低。</X.P>
             <X.P>因此，Winograd适用于较小的卷积核和分块。</X.P>
             <X.H1>参考资料</X.H1>
-            <X.P noMarginBottom>本文的部分内容、图片来源于：</X.P>
+            <X.P>本文的部分内容、图片来源于：</X.P>
             <X.Uli>@Bilibili - 卷积优化：Winograd算法【推理引擎】[https://www.bilibili.com/video/BV1vv4y1Y7sc]@</X.Uli>
         </>
     );

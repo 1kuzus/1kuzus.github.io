@@ -60,7 +60,7 @@ export default function Post() {
             <X.H1>一些符号约定</X.H1>
             <X.H2>[...]和(...)</X.H2>
             <X.P>`[...]`是汇编语法，表示一个内存单元，段地址在`DS`中，偏移地址由`...`给出；\n`(...)`是为了学习方便做出的约定，表示一个内存单元或寄存器中的内容。</X.P>
-            <X.P noMarginBottom>例如，`pop ax`的功能可以描述为：</X.P>
+            <X.P>例如，`pop ax`的功能可以描述为：</X.P>
             <X.Uli>`(ax)=((ss)*16+(sp))`</X.Uli>
             <X.Uli>`(sp)=(sp)+2`</X.Uli>
             <X.H2>idata</X.H2>
@@ -82,7 +82,7 @@ export default function Post() {
                 end
                 `}
             />
-            <X.P noMarginBottom>`loop`指令功能是实现计数型循环，会*默认使用*`CX`寄存器的值作为循环计数器，当执行`loop`指令时会进行操作：</X.P>
+            <X.P>`loop`指令功能是实现计数型循环，会*默认使用*`CX`寄存器的值作为循环计数器，当执行`loop`指令时会进行操作：</X.P>
             <X.Uli>`(CX)=(CX)-1`；</X.Uli>
             <X.Uli>判断`(CX)`是否为`0`，如果不为`0`，则跳转到标号处继续执行循环体；如果为`0`，则继续执行下一条指令。</X.Uli>
             <X.H1>inc指令</X.H1>
@@ -137,7 +137,7 @@ export default function Post() {
                 end
                 `}
             />
-            <X.P noMarginBottom>上面的代码希望将数据通过栈倒序存放。使用`dw(define word)`关键字定义了一片数据空间，类似的操作还有：</X.P>
+            <X.P>上面的代码希望将数据通过栈倒序存放。使用`dw(define word)`关键字定义了一片数据空间，类似的操作还有：</X.P>
             <X.Uli>`db`：定义一个字节的数据</X.Uli>
             <X.Uli>`dw`：定义一个字的数据</X.Uli>
             <X.Uli>`dd`：定义一个双字的数据</X.Uli>

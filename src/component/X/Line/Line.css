@@ -1,0 +1,31 @@
+.x-l {
+    line-height: 26px;
+    font-size: 16px;
+}
+.x-l .katex {
+    margin: 0 2px;
+}
+.x-inline-highlight {
+    margin: 0 4px;
+    padding: 2px 4px;
+    font-size: 14px;
+    font-family: var(--font-code);
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    color: var(--fg-gray-100);
+    border-radius: 4px;
+    background-color: var(--bg-transparent-gray-600);
+}
+.x-inline-strong {
+    font-weight: bold;
+}
+.x-inline-link {
+    color: var(--brand-300);
+    border-bottom: 1px solid transparent;
+}
+.x-inline-link .x-inline-highlight {
+    color: var(--brand-300);
+}
+.x-inline-link:hover {
+    border-bottom: 1px solid var(--brand-300);
+}

@@ -19,7 +19,7 @@ function PaperSummary(props) {
                 ([comp, text], index) =>
                     comp && (
                         <X.Oli key={index}>
-                            <X.P noMarginBottom>*{text}*</X.P>
+                            <X.P>*{text}*</X.P>
                             {typeof comp === 'string' ? <X.P>{comp}</X.P> : comp}
                         </X.Oli>
                     )
@@ -49,7 +49,7 @@ export default function Post() {
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>更多笔记</X.H3>
                 <X.P>神经辐射场用于从2D的图片重建3D的场景。</X.P>
-                <X.P noMarginBottom>文中出现的三个指标：PSNR、SSIM、LPIPS</X.P>
+                <X.P>文中出现的三个指标：PSNR、SSIM、LPIPS</X.P>
                 <X.Uli>*峰值信噪比*`(Peak Signal to Noise Ratio, PSNR)`：用于衡量图像恢复的质量，数值越高表示图像质量越好。接近`50 dB`代表误差非常小，大于`30 dB`人眼难察觉差异。</X.Uli>
                 <X.Uli>*结构相似性*`(Structural Similarity Index Measure, SSIM)`：用于衡量图像的结构相似性，得分通常在`0`~`1`之间，数值越高表示图像结构越相似。相较于PSNR在图像质量的衡量上更能符合人眼对图像质量的判断。</X.Uli>
                 <X.Uli>*基于学习的感知图像质量评价*`(Learned Perceptual Image Patch Similarity, LPIPS)`：测量从预训练网络中提取的两个图像的特征之间的相似性，得分通常在`0`~`1`之间，数值越低表示感知质量越高。</X.Uli>
@@ -68,7 +68,7 @@ export default function Post() {
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>更多笔记</X.H3>
                 <X.H3>Instant NGP与NeRF的异同</X.H3>
-                <X.P noMarginBottom>转载自@知乎：从NeRF到Instant-NGP[https://zhuanlan.zhihu.com/p/631284285]@</X.P>
+                <X.P>转载自@知乎：从NeRF到Instant-NGP[https://zhuanlan.zhihu.com/p/631284285]@</X.P>
                 <X.Uli>同样基于体渲染</X.Uli>
                 <X.Uli>不同于NeRF的MLP，Instant NGP使用稀疏的参数化的`voxel grid`作为场景表达</X.Uli>
             </X.HighlightBlock>
@@ -79,7 +79,7 @@ export default function Post() {
                 topic={
                     <>
                         <X.P>输入一个以多视图RGB图像预训练的NeRF，学习给定场景的3D实例分割</X.P>
-                        <X.P noMarginBottom>文章的主要贡献：</X.P>
+                        <X.P>文章的主要贡献：</X.P>
                         <X.Uli>第一个在NeRF中进行3D实例分割的尝试之一，而没有使用真实分割标签作为输入</X.Uli>
                         <X.Uli>提出`Neural Instance Field`的结构和训练方法，可以产生*多视图一致*的2D分割和连续的3D分割</X.Uli>
                         <X.Uli>对合成室内NeRF数据集进行实验和消融研究</X.Uli>
@@ -158,8 +158,8 @@ export default function Post() {
                 <X.H3>更多笔记</X.H3>
                 <X.H3>语义分割与实例分割</X.H3>
                 <X.Image src="ss_and_is.jpg" width="600px" />
-                <X.P noMarginBottom>*语义分割*`(semantic segmentation)`：为每一个像素分配一个类别，但不区分同一类别之间的对象。</X.P>
-                <X.P>*实例分割*`(instance segmentation)`：会区分属于同一类别的不同实例。</X.P>
+                <X.L>*语义分割*`(semantic segmentation)`：为每一个像素分配一个类别，但不区分同一类别之间的对象。</X.L>
+                <X.L>*实例分割*`(instance segmentation)`：会区分属于同一类别的不同实例。</X.L>
             </X.HighlightBlock>
             <X.H2 href="https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Long_Fully_Convolutional_Networks_2015_CVPR_paper.pdf">【FCN】Fully Convolutional Networks for Semantic Segmentation (2015)</X.H2>
             <PaperSummary

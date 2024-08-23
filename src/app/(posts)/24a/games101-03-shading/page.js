@@ -10,7 +10,7 @@ export default function Post() {
             <X.TOC />
             <X.Title>{metas[path].title}</X.Title>
             <X.H1>Blinn-Phong光照模型</X.H1>
-            <X.P noMarginBottom>将环境光分为：</X.P>
+            <X.P>将环境光分为：</X.P>
             <X.Uli>漫反射`(diffuse reflection)`：一根光线打过来，反射到四面八方</X.Uli>
             <X.Uli>高光`(specular highlights)`：一根光线打过来，反射方向与镜面反射方向相近</X.Uli>
             <X.Uli>环境光`(ambient lighting)`：环境中经过多次反射叠加的结果，认为是常量</X.Uli>
@@ -19,7 +19,7 @@ export default function Post() {
                 <X.Image src="fig1.jpg" invertInDarkTheme />
                 <div>
                     <X.P>着色模型考虑一个点，在这个点处小范围表面被近似看作平面：</X.P>
-                    <X.P noMarginBottom>模型的输入（向量均为单位向量）：</X.P>
+                    <X.P>模型的输入（向量均为单位向量）：</X.P>
                     <X.Uli>观察方向{`$\\bm{v}$`}</X.Uli>
                     <X.Uli>法线方向{`$\\bm{n}$`}</X.Uli>
                     <X.Uli>光照方向{`$\\bm{l}$`}</X.Uli>
@@ -46,7 +46,7 @@ export default function Post() {
                     <X.Formula text="L_d=k_d(I/r^2)\max(0,\bm{l}\cdot\bm{n})" />
                     <X.Uli>其中的$k_d$是漫反射常量，表示着色点对能量的吸收率，取决于物体材质。如果定义为具有`3`个分量的常向量，则可以表示不同的颜色。</X.Uli>
                     <X.Uli>当光照方向和法线方向余弦值为负数的时候，认为光线不可到达此点，按$0$考虑。</X.Uli>
-                    <X.P withMarginTop>注意到漫反射是与观察方向{`$\\bm{v}$`}无关的。</X.P>
+                    <X.P>注意到漫反射是与观察方向{`$\\bm{v}$`}无关的。</X.P>
                 </div>
             </X.FlexRow>
             <X.H2>高光</X.H2>
@@ -97,7 +97,7 @@ export default function Post() {
                     <X.P>如果$(x,y)$在三角形内部，则有$\alpha$、$\beta$、$\gamma$均非负。</X.P>
                     <X.P>当$\alpha=\beta=\gamma=1/3$时，$(x,y)$是三角形重心。</X.P>
                     <X.Divider />
-                    <X.P withMarginTop>重心坐标的作用是给三角形内部任意一点线性插值。$V_A$、$V_B$、$V_C$可能是位置、颜色、深度等等。</X.P>
+                    <X.P>重心坐标的作用是给三角形内部任意一点线性插值。$V_A$、$V_B$、$V_C$可能是位置、颜色、深度等等。</X.P>
                     <X.HighlightBlock>
                         <X.Formula text="V=\alpha V_A + \beta V_B + \gamma V_C" />
                     </X.HighlightBlock>
@@ -120,7 +120,7 @@ export default function Post() {
             <X.H2>法线贴图</X.H2>
             <X.P>法线贴图`(normal mapping)`直接将法线存储在贴图中。</X.P>
             <X.Image src="fig12.jpg" invertInDarkTheme width="800px" />
-            <X.P noMarginBottom>如图，改变后的法线方向垂直于$(1,dp)^T$，应为$(-dp,1)^T$。不过，上述是在平面上的简单示意图，实际情况下纹理是一个$u-v$平面，计算改变后的法线方向需要：</X.P>
+            <X.P>如图，改变后的法线方向垂直于$(1,dp)^T$，应为$(-dp,1)^T$。不过，上述是在平面上的简单示意图，实际情况下纹理是一个$u-v$平面，计算改变后的法线方向需要：</X.P>
             <X.Uli>以原本的法线为$(0,0,1)^T$建立一个局部坐标系</X.Uli>
             <X.Uli>计算{`$\\bm{n}=(-dp/du,-dp/dv,1)^T$`}</X.Uli>
             <X.Uli>对{`$\\bm{n}$`}归一化即为所求</X.Uli>

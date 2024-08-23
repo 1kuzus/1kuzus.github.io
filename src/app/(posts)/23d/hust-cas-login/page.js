@@ -215,9 +215,9 @@ export default function Post() {
             <X.H1>OCR</X.H1>
             <X.P>华科的验证码是一个四位数字，干扰比较小，属于非常简单的验证码。验证码请求的地址是@[https://pass.hust.edu.cn/cas/code]@。</X.P>
             <X.P>核心的识别逻辑使用`ddddocr`库就可以了，不需要借助付费的打码平台。</X.P>
-            <X.P noMarginBottom>验证码是`gif`格式，考虑将所有帧叠加，再做二值化：</X.P>
+            <X.P>验证码是`gif`格式，考虑将所有帧叠加，再做二值化：</X.P>
             <X.Image src="fig12.jpg" width="160px" />
-            <X.P noMarginBottom>发现图像中会有干扰的细边，再做一次中值滤波：</X.P>
+            <X.P>发现图像中会有干扰的细边，再做一次中值滤波：</X.P>
             <X.Image src="fig13.jpg" width="160px" />
             <X.P>处理过后的图像调库检测即可，OCR的源代码如下：</X.P>
             <X.CodeBlock

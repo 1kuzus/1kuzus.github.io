@@ -48,16 +48,11 @@ export default function Post() {
                     language="jsx"
                     code={`
                     <X.Divider />
-                    <X.Br />
-                    <X.Br />
-                    <X.Br />
+                    组件已弃用！
                     <X.Divider />
                     `}
                 />
                 <X.Divider />
-                <X.Br />
-                <X.Br />
-                <X.Br />
                 <X.Divider />
             </X.HighlightBlock>
             <X.H1>段落</X.H1>
@@ -68,20 +63,20 @@ export default function Post() {
                 <X.P>夜晚的城市灯光璀璨夺目，高楼的霓虹灯在黑夜中闪烁不停，像是星空中的繁星在闪烁。</X.P>
             </X.HighlightBlock>
             <X.H2>灵活设置段落的上下外边距</X.H2>
-            <X.P>段落组件默认的`margin-top`为`0`，`margin-bottom`为`24px`，但可以：\n通过`withMarginTop`设置`margin-top`为`24px`；\n通过`noMarginBottom`设置`margin-bottom`为`0`。\n这样使得段落组件的使用更为灵活。</X.P>
+            <X.P>段落组件默认的`margin-top`为`0`，`margin-bottom`为`24px`，但可以：\n通过`witxhMargixnTop`设置`margin-top`为`24px`；\n通过`noxMarginxBottom`设置`margin-bottom`为`0`。\n这样使得段落组件的使用更为灵活。</X.P>
             <X.HighlightBlock bgcolor="gray">
                 <X.H3>示例</X.H3>
                 <X.CodeBlock
                     language="jsx"
                     code={`
                     <X.P>这是一个正常的段落。</X.P>
-                    <X.P noMarginBottom>这是一个没有下外边距的段落。</X.P>
+                    <X.P>这是一个没有下外边距的段落。</X.P>
                     <X.P>这是一个正常的段落。</X.P>
                     <X.P>这是一个正常的段落。</X.P>
                     `}
                 />
                 <X.P>这是一个正常的段落。</X.P>
-                <X.P noMarginBottom>这是一个没有下外边距的段落。</X.P>
+                <X.P>这是一个没有下外边距的段落。</X.P>
                 <X.P>这是一个正常的段落。</X.P>
                 <X.P>这是一个正常的段落。</X.P>
             </X.HighlightBlock>
@@ -209,22 +204,22 @@ export default function Post() {
                 <X.CodeBlock
                     language="jsx"
                     code={`
-                    <X.P noMarginBottom>列表1：</X.P>
+                    <X.P>列表1：</X.P>
                     <X.Oli reset>第一项（重置）</X.Oli>
                     <X.Oli>第二项</X.Oli>
                     <X.Oli>第三项</X.Oli>
                     <X.Oli>第四项</X.Oli>
-                    <X.P noMarginBottom>列表2：</X.P>
+                    <X.P>列表2：</X.P>
                     <X.Oli reset>第一项（重置）</X.Oli>
                     <X.Oli>第二项</X.Oli>
                     `}
                 />
-                <X.P noMarginBottom>列表1：</X.P>
+                <X.P>列表1：</X.P>
                 <X.Oli reset>第一项（重置）</X.Oli>
                 <X.Oli>第二项</X.Oli>
                 <X.Oli>第三项</X.Oli>
                 <X.Oli>第四项</X.Oli>
-                <X.P noMarginBottom>列表2：</X.P>
+                <X.P>列表2：</X.P>
                 <X.Oli reset>第一项（重置）</X.Oli>
                 <X.Oli>第二项</X.Oli>
             </X.HighlightBlock>

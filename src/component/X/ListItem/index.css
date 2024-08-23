@@ -1,7 +1,7 @@
 .x-uli,
 .x-oli {
     display: flex;
-    margin: 8px 0;
+    margin: 16px 0;
     line-height: 28px;
 }
 .x-uli-marker,
