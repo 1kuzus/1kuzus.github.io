@@ -95,18 +95,18 @@ export default function Post() {
             <X.HighlightBlock>
                 <X.P>这里的Loop是取算法的发明者Charles Loop，与“循环”无关。</X.P>
             </X.HighlightBlock>
-            <X.P noMarginBottom>Loop细分可以概括为两步操作：</X.P>
+            <X.P>Loop细分可以概括为两步操作：</X.P>
             <X.Oli>将三角形细分：连接三角形`三边中点`，就可以把原来的一个三角形划分为四个</X.Oli>
             <X.Oli>调整顶点的位置</X.Oli>
-            <X.P withMarginTop>其中第二步对于“新的”（新取的中点）顶点和“老的”（原本就有的）顶点更新方式分别为：</X.P>
+            <X.P>其中第二步对于“新的”（新取的中点）顶点和“老的”（原本就有的）顶点更新方式分别为：</X.P>
             <X.P>新的顶点位置调整为周围四个点位置的加权平均：$3(A+B)/8+(C+D)/8$</X.P>
             <X.Image src="fig14.jpg" width="300px" invertInDarkTheme />
             <X.P>对于旧的顶点，其位置调整为自己原本位置与所有邻居的加权平均：\n{`$(1-nu)p_{original} + u \\sum p_{neighbor}$`}</X.P>
             <X.P>其中$n$是节点的度数，$n=3$时$u=3/16$，其他情况下$u=3/8n$。</X.P>
             <X.Image src="fig15.jpg" width="380px" invertInDarkTheme />
             <X.H3>Catmull-Clark细分</X.H3>
-            <X.P noMarginBottom>Catmull-Clark细分针对四边形网格，同样的可以概括为两步操作：</X.P>
-            <X.Oli reset={1}>将四边形细分：连接`四边形面中心点`与`边点`</X.Oli>
+            <X.P>Catmull-Clark细分针对四边形网格，同样的可以概括为两步操作：</X.P>
+            <X.Oli reset>将四边形细分：连接`四边形面中心点`与`边点`</X.Oli>
             <X.Oli>调整顶点的位置</X.Oli>
             <X.P>对于`四边形面中心点`，其取法为：{`$f=\\frac{v_1+v_2+v_3+v_4}{4}$`}</X.P>
             <X.Image src="fig16.jpg" invertInDarkTheme />

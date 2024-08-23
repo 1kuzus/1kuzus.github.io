@@ -57,16 +57,16 @@ export default function Post() {
                     在给定样本集下，{'$\\bm{\\theta}$'}的贝叶斯估计量是{`$\\int_{\\bm{\\Theta}} \\bm{\\theta} P(\\bm{\\theta}|\\bm{\\chi}) d\\bm{\\theta}$`}。
                 </X.P>
             </X.HighlightBlock>
-            <X.P noMarginBottom>在平方损失函数下，贝叶斯估计的步骤是：</X.P>
+            <X.P>在平方损失函数下，贝叶斯估计的步骤是：</X.P>
             <X.Oli>
                 <X.P>猜测参数的先验分布{`$P(\\bm{\\theta})$`}</X.P>
             </X.Oli>
             <X.Oli>
-                <X.P noMarginBottom>对于参数估计问题，样本的概率密度函数形式已知为{`$P(\\bm{X}|\\bm{\\theta})$`}，形式上求出样本集分布为：</X.P>
+                <X.P>对于参数估计问题，样本的概率密度函数形式已知为{`$P(\\bm{X}|\\bm{\\theta})$`}，形式上求出样本集分布为：</X.P>
                 <X.Formula text="P(\bm{\chi}|\bm{\theta}) = \prod_i P(\bm{X}_i|\bm{\theta})" />
             </X.Oli>
             <X.Oli>
-                <X.P noMarginBottom>利用贝叶斯公式求{`$\\bm{\\theta}$`}的后验概率分布</X.P>
+                <X.P>利用贝叶斯公式求{`$\\bm{\\theta}$`}的后验概率分布</X.P>
                 <X.Formula text="P(\bm{\theta}|\bm{\chi}) = \frac{P(\bm{\chi}|\bm{\theta}) P(\bm{\theta})}{\int_{\bm{\Theta}} P(\bm{\chi}|\bm{\theta}) P(\bm{\theta}) d\bm{\theta}}" />
             </X.Oli>
             <X.Oli>
@@ -93,7 +93,7 @@ export default function Post() {
                     </X.P>
                 </X.Uli>
                 <X.Uli>
-                    <X.P noMarginBottom>概率论的两个学派中，`频率学派`认为应从客观掌握的数据来计算概率；而`贝叶斯学派`则认为概率是有先验和后验的，我们要计算的是后验概率，这个后验概率又是以先验概率为基础的。如果采用贝叶斯估计，会假设参数$\mu$存在先验分布（`步骤1`），这里假设$\mu$服从均匀分布：</X.P>
+                    <X.P>概率论的两个学派中，`频率学派`认为应从客观掌握的数据来计算概率；而`贝叶斯学派`则认为概率是有先验和后验的，我们要计算的是后验概率，这个后验概率又是以先验概率为基础的。如果采用贝叶斯估计，会假设参数$\mu$存在先验分布（`步骤1`），这里假设$\mu$服从均匀分布：</X.P>
                     <X.Formula text="P(\mu) = \frac{1}{5} \quad (0 \leq \mu \leq 5)" />
                 </X.Uli>
                 <X.Uli>
@@ -184,11 +184,11 @@ export default function Post() {
             <X.P>假设要估计的正态分布均值$\mu$未知，方差$\sigma^2$已知。假定$\mu$的先验分布也是正态分布，均值为$\mu_0$，方差为$\sigma_0^2$。</X.P>
             <X.P>假设观测到的$N$个样本的均值为$m$，这里直接给出结论：</X.P>
             <X.Formula text="\hat{\mu} = \frac{N\sigma_0^2}{N\sigma_0^2+\sigma^2}m + \frac{\sigma^2}{N\sigma_0^2+\sigma^2}\mu_0" />
-            <X.P noMarginBottom>可以看到贝叶斯估计结果由两部分构成，第一项是样本知识，第二项是先验知识。</X.P>
+            <X.P>可以看到贝叶斯估计结果由两部分构成，第一项是样本知识，第二项是先验知识。</X.P>
             <X.Uli>样本数量为`0`时，估计值完全等于先验$\mu_0$；样本数量为`无穷`时，估计值趋于样本均值$m$；</X.Uli>
             <X.Uli>若$\sigma_0^2=0$，则先验知识绝对可靠，样本不起作用；</X.Uli>
             <X.Uli>若$\sigma_0 \gg \sigma$，则先验知识十分不确定，估计值近似等于样本均值。</X.Uli>
-            <X.P withMarginTop>贝叶斯估计的优势在于，可以结合样本信息和先验知识，并且根据`样本数量`和`先验知识的确定程度`调和两部分信息的相对贡献。</X.P>
+            <X.P>贝叶斯估计的优势在于，可以结合样本信息和先验知识，并且根据`样本数量`和`先验知识的确定程度`调和两部分信息的相对贡献。</X.P>
         </>
     );
 }

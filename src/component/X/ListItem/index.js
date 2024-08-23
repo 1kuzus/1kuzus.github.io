@@ -1,4 +1,4 @@
-import P from '../Paragraph/Paragraph';
+import L from '../Line/Line';
 import {isStringOrStringArray} from 'src/utils/utils';
 import './index.css';
 
@@ -10,7 +10,7 @@ export function Uli(props) {
                 <div className="x-uli-marker-dot" />
             </div>
             <div className="x-uli-content-wrapper">
-                {isStringOrStringArray(children) ? <P>{children}</P> : children}
+                {isStringOrStringArray(children) ? <L>{children}</L> : children}
             </div>
         </div>
     );
@@ -29,7 +29,7 @@ export function Oli(props) {
         <div className="x-oli">
             <div className="x-oli-number">{(reset !== undefined ? resetOliIndex(+reset) : addOliIndex()) + '.'}</div>
             <div className="x-oli-content-wrapper">
-                {isStringOrStringArray(children) ? <P>{children}</P> : children}
+                {isStringOrStringArray(children) ? <L>{children}</L> : children}
             </div>
         </div>
     );

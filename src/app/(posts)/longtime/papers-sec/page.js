@@ -29,16 +29,16 @@ export default function Post() {
             </X.HighlightBlock>
             <X.H2 href="https://ink.library.smu.edu.sg/cgi/viewcontent.cgi?params=/context/sis_research/article/5214/&path_info=p53_liu.pdf">Typing-Proof: Usable, Secure and Low-Cost Two-Factor Authentication Based on Keystroke Timings (ACSAC 2018)</X.H2>
             <X.HighlightBlock bgcolor="gray">
-                <X.P noMarginBottom>Sound-Proof虽然简化了用户操作，但是存在一些问题比如安静环境、电脑设备没有内置麦克风等，在一些攻击场景如近距离`co-located attack`下有安全问题。文章提出的Typing-Proof：</X.P>
+                <X.P>Sound-Proof虽然简化了用户操作，但是存在一些问题比如安静环境、电脑设备没有内置麦克风等，在一些攻击场景如近距离`co-located attack`下有安全问题。文章提出的Typing-Proof：</X.P>
                 <X.Uli>PC端输入密码后，要求用户输入一些随机的字符</X.Uli>
                 <X.Uli>PC端通过JavaScript记录所有按键发生的时间戳序列，手机端通过麦克风记录敲击声音</X.Uli>
                 <X.Uli>时间戳序列通过服务器发送到手机端，比较是否匹配</X.Uli>
                 <X.Uli>如果匹配，认证成功；\n如果认证失败，Typing-Proof还提供了一个备用方案，也就是在手机端显示输入的字符，用户确认和PC端自己的输入一致后，在手机端选择“确认”或“拒绝”登录。（One-Button Authentication）</X.Uli>
-                <X.P withMarginTop>Typing-Proof能更好的应对近距离攻击（复制键盘敲击声不仅要求攻击者与用户在同一环境，同时还要有非常近的物理距离）和攻击者故意触发使用户手机播放特定音频（如消息铃声）的攻击（因为键盘敲击声很难远程模拟）。</X.P>
+                <X.P>Typing-Proof能更好的应对近距离攻击（复制键盘敲击声不仅要求攻击者与用户在同一环境，同时还要有非常近的物理距离）和攻击者故意触发使用户手机播放特定音频（如消息铃声）的攻击（因为键盘敲击声很难远程模拟）。</X.P>
             </X.HighlightBlock>
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>更多笔记</X.H3>
-                <X.P noMarginBottom>一些用户手机交互更少的2FA机制：</X.P>
+                <X.P>一些用户手机交互更少的2FA机制：</X.P>
                 <X.Uli>Sound-Proof</X.Uli>
                 <X.Uli>One-Button Authentication：一键认证，用户在PC登录时手机端会有提示，用户选择允许/拒绝即可；如果攻击者在短时间内同步登录，用户如果没有正确分辨出请求的发起方，可能存在安全问题。</X.Uli>
             </X.HighlightBlock>

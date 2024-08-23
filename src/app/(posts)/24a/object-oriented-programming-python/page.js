@@ -293,7 +293,7 @@ export default function Post() {
                 />
             </X.HighlightBlock>
             <X.H2>类比于C++</X.H2>
-            <X.P noMarginBottom>C++中的封装有三种：`public`、`protected`、`private`；Python中没有这些关键字，但是可以通过属性名命名约定来实现。</X.P>
+            <X.P>C++中的封装有三种：`public`、`protected`、`private`；Python中没有这些关键字，但是可以通过属性名命名约定来实现。</X.P>
             <X.Uli>`public`：公有变量，可以在*类的内部和外部*访问，正常命名即可。</X.Uli>
             <X.Uli>`protected`：保护变量，只能在*类内和子类*访问，属性名前加单下划线`_`。这只是一种命名约定，实际上是可以访问的。</X.Uli>
             <X.Uli>`private`：私有变量，只能在*类的内部*访问，属性名前加双下划线`__`，这样会使Python解释器修改变量名为`_类名__属性名`的形式。</X.Uli>
@@ -733,7 +733,7 @@ export default function Post() {
                 `}
             />
             <X.H2>运算符重载</X.H2>
-            <X.P noMarginBottom>我们为`Vector3d`类定义加法、减法、乘法操作。这个例子中我们约定，加减法就是普通的按元素加减，而乘法满足：</X.P>
+            <X.P>我们为`Vector3d`类定义加法、减法、乘法操作。这个例子中我们约定，加减法就是普通的按元素加减，而乘法满足：</X.P>
             <X.Uli>`obj*常数`时返回缩放后的向量</X.Uli>
             <X.Uli>`obj1*obj2`时返回点乘数值</X.Uli>
             <X.CodeBlock

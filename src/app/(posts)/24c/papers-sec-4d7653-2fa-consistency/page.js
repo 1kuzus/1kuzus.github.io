@@ -9,13 +9,13 @@ export default function Post() {
         <>
             <X.TOC />
             <X.Title>{metas[path].title}</X.Title>
-            <X.P noMarginBottom>论文链接：</X.P>
+            <X.P>论文链接：</X.P>
             <X.Uli>@A Systematic Study of the Consistency of Two-Factor Authentication User Journeys on Top-Ranked Websites[https://www.ndss-symposium.org/wp-content/uploads/2023/02/ndss2023_s362_paper.pdf]@</X.Uli>
             <X.Uli>@arxiv Extended Version[https://arxiv.org/pdf/2210.09373]@</X.Uli>
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>笔记</X.H3>
                 <X.H3>认证因素 Authentication Factor</X.H3>
-                <X.P noMarginBottom>一般来说有三种：</X.P>
+                <X.P>一般来说有三种：</X.P>
                 <X.Uli>知识因素/秘密信息`(knowledge factors)`：原则上仅个人知道的信息，典型的如密码</X.Uli>
                 <X.Uli>物品因素/个人财产`(possession factors)`：持有的实体物品，如身份证、卡、U盘等</X.Uli>
                 <X.Uli>遗传因素/生理特征`(inherence factors)`：个人生理特征，如指纹、虹膜、人脸等</X.Uli>
@@ -99,7 +99,7 @@ export default function Post() {
             <X.H2>网站数据概览</X.H2>
             <X.Image src="2.jpg" width="100%" invertInDarkTheme />
             <X.Image src="3.jpg" width="100%" invertInDarkTheme />
-            <X.P noMarginBottom>一些发现包括：</X.P>
+            <X.P>一些发现包括：</X.P>
             <X.Uli>`86%`的网站使用`two-factor`/`two-step`/`multiple-factor`+`authentication`/`verification`作为命名；</X.Uli>
             <X.Uli>`92%`的网站2FA设置在`账户设置`的`安全设置`下；</X.Uli>
             <X.Uli>只有`31`个网站提供设备记忆功能，其中`52%`的网站描述设备记忆为`记住设备或客户端`，`29%`的网站描述设备记忆为`信任设备`，`13%`的网站描述设备记忆为`跳过额外步骤`；</X.Uli>

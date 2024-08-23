@@ -1,10 +1,11 @@
-import {Br, Divider} from './_Misc';
 import CodeBlock from './CodeBlock/CodeBlock';
+import Divider from './Divider/Divider';
 import FlexRow from './FlexRow/FlexRow';
 import Formula from './Formula/Formula';
 import {Title, H1, H2, H3} from './Headers';
 import HighlightBlock from './HighlightBlock/HighlightBlock';
 import Image from './Image/Image';
+import L from './Line/Line';
 import {Uli, Oli} from './ListItem';
 import P from './Paragraph/Paragraph';
 import Table from './Table/Table';
@@ -12,6 +13,7 @@ import TOC from './TOC/TOC';
 
 const X = {
     CodeBlock,
+    Divider,
     FlexRow,
     Formula,
     Title,
@@ -20,13 +22,12 @@ const X = {
     H3,
     HighlightBlock,
     Image,
+    L,
     Uli,
     Oli,
     P,
     Table,
     TOC,
-    Br,
-    Divider,
 };
 
 export default X;

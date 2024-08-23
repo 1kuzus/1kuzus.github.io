@@ -37,7 +37,7 @@ export default function Post() {
             <X.P>常用`db`指令定义字符串。字符类型的数据会被编译器自动转为ASCII码。</X.P>
             <X.Image src="fig1.jpg" width="100%" />
             <X.HighlightBlock>
-                <X.P noMarginBottom>ASCII码在设计上满足一些规律：</X.P>
+                <X.P>ASCII码在设计上满足一些规律：</X.P>
                 <X.Uli>在`16`进制下，`3xh`就代表了字符`10`进制数`'x'`，例如`'1'`的ASCII码为`49`也就是`31h`</X.Uli>
                 <X.Uli>在`16`进制下，大写字母和小写字母的`ASCII`码相差`20h`，例如`'A'`的`ASCII`码为`41h`，`'a'`的`ASCII`码为`61h`</X.Uli>
             </X.HighlightBlock>

@@ -1,7 +1,3 @@
-.x-br {
-    width: 0;
-    height: 24px;
-}
 .x-divider {
     margin: 16px 0;
     border-bottom: var(--border);

@@ -16,7 +16,7 @@ export default function Post() {
             <X.Uli>DOSBox：@[https://www.dosbox.com/]@</X.Uli>
             <X.Uli>MASM（民间版本）：@[https://github.com/froginwell/assembly/tree/master/software]@</X.Uli>
             <X.Uli>MASM（@B站教学[https://www.bilibili.com/video/BV1Wu411B72F]@版本）：@8086汇编环境[/files/8086_asm_env.zip]@</X.Uli>
-            <X.P withMarginTop>`dosbox.conf`文件拉到最下，`[autoexec]`部分添加：</X.P>
+            <X.P>`dosbox.conf`文件拉到最下，`[autoexec]`部分添加：</X.P>
             <X.CodeBlock
                 language="text"
                 diffAddedLines="3-4"
@@ -29,14 +29,14 @@ export default function Post() {
             />
             <X.P>下次启动DOSBox时会自动挂载`C`盘到`masm`目录。</X.P>
             <X.H1>寄存器</X.H1>
-            <X.P noMarginBottom>8086 CPU有`14`个寄存器，包括：</X.P>
+            <X.P>8086 CPU有`14`个寄存器，包括：</X.P>
             <X.Uli>通用寄存器：`AX`、`BX`、`CX`、`DX`</X.Uli>
             <X.Uli>变址寄存器：`SI`、`DI`</X.Uli>
             <X.Uli>指针寄存器：`SP`、`BP`</X.Uli>
             <X.Uli>指令指针寄存器：`IP`</X.Uli>
             <X.Uli>段寄存器：`CS`、`DS`、`SS`、`ES`</X.Uli>
             <X.Uli>标志寄存器：`PSW`</X.Uli>
-            <X.P withMarginTop>对应的名称及释义如下：</X.P>
+            <X.P>对应的名称及释义如下：</X.P>
             <X.Table
                 fromJSX={[
                     ['寄存器名', '英文', '解释'],
@@ -56,20 +56,16 @@ export default function Post() {
                     ['`PSW`', '`Program Status Word`', '`程序状态字寄存器`'],
                 ]}
             />
-            <X.P withMarginTop>8086 CPU所有寄存器都是`16`位的，可以存放`2`个字节。有时还会见到`AH`、`AL`的表示方法，它们分别表示`AX`的高、低`8`位。</X.P>
+            <X.P>8086 CPU所有寄存器都是`16`位的，可以存放`2`个字节。有时还会见到`AH`、`AL`的表示方法，它们分别表示`AX`的高、低`8`位。</X.P>
             <X.H1>8086 CPU物理地址表示</X.H1>
             <X.P>8086 CPU有`20`位地址总线，最大寻址空间是`1MB`，但由于字长是`16`位，所以需要两个`16`位地址（*段地址*、*偏移地址*）相加合成一个`20`位地址。</X.P>
             <X.P>段地址$\times$`16`$+$偏移地址$=$物理地址</X.P>
             <X.Uli>一个段的起始地址一定是`16`的倍数</X.Uli>
             <X.Uli>由于偏移地址是`16`位，所以一个段的最大长度为`64KB`</X.Uli>
-            <X.P noMarginBottom withMarginTop>
-                例如数据在`21F60H`内存单元中，段地址是`2000H`，表示方法可以是：
-            </X.P>
+            <X.P>例如数据在`21F60H`内存单元中，段地址是`2000H`，表示方法可以是：</X.P>
             <X.Uli>数据在内存`2000:1F60`单元中；</X.Uli>
             <X.Uli>数据在内存的`2000H`段的`1F60H`单元中；</X.Uli>
-            <X.P noMarginBottom withMarginTop>
-                有四个专门存放段地址的寄存器：
-            </X.P>
+            <X.P>有四个专门存放段地址的寄存器：</X.P>
             <X.Uli>`CS`：代码段寄存器</X.Uli>
             <X.Uli>`DS`：数据段寄存器</X.Uli>
             <X.Uli>`SS`：栈段寄存器</X.Uli>
@@ -140,7 +136,7 @@ export default function Post() {
             <X.P>8086 CPU也可以一次性传输一个字，假如`DS`寄存器的值为`1000H`，则`mov ax,[0]`就表示将`1000:0`中的字送入`AX`中；`mov [0],cx`就表示将`CX`中的字送入`1000:0`中。</X.P>
             <X.H1>栈操作（push指令、pop指令）</X.H1>
             <X.P>基于8086 CPU编程，可以将一段内存当作栈来使用。8086 CPU有两个与栈相关的寄存器，`SS`存放栈顶的段地址，`SP`存放栈顶的偏移地址。在任意时刻，`SS:SP`指向栈顶元素。</X.P>
-            <X.P noMarginBottom>`push`和`pop`指令用于栈操作：</X.P>
+            <X.P>`push`和`pop`指令用于栈操作：</X.P>
             <X.Uli>`push 寄存器`：`SP`自动减`2`，将寄存器的内容送入`SS:SP`，此时`SS:SP`指向新栈顶。</X.Uli>
             <X.Uli>`pop 寄存器`：将`SS:SP`指向的内容送入寄存器，`SP`自动加`2`。</X.Uli>
             <X.HighlightBlock>

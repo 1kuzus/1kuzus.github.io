@@ -9,22 +9,20 @@ export default function Post() {
         <>
             <X.TOC />
             <X.Title>{metas[path].title}</X.Title>
-            <X.P noMarginBottom>论文链接：</X.P>
+            <X.P>论文链接：</X.P>
             <X.Uli>@TAINTMINI: Detecting Flow of Sensitive Data in Mini-Programs with Static Taint Analysis[https://chaowang.dev/publications/icse23.pdf]@</X.Uli>
             <X.H1>1.Introduction</X.H1>
-            <X.P noMarginBottom>小程序市场发展迅速，已有的针对Mobile Apps的污点分析技术在以下情况存在一些不足：</X.P>
+            <X.P>小程序市场发展迅速，已有的针对Mobile Apps的污点分析技术在以下情况存在一些不足：</X.P>
             <X.Uli>多语言（WXML/JavaScript）</X.Uli>
             <X.Uli>大量的异步event handler（例如生命周期`onLaunch`/`onReady`）</X.Uli>
             <X.Uli>跨页数据流动</X.Uli>
             <X.Uli>跨小程序数据流动</X.Uli>
-            <X.P noMarginBottom withMarginTop>
-                针对这些不足，TaintMini会追踪如下数据流：
-            </X.P>
+            <X.P>针对这些不足，TaintMini会追踪如下数据流：</X.P>
             <X.Uli>WXML视图层 ~ JavaScript逻辑层</X.Uli>
             <X.Uli>events ~ events</X.Uli>
             <X.Uli>page ~ page</X.Uli>
             <X.Uli>Mini-Program ~ Mini-Program</X.Uli>
-            <X.P withMarginTop>文章的主要贡献是：</X.P>
+            <X.P>文章的主要贡献是：</X.P>
             <X.Uli>提出了一种新的污点分析技术，拓展ODG`(Object Dependency Graph)`为UDFG`(Universal Data Flow Graph)`；</X.Uli>
             <X.Uli>实验评估，`238866`个小程序中有`11.38%`出现了隐私数据流；</X.Uli>
             <X.Uli>实际应用，检测恶意应用。</X.Uli>
@@ -43,7 +41,7 @@ export default function Post() {
             <X.Uli>WXML和JavaScript的互相作用，如行内逻辑`wx:for/if/else`，`wxs`代码块</X.Uli>
             <X.Uli>异步回调：执行的顺序取决于外部系统，如用户的行为，无法预先知晓</X.Uli>
             <X.Uli>跨页和跨小程序数据流动</X.Uli>
-            <X.P withMarginTop>本文只研究微信平台小程序。微信小程序体量大、微信也是最早提出“小程序”概念的。</X.P>
+            <X.P>本文只研究微信平台小程序。微信小程序体量大、微信也是最早提出“小程序”概念的。</X.P>
             <X.H1>4.Design</X.H1>
             <X.P>todotodotdotodtodot</X.P>
             <X.H2>UDFG Generation</X.H2>

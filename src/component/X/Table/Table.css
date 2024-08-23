@@ -1,7 +1,7 @@
 .x-table-wrapper {
     width: fit-content;
     max-width: 100%;
-    margin-bottom: 24px;
+    margin: 16px 0;
     overflow-x: auto;
 }
 .x-table {

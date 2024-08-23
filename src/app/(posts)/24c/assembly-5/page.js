@@ -22,6 +22,8 @@ export default function Post() {
             <X.HighlightBlock>
                 <X.P>123</X.P>
             </X.HighlightBlock>
+            <X.L>456</X.L>
+            <X.L>456</X.L>
         </>
     );
 }
