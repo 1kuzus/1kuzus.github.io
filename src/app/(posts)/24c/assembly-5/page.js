@@ -51,6 +51,7 @@ export default function Post() {
                 />
             </X.Uli>
             <X.P>123456</X.P>
+            <X.Image src="fig1.jpg"  />
         </>
     );
 }

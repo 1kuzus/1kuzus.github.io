@@ -7,9 +7,6 @@
     display: block;
     max-width: 100%;
 }
-.x-image-wrapper.x-image-center img {
-    margin: 0 auto;
-}
 :root.dark .x-image-wrapper.x-image-invert img {
     filter: hue-rotate(180deg) sepia(8%) invert(89.02%) saturate(160%);
 }

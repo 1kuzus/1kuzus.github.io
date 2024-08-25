@@ -38,6 +38,7 @@ export default function Post() {
             <X.H2>分形</X.H2>
             <X.P>分形`(Fractals)`具有自相似性。</X.P>
             <X.FlexRow gap="32px">
+                {/* todo : .............. */}
                 <X.Image src="fig6.jpg" height="240px" invertInDarkTheme />
                 <X.Image src="fig7.jpg" height="240px" />
             </X.FlexRow>
