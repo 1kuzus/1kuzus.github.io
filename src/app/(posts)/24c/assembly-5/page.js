@@ -39,6 +39,18 @@ export default function Post() {
                     thead: 'row',
                 }}
             />
+            <X.Uli>
+                <X.P>123</X.P>
+                <X.P>`123`</X.P>
+                <X.CodeBlock
+                    language="asm8086"
+                    code={`
+                    mov ax,bx
+                    mov cx,dx
+                    `}
+                />
+            </X.Uli>
+            <X.P>123456</X.P>
         </>
     );
 }

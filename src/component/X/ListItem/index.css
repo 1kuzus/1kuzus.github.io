@@ -1,8 +1,8 @@
 .x-uli,
 .x-oli {
     display: flex;
-    margin: 16px 0;
-    line-height: 26px;
+    margin: 12px 0;
+    line-height: 28px;
 }
 .x-uli-marker,
 .x-oli-number {
@@ -25,6 +25,11 @@
 .x-oli .x-oli-content-wrapper {
     flex: 1;
     max-width: calc(100% - 32px);
+}
+.x-uli .x-uli-content-wrapper > *,
+.x-oli .x-oli-content-wrapper > * {
+    margin-top: 12px;
+    margin-bottom: 12px;
 }
 .x-uli .x-uli-content-wrapper > :first-child,
 .x-oli .x-oli-content-wrapper > :first-child {

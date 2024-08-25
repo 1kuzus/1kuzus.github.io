@@ -1,7 +1,7 @@
 .x-table-wrapper {
     width: fit-content;
     max-width: 100%;
-    margin: 16px 0;
+    margin: 24px 0;
     overflow-x: auto;
 }
 .x-table {
@@ -19,7 +19,7 @@
 .x-table th,
 .x-table td {
     padding: 8px 12px;
-    line-height: 26px;
+    line-height: 28px;
     text-align: center;
 }
 .x-table th > *,
