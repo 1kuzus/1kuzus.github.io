@@ -39,14 +39,14 @@ export default function Post() {
             <X.Table
                 fromData={[
                     ['icon', '释义'],
-                    [<X.Image src="view.png" width="16px" center />, '`View`，视图。'],
-                    [<X.Image src="category.png" width="16px" center />, '`Category`，分类，一系列有共同特征的CWE条目。'],
-                    [<X.Image src="pillar.png" width="16px" center />, '`Pillar`，最抽象的CWE条目类型，但与`Category`相比，仍然是从“技术上”对缺陷类型进行描述。'],
-                    [<X.Image src="class.png" width="16px" center />, '`Class`，较为抽象的CWE条目类型，通常独立于特定的语言或技术。\\n`Class`级别的CWE通常从【行为、属性、资源】中的`1`~`2`个方面来描述问题。'],
-                    [<X.Image src="base.png" width="16px" center />, '`Base`，较为抽象的CWE条目类型，通常也是独立于资源或技术。\\n`Base`级别的CWE通常从【行为、属性、技术、语言、资源】中的`2`~`3`个方面来描述问题。'],
-                    [<X.Image src="variant.png" width="16px" center />, '`Variant`，通常与特定种类的产品有关系，一般包含特定的语言或技术。\\n`Variant`级别的CWE通常从【行为、属性、技术、语言、资源】中的`3`~`5`个方面来描述问题。'],
-                    [<X.Image src="composite.png" width="16px" center />, '`Composite`，此类缺陷需要多种缺陷同时存在，才会引发潜在的安全漏洞。数量较少。'],
-                    [<X.Image src="chain.png" width="30px" center />, '`Chain`，呈链式关系，例如缺陷X为缺陷Y的发生创造了条件。数量较少。\\n`Chain`可以涉及两个以上的弱点，在某些情况下也可能具有树状结构。'],
+                    [<X.Image src="view.png" width="16px" />, '`View`，视图。'],
+                    [<X.Image src="category.png" width="16px" />, '`Category`，分类，一系列有共同特征的CWE条目。'],
+                    [<X.Image src="pillar.png" width="16px" />, '`Pillar`，最抽象的CWE条目类型，但与`Category`相比，仍然是从“技术上”对缺陷类型进行描述。'],
+                    [<X.Image src="class.png" width="16px" />, '`Class`，较为抽象的CWE条目类型，通常独立于特定的语言或技术。\\n`Class`级别的CWE通常从【行为、属性、资源】中的`1`~`2`个方面来描述问题。'],
+                    [<X.Image src="base.png" width="16px" />, '`Base`，较为抽象的CWE条目类型，通常也是独立于资源或技术。\\n`Base`级别的CWE通常从【行为、属性、技术、语言、资源】中的`2`~`3`个方面来描述问题。'],
+                    [<X.Image src="variant.png" width="16px" />, '`Variant`，通常与特定种类的产品有关系，一般包含特定的语言或技术。\\n`Variant`级别的CWE通常从【行为、属性、技术、语言、资源】中的`3`~`5`个方面来描述问题。'],
+                    [<X.Image src="composite.png" width="16px" />, '`Composite`，此类缺陷需要多种缺陷同时存在，才会引发潜在的安全漏洞。数量较少。'],
+                    [<X.Image src="chain.png" width="30px" />, '`Chain`，呈链式关系，例如缺陷X为缺陷Y的发生创造了条件。数量较少。\\n`Chain`可以涉及两个以上的弱点，在某些情况下也可能具有树状结构。'],
                 ]}
                 tableStyle={{
                     align: 'cl',
