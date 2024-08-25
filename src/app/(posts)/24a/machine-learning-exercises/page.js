@@ -105,8 +105,10 @@ export default function Post() {
                 <X.P>`c.`它是一种非常有效的反向传播方法</X.P>
                 <X.P>`d.`这些均不是</X.P>
                 <X.P>答：`a`</X.P>
+                <X.HighlightBlock bgcolor="red">
+                    <X.P>BN是对数据做批规范化，不是对权重。</X.P>
+                </X.HighlightBlock>
             </X.Oli>
-            <X.HighlightBlock bgcolor="red">BN是对数据做批规范化，不是对权重。</X.HighlightBlock>
             <X.Oli>
                 <X.P>在一个神经网络中，下面哪种方法可以用来处理过拟合？</X.P>
                 <X.P>`a.`Dropout</X.P>
@@ -122,21 +124,21 @@ export default function Post() {
                 <X.P>`c.`只对最后几层进行调参`(fine-tuning)`</X.P>
                 <X.P>`d.`对每一层模型进行评估，选择其中的少数来使用</X.P>
                 <X.P>答：`c`</X.P>
-            </X.Oli>
-            <X.HighlightBlock bgcolor="red">
-                <X.P>在考虑微调时，根据新数据集的大小、新数据集与预训练模型数据集相似度，不同策略如下：</X.P>
-                <X.Table
-                    fromText={`
+                <X.HighlightBlock bgcolor="red">
+                    <X.P>在考虑微调时，根据新数据集的大小、新数据集与预训练模型数据集相似度，不同策略如下：</X.P>
+                    <X.Table
+                        fromText={`
                     |数据量少|数据量大
                     相似度低|主干部分提取的特征是通用特征，可以冻结预训练模型的初始层（比如'k'层），并再次训练剩余的提取高层特征'n-k'层。|根据数据从头开始训练神经网络'(training from scratch)'
                     相似度高|修改最后几层或输出层的输出类别|这时是理想情况，保留预训练模型的结构和初始权重，再用数据来重新训练该模型
                     `}
-                    tableStyle={{
-                        thead: 'all',
-                        width: [0, 400, 400],
-                    }}
-                />
-            </X.HighlightBlock>
+                        tableStyle={{
+                            thead: 'all',
+                            width: [0, 400, 400],
+                        }}
+                    />
+                </X.HighlightBlock>
+            </X.Oli>
             <X.Oli>
                 <X.P>对于一个分类任务，如果开始时神经网络的权重不是随机赋值的，而是都设成$0$，下面哪个叙述是正确的？</X.P>
                 <X.P>`a.`神经网络会正常开始训练</X.P>
@@ -210,11 +212,11 @@ export default function Post() {
                 <X.P>BN层有两个可学习参数：拉伸参数$\gamma$和偏移参数$\beta$，它们的形状与$x$相同。请写出经过批量归一化转换后的$x$表达式。</X.P>
                 <X.P>答：</X.P>
                 <X.Formula text="\text{BN}(x)=\gamma \cdot \frac{x-\text{E}(x)}{\text{Var}(x)} + \beta" />
+                <X.HighlightBlock bgcolor="red">
+                    <X.Uli>分母常写为{`$\\sqrt{\\text{Var}(x)^2+\\epsilon}$`}</X.Uli>
+                    <X.Uli>参数$\gamma$和$\beta$通常是向量，公式中的乘法应为按元素乘。</X.Uli>
+                </X.HighlightBlock>
             </X.Oli>
-            <X.HighlightBlock bgcolor="red">
-                <X.Uli>分母常写为{`$\\sqrt{\\text{Var}(x)^2+\\epsilon}$`}</X.Uli>
-                <X.Uli>参数$\gamma$和$\beta$通常是向量，公式中的乘法应为按元素乘。</X.Uli>
-            </X.HighlightBlock>
             <X.Oli>
                 <X.P>简述Dropout能够防止过拟合的原因。</X.P>
                 <X.P>答：</X.P>
@@ -312,10 +314,10 @@ export default function Post() {
                 <X.P>`a.`对</X.P>
                 <X.P>`b.`错</X.P>
                 <X.P>答：`b`</X.P>
+                <X.HighlightBlock bgcolor="red">
+                    <X.P>通常认为卷积核数量等于输出通道数。</X.P>
+                </X.HighlightBlock>
             </X.Oli>
-            <X.HighlightBlock bgcolor="red">
-                <X.P>通常认为卷积核数量等于输出通道数。</X.P>
-            </X.HighlightBlock>
             <X.Oli>
                 <X.P>卷积神经网络的经典结构有哪些？简单介绍一下近年来具有代表性的深度卷积神经网络的设计思路：</X.P>
                 <X.P>答：有LeNet、AlexNet、VGG、ResNet等。</X.P>
@@ -352,10 +354,10 @@ export default function Post() {
                 <X.P>`c.`GRU相对于LSTM参数更少</X.P>
                 <X.P>`d.`所有选项都正确</X.P>
                 <X.P>答：`d`</X.P>
+                <X.HighlightBlock bgcolor="red">
+                    <X.P>*门控循环单元*`(Gated Recurrent Unit, GRU)`通过简化LSTM神经网络循环函数达到了类似的效果并节省了计算成本。在GRU中，遗忘门和输入门合并成了一个新的重置门，且加入了一个更新门。</X.P>
+                </X.HighlightBlock>
             </X.Oli>
-            <X.HighlightBlock bgcolor="red">
-                <X.P>*门控循环单元*`(Gated Recurrent Unit, GRU)`通过简化LSTM神经网络循环函数达到了类似的效果并节省了计算成本。在GRU中，遗忘门和输入门合并成了一个新的重置门，且加入了一个更新门。</X.P>
-            </X.HighlightBlock>
             <X.Oli>
                 <X.P>在训练中，如果梯度爆炸发生，可能会导致什么问题？</X.P>
                 <X.P>`a.`数值溢出</X.P>
@@ -460,15 +462,15 @@ export default function Post() {
             <X.Oli reset>
                 <X.P>最优动作价值函数依赖于（）。</X.P>
                 <X.P>答：状态、行动。</X.P>
+                <X.HighlightBlock bgcolor="red">
+                    <X.Uli>*策略*：智能体根据状态进行下一步行动的函数。\n确定性策略：$\pi(s)=a$，即状态$s$下执行动作$a$\n随机性策略：$\pi(s,a)=p$，即在状态$s$下执行动作$a$的概率为$p$</X.Uli>
+                    <X.Uli>*奖励*`(reward)`：在$t$时刻得到的奖励$R_t$，$R_t$依赖于$s_t$和$a_t$。</X.Uli>
+                    <X.Uli>*回报*`(return)`：在$t$时刻的*折扣回报*是{`$U_t=R_t+\\gamma R_{t+1}+\\gamma^2 R_{t+2}+\\dots$`}</X.Uli>
+                    <X.Uli>*动作价值函数*：{`$Q_{\\pi}(s_t,a_t)=\\text{E}(U_t|s_t,a_t)$`}，评估智能体在状态$s_t$时选择动作$a_t$有多好。</X.Uli>
+                    <X.Uli>*状态价值函数*：{`$V_{\\pi}(s_t)=\\text{E}(Q_{\\pi})=\\sum_a\\pi(s_t,a)Q_{\\pi}(s_t,a)$`}，评估智能体在状态$s_t$有多好。</X.Uli>
+                    <X.Uli>*最优动作价值函数*：{`$Q^{\\ast}(s_t,a_t)=\\max_{\\pi}Q_{\\pi}(s_t,a_t)$`}，无论采用何种策略在状态$s_t$下选择动作$a_t$的最优结果。</X.Uli>
+                </X.HighlightBlock>
             </X.Oli>
-            <X.HighlightBlock bgcolor="red">
-                <X.Uli>*策略*：智能体根据状态进行下一步行动的函数。\n确定性策略：$\pi(s)=a$，即状态$s$下执行动作$a$\n随机性策略：$\pi(s,a)=p$，即在状态$s$下执行动作$a$的概率为$p$</X.Uli>
-                <X.Uli>*奖励*`(reward)`：在$t$时刻得到的奖励$R_t$，$R_t$依赖于$s_t$和$a_t$。</X.Uli>
-                <X.Uli>*回报*`(return)`：在$t$时刻的*折扣回报*是{`$U_t=R_t+\\gamma R_{t+1}+\\gamma^2 R_{t+2}+\\dots$`}</X.Uli>
-                <X.Uli>*动作价值函数*：{`$Q_{\\pi}(s_t,a_t)=\\text{E}(U_t|s_t,a_t)$`}，评估智能体在状态$s_t$时选择动作$a_t$有多好。</X.Uli>
-                <X.Uli>*状态价值函数*：{`$V_{\\pi}(s_t)=\\text{E}(Q_{\\pi})=\\sum_a\\pi(s_t,a)Q_{\\pi}(s_t,a)$`}，评估智能体在状态$s_t$有多好。</X.Uli>
-                <X.Uli>*最优动作价值函数*：{`$Q^{\\ast}(s_t,a_t)=\\max_{\\pi}Q_{\\pi}(s_t,a_t)$`}，无论采用何种策略在状态$s_t$下选择动作$a_t$的最优结果。</X.Uli>
-            </X.HighlightBlock>
             <X.Oli>
                 <X.P>DQN是对（）的近似。</X.P>
                 <X.P>答：Q函数。</X.P>
@@ -516,10 +518,10 @@ export default function Post() {
                 <X.P>`c.`用ReLU激活函数，因为$Q$值非负</X.P>
                 <X.P>`d.`用SoftMax激活函数，因为DQN的输出是一个概率分布</X.P>
                 <X.P>答：`a`</X.P>
+                <X.HighlightBlock bgcolor="red">
+                    <X.P>DQN的目标是估计每个可能动作的$Q$值（动作价值函数），而这些$Q$值可以是任意实数。如果在输出层使用了某种激活函数，它可能会对输出值进行限制，导致无法灵活地表示$Q$值。</X.P>
+                </X.HighlightBlock>
             </X.Oli>
-            <X.HighlightBlock bgcolor="red">
-                <X.P>DQN的目标是估计每个可能动作的$Q$值（动作价值函数），而这些$Q$值可以是任意实数。如果在输出层使用了某种激活函数，它可能会对输出值进行限制，导致无法灵活地表示$Q$值。</X.P>
-            </X.HighlightBlock>
             <X.Oli>
                 <X.P>DQN是基于什么的强化学习方法？</X.P>
                 <X.P>`a.`基于价值的方法</X.P>

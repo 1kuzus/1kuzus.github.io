@@ -22,7 +22,7 @@ export default function Post() {
                 全源最短路|Johnson|$VE\\log E$
                 `}
             />
-            <X.P>注：</X.P>
+            <X.L>注：</X.L>
             <X.Uli>本文用$V$表示顶点数，$E$表示边数。</X.Uli>
             <X.Uli>
                 <X.P>有的文章写优先队列实现的Dijkstra算法时间复杂度为$E\log V$，可以作如下理解：</X.P>
