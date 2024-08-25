@@ -18,60 +18,21 @@ export default function Post() {
             <X.P>显然我们要找的是`login`，点开详情：</X.P>
             <X.Image src="fig3.jpg" width="100%" />
             <X.P>下面是参数的含义，如果你不想看详细的分析过程，可以阅读后直接跳到下一节：</X.P>
-            <X.Table>
-                <tr>
-                    <td>
-                        <X.P>`rsa`</X.P>
-                    </td>
-                    <td>弃置</td>
-                </tr>
-                <tr>
-                    <td>
-                        <X.P>`ul`</X.P>
-                    </td>
-                    <td>
-                        <X.P>根据`username`前端加密</X.P>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <X.P>`pl`</X.P>
-                    </td>
-                    <td>
-                        <X.P>根据`password`前端加密</X.P>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <X.P>`code`</X.P>
-                    </td>
-                    <td>验证码</td>
-                </tr>
-                <tr>
-                    <td>
-                        <X.P>`phoneCode`</X.P>
-                    </td>
-                    <td>留空即可</td>
-                </tr>
-                <tr>
-                    <td>
-                        <X.P>`lt`</X.P>
-                    </td>
-                    <td>固定参数</td>
-                </tr>
-                <tr>
-                    <td>
-                        <X.P>`execution`</X.P>
-                    </td>
-                    <td>固定参数</td>
-                </tr>
-                <tr>
-                    <td>
-                        <X.P>`_eventId`</X.P>
-                    </td>
-                    <td>固定参数</td>
-                </tr>
-            </X.Table>
+            <X.Table
+                fromText={`
+                'rsa'|弃置
+                'ul'|根据'username'前端加密
+                'pl'|根据'password'前端加密
+                'code'|验证码
+                'phoneCode'|留空即可
+                'lt'|固定参数
+                'execution'|固定参数
+                '_eventId'|固定参数
+                `}
+                tableStyle={{
+                    thead: 'none',
+                }}
+            />
             <X.HighlightBlock>
                 <X.P>此处有一个历史缘故。在2023年1月的时候，`ul`和`pl`是明文的用户名和密码的字符串长度，这也符合参数名`username length(ul)`，`rsa`是前端加密参数。后来华科登录接口似乎经历了一次改版，弃置了`rsa`参数，`ul`和`pl`变成了现在的意义。</X.P>
             </X.HighlightBlock>

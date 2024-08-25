@@ -7,7 +7,7 @@
 	// Placeholders with the same ids are connected.
 	"X.H1 tag": {
 		"scope": "javascript,typescript",
-		"prefix": "xh1",
+		"prefix": ["xh1","#"],
 		"body": [
 			"<X.H1>$1</X.H1>",
 		],
@@ -15,7 +15,7 @@
 	},
 	"X.H2 tag": {
 		"scope": "javascript,typescript",
-		"prefix": "xh2",
+		"prefix": ["xh2","##"],
 		"body": [
 			"<X.H2>$1</X.H2>",
 		],
@@ -23,7 +23,7 @@
 	},
 	"X.H3 tag": {
 		"scope": "javascript,typescript",
-		"prefix": "xh3",
+		"prefix": ["xh3","###"],
 		"body": [
 			"<X.H3>$1</X.H3>",
 		],
@@ -58,7 +58,7 @@
 		"prefix": "xc",
 		"body": [
 			"<X.CodeBlock",
-			"\tlanguage='$1'",
+			"\tlanguage=\"$1\"",
 			"\tcode={`",
 			"\t`}",
 			"/>",
@@ -70,7 +70,7 @@
 		"prefix": "xccpp",
 		"body": [
 			"<X.CodeBlock",
-			"\tlanguage='cpp'",
+			"\tlanguage=\"cpp\"",
 			"\tcode={`$1",
 			"\t`}",
 			"/>",
@@ -82,7 +82,7 @@
 		"prefix": "xcpy",
 		"body": [
 			"<X.CodeBlock",
-			"\tlanguage='python'",
+			"\tlanguage=\"python\"",
 			"\tcode={`$1",
 			"\t`}",
 			"/>",
@@ -94,7 +94,7 @@
 		"prefix": "xcjs",
 		"body": [
 			"<X.CodeBlock",
-			"\tlanguage='js'",
+			"\tlanguage=\"js\"",
 			"\tcode={`$1",
 			"\t`}",
 			"/>",
@@ -161,7 +161,7 @@
 		"scope": "javascript,typescript",
 		"prefix": "ximage",
 		"body": [
-			"<X.Image src='fig1.jpg' width='100%$1' />"
+			"<X.Image src=\"fig1.jpg\" width=\"100%$1\" />"
 		],
 		"description": "X.Image tag"
 	},
@@ -187,6 +187,84 @@
 			"</X.Table>",
 		],
 		"description": "X.Table tag"
+	},
+	"X.Table tag with fromText": {
+		"scope": "javascript,typescript",
+		"prefix": "xtft",
+		"body": [
+			"<X.Table",
+			"\tfromText={`",
+			"\t'index'|列一|列二$1",
+			"\t行一|@百度[https://www.baidu.com]@|你好*世界*",
+			"\t行二|$(x+y)^2$|'Hello, World!'",
+			"\t`}",
+			"/>",
+		],
+		"description": "X.Table tag with fromText"
+	},
+	"X.Table tag with fromData": {
+		"scope": "javascript,typescript",
+		"prefix": "xtfd",
+		"body": [
+			"<X.Table",
+			"\tfromData={[",
+			"\t\t['列一', '列二'],$1",
+			"\t\t['*你好*', '世界'],",
+			"\t\t[<X.CodeBlock language=\"python\" code=\"print('hello')\" />, '$(x+y)^2$'],",
+			"\t\t[",
+			"\t\t\t'`Hello, World!`',",
+			"\t\t\t<>",
+			"\t\t\t\t<X.P>lorem ipsum dolor sit amet</X.P>",
+			"\t\t\t\t<X.Formula text=\"x^2+y^2+2xy\" />",
+			"\t\t\t\t<X.HighlightBlock>",
+			"\t\t\t\t\t<X.P>`consectetur adipiscing elit`</X.P>",
+			"\t\t\t\t</X.HighlightBlock>",
+			"\t\t\t</>",
+			"\t\t]",
+			"\t]}",
+			"/>",
+		],
+		"description": "X.Table tag with fromData"
+	},
+	"X.Table tag with fromText and tableStyle": {
+		"scope": "javascript,typescript",
+		"prefix": "xtfttbs",
+		"body": [
+			"<X.Table",
+			"\tfromText={`",
+			"\t属性|值|示例$1",
+			"\t'align'|'string'|'\"lcccr\"'",
+			"\t'thead'|'\"all\"'/'\"row\"'/'\"column\"'/'\"none\"'|'\"row\"'",
+			"\t'width'|'number[]'|'[0, 0, 200, 320]'",
+			"\t`}",
+			"\ttableStyle={{",
+			"\t\talign: 'lll',",
+			"\t\tthead: 'all',",
+			"\t\twidth: [100, 0, 200],",
+			"\t}}",
+			"/>",
+		],
+		"description": "X.Table tag with fromText and tableStyle"
+	},
+	"X.Table tag with fromData and tableStyle": {
+		"scope": "javascript,typescript",
+		"prefix": "xtfdtbs",
+		"body": [
+			"<X.Table",
+			"\tfromData={[",
+			"\t\t['属性', '值', '示例'],$1",
+			"\t\t['`align`', '`string`', '`\"lcccr\"`'],",
+			"\t\t['`thead`', '`\"all\"`/`\"row\"`/`\"column\"`/`\"none\"`', '`\"row\"`'],",
+			"\t\t['`width`', '`number[]`', '`[0, 0, 200, 320]`'],",
+			"\t]}",
+			"\ttableStyle={{",
+			"\t\talign: 'lll',",
+			"\t\tthead: 'all',",
+			"\t\twidth: [100, 0, 200],",
+			"\t}}",
+			"/>",			
+		],
+		"description": "X.Table tag with fromData and tableStyle"
 	},
 	"inline latex": {
 		"prefix": "il",

@@ -175,44 +175,17 @@ export default function Post() {
             </X.HighlightBlock>
             <X.H1>mul指令</X.H1>
             <X.P>`mul`指令的格式为`mul 寄存器`或`mul [...]`，其中被乘数默认存储在`AX`中，乘法指令分为`8`位乘法和`16`位乘法：</X.P>
-            <X.Table>
-                <tr>
-                    <th></th>
-                    <th>
-                        <X.P>`8`位乘法</X.P>
-                    </th>
-                    <th>
-                        <X.P>`16`位乘法</X.P>
-                    </th>
-                </tr>
-                <tr>
-                    <th>被乘数（默认）</th>
-                    <td>
-                        <X.P>`AL`</X.P>
-                    </td>
-                    <td>
-                        <X.P>`AX`</X.P>
-                    </td>
-                </tr>
-                <tr>
-                    <th>乘数</th>
-                    <td>
-                        <X.P>`8`位寄存器或内存单元</X.P>
-                    </td>
-                    <td>
-                        <X.P>`16`位寄存器或内存单元</X.P>
-                    </td>
-                </tr>
-                <tr>
-                    <th>结果</th>
-                    <td>
-                        <X.P>`AX`</X.P>
-                    </td>
-                    <td>
-                        <X.P>高位`DX`，低位`AX`</X.P>
-                    </td>
-                </tr>
-            </X.Table>
+            <X.Table
+                fromText={`
+                |'8'位乘法|'16'位乘法
+                被乘数（默认）|'AL'|'AX'
+                乘数|'8'位寄存器或内存单元|'16'位寄存器或内存单元
+                结果|'AX'|高位'DX'，低位'AX'
+                `}
+                tableStyle={{
+                    thead: 'all',
+                }}
+            />
             <X.P>例：</X.P>
             <X.CodeBlock
                 language="asm8086"

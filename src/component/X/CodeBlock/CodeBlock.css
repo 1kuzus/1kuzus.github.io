@@ -24,6 +24,7 @@
     display: block;
     width: fit-content;
     padding: 0 32px;
+    text-align: left;
 }
 
 /*todo: format&简化*/

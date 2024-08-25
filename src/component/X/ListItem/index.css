@@ -2,7 +2,7 @@
 .x-oli {
     display: flex;
     margin: 16px 0;
-    line-height: 28px;
+    line-height: 26px;
 }
 .x-uli-marker,
 .x-oli-number {
@@ -10,7 +10,7 @@
     justify-content: center;
     align-items: center;
     width: 32px;
-    height: 28px;
+    height: 26px;
 }
 .x-oli-number {
     color: var(--brand-300);

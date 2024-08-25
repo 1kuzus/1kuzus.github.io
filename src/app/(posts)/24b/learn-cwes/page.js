@@ -48,6 +48,9 @@ export default function Post() {
                     [<X.Image src="composite.png" width="16px" center />, '`Composite`，此类缺陷需要多种缺陷同时存在，才会引发潜在的安全漏洞。数量较少。'],
                     [<X.Image src="chain.png" width="30px" center />, '`Chain`，呈链式关系，例如缺陷X为缺陷Y的发生创造了条件。数量较少。\\n`Chain`可以涉及两个以上的弱点，在某些情况下也可能具有树状结构。'],
                 ]}
+                tableStyle={{
+                    align: 'cl',
+                }}
             />
             <X.H1>View of CWE Top 25 (2023)</X.H1>
             <X.P>（2023年）前25个最危险的软件缺陷，按顺序排名。标题前的【`P`/`C`/`B`/`V`/`Compo`】标识了其抽象类型。</X.P>
