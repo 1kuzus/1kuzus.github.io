@@ -262,9 +262,21 @@
 			"\t\tthead: 'all',",
 			"\t\twidth: [100, 0, 200],",
 			"\t}}",
-			"/>",			
+			"/>",
 		],
 		"description": "X.Table tag with fromData and tableStyle"
+	},
+	"tableStyle props": {
+		"scope": "javascript,typescript",
+		"prefix": "tbs",
+		"body": [
+			"tableStyle={{",
+			"\talign: 'lll',",
+			"\tthead: 'all',",
+			"\twidth: [100, 0, 200],",
+			"}}",
+		],
+		"description": "tableStyle props"
 	},
 	"inline latex": {
 		"prefix": "il",
