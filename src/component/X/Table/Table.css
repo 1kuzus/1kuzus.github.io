@@ -19,9 +19,25 @@
 .x-table th,
 .x-table td {
     padding: 8px 12px;
+    line-height: 26px;
     text-align: center;
 }
 .x-table th > *,
 .x-table td > * {
-    margin: 0;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.x-table th > :first-child,
+.x-table td > :first-child {
+    margin-top: 0;
+}
+.x-table th > :last-child,
+.x-table td > :last-child {
+    margin-bottom: 0;
+}
+.x-cell-align-l * {
+    text-align: left;
+}
+.x-cell-align-r * {
+    text-align: right;
 }

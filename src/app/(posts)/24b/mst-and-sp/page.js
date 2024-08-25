@@ -10,62 +10,18 @@ export default function Post() {
             <X.TOC />
             <X.Title>{metas[path].title}</X.Title>
             <X.H1>汇总</X.H1>
-            <X.Table>
-                <tr>
-                    <th>求解问题</th>
-                    <th>算法名称</th>
-                    <th>时间复杂度</th>
-                </tr>
-                <tr>
-                    <td>最小生成树</td>
-                    <td>Kruskal</td>
-                    <td>
-                        <X.P>$E\log E$</X.P>
-                    </td>
-                </tr>
-                <tr>
-                    <td>最小生成树</td>
-                    <td>Prim（朴素）</td>
-                    <td>
-                        <X.P>$V^2$</X.P>
-                    </td>
-                </tr>
-                <tr>
-                    <td>最小生成树</td>
-                    <td>Prim（优先队列）</td>
-                    <td>
-                        <X.P>$E\log E$</X.P>
-                    </td>
-                </tr>
-                <tr>
-                    <td>单源最短路</td>
-                    <td>Bellman-Ford</td>
-                    <td>
-                        <X.P>$VE$</X.P>
-                    </td>
-                </tr>
-                <tr>
-                    <td>单源最短路</td>
-                    <td>Dijkstra（优先队列）</td>
-                    <td>
-                        <X.P>$E\log E$</X.P>
-                    </td>
-                </tr>
-                <tr>
-                    <td>全源最短路</td>
-                    <td>Floyd</td>
-                    <td>
-                        <X.P>$V^3$</X.P>
-                    </td>
-                </tr>
-                <tr>
-                    <td>全源最短路</td>
-                    <td>Johnson</td>
-                    <td>
-                        <X.P>$VE\log E$</X.P>
-                    </td>
-                </tr>
-            </X.Table>
+            <X.Table
+                fromText={`
+                求解问题|算法名称|时间复杂度
+                最小生成树|Kruskal|$E\\log E$
+                最小生成树|Prim（朴素）|$V^2$
+                最小生成树|Prim（优先队列）|$E\\log E$
+                单源最短路|Bellman-Ford|$VE$
+                单源最短路|Dijkstra（优先队列）|$E\\log E$
+                全源最短路|Floyd|$V^3$
+                全源最短路|Johnson|$VE\\log E$
+                `}
+            />
             <X.P>注：</X.P>
             <X.Uli>本文用$V$表示顶点数，$E$表示边数。</X.Uli>
             <X.Uli>
