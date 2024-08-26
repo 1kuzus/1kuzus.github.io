@@ -13,7 +13,7 @@ export default function Post() {
             <X.P>传统神经网络每次的输入是独立的，每次输出只依赖于当前的输入；但在某些任务中需要更好的处理序列信息，即前面的输入和后面的输入是有关系的；*循环神经网络*`(Recurrent Neural Networks, RNN)`通过使用带自反馈的神经元，能够处理任意长度的序列。</X.P>
             <X.P>下面是一个非常常见的RNN结构描述图。它展示了RNN的自反馈机制和与时间的依赖关系，但是对网络结构的描述容易引起误解：右侧的展开形式并不意味着网络有`t`层，而是反映了随着时间增加（有时也可以理解为随着程序中循环的迭代），上一次输出的隐藏状态，和$x_t$共同作为网络的下一次的输入。</X.P>
             <X.P>或者，如果说CNN是从空间维度上堆叠卷积层，不断加深，RNN就是从时间维度上的延展，而其网络真正的参数是很少的。</X.P>
-            <X.Image src="rnn1.png" width="600px" invertInDarkTheme />
+            <X.Image src="rnn1.png" width="600px" filterDarkTheme />
             <X.P>下面以一个简单的正弦序列预测任务出发，结合代码理解RNN网络的部分细节。</X.P>
             <X.H2>预测一个正弦序列</X.H2>
             <X.P>这个例子中，我们对一个加了噪声的正弦序列进行预测。</X.P>
@@ -37,7 +37,7 @@ export default function Post() {
                 `}
             />
             <X.P>代码中我们在区间$[0,36]$取了`400`点数据，如果把横轴看成时间轴，可以认为数据集中有`400`个连续时间点的数据。</X.P>
-            <X.Image src="fig1.png" width="600px" invertInDarkTheme />
+            <X.Image src="fig1.png" width="600px" filterDarkTheme />
             <X.P>现在明确一下我们的方案：</X.P>
             <X.Oli>使用前`80%`也就是前`320`个数据作为训练集，剩余的作为测试集，观察预测结果。</X.Oli>
             <X.Oli>序列长度为`10`，也就是模型根据前`10`个时间点的数据去预测下一个时间点的数据。</X.Oli>
@@ -173,9 +173,9 @@ export default function Post() {
             <X.P>多步预测会导致误差的累积。</X.P>
             <X.H2>看看效果</X.H2>
             <X.P>如果不执行训练步骤的代码，使用初始随机参数的模型预测结果是：</X.P>
-            <X.Image src="fig2.png" width="600px" invertInDarkTheme />
+            <X.Image src="fig2.png" width="600px" filterDarkTheme />
             <X.P>经过训练后，每次训练的`loss`和最终的预测：</X.P>
-            <X.Image src="fig3.png" width="600px" invertInDarkTheme />
+            <X.Image src="fig3.png" width="600px" filterDarkTheme />
             <X.H2>使用torch.nn.RNN</X.H2>
             <X.P>使用`torch.nn.RNN`模块时，与上面例子中手动实现的RNN有几处细小的区别，下面给出了使用`torch.nn.RNN`时需要做出的修改：</X.P>
             <X.Oli reset>
@@ -298,20 +298,20 @@ export default function Post() {
             <X.P>RNN可以利用先前的信息理解当前的任务，这点非常不错；有时我们只需要短期的信息，例如一个语言模型预测下面的句子：\n`天空中飘着一朵白色的【云】`，这很简单。但有些时候我们需要更多背景信息，例如：\n`我出生在法国，…… ，我可以说流利的【法语】`，这个情况下，随着前后文距离变大，RNN对长期依赖关系的学习会变得困难。</X.P>
             <X.H2>LSTM</X.H2>
             <X.P>*长短期记忆网络*`(Long Short-Term Memory, LSTM)`是一种特殊的RNN，可以学习长期依赖。以RNN为例，循环神经网络随时间展开通常具有如下的示意图：</X.P>
-            <X.Image src="rnn2.png" width="600px" invertInDarkTheme />
+            <X.Image src="rnn2.png" width="600px" filterDarkTheme />
             <X.P>对于RNN来说，利用历史状态和输入得到新的状态，只经过一个简单的`tanh`激活层，而对于LSTM来说，它的示意图略显复杂：</X.P>
-            <X.Image src="lstm1.png" width="600px" invertInDarkTheme />
+            <X.Image src="lstm1.png" width="600px" filterDarkTheme />
             <X.P>在上图中，每条线表示一个向量，粉红色圆圈表示逐点式操作，黄色的方框是神经网络的层。这看起来很眼晕，不过我们接下来会一点点的解释图里的内容。</X.P>
             <X.H2>门控单元</X.H2>
             <X.P>下面的结构称为门控单元：</X.P>
-            <X.Image src="lstm2.png" width="100px" invertInDarkTheme />
+            <X.Image src="lstm2.png" width="100px" filterDarkTheme />
             <X.P>门控单元控制信息量通过的多少，通过向量$z$来控制$x$通过的信息量：</X.P>
             <X.Formula text="o=\sigma(z) \otimes x" />
             <X.P>式子中$\otimes$表示按位置相乘，$\sigma(z)$的每个元素输出范围是$[0,1]$，某个元素接近`1`，$x$对应位置保留的信息就越多，反之就越少。</X.P>
             <X.H2>逐部分分析LSTM</X.H2>
             <X.H3>遗忘门</X.H3>
             <X.P>LSTM的第一步是决定什么应该被遗忘，也就是对上一个*单元*`(cell)`状态信息选择性的遗忘。\n这个操作由遗忘门$f_t$实现，将其$[0,1]$范围的输出按位置与单元上一时刻状态相乘。</X.P>
-            <X.Image src="lstm3.png" width="600px" invertInDarkTheme />
+            <X.Image src="lstm3.png" width="600px" filterDarkTheme />
             <X.HighlightBlock bgcolor="gray">
                 <X.P>举一个概念性的例子：</X.P>
                 <X.P>考虑一个语言模型，输入一个句子：`Alice是一名女教师，她喜欢给学生讲课；Bob是一位男司机，他喝酒上瘾。`</X.P>
@@ -319,15 +319,15 @@ export default function Post() {
             </X.HighlightBlock>
             <X.H3>输入门</X.H3>
             <X.P>下一步就是决定要在单元中存入什么新的信息。这一部分有两路：`tanh`这一路与普通RNN很像，生成一个中间状态；$\sigma$这一路被称为输入门$i_t$，控制这个中间状态有多少信息被存入单元。</X.P>
-            <X.Image src="lstm4.png" width="600px" invertInDarkTheme />
+            <X.Image src="lstm4.png" width="600px" filterDarkTheme />
             <X.P>经历这两步之后，便可以相加得到新的单元状态：</X.P>
-            <X.Image src="lstm5.png" width="600px" invertInDarkTheme />
+            <X.Image src="lstm5.png" width="600px" filterDarkTheme />
             <X.HighlightBlock bgcolor="gray">
                 <X.P>同理，当模型看到`Bob是一位男司机`时，我们可能会想丢掉此前的语义信息`女性`，并把新的语义信息`男性`存入单元状态，使得后文输出正确的代词`他`。</X.P>
             </X.HighlightBlock>
             <X.H3>输出门</X.H3>
             <X.P>最后是决定新的隐藏状态，这个输出会基于单元状态，但会经过门控单元。输出门$o_t$决定经过`tanh`的单元状态$C_t$有多少被输出到下一时刻的隐藏状态。</X.P>
-            <X.Image src="lstm6.png" width="600px" invertInDarkTheme />
+            <X.Image src="lstm6.png" width="600px" filterDarkTheme />
             <X.HighlightBlock bgcolor="gray">
                 <X.P>当看到`Bob是一位男司机，他……`时，由于出现了主语`他`，模型可能会输出和`谓语动词`有关的语义信息。</X.P>
             </X.HighlightBlock>

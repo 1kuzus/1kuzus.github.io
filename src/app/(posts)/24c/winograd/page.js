@@ -124,7 +124,7 @@ export default function Post() {
             />
             <X.H2>二维</X.H2>
             <X.P>推广到二维情形，假设输入是$4 \times 4$图像，卷积核大小$3 \times 3$，则首先通过Img2col展开成矩阵乘法，再分块使用Winograd。</X.P>
-            <X.Image src="fig1.jpg" width="800px" invertInDarkTheme />
+            <X.Image src="fig1.jpg" width="800px" filterDarkTheme />
             <X.P>对于划分的每一小块，都可以使用一维Winograd算法计算；而整体来看，如果把每个分块都当作一个元素，则同理可以再用一次一维Winograd算法计算。</X.P>
             <X.P>从计算的效率来说，先分析整体，对分块矩阵进行Winograd算法，这时会需要`4`次*矩阵乘*；而每次矩阵乘再用Winograd算法，需要`4`次数乘，整个过程共需要`16`次乘法。如果使用常规的卷积操作则需要`36`次乘法。</X.P>
             <X.H2>算法的特点</X.H2>

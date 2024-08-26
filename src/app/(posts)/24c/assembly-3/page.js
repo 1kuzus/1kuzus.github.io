@@ -88,7 +88,7 @@ export default function Post() {
             <X.P>到现在为止，已经学习了`BX`、`SI`、`DI`、`BP`四个寄存器，它们都是与地址操作有关的寄存器。只有这四个寄存器可以以`[...]`的格式对内存进行寻址。</X.P>
             <X.P>按照基址寄存器和变址寄存器分类，则`BX`和`BP`是基址寄存器，`SI`和`DI`是变址寄存器。在使用时，基址寄存器和变址寄存器可以任意组合，例如`[bx+si]`、`[bx+di]`、`[bp+si]`、`[bp+di]`，但内部不能互相组合，例如`[bx+bp]`、`[si+di]`是*错误的*写法。</X.P>
             <X.H2>总结</X.H2>
-            <X.Image src="fig2.png" width="800px" invertInDarkTheme />
+            <X.Image src="fig2.png" width="800px" filterDarkTheme />
             <X.H1>指明要访问数据的大小</X.H1>
             <X.P>观察下面的代码：</X.P>
             <X.CodeBlock

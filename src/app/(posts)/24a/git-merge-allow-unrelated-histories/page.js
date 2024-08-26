@@ -14,7 +14,7 @@ export default function Post() {
             <X.P>之前为了配置路径别名进行了`eject`，后来发现设置`jsconfig.json`就可以解决问题，于是一直想还原成没有`eject`的项目。当然，`eject`操作是不可逆的，于是我把原来的`master`分支备份到`v1`分支，再另建一个新项目，把旧代码迁移过来，然后把新项目强制`push`到`master`分支，这样就可以在`master`分支上继续新版本的开发。</X.P>
             <X.H1>问题</X.H1>
             <X.P>在新版本（暂且叫它`v2`）也就是现在的`master`分支上提交了数次`commit`后，我意识到一个问题：此前的做法导致原来`v1`版本的提交记录并没有迁移到`master`分支中，当前的`master`分支相当于从零开始。</X.P>
-            <X.Image src="fig1.png" width="600px" invertInDarkTheme />
+            <X.Image src="fig1.png" width="600px" filterDarkTheme />
             <X.P>我希望`master`分支仍然保留`v1`版本的提交，同时也在此基础上记录`v2`版本的提交。</X.P>
             <X.H1>解决步骤</X.H1>
             <X.P>首先找一个文件夹克隆仓库：</X.P>

@@ -17,7 +17,7 @@ export default function Post() {
             <X.P>在链路层传输中，可能出现的错误包括数据位出错、分组丢失、分组失序、分组重复等。可靠传输服务希望实现发送端发送什么，接收端就接收到什么。虽然下面将在链路层这一章节中介绍SW、GBN、SR三种协议，但要明确的是，可靠传输服务并不仅仅局限于链路层，其他各层均可选择实现可靠传输。</X.P>
             <X.H2>停等协议 - SW</X.H2>
             <X.P>*停等协议*`(Stop and Wait, SW)`的发送方每发送一帧数据就停止，并等待接收方发送确认帧，收到确认后再发送下一帧。</X.P>
-            <X.Image src="sw.png" width="100%" invertInDarkTheme />
+            <X.Image src="sw.png" width="100%" filterDarkTheme />
             <X.H3>确认与否认、超时重传</X.H3>
             <X.P>发送方发送数据后等待接收方`ACK`或`NAK`的响应，并启动超时计时器，如果一定时间收不到响应则启动超时重传。</X.P>
             <X.H3>确认丢失</X.H3>
@@ -28,19 +28,19 @@ export default function Post() {
             <X.P>*回退N帧协议*`(Go Back N, GBN)`允许发送方连续发送多个帧（即发送窗口可以大于`1`），以解决停等协议信道利用率低的问题。</X.P>
             <X.P>发送方可在未收到接收方确认分组的情况下，将序号落在发送窗口内的多个数据分组全部发送出去；但接收方的接收窗口大小仅为`1`，也就是只有接收到了此窗口所代表的序号的分组，接收方才会回复`ACK`并且移动接收窗口。同理，发送方收到了发送窗口中最早的那个序号对应分组的`ACK`，才会移动发送窗口。</X.P>
             <X.H3>累计确认</X.H3>
-            <X.Image src="gbn1.png" width="100%" invertInDarkTheme />
+            <X.Image src="gbn1.png" width="100%" filterDarkTheme />
             <X.P>接收方不一定要对收到的数据逐个确认，也可以对最后一个分组进行确认。`ACK n`表示序号为`n`及其之前的分组都已经被正确接收。称这种方法为累计确认。例如图中，接收方只对`1`号、`4`号数据分组进行确认，并且`ACK 1`在传输过程中丢失，发送方仍然可以根据收到的`ACK 4`判断`0`~`4`号分组都已经被正确接收。</X.P>
             <X.H3>有差错情况</X.H3>
-            <X.Image src="gbn2.png" width="100%" invertInDarkTheme />
+            <X.Image src="gbn2.png" width="100%" filterDarkTheme />
             <X.P>例如发送方发送了`5`/`6`/`7`/`0`/`1`五个分组，但`5`号数据分组丢失，此时由于到达的四个分组都与接收窗口序号不匹配，接收方会将其丢弃，并重复响应`ACK 4`。</X.P>
             <X.H2>选择重传协议 - SR</X.H2>
             <X.P>*选择重传协议*`(Selective Repeat, SR)`加大接收窗口的长度（即接收窗口也可以大于`1`），缓存乱序到达的帧，这样不至于在一些情况下需要重传所有未被确认的帧从而导致效率降低。</X.P>
             <X.P>与GBN一样，发送方可在未收到接收方确认分组的情况下，将序号落在发送窗口内的多个数据分组全部发送出去；接收方可接收未按序到达但没有误码并且序号落在接收窗口内的数据分组；发送方收到未按序到达的确认分组时，对其进行记录，以防止其相应数据分组的超时重发，但发送窗口不能向前滑动。为了使发送方仅重传出现差错的分组，接收方不再采用累积确认，而是对每个正确接收的数据分组进行*逐一确认*。</X.P>
-            <X.Image src="sr1.png" width="100%" invertInDarkTheme />
+            <X.Image src="sr1.png" width="100%" filterDarkTheme />
             <X.P>例如发送方发送了`0`/`1`/`2`/`3`四个分组，但`2`号数据分组丢失，此时`0`号、`1`号按序到达，接收窗口可以向前移动；而`3`号分组可以被接收，但接收窗口不能移动。</X.P>
-            <X.Image src="sr2.png" width="100%" invertInDarkTheme />
+            <X.Image src="sr2.png" width="100%" filterDarkTheme />
             <X.P>返回的`ACK`到达发送方之后，发送方可以把发送窗口的起点移动到`2`号，同时记录`3`号分组已接收。移动发送窗口后，可以把新纳入窗口的`4`号、`5`号发送出去。</X.P>
-            <X.Image src="sr3.png" width="100%" invertInDarkTheme />
+            <X.Image src="sr3.png" width="100%" filterDarkTheme />
             <X.P>如果`4`号、`5`号可以被正常接收，并且返回的`ACK 4`、`ACK 5`可以正确到达发送方，那么最后会使得发送窗口和接收窗口都卡在`2`的位置，并最终触发`2`号分组超时重传。</X.P>
             <X.HighlightBlock>
                 <X.H3>GBN和SR的重传计时器</X.H3>
@@ -94,17 +94,17 @@ export default function Post() {
             <X.H3>强化碰撞</X.H3>
             <X.P>以太网的强化碰撞：当发送帧的站点检测到碰撞，除了立即停止发送帧外，还要再继续发送`48`位的人为干扰信号，以便有足够多的碰撞信号使所有站点都能检测出碰撞。</X.P>
             <X.H3>争用期</X.H3>
-            <X.Image src="csma1.png" width="100%" invertInDarkTheme />
+            <X.Image src="csma1.png" width="100%" filterDarkTheme />
             <X.P>图中$\tau$是单程传播时延，$\delta$并没有很强的物理含义，我们只是假设主机D发送数据后经过$\delta$时间检测到A的信号。这张图的重点是，在$\delta$趋近于0的情况下，A最长需要$2\tau$的时间检测到碰撞。我们把$2\tau$称作*争用期*`(Contention Period)`，它的意义是只要经过$2\tau$时间还没有检测到碰撞，就能肯定这次发送不会发生碰撞。</X.P>
             <X.H3>截断二进制指数规避算法</X.H3>
             <X.P>第$cnt$次重传的退避时间为$2\tau \times r$，r为从集合{`$\\{0,1,2,3, \\dots, 2^{\\min(cnt,10)}-1\\}$`}中随机选出的数。当重传达`16`次仍不能成功时，则丢弃该帧，并向上层报告。</X.P>
             <X.H3>最小/最大帧长的由来</X.H3>
-            <X.Image src="csma2.png" width="600" invertInDarkTheme />
+            <X.Image src="csma2.png" width="600" filterDarkTheme />
             <X.P>如果一个帧的长度太小，可能一个站点还没来得及检测到其发送的帧产生了碰撞，就已经将这个帧发送完毕了。帧的传输时间要大于争用期。对于`10 Mb/s`以太网，帧的最小长度为`64`字节。减去帧头和帧尾，数据部分至少应为`46`字节。</X.P>
             <X.P>如果一个帧的长度过大，一个站点不停地发送帧，其他站点就一直无法无法使用信道；如果帧的长度过大，接收方的缓冲区也可能产生溢出。以太网规定数据部分最长为`1500`字节，加上帧头和帧尾，帧的最大长度为`1518`字节。</X.P>
             <X.H2>碰撞避免 - CSMA/CA</X.H2>
             <X.P>在无线局域网中可能会出现隐蔽站的问题，使用碰撞检测意义不大。不同于以太网，802.11标准使用*碰撞避免*`(Collision Avoidance, CA)`而不是碰撞检测。</X.P>
-            <X.Image src="csma3.png" width="600" invertInDarkTheme />
+            <X.Image src="csma3.png" width="600" filterDarkTheme />
             <X.H3>使用确认帧</X.H3>
             <X.P>CSMA、CSMA/CD都没有使用确认帧机制。但因为无线信道的通信质量远不如有线信道，因此CSMA/CA要求接收方收到数据帧后响应`ACK`，发送方收到`ACK`就可以进行下一个数据帧的发送。</X.P>
             <X.H3>预约信道</X.H3>
@@ -187,7 +187,7 @@ export default function Post() {
             <X.P>*开放最短路径优先*`(Open Shortest Path First, OSPF)`是基于`链路状态法`的，较为复杂，适用于大网络。\n每个路由器使用洪泛法向区域中的所有路由器发送信息，因此最终整个区域内所有路由器都得到了区域完整的图结构。然后每台路由器在本地运行`Dijkstra`最短路径算法，确定一个以自身为根节点到所有子网的最短路径树。</X.P>
             <X.H3>在单个自治系统中再划分层次结构</X.H3>
             <X.P>为了应用于规模很大的网络，OSPF协议可以将一个自治系统再划分为若干更小的*区域*。在每个区域内，一台或多台区域边界路由器负责为流向该区域以外的分组提供路由选择。在AS中只有一个区域被配置成主干区域。主干区域的主要作用是为该AS中其他区域之间的流量提供路由选择。该主干总是包含本AS中的所有区域边界路由器、但也可能包含非边界路由器。在AS中的区域间的路由选择要求分组先路由到一个区域边界路由器（区域内路由选择），然后通过主干路由到位于目的区域的区域边界路由器进而再路由到最终目的地。</X.P>
-            <X.Image src="ospf.png" width="600" invertInDarkTheme />
+            <X.Image src="ospf.png" width="600" filterDarkTheme />
             <X.H3>OSPF 相较于 RIP 的优点</X.H3>
             <X.Uli>安全：使用鉴别，仅有受信任的路由器能参于OSPF协议，可防止恶意入侵者将不正确的信息注入路由器表内。</X.Uli>
             <X.Uli>允许多条相同开销的路径：当存在多条相等开销的路径时，无须仅选择单一的路径来承载所有的流量。（RIP协议只允许一条）</X.Uli>
@@ -196,11 +196,11 @@ export default function Post() {
             <X.H2>边界网关协议 - BGP</X.H2>
             <X.P>*边界网关协议*`(Border Gateway Protocol, BGP)`在这里只做简单的概念性介绍。</X.P>
             <X.FlexRow>
-                <X.Image src="bgp1.png" width="400" invertInDarkTheme />
-                <X.Image src="bgp2.png" width="400" invertInDarkTheme />
+                <X.Image src="bgp1.png" width="400" filterDarkTheme />
+                <X.Image src="bgp2.png" width="400" filterDarkTheme />
             </X.FlexRow>
             <X.P>在不同自治系统内，度量路由的代价可能不同；自治系统之间的路由选择也需要考虑相关的政治、经济、安全因素。BGP只希望选择一条可达，无环路，且相对较优的路由。</X.P>
-            <X.Image src="bgp3.png" width="600" invertInDarkTheme />
+            <X.Image src="bgp3.png" width="600" filterDarkTheme />
             <X.P>在配置BGP时，每个AS需要选择至少一个路由器作为*BGP发言人*，不同自治系统的BGP发言人要通过TCP连接交换路由信息。当BGP发言人互相交换了网络可达性信息后，各BGP发言人就根据自己的策略选择出到达各自治系统的较好的路由，也就是构造出树形结构、不存在回路的连通图。</X.P>
             <X.HighlightBlock bgcolor="red">
                 <X.P>关于协议所属层次的划分：\nRIP基于UDP，BGP基于TCP，归类到应用层协议比较合理；\nOSPF基于IP，归类到传输层协议比较合理；\n只不过，它们计算出的路径都服务于网络层，因此按照课程目录划在了网络层下。</X.P>
@@ -313,7 +313,7 @@ export default function Post() {
             <X.Uli>`2001:db8:de:0:0:0:0:2e13`</X.Uli>
             <X.Uli>`2001:db8:de::2e13`</X.Uli>
             <X.H2>IPv6比IPv4的改进</X.H2>
-            <X.Image src="ip.png" width="100%" invertInDarkTheme />
+            <X.Image src="ip.png" width="100%" filterDarkTheme />
             <X.Uli>扩大了地址空间，从`8`位变为`32`位</X.Uli>
             <X.Uli>IPv6移除了校验和字段，以减少每跳的处理时间</X.Uli>
             <X.Uli>IPv6将可选字段移出首部字段，放在有效载荷的扩展首部中，路由器不对扩展首部进行检查，提高了处理效率</X.Uli>
@@ -333,7 +333,7 @@ export default function Post() {
             <X.H2>用户数据报协议 - UDP</X.H2>
             <X.P>*用户数据报协议*`(User Datagram Protocol, UDP)`提供无连接、不可靠的服务，支持单播、多播、广播；UDP面向报文，对应用进程交下来的报文既不合并也不拆分。</X.P>
             <X.P>UDP传输效率更高，其牺牲了可靠性来保证性能。UDP适用于实时应用，例如视频会议、电话等。\nUDP首部开销小，只包括源端口、目的端口、长度、校验和共`8`字节。</X.P>
-            <X.Image src="tcpudp.jpg" width="600" invertInDarkTheme />
+            <X.Image src="tcpudp.jpg" width="600" filterDarkTheme />
             <X.H2>传输控制协议 - TCP</X.H2>
             <X.P>*传输控制协议*`(Transmission Control Protocol, TCP)`提供连接、可靠的服务，仅支持单播；TCP面向字节流，把应用进程交下来的报文仅当作字节流。</X.P>
             <X.P>TCP首部由`20`字节固定首部和最大`40`字节的扩展首部构成。下面是对一些字段的解释：</X.P>
@@ -344,10 +344,10 @@ export default function Post() {
             <X.Uli>窗口：占`16`位，以字节为单位，用于流量控制；接收方给出的*接收窗口*值是发送方设置其发送窗口的依据之一（另一个是*拥塞窗口*）。</X.Uli>
             <X.H3>TCP连接建立</X.H3>
             <X.P>TCP通过三报文握手建立连接，目的是使双方能感知到对方的存在，同时协商一些参数。过程如下图所示：</X.P>
-            <X.Image src="tcp1.jpg" width="100%" invertInDarkTheme />
+            <X.Image src="tcp1.jpg" width="100%" filterDarkTheme />
             <X.H3>TCP连接释放</X.H3>
             <X.P>TCP通过四报文挥手释放连接。服务端响应客户端的释放请求后进入关闭等待状态，但如果TCP服务器进程还有数据要发送，服务端仍然会发送完最后的数据才会发送连接释放报文段。\n客户端确认了连接释放报文段后，还要经过`2`倍*最长报文段寿命*`(Maximum Segment Lifetime, MSL)`才进入关闭状态，这是为了防止客户端确认报文丢失，如果直接进入关闭状态就无法接收到服务端重传的连接释放报文。过程如下图所示：</X.P>
-            <X.Image src="tcp2.jpg" width="100%" invertInDarkTheme />
+            <X.Image src="tcp2.jpg" width="100%" filterDarkTheme />
             <X.H3>TCP可靠传输</X.H3>
             <X.P>TCP综合了GBN和SR的一些机制来实现可靠传输。</X.P>
             <X.P>TCP的接收方也会维护接收窗口，这点与SR类似；但TCP采用与GBN类似的累计确认。\n需要注意的是，GBN中`ACK n`表示序号为`n`及其之前的分组都已经被正确接收，而TCP中`ACK n`表示序号为`n-1`及其之前的分组都已经被正确接收，接收方期望收到的最小序号的分组是序号`n`。</X.P>
@@ -367,7 +367,7 @@ export default function Post() {
             </X.HighlightBlock>
             <X.HighlightBlock bgcolor="gray">
                 <X.H3>拥塞控制的实现</X.H3>
-                <X.Image src="tcp3.jpg" width="600" invertInDarkTheme />
+                <X.Image src="tcp3.jpg" width="600" filterDarkTheme />
                 <X.H3>慢开始</X.H3>
                 <X.P>执行慢开始算法时拥塞窗口初始大小为`1`，同时要设定慢开始门限值（图中是`8`），拥塞窗口将指数增大到门限值。</X.P>
                 <X.H3>拥塞避免</X.H3>

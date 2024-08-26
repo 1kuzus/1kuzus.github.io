@@ -87,7 +87,7 @@ export default function Post() {
                     <X.P>对于一个实二次型$f(X)=X^TAX$，总能通过正交变换$X=PY$使得：</X.P>
                     <X.Formula text="f(X)=Y^T(P^TAP)Y=\lambda_1y_1^2+\dots+\lambda_ny_n^2" />
                     <X.P>式中$\lambda_i$是$A$的特征值。</X.P>
-                    <X.Image src="fig1.png" width="200px" invertInDarkTheme />
+                    <X.Image src="fig1.png" width="200px" filterDarkTheme />
                     <X.P>在二维情形理解其几何含义，也就是一个斜向的圆锥曲线可以正交变换为标准形式。</X.P>
                 </X.HighlightBlock>
             </X.Oli>

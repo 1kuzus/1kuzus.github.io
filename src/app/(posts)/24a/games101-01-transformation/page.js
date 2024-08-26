@@ -18,7 +18,7 @@ export default function Post() {
                 \begin{bmatrix} x \\y \end{bmatrix}
                 "
             />
-            <X.Image src="fig1.jpg" width="600px" invertInDarkTheme />
+            <X.Image src="fig1.jpg" width="600px" filterDarkTheme />
             <X.H2>切变 Shear</X.H2>
             <X.Formula
                 text="
@@ -30,7 +30,7 @@ export default function Post() {
             <X.Uli>$y=0$时水平偏移是$0$</X.Uli>
             <X.Uli>$y=1$时水平偏移是$a$</X.Uli>
             <X.Uli>垂直偏移总是$0$</X.Uli>
-            <X.Image src="fig2.jpg" width="600px" invertInDarkTheme />
+            <X.Image src="fig2.jpg" width="600px" filterDarkTheme />
             <X.H2>旋转 Rotate</X.H2>
             <X.Formula
                 text="
@@ -41,10 +41,10 @@ export default function Post() {
                 \end{bmatrix}
                 "
             />
-            <X.Image src="fig3.jpg" width="600px" invertInDarkTheme />
+            <X.Image src="fig3.jpg" width="600px" filterDarkTheme />
             <X.H2>平移 Translation - 引入齐次坐标</X.H2>
             <X.P>下面这个简单的平面平移变换并不能用`2`维矩阵表示：</X.P>
-            <X.Image src="fig4.jpg" width="600px" invertInDarkTheme />
+            <X.Image src="fig4.jpg" width="600px" filterDarkTheme />
             <X.HighlightBlock>
                 <X.H3>引入齐次坐标</X.H3>
                 <X.P>我们不希望将平移操作看待为一个特例，而是想要找到一个统一的、适用于各种变换的方法。\n这个解决方案就是引入*齐次坐标*`Homogeneous Coordinates`：</X.P>
@@ -271,7 +271,7 @@ export default function Post() {
             />
             <X.H3>透视投影</X.H3>
             <X.P>透视投影符合近大远小的视觉效果，观感上更为自然。透视投影可以首先将*视锥体*`(View Frustum)`“挤压”至长方体内，再应用正交投影：</X.P>
-            <X.Image src="fig6.jpg" width="500px" invertInDarkTheme />
+            <X.Image src="fig6.jpg" width="500px" filterDarkTheme />
             <X.Formula
                 text="
                 M_{persp \rightarrow ortho}=

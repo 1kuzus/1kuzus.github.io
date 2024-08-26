@@ -17,11 +17,11 @@ export default function Post() {
             <X.Formula text="\hat{P}(x) = \frac{k}{n} \cdot \frac{1}{V}" />
             <X.H1>直方图方法</X.H1>
             <X.P>直方图方法非常简单，可以理解为近似的用直方图的形状取描述概率密度函数。</X.P>
-            <X.Image src="fig1.png" width="75%" invertInDarkTheme />
+            <X.Image src="fig1.png" width="75%" filterDarkTheme />
             <X.P>不过，在样本数量并非无限时，如果小舱（直方图组距）过大，那么最终估计出的密度函数就非常粗糙；如果过小，那么有的小舱内可能没有样本，估计出的概率密度函数很不连续。</X.P>
             <X.FlexRow>
-                <X.Image src="fig2.png" width="100%" invertInDarkTheme />
-                <X.Image src="fig3.png" width="100%" invertInDarkTheme />
+                <X.Image src="fig2.png" width="100%" filterDarkTheme />
+                <X.Image src="fig3.png" width="100%" filterDarkTheme />
             </X.FlexRow>
             <X.HighlightBlock>
                 <X.P>小舱的选择应该与样本总数相适应。如果样本总数是$n$，小舱体积是$V_n$，在$x$附近落入小舱的样本个数是$k_n$，那么估计的概率密度{`$\\hat{P}(x)$`}可以收敛于真实概率密度$P(x)$的条件是：</X.P>
@@ -83,14 +83,14 @@ export default function Post() {
             </X.HighlightBlock>
             <X.P>下面是在样本数和平滑参数不同时，使用方窗和高斯窗的估计结果：</X.P>
             <X.Uli>方窗</X.Uli>
-            <X.Image src="fig4.png" width="100%" invertInDarkTheme />
+            <X.Image src="fig4.png" width="100%" filterDarkTheme />
             <X.Uli>高斯窗</X.Uli>
-            <X.Image src="fig5.png" width="100%" invertInDarkTheme />
+            <X.Image src="fig5.png" width="100%" filterDarkTheme />
             <X.HighlightBlock>
                 <X.P>你可能发现当平滑参数过大时，估计的效果并不理想。然而在窗函数及其参数满足一定的条件时，Parzen窗估计可以是渐进无偏的。其中对于小舱体积（也就是平滑参数决定的窗口宽度）的要求是，应随着样本数的增加而趋近于`0`，但是缩减速度不快于$1/n$。\n常取为{`$\\frac{1}{\\sqrt{n}}$`}的倍数。</X.P>
             </X.HighlightBlock>
             <X.P>下面是取{`$\\sigma=\\frac{32}{\\sqrt{n}}$`}的高斯窗的估计结果：</X.P>
-            <X.Image src="fig6.png" width="100%" invertInDarkTheme />
+            <X.Image src="fig6.png" width="100%" filterDarkTheme />
         </>
     );
 }

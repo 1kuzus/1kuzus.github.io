@@ -38,7 +38,7 @@ export default function Post() {
             <X.P>部分研究对本文有启发的一点是，将2FA的设置和登录分开研究，因为用户经常因为缺乏引导而感到困惑，这些研究大力推荐为用户设置清晰的说明和引导。</X.P>
             <X.P>本文工作的关键区别在于，本文不研究形式、内容或功能的具体变化如何影响2FA的可用性和具体体验，而是首次系统地研究现有流行网站用户体验的*一致性*。论文的核心贡献是衡量各个网站的2FA用户旅程服从雅各布定律的程度。</X.P>
             <X.H1>4.Methodology</X.H1>
-            <X.Image src="1.jpg" width="100%" invertInDarkTheme />
+            <X.Image src="1.jpg" width="100%" filterDarkTheme />
             <X.H1>5.Data Set</X.H1>
             <X.P>论文的数据集整理自网站@[https://2fa.directory/]@。</X.P>
             <X.H1>6.Comparison Factors</X.H1>
@@ -117,8 +117,8 @@ export default function Post() {
             />
             <X.H1>7.Results</X.H1>
             <X.H2>网站数据概览</X.H2>
-            <X.Image src="2.jpg" width="100%" invertInDarkTheme />
-            <X.Image src="3.jpg" width="100%" invertInDarkTheme />
+            <X.Image src="2.jpg" width="100%" filterDarkTheme />
+            <X.Image src="3.jpg" width="100%" filterDarkTheme />
             <X.P>一些发现包括：</X.P>
             <X.Uli>`86%`的网站使用`two-factor`/`two-step`/`multiple-factor`+`authentication`/`verification`作为命名；</X.Uli>
             <X.Uli>`92%`的网站2FA设置在`账户设置`的`安全设置`下；</X.Uli>

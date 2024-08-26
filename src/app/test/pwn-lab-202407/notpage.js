@@ -42,9 +42,9 @@ export default function Post() {
             <X.Image src="T1-2.jpg" width="1161px" />
             <X.H2>分析</X.H2>
             <X.P>看一下IDA还原的C代码：</X.P>
-            <X.Image src="T1-3.jpg" width="717px" invertInDarkTheme />
+            <X.Image src="T1-3.jpg" width="717px" filterDarkTheme />
             <X.P>`See_something`函数打印了参数的地址：</X.P>
-            <X.Image src="T1-4.jpg" width="583px" invertInDarkTheme />
+            <X.Image src="T1-4.jpg" width="583px" filterDarkTheme />
             <X.P>栈帧分析：</X.P>
             <X.CodeBlock
                 language="text"
@@ -145,8 +145,8 @@ export default function Post() {
             />
             <X.H1>T2</X.H1>
             <X.H2>分析</X.H2>
-            <X.Image src="T2-1.jpg" width="669px" invertInDarkTheme />
-            <X.Image src="T2-2.jpg" width="584px" invertInDarkTheme />
+            <X.Image src="T2-1.jpg" width="669px" filterDarkTheme />
+            <X.Image src="T2-2.jpg" width="584px" filterDarkTheme />
             <X.P>没有`canary`，</X.P>
             <X.P>栈帧分析：</X.P>
             <X.CodeBlock
@@ -172,9 +172,7 @@ export default function Post() {
             <X.Uli>可执行程序：`.exe`</X.Uli>
             <X.Uli>动态链接库：`.dll`</X.Uli>
             <X.Uli>静态链接库：`.lib`</X.Uli>
-            <X.P>
-                Linux：`ELF(Executable and Linkable Format)`
-            </X.P>
+            <X.P>Linux：`ELF(Executable and Linkable Format)`</X.P>
             <X.Uli>可执行程序：`.out`</X.Uli>
             <X.Uli>动态链接库：`.so`</X.Uli>
             <X.Uli>静态链接库：`.a`</X.Uli>
