@@ -39,7 +39,7 @@ export default function Post() {
             <X.P>分形`(Fractals)`具有自相似性。</X.P>
             <X.FlexRow gap="32px">
                 {/* todo : .............. */}
-                <X.Image src="fig6.jpg" height="240px" invertInDarkTheme />
+                <X.Image src="fig6.jpg" height="240px" filterDarkTheme />
                 <X.Image src="fig7.jpg" height="240px" />
             </X.FlexRow>
             <X.P>分形的变化频率非常高，在渲染时会引发强烈的走样。</X.P>
@@ -69,29 +69,29 @@ export default function Post() {
             <X.P>`f`后面是顶点的索引。更详细的资料可以参考@维基百科[https://en.wikipedia.org/wiki/Wavefront_.obj_file]@。</X.P>
             <X.P>网站@ONLINE 3D VIEWER[https://3dviewer.net/]@可以在线查看各种格式定义的3D模型。</X.P>
             <X.H2>贝塞尔曲线</X.H2>
-            <X.Image src="fig8.jpg" width="400px" invertInDarkTheme />
+            <X.Image src="fig8.jpg" width="400px" filterDarkTheme />
             <X.P>我们可以通过三个控制点$b_0$、$b_1$、$b_2$来生成图中蓝色的曲线，具体做法是对于每个$t \in [0,1]$：\n做出点$b_0^1$、$b_1^1$，满足$b_0b_0^1=tb_0b_1$、$b_1b_1^1=tb_1b_2$；\n再做出$b_0^2$，满足$b_0^1b_0^2=tb_0^1b_1^1$；</X.P>
             <X.P>每一个$t$对应的$b_0^2$就构成一条贝塞尔曲线，也就是图中蓝色的曲线。</X.P>
             <X.H3>三阶贝塞尔曲线</X.H3>
             <X.P>如果用四个控制点，同样通过类似的递归的方法，可以生成一条更高阶的贝塞尔曲线：</X.P>
-            <X.Image src="fig9.jpg" width="600px" invertInDarkTheme />
+            <X.Image src="fig9.jpg" width="600px" filterDarkTheme />
             <X.P>对于三阶贝塞尔曲线上一点$b_0^3$，也就是图中标识的$x(t)$，尽管从演示上是通过中间点一步一步得到的，但实际给出四个控制点位置和$t$就可以唯一确定。</X.P>
             <X.P>下图中左侧是常见的分段定义贝塞尔曲线的方法，每个顶点都延伸出两根“控制杆”，而实际上三阶贝塞尔曲线的四个控制点是图中标出的$b_0$~$b_3$，相当于省去了连线$b_1b_2$。</X.P>
             <X.P>如果希望分段贝塞尔曲线连续，则需要两侧的“控制杆”反向共线且等长，如下图中右侧所示。</X.P>
             <X.FlexRow gap="32px">
-                <X.Image src="fig10.jpg" width="360px" invertInDarkTheme />
-                <X.Image src="fig11.jpg" width="360px" invertInDarkTheme />
+                <X.Image src="fig10.jpg" width="360px" filterDarkTheme />
+                <X.Image src="fig11.jpg" width="360px" filterDarkTheme />
             </X.FlexRow>
             <X.P>@这个网站[https://math.hws.edu/eck/cs424/notes2013/canvas/bezier.html]@可以在线编辑贝塞尔曲线。</X.P>
             <X.H2>贝塞尔曲面</X.H2>
             <X.P>描述一维贝塞尔曲线时需要一个参数$t$，自然地，对于贝塞尔曲面需要两个参数$u \in [0,1]$,$v \in [0,1]$。</X.P>
-            <X.Image src="fig12.jpg" width="600px" invertInDarkTheme />
+            <X.Image src="fig12.jpg" width="600px" filterDarkTheme />
             <X.P>生成贝塞尔曲面的方式类似双线性插值：我们需要`16`个控制点排列成$4 \times 4$，对于四个点组成的一列可以生成一个贝塞尔曲线（图中灰色线），指定了参数$u$后，可以分别得到四条曲线上的四个点（图中蓝色点）；以这四个蓝色点作为新的控制点，每一个参数$v$都会给出蓝色贝塞尔曲线上的一点（图中白色点）。</X.P>
             <X.P>这就是参数$(u,v)$到贝塞尔曲面上一点的一一对应关系。</X.P>
             <X.H1>网格操作</X.H1>
             <X.H2>网格细分</X.H2>
             <X.P>网格细分`(mesh subdivision)`相当于上采样，可以增加分辨率。</X.P>
-            <X.Image src="fig13.jpg" width="600px" invertInDarkTheme />
+            <X.Image src="fig13.jpg" width="600px" filterDarkTheme />
             <X.H3>Loop细分</X.H3>
             <X.HighlightBlock>
                 <X.P>这里的Loop是取算法的发明者Charles Loop，与“循环”无关。</X.P>
@@ -101,28 +101,28 @@ export default function Post() {
             <X.Oli>调整顶点的位置</X.Oli>
             <X.P>其中第二步对于“新的”（新取的中点）顶点和“老的”（原本就有的）顶点更新方式分别为：</X.P>
             <X.P>新的顶点位置调整为周围四个点位置的加权平均：$3(A+B)/8+(C+D)/8$</X.P>
-            <X.Image src="fig14.jpg" width="300px" invertInDarkTheme />
+            <X.Image src="fig14.jpg" width="300px" filterDarkTheme />
             <X.P>对于旧的顶点，其位置调整为自己原本位置与所有邻居的加权平均：\n{`$(1-nu)p_{original} + u \\sum p_{neighbor}$`}</X.P>
             <X.P>其中$n$是节点的度数，$n=3$时$u=3/16$，其他情况下$u=3/8n$。</X.P>
-            <X.Image src="fig15.jpg" width="380px" invertInDarkTheme />
+            <X.Image src="fig15.jpg" width="380px" filterDarkTheme />
             <X.H3>Catmull-Clark细分</X.H3>
             <X.P>Catmull-Clark细分针对四边形网格，同样的可以概括为两步操作：</X.P>
             <X.Oli reset>将四边形细分：连接`四边形面中心点`与`边点`</X.Oli>
             <X.Oli>调整顶点的位置</X.Oli>
             <X.P>对于`四边形面中心点`，其取法为：{`$f=\\frac{v_1+v_2+v_3+v_4}{4}$`}</X.P>
-            <X.Image src="fig16.jpg" invertInDarkTheme />
+            <X.Image src="fig16.jpg" filterDarkTheme />
             <X.P>对于`边点`，其取法为：{`$e=\\frac{f_1+f_2+v_1+v_2}{4}$`}</X.P>
-            <X.Image src="fig17.jpg" invertInDarkTheme />
+            <X.Image src="fig17.jpg" filterDarkTheme />
             <X.P>第二步，对于原来的顶点$p$，其调整为：{`$v=\\frac{f_1+f_2+f_3+f_4+2(m_1+m_2+m_3+m_4)+4p}{16}$`}\n这里的$m$是边的中点，与上面求得的`边点`不同。</X.P>
-            <X.Image src="fig18.jpg" invertInDarkTheme />
+            <X.Image src="fig18.jpg" filterDarkTheme />
             <X.H2>网格简化</X.H2>
             <X.P>网格简化`(mesh simplification)`相当于下采样。</X.P>
-            <X.Image src="fig19.jpg" invertInDarkTheme />
+            <X.Image src="fig19.jpg" filterDarkTheme />
             <X.H3>边坍缩</X.H3>
             <X.P>边坍缩合并一条边的两个顶点。</X.P>
-            <X.Image src="fig20.jpg" width="600px" invertInDarkTheme />
+            <X.Image src="fig20.jpg" width="600px" filterDarkTheme />
             <X.P>如何评定新的顶点与原模型轮廓一致的程度呢（例如下面左图取平均的效果明显不如右图）？答案是优化*⼆次误差*，也就是新的顶点与原来的各面的距离平方之和最小。</X.P>
-            <X.Image src="fig21.jpg" width="600px" invertInDarkTheme />
+            <X.Image src="fig21.jpg" width="600px" filterDarkTheme />
             <X.P>执行算法时，对于模型的每一条边，都可以算出坍缩后最优的⼆次误差；使用*贪心算法*，每次取二次误差最小的边进行坍缩。注意到，将一条边坍缩后，会影响与这条边相邻接的其他边的位置，自然也会影响其他边的最优二次误差值，因此每次操作后还需要调整部分边的最优二次误差值。可以利用*优先队列*实现功能。</X.P>
         </>
     );

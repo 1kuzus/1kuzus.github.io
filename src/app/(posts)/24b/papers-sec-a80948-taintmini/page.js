@@ -31,10 +31,10 @@ export default function Post() {
             <X.P>出于性能考虑，微信对单个小程序大小有限制，复杂操作可能需要多个小程序配合完成，例如购物小程序需要调起支付小程序。此时需要用到`navigateToMiniProgram`API。</X.P>
             <X.H1>3.Example & Challenges</X.H1>
             <X.H2>一个例子</X.H2>
-            <X.Image src="1.jpg" width="100%" invertInDarkTheme />
+            <X.Image src="1.jpg" width="100%" filterDarkTheme />
             <X.P>这个例子中就包含了各种类型的数据流动，详见原文。</X.P>
             <X.H2>与Web Apps和Mobile Apps比较</X.H2>
-            <X.Image src="2.jpg" width="800px" invertInDarkTheme />
+            <X.Image src="2.jpg" width="800px" filterDarkTheme />
             <X.P>在视图层，小程序不能操作DOM；小程序支持列表/条件渲染（`wx:for/if`）。\n在逻辑层，JavaScript是解释型、弱类型语言；而Java类似编译型语言、是强类型语言。</X.P>
             <X.H2>挑战与研究范围</X.H2>
             <X.P>为了检测小程序隐私数据潜在的泄露风险，有三类数据流目前还没有现有的污点分析技术解决：</X.P>

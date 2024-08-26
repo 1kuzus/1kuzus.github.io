@@ -14,7 +14,7 @@ export default function Post() {
             <X.Image src="fig1.png" width="600px" />
             <X.H1>交并比</X.H1>
             <X.P>*交并比*`(Intersection over Union, IoU)`是产生的检测框与真实检测框的交集与并集的比值。</X.P>
-            <X.Image src="fig2.jpg" width="300px" invertInDarkTheme />
+            <X.Image src="fig2.jpg" width="300px" filterDarkTheme />
             <X.H1>查准率和查全率</X.H1>
             <X.P>对于一组图像的目标检测结果来说，假如规定`IoU`大于某一阈值就把检测结果视为真正例`TP`，否则视为假正例`FP`；并且如果出现多个检测重叠一个真值的情况，只有最高置信度的检测框被视为`TP`，其他则视为`FP`。</X.P>
             <X.P>接下来计算两个指标：*查准率*或*精确率*`Precision`，即预测为正的样本中的正确率`TP/All Detections`；*查全率*或*召回率*`Recall`，即正确检测出的正样本占所有正样本的比例`TP/All Ground Truths`。</X.P>
@@ -28,9 +28,9 @@ export default function Post() {
                 <X.H3>个人理解</X.H3>
                 <X.P>当我们说模型在一个类别上预测精度是`80%`时，直观上的体会是“模型的`10`个预测框中，大约有`8`个是对目标的正确预测”。然而这并不能与`Precision`-`Recall`曲线下的面积建立起直观的联系。但注意到曲线的纵坐标的含义就是精度，从这个角度出发，以下是对`AP`指标的个人理解：</X.P>
                 <X.P>下面是一个常见的`Precision`-`Recall`曲线示意图。尽管现实任务中的曲线通常是不平滑、不单调的，但大致可以用图中的较为理想的曲线走势描述。我们通常用*平衡点*去衡量一个模型的好坏，也就是曲线上`Precision`=`Recall`的点。</X.P>
-                <X.Image src="fig4.jpg" width="40%" invertInDarkTheme />
+                <X.Image src="fig4.jpg" width="40%" filterDarkTheme />
                 <X.P>模型在平衡点处的精度与曲线下面积有没有联系呢？下图的蓝色折线`D`将曲线`A`的平衡点两侧的两段单调递减的曲线近似为直线，如果以折线`D`下面积近似曲线`A`下面积，将黄色三角形补到右侧后，可以发现蓝色折线`D`下的面积恰好反映了平衡点处的精度。</X.P>
-                <X.Image src="fig5.jpg" width="85%" invertInDarkTheme />
+                <X.Image src="fig5.jpg" width="85%" filterDarkTheme />
                 <X.P>因此可以认为，平均精度`AP`某种意义上是用`Precision`-`Recall`曲线下面积近似反映了平衡点处的`Precision`值。</X.P>
             </X.HighlightBlock>
             <X.H1>全类平均精度mAP</X.H1>

@@ -34,7 +34,7 @@ export default function Post() {
             <X.Uli>@View by Research Concepts[https://cwe.mitre.org/data/definitions/1000.html]@</X.Uli>
             <X.P>CWE Categories是更细的划分，一个CWE分类可能包含一系列具有共同特征的CWE条目。</X.P>
             <X.P>CWE的不同条目也具有不同的抽象程度，有些条目描述了具体的缺陷，有些则描述了更一般的问题。CWE的条目之间也存在父级子级的关系。四种抽象程度如下图所示：</X.P>
-            <X.Image src="weakness_abstractions.png" width="600px" invertInDarkTheme />
+            <X.Image src="weakness_abstractions.png" width="600px" filterDarkTheme />
             <X.P>这些分级在官网上也有对应的图标表示，相应的释义为：</X.P>
             <X.Table
                 fromData={[
@@ -1157,7 +1157,7 @@ export default function Post() {
             </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/918.html">【B】CWE-918: Server-Side Request Forgery (SSRF)</X.H2>
             <X.P>服务端请求伪造，攻击者通过伪造服务器发起的请求，使服务器端的应用程序访问受信任的第三方服务器或资源。通常，攻击者利用此漏洞访问内部系统。SSRF可以看作一种跳板攻击。</X.P>
-            <X.Image src="ssrf.jpg" width="800px" invertInDarkTheme />
+            <X.Image src="ssrf.jpg" width="800px" filterDarkTheme />
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2024-3149[https://www.opencve.io/cve/CVE-2024-3149]@</X.Uli>

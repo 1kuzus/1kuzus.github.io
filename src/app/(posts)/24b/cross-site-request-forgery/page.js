@@ -11,7 +11,7 @@ export default function Post() {
             <X.Title>{metas[path].title}</X.Title>
             <X.H1>概念与威胁模型</X.H1>
             <X.P>*跨站请求伪造*`(Cross-site Request Forgery, CSRF)`是一种冒充受信任用户，向服务器发送非预期请求的攻击方式。CSRF主要利用浏览器会自动携带cookie的特性。</X.P>
-            <X.Image src="csrf.webp" width="800px" invertInDarkTheme />
+            <X.Image src="csrf.webp" width="800px" filterDarkTheme />
             <X.Oli>用户登录网站，例如银行网站；</X.Oli>
             <X.Oli>网站返回cookie用于验证身份；</X.Oli>
             <X.Oli>

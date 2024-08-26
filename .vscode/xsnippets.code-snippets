@@ -165,13 +165,13 @@
 		],
 		"description": "X.Image tag"
 	},
-	"invertInDarkTheme props": {
+	"filterDarkTheme props": {
 		"scope": "javascript,typescript",
-		"prefix": "iidt",
+		"prefix": "fdt",
 		"body": [
-			"invertInDarkTheme"
+			"filterDarkTheme"
 		],
-		"description": "invertInDarkTheme props"
+		"description": "filterDarkTheme props"
 	},
 	"X.Table tag": {
 		"scope": "javascript,typescript",

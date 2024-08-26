@@ -13,7 +13,7 @@ export default function Post() {
             <X.P>PyTorch版本复现代码来自于Github仓库 @Github: R2Plus1D-PyTorch[https://github.com/irhum/R2Plus1D-PyTorch]@</X.P>
             <X.H1>(2+1)D卷积</X.H1>
             <X.P>普通3D卷积的核大小为$(C_i,C_o,K_t,K_w,K_h)$，$C_i,C_o$为输入通道数、$K_t,K_w,K_h$是3D卷积核的尺寸。\nR(2+1)D网络最核心的改动就是将普通的`Conv3d`替换为`SpatioTemporalConv`卷积。</X.P>
-            <X.Image src="fig1.jpg" width="100%" invertInDarkTheme />
+            <X.Image src="fig1.jpg" width="100%" filterDarkTheme />
             <X.P>`SpatioTemporalConv`卷积从外部看与`Conv3d`相同，均有`5`个超参数，区别在于其内部的结构：</X.P>
             <X.Uli>大小为$(C_i,C,1,K_w,K_h)$的`Conv3d`</X.Uli>
             <X.Uli>`BatchNorm`+`ReLU`</X.Uli>
@@ -41,7 +41,7 @@ export default function Post() {
             <X.P>这样做的目的是使得R(2+1)D卷积的参数量和R3D相近。也就是说，拆分时间和空间两次卷积并不是为了减少计算量。文中给出了使用R(2+1)D卷积两个优点：</X.P>
             <X.Oli>增加了网络非线性层的层数</X.Oli>
             <X.Oli>优化更容易（实验结果：R(2+1)D网络的训练和测试误差都更小）</X.Oli>
-            <X.Image src="fig2.jpg" width="600" invertInDarkTheme />
+            <X.Image src="fig2.jpg" width="600" filterDarkTheme />
         </>
     );
 }

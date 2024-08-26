@@ -41,7 +41,7 @@ export default function Post() {
             </X.Oli>
             <X.Oli>
                 <X.P>根据图示分界线给出与门神经网络的参数$w_1$、$w_2$、$b$。</X.P>
-                <X.Image src="fig1.png" width="400px" invertInDarkTheme />
+                <X.Image src="fig1.png" width="400px" filterDarkTheme />
                 <X.P>答：{`$y=\\text{sign}(u_1+u_2-1.5)$`}，因此$w_1=1$、$w_2=1$、$b=-1.5$</X.P>
             </X.Oli>
             <X.Oli>
@@ -95,7 +95,7 @@ export default function Post() {
             <X.H1>优化方法</X.H1>
             <X.Oli reset>
                 <X.P>在训练神经网络时，损失函数在最初的几个时没有下降，可能的原因是？</X.P>
-                <X.Image src="fig2.png" width="260px" invertInDarkTheme />
+                <X.Image src="fig2.png" width="260px" filterDarkTheme />
                 <X.P>答：学习率太低；正则参数太高；陷入局部最优值等。</X.P>
             </X.Oli>
             <X.Oli>
@@ -166,7 +166,7 @@ export default function Post() {
             </X.Oli>
             <X.Oli>
                 <X.P>当训练一个神经网络来作图像识别任务时，通常会绘制一张训练集误差和交叉训练集误差图来进行调试。在图中，最好在哪个时间停止训练？</X.P>
-                <X.Image src="fig3.png" width="260px" invertInDarkTheme />
+                <X.Image src="fig3.png" width="260px" filterDarkTheme />
                 <X.P>答：`c`</X.P>
             </X.Oli>
             <X.Oli>
@@ -614,7 +614,7 @@ export default function Post() {
             <X.Oli>
                 <X.P>请解释“领域”在迁移学习中的概念。</X.P>
                 <X.P>答：领域是机器学习的主体，主要由两个部分构成：数据和生成这些数据的概率分布。</X.P>
-                <X.Image src="fig4.jpg" width="600px" invertInDarkTheme />
+                <X.Image src="fig4.jpg" width="600px" filterDarkTheme />
             </X.Oli>
             <X.Oli>
                 <X.P>什么是领域自适应？请简要描述其基本原理。</X.P>

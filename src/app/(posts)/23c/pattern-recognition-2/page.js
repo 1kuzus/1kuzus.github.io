@@ -178,7 +178,7 @@ export default function Post() {
                 `}
             />
             <X.P>观察迭代结果：</X.P>
-            <X.Image src="fig1.png" width="100%" invertInDarkTheme />
+            <X.Image src="fig1.png" width="100%" filterDarkTheme />
             <X.P>如果随着样本数增加，后验概率序列逐渐尖锐，最终趋向于以参数真实值为中心的一个尖峰，则这一过程称为贝叶斯学习。</X.P>
             <X.H2>正态分布下的贝叶斯估计</X.H2>
             <X.P>假设要估计的正态分布均值$\mu$未知，方差$\sigma^2$已知。假定$\mu$的先验分布也是正态分布，均值为$\mu_0$，方差为$\sigma_0^2$。</X.P>
