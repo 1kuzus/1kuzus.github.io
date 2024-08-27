@@ -1551,7 +1551,7 @@ export default function Post() {
             />
             <X.P>这会被解析成：</X.P>
             <X.CodeBlock language="php" code='<?php system("/bin/ls -l");?>' />
-            <X.P>这将导致用户查看他们的时候，PHP代码被解析执行。注意这种情况下，同样存在XSS漏洞风险。</X.P>
+            <X.P>这将导致用户查看它们的时候，PHP代码被解析执行。注意这种情况下，同样存在XSS漏洞风险。</X.P>
             <X.H3>Example 2</X.H3>
             <X.CodeBlock
                 language="python"
