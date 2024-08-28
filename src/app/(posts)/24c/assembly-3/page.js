@@ -39,7 +39,7 @@ export default function Post() {
             <X.HighlightBlock>
                 <X.P>ASCII码在设计上满足一些规律：</X.P>
                 <X.Uli>在`16`进制下，`3xh`就代表了字符`10`进制数`'x'`，例如`'1'`的ASCII码为`49`也就是`31h`</X.Uli>
-                <X.Uli>在`16`进制下，大写字母和小写字母的`ASCII`码相差`20h`，例如`'A'`的`ASCII`码为`41h`，`'a'`的`ASCII`码为`61h`</X.Uli>
+                <X.Uli>在`16`进制下，大写字母和小写字母的ASCII码相差`20h`，例如`'A'`的ASCII码为`41h`，`'a'`的ASCII码为`61h`</X.Uli>
             </X.HighlightBlock>
             <X.H1>and指令、or指令</X.H1>
             <X.P>位运算指令，用法与`add`类似。这两个指令可以在不需要分支结构的情况下，实现大小写字符转换：</X.P>

@@ -149,7 +149,7 @@ export default function Post() {
             <X.P>可以得到加密的字符串。这里的`publicKey`是调试时复制来的值。我们不清楚这是不是一个固定的参数，因此同样分析一下这个参数的来源：</X.P>
             <X.Image src="fig11.jpg" width="100%" />
             <X.P>前面抓包时注意到有一个`XHR`请求，实际上这就是`publicKey`。</X.P>
-            <X.P>至此我们已经可以在本地`node`环境跑通加密`js`，我们把它命名为`encrypt.js`并创建一个稍后服务于爬虫程序的模块`encrypt.py`：</X.P>
+            <X.P>至此我们已经可以在本地`node`环境跑通加密JS，我们把它命名为`encrypt.js`并创建一个稍后服务于爬虫程序的模块`encrypt.py`：</X.P>
             <X.CodeBlock
                 language="python"
                 code={`
@@ -169,7 +169,7 @@ export default function Post() {
                     return ul, pl
                 `}
             />
-            <X.P>这个模块根据传入的`public_key`替换`js`源代码中的部分，再编译，最后在`Python`环境中调用`js`代码得到加密结果。</X.P>
+            <X.P>这个模块根据传入的`public_key`替换JS源代码中的部分，再编译，最后在Python环境中调用JS代码得到加密结果。</X.P>
             <X.HighlightBlock>
                 <X.P>到目前位置，`public_key`参数一直都是同一个值（`MFwwDQYJKo...`）。</X.P>
             </X.HighlightBlock>
