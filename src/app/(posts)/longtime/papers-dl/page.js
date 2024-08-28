@@ -8,7 +8,6 @@ function PaperSummary(props) {
     const {topic, method, experiment, innovation, limitation} = props;
     return (
         <X.HighlightBlock bgcolor="gray">
-            {X.Oli({reset: 0}) && false /*在不确定第一个Oli的情况下，reset序号为0，使得下一项一定从1开始*/}
             {[
                 [topic, '文章的主题 / 文章要解决什么问题？'],
                 [method, '文章的核心方法 / 具体是如何做的？'],
@@ -18,10 +17,10 @@ function PaperSummary(props) {
             ].map(
                 ([comp, text], index) =>
                     comp && (
-                        <X.Oli key={index}>
+                        <X.Uli key={index}>
                             <X.P>*{text}*</X.P>
                             {typeof comp === 'string' ? <X.P>{comp}</X.P> : comp}
-                        </X.Oli>
+                        </X.Uli>
                     )
             )}
         </X.HighlightBlock>
@@ -45,7 +44,7 @@ export default function Post() {
             <X.Title>{metas[path].title}</X.Title>
             <X.H1>研究</X.H1>
             <X.H2 href="https://arxiv.org/pdf/2003.08934.pdf">【NeRF】NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis (2020)</X.H2>
-            <PaperSummary topic="使用稀疏输入2D图片集实现场景的3D视图合成" method={<X.P>从`($x,y,z,\theta,\phi$)`到`($R,G,B,\sigma$)`</X.P>} experiment="测试数据集是`Diffuse Synthetic 360`、`Realistic Synthetic 360`和`Real Forward-Facing`" innovation="将输入坐标位置编码，帮助MLP表示高频函数\n分层采样" limitation="有效地优化和渲染神经辐射场\n可解释性" />
+            <PaperSummary topic="使用稀疏输入2D图片集实现场景的3D视图合成。" method={<X.P>从`($x,y,z,\theta,\phi$)`到`($R,G,B,\sigma$)`。</X.P>} experiment="测试数据集是`Diffuse Synthetic 360`、`Realistic Synthetic 360`和`Real Forward-Facing`。" innovation="将输入坐标位置编码，帮助MLP表示高频函数；分层采样" limitation="有效地优化和渲染神经辐射场；可解释性" />
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>更多笔记</X.H3>
                 <X.P>神经辐射场用于从2D的图片重建3D的场景。</X.P>
@@ -54,17 +53,8 @@ export default function Post() {
                 <X.Uli>*结构相似性*`(Structural Similarity Index Measure, SSIM)`：用于衡量图像的结构相似性，得分通常在`0`~`1`之间，数值越高表示图像结构越相似。相较于PSNR在图像质量的衡量上更能符合人眼对图像质量的判断。</X.Uli>
                 <X.Uli>*基于学习的感知图像质量评价*`(Learned Perceptual Image Patch Similarity, LPIPS)`：测量从预训练网络中提取的两个图像的特征之间的相似性，得分通常在`0`~`1`之间，数值越低表示感知质量越高。</X.Uli>
             </X.HighlightBlock>
-            <X.H2 href="https://arxiv.org/pdf/2308.04079.pdf">【3DGS】3D Gaussian Splatting for Real-Time Radiance Field Rendering (2023)</X.H2>
-            <PaperSummary topic="实现实时辐射场渲染，同时保持高质量的视觉效果，并且保持较短的训练时间" />
-            <X.HighlightBlock bgcolor="blue">
-                <X.H3>更多笔记</X.H3>
-                <X.H3>文章的相关工作部分</X.H3>
-                <X.P>传统的场景重建与渲染：基于光场的，密集采样、非结构化捕获；*运动恢复结构*`(Structure from Motion, SFM)`用一组照片估计稀疏点云合成新视图；*多视点立体视觉*`(Multi-View Stereo, MVS)`；\n神经渲染和辐射场：用CNN估计混合权重，用于纹理空间；Soft3D提出`Volumetric representations`；NeRF提出重要性采样和位置编码来提高质量，但使用了大型多层感知器，对速度有负面影响；</X.P>
-                <X.H3>稀疏重建和稠密重建</X.H3>
-                <X.P>稀疏重建主要用于定位，得到每张图片的相机参数，提取特征点，例如SFM；稠密重建是假设相机参数已知的情况下，从不同视角的图像中找到匹配的对应点，对整个图像或图像中绝大部分像素进行重建。</X.P>
-            </X.HighlightBlock>
             <X.H2 href="https://arxiv.org/pdf/2201.05989.pdf">【Instant NGP】Instant Neural Graphics Primitives with a Multiresolution Hash Encoding (2022)</X.H2>
-            <PaperSummary topic="实现实时辐射场渲染，同时保持高质量的视觉效果，并且保持较短的训练时间" />
+            <PaperSummary topic="主要用于解决NeRF在对全连接神经网络进行参数化时的效率问题。" innovation="提出了一种基于哈希搜索的编码方法。" />
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>更多笔记</X.H3>
                 <X.H3>Instant NGP与NeRF的异同</X.H3>
@@ -72,17 +62,26 @@ export default function Post() {
                 <X.Uli>同样基于体渲染</X.Uli>
                 <X.Uli>不同于NeRF的MLP，Instant NGP使用稀疏的参数化的`voxel grid`作为场景表达</X.Uli>
             </X.HighlightBlock>
+            <X.H2 href="https://arxiv.org/pdf/2308.04079.pdf">【3DGS】3D Gaussian Splatting for Real-Time Radiance Field Rendering (2023)</X.H2>
+            <PaperSummary topic="实现实时辐射场渲染，同时保持高质量的视觉效果，并且保持较短的训练时间。" />
+            <X.HighlightBlock bgcolor="blue">
+                <X.H3>更多笔记</X.H3>
+                <X.H3>文章的相关工作部分</X.H3>
+                <X.P>传统的场景重建与渲染：基于光场的，密集采样、非结构化捕获；*运动恢复结构*`(Structure from Motion, SFM)`用一组照片估计稀疏点云合成新视图；*多视点立体视觉*`(Multi-View Stereo, MVS)`；\n神经渲染和辐射场：用CNN估计混合权重，用于纹理空间；Soft3D提出`Volumetric representations`；NeRF提出重要性采样和位置编码来提高质量，但使用了大型多层感知器，对速度有负面影响。</X.P>
+                <X.H3>稀疏重建和稠密重建</X.H3>
+                <X.P>稀疏重建主要用于定位，得到每张图片的相机参数，提取特征点，例如SFM；稠密重建是假设相机参数已知的情况下，从不同视角的图像中找到匹配的对应点，对整个图像或图像中绝大部分像素进行重建。</X.P>
+            </X.HighlightBlock>
             <X.H2 href="https://arxiv.org/pdf/2211.11646.pdf">【NeRF RPN】NeRF-RPN: A general framework for object detection in NeRFs (2022)</X.H2>
-            <PaperSummary topic="在NeRF中直接进行3D物体检测" method={<X.P>第一部分：特征提取器\n从NeRF采样的辐射度和密度网格作为输入，生成特征金字塔作为输出。\n第二部分：RPN头\n对特征金字塔进行操作并生成对象建议。</X.P>} innovation="第一次将RPN引入NeRF以进行3D物体检测和相关任务\n利用Hypersim和3D-FRONT数据集构建了第一个用于3D目标检测的NeRF数据集" />
+            <PaperSummary topic="在NeRF中直接进行3D物体检测。" method={<X.P>第一部分：特征提取器\n从NeRF采样的辐射度和密度网格作为输入，生成特征金字塔作为输出。\n第二部分：RPN头\n对特征金字塔进行操作并生成对象建议。</X.P>} innovation="第一次将RPN引入NeRF以进行3D物体检测和相关任务；\n利用Hypersim和3D-FRONT数据集构建了第一个用于3D目标检测的NeRF数据集。" />
             <X.H2 href="https://arxiv.org/pdf/2304.04395v3.pdf">【Instance NeRF】Instance Neural Radiance Field (2023)</X.H2>
             <PaperSummary
                 topic={
                     <>
-                        <X.P>输入一个以多视图RGB图像预训练的NeRF，学习给定场景的3D实例分割</X.P>
+                        <X.P>输入一个以多视图RGB图像预训练的NeRF，学习给定场景的3D实例分割。</X.P>
                         <X.P>文章的主要贡献：</X.P>
-                        <X.Uli>第一个在NeRF中进行3D实例分割的尝试之一，而没有使用真实分割标签作为输入</X.Uli>
-                        <X.Uli>提出`Neural Instance Field`的结构和训练方法，可以产生*多视图一致*的2D分割和连续的3D分割</X.Uli>
-                        <X.Uli>对合成室内NeRF数据集进行实验和消融研究</X.Uli>
+                        <X.Uli>第一个在NeRF中进行3D实例分割的尝试之一，而没有使用真实分割标签作为输入；</X.Uli>
+                        <X.Uli>提出`Neural Instance Field`的结构和训练方法，可以产生*多视图一致*的2D分割和连续的3D分割；</X.Uli>
+                        <X.Uli>对合成室内NeRF数据集进行实验和消融研究。</X.Uli>
                     </>
                 }
                 method={
@@ -105,16 +104,16 @@ export default function Post() {
             <PaperSummary
                 topic={
                     <>
-                        <X.P>提出一种不使用高分辨率训练数据，解决高分辨率分割问题的方法\n右图是改进后的结果：</X.P>
+                        <X.P>提出一种不使用高分辨率训练数据，解决高分辨率分割问题的方法。右图是改进后的结果：</X.P>
                         <X.Image src="cascadepsp.jpg" width="400px" filterDarkTheme />
                     </>
                 }
             />
             <X.H2 href="https://arxiv.org/pdf/2312.00860.pdf">【SAGA】Segment Any 3D Gaussians (2023)</X.H2>
-            <PaperSummary topic="交互式3D分割" />
+            <PaperSummary topic="交互式3D分割`(promptable segmentation)`。" />
             <X.H1>学习</X.H1>
             <X.H2 href="https://www.cv-foundation.org/openaccess/content_cvpr_2014/papers/Girshick_Rich_Feature_Hierarchies_2014_CVPR_paper.pdf">【R-CNN】Rich Feature Hierarchies for Accurate Object Detection and Semantic Segmentation (2014)</X.H2>
-            <PaperSummary topic="提出`Regions with CNN features, R-CNN`提高目标检测性能" method="区域提议`(Region Proposals)`：使用`selective search`生成候选框" experiment="在`PASCAL VOC 2012`取得`mAP 53.3%`，在`ILSVRC 2013`竞赛数据集取得`mAP 31.4%`" />
+            <PaperSummary topic="提出`Regions with CNN features, R-CNN`提高目标检测性能。" method="区域提议`(Region Proposals)`：使用`selective search`生成候选框" experiment="在`PASCAL VOC 2012`取得`mAP 53.3%`，在`ILSVRC 2013`竞赛数据集取得`mAP 31.4%`。" />
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>更多笔记</X.H3>
                 <X.P>转载自@动手学深度学习 - 区域卷积神经网络系列[https://zh-v2.d2l.ai/chapter_computer-vision/rcnn.html]@</X.P>
@@ -163,7 +162,7 @@ export default function Post() {
             </X.HighlightBlock>
             <X.H2 href="https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Long_Fully_Convolutional_Networks_2015_CVPR_paper.pdf">【FCN】Fully Convolutional Networks for Semantic Segmentation (2015)</X.H2>
             <PaperSummary
-                topic="使用全卷积网络进行语义分割"
+                topic="使用全卷积网络进行语义分割。"
                 method="
                 是将现有的分类网络（AlexNet、VGG Net、GoogLeNet）改造为全卷积网络，以便在语义分割任务上进行端到端（输入图像，输出分割掩码）的训练。\n
                 改造的方式是将最后的全连接层替换成卷积层。
@@ -178,6 +177,17 @@ export default function Post() {
                 <X.H3>FCN中的转置卷积</X.H3>
                 <X.P>例如对于ImageNet的图片输入，大小通常为$224 \times 224 \times 3$（RGB通道）；经过卷积后缩小宽高缩小`32`倍，通道增加到`512`，变成$7 \times 7 \times 512$的特征图。此时FCN会先通过一个`1x1conv`进行通道降维，然后通过转置卷积将特征图的高度和宽度增加`32`倍，*输出通道数等于类别数*，相当于储存了对每一类的预测结果。</X.P>
             </X.HighlightBlock>
+            <X.H2 href="https://arxiv.org/pdf/1911.11907">【GhostNet】GhostNet: More Features from Cheap Operations (2020)</X.H2>
+            <PaperSummary
+                topic="在嵌入式设备上部署CNN通常由于内存和计算资源受限而困难，GhostNet提出了Ghost模块，用低成本的操作生成更多特征图，可以作为一种轻量化的深度卷积模型架构"
+                method={
+                    <>
+                        <X.P>特征图的各层之间有很多是相似的（冗余信息），论文希望能通过更低成本的计算量去获取它们。</X.P>
+                        <X.Image src="ghost_module.jpg" width="600px" filterDarkTheme />
+                        <X.P>对于某个特征层，只用卷积操作生成部分真实的特征层，剩余的特征层通过对真实的特征层线性变换生成，最后将这些特征层拼接在一起。</X.P>
+                    </>
+                }
+            />
         </>
     );
 }
