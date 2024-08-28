@@ -148,7 +148,7 @@ export default function Post() {
                                dw 0e654h,903fh,2b1ah,45dch,89efh,1abch,45d2h,7f9eh
                         ;0x3c5b_2487_e1af_965f_d2c8_7b45_10d2_e3f8
                                dw 0e3f8h,10d2h,7b45h,0d2c8h,965fh,0e1afh,2487h,3c5bh
-        
+
                         ;ans = 0xbbf9_6a59_fc6c_204f_18a4_a65f_a112_ca4c
                         ;答案在内存中应该是：4C CA 12 A1 5F A6 A4 18 - 4F 20 6C FC 59 6A F9 BB
                     datasg ends
@@ -168,21 +168,21 @@ export default function Post() {
                     ;sum
                            dw 8 dup(0)
                 datasg ends
-                
+
                 stcksg segment
                            db 16 dup(0)
                 stcksg ends
-                
+
                 codesg segment
-                    start: 
+                    start:
                            mov  ax,datasg
                            mov  ds,ax
-                
+
                            call add128
-                
+
                            mov  ax,4c00h
                            int  21h
-                
+
                     add128:
                            push ax
                            push cx
@@ -225,23 +225,23 @@ export default function Post() {
                 datasg segment
                            db 9,11,9,1,9,5,63,38
                 datasg ends
-                
+
                 stcksg segment
                            db 16 dup(0)
                 stcksg ends
-                
+
                 codesg segment
-                    start: 
+                    start:
                            mov  ax,datasg
                            mov  ds,ax
-                
+
                            mov  ax,0
                            call stats
-                
+
                            mov  ax,4c00h
                            int  21h
-                
-                    stats: 
+
+                    stats:
                            push cx
                            push si
                            mov  si,0
@@ -287,23 +287,23 @@ export default function Post() {
                            db 'Welcome to MASM!'
                            db 16 dup(0)
                 datasg ends
-                
+
                 stcksg segment
                            db 16 dup(0)
                 stcksg ends
-                
+
                 codesg segment
-                    start: 
+                    start:
                            mov  ax,datasg
                            mov  ds,ax
                            mov  es,ax
-                
+
                            call copy
-                
+
                            mov  ax,4c00h
                            int  21h
-                
-                    copy:  
+
+                    copy:
                            push si
                            push di
                            mov  si,0

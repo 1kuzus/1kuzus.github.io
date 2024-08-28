@@ -19,7 +19,7 @@ export default function Post() {
                 code={`
                 assume cs:codesg
                 codesg segment
-                    start: 
+                    start:
                            nop
                            nop
                     s:     mov ax, offset s    ;相当于mov ax,2
@@ -210,9 +210,9 @@ export default function Post() {
                 stcksg segment
                            db 16 dup(0)
                 stcksg ends
-                
+
                 codesg segment
-                    start: 
+                    start:
                            mov  ax,2
                            push ax
                            mov  ax,5
@@ -220,7 +220,7 @@ export default function Post() {
                            call cube
                            mov  ax,4c00h
                            int  21h
-                
+
                     cube:  push bp           ;保存BP
                            mov  bp,sp
                            mov  ax,[bp+4]
@@ -264,27 +264,27 @@ export default function Post() {
                            db 'conversation',4 dup(0)
                            db 'masm',12 dup(0)
                 datasg ends
-                
+
                 stcksg segment
                            db 16 dup(0)
                 stcksg ends
-                
+
                 codesg segment
-                    start: 
+                    start:
                            mov  ax,datasg
                            mov  ds,ax
-                
+
                            mov  bx,0
                            mov  cx,4
                     s:     mov  si,bx
                            call func
                            add  bx,10h
                            loop s
-                
+
                            mov  ax,4c00h
                            int  21h
-                
-                    func:  
+
+                    func:
                            push cx
                            push si
                            mov  ch,0

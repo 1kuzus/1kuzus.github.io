@@ -71,7 +71,6 @@ export default function Post() {
             <X.P>深度可分离卷积的总参数量为$h \times w \times D_i + D_i \times D_o$。</X.P>
             <X.H2>基于Ghost特征的轻量化网络</X.H2>
             <X.H2>知识蒸馏</X.H2>
-            
         </>
     );
 }
