@@ -183,8 +183,8 @@ export default function Post() {
                 method={
                     <>
                         <X.P>特征图的各层之间有很多是相似的（冗余信息），论文希望能通过更低成本的计算量去获取它们。</X.P>
-                        <X.Image src="ghost_module.jpg" width="600px" filterDarkTheme />
-                        <X.P>对于某个特征层，只用卷积操作生成部分真实的特征层，剩余的特征层通过对真实的特征层线性变换生成，最后将这些特征层拼接在一起。</X.P>
+                        <X.Image src="ghost_module.jpg" width="400px" filterDarkTheme />
+                        <X.P>对于某个特征层，只用较少卷积操作生成部分真实的特征层（固有特征图），剩余的特征层通过对固有特征图的每个通道线性变换生成，最后将这些特征层拼接在一起。</X.P>
                     </>
                 }
             />
