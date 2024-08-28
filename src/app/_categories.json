@@ -93,7 +93,6 @@
             "/24a/games101-02-rasterization/",
             "/24a/games101-03-shading/",
             "/24a/games101-04-geometry/",
-            "/24b/by-questions/",
             "/24c/assembly-1/",
             "/24c/assembly-2/",
             "/24c/assembly-3/",
@@ -104,6 +103,7 @@
     {
         "categoryName": "杂记",
         "posts": [
+            "/24b/by-questions/",
             "/longtime/hundred-thousand/",
             "/longtime/linux-commands/"
         ]

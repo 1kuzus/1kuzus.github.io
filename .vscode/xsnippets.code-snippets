@@ -161,7 +161,7 @@
 		"scope": "javascript,typescript",
 		"prefix": "ximage",
 		"body": [
-			"<X.Image src=\"fig1.jpg\" width=\"100%$1\" />"
+			"<X.Image src=\"fig1$1.jpg\" width=\"100%\" />"
 		],
 		"description": "X.Image tag"
 	},
