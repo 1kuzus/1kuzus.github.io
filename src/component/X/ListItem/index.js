@@ -20,7 +20,7 @@ let oliIndex = 0;
 function addOliIndex() {
     return ++oliIndex;
 }
-export function resetOliIndex(idx) {
+function resetOliIndex(idx) {
     return (oliIndex = idx);
 }
 export function Oli(props) {
