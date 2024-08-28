@@ -142,8 +142,7 @@ export default function Post() {
             <X.HighlightBlock>
                 <X.P>8086 CPU只知道栈顶的位置，不知道栈的大小有多大，并不能保证栈操作不会越界。编程时需要程序员主动避免栈溢出风险。</X.P>
             </X.HighlightBlock>
-            <X.H1>练习</X.H1>
-            <X.H2>DEBUG.EXE的使用</X.H2>
+            <X.H1>DEBUG.EXE的使用</X.H1>
             <X.P>在终端输入`debug`即可，在`-`后输入参数。</X.P>
             <X.Uli>`r`：查看所有寄存器内容</X.Uli>
             <X.Uli>`r [reg]`：修改寄存器`reg`内容</X.Uli>
@@ -156,6 +155,7 @@ export default function Post() {
             <X.Uli>`t [cnt]`：执行`cnt`步`CS:IP`处的指令（`cnt`是`16`进制数）</X.Uli>
             <X.Uli>`t [=addr] [cnt]`：执行`cnt`步`addr`处的指令</X.Uli>
             <X.Image src="fig1.jpg" width="100%" />
+            <X.H1>练习</X.H1>
             <X.H2>A+B</X.H2>
             <X.HighlightBlock bgcolor="blue">
                 <X.P>使用`debug`编写、运行一个程序，计算`0789H + 0ABCH`的值。</X.P>
