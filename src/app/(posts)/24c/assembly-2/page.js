@@ -280,7 +280,7 @@ export default function Post() {
                 end
                 `}
             />
-            <X.P>结果是`405H`。</X.P>
+            <X.P>结果是`405h`。</X.P>
             <X.Image src="fig4.jpg" width="100%" />
             <X.H2>复制内存（使用loop和段前缀）</X.H2>
             <X.HighlightBlock bgcolor="blue">
