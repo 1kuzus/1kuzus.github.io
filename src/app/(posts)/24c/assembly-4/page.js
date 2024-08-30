@@ -288,11 +288,11 @@ export default function Post() {
                            push cx
                            push si
                            mov  ch,0
-                    f:     mov  cl,[si]                    ;遇到0就停止
+                    w:     mov  cl,[si]                    ;遇到0就停止
                            jcxz return
                            and  byte ptr [si],11011111b
                            inc  si
-                           jmp  f
+                           jmp  w
                     return:
                            pop  si
                            pop  cx

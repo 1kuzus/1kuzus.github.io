@@ -62,9 +62,9 @@ export default function Post() {
             <X.P>段地址$\times$`16`$+$偏移地址$=$物理地址</X.P>
             <X.Uli>一个段的起始地址一定是`16`的倍数</X.Uli>
             <X.Uli>由于偏移地址是`16`位，所以一个段的最大长度为`64KB`</X.Uli>
-            <X.P>例如数据在`21F60H`内存单元中，段地址是`2000H`，表示方法可以是：</X.P>
-            <X.Uli>数据在内存`2000:1F60`单元中；</X.Uli>
-            <X.Uli>数据在内存的`2000H`段的`1F60H`单元中；</X.Uli>
+            <X.P>例如数据在`21f60h`内存单元中，段地址是`2000h`，表示方法可以是：</X.P>
+            <X.Uli>数据在内存`2000:1f60`单元中；</X.Uli>
+            <X.Uli>数据在内存的`2000h`段的`1f60h`单元中；</X.Uli>
             <X.P>有四个专门存放段地址的寄存器：</X.P>
             <X.Uli>`CS`：代码段寄存器</X.Uli>
             <X.Uli>`DS`：数据段寄存器</X.Uli>
@@ -97,7 +97,7 @@ export default function Post() {
                     language="asm8086"
                     code={`
                     jmp 2000:3
-                    jmp 4:0B16
+                    jmp 4:0b16
                     `}
                 />
             </X.Uli>
@@ -107,20 +107,20 @@ export default function Post() {
             </X.Uli>
             <X.H1>内存中字的存储</X.H1>
             <X.P>低位字节存放在低地址，高位字节存放在高地址，也就是小端序。</X.P>
-            <X.P>例：在起始地址为`0`的单元中，存放`4E20H`；在起始地址为`2`的单元中，存放`0012H`；内存情况为：</X.P>
+            <X.P>例：在起始地址为`0`的单元中，存放`4e20h`；在起始地址为`2`的单元中，存放`0012h`；内存情况为：</X.P>
             <X.CodeBlock
                 language="text"
                 code={`
-                0: 20H
-                1: 4EH
-                2: 12H
-                3: 00H
+                0: 20h
+                1: 4eh
+                2: 12h
+                3: 00h
                 `}
             />
-            <X.Uli>`0`地址单元存放的*字节型*数据是：`20H`</X.Uli>
-            <X.Uli>`0`地址*字*单元存放的*字型*数据是：`4E20H`</X.Uli>
-            <X.Uli>`2`地址单元存放的*字节型*数据是：`12H`</X.Uli>
-            <X.Uli>`2`地址*字*单元存放的*字型*数据是：`0012H`</X.Uli>
+            <X.Uli>`0`地址单元存放的*字节型*数据是：`20h`</X.Uli>
+            <X.Uli>`0`地址*字*单元存放的*字型*数据是：`4e20h`</X.Uli>
+            <X.Uli>`2`地址单元存放的*字节型*数据是：`12h`</X.Uli>
+            <X.Uli>`2`地址*字*单元存放的*字型*数据是：`0012h`</X.Uli>
             <X.H1>8086 CPU从内存单元读取数据</X.H1>
             <X.P>用`DS`寄存器存放要访问的数据的段地址，偏移地址用`[...]`的形式给出，例如：</X.P>
             <X.CodeBlock
@@ -131,9 +131,9 @@ export default function Post() {
                 mov al,[0]
                 `}
             />
-            <X.P>以上代码的作用是将`1000:0`也就是`10000H`中的数据读到`AL`中。</X.P>
+            <X.P>以上代码的作用是将`1000:0`也就是`10000h`中的数据读到`AL`中。</X.P>
             <X.P>`DS`也不支持立即数赋值，需要将数据先存入通用寄存器，再送入段寄存器。</X.P>
-            <X.P>8086 CPU也可以一次性传输一个字，假如`DS`寄存器的值为`1000H`，则`mov ax,[0]`就表示将`1000:0`中的字送入`AX`中；`mov [0],cx`就表示将`CX`中的字送入`1000:0`中。</X.P>
+            <X.P>8086 CPU也可以一次性传输一个字，假如`DS`寄存器的值为`1000h`，则`mov ax,[0]`就表示将`1000:0`中的字送入`AX`中；`mov [0],cx`就表示将`CX`中的字送入`1000:0`中。</X.P>
             <X.H1>栈操作（push指令、pop指令）</X.H1>
             <X.P>基于8086 CPU编程，可以将一段内存当作栈来使用。8086 CPU有两个与栈相关的寄存器，`SS`存放栈顶的段地址，`SP`存放栈顶的偏移地址。在任意时刻，`SS:SP`指向栈顶元素。</X.P>
             <X.P>`push`和`pop`指令用于栈操作：</X.P>
@@ -158,17 +158,17 @@ export default function Post() {
             <X.H1>练习</X.H1>
             <X.H2>A+B</X.H2>
             <X.HighlightBlock bgcolor="blue">
-                <X.P>使用`debug`编写、运行一个程序，计算`0789H + 0ABCH`的值。</X.P>
+                <X.P>使用`debug`编写、运行一个程序，计算`0789h + 0abch`的值。</X.P>
             </X.HighlightBlock>
             <X.Image src="fig2.jpg" width="100%" />
-            <X.P>运行后`AX`的值为`1245H`。</X.P>
+            <X.P>运行后`AX`的值为`1245h`。</X.P>
             <X.H2>jmp指令</X.H2>
             <X.HighlightBlock bgcolor="blue">
                 <X.P>编程实现下图所示的程序，并分析从`2000:0`开始的执行流程。</X.P>
                 <X.Image src="fig3.jpg" width="600px" />
             </X.HighlightBlock>
             <X.Oli>`mov ax,6622`</X.Oli>
-            <X.Oli>`jmp 1000:3`（注意此时会把`CS`的值设为`1000H`）</X.Oli>
+            <X.Oli>`jmp 1000:3`（注意此时会把`CS`的值设为`1000h`）</X.Oli>
             <X.Oli>`mov ax,0000`</X.Oli>
             <X.Oli>`mov bx,ax`</X.Oli>
             <X.Oli>`jmp bx`（也就是`jmp 0000`，相当于跳转到`1000:0`）</X.Oli>
@@ -180,10 +180,10 @@ export default function Post() {
                 <X.CodeBlock
                     language="text"
                     code={`
-                    10000H: 23H
-                    10001H: 11H
-                    10002H: 22H
-                    10003H: 66H
+                    10000h: 23h
+                    10001h: 11h
+                    10002h: 22h
+                    10003h: 66h
                     `}
                 />
                 <X.P>然后运行以下指令，观察寄存器值的结果。</X.P>
@@ -202,9 +202,9 @@ export default function Post() {
             </X.HighlightBlock>
             <X.P>写入内存数据和代码：</X.P>
             <X.Image src="fig4.jpg" width="100%" />
-            <X.P>执行`-t 7`后，使用`-r`查看寄存器值，`AX`为`1123H`，`BX`为`8833H`，`CX`为`8833H`。</X.P>
+            <X.P>执行`-t 7`后，使用`-r`查看寄存器值，`AX`为`1123h`，`BX`为`8833h`，`CX`为`8833h`。</X.P>
             <X.Image src="fig5.jpg" width="100%" />
-            <X.P>注意操作对象是字型数据，一次操作`16`位数据，例如`mov cx,[1]`是将`2211H`送入寄存器`CX`。</X.P>
+            <X.P>注意操作对象是字型数据，一次操作`16`位数据，例如`mov cx,[1]`是将`2211h`送入寄存器`CX`。</X.P>
             <X.H2>栈操作</X.H2>
             <X.HighlightBlock bgcolor="blue">
                 <X.P>使用`debug`编写、运行如下程序，分析最终寄存器`AX`、`BX`的值。</X.P>
@@ -230,16 +230,16 @@ export default function Post() {
             <X.CodeBlock
                 language="text"
                 code={`
-                1000BH: ...
-                1000CH: 1BH
-                1000DH: 00H
-                1000EH: 1AH
-                1000FH: 00H
-                10010H: ...
+                1000bh: ...
+                1000ch: 1bh
+                1000dh: 00h
+                1000eh: 1ah
+                1000fh: 00h
+                10010h: ...
                 `}
             />
             <X.Image src="fig6.jpg" width="100%" />
-            <X.P>此时`SP`值为`000CH`，执行两次`pop`时，先将`001BH`送入`AX`，再将`001AH`送入`BX`。</X.P>
+            <X.P>此时`SP`值为`000ch`，执行两次`pop`时，先将`001bh`送入`AX`，再将`001ah`送入`BX`。</X.P>
             <X.Image src="fig7.jpg" width="100%" />
         </>
     );
