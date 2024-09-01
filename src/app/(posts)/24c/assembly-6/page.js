@@ -114,7 +114,7 @@ export default function Post() {
             <X.H2>int指令与iret指令</X.H2>
             <X.P>在执行`int n`时，逻辑上相当于自动依次执行了：`pushf`、`push cs`、`push ip`；它和`call`指令保存`CS`和`IP`的行为很像，但还保存并修改了标志寄存器的值。</X.P>
             <X.P>对应地，从一个中断处理程序返回到原程序时，需要使用`iret`指令，逻辑上相当于自动依次执行了：`pop ip`、`pop cs`、`popf`。</X.P>
-            <X.H2>int指令引发的中断</X.H2>
+            <X.H2>int指令示例</X.H2>
             <X.P>在这里我们编写设计一个`int 7ch`中断，功能是将以`0`结尾的纯字母字符串转为大写，参数是`DS:SI`指向字符串首地址。</X.P>
             <X.P>先看不使用中断，只用最一般的子程序调用的实现：</X.P>
             <X.CodeBlock
@@ -174,7 +174,7 @@ export default function Post() {
 
                 codesg segment
                        start:
-                       ;安装中断程序
+                       ;安装中断处理程序
                                 mov  ax,0
                                 mov  es,ax
                                 mov  di,200h                                ;设置安装位置，安装到ES:DI处
@@ -293,7 +293,7 @@ export default function Post() {
             <X.P>DOS中断是由操作系统提供的、更为高层的中断，同样提供了丰富的功能，使用时查手册即可。下图列出了一些DOS中断，并以`21h`为例做展开。</X.P>
             <X.Image src="fig7.jpg" width="100%" filterDarkTheme />
             <X.H2>二者的联系</X.H2>
-            <X.P>BIOS和DOS在所提供的中断程序中包含了许多子程序，这些子程序实现了编程时常用到的功能。\n这些功能大多是调用外设的功能，而外设的硬件细节太多，常调用ROM中的BIOS中断来完成操作；\n对于DOS中断来说，和硬件设备相关的DOS中断程序中，一般都是在操作系统级调用BIOS的中断程序来实现的，提供更加高层的一些功能。\n当然如果这些都不能满足需求，用户也可以在程序里直接和外设进行联系（端口操作）。</X.P>
+            <X.P>BIOS和DOS在所提供的中断处理程序中包含了许多子程序，这些子程序实现了编程时常用到的功能。\n这些功能大多是调用外设的功能，而外设的硬件细节太多，常调用ROM中的BIOS中断来完成操作；\n对于DOS中断来说，和硬件设备相关的DOS中断处理程序中，一般都是在操作系统级调用BIOS的中断处理程序来实现的，提供更加高层的一些功能。\n当然如果这些都不能满足需求，用户也可以在程序里直接和外设进行联系（端口操作）。</X.P>
             <X.Image src="fig8.jpg" width="600px" filterDarkTheme />
             <X.H1>端口的读写</X.H1>
             <X.P>CPU可以直接读写三个地方的数据：CPU内部的寄存器、内存单元、端口；而端口对应网卡、显卡等等外部芯片。这些外部芯片工作时，都有一些寄存器由CPU读写；而从CPU的角度，就把这些寄存器当作端口并统一编址。</X.P>
@@ -366,7 +366,7 @@ export default function Post() {
                 <X.P>执行`int 9`中断处理程序</X.P>
                 <X.HighlightBlock>
                     <X.H3>BIOS键盘缓冲区</X.H3>
-                    <X.P>BIOS键盘缓冲区是系统启动后，BIOS用于存放`int 9`中断例程所接收的键盘输入的内存区。BIOS键盘缓冲区可以存储最多`15`个键盘输入，每个键盘输入用一个字存放，高位字节存放扫描码，低位字节存放ASCII码。</X.P>
+                    <X.P>BIOS键盘缓冲区是系统启动后，BIOS用于存放`int 9`中断处理程序所接收的键盘输入的内存区。BIOS键盘缓冲区可以存储最多`15`个键盘输入，每个键盘输入用一个字存放，高位字节存放扫描码，低位字节存放ASCII码。</X.P>
                     <X.P>如果输入了控制键和切换键，内存中有一个特殊的字节：键盘状态字节，地址是`00417h`，用于存放控制键和切换键的状态信息。字节内容为：</X.P>
                     <X.Table
                         fromText={`
@@ -380,6 +380,16 @@ export default function Post() {
                 </X.HighlightBlock>
                 <X.P>程序读出`60h`端口中的扫描码，如果是字符键的扫描码，将该扫描码和它所对应的ASCII码送入内存中的BIOS键盘缓冲区；如果是控制键和切换键的扫描码，则更新键盘状态字节。</X.P>
             </X.Oli>
+            <X.H2>更多中断操作</X.H2>
+            <X.Image src="fig13.jpg" width="800px" filterDarkTheme />
+            <X.P>硬件中断、BIOS中断、DOS中断是由底层至上层针对键盘操作提供的不同功能。</X.P>
+            <X.P>以BIOS`int 16h`中断为例，第`0`号功能的过程是：</X.P>
+            <X.Oli reset>检查键盘缓冲区是否有数据</X.Oli>
+            <X.Oli>如果没有，重复第`1`步</X.Oli>
+            <X.Oli>读取缓冲区第一个字单元的键盘输入</X.Oli>
+            <X.Oli>将读取的扫描码送入`AH`，ASCII码送入`AL`</X.Oli>
+            <X.Oli>将已读取的键盘输入从缓冲区中删除</X.Oli>
+            <X.P>`int 16h`中断和`int 9`中断是一对相互配合的程序，`int 9`中断处理程序向键盘缓冲区中写入，`int 16h`中断处理程序从缓冲区中读出。它们写入和读出的时机不同，`int 9`中断处理程序在有键按下的时候向键盘缓冲区中写入数据；而`int 16h`中断处理程序是在应用程序对其进行调用的时候，将数据从键盘缓冲区中读出。</X.P>
             <X.H1>练习</X.H1>
             <X.H2>编写除法错误的中断处理程序</X.H2>
             <X.HighlightBlock bgcolor="blue">
@@ -395,7 +405,7 @@ export default function Post() {
                 />
                 <X.P>注：除法错误不仅仅是除以`0`，还包括除数溢出等情况。</X.P>
             </X.HighlightBlock>
-            <X.P>选取从`00200h`开始的地址空间作为存放`div0`程序的目的地址。同时，我们希望中断程序能够永久驻留内存，因此为了保证正常工作，提示字符串的值也需要随程序一起复制到内存中，我们把这部分数据保存到`00200h`之前的`32`个字节（从`001e0`开始）。</X.P>
+            <X.P>选取从`00200h`开始的地址空间作为存放`div0`程序的目的地址。同时，我们希望中断处理程序能够永久驻留内存，因此为了保证正常工作，提示字符串的值也需要随程序一起复制到内存中，我们把这部分数据保存到`00200h`之前的`32`个字节（从`001e0`开始）。</X.P>
             <X.CodeBlock
                 language="asm8086"
                 code={`
@@ -411,7 +421,7 @@ export default function Post() {
 
                 codesg segment
                     start:
-                    ;安装中断程序
+                    ;安装中断处理程序
                              mov  ax,0
                              mov  es,ax
                              mov  di,200h-32                          ;设置安装位置，安装到ES:DI处，留出了32字节的数据空间用于存储提示字符串
@@ -503,6 +513,282 @@ export default function Post() {
             />
             <X.P>依次执行，在`div0.EXE`执行完成返回后，执行`bad.EXE`能够触发自定义的中断处理程序并在屏幕上输出提示内容。</X.P>
             <X.Image src="fig2.jpg" width="100%" />
+            <X.H2>自定义键盘输入处理</X.H2>
+            <X.HighlightBlock bgcolor="blue">
+                <X.P>下面的程序可以在屏幕的中心以红底黑字依次显示字符`A`~`Z`，然后结束程序。子程序`delay`的作用是控制相邻两个字符显示的时间间隔。</X.P>
+                <X.CodeBlock
+                    language="asm8086"
+                    code={`
+                    assume cs:codesg,ds:datasg,ss:stcksg
+
+                    datasg segment
+                               db 32 dup(0)
+                    datasg ends
+                    
+                    stcksg segment
+                               db 16 dup(0)
+                    stcksg ends
+                    
+                    codesg segment
+                        start: 
+                        ;一段循环在屏幕中间显示A~Z的程序
+                               mov  ax,0b800h
+                               mov  es,ax
+                               mov  al,'A'
+                               mov   byte ptr es:[80*2*12+40*2+1],40h   ;第12行、第40列，红底黑字
+                        s:     mov  es:[80*2*12+40*2],al                ;显示字符
+                               call delay
+                               inc  al
+                               cmp  al,'Z'
+                               jng  s
+                    
+                               mov  ax,4c00h
+                               int  21h
+                    
+                        ;执行双重空循环，延时
+                        delay: 
+                               push cx
+                               mov  cx,10h
+                        s1:    push cx
+                               mov  cx,0ffffh
+                        s2:    loop s2
+                               pop  cx
+                               loop s1
+                               pop  cx
+                               ret
+                    codesg ends
+                    end start
+                    `}
+                />
+                <X.P>现在希望加入一个功能，在程序执行的任何时刻，按下`Alt`键可以切换字符的显示背景。（在红/绿色之间切换即可，只需要每次对显示属性字节异或`01100000b`）</X.P>
+            </X.HighlightBlock>
+            <X.P>与上一题不同的是，首先本题不需要安装中断处理程序，只需要程序运行时能够定制化键盘中断的功能；另外由于键盘输入的中断处理程序涉及到所有键的输入，因此不能像上题一样完全重写一个处理程序，而是大致的思路应该为在原有`9`号中断处理程序的基础上，“插入”一个条件判断，如果是`Alt`键则执行想要的功能。</X.P>
+            <X.P>综上，本题采用的思路为，先把原来的中断向量保存到内存中，然后修改原来的中断向量指向自定义的中断处理程序`i9`；在返回前还要恢复原来的中断向量。而在子程序`i9`中，还要想办法调用原来的中断处理程序，正常响应键盘输入。一个大致的框架为：</X.P>
+            <X.CodeBlock
+                language="asm8086"
+                highlightLines="13-24,29-35,40-41"
+                code={`
+                assume cs:codesg,ds:datasg,ss:stcksg
+
+                datasg segment
+                           db 32 dup(0)
+                datasg ends
+                
+                stcksg segment
+                           db 16 dup(0)
+                stcksg ends
+                
+                codesg segment
+                    start: 
+                    ;保存原来的中断向量到DS:0处
+                           mov   ax,datasg
+                           mov   ds,ax
+                           mov   ax,0
+                           mov   es,ax
+                           push  es:[9*4]
+                           pop   ds:[0]
+                           push  es:[9*4+2]
+                           pop   ds:[2]
+                    ;更改原来的中断向量
+                           mov   word ptr es:[9*4],offset i9               ;设置9号中断的IP为offset i9
+                           mov   es:[9*4+2],cs                             ;设置9号中断的CS为代码段起始地址
+
+                    ;一段循环在屏幕中间显示A~Z的程序
+                           ;...
+
+                    ;恢复原来的中断向量
+                           mov   ax,0
+                           mov   es,ax
+                           push  ds:[0]
+                           pop   es:[9*4]
+                           push  ds:[2]
+                           pop   es:[9*4+2]
+                
+                           mov   ax,4c00h
+                           int   21h
+
+                    i9:
+                           ;...
+                codesg ends
+                end start
+                `}
+            />
+            <X.P>前面提到8086 CPU的中断过程为：</X.P>
+            <X.HighlightBlock bgcolor="gray">
+                <X.Oli reset>从中断信息中取得中断类型码</X.Oli>
+                <X.Oli>标志寄存器入栈（中断过程会改变标志，需要先进行保护）</X.Oli>
+                <X.Oli>设置`IF=0`，`TF=0`</X.Oli>
+                <X.Oli>`CS`入栈，`IP`入栈</X.Oli>
+                <X.Oli>从中断向量表读取中断处理程序的入口地址，设置`CS`和`IP`</X.Oli>
+                <X.Oli>开始执行中断处理程序</X.Oli>
+            </X.HighlightBlock>
+            <X.P>我们现在要在`i9`子程序中调用原来的`int 9`中断处理程序。请注意，程序之所以跳转到`i9`，是因为程序已经修改了中断向量表，然后由键盘输入产生`int 9`中断，中断过程的第`1`~`5`步已经执行完成，在第`5`步进入到`i9`子程序中；</X.P>
+            <X.P>而我们还想在`i9`子程序中手动调用被保存在`dword ptr ds:[0]`中的原来的`int 9`中断处理程序，此时没有人为我们自动执行中断过程了，需要手动模拟！因此这部分过程为：</X.P>
+            <X.Oli reset>
+                <X.P>模拟标志寄存器入栈</X.P>
+                <X.CodeBlock language="asm8086" code="pushf" />
+            </X.Oli>
+            <X.Oli>
+                <X.P>模拟设置`IF=0`，`TF=0`</X.P>
+                <X.CodeBlock
+                    language="asm8086"
+                    code={`
+                    pushf
+                    pop   bx                ;标志寄存器的值临时赋值给BX
+                    and   bh,11111100b      ;IF=0，TF=0
+                    push  bx
+                    popf                    ;将更新后的值赋值给标志寄存器
+                    `}
+                />
+            </X.Oli>
+            <X.Oli>
+                <X.P>`CS`入栈、`IP`入栈、跳转到入口地址由`call`指令完成：</X.P>
+                <X.CodeBlock language="asm8086" code="call  dword ptr ds:[0]" />
+            </X.Oli>
+            <X.P>在原中断处理程序调用完成后，就是自定义的部分：</X.P>
+            <X.CodeBlock
+                language="asm8086"
+                code={`
+                ;自定义的键盘输入处理
+                in    al,60h                                    ;读取键盘输入送入AL
+                cmp   al,38h                                    ;判断是否为Alt键
+                jne   return                                    ;不是则返回
+                mov   ax,0b800h
+                mov   es,ax
+                xor   byte ptr es:[80*2*12+40*2+1],01100000b    ;在红色和绿色背景之间切换
+                `}
+            />
+            <X.P>注意因为这是中断调用，要使用`iret`指令返回。`i9`子程序的完整代码为：</X.P>
+            <X.CodeBlock
+                language="asm8086"
+                code={`
+                i9:    
+                       push  ax
+                       push  bx
+                       push  es
+                ;------------------------------------------------------
+                ;模拟标志寄存器入栈
+                       pushf
+                ;模拟设置IF=0，TF=0
+                       pushf
+                       pop   bx
+                       and   bh,11111100b
+                       push  bx
+                       popf
+                ;call指令即可实现CS、IP入栈并跳转到入口地址
+                       call  dword ptr ds:[0]
+                ;------------------------------------------------------
+                ;自定义的键盘输入处理
+                       in    al,60h                                    ;读取键盘输入送入AL
+                       cmp   al,38h                                    ;判断是否为Alt键
+                       jne   return                                    ;不是则返回
+                       mov   ax,0b800h
+                       mov   es,ax
+                       xor   byte ptr es:[80*2*12+40*2+1],01100000b    ;在红色和绿色背景之间切换
+                return:
+                       pop   es
+                       pop   bx
+                       pop   ax
+                       iret
+                `}
+            />
+            <X.Divider />
+            <X.P>题目的完整代码为：</X.P>
+            <X.CodeBlock
+                language="asm8086"
+                code={`
+                assume cs:codesg,ds:datasg,ss:stcksg
+
+                datasg segment
+                           db 32 dup(0)
+                datasg ends
+                
+                stcksg segment
+                           db 16 dup(0)
+                stcksg ends
+                
+                codesg segment
+                    start: 
+                    ;保存原来的中断向量到DS:0处
+                           mov   ax,datasg
+                           mov   ds,ax
+                           mov   ax,0
+                           mov   es,ax
+                           push  es:[9*4]
+                           pop   ds:[0]
+                           push  es:[9*4+2]
+                           pop   ds:[2]
+                    ;更改原来的中断向量
+                           mov   word ptr es:[9*4],offset i9               ;设置9号中断的IP为offset i9
+                           mov   es:[9*4+2],cs                             ;设置9号中断的CS为代码段起始地址
+                    ;一段循环在屏幕中间显示A~Z的程序
+                           mov   ax,0b800h
+                           mov   es,ax
+                           mov   al,'A'
+                           mov   byte ptr es:[80*2*12+40*2+1],40h          ;第12行、第40列，红底黑字
+                    s:     mov   es:[80*2*12+40*2],al                      ;显示字符
+                           call  delay
+                           inc   al
+                           cmp   al,'Z'
+                           jng   s
+                    ;恢复原来的中断向量
+                           mov   ax,0
+                           mov   es,ax
+                           push  ds:[0]
+                           pop   es:[9*4]
+                           push  ds:[2]
+                           pop   es:[9*4+2]
+                
+                           mov   ax,4c00h
+                           int   21h
+                
+                    ;执行双重空循环，延时
+                    delay: 
+                           push  cx
+                           mov   cx,10h
+                    s1:    push  cx
+                           mov   cx,0ffffh
+                    s2:    loop  s2
+                           pop   cx
+                           loop  s1
+                           pop   cx
+                           ret
+                
+                    i9:    
+                           push  ax
+                           push  bx
+                           push  es
+                    ;------------------------------------------------------
+                    ;模拟标志寄存器入栈
+                           pushf
+                    ;模拟设置IF=0，TF=0
+                           pushf
+                           pop   bx
+                           and   bh,11111100b
+                           push  bx
+                           popf
+                    ;call指令即可实现CS、IP入栈并跳转到入口地址
+                           call  dword ptr ds:[0]
+                    ;------------------------------------------------------
+                    ;自定义的键盘输入处理
+                           in    al,60h                                    ;读取键盘输入送入AL
+                           cmp   al,38h                                    ;判断是否为Alt键
+                           jne   return                                    ;不是则返回
+                           mov   ax,0b800h
+                           mov   es,ax
+                           xor   byte ptr es:[80*2*12+40*2+1],01100000b    ;在红色和绿色背景之间切换
+                
+                    return:
+                           pop   es
+                           pop   bx
+                           pop   ax
+                           iret
+                codesg ends
+                end start
+                `}
+            />
+            <X.P>执行效果（按下`Alt`键切换背景颜色）：</X.P>
+            <X.Image src="fig14.gif" width="200px" />
         </>
     );
 }
