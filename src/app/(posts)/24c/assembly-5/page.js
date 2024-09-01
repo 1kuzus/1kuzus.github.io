@@ -124,6 +124,15 @@ export default function Post() {
                 std  ;DF=1
                 `}
             />
+            <X.H1>pushf指令和popf指令</X.H1>
+            <X.P>`pushf`指令是将标志寄存器的内容压入栈中，`popf`指令是将栈中的内容弹出到标志寄存器中，后面不需要其他参数。注意标志寄存器大小是两个字节。</X.P>
+            <X.CodeBlock
+                language="asm8086"
+                code={`
+                pushf
+                popf
+                `}
+            />
             <X.H1>rep指令</X.H1>
             <X.P>`rep`指令是重复指令，根据`CX`的值重复执行后面的指令，常常使用`rep movsb`和`rep movsw`。</X.P>
             <X.CodeBlock
