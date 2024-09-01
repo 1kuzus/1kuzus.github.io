@@ -56,8 +56,8 @@ export default function Post() {
             />
             <X.P>直接修改内存对应地址的值，屏幕上就会立即有变化：</X.P>
             <X.Image src="fig1.jpg" width="100%" />
-            <X.H1>中断处理程序</X.H1>
-            <X.P>在8086 CPU中，中断是一种异步事件，可以随时打断当前程序的执行。当CPU收到中断请求时，会执行中断处理程序，处理完后再返回到原程序继续执行。中断处理程序的入口地址存放在*中断向量表*中，根据中断类型码查表得到对应处理程序的入口地址。</X.P>
+            <X.H1>中断、中断处理程序</X.H1>
+            <X.P>在8086 CPU中，中断可以打断当前程序的执行，当CPU收到中断请求时，会执行中断处理程序，处理完后再返回到原程序继续执行。中断处理程序的入口地址存放在*中断向量表*中，根据中断类型码查表得到对应处理程序的入口地址。</X.P>
             <X.P>8086 CPU的中断向量表是一个`1KB`的表，包含了`256`个中断类型码对应的中断处理程序的入口地址，每个入口地址占`4`个字节，前两字节存放`IP`的值，后两字节存放`CS`的值。中断向量表的起始地址是`00000h`，终止地址是`003ffh`。</X.P>
             <X.CodeBlock
                 language="text"
@@ -81,6 +81,181 @@ export default function Post() {
             <X.Uli>可屏蔽中断：CPU可以不响应的外中断，一般是由外部硬件通过INTR`(Interrupt Request)`信号线发送给CPU；CPU是否响应取决于`IF`标志位，如果`IF=0`，CPU不响应可屏蔽中断。</X.Uli>
             <X.Uli>不可屏蔽中断：CPU必须响应的外中断，通过NMI`(Non-Maskable Interrupt)`信号线发送。8086 CPU不可屏蔽中断的中断类型码固定为`2`。</X.Uli>
             <X.P>几乎所有外部设备引发的中断都是可屏蔽中断，如键盘输入、打印机请求等；而不可屏蔽中断是在系统有必须处理的紧急情况发生时用来通知CPU的中断信息。</X.P>
+            <X.H2>8086 CPU中断过程</X.H2>
+            <X.P>中断过程由CPU的硬件自动完成，用中断类型码找到中断向量，并用它设置CS和IP。具体地说8086 CPU的中断过程为：</X.P>
+            <X.Oli>从中断信息中取得中断类型码</X.Oli>
+            <X.Oli>标志寄存器入栈（中断过程会改变标志，需要先进行保护）</X.Oli>
+            <X.Oli>设置`IF=0`，`TF=0`</X.Oli>
+            <X.Oli>`CS`入栈，`IP`入栈</X.Oli>
+            <X.Oli>从中断向量表读取中断处理程序的入口地址，设置`CS`和`IP`</X.Oli>
+            <X.Oli>开始执行中断处理程序</X.Oli>
+            <X.H2>单步中断</X.H2>
+            <X.P>标志寄存器中有两个标志位与中断有关：`TF(Trap Flag)`和`IF(Interrupt Flag)`。`TF`用于单步执行，`IF`用于可屏蔽中断的开关。</X.P>
+            <X.P>`TF`陷阱标志用于调试，当`TF=1`时，CPU在执行完一条指令后，会产生一个`1`号中断，由系统控制计算机。</X.P>
+            <X.P>`IF`中断标志用于控制CPU是否响应可屏蔽中断。当`IF=1`时，CPU响应可屏蔽中断；当`IF=0`时，CPU不响应可屏蔽中断。这个标志位可以用`sti`指令和`cli`指令来设置：</X.P>
+            <X.CodeBlock
+                language="asm8086"
+                code={`
+                sti  ;设置IF=1，CPU响应可屏蔽中断
+                cli  ;设置IF=0，CPU不响应可屏蔽中断
+                `}
+            />
+            <X.HighlightBlock bgcolor="red">
+                <X.H3>讨论</X.H3>
+                <X.Uli>
+                    <X.P>8086 CPU中断过程第`3`步中，为什么要设置`TF=0`？</X.P>
+                    <X.P>中断处理程序也是一条条的指令。如果在执行中断处理程序前`TF=1`，则执行完程序的第一条指令后，又会产生单步中断，然后转去执行单步中断的中断处理程序。此时由于`TF=1`，则执行完第一条指令后，又会产生单步中断……</X.P>
+                </X.Uli>
+                <X.Uli>
+                    <X.P>8086 CPU中断过程第`3`步中，为什么要设置`IF=0`？</X.P>
+                    <X.P>进入中断处理程序后，禁止其他的可屏蔽中断，避免中断嵌套。</X.P>
+                </X.Uli>
+            </X.HighlightBlock>
+            <X.H2>int指令与iret指令</X.H2>
+            <X.P>在执行`int n`时，逻辑上相当于自动依次执行了：`pushf`、`push cs`、`push ip`；它和`call`指令保存`CS`和`IP`的行为很像，但还保存并修改了标志寄存器的值。</X.P>
+            <X.P>对应地，从一个中断处理程序返回到原程序时，需要使用`iret`指令，逻辑上相当于自动依次执行了：`pop ip`、`pop cs`、`popf`。</X.P>
+            <X.H2>int指令引发的中断</X.H2>
+            <X.P>在这里我们编写设计一个`int 7ch`中断，功能是将以`0`结尾的纯字母字符串转为大写，参数是`DS:SI`指向字符串首地址。</X.P>
+            <X.P>先看不使用中断，只用最一般的子程序调用的实现：</X.P>
+            <X.CodeBlock
+                language="asm8086"
+                code={`
+                assume cs:codesg,ds:datasg,ss:stcksg
+
+                datasg segment
+                           db 'misunderstanding',0
+                datasg ends
+
+                stcksg segment
+                           db 16 dup(0)
+                stcksg ends
+
+                codesg segment
+                    start:
+                           mov  ax,datasg
+                           mov  ds,ax
+                           mov  si,0                       ;设置DS:SI为字符串首地址
+                           call i7ch
+
+                           mov  ax,4c00h
+                           int  21h
+
+                    i7ch:
+                           push cx
+                           push si
+                           mov  ch,0
+                    w:     mov  cx,[si]
+                           jcxz return
+                           and  byte ptr [si],11011111b
+                           inc  si
+                           jmp  w
+                    return:pop  si
+                           pop  cx
+                           ret
+                codesg ends
+                end start
+                `}
+            />
+            <X.Image src="fig11.jpg" width="100%" />
+            <X.P>现在希望编写一个`i7ch`中断处理程序，由`int 7ch`触发中断；此时需要一个确定、但又不影响系统的内存位置存放程序；一个技巧是使用中断向量表的内存区域，因为别的程序不会用到，而系统要处理的中断事件也远没有`256`个，因此可以利用中断向量表后段地址空间，这里选取从`00200h`开始的地址空间作为存放`i7ch`程序的目的地址。</X.P>
+            <X.CodeBlock
+                language="asm8086"
+                highlightLines="13-20,25,30-47,60"
+                code={`
+                assume cs:codesg,ds:datasg,ss:stcksg
+
+                datasg segment
+                              db 'misunderstanding',0
+                datasg ends
+
+                stcksg segment
+                              db 16 dup(0)
+                stcksg ends
+
+                codesg segment
+                       start:
+                       ;安装中断程序
+                                mov  ax,0
+                                mov  es,ax
+                                mov  di,200h                                ;设置安装位置，安装到ES:DI处
+                                call install
+                       ;设置中断向量表
+                                mov  word ptr es:[7ch*4],200h               ;设置7ch号中断的IP=200h
+                                mov  word ptr es:[7ch*4+2],0                ;设置7ch号中断的CS=0
+                       ;调用中断实现功能
+                                mov  ax,datasg
+                                mov  ds,ax
+                                mov  si,0                                   ;设置DS:SI为字符串首地址
+                                int  7ch
+
+                                mov  ax,4c00h
+                                int  21h
+
+                       ;中断安装程序
+                       ;使用movsb指令安装，该指令从DS:SI复制到ES:DI，ES:DI在前面已经设置好
+                       install:
+                                push ax
+                                push cx
+                                push si
+                                push ds
+                                cld                                         ;设置方向标志
+                                mov  ax,cs
+                                mov  ds,ax                                  ;设置DS为代码段起始地址
+                                mov  si,offset i7ch                         ;设置SI为offset i7ch（从子程序开始处复制）
+                                mov  cx,offset end_i7ch - offset i7ch       ;使用地址标号相减得到指令长度，也是循环次数
+                                rep  movsb
+                                pop  ds
+                                pop  si
+                                pop  cx
+                                pop  ax
+                                ret
+
+                       i7ch:
+                                push cx
+                                push si
+                                mov  ch,0
+                       w:       mov  cx,[si]
+                                jcxz return
+                                and  byte ptr [si],11011111b
+                                inc  si
+                                jmp  w
+                       return:  pop  si
+                                pop  cx
+                                iret
+                       end_i7ch:
+                                nop
+                codesg ends
+                end start
+                `}
+            />
+            <X.P>所谓的“安装程序”就是将`i7ch`中断处理程序的代码复制到内存中（通过`movsb`指令复制机器码），然后还需要修改中断向量表，将`7ch`号中断的入口地址设置为复制到的内存地址。这样触发`7ch`中断时就能够找到自定义的中断处理程序了。</X.P>
+            <X.P>执行的效果是相同的：数据段中的字符串会被改写为大写，但要注意此时中断处理程序已经写入了内存，在其他程序中可以直接调用`int 7ch`实现同样的功能！例如编写一个`test`程序：</X.P>
+            <X.CodeBlock
+                language="asm8086"
+                code={`
+                assume cs:codesg,ds:datasg
+
+                datasg segment
+                              db 'internationalism',0
+                datasg ends
+
+                codesg segment
+                       start:
+                              mov ax,datasg
+                              mov ds,ax
+                              mov si,0
+                              int 7ch
+
+                              mov ax,4c00h
+                              int 21h
+                codesg ends
+                end start
+                `}
+            />
+            <X.P>假设前面的程序编译后得到`i7ch.EXE`，现在做一个实验，依次执行：</X.P>
+            <X.Image src="fig12.jpg" width="100%" />
+            <X.P>可以看到`test`程序中并没有`7ch`中断相关的逻辑，但先执行过`i7ch.EXE`之后，是可以调用相关逻辑完成转换大写功能的，说明成功在内存中存入程序、并改写入口地址了。</X.P>
+            <X.H1>BIOS中断和DOS中断</X.H1>
             <X.H2>BIOS中断调用示例</X.H2>
             <X.P>BIOS中断是由BIOS提供的一些服务程序，可以通过`int`指令调用。前面提到可以直接操作显存来控制屏幕显示的内容，而定位到具体的地址需要细节的计算；而BIOS的`10h`号中断提供了一系列关于字符显示的功能，包括设置光标位置、在指定位置显示字符等。BIOS中断相当于封装了底层的细节，提供了更方便的调用方式。</X.P>
             <X.P>找到这些中断的中断号和功能描述，需要*查手册*！例如：</X.P>
@@ -140,7 +315,9 @@ export default function Post() {
                 out  dx,al  ;将AL的内容写入3f8h号端口
                 `}
             />
-            <X.P>在`in`指令和`out`指令中，只能使用`AL`（访问`8`位端口）或`AX`（访问`16`位端口）来存放读取或要写入的数据。</X.P>
+            <X.HighlightBlock>
+                <X.P>在`in`指令和`out`指令中，只能使用`AL`（访问`8`位端口）或`AX`（访问`16`位端口）来存放读取或要写入的数据。</X.P>
+            </X.HighlightBlock>
             <X.H2>扬声器发声示例</X.H2>
             <X.P>下面的程序可以让扬声器响一下：</X.P>
             <X.CodeBlock
@@ -173,6 +350,36 @@ export default function Post() {
                 end start
                 `}
             />
+            <X.H1>键盘相关操作</X.H1>
+            <X.H2>键盘输入的处理过程</X.H2>
+            <X.Oli reset>
+                <X.P>键盘输入</X.P>
+                <X.P>键盘上每一个键相当于一个开关，键盘中有一个芯片对每一个键的开关状态进行扫描：按下/松开一个键时，芯片都会产生一个扫描码，扫描码被送入主板上相关接口芯片的寄存器中，该寄存器的端口地址为`60h`。扫描码与ASCII码不同，下图是通码：</X.P>
+                <X.Image src="fig10.jpg" width="800px" filterDarkTheme />
+                <X.P>按下一个键产生通码，松开一个键产生断码；通码的最高位为`0`，断码的最高位为`1`；通码和断码的低`7`位是相同的。</X.P>
+            </X.Oli>
+            <X.Oli>
+                <X.P>引发`int 9`中断</X.P>
+                <X.P>键盘的输入到达`60h`端口时，相关的芯片就会向CPU发出中断类型码为`9`的可屏蔽中断信息。CPU检测到该中断信息后，如果`IF=1`，则响应中断，转去执行`int 9`中断处理程序。</X.P>
+            </X.Oli>
+            <X.Oli>
+                <X.P>执行`int 9`中断处理程序</X.P>
+                <X.HighlightBlock>
+                    <X.H3>BIOS键盘缓冲区</X.H3>
+                    <X.P>BIOS键盘缓冲区是系统启动后，BIOS用于存放`int 9`中断例程所接收的键盘输入的内存区。BIOS键盘缓冲区可以存储最多`15`个键盘输入，每个键盘输入用一个字存放，高位字节存放扫描码，低位字节存放ASCII码。</X.P>
+                    <X.P>如果输入了控制键和切换键，内存中有一个特殊的字节：键盘状态字节，地址是`00417h`，用于存放控制键和切换键的状态信息。字节内容为：</X.P>
+                    <X.Table
+                        fromText={`
+                        位|'7'|'6'|'5'|'4'|'3'|'2'|'1'|'0'
+                        含义|'Insert'|'Caps Lock'|'Num Lock'|'Scroll Lock'|'Alt'|'Ctrl'|左'Shift'|右'Shift'
+                        `}
+                        tableStyle={{
+                            thead: 'column',
+                        }}
+                    />
+                </X.HighlightBlock>
+                <X.P>程序读出`60h`端口中的扫描码，如果是字符键的扫描码，将该扫描码和它所对应的ASCII码送入内存中的BIOS键盘缓冲区；如果是控制键和切换键的扫描码，则更新键盘状态字节。</X.P>
+            </X.Oli>
             <X.H1>练习</X.H1>
             <X.H2>编写除法错误的中断处理程序</X.H2>
             <X.HighlightBlock bgcolor="blue">
@@ -188,8 +395,7 @@ export default function Post() {
                 />
                 <X.P>注：除法错误不仅仅是除以`0`，还包括除数溢出等情况。</X.P>
             </X.HighlightBlock>
-            <X.P>希望编写一个`div0`子程序做中断处理，此时需要一个确定、但又不影响系统的内存位置存放程序；一个技巧是使用中断向量表的内存区域，因为别的程序不会用到，而系统要处理的中断事件也远没有`256`个，因此可以利用中断向量表后段地址空间，这里选取从`00200h`开始的地址空间作为存放`div0`程序的目的地址。</X.P>
-            <X.P>同时，我们希望这个程序能够永久驻留内存，也就是“一劳永逸”地改变除法错误中断，提示字符串的值也需要随程序一起复制到内存中，我们把这部分数据保存到`00200h`之前的`32`个字节（从`001e0`开始）。</X.P>
+            <X.P>选取从`00200h`开始的地址空间作为存放`div0`程序的目的地址。同时，我们希望中断程序能够永久驻留内存，因此为了保证正常工作，提示字符串的值也需要随程序一起复制到内存中，我们把这部分数据保存到`00200h`之前的`32`个字节（从`001e0`开始）。</X.P>
             <X.CodeBlock
                 language="asm8086"
                 code={`
@@ -208,11 +414,9 @@ export default function Post() {
                     ;安装中断程序
                              mov  ax,0
                              mov  es,ax
-                             mov  di,200h-32                          ;设定安装位置，安装到ES:DI处，留出了32字节的数据空间用于存储提示字符串
+                             mov  di,200h-32                          ;设置安装位置，安装到ES:DI处，留出了32字节的数据空间用于存储提示字符串
                              call install
                     ;设置中断向量表
-                             mov  ax,0
-                             mov  es,ax
                              mov  word ptr es:[0],200h                ;设置0号中断的IP=200h，真正的程序从200h开始
                              mov  word ptr es:[2],0                   ;设置0号中断的CS=0
 
@@ -261,13 +465,13 @@ export default function Post() {
                              mov  di,80*2*12                          ;初始化ES:DI=b8000h+80*2*12，这目标显存的起始地址（第12行开头）
                              mov  ch,0
                     w:       mov  cl,[si]                             ;字符串循环写入显存
-                             jcxz ok                                  ;遇到0就停止
+                             jcxz return                              ;遇到0就停止
                              mov  es:[di],cl
                              mov  byte ptr es:[di+1],40h              ;红底黑字
                              inc  si
                              add  di,2
                              jmp  w
-                    ok:      pop  es
+                    return:  pop  es
                              pop  ds
                              pop  di
                              pop  si
@@ -281,7 +485,6 @@ export default function Post() {
                 end start
                 `}
             />
-            <X.P>首先调用安装程序，这里通过类似函数传参的思想指定了写入内存的起始位置为`200h-32`也就是`001e0h`（字符串常量从`001e0h`开始，`div0`程序从`00200h`开始）；然后设置`0`号中断的中断向量表。具体细节见程序注释。</X.P>
             <X.P>编译上面的程序，命名为`div0.EXE`；接下来编译一个触发除法错误中断的程序，命名为`bad.EXE`：</X.P>
             <X.CodeBlock
                 language="asm8086"
@@ -298,10 +501,8 @@ export default function Post() {
                 end start
                 `}
             />
-            <X.P>依次执行：</X.P>
+            <X.P>依次执行，在`div0.EXE`执行完成返回后，执行`bad.EXE`能够触发自定义的中断处理程序并在屏幕上输出提示内容。</X.P>
             <X.Image src="fig2.jpg" width="100%" />
-            <X.P>注意这里，在`div0.EXE`执行完成返回后，才执行的`bad.EXE`，此时仍然能够触发自定义的中断处理程序，说明成功的在内存中存入程序、并改写入口地址了。</X.P>
-            <X.Oli>还需要！！！！15.16.18.19</X.Oli>
         </>
     );
 }
