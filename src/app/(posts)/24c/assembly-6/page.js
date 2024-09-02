@@ -524,13 +524,13 @@ export default function Post() {
                     datasg segment
                                db 32 dup(0)
                     datasg ends
-                    
+
                     stcksg segment
                                db 16 dup(0)
                     stcksg ends
-                    
+
                     codesg segment
-                        start: 
+                        start:
                         ;一段循环在屏幕中间显示A~Z的程序
                                mov  ax,0b800h
                                mov  es,ax
@@ -541,12 +541,12 @@ export default function Post() {
                                inc  al
                                cmp  al,'Z'
                                jng  s
-                    
+
                                mov  ax,4c00h
                                int  21h
-                    
+
                         ;执行双重空循环，延时
-                        delay: 
+                        delay:
                                push cx
                                mov  cx,10h
                         s1:    push cx
@@ -573,13 +573,13 @@ export default function Post() {
                 datasg segment
                            db 32 dup(0)
                 datasg ends
-                
+
                 stcksg segment
                            db 16 dup(0)
                 stcksg ends
-                
+
                 codesg segment
-                    start: 
+                    start:
                     ;保存原来的中断向量到DS:0处
                            mov   ax,datasg
                            mov   ds,ax
@@ -603,7 +603,7 @@ export default function Post() {
                            pop   es:[9*4]
                            push  ds:[2]
                            pop   es:[9*4+2]
-                
+
                            mov   ax,4c00h
                            int   21h
 
@@ -662,7 +662,7 @@ export default function Post() {
             <X.CodeBlock
                 language="asm8086"
                 code={`
-                i9:    
+                i9:
                        push  ax
                        push  bx
                        push  es
@@ -702,13 +702,13 @@ export default function Post() {
                 datasg segment
                            db 32 dup(0)
                 datasg ends
-                
+
                 stcksg segment
                            db 16 dup(0)
                 stcksg ends
-                
+
                 codesg segment
-                    start: 
+                    start:
                     ;保存原来的中断向量到DS:0处
                            mov   ax,datasg
                            mov   ds,ax
@@ -738,12 +738,12 @@ export default function Post() {
                            pop   es:[9*4]
                            push  ds:[2]
                            pop   es:[9*4+2]
-                
+
                            mov   ax,4c00h
                            int   21h
-                
+
                     ;执行双重空循环，延时
-                    delay: 
+                    delay:
                            push  cx
                            mov   cx,10h
                     s1:    push  cx
@@ -753,8 +753,8 @@ export default function Post() {
                            loop  s1
                            pop   cx
                            ret
-                
-                    i9:    
+
+                    i9:
                            push  ax
                            push  bx
                            push  es
@@ -777,7 +777,7 @@ export default function Post() {
                            mov   ax,0b800h
                            mov   es,ax
                            xor   byte ptr es:[80*2*12+40*2+1],01100000b    ;在红色和绿色背景之间切换
-                
+
                     return:
                            pop   es
                            pop   bx
