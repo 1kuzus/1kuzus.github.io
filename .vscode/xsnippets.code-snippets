@@ -39,7 +39,7 @@
 	},
 	"X.Uli tag": {
 		"scope": "javascript,typescript",
-		"prefix": "xuli",
+		"prefix": ["xuli","-"],
 		"body": [
 			"<X.Uli>$1</X.Uli>",
 		],
@@ -47,7 +47,7 @@
 	},
 	"X.Oli tag": {
 		"scope": "javascript,typescript",
-		"prefix": "xoli",
+		"prefix": ["xoli","+"],
 		"body": [
 			"<X.Oli>$1</X.Oli>",
 		],
