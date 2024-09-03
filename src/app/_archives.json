@@ -15,6 +15,10 @@
         "title": "【汇编语言】流程转移与子程序",
         "time": "2024-08-20"
     },
+    "/24c/papers-sec-240817-2fa-failures/": {
+        "title": "论文精读：Security and Privacy Failures in Popular 2FA Apps (Security 2023)",
+        "time": "2024-08-17"
+    },
     "/24c/winograd/": {
         "title": "Winograd算法",
         "time": "2024-08-15"
@@ -23,7 +27,7 @@
         "title": "【汇编语言】内存寻址方式",
         "time": "2024-08-14"
     },
-    "/24c/papers-sec-d5d218-conquer/": {
+    "/24c/papers-sec-240810-conquer/": {
         "title": "论文精读：Do Not Give A Dog Bread Every Time He Wags His Tail: Stealing Passwords through Content Queries (CONQUER) Attack (NDSS 2023)",
         "time": "2024-08-10"
     },
@@ -47,7 +51,7 @@
         "title": "【汇编语言】访问寄存器和内存",
         "time": "2024-08-06"
     },
-    "/24c/papers-sec-4d7653-2fa-consistency/": {
+    "/24c/papers-sec-240728-2fa-consistency/": {
         "title": "论文精读：A Systematic Study of the Consistency of Two-Factor Authentication User Journeys on Top-Ranked Websites (NDSS 2023)",
         "time": "2024-07-28"
     },
@@ -115,7 +119,7 @@
         "title": "最小生成树与最短路算法",
         "time": "2024-05-19"
     },
-    "/24b/papers-sec-a80948-taintmini/": {
+    "/24b/papers-sec-240514-taintmini/": {
         "title": "论文精读：TAINTMINI: Detecting Flow of Sensitive Data in Mini-Programs with Static Taint Analysis (ICSE 2023)",
         "time": "2024-05-14"
     },
@@ -174,6 +178,10 @@
     "/24a/object-oriented-programming-python/": {
         "title": "Python面向对象编程",
         "time": "2024-02-29"
+    },
+    "/24a/games101-05-ray-tracing/": {
+        "title": "【GAMES101】Ray Tracing",
+        "time": "2024-02-11"
     },
     "/24a/git-merge-allow-unrelated-histories/": {
         "title": "记录：使用--allow-unrelated-histories",
