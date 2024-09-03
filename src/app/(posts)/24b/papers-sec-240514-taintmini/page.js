@@ -1,7 +1,7 @@
 import X from 'src/component/X';
 import metas from 'src/app/_metas';
 
-const path = '/24b/papers-sec-a80948-taintmini/';
+const path = '/24b/papers-sec-240514-taintmini/';
 export const {metadata} = metas[path];
 
 export default function Post() {

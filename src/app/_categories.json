@@ -17,9 +17,10 @@
             "/24b/learn-cwes/",
             "/24b/cross-site-scripting/",
             "/24b/cross-site-request-forgery/",
-            "/24b/papers-sec-a80948-taintmini/",
-            "/24c/papers-sec-4d7653-2fa-consistency/",
-            "/24c/papers-sec-d5d218-conquer/"
+            "/24b/papers-sec-240514-taintmini/",
+            "/24c/papers-sec-240728-2fa-consistency/",
+            "/24c/papers-sec-240810-conquer/",
+            "/24c/papers-sec-240817-2fa-failures/"
         ]
     },
     {
@@ -93,6 +94,7 @@
             "/24a/games101-02-rasterization/",
             "/24a/games101-03-shading/",
             "/24a/games101-04-geometry/",
+            "/24a/games101-05-ray-tracing/",
             "/24c/assembly-1/",
             "/24c/assembly-2/",
             "/24c/assembly-3/",

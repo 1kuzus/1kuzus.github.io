@@ -31,6 +31,9 @@ export default function Post() {
             <X.CodeBlock language="bash" code="cat /Library/Receipts/InstallHistory.plist" />
             <X.H2>重建Spotlight索引</X.H2>
             <X.CodeBlock language="bash" code="sudo mdutil -E /" />
+            <X.H2>修改截图的输出格式</X.H2>
+            <X.P>Mac自带截图功能（`command`+`shift`+`3`/`4`/`5`）默认输出格式为`png`，可以修改为`jpg`：</X.P>
+            <X.CodeBlock language="text" code="defaults write com.apple.screencapture type jpg" />
         </>
     );
 }

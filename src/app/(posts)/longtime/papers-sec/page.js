@@ -4,7 +4,6 @@ import metas from 'src/app/_metas';
 const path = '/longtime/papers-sec/';
 export const {metadata} = metas[path];
 
-// [Security’ 23] Security and Privacy Failures in Popular 2FA Apps https://www.usenix.org/system/files/sec23summer_198-gilsenan-prepub.pdf
 // Maginot Line: Assessing a New Cross-app Threat to PII-as-Factor Authentication in Chinese Mobile Apps
 // zxcvbn Low-Budget Password Strength Estimation https://www.usenix.org/system/files/conference/usenixsecurity16/sec16_paper_wheeler.pdf
 
