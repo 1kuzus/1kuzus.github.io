@@ -41,6 +41,13 @@ export default function Post() {
                 <X.Uli>Sound-Proof</X.Uli>
                 <X.Uli>One-Button Authentication：一键认证，用户在PC登录时手机端会有提示，用户选择允许/拒绝即可；如果攻击者在短时间内同步登录，用户如果没有正确分辨出请求的发起方，可能存在安全问题。</X.Uli>
             </X.HighlightBlock>
+            <X.H2 href="https://www.usenix.org/system/files/sec23summer_198-gilsenan-prepub.pdf">Security and Privacy Failures in Popular 2FA Apps (Security 2023)</X.H2>
+            <X.HighlightBlock bgcolor="gray">
+            </X.HighlightBlock>
+            <X.HighlightBlock bgcolor="blue">
+                <X.H3>更多笔记</X.H3>
+            </X.HighlightBlock>
+
             <X.H1>其他</X.H1>
             <X.H2 href="https://www.usenix.org/system/files/sec22-sanusi-bohuk.pdf">Gossamer: Securely Measuring Password-based Logins (Security 2022)</X.H2>
             <X.HighlightBlock bgcolor="gray">
