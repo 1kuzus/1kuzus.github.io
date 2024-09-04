@@ -640,7 +640,7 @@ export default function Post() {
             <X.Oli>
                 <X.P>迁移学习的三个基本类型是？</X.P>
                 <X.P>答：</X.P>
-                <X.Formula text="f^\ast=\text{argmin}_f \frac{1}{N_s} \sum_{i=1}^{N_s} \text{Loss}(v_if(x_i),y_i)+\lambda R(T(D_s),T(D_t))" />
+                <X.Formula text="f^\ast=\argmin_f \frac{1}{N_s} \sum_{i=1}^{N_s} \text{Loss}(v_if(x_i),y_i)+\lambda R(T(D_s),T(D_t))" />
                 <X.Uli>基于样本的迁移学习：核心思想是增大源域样本中，与目标域样本差异度小的比重，根据源域和目标域的相似度来学习源域样本的权重$v_i$。</X.Uli>
                 <X.Uli>基于特征的迁移学习：学习一个作用于源域和目标域上的特征变换函数$T$来最小化迁移正则化项$R$。</X.Uli>
                 <X.Uli>基于模型的迁移学习：学习如何将源域的判别函数$f$对目标域数据进行正则化和微调。</X.Uli>

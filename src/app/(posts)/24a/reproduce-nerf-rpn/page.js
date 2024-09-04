@@ -57,7 +57,7 @@ export default function Post() {
             <X.P>作者提供了数据集的@OneDrive链接[https://hkustconnect-my.sharepoint.com/:f:/g/personal/bhuai_connect_ust_hk/Ekjf3YC0W9BMsc-jHWXI4xEBy5s_OJBLEbebNVIprd4zMg?e=FgbN9S]@，这里以`3D-FRONT`数据集作为例子，需要从作者提供的链接中下载`front3d_nerf_data.zip`和`front3d_rpn_data.zip`。</X.P>
             <X.P>假设数据集解压的路径为`E:\front3d_nerf_data`和`E:\front3d_rpn_data`。</X.P>
             <X.H2>可视化数据集</X.H2>
-            <X.P>在完成上面步骤后，就可以先利用Instant-NGP的UI可视化数据集中标注的`ground truth`了，这里以场景`3dfront_0004_00`为例：</X.P>
+            <X.P>在完成上面步骤后，就可以先利用Instant-NGP的UI可视化数据集中标注的Ground Truth了，这里以场景`3dfront_0004_00`为例：</X.P>
             <X.CodeBlock
                 language="bash"
                 code={`

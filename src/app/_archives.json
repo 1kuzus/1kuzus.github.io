@@ -7,6 +7,10 @@
         "title": "模型优化概述：量化、压缩、轻量化",
         "time": "2024-08-26"
     },
+    "/24c/papers-sec-240824-zxcvbn/": {
+        "title": "论文精读：zxcvbn: Low-Budget Password Strength Estimation",
+        "time": "2024-08-24"
+    },
     "/24c/assembly-5/": {
         "title": "【汇编语言】标志寄存器",
         "time": "2024-08-21"
