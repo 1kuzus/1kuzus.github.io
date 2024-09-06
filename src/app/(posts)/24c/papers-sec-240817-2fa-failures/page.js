@@ -9,7 +9,7 @@ export default function Post() {
         <>
             <X.TOC />
             <X.Title>{metas[path].title}</X.Title>
-            <X.P>论文链接：</X.P>
+            <X.P>相关链接：</X.P>
             <X.Uli>@Security and Privacy Failures in Popular 2FA Apps[https://www.usenix.org/system/files/sec23summer_198-gilsenan-prepub.pdf]@</X.Uli>
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>笔记</X.H3>

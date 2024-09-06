@@ -9,8 +9,9 @@ export default function Post() {
         <>
             <X.TOC />
             <X.Title>{metas[path].title}</X.Title>
-            <X.P>论文链接：</X.P>
+            <X.P>相关链接：</X.P>
             <X.Uli>@zxcvbn: Low-Budget Password Strength Estimation[https://www.usenix.org/system/files/conference/usenixsecurity16/sec16_paper_wheeler.pdf]@</X.Uli>
+            <X.Uli>@Github仓库：dropbox/zxcvbn[https://github.com/dropbox/zxcvbn]@</X.Uli>
             <X.H1>1.Introduction</X.H1>
             <X.P>本文主要提出一个易于实现的密码强度检测器。研究者来自Dropbox。</X.P>
             <X.H1>2.Background and Related Work</X.H1>

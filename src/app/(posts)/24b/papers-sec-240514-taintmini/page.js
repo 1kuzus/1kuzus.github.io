@@ -9,7 +9,7 @@ export default function Post() {
         <>
             <X.TOC />
             <X.Title>{metas[path].title}</X.Title>
-            <X.P>论文链接：</X.P>
+            <X.P>相关链接：</X.P>
             <X.Uli>@TAINTMINI: Detecting Flow of Sensitive Data in Mini-Programs with Static Taint Analysis[https://chaowang.dev/publications/icse23.pdf]@</X.Uli>
             <X.H1>1.Introduction</X.H1>
             <X.P>小程序市场发展迅速，已有的针对Mobile Apps的污点分析技术在以下情况存在一些不足：</X.P>
@@ -22,7 +22,7 @@ export default function Post() {
             <X.Uli>events ~ events</X.Uli>
             <X.Uli>page ~ page</X.Uli>
             <X.Uli>Mini-Program ~ Mini-Program</X.Uli>
-            <X.P>文章的主要贡献是：</X.P>
+            <X.P>论文的主要贡献是：</X.P>
             <X.Uli>提出了一种新的污点分析技术，拓展ODG`(Object Dependency Graph)`为UDFG`(Universal Data Flow Graph)`；</X.Uli>
             <X.Uli>实验评估，`238866`个小程序中有`11.38%`出现了隐私数据流；</X.Uli>
             <X.Uli>实际应用，检测恶意应用。</X.Uli>

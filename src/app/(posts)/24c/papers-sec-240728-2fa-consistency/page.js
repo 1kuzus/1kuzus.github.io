@@ -9,7 +9,7 @@ export default function Post() {
         <>
             <X.TOC />
             <X.Title>{metas[path].title}</X.Title>
-            <X.P>论文链接：</X.P>
+            <X.P>相关链接：</X.P>
             <X.Uli>@A Systematic Study of the Consistency of Two-Factor Authentication User Journeys on Top-Ranked Websites[https://www.ndss-symposium.org/wp-content/uploads/2023/02/ndss2023_s362_paper.pdf]@</X.Uli>
             <X.Uli>@arxiv Extended Version[https://arxiv.org/pdf/2210.09373]@</X.Uli>
             <X.HighlightBlock bgcolor="blue">
@@ -135,7 +135,7 @@ export default function Post() {
             <X.Uli>恢复选项多为可选项：大部分网站提供恢复选项，但只有少数网站强制要求用户设置这些选项。</X.Uli>
             <X.Uli>设备记忆功能的混合策略：超过一半的网站不支持设备记忆功能，而支持该功能的网站在用户选择和逻辑上也存在差异。</X.Uli>
             <X.Uli>一致的停用支持：几乎所有网站都允许停用2FA，但只有少数会提醒用户停用的风险并进行身份验证。</X.Uli>
-            <X.H1>8.Discussion And Future Work</X.H1>
+            <X.H1>8.Discussion and Future Work</X.H1>
             <X.P>略。</X.P>
             <X.H1>9.Conclusion</X.H1>
             <X.P>本文的工作为比较网站上的2FA用户旅程提供了一种方法，并首次对顶级网站上用户旅程的一致性进行了系统研究。这项工作也会为2FA功能开发者提供更通用的UX设计指南。</X.P>
