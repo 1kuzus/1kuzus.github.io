@@ -9,7 +9,7 @@ export default function Post() {
         <>
             <X.TOC />
             <X.Title>{metas[path].title}</X.Title>
-            <X.P>论文链接：</X.P>
+            <X.P>相关链接：</X.P>
             <X.Uli>@Do Not Give A Dog Bread Every Time He Wags His Tail: Stealing Passwords through Content Queries (CONQUER) Attack[https://www.ndss-symposium.org/wp-content/uploads/2023/02/ndss2023_f5_paper.pdf]@</X.Uli>
             <X.H1>1.Introduction</X.H1>
             <X.P>论文提出了一种攻击方法：CONQUER`(*Con*tent *Quer*ies)`，利用Android系统辅助模式的`findAccessibilityNodeInfosByText(text)`API来查询密码输入框节点包含的文本，从而逐位枚举出用户输入的密码。</X.P>
@@ -19,12 +19,12 @@ export default function Post() {
             <X.H2>关于Accessibility Service的攻击与防御</X.H2>
             <X.Uli>被动攻击：被动地嗅探无障碍事件，并收集泄露的凭证；被动攻击往往对环境要求较高，一般性受限。</X.Uli>
             <X.Uli>主动攻击：攻击者主动与系统或应用程序交互，甚至诱导用户在攻击者控制的环境下输入敏感信息。这类攻击通常涉及更多的操作，如劫持输入输出通道，或用精心构造的组件覆盖在输入框的上层；通常更易被用户察觉。</X.Uli>
-            <X.H1>3.Observation And Threat Model</X.H1>
+            <X.H1>3.Observation and Threat Model</X.H1>
             <X.H2>关键发现</X.H2>
             <X.P>Android并没有阻止`findAccessibilityNodeInfosByText(text)`搜索密码输入框，也没有向用户发出警报。攻击者可以检查API返回的列表是否包含密码输入框来查询`text`是否在用户的密码中。</X.P>
             <X.H2>威胁模型和假设</X.H2>
             <X.P>攻击目标是窃取密码；假设用户已经安装了恶意软件，并已经授予其无障碍服务的权限；用户使用最新安卓系统（旧版存在一些更易实现的攻击手段）；假设用户关闭了“使密码可见”（否则可以通过无障碍事件直接访问到密码）。</X.P>
-            <X.H1>4.Overview Of CONQUER Attack</X.H1>
+            <X.H1>4.Overview of CONQUER Attack</X.H1>
             <X.H2>攻击流程</X.H2>
             <X.Oli>恶意软件注册无障碍服务来获取目标事件；（事件由输入密码触发）</X.Oli>
             <X.Oli>用户输入密码时恶意软件将收到通知，并能够确定相关事件；</X.Oli>
@@ -118,7 +118,7 @@ export default function Post() {
             <X.Uli>Android无障碍服务防御</X.Uli>
             <X.Uli>基于侧信道的按键推断</X.Uli>
             <X.H1>9.Conclusion</X.H1>
-            <X.P>文章提出了一种基于内容查询的密码窃取攻击，并克服了区分密码和描述、区分大小写等难点。</X.P>
+            <X.P>论文提出了一种基于内容查询的密码窃取攻击，并克服了区分密码和描述、区分大小写等难点。</X.P>
         </>
     );
 }

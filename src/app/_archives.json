@@ -1,4 +1,8 @@
 {
+    "/24c/papers-sec-240902-pafa-authentication/": {
+        "title": "论文精读：Maginot Line: Assessing a New Cross-app Threat to PII-as-Factor Authentication in Chinese Mobile Apps (NDSS 2024)",
+        "time": "2024-09-02"
+    },
     "/24c/assembly-6/": {
         "title": "【汇编语言】中断及外部设备操作",
         "time": "2024-08-28"
@@ -8,7 +12,7 @@
         "time": "2024-08-26"
     },
     "/24c/papers-sec-240824-zxcvbn/": {
-        "title": "论文精读：zxcvbn: Low-Budget Password Strength Estimation",
+        "title": "论文精读：zxcvbn: Low-Budget Password Strength Estimation (Security 2016)",
         "time": "2024-08-24"
     },
     "/24c/assembly-5/": {
