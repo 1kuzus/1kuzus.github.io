@@ -7,6 +7,11 @@ export const {metadata} = metas[path];
 // Maginot Line: Assessing a New Cross-app Threat to PII-as-Factor Authentication in Chinese Mobile Apps
 //https://www.ndss-symposium.org/wp-content/uploads/2024-241-paper.pdf
 
+
+//Reining in the Web’s Inconsistencies with Site Policy https://www.ndss-symposium.org/wp-content/uploads/ndss2021_2A-1_23091_paper.pdf
+//Leaking the Privacy of Groups and More: Understanding Privacy Risks of Cross-App Content Sharing in Mobile Ecosystem https://www.ndss-symposium.org/wp-content/uploads/2024-138-paper.pdf
+//“If I could do this, I feel anyone could:” The Design and Evaluation of a Secondary Authentication Factor Manager https://www.usenix.org/system/files/usenixsecurity23-smith.pdf
+
 export default function Post() {
     return (
         <>

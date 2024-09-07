@@ -17,6 +17,9 @@ export default function Post() {
             <X.Uli>`a`：显示所有用户的进程</X.Uli>
             <X.Uli>`u`：显示详细信息</X.Uli>
             <X.Uli>`x`：显示没有控制终端的进程</X.Uli>
+            <X.H2>查找文件、设置查找深度</X.H2>
+            <X.P>查找根目录下所有`rc`结尾的文件，只递归两层：</X.P>
+            <X.CodeBlock language="bash" code="find / -maxdepth 2 -type f -name *rc" />
             <X.H1>Mac OS</X.H1>
             <X.H2>在当前路径打开访达</X.H2>
             <X.CodeBlock language="bash" code="open ." />
