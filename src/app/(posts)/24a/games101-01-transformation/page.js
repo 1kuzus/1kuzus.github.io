@@ -92,9 +92,7 @@ export default function Post() {
             </X.HighlightBlock>
             <X.H2>组合变换</X.H2>
             <X.P>组合变换的矩阵顺序会影响结果，应该从右至左结合。\n对于一点{`$\\bm{x}=(x,y,1)^T$`}先应用$A_1$，再应用$A_2\dots$，最后应用$A_n$，应该写为：</X.P>
-            <X.HighlightBlock bgcolor="gray">
-                <X.Formula text="A_n \dots A_2 A_1 \bm{x}" />
-            </X.HighlightBlock>
+            <X.Formula text="A_n \dots A_2 A_1 \bm{x}" />
             <X.H1>3D变换</X.H1>
             <X.H2>一般形式</X.H2>
             <X.P>由2D变换推广而来，在齐次坐标下3D变换的一般形式可以表示为：</X.P>
@@ -170,7 +168,7 @@ export default function Post() {
             <X.P>然后，将模型摆放到世界空间中指定的位置，需要依次进行缩放、旋转、平移操作，也就是：</X.P>
             <X.Formula text="M_{model}=TRS" />
             <X.HighlightBlock>
-                <X.Formula text="\bm{p}_{world}=M_{model}\bm{p}_{local}" />
+                <X.Formula text="\bm{p}_{world}=M_{model}\bm{p}_{local}" alignLeft />
                 <X.P>变换前：*模型空间*`(Local Space)`\n变换后：*世界空间*`(World Space)`</X.P>
             </X.HighlightBlock>
             <X.H2>视图变换</X.H2>
@@ -231,7 +229,7 @@ export default function Post() {
                 "
             />
             <X.HighlightBlock>
-                <X.Formula text="\bm{p}_{view}=M_{view}\bm{p}_{world}" />
+                <X.Formula text="\bm{p}_{view}=M_{view}\bm{p}_{world}" alignLeft />
                 <X.P>变换前：*世界空间*`(World Space)`\n变换后：*观察空间*`(View Space)`</X.P>
             </X.HighlightBlock>
             <X.H2>投影变换</X.H2>
@@ -268,6 +266,7 @@ export default function Post() {
                 0 & 0 & 0 & 1
                 \end{bmatrix}
                 "
+                alignLeft
             />
             <X.H3>透视投影</X.H3>
             <X.P>透视投影符合近大远小的视觉效果，观感上更为自然。透视投影可以首先将*视锥体*`(View Frustum)`“挤压”至长方体内，再应用正交投影：</X.P>
@@ -282,6 +281,7 @@ export default function Post() {
                 0 & 0 & 1 & 0
                 \end{bmatrix}
                 "
+                alignLeft
             />
             <X.Formula
                 text="
@@ -299,6 +299,7 @@ export default function Post() {
                 0 & 0 & 1 & 0
                 \end{bmatrix}
                 "
+                alignLeft
             />
             <X.HighlightBlock>
                 <X.P>变换前：*观察空间*`(View Space)`\n变换后：*裁剪空间*`(Clip Space)`</X.P>

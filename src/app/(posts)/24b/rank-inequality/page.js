@@ -27,8 +27,8 @@ export default function Post() {
             <X.H3>左边</X.H3>
             <X.Formula text="r(A)+r(B)-n \leq r(AB)" />
             <X.P>移项得$r(B)-r(AB) \leq n-r(A)$，如果记单位矩阵{`$I_{n \\times n}$`}，则可以更直观的表示为：</X.P>
+            <X.Formula text="r(B)-r(AB) \leq r(I)-r(AI)" />
             <X.HighlightBlock>
-                <X.Formula text="r(B)-r(AB) \leq r(I)-r(AI)" />
                 <X.P>含义为同一个变换$A$作用于$n$维空间（的单位轴向量组），其损失的维度一定不会小于变换$A$作用于$n$维空间中的某个向量组$B$。</X.P>
             </X.HighlightBlock>
             <X.P>如果变换$A$压缩了向量组$B$的秩，则至少也会压缩$B$所在空间等量的秩数；但反之如果变换$A$压缩了空间的维度，有可能恰好没有影响到向量组$B$。</X.P>

@@ -113,7 +113,7 @@ const propertyOrderList = [
     'animation',
 ];
 
-const blacklist = ['src\\app\\globals.css', 'src\\assets\\styles\\katex.css', 'src\\assets\\styles\\fonts.css'];
+const blacklist = ['src/app/globals.css', 'src/assets/styles/katex.css', 'src/assets/styles/fonts.css'];
 
 console.log('--- Running checkCss.js ---');
 function findCssFiles(dir) {

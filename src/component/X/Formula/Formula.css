@@ -1,10 +1,13 @@
 .x-formula {
-    /* margin-top: 8px;
-    margin-bottom: 24px; */
-    /* overflow-x: auto;
-    overflow-y: hidden; */
     margin: 24px 0;
+    /* padding: 4px 0; */
+    text-align: center;
+    overflow-x: auto;
+    overflow-y: hidden;
     user-select: none;
+}
+.x-formula-left {
+    text-align: left;
 }
 .x-formula * {
     white-space: nowrap;

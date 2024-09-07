@@ -30,7 +30,7 @@ export default function Table(props) {
                                       const child = isStringOrStringArray(td) ? <L>{td}</L> : td;
                                       const fmt = align[td_index];
                                       const className = fmt === 'l' || fmt === 'r' ? 'x-cell-align-' + fmt : null;
-                                      const w = width[td_index] && tr_index === 0 ? width[td_index] : null;
+                                      const w = width[td_index] || null;
                                       return (tr_index === 0 && (thead === 'all' || thead === 'row')) ||
                                           (td_index === 0 && (thead === 'all' || thead === 'column')) ? (
                                           <th key={td_index} className={className} width={w}>
