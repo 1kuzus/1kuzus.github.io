@@ -26,16 +26,14 @@ export default function Post() {
             <X.H2>动机</X.H2>
             <X.P>用下式：</X.P>
             <X.Formula text="y=w_1x_1+w_2x_2 \dots w_dx_d=\bm{W}^T\bm{X}" />
-            <X.P>来估计带标签样本{`$(\\bm{X}_i,y_i)$`}</X.P>
+            <X.P>来估计带标签样本{`$(\\bm{X}_i,y_i)$`}。</X.P>
             <X.H2>损失函数</X.H2>
             <X.P>线性回归模型使用最小平方误差：</X.P>
             <X.Formula text="\min L(\bm{W})=\frac{1}{N}\sum_{i=1}^N(\bm{W}^T\bm{X}_i-y_i)^2" />
             <X.P>
                 记{`$\\bm{\\chi}_{(N \\times d)}=[\\bm{X}_1, \\bm{X}_2, \\dots, \\bm{X}_N]^T$`}，{`$\\bm{y}_{(N \\times 1)}=[y_1, y_2, \\dots, y_N]^T$`}，可以将损失写作：
             </X.P>
-            <X.HighlightBlock bgcolor="gray">
-                <X.Formula text="\min L(\bm{W})=\frac{1}{N}(\bm{\chi W}-\bm{y})^T(\bm{\chi W}-\bm{y})" />
-            </X.HighlightBlock>
+            <X.Formula text="\min L(\bm{W})=\frac{1}{N}(\bm{\chi W}-\bm{y})^T(\bm{\chi W}-\bm{y})" />
             <X.H2>最优解</X.H2>
             <X.HighlightBlock bgcolor="gray">
                 <X.Formula text="\bm{W}^*=(\bm{\chi}^T\bm{\chi})^{-1}\bm{\chi}^T\bm{y}" />
@@ -50,10 +48,8 @@ export default function Post() {
             <X.Formula text="\bm{S}_w=\bm{S}_1+\bm{S}_2=\sum_{\bm{X} \in \bm{\chi}_1}(\bm{X}-\bm{m}_1)(\bm{X}-\bm{m}_1)^T+\sum_{\bm{X} \in \bm{\chi}_2}(\bm{X}-\bm{m}_2)(\bm{X}-\bm{m}_2)^T" />
             <X.P>*类间离散度矩阵*：</X.P>
             <X.Formula text="\bm{S}_b=(\bm{m}_1-\bm{m}_2)(\bm{m}_1-\bm{m}_2)^T" />
-            <X.P>判别准则为</X.P>
-            <X.HighlightBlock bgcolor="gray">
-                <X.Formula text="\max J_F(\bm{W})=\frac{\bm{W}^T\bm{S}_b\bm{W}}{\bm{W}^T\bm{S}_w\bm{W}}" />
-            </X.HighlightBlock>
+            <X.P>判别准则为：</X.P>
+            <X.Formula text="\max J_F(\bm{W})=\frac{\bm{W}^T\bm{S}_b\bm{W}}{\bm{W}^T\bm{S}_w\bm{W}}" />
             <X.H2>最优解</X.H2>
             <X.P>Fisher判别准则下的最优投影方向为：</X.P>
             <X.HighlightBlock bgcolor="gray">
@@ -68,16 +64,14 @@ export default function Post() {
             <X.P>感知器用{`$\\bm{W}^T\\bm{X}$`}的正负来判断样本的分类。</X.P>
             <X.H2>损失函数</X.H2>
             <X.P>感知器的损失函数可以理解为错分样本的个数，数学形式如下：</X.P>
-            <X.HighlightBlock bgcolor="gray">
-                <X.Formula
-                    text="\min L(\bm{W})=\frac{1}{N}\sum_{i=1}^Nl(i), \; l(i)=
-                    \begin{cases}
-                    1, \quad \text{sign}(y_i\bm{W}^T\bm{X_i}) \lt 0 \\
-                    0, \quad \text{otherwise}
-                    \end{cases}
-                    "
-                />
-            </X.HighlightBlock>
+            <X.Formula
+                text="\min L(\bm{W})=\frac{1}{N}\sum_{i=1}^Nl(i), \; l(i)=
+                \begin{cases}
+                1, \quad \text{sign}(y_i\bm{W}^T\bm{X_i}) \lt 0 \\
+                0, \quad \text{otherwise}
+                \end{cases}
+                "
+            />
             <X.H2>更新规则</X.H2>
             <X.P>如果所有样本都分类正确，算法结束；否则对于分错的样本{`$(\\bm{X}_i,y_i)$`}执行：</X.P>
             <X.Formula text="\bm{W}_{t+1}=\bm{W}_t+y_i\bm{X}_i" />
@@ -104,9 +98,7 @@ export default function Post() {
             <X.P>希望似然函数取最大，那么定义损失函数为如下形式：</X.P>
             <X.Formula text="\min L(\bm{W})=-\frac{1}{N}\ln P=-\frac{1}{N}\sum_{i=1}^N\ln \sigma(y_i\bm{W}^T\bm{X_i})" />
             <X.P>进而化简为：</X.P>
-            <X.HighlightBlock bgcolor="gray">
-                <X.Formula text="\min L(\bm{W})=\frac{1}{N}\sum_{i=1}^N\ln(1+e^{-y_i\bm{W}^T\bm{X_i}})" />
-            </X.HighlightBlock>
+            <X.Formula text="\min L(\bm{W})=\frac{1}{N}\sum_{i=1}^N\ln(1+e^{-y_i\bm{W}^T\bm{X_i}})" />
             <X.H2>更新规则</X.H2>
             <X.P>使用梯度下降法，计算出梯度：</X.P>
             <X.Formula

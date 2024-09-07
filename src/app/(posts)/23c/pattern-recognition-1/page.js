@@ -40,19 +40,19 @@ export default function Post() {
             <X.H2>两分类情况下，最小错误率决策的四种等价规则</X.H2>
             <X.Oli>
                 <X.P>后验概率判决</X.P>
-                <X.Formula text="P(\omega_1|x) \gt P(\omega_2|x)" />
+                <X.Formula text="P(\omega_1|x) \gt P(\omega_2|x)" alignLeft />
             </X.Oli>
             <X.Oli>
                 <X.P>后验概率判决，分母相同看分子</X.P>
-                <X.Formula text="P(x|\omega_1)P(\omega_1) \gt P(x|\omega_2)P(\omega_2)" />
+                <X.Formula text="P(x|\omega_1)P(\omega_1) \gt P(x|\omega_2)P(\omega_2)" alignLeft />
             </X.Oli>
             <X.Oli>
                 <X.P>似然比$l$、似然比阈值$\lambda$</X.P>
-                <X.Formula text="l(x) = \frac{P(x|\omega_1)}{P(x|\omega_2)}, \; \lambda = \frac{P(\omega_2)}{P(\omega_1)}, \; l(x) \gt \lambda" />
+                <X.Formula text="l(x) = \frac{P(x|\omega_1)}{P(x|\omega_2)}, \; \lambda = \frac{P(\omega_2)}{P(\omega_1)}, \; l(x) \gt \lambda" alignLeft />
             </X.Oli>
             <X.Oli>
                 <X.P>对数似然比</X.P>
-                <X.Formula text="-\ln [l(x)] \lt \ln\frac{P(\omega_1)}{P(\omega_2)}" />
+                <X.Formula text="-\ln [l(x)] \lt \ln\frac{P(\omega_1)}{P(\omega_2)}" alignLeft />
             </X.Oli>
             <X.HighlightBlock>
                 <X.P>可以把每一类的后验概率$P(\omega_i|x)$或者$P(x|\omega_i)P(\omega_i)$看作该类的一个`判别函数`$g(x)$，决策的过程就是各类的判别函数比较大小</X.P>
@@ -160,7 +160,7 @@ export default function Post() {
             />
             <X.P>从以下三种情况考虑决策面：</X.P>
             <X.Oli reset>
-                <X.Formula text="\bm{\Sigma_1} = \bm{\Sigma_2}=...=\bm{\Sigma_c} = \sigma^2\bm{I}" />
+                <X.Formula text="\bm{\Sigma_1} = \bm{\Sigma_2}=...=\bm{\Sigma_c} = \sigma^2\bm{I}" alignLeft />
             </X.Oli>
             <X.P>各类模式分布的协方差矩阵相等，样本统计独立且方差相同，协方差均为0。\n此时{`$g(\\bm{X})$`}的前两项与类别无关，后两项化简为：</X.P>
             <X.Formula text="g_i(\bm{X}) = -\frac{1}{2\sigma^2}\Vert\bm{X}-\bm{\mu_i}\Vert^2 +\ln P(\omega_i)" />
@@ -196,7 +196,7 @@ export default function Post() {
             <X.P>对于三分类问题，得到的结果类似：</X.P>
             <X.Image src="fig5.png" width="500px" filterDarkTheme />
             <X.Oli>
-                <X.Formula text="\bm{\Sigma_1} = \bm{\Sigma_2}=...=\bm{\Sigma_c} = \bm{\Sigma}" />
+                <X.Formula text="\bm{\Sigma_1} = \bm{\Sigma_2}=...=\bm{\Sigma_c} = \bm{\Sigma}" alignLeft />
             </X.Oli>
             <X.HighlightBlock bgcolor="gray">
                 <X.H3>马氏距离</X.H3>
@@ -233,7 +233,7 @@ export default function Post() {
             <X.P>此时，先验概率相等的前提下，决策线仍然过样本中心连线中点；但不一定垂直于样本中心的连线。</X.P>
             <X.Image src="fig7.png" width="500px" filterDarkTheme />
             <X.Oli>
-                <X.Formula text="\bm{\Sigma_i} \neq \bm{\Sigma_j}" />
+                <X.Formula text="\bm{\Sigma_i} \neq \bm{\Sigma_j}" alignLeft />
             </X.Oli>
             <X.P>此为最一般情况。决策面为超二次曲面。对于二维样本，决策线为二次曲线。\n判别函数：</X.P>
             <X.Formula text="g_i(\bm{X}) = -\frac{1}{2}r_i^2 - \frac{1}{2}\ln |\bm{\Sigma_i}| + \ln P(\omega_i)" />

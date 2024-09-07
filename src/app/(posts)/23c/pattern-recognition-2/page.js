@@ -38,18 +38,18 @@ export default function Post() {
             <X.P>举一个带有具体数值的例子，假如观测到了四个样本：$[1,0,0]$、$[1,1,0]$、$[1,0,0]$、$[1,1,1]$，则估计参数{'$\\hat{\\bm{\\theta}} = [1,0.5,0.25]$'}\n其含义为，对于第一个维度，四个样本均为`1`，因此估计$x_1=1$的概率为`1`；对于第二个样本，四个样本中有两个为`1`，另外两个为`0`，则估计$x_2=1$的概率为`0.5`，以此类推。</X.P>
             <X.H2>正态分布下的最大似然估计</X.H2>
             <X.H3>单变量正态分布</X.H3>
-            <X.Formula text="\hat{\mu} = \frac{1}{n} \sum x_k" />
-            <X.Formula text="\hat{\sigma}^2 = \frac{1}{n} \sum (x_k - \hat{\mu})^2" />
+            <X.Formula text="\hat{\mu} = \frac{1}{n} \sum x_k" alignLeft />
+            <X.Formula text="\hat{\sigma}^2 = \frac{1}{n} \sum (x_k - \hat{\mu})^2" alignLeft />
             <X.H3>多变量正态分布</X.H3>
-            <X.Formula text="\hat{\bm{\mu}} = \frac{1}{n} \sum \bm{X}_k" />
-            <X.Formula text="\hat{\bm{\Sigma}} = \frac{1}{n} \sum (\bm{X}_k - \hat{\bm{\mu}})(\bm{X}_k - \hat{\bm{\mu}})^T" />
+            <X.Formula text="\hat{\bm{\mu}} = \frac{1}{n} \sum \bm{X}_k" alignLeft />
+            <X.Formula text="\hat{\bm{\Sigma}} = \frac{1}{n} \sum (\bm{X}_k - \hat{\bm{\mu}})(\bm{X}_k - \hat{\bm{\mu}})^T" alignLeft />
             <X.H1>贝叶斯估计</X.H1>
             <X.P>
                 贝叶斯估计与最大似然估计一个根本的区别是，最大似然估计把未知参数当作固定的量，而贝叶斯估计把未知参数本身也看作随机变量。假设未知参数是{`$\\bm{\\theta}$`}，其分布空间为{`$\\bm{\\Theta}$`}，定义损失函数{`$\\lambda(\\bm{\\theta},\\hat{\\bm{\\theta}})$`}表示估计误差的损失。如果已经观测到了样本集{`$\\bm{\\chi}$`}，那么我们的目标是：
             </X.P>
             <X.HighlightBlock>
                 <X.P>最小化期望风险：</X.P>
-                <X.Formula text="\int_{\bm{\Theta}} \lambda(\bm{\theta},\hat{\bm{\theta}}) P(\bm{\theta}|\bm{\chi}) d\bm{\theta}" />
+                <X.Formula text="\int_{\bm{\Theta}} \lambda(\bm{\theta},\hat{\bm{\theta}}) P(\bm{\theta}|\bm{\chi}) d\bm{\theta}" alignLeft />
             </X.HighlightBlock>
             <X.P>通常情况下损失函数取{`$\\lambda(\\bm{\\theta},\\hat{\\bm{\\theta}}) = (\\bm{\\theta}-\\hat{\\bm{\\theta}})^2$`}，此时有结论：</X.P>
             <X.HighlightBlock>
@@ -66,7 +66,7 @@ export default function Post() {
                 <X.Formula text="P(\bm{\chi}|\bm{\theta}) = \prod_i P(\bm{X}_i|\bm{\theta})" />
             </X.Oli>
             <X.Oli>
-                <X.P>利用贝叶斯公式求{`$\\bm{\\theta}$`}的后验概率分布</X.P>
+                <X.P>利用贝叶斯公式求{`$\\bm{\\theta}$`}的后验概率分布：</X.P>
                 <X.Formula text="P(\bm{\theta}|\bm{\chi}) = \frac{P(\bm{\chi}|\bm{\theta}) P(\bm{\theta})}{\int_{\bm{\Theta}} P(\bm{\chi}|\bm{\theta}) P(\bm{\theta}) d\bm{\theta}}" />
             </X.Oli>
             <X.Oli>
