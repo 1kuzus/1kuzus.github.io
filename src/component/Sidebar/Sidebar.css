@@ -18,11 +18,14 @@
     user-select: none;
     transition: transform 200ms;
 }
+#sidebar:hover {
+    left: 0px; /*解决#sidebar:hover::-webkit-scrollbar对safari无效*/
+}
 #sidebar::-webkit-scrollbar {
     display: none;
 }
 #sidebar:hover::-webkit-scrollbar {
-    display: block; /*todo:safari无效*/
+    display: block;
 }
 #sidebar.show-sidebar {
     transform: translateX(0);
