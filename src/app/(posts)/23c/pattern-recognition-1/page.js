@@ -187,10 +187,10 @@ export default function Post() {
             </X.P>
             <X.Image src="fig1.png" width="500px" filterDarkTheme />
             <X.P>红色和蓝色分别标记了两类样本点的分布情况，其中加粗的红点和蓝点表示样本中心的位置；\n生成两组样本时使用的方差均为`0.8`；样本的$x,y$坐标相关性为`0`。\n现在对平面上的所有点计算判别函数`g_red`和`g_blue`。`g_red`更大的区域用红色阴影表示，`g_blue`更大的区域用蓝色阴影表示。\n两个区域的交界处即为自然生成的决策线。结果如下：</X.P>
-            <X.FlexRow>
-                <X.Image src="fig2.png" width="320px" filterDarkTheme />
-                <X.Image src="fig3.png" width="320px" filterDarkTheme />
-                <X.Image src="fig4.png" width="320px" filterDarkTheme />
+            <X.FlexRow minWidth="600px">
+                <X.Image src="fig2.png" width="33%" filterDarkTheme />
+                <X.Image src="fig3.png" width="33%" filterDarkTheme />
+                <X.Image src="fig4.png" width="33%" filterDarkTheme />
             </X.FlexRow>
             <X.P>决策线垂直于样本中心的连线并且在先验概率相等的前提下过样本中心连线中点`(左图)`。\n如果先验概率不相等，决策线会偏向先验概率小的一侧`(中图)`，而且有可能超过端点`(右图)`。</X.P>
             <X.P>对于三分类问题，得到的结果类似：</X.P>
@@ -237,10 +237,10 @@ export default function Post() {
             </X.Oli>
             <X.P>此为最一般情况。决策面为超二次曲面。对于二维样本，决策线为二次曲线。\n判别函数：</X.P>
             <X.Formula text="g_i(\bm{X}) = -\frac{1}{2}r_i^2 - \frac{1}{2}\ln |\bm{\Sigma_i}| + \ln P(\omega_i)" />
-            <X.FlexRow>
-                <X.Image src="fig8.png" width="320px" filterDarkTheme />
-                <X.Image src="fig9.png" width="320px" filterDarkTheme />
-                <X.Image src="fig10.png" width="320px" filterDarkTheme />
+            <X.FlexRow minWidth="600px">
+                <X.Image src="fig8.png" width="33%" filterDarkTheme />
+                <X.Image src="fig9.png" width="33%" filterDarkTheme />
+                <X.Image src="fig10.png" width="33%" filterDarkTheme />
             </X.FlexRow>
         </>
     );
