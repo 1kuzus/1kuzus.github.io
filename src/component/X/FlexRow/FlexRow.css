@@ -1,14 +1,15 @@
-.x-flexrow {
-    display: flex;
-    flex-direction: row;
+.x-flexrow-wrapper {
     max-width: 100%;
     margin: 24px 0;
-    padding: 4px;
     overflow-x: auto;
 }
+.x-flexrow {
+    padding: 4px;
+    display: inline-flex;
+    flex-direction: row;
+}
 .x-flexrow > * {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
+    margin: 0 !important;
 }
 .x-flexrow > div > *:first-child {
     margin-top: 0 !important;

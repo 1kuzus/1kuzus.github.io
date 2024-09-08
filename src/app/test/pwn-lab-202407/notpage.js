@@ -12,7 +12,7 @@ export default function Post() {
             <X.H1>T1（例题）</X.H1>
             <X.H2>环境</X.H2>
             <X.P>测试环境如下，提示需要替换`libc`。</X.P>
-            <X.Image src="T1-1.jpg" width="381px" />
+            <X.Image src="T1-1.jpg" />
             <X.P>在`/week1`下执行：</X.P>
             <X.CodeBlock
                 language="bash"
@@ -39,12 +39,12 @@ export default function Post() {
                 patchelf --set-rpath ../glibc-all-in-one/libs/2.23-0ubuntu11.3_amd64 hw1
                 `}
             />
-            <X.Image src="T1-2.jpg" width="1161px" />
+            <X.Image src="T1-2.jpg"  />
             <X.H2>分析</X.H2>
             <X.P>看一下IDA还原的C代码：</X.P>
-            <X.Image src="T1-3.jpg" width="717px" filterDarkTheme />
+            <X.Image src="T1-3.jpg"  filterDarkTheme />
             <X.P>`See_something`函数打印了参数的地址：</X.P>
-            <X.Image src="T1-4.jpg" width="583px" filterDarkTheme />
+            <X.Image src="T1-4.jpg" filterDarkTheme />
             <X.P>栈帧分析：</X.P>
             <X.CodeBlock
                 language="text"
@@ -145,8 +145,8 @@ export default function Post() {
             />
             <X.H1>T2</X.H1>
             <X.H2>分析</X.H2>
-            <X.Image src="T2-1.jpg" width="669px" filterDarkTheme />
-            <X.Image src="T2-2.jpg" width="584px" filterDarkTheme />
+            <X.Image src="T2-1.jpg" filterDarkTheme />
+            <X.Image src="T2-2.jpg" filterDarkTheme />
             <X.P>没有`canary`，</X.P>
             <X.P>栈帧分析：</X.P>
             <X.CodeBlock

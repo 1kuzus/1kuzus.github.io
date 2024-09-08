@@ -1,12 +1,10 @@
-.x-image-wrapper {
-    height: fit-content;
-    margin: 24px 0;
-    user-select: none;
-}
-.x-image-wrapper img {
+.x-image {
     display: block;
     max-width: 100%;
+    margin: 24px auto;
+    object-fit: contain;
+    user-select: none;
 }
-:root.dark .x-image-wrapper.x-image-invert img {
+:root.dark .x-image.x-image-invert {
     filter: hue-rotate(180deg) sepia(8%) invert(89.02%) saturate(160%);
 }

@@ -57,10 +57,11 @@ export default function Post() {
             <X.P>图中的蓝点所在位置，表示估计的强度低于密码真实的强度（假设PGS真实反映了密码强度），这是一个实用性问题（用户觉得：我的密码明明很强，为什么还是不合格？）；相对的，如果落在上面的区域，就代表估计的强度高于密码真实的强度，那么这是一个安全性问题。</X.P>
             <X.H2>算法选择</X.H2>
             <X.P>在算法选择上对比了NIST熵、KeePass（另一个不基于LUDS的估计方案）和zxcvbn（本文提出的方案）：</X.P>
-            <X.Image src="4.jpg" width="320px" filterDarkTheme />
-            <X.Image src="5.jpg" width="320px" filterDarkTheme />
-            <X.Image src="6.jpg" width="320px" filterDarkTheme />
-            {/* todo x.flexrow x.formula居中 */}
+            <X.FlexRow minWidth="600px">
+                <X.Image src="4.jpg" width="33%" filterDarkTheme />
+                <X.Image src="5.jpg" width="33%" filterDarkTheme />
+                <X.Image src="6.jpg" width="33%" filterDarkTheme />
+            </X.FlexRow>
             <X.P>能看到zxcvbn确实在低数量级（在线攻击区间）有更高的准确性。</X.P>
             <X.HighlightBlock>
                 <X.P>看到各图中都有很多水平的“条带”，一般来说LUDS方法对具体字符的不敏感的，比如`hello`、`abcde`、`vdskj`很可能具有相同的分数，此时大量的密码都对应了同一个估计分数，但是PGS指标可能相差较多，就形成了一条水平线；</X.P>
