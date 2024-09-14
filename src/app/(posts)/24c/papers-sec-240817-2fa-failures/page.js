@@ -27,7 +27,7 @@ export default function Post() {
                 <X.Uli>有些信息不能直接识别、但与其他信息相结合时可用于识别一个人，例如姓名+地址。</X.Uli>
             </X.HighlightBlock>
             <X.H1>1.Introduction</X.H1>
-            <X.P>TOTP是一种常见的2FA形式，通常被认为比SMS 2FA更安全；然而TOTP 2FA也为用户带来了一下可用性负担，用户常常丢失设备、更换设备或卸载TOTP应用，如果无法生成OTP就无法登录账户。为了应对这种可用性问题，许多TOTP应用程序提供自定义备份机制，以帮助用户从设备丢失中恢复。论文主要研究这些备份机制的安全问题和隐私问题：</X.P>
+            <X.P>TOTP是一种常见的2FA形式，通常被认为比SMS 2FA更安全；然而TOTP 2FA也为用户带来了一下易用性负担，用户常常丢失设备、更换设备或卸载TOTP应用，如果无法生成OTP就无法登录账户。为了应对这种易用性问题，许多TOTP应用程序提供自定义备份机制，以帮助用户从设备丢失中恢复。论文主要研究这些备份机制的安全问题和隐私问题：</X.P>
             <X.Uli>RQ1：备份机制将哪些个人信息泄露给开发TOTP应用程序的机构，或其他第三方？（如果有的话）</X.Uli>
             <X.Uli>RQ2：攻击者获得TOTP备份的风险有多大？</X.Uli>
             <X.Uli>RQ3：如果攻击者获得了TOTP备份，危及TOTP密钥的风险有多大？</X.Uli>
@@ -51,7 +51,7 @@ export default function Post() {
             <X.P>这一节讨论各种备份机制。</X.P>
             <X.Image src="1.jpg" width="100%" filterDarkTheme />
             <X.H2>离线：Backup without the Network</X.H2>
-            <X.P>数据集中`7`个应用程序支持以二维码的形式导出到其他设备，由于不涉及网络请求，该方法安全性较高，但缺乏实用性。</X.P>
+            <X.P>数据集中`7`个应用程序支持以二维码的形式导出到其他设备，由于不涉及网络请求，该方法安全性较高，但缺乏易用性。</X.P>
             <X.H2>在线、无加密：Remote Backups without Encryption</X.H2>
             <X.P>数据集中`12`个应用程序可以以明文形式备份TOTP数据、有`3`个应用程序可以直接以明文形式进行云同步。</X.P>
             <X.H2>在线、有加密：Remote Backups with Encryption</X.H2>
