@@ -7,7 +7,6 @@ export const {metadata} = metas[path];
 // Maginot Line: Assessing a New Cross-app Threat to PII-as-Factor Authentication in Chinese Mobile Apps
 //https://www.ndss-symposium.org/wp-content/uploads/2024-241-paper.pdf
 
-
 //Reining in the Web’s Inconsistencies with Site Policy https://www.ndss-symposium.org/wp-content/uploads/ndss2021_2A-1_23091_paper.pdf
 //Leaking the Privacy of Groups and More: Understanding Privacy Risks of Cross-App Content Sharing in Mobile Ecosystem https://www.ndss-symposium.org/wp-content/uploads/2024-138-paper.pdf
 //“If I could do this, I feel anyone could:” The Design and Evaluation of a Secondary Authentication Factor Manager https://www.usenix.org/system/files/usenixsecurity23-smith.pdf
@@ -49,11 +48,10 @@ export default function Post() {
 
             {/* <X.H2 href="https://www.ndss-symposium.org/wp-content/uploads/2024-241-paper.pdf">Maginot Line: Assessing a New Cross-app Threat to PII-as-Factor Authentication in Chinese Mobile Apps (Security 2024)</X.H2> */}
 
-
             <X.H1>其他</X.H1>
             <X.H2 href="https://www.usenix.org/system/files/sec22-sanusi-bohuk.pdf">Gossamer: Securely Measuring Password-based Logins (Security 2022)</X.H2>
             <X.HighlightBlock bgcolor="gray">
-                <X.P>用户提交的登录信息（如密码）的特征对于制定更好的安全策略、提升系统的可用性以及检测攻击至关重要。然而，由于密码的高度敏感性，直接监测存在很大的安全风险，因此需要开发一种既能提供有用统计信息又能确保密码安全的测量基础设施。</X.P>
+                <X.P>用户提交的登录信息（如密码）的特征对于制定更好的安全策略、提升系统的易用性以及检测攻击至关重要。然而，由于密码的高度敏感性，直接监测存在很大的安全风险，因此需要开发一种既能提供有用统计信息又能确保密码安全的测量基础设施。</X.P>
                 <X.P>论文设计了一个名为Gossamer的测量系统，可以安全地记录登录请求，包括提交的密码的统计数据。</X.P>
             </X.HighlightBlock>
         </>

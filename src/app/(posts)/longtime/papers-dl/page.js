@@ -13,7 +13,7 @@ function PaperSummary(props) {
                 [method, '文章的核心方法 / 具体是如何做的？'],
                 [experiment, '做了什么实验，效果怎么样？'],
                 [innovation, '研究的创新点'],
-                [limitation, '有什么限制或可以改进的地方？'],
+                [limitation, '有什么局限或可以改进的地方？'],
             ].map(
                 ([comp, text], index) =>
                     comp && (
@@ -34,7 +34,7 @@ AI提问示例
 2.文章具体是如何做的，核心方法是什么？
 3.文章具体做了什么数据集上的实验，效果怎么样？
 4.研究有什么创新点？
-5.研究有什么限制或可以改进的地方？
+5.研究有什么局限或可以改进的地方？
 */
 
 export default function Post() {
