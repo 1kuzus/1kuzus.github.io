@@ -32,7 +32,22 @@ export default function Post() {
             <X.P>
                 注意尽管{`$\\bm{p_0}$`}是任意选取的平面上的点，分子上的内积结果是不受{`$\\bm{p_0}$`}位置影响的。
             </X.P>
-            <X.P>0；50；55</X.P>
+            <X.HighlightBlock>
+                <X.P>@Möller-Trumbore[https://en.wikipedia.org/wiki/Möller–Trumbore_intersection_algorithm]@算法可以快速求解三维空间中光线与三角形的交点（也能判断是否有交点、交点是否在三角形内）。</X.P>
+            </X.HighlightBlock>
+            <X.H1>加速光线求交</X.H1>
+            <X.H2>光线与轴对齐包围盒（AABB）求交</X.H2>
+            <X.P>三维的轴对齐包围盒`(Axis-Aligned Bounding Box, AABB)`是一个长方体，其六个面都与坐标轴平行且能够刚好包裹住物体。加速光线与物体求交的一个自然想法是，先判断光线是否与物体的AABB相交，如果不相交则光线不可能与物体相交。</X.P>
+            <X.P>求解光线与AABB的交点的例子（这里用二维情况举例）如下：</X.P>
+            <X.Image src="fig3.jpg" width="100%" filterDarkTheme />
+            <X.Uli>分别计算光线进入、离开*每一对*面（在这个二维例子中是一对边，例如直线$x_0$和$x_1$）的时间；</X.Uli>
+            <X.Uli>
+                光线进入所有对面（对边）才算进入AABB，离开任一对面（对边）都算离开AABB；\n因此计算出对于整个AABB，有{`$t_{enter}=\\max\\{t_{min}\\}$`}、{`$t_{exit}=\\min\\{t_{max}\\}$`}；
+            </X.Uli>
+            <X.Uli>
+                当且仅当{`$t_{enter} \\lt t_{exit}$`}且{`$t_{exit} \\geq 0$`}时，光线与AABB相交。
+            </X.Uli>
+            <X.H2>使用AABB加速光线求交</X.H2>
         </>
     );
 }
