@@ -14,6 +14,6 @@ Prism.languages.asm8086 = {
         pattern: /\b(?:ax|bx|cx|dx|si|di|sp|bp|ah|bh|ch|dh|al|bl|cl|dl|cs|ds|es|fs|gs|ss|ip|flags)\b/i,
         alias: 'variable',
     },
-    number: /(?:\b|\$)(?:0[hx][\da-f]+|[0-7]+[oq]|0[by][01]+|[\da-f]+h?)\b/i,
+    number: /(?:\b|\$)(?:0[hx][\da-f]+|[0-7]+[oq]|0[by][01]+|[\da-f]+h?)\b[^:]/i,
     operator: /[\[\]*+\-\/%<>=&|$!~^]/,
 };
