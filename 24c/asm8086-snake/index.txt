@@ -1,0 +1,454 @@
+2:I[10579,["2202","static/chunks/2202-c94dd0688c9a9cf1.js","2993","static/chunks/2993-a89739abda400190.js","220","static/chunks/app/(posts)/24c/asm8086-snake/page-566b1ef08382aa2d.js"],""]
+a:I[74365,["2202","static/chunks/2202-c94dd0688c9a9cf1.js","2993","static/chunks/2993-a89739abda400190.js","220","static/chunks/app/(posts)/24c/asm8086-snake/page-566b1ef08382aa2d.js"],""]
+b:I[5613,[],""]
+c:I[31778,[],""]
+d:I[30389,["2202","static/chunks/2202-c94dd0688c9a9cf1.js","5250","static/chunks/5250-9192d080d30d8ff7.js","2993","static/chunks/2993-a89739abda400190.js","1993","static/chunks/app/(posts)/layout-bc16219d705a1e35.js"],""]
+e:I[25694,["5250","static/chunks/5250-9192d080d30d8ff7.js","3185","static/chunks/app/layout-e67a8dae1607119d.js"],"GlobalProvider"]
+f:I[30397,["5250","static/chunks/5250-9192d080d30d8ff7.js","3185","static/chunks/app/layout-e67a8dae1607119d.js"],""]
+3:T5f3,datasg <span class="token keyword">segment</span>
+    addri9 <span class="token keyword">db</span> <span class="token number">0,</span><span class="token number">0,</span><span class="token number">0,</span><span class="token number">0 </span>           <span class="token comment">;存放原9号中断的中断向量</span>
+    seed   <span class="token keyword">db</span> <span class="token number">0adh </span>              <span class="token comment">;随机数种子</span>
+    rand   <span class="token keyword">db</span> <span class="token number">0 </span>                 <span class="token comment">;随机数</span>
+    apple  <span class="token keyword">db</span> <span class="token number">44h </span>               <span class="token comment">;果实位置，初始设为44h</span>
+    dir    <span class="token keyword">db</span> <span class="token number">0 </span>                 <span class="token comment">;方向，0:up 1:right 2:left 3:down</span>
+    dirbuf <span class="token keyword">db</span> <span class="token number">0
+</span>    snake  <span class="token keyword">db</span> <span class="token number">4ah,</span><span class="token number">49h,</span><span class="token number">48h,</span><span class="token number">47h </span>   <span class="token comment">;蛇尾 --- 蛇头</span>
+           <span class="token keyword">db</span> <span class="token number">256 </span><span class="token keyword">dup</span>(<span class="token number">0)</span>
+datasg <span class="token keyword">ends</span>
+4:T441,<span class="token comment">;;;;延迟一段时间</span>
+delay:
+          <span class="token function">push</span>  <span class="token register variable">cx</span>
+          <span class="token function">mov</span>   <span class="token register variable">cx</span>,<span class="token number">7h </span>                           <span class="token comment">;增大此值可以减慢蛇的移动速度（间隔）</span>
+d1:       <span class="token function">push</span>  <span class="token register variable">cx</span>
+          <span class="token function">mov</span>   <span class="token register variable">cx</span>,<span class="token number">0ffffh
+</span>d2:       <span class="token function">loop</span>  <span class="token number">d2
+</span>          <span class="token function">pop</span>   <span class="token register variable">cx</span>
+          <span class="token function">loop</span>  <span class="token number">d1
+</span>          <span class="token function">pop</span>   <span class="token register variable">cx</span>
+          <span class="token function">ret</span>
+5:T669,<span class="token comment">;;;;平方取中随机数</span>
+<span class="token comment">;输出：</span>
+<span class="token comment">;rand     下一个随机数</span>
+getrand:
+          <span class="token function">push</span>  <span class="token register variable">ax</span>
+          <span class="token function">push</span>  <span class="token register variable">cx</span>
+          <span class="token function">mov</span>   <span class="token register variable">al</span>,rand
+          <span class="token function">mul</span>   <span class="token keyword">byte</span> <span class="token keyword">ptr</span> rand
+          <span class="token function">mov</span>   <span class="token register variable">cl</span>,<span class="token number">4
+</span>          <span class="token function">shr</span>   <span class="token register variable">ax</span>,<span class="token register variable">cl</span>
+          <span class="token function">cmp</span>   <span class="token register variable">al</span>,<span class="token number">0
+</span>          <span class="token function">jnz</span>   ok
+          <span class="token function">mov</span>   <span class="token register variable">al</span>,seed                          <span class="token comment">;避免陷入0循环</span>
+ok:
+          <span class="token function">mov</span>   rand,<span class="token register variable">al</span>
+          <span class="token function">pop</span>   <span class="token register variable">cx</span>
+          <span class="token function">pop</span>   <span class="token register variable">ax</span>
+          <span class="token function">ret</span>
+6:T1e24,codesg <span class="token keyword">segment</span>
+    start:
+             <span class="token function">mov</span>   <span class="token register variable">ax</span>,datasg
+             <span class="token function">mov</span>   <span class="token register variable">ds</span>,<span class="token register variable">ax</span>
+    <span class="token comment">;保存原来9号中断的中断向量到addri9处</span>
+             <span class="token function">mov</span>   <span class="token register variable">ax</span>,<span class="token number">0
+</span>             <span class="token function">mov</span>   <span class="token register variable">es</span>,<span class="token register variable">ax</span>
+             <span class="token function">push</span>  <span class="token register variable">es</span>:<span class="token operator">[</span><span class="token number">9*</span><span class="token number">4]</span>
+             <span class="token function">pop</span>   <span class="token keyword">word</span> <span class="token keyword">ptr</span> addri9<span class="token operator">[</span><span class="token number">0]</span>
+             <span class="token function">push</span>  <span class="token register variable">es</span>:<span class="token operator">[</span><span class="token number">9*</span><span class="token number">4+</span><span class="token number">2]</span>
+             <span class="token function">pop</span>   <span class="token keyword">word</span> <span class="token keyword">ptr</span> addri9<span class="token operator">[</span><span class="token number">2]</span>
+    <span class="token comment">;更改原来的中断向量</span>
+             <span class="token function">mov</span>   <span class="token keyword">word</span> <span class="token keyword">ptr</span> <span class="token register variable">es</span>:<span class="token operator">[</span><span class="token number">9*</span><span class="token number">4]</span>,<span class="token keyword">offset</span> int9    <span class="token comment">;设置9号中断的IP为offset int9</span>
+             <span class="token function">mov</span>   <span class="token register variable">es</span>:<span class="token operator">[</span><span class="token number">9*</span><span class="token number">4+</span><span class="token number">2]</span>,<span class="token register variable">cs</span>                    <span class="token comment">;设置9号中断的CS为代码段起始地址</span>
+             <span class="token comment">;...</span>
+
+    <span class="token comment">;游戏结束返回</span>
+    ret_main:
+    <span class="token comment">;恢复原来的中断向量</span>
+             <span class="token function">mov</span>   <span class="token register variable">ax</span>,<span class="token number">0
+</span>             <span class="token function">mov</span>   <span class="token register variable">es</span>,<span class="token register variable">ax</span>
+             <span class="token function">push</span>  <span class="token keyword">word</span> <span class="token keyword">ptr</span> addri9<span class="token operator">[</span><span class="token number">0]</span>
+             <span class="token function">pop</span>   <span class="token register variable">es</span>:<span class="token operator">[</span><span class="token number">9*</span><span class="token number">4]</span>
+             <span class="token function">push</span>  <span class="token keyword">word</span> <span class="token keyword">ptr</span> addri9<span class="token operator">[</span><span class="token number">2]</span>
+             <span class="token function">pop</span>   <span class="token register variable">es</span>:<span class="token operator">[</span><span class="token number">9*</span><span class="token number">4+</span><span class="token number">2]</span>
+             <span class="token comment">;...</span>
+
+
+    <span class="token comment">;;;;自定义键盘中断</span>
+    int9:
+             <span class="token function">push</span>  <span class="token register variable">ax</span>
+             <span class="token function">push</span>  <span class="token register variable">bx</span>
+    <span class="token comment">;模拟标志寄存器入栈</span>
+             <span class="token function">pushf</span>
+    <span class="token comment">;模拟设置IF=0，TF=0</span>
+             <span class="token function">pushf</span>
+             <span class="token function">pop</span>   <span class="token register variable">ax</span>
+             <span class="token function">and</span>   <span class="token register variable">ah</span>,<span class="token number">11111100b
+</span>             <span class="token function">push</span>  <span class="token register variable">ax</span>
+             <span class="token function">popf</span>
+    <span class="token comment">;call指令即可实现CS、IP入栈并跳转到入口地址</span>
+             <span class="token function">call</span>  <span class="token keyword">dword</span> <span class="token keyword">ptr</span> addri9
+    <span class="token comment">;自定义的键盘输入处理</span>
+             <span class="token function">in</span>    <span class="token register variable">al</span>,<span class="token number">60h </span>                          <span class="token comment">;读取键盘输入送入AL</span>
+             <span class="token function">cmp</span>   <span class="token register variable">al</span>,dir
+             <span class="token function">je</span>    int9_dft
+             <span class="token function">cmp</span>   <span class="token register variable">al</span>,<span class="token number">11h </span>                          <span class="token comment">;W键</span>
+             <span class="token function">je</span>    int9_w
+             <span class="token function">cmp</span>   <span class="token register variable">al</span>,<span class="token number">20h </span>                          <span class="token comment">;D键</span>
+             <span class="token function">je</span>    int9_d
+             <span class="token function">cmp</span>   <span class="token register variable">al</span>,<span class="token number">1eh </span>                          <span class="token comment">;A键</span>
+             <span class="token function">je</span>    int9_a
+             <span class="token function">cmp</span>   <span class="token register variable">al</span>,<span class="token number">1fh </span>                          <span class="token comment">;S键</span>
+             <span class="token function">je</span>    int9_s
+             <span class="token function">jmp</span>   int9_dft
+    int9_w:
+             <span class="token function">mov</span>   dirbuf,<span class="token number">0
+</span>             <span class="token function">jmp</span>   int9_dft
+    int9_d:
+             <span class="token function">mov</span>   dirbuf,<span class="token number">1
+</span>             <span class="token function">jmp</span>   int9_dft
+    int9_a:
+             <span class="token function">mov</span>   dirbuf,<span class="token number">2
+</span>             <span class="token function">jmp</span>   int9_dft
+    int9_s:
+             <span class="token function">mov</span>   dirbuf,<span class="token number">3
+</span>             <span class="token function">jmp</span>   int9_dft
+    int9_dft:
+             <span class="token function">pop</span>   <span class="token register variable">bx</span>
+             <span class="token function">pop</span>   <span class="token register variable">ax</span>
+             iret
+codesg <span class="token keyword">ends</span>
+<span class="token keyword">end</span> start
+7:T8d6,游戏的地图大小设计为<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">16</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">16</span></span></span></span>（含边界），这样刚好可以用<code class="x-inline-highlight">4</code>位表示一个坐标分量，一个字节表示一个二维坐标。约定一个字节的高<code class="x-inline-highlight">4</code>位表示<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span>坐标，低<code class="x-inline-highlight">4</code>位表示<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span>坐标。例如<code class="x-inline-highlight">4ah</code>表示逻辑坐标<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">10</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">4</span><span class="mclose">)</span></span></span></span>，对应<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">16</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">16</span></span></span></span>地图中的第<code class="x-inline-highlight">10</code>行、第<code class="x-inline-highlight">4</code>列的方格。8:Td18,<span class="token comment">;;;;在显存[x+5行，2*y列]和[x+5行，2*y+1列]处写入属性BH（等价于逻辑坐标x,y）</span>
+write:
+<span class="token comment">;输入：</span>
+<span class="token comment">;BH       属性</span>
+<span class="token comment">;BL[7:4]  y坐标（逻辑列号）</span>
+<span class="token comment">;BL[3:0]  x坐标（逻辑行号）</span>
+          <span class="token function">push</span>  <span class="token register variable">cx</span>
+          <span class="token function">mov</span>   <span class="token register variable">di</span>,<span class="token register variable">bx</span>
+          <span class="token function">and</span>   <span class="token register variable">di</span>,<span class="token number">00f0h </span>                        <span class="token comment">;(di)=逻辑列号*16</span>
+          <span class="token function">mov</span>   <span class="token register variable">cl</span>,<span class="token number">2
+</span>          <span class="token function">shr</span>   <span class="token register variable">di</span>,<span class="token register variable">cl</span>                            <span class="token comment">;逻辑右移2位，(di)=逻辑列号*4</span>
+          <span class="token function">mov</span>   <span class="token register variable">cl</span>,<span class="token register variable">bl</span>
+          <span class="token function">and</span>   <span class="token register variable">cl</span>,<span class="token number">0fh </span>                          <span class="token comment">;(cl)=逻辑行号</span>
+          <span class="token function">mov</span>   <span class="token register variable">al</span>,<span class="token number">10
+</span>          <span class="token function">mul</span>   <span class="token register variable">cl</span>                               <span class="token comment">;(ax)=逻辑行号*10</span>
+          <span class="token function">add</span>   <span class="token register variable">ax</span>,<span class="token number">0b800h+</span><span class="token number">50 </span>                    <span class="token comment">;(ax)=逻辑行号*10+b800h+50</span>
+          <span class="token function">mov</span>   <span class="token register variable">es</span>,<span class="token register variable">ax</span>                            <span class="token comment">;(es)=逻辑行号*10+b800h+50</span>
+          <span class="token function">mov</span>   <span class="token keyword">byte</span> <span class="token keyword">ptr</span> <span class="token register variable">es</span>:<span class="token operator">[</span><span class="token register variable">di</span><span class="token operator">+</span><span class="token number">1]</span>,<span class="token register variable">bh</span>
+          <span class="token function">mov</span>   <span class="token keyword">byte</span> <span class="token keyword">ptr</span> <span class="token register variable">es</span>:<span class="token operator">[</span><span class="token register variable">di</span><span class="token operator">+</span><span class="token number">3]</span>,<span class="token register variable">bh</span>
+          <span class="token function">pop</span>   <span class="token register variable">cx</span>
+          <span class="token function">ret</span>
+9:T8750,<span class="token keyword">assume</span> <span class="token register variable">cs</span>:codesg,<span class="token register variable">ds</span>:datasg,<span class="token register variable">ss</span>:stcksg
+
+datasg <span class="token keyword">segment</span>
+    addri9 <span class="token keyword">db</span> <span class="token number">0,</span><span class="token number">0,</span><span class="token number">0,</span><span class="token number">0 </span>           <span class="token comment">;存放原9号中断的中断向量</span>
+    seed   <span class="token keyword">db</span> <span class="token number">0adh </span>              <span class="token comment">;随机数种子</span>
+    rand   <span class="token keyword">db</span> <span class="token number">0 </span>                 <span class="token comment">;随机数</span>
+    apple  <span class="token keyword">db</span> <span class="token number">44h </span>               <span class="token comment">;果实位置，初始设为44h</span>
+    dir    <span class="token keyword">db</span> <span class="token number">0 </span>                 <span class="token comment">;方向，0:up 1:right 2:left 3:down</span>
+    dirbuf <span class="token keyword">db</span> <span class="token number">0
+</span>    snake  <span class="token keyword">db</span> <span class="token number">4ah,</span><span class="token number">49h,</span><span class="token number">48h,</span><span class="token number">47h </span>   <span class="token comment">;蛇尾 --- 蛇头</span>
+           <span class="token keyword">db</span> <span class="token number">256 </span><span class="token keyword">dup</span>(<span class="token number">0)</span>
+datasg <span class="token keyword">ends</span>
+
+stcksg <span class="token keyword">segment</span>
+           <span class="token keyword">db</span> <span class="token number">128 </span><span class="token keyword">dup</span>(<span class="token number">0)</span>
+stcksg <span class="token keyword">ends</span>
+
+codesg <span class="token keyword">segment</span>
+    start:
+              <span class="token function">mov</span>   <span class="token register variable">ax</span>,datasg
+              <span class="token function">mov</span>   <span class="token register variable">ds</span>,<span class="token register variable">ax</span>
+    <span class="token comment">;保存原来9号中断的中断向量到addri9处</span>
+              <span class="token function">mov</span>   <span class="token register variable">ax</span>,<span class="token number">0
+</span>              <span class="token function">mov</span>   <span class="token register variable">es</span>,<span class="token register variable">ax</span>
+              <span class="token function">push</span>  <span class="token register variable">es</span>:<span class="token operator">[</span><span class="token number">9*</span><span class="token number">4]</span>
+              <span class="token function">pop</span>   <span class="token keyword">word</span> <span class="token keyword">ptr</span> addri9<span class="token operator">[</span><span class="token number">0]</span>
+              <span class="token function">push</span>  <span class="token register variable">es</span>:<span class="token operator">[</span><span class="token number">9*</span><span class="token number">4+</span><span class="token number">2]</span>
+              <span class="token function">pop</span>   <span class="token keyword">word</span> <span class="token keyword">ptr</span> addri9<span class="token operator">[</span><span class="token number">2]</span>
+    <span class="token comment">;更改原来的中断向量</span>
+              <span class="token function">mov</span>   <span class="token keyword">word</span> <span class="token keyword">ptr</span> <span class="token register variable">es</span>:<span class="token operator">[</span><span class="token number">9*</span><span class="token number">4]</span>,<span class="token keyword">offset</span> int9    <span class="token comment">;设置9号中断的IP为offset int9</span>
+              <span class="token function">mov</span>   <span class="token register variable">es</span>:<span class="token operator">[</span><span class="token number">9*</span><span class="token number">4+</span><span class="token number">2]</span>,<span class="token register variable">cs</span>                    <span class="token comment">;设置9号中断的CS为代码段起始地址</span>
+    <span class="token comment">;初始化</span>
+              <span class="token function">call</span>  init
+    <span class="token comment">;主循环</span>
+    main_loop:
+              <span class="token function">call</span>  delay
+              <span class="token function">mov</span>   <span class="token register variable">al</span>,dirbuf
+              <span class="token function">xor</span>   <span class="token register variable">al</span>,dir
+              <span class="token function">cmp</span>   <span class="token register variable">al</span>,<span class="token number">3
+</span>              <span class="token function">je</span>    keep_dir
+              <span class="token function">xor</span>   <span class="token register variable">al</span>,dir
+              <span class="token function">mov</span>   dir,<span class="token register variable">al</span>
+    keep_dir:
+              <span class="token function">call</span>  move
+              <span class="token function">jmp</span>   main_loop
+    <span class="token comment">;游戏结束返回</span>
+    gameover:
+    <span class="token comment">;恢复原来的中断向量</span>
+              <span class="token function">mov</span>   <span class="token register variable">ax</span>,<span class="token number">0
+</span>              <span class="token function">mov</span>   <span class="token register variable">es</span>,<span class="token register variable">ax</span>
+              <span class="token function">push</span>  <span class="token keyword">word</span> <span class="token keyword">ptr</span> addri9<span class="token operator">[</span><span class="token number">0]</span>
+              <span class="token function">pop</span>   <span class="token register variable">es</span>:<span class="token operator">[</span><span class="token number">9*</span><span class="token number">4]</span>
+              <span class="token function">push</span>  <span class="token keyword">word</span> <span class="token keyword">ptr</span> addri9<span class="token operator">[</span><span class="token number">2]</span>
+              <span class="token function">pop</span>   <span class="token register variable">es</span>:<span class="token operator">[</span><span class="token number">9*</span><span class="token number">4+</span><span class="token number">2]</span>
+    <span class="token comment">;清空键盘缓冲区</span>
+    clear:
+              <span class="token function">mov</span>   <span class="token register variable">ah</span>, <span class="token number">01h
+</span>              <span class="token function">int</span>   <span class="token number">16h
+</span>              <span class="token function">je</span>    done
+              <span class="token function">mov</span>   <span class="token register variable">ah</span>, <span class="token number">00h
+</span>              <span class="token function">int</span>   <span class="token number">16h
+</span>              <span class="token function">jmp</span>   clear
+    done:
+              <span class="token function">mov</span>   <span class="token register variable">ax</span>,<span class="token number">4c00h
+</span>              <span class="token function">int</span>   <span class="token number">21h
+</span>
+    <span class="token comment">;;;;延迟一段时间</span>
+    delay:
+              <span class="token function">push</span>  <span class="token register variable">cx</span>
+              <span class="token function">mov</span>   <span class="token register variable">cx</span>,<span class="token number">7h </span>                           <span class="token comment">;增大此值可以减慢蛇的移动速度（间隔）</span>
+    d1:       <span class="token function">push</span>  <span class="token register variable">cx</span>
+              <span class="token function">mov</span>   <span class="token register variable">cx</span>,<span class="token number">0ffffh
+</span>    d2:       <span class="token function">loop</span>  <span class="token number">d2
+</span>              <span class="token function">pop</span>   <span class="token register variable">cx</span>
+              <span class="token function">loop</span>  <span class="token number">d1
+</span>              <span class="token function">pop</span>   <span class="token register variable">cx</span>
+              <span class="token function">ret</span>
+
+    <span class="token comment">;;;;平方取中随机数</span>
+    <span class="token comment">;输出：</span>
+    <span class="token comment">;rand     下一个随机数</span>
+    getrand:
+              <span class="token function">push</span>  <span class="token register variable">ax</span>
+              <span class="token function">push</span>  <span class="token register variable">cx</span>
+              <span class="token function">mov</span>   <span class="token register variable">al</span>,rand
+              <span class="token function">mul</span>   <span class="token keyword">byte</span> <span class="token keyword">ptr</span> rand
+              <span class="token function">mov</span>   <span class="token register variable">cl</span>,<span class="token number">4
+</span>              <span class="token function">shr</span>   <span class="token register variable">ax</span>,<span class="token register variable">cl</span>
+              <span class="token function">cmp</span>   <span class="token register variable">al</span>,<span class="token number">0
+</span>              <span class="token function">jnz</span>   ok
+              <span class="token function">mov</span>   <span class="token register variable">al</span>,seed                          <span class="token comment">;避免陷入0循环</span>
+    ok:
+              <span class="token function">mov</span>   rand,<span class="token register variable">al</span>
+              <span class="token function">pop</span>   <span class="token register variable">cx</span>
+              <span class="token function">pop</span>   <span class="token register variable">ax</span>
+              <span class="token function">ret</span>
+
+    <span class="token comment">;;;;在显存[x+5行，2*y列]和[x+5行，2*y+1列]处写入属性BH（等价于逻辑坐标x,y）</span>
+    write:
+    <span class="token comment">;输入：</span>
+    <span class="token comment">;BH       属性</span>
+    <span class="token comment">;BL[7:4]  y坐标（逻辑列号）</span>
+    <span class="token comment">;BL[3:0]  x坐标（逻辑行号）</span>
+              <span class="token function">push</span>  <span class="token register variable">cx</span>
+              <span class="token function">mov</span>   <span class="token register variable">di</span>,<span class="token register variable">bx</span>
+              <span class="token function">and</span>   <span class="token register variable">di</span>,<span class="token number">00f0h </span>                        <span class="token comment">;(di)=逻辑列号*16</span>
+              <span class="token function">mov</span>   <span class="token register variable">cl</span>,<span class="token number">2
+</span>              <span class="token function">shr</span>   <span class="token register variable">di</span>,<span class="token register variable">cl</span>                            <span class="token comment">;逻辑右移2位，(di)=逻辑列号*4</span>
+              <span class="token function">mov</span>   <span class="token register variable">cl</span>,<span class="token register variable">bl</span>
+              <span class="token function">and</span>   <span class="token register variable">cl</span>,<span class="token number">0fh </span>                          <span class="token comment">;(cl)=逻辑行号</span>
+              <span class="token function">mov</span>   <span class="token register variable">al</span>,<span class="token number">10
+</span>              <span class="token function">mul</span>   <span class="token register variable">cl</span>                               <span class="token comment">;(ax)=逻辑行号*10</span>
+              <span class="token function">add</span>   <span class="token register variable">ax</span>,<span class="token number">0b800h+</span><span class="token number">50 </span>                    <span class="token comment">;(ax)=逻辑行号*10+b800h+50</span>
+              <span class="token function">mov</span>   <span class="token register variable">es</span>,<span class="token register variable">ax</span>                            <span class="token comment">;(es)=逻辑行号*10+b800h+50</span>
+              <span class="token function">mov</span>   <span class="token keyword">byte</span> <span class="token keyword">ptr</span> <span class="token register variable">es</span>:<span class="token operator">[</span><span class="token register variable">di</span><span class="token operator">+</span><span class="token number">1]</span>,<span class="token register variable">bh</span>
+              <span class="token function">mov</span>   <span class="token keyword">byte</span> <span class="token keyword">ptr</span> <span class="token register variable">es</span>:<span class="token operator">[</span><span class="token register variable">di</span><span class="token operator">+</span><span class="token number">3]</span>,<span class="token register variable">bh</span>
+              <span class="token function">pop</span>   <span class="token register variable">cx</span>
+              <span class="token function">ret</span>
+
+    <span class="token comment">;;;;初始化地图</span>
+    init:
+    <span class="token comment">;清屏</span>
+              <span class="token function">mov</span>   <span class="token register variable">ax</span>,<span class="token number">0b800h+</span><span class="token number">50
+</span>              <span class="token function">mov</span>   <span class="token register variable">es</span>,<span class="token register variable">ax</span>
+              <span class="token function">mov</span>   <span class="token register variable">cx</span>,<span class="token number">7fffh
+</span>              <span class="token function">mov</span>   <span class="token register variable">di</span>,<span class="token number">0
+</span>    i1:       <span class="token function">mov</span>   <span class="token keyword">byte</span> <span class="token keyword">ptr</span> <span class="token register variable">es</span>:<span class="token operator">[</span><span class="token register variable">di</span><span class="token operator">]</span>,<span class="token number">0
+</span>              <span class="token function">inc</span>   <span class="token register variable">di</span>
+              <span class="token function">loop</span>  i1
+    <span class="token comment">;绘制果实和蛇</span>
+              <span class="token function">call</span>  getrand
+              <span class="token function">mov</span>   <span class="token register variable">bh</span>,<span class="token number">40h </span>                          <span class="token comment">;红底（果实）</span>
+              <span class="token function">mov</span>   <span class="token register variable">bl</span>,apple
+              <span class="token function">call</span>  write
+              <span class="token function">mov</span>   <span class="token register variable">si</span>,<span class="token number">0
+</span>              <span class="token function">mov</span>   <span class="token register variable">bh</span>,<span class="token number">20h </span>                          <span class="token comment">;绿底（蛇）</span>
+    i2:       <span class="token function">mov</span>   <span class="token register variable">bl</span>,snake<span class="token operator">[</span><span class="token register variable">si</span><span class="token operator">]</span>
+              <span class="token function">call</span>  write
+              <span class="token function">inc</span>   <span class="token register variable">si</span>
+              <span class="token function">cmp</span>   <span class="token keyword">byte</span> <span class="token keyword">ptr</span> snake<span class="token operator">[</span><span class="token register variable">si</span><span class="token operator">]</span>,<span class="token number">0
+</span>              <span class="token function">jnz</span>   i2
+    <span class="token comment">;绘制边界</span>
+              <span class="token function">mov</span>   <span class="token register variable">bh</span>,<span class="token number">70h </span>                          <span class="token comment">;白底（边界）</span>
+              <span class="token function">mov</span>   <span class="token register variable">cx</span>,<span class="token number">15 </span>                           <span class="token comment">;16*16地图（包含边界）</span>
+    i3:       <span class="token function">mov</span>   <span class="token register variable">bl</span>,<span class="token register variable">cl</span>                            <span class="token comment">;x=i，y=0</span>
+              <span class="token function">call</span>  write
+              <span class="token function">or</span>    <span class="token register variable">bl</span>,<span class="token number">0f0h </span>                         <span class="token comment">;x=i，y=15</span>
+              <span class="token function">call</span>  write
+              <span class="token function">mov</span>   <span class="token register variable">bl</span>,<span class="token register variable">cl</span>
+              <span class="token function">push</span>  <span class="token register variable">cx</span>
+              <span class="token function">mov</span>   <span class="token register variable">cx</span>,<span class="token number">4
+</span>              <span class="token function">shl</span>   <span class="token register variable">bl</span>,<span class="token register variable">cl</span>                            <span class="token comment">;赋值y=i</span>
+              <span class="token function">pop</span>   <span class="token register variable">cx</span>
+              <span class="token function">or</span>    <span class="token register variable">bl</span>,<span class="token number">0fh </span>                          <span class="token comment">;x=15，y=i</span>
+              <span class="token function">call</span>  write
+              <span class="token function">and</span>   <span class="token register variable">bl</span>,<span class="token number">0f0h </span>                         <span class="token comment">;x=0，y=i</span>
+              <span class="token function">call</span>  write
+              <span class="token function">jcxz</span>  ret_init
+              <span class="token function">sub</span>   <span class="token register variable">cx</span>,<span class="token number">1
+</span>              <span class="token function">jmp</span>   i3
+    ret_init:
+              <span class="token function">ret</span>
+
+    <span class="token comment">;;;;移动一步</span>
+    move:
+    <span class="token comment">;si移动到头部下一个位置</span>
+              <span class="token function">mov</span>   <span class="token register variable">si</span>,<span class="token number">0
+</span>    m2:       <span class="token function">inc</span>   <span class="token register variable">si</span>
+              <span class="token function">cmp</span>   snake<span class="token operator">[</span><span class="token register variable">si</span><span class="token operator">]</span>,<span class="token number">0
+</span>              <span class="token function">jnz</span>   m2
+    <span class="token comment">;复制原头部数据</span>
+              <span class="token function">mov</span>   <span class="token register variable">al</span>,snake<span class="token operator">[</span><span class="token register variable">si</span><span class="token operator">-</span><span class="token number">1]</span>
+              <span class="token function">mov</span>   snake<span class="token operator">[</span><span class="token register variable">si</span><span class="token operator">]</span>,<span class="token register variable">al</span>
+    <span class="token comment">;根据方向移动蛇头</span>
+              <span class="token function">cmp</span>   <span class="token keyword">byte</span> <span class="token keyword">ptr</span> dir,<span class="token number">0
+</span>              <span class="token function">je</span>    move_u
+              <span class="token function">cmp</span>   <span class="token keyword">byte</span> <span class="token keyword">ptr</span> dir,<span class="token number">1
+</span>              <span class="token function">je</span>    move_r
+              <span class="token function">cmp</span>   <span class="token keyword">byte</span> <span class="token keyword">ptr</span> dir,<span class="token number">2
+</span>              <span class="token function">je</span>    move_l
+              <span class="token function">cmp</span>   <span class="token keyword">byte</span> <span class="token keyword">ptr</span> dir,<span class="token number">3
+</span>              <span class="token function">je</span>    move_d
+              <span class="token function">jmp</span>   move_dft
+    move_u:
+              <span class="token function">sub</span>   snake<span class="token operator">[</span><span class="token register variable">si</span><span class="token operator">]</span>,<span class="token number">1
+</span>              <span class="token function">jmp</span>   move_dft
+    move_r:
+              <span class="token function">add</span>   snake<span class="token operator">[</span><span class="token register variable">si</span><span class="token operator">]</span>,<span class="token number">10h
+</span>              <span class="token function">jmp</span>   move_dft
+    move_l:
+              <span class="token function">sub</span>   snake<span class="token operator">[</span><span class="token register variable">si</span><span class="token operator">]</span>,<span class="token number">10h
+</span>              <span class="token function">jmp</span>   move_dft
+    move_d:
+              <span class="token function">add</span>   snake<span class="token operator">[</span><span class="token register variable">si</span><span class="token operator">]</span>,<span class="token number">1
+</span>              <span class="token function">jmp</span>   move_dft
+    move_dft:
+    <span class="token comment">;擦除尾部</span>
+              <span class="token function">mov</span>   <span class="token register variable">bh</span>,<span class="token number">0
+</span>              <span class="token function">mov</span>   <span class="token register variable">bl</span>,snake<span class="token operator">[</span><span class="token number">0]</span>
+              <span class="token function">call</span>  write
+    <span class="token comment">;绘制新头部</span>
+              <span class="token function">mov</span>   <span class="token register variable">bh</span>,<span class="token number">20h
+</span>              <span class="token function">mov</span>   <span class="token register variable">bl</span>,snake<span class="token operator">[</span><span class="token register variable">si</span><span class="token operator">]</span>
+              <span class="token function">call</span>  write
+    <span class="token comment">;判定蛇头吃到果实或撞墙</span>
+              <span class="token function">cmp</span>   <span class="token register variable">bl</span>,apple
+              <span class="token function">je</span>    eat
+              <span class="token function">call</span>  is_valid
+              <span class="token function">cmp</span>   <span class="token register variable">al</span>,<span class="token number">0
+</span>              <span class="token function">je</span>    gameover
+    <span class="token comment">;移动蛇身</span>
+              <span class="token function">mov</span>   <span class="token register variable">si</span>,<span class="token number">0
+</span>    m1:       <span class="token function">mov</span>   <span class="token register variable">al</span>,snake<span class="token operator">[</span><span class="token register variable">si</span><span class="token operator">+</span><span class="token number">1]</span>
+              <span class="token function">mov</span>   snake<span class="token operator">[</span><span class="token register variable">si</span><span class="token operator">]</span>,<span class="token register variable">al</span>
+              <span class="token function">inc</span>   <span class="token register variable">si</span>
+              <span class="token function">cmp</span>   <span class="token keyword">byte</span> <span class="token keyword">ptr</span> snake<span class="token operator">[</span><span class="token register variable">si</span><span class="token operator">+</span><span class="token number">1]</span>,<span class="token number">0
+</span>              <span class="token function">jnz</span>   m1
+    <span class="token comment">;擦除复制的新头部</span>
+              <span class="token function">mov</span>   snake<span class="token operator">[</span><span class="token register variable">si</span><span class="token operator">]</span>,<span class="token number">0
+</span>              <span class="token function">jmp</span>   ret_move
+    <span class="token comment">;吃到果实</span>
+    eat:
+              <span class="token function">mov</span>   <span class="token register variable">al</span>,apple
+              <span class="token function">mov</span>   snake<span class="token operator">[</span><span class="token register variable">si</span><span class="token operator">]</span>,<span class="token register variable">al</span>
+    m3:       <span class="token function">call</span>  getrand
+              <span class="token function">mov</span>   <span class="token register variable">bl</span>,rand
+              <span class="token function">call</span>  is_valid
+              <span class="token function">cmp</span>   <span class="token register variable">al</span>,<span class="token number">1
+</span>              jne   m3                               <span class="token comment">;如果生成的位置已经有蛇身，则重新生成</span>
+              <span class="token function">mov</span>   <span class="token keyword">byte</span> <span class="token keyword">ptr</span> apple,<span class="token register variable">bl</span>
+              <span class="token function">mov</span>   <span class="token register variable">bh</span>,<span class="token number">40h
+</span>              <span class="token function">mov</span>   <span class="token register variable">bl</span>,apple
+              <span class="token function">call</span>  write
+              <span class="token function">ret</span>
+
+    <span class="token comment">;;;;判断合法位置：边界、蛇身处判定为不合法（不判断蛇头）</span>
+    is_valid:
+    <span class="token comment">;输入：</span>
+    <span class="token comment">;BL     坐标</span>
+    <span class="token comment">;输出：</span>
+    <span class="token comment">;AL     0(不合法)/1(合法)</span>
+              <span class="token function">push</span>  <span class="token register variable">bx</span>
+              <span class="token function">mov</span>   <span class="token register variable">al</span>,<span class="token number">0
+</span>              <span class="token function">cmp</span>   <span class="token register variable">bl</span>,<span class="token number">0fh </span>                          <span class="token comment">;x=i，y=0</span>
+              <span class="token function">jb</span>    false
+              <span class="token function">cmp</span>   <span class="token register variable">bl</span>,<span class="token number">0f0h </span>                         <span class="token comment">;x=i，y=15</span>
+              <span class="token function">ja</span>    false
+              <span class="token function">mov</span>   <span class="token register variable">bh</span>,<span class="token register variable">bl</span>
+              <span class="token function">and</span>   <span class="token register variable">bh</span>,<span class="token number">0fh
+</span>              <span class="token function">cmp</span>   <span class="token register variable">bh</span>,<span class="token number">0fh </span>                          <span class="token comment">;x=15，y=i</span>
+              <span class="token function">je</span>    false
+              <span class="token function">cmp</span>   <span class="token register variable">bh</span>,<span class="token number">0 </span>                            <span class="token comment">;x=0，y=i</span>
+              <span class="token function">je</span>    false
+
+              <span class="token function">mov</span>   <span class="token register variable">si</span>,<span class="token number">0
+</span>    v1:       <span class="token function">cmp</span>   <span class="token register variable">bl</span>,snake<span class="token operator">[</span><span class="token register variable">si</span><span class="token operator">]</span>
+              <span class="token function">je</span>    false
+              <span class="token function">inc</span>   <span class="token register variable">si</span>
+              <span class="token function">cmp</span>   <span class="token keyword">byte</span> <span class="token keyword">ptr</span> snake<span class="token operator">[</span><span class="token register variable">si</span><span class="token operator">+</span><span class="token number">1]</span>,<span class="token number">0
+</span>              <span class="token function">jnz</span>   v1
+
+              <span class="token function">mov</span>   <span class="token register variable">al</span>,<span class="token number">1
+</span>    false:
+              <span class="token function">pop</span>   <span class="token register variable">bx</span>
+              <span class="token function">ret</span>
+
+    <span class="token comment">;;;;自定义键盘中断</span>
+    int9:
+              <span class="token function">push</span>  <span class="token register variable">ax</span>
+              <span class="token function">push</span>  <span class="token register variable">bx</span>
+    <span class="token comment">;模拟标志寄存器入栈</span>
+              <span class="token function">pushf</span>
+    <span class="token comment">;模拟设置IF=0，TF=0</span>
+              <span class="token function">pushf</span>
+              <span class="token function">pop</span>   <span class="token register variable">ax</span>
+              <span class="token function">and</span>   <span class="token register variable">ah</span>,<span class="token number">11111100b
+</span>              <span class="token function">push</span>  <span class="token register variable">ax</span>
+              <span class="token function">popf</span>
+    <span class="token comment">;call指令即可实现CS、IP入栈并跳转到入口地址</span>
+              <span class="token function">call</span>  <span class="token keyword">dword</span> <span class="token keyword">ptr</span> addri9
+    <span class="token comment">;自定义的键盘输入处理</span>
+              <span class="token function">in</span>    <span class="token register variable">al</span>,<span class="token number">60h </span>                          <span class="token comment">;读取键盘输入送入AL</span>
+              <span class="token function">cmp</span>   <span class="token register variable">al</span>,dir
+              <span class="token function">je</span>    int9_dft
+              <span class="token function">cmp</span>   <span class="token register variable">al</span>,<span class="token number">11h </span>                          <span class="token comment">;W键</span>
+              <span class="token function">je</span>    int9_w
+              <span class="token function">cmp</span>   <span class="token register variable">al</span>,<span class="token number">20h </span>                          <span class="token comment">;D键</span>
+              <span class="token function">je</span>    int9_d
+              <span class="token function">cmp</span>   <span class="token register variable">al</span>,<span class="token number">1eh </span>                          <span class="token comment">;A键</span>
+              <span class="token function">je</span>    int9_a
+              <span class="token function">cmp</span>   <span class="token register variable">al</span>,<span class="token number">1fh </span>                          <span class="token comment">;S键</span>
+              <span class="token function">je</span>    int9_s
+              <span class="token function">jmp</span>   int9_dft
+    int9_w:
+              <span class="token function">mov</span>   dirbuf,<span class="token number">0
+</span>              <span class="token function">jmp</span>   int9_dft
+    int9_d:
+              <span class="token function">mov</span>   dirbuf,<span class="token number">1
+</span>              <span class="token function">jmp</span>   int9_dft
+    int9_a:
+              <span class="token function">mov</span>   dirbuf,<span class="token number">2
+</span>              <span class="token function">jmp</span>   int9_dft
+    int9_s:
+              <span class="token function">mov</span>   dirbuf,<span class="token number">3
+</span>              <span class="token function">jmp</span>   int9_dft
+    int9_dft:
+              <span class="token function">pop</span>   <span class="token register variable">bx</span>
+              <span class="token function">pop</span>   <span class="token register variable">ax</span>
+              iret
+codesg <span class="token keyword">ends</span>
+<span class="token keyword">end</span> start
+0:["DLS9kKdgYBor9z0gppkoc",[[["",{"children":["(posts)",{"children":["24c",{"children":["asm8086-snake",{"children":["__PAGE__",{}]}]}]}]},"$undefined","$undefined",true],["",{"children":["(posts)",{"children":["24c",{"children":["asm8086-snake",{"children":["__PAGE__",{},["$L1",[["$","$L2",null,{}],["$","h1",null,{"className":"x-title","children":"8086汇编贪吃蛇"}],["$","h2",null,{"className":"x-h1","children":"变量设置"}],["$","p",null,{"className":"x-l x-p","dangerouslySetInnerHTML":{"__html":"在数据段中使用以下变量："}}],["$","div",null,{"className":"x-codeblock","children":["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}]}]}],["$","h2",null,{"className":"x-h1","children":"前置技术"}],["$","p",null,{"className":"x-l x-p","dangerouslySetInnerHTML":{"__html":"在汇编实现贪吃蛇通常需要解决以下几个技术："}}],["$","h3",null,{"className":"x-h2","children":"延时函数"}],["$","p",null,{"className":"x-l x-p","dangerouslySetInnerHTML":{"__html":"在汇编中延时函数可以通过执行空循环来实现："}}],["$","div",null,{"className":"x-codeblock","children":["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$4"}}]}]}],["$","p",null,{"className":"x-l x-p","dangerouslySetInnerHTML":{"__html":"虽然这种方法不能精确控制延迟多少秒/毫秒，但可以通过调节外层循环的次数（内层也可以）来相对地控制延迟时间。（一层循环最大执行次数是<code class=\"x-inline-highlight\">ffffh</code>，仍然太快，因此需要两层循环）"}}],["$","h3",null,{"className":"x-h2","children":"随机数"}],["$","p",null,{"className":"x-l x-p","dangerouslySetInnerHTML":{"__html":"使用平方取中法实现一个简单的伪随机序列，随机种子预先写死在代码中："}}],["$","div",null,{"className":"x-codeblock","children":["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$5"}}]}]}],["$","p",null,{"className":"x-l x-p","dangerouslySetInnerHTML":{"__html":"这里生成的是<code class=\"x-inline-highlight\">8</code>位的随机数，每次调用<code class=\"x-inline-highlight\">getrand</code>都会更新<code class=\"x-inline-highlight\">rand</code>标号处的一个字节的值。这个随机数生成方法有时会陷入<code class=\"x-inline-highlight\">0</code>循环，因此产生新的随机数时加了一个判断，如果结果为<code class=\"x-inline-highlight\">0</code>则重新从<code class=\"x-inline-highlight\">seed</code>开始生成。"}}],["$","h3",null,{"className":"x-h2","children":"处理键盘输入"}],["$","p",null,{"className":"x-l x-p","dangerouslySetInnerHTML":{"__html":"使用自定义的键盘中断程序（<code class=\"x-inline-highlight\">9</code>号中断）解决，大致框架为："}}],["$","div",null,{"className":"x-codeblock","children":["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$6"}}]}]}],["$","p",null,{"className":"x-l x-p","dangerouslySetInnerHTML":{"__html":"在设计键盘响应时，不希望玩家能够直接修改蛇的移动方向为当前方向的反向（不能调转<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.6741em;\"></span><span class=\"mord\">18</span><span class=\"mord\"><span class=\"mord\">0</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.6741em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mbin mtight\">∘</span></span></span></span></span></span></span></span></span></span></span>），例如如果当前移动方向为向上，则应只允许修改为向左/向右，而不能修改为向下。为此额外添加了<code class=\"x-inline-highlight\">dirbuf</code>变量，用户的键盘输入会实时存入<code class=\"x-inline-highlight\">dirbuf</code>，但只在每次主循环中有条件地与<code class=\"x-inline-highlight\">dir</code>同步。主循环如下（其中<code class=\"x-inline-highlight\">move</code>函数处理蛇移动一步，后面会详细说明）："}}],["$","div",null,{"className":"x-codeblock","children":["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"main_loop:\n          <span class=\"token function\">call</span>  delay\n          <span class=\"token function\">mov</span>   <span class=\"token register variable\">al</span>,dirbuf\n          <span class=\"token function\">xor</span>   <span class=\"token register variable\">al</span>,dir\n          <span class=\"token function\">cmp</span>   <span class=\"token register variable\">al</span>,<span class=\"token number\">3\n</span>          <span class=\"token function\">je</span>    keep_dir\n          <span class=\"token function\">xor</span>   <span class=\"token register variable\">al</span>,dir\n          <span class=\"token function\">mov</span>   dir,<span class=\"token register variable\">al</span>\nkeep_dir:\n          <span class=\"token function\">call</span>  move\n          <span class=\"token function\">jmp</span>   main_loop\n"}}]}]}],["$","p",null,{"className":"x-l x-p","dangerouslySetInnerHTML":{"__html":"代码中<code class=\"x-inline-highlight\">dir</code>与<code class=\"x-inline-highlight\">dirbuf</code>异或为<code class=\"x-inline-highlight\">3</code>时，表示方向刚好相差<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.6741em;\"></span><span class=\"mord\">18</span><span class=\"mord\"><span class=\"mord\">0</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.6741em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mbin mtight\">∘</span></span></span></span></span></span></span></span></span></span></span>，此时不改变<code class=\"x-inline-highlight\">dir</code>的值（<code class=\"x-inline-highlight\">je keep_dir</code>）；由于异或操作改变了<code class=\"x-inline-highlight\">AL</code>的值，因此送入<code class=\"x-inline-highlight\">dir</code>前需要再异或一次原来的<code class=\"x-inline-highlight\">dir</code>值。"}}],["$","h3",null,{"className":"x-h2","children":"坐标设计与操作显存绘制"}],["$","p",null,{"className":"x-l x-p","dangerouslySetInnerHTML":{"__html":"通过操作显存绘制图形，显存中用<code class=\"x-inline-highlight\">2</code>个字节表示一个字符，低字节表示字符的ASCII码，高字节表示字符的颜色。这里不设置字符，只设置背景色，相邻的两列刚好凑成一个正方形。"}}],["$","p",null,{"className":"x-l x-p","dangerouslySetInnerHTML":{"__html":"$7"}}],["$","p",null,{"className":"x-l x-p","dangerouslySetInnerHTML":{"__html":"由于字符显示区是<code class=\"x-inline-highlight\">25</code>行、<code class=\"x-inline-highlight\">80</code>列，这里的<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.4306em;\"></span><span class=\"mord mathnormal\">x</span></span></span></span>坐标对应了<code class=\"x-inline-highlight\">行号-5</code>（为了让地图显示在屏幕中间），<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.625em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.03588em;\">y</span></span></span></span>坐标对应了<code class=\"x-inline-highlight\">列号/2</code>（因为每个字符占<code class=\"x-inline-highlight\">2</code>列）。封装一个<code class=\"x-inline-highlight\">write</code>函数，用于将属性写入显存的指定位置："}}],["$","div",null,{"className":"x-codeblock","children":["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$8"}}]}]}],["$","p",null,{"className":"x-l x-p","dangerouslySetInnerHTML":{"__html":"显存的起始地址是<code class=\"x-inline-highlight\">b8000h</code>，屏幕第<code class=\"x-inline-highlight\">i</code>行、第<code class=\"x-inline-highlight\">j</code>列的偏移地址是<code class=\"x-inline-highlight\">80&#42;2&#42;i+2&#42;j</code>，用<code class=\"x-inline-highlight\">段地址:偏移地址</code>表示为<code class=\"x-inline-highlight\">b800:80&#42;2&#42;i+2&#42;j</code>；我们希望从第<code class=\"x-inline-highlight\">5</code>行开始显示地图，因此偏移地址额外加上<code class=\"x-inline-highlight\">80&#42;2&#42;5</code>，如果加到段地址上还要除以<code class=\"x-inline-highlight\">16</code>，也就是<code class=\"x-inline-highlight\">80&#42;2&#42;5/16=50</code>，对应代码中<code class=\"x-inline-highlight\">0b800h+50</code>。"}}],["$","p",null,{"className":"x-l x-p","dangerouslySetInnerHTML":{"__html":"同理，逻辑行号在偏移地址中数值要乘<code class=\"x-inline-highlight\">80*2=160</code>，而表示在段地址中只需乘<code class=\"x-inline-highlight\">160/16=10</code>。"}}],["$","h2",null,{"className":"x-h1","children":"实现"}],["$","h3",null,{"className":"x-h2","children":"代码"}],["$","p",null,{"className":"x-l x-p","dangerouslySetInnerHTML":{"__html":"完整的代码如下："}}],["$","div",null,{"className":"x-codeblock","children":["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$9"}}]}]}],["$","h3",null,{"className":"x-h2","children":"演示"}],["$","$La",null,{"src":"game.gif"}]],null]]},["$","$Lb",null,{"parallelRouterKey":"children","segmentPath":["children","(posts)","children","24c","children","asm8086-snake","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$Lc",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/55722f4e6a890f7d.css","precedence":"next","crossOrigin":""}]]}]]},["$","$Lb",null,{"parallelRouterKey":"children","segmentPath":["children","(posts)","children","24c","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$Lc",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},[null,["$","div",null,{"id":"post-layout","children":[false,["$","div",null,{"id":"main","className":"y-center-wrapper","children":["$","$Lb",null,{"parallelRouterKey":"children","segmentPath":["children","(posts)","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$Lc",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]}],["$","$Ld",null,{}]]}],null]]},[null,["$","html",null,{"lang":"zh-CN","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","link",null,{"rel":"icon","href":"/favicon.ico","type":"image/x-icon"}],["$","script",null,{"async":true,"src":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"}],["$","script",null,{"async":true,"src":"https://www.googletagmanager.com/gtag/js?id=G-45BYSZ6WPY"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nwindow.dataLayer = window.dataLayer || [];\nfunction gtag() {\n    dataLayer.push(arguments);\n}\ngtag('js', new Date());\ngtag('config', 'G-45BYSZ6WPY');\n"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"const a=z=>h.getItem(z),b=(y,z)=>h.setItem(y,z),c=(y,z)=>document.documentElement.setAttribute(y,z),d='theme',e='dark',f='light',g='class',h=localStorage;a(d)!==e&&a(d)!==f&&b(d,f);a(d)===e?c(g,e):c(g,f);"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nif (!Array.prototype.findLast) {\n    Array.prototype.findLast = function (callback) {\n        for (let i = this.length - 1; i >= 0; i--) {\n            if (callback(this[i])) return this[i];\n        }\n        return undefined;\n    };\n}\nif (!Array.prototype.findLastIndex) {\n    Array.prototype.findLastIndex = function (callback) {\n        for (let i = this.length - 1; i >= 0; i--) {\n            if (callback(this[i])) return i;\n        }\n        return -1;\n    };\n}\n"}}]]}],["$","body",null,{"children":["$","$Le",null,{"children":[["$","$Lf",null,{}],["$","$Lb",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$Lc",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"id":"notfound","children":[["$","img",null,{"alt":"img","src":"/images/cry.gif"}],["$","div",null,{"id":"notfound-404","children":"404"}],["$","div",null,{"id":"notfound-text","children":"Page Not Found"}]]}],"notFoundStyles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/0f7cce8b0dae9908.css","precedence":"next","crossOrigin":""}]],"styles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/b40928c6409d5a6e.css","precedence":"next","crossOrigin":""}]]}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/1279e9e476ea3436.css","precedence":"next","crossOrigin":""}]],"$L10"]]]]
+10:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"8086汇编贪吃蛇 - 铃木的网络日记"}],["$","link","3",{"rel":"canonical","href":"https://1kuzus.github.io/24c/asm8086-snake/"}]]
+1:null
