@@ -8,7 +8,7 @@
     "sha256": "node src/utils/sha256.js",
     "dev": "next dev -p 3030",
     "build": "next build",
-    "predeploy": "npm run build && next-sitemap && type nul > out/.nojekyll",
+    "predeploy": "npm run build && next-sitemap && touch out/.nojekyll",
     "deploy": "gh-pages -d out --dotfiles",
     "serve": "serve out -p 3039",
     "start": "next start",
