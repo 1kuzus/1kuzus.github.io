@@ -29,6 +29,10 @@ export default function Post() {
             <X.Uli>UI：用户界面`(User Interface)`，用户与软件交互的界面，注重产品的视觉呈现。</X.Uli>
             <X.Uli>UX：用户体验`(User Experience)`，用户使用软件时的感受，注重产品的内在逻辑。</X.Uli>
             <X.Image src="uiux.jpg" width="600px" />
+            <X.H2>信息安全三要素（CIA）</X.H2>
+            <X.Uli>保密性`(*C*onfidentiality)`：信息只能被授权的人访问。（相关技术：访问控制、加密）</X.Uli>
+            <X.Uli>完整性`(*I*ntegrity)`：信息在传输和存储过程中不被篡改。（相关技术：哈希、数字签名、校验和）</X.Uli>
+            <X.Uli>可用性`(*A*vailability)`：确保信息在需要时可用。（相关技术：备份与恢复等）</X.Uli>
             <X.H1>社会</X.H1>
             <X.H2>B端、C端</X.H2>
             <X.P>B端`(Business)`面向企业，注重产品的效率和业务逻辑，例如企业管理软件、云服务等；C端`(Consumer)`面向个人，产品主要解决一个具体的需求痛点（而B端产品通常需要解决一个需求面），更注重用户体验。</X.P>

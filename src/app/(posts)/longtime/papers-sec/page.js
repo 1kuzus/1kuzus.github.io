@@ -4,13 +4,25 @@ import metas from 'src/app/_metas';
 const path = '/longtime/papers-sec/';
 export const {metadata} = metas[path];
 
-//Reining in the Web’s Inconsistencies with Site Policy https://www.ndss-symposium.org/wp-content/uploads/ndss2021_2A-1_23091_paper.pdf
-//Leaking the Privacy of Groups and More: Understanding Privacy Risks of Cross-App Content Sharing in Mobile Ecosystem https://www.ndss-symposium.org/wp-content/uploads/2024-138-paper.pdf
-//“If I could do this, I feel anyone could:” The Design and Evaluation of a Secondary Authentication Factor Manager https://www.usenix.org/system/files/usenixsecurity23-smith.pdf
+/******
+Reining in the Web’s Inconsistencies with Site Policy
+https://www.ndss-symposium.org/wp-content/uploads/ndss2021_2A-1_23091_paper.pdf
 
-//Pre-hijacked accounts: An Empirical Study of Security Failures in User Account Creation on the Web https://www.usenix.org/system/files/sec22-sudhodanan.pdf
+Leaking the Privacy of Groups and More: Understanding Privacy Risks of Cross-App Content Sharing in Mobile Ecosystem 
+https://www.ndss-symposium.org/wp-content/uploads/2024-138-paper.pdf
 
-//O Single Sign-Off, Where Art Thou? An Empirical Analysis of Single Sign-On Account Hijacking and Session Management on the Web https://www.usenix.org/system/files/conference/usenixsecurity18/sec18-ghasemisharif_0.pdf
+“If I could do this, I feel anyone could:” The Design and Evaluation of a Secondary Authentication Factor Manager
+https://www.usenix.org/system/files/usenixsecurity23-smith.pdf
+
+Pre-hijacked accounts: An Empirical Study of Security Failures in User Account Creation on the Web
+https://www.usenix.org/system/files/sec22-sudhodanan.pdf
+
+O Single Sign-Off, Where Art Thou? An Empirical Analysis of Single Sign-On Account Hijacking and Session Management on the Web
+https://www.usenix.org/system/files/conference/usenixsecurity18/sec18-ghasemisharif_0.pdf
+
+Cross Miniapp Request Forgery: Root Causes, Attacks, and Vulnerability Detection
+https://dl.acm.org/doi/pdf/10.1145/3548606.3560597
+******/
 
 export default function Post() {
     return (
@@ -46,8 +58,45 @@ export default function Post() {
                 <X.Uli>Sound-Proof</X.Uli>
                 <X.Uli>One-Button Authentication：一键认证，用户在PC登录时手机端会有提示，用户选择允许/拒绝即可；如果攻击者在短时间内同步登录，用户如果没有正确分辨出请求的发起方，可能存在安全问题。</X.Uli>
             </X.HighlightBlock>
-
-            {/* <X.H2 href="https://www.ndss-symposium.org/wp-content/uploads/2024-241-paper.pdf">Maginot Line: Assessing a New Cross-app Threat to PII-as-Factor Authentication in Chinese Mobile Apps (Security 2024)</X.H2> */}
+            <X.H1>跨x通信</X.H1>
+            <X.H2 href="https://dl.acm.org/doi/pdf/10.1145/3548606.3560597">Cross Miniapp Request Forgery: Root Causes, Attacks, and Vulnerability Detection (CCS 2022)</X.H2>
+            <X.HighlightBlock bgcolor="gray">
+                <X.P>当发生微信小程序跳转时，如果接收端没有检查`referrerInfo.appId`，就有可能收到CMRF攻击。攻击者可以用自己的恶意小程序通过`wx.navigateToMiniProgram`跳转到受害者的小程序，携带自定义的`extraData`实现攻击。</X.P>
+            </X.HighlightBlock>
+            <X.HighlightBlock bgcolor="blue">
+                <X.H3>更多笔记</X.H3>
+                <X.P>跨小程序通信代码（发起端）：</X.P>
+                <X.CodeBlock
+                    language="js"
+                    code={`
+                    wx.navigateToMiniProgram({
+                        appId: 'wxfdcee92a299bcaf1', // 例：腾讯公益
+                        // path: 'page/index/index?id=123',
+                        extraData: {
+                            foo: 'bar'
+                        },
+                        success(res) {
+                            // ...
+                        }
+                    })
+                    `}
+                />
+                <X.P>跨小程序通信代码（接收端，如果有`extraData`）：</X.P>
+                <X.CodeBlock
+                    language="js"
+                    code={`
+                    // app.js
+                    App({
+                        onShow(options) {
+                            if(options.referrerInfo.extraData) {
+                                // ...
+                            }
+                        },
+                        // ...
+                    })
+                    `}
+                />
+            </X.HighlightBlock>
 
             <X.H1>其他</X.H1>
             <X.H2 href="https://www.usenix.org/system/files/sec22-sanusi-bohuk.pdf">Gossamer: Securely Measuring Password-based Logins (Security 2022)</X.H2>
