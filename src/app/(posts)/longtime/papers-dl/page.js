@@ -113,7 +113,7 @@ export default function Post() {
             <PaperSummary topic="交互式3D分割`(promptable segmentation)`。" />
             <X.H1>学习</X.H1>
             <X.H2 href="https://www.cv-foundation.org/openaccess/content_cvpr_2014/papers/Girshick_Rich_Feature_Hierarchies_2014_CVPR_paper.pdf">【R-CNN】Rich Feature Hierarchies for Accurate Object Detection and Semantic Segmentation (2014)</X.H2>
-            <PaperSummary topic="提出`Regions with CNN features, R-CNN`提高目标检测性能。" method="区域提议`(Region Proposals)`：使用`selective search`生成候选框" experiment="在`PASCAL VOC 2012`取得`mAP 53.3%`，在`ILSVRC 2013`竞赛数据集取得`mAP 31.4%`。" />
+            <PaperSummary topic="提出`Regions with CNN features, R-CNN`提高目标检测性能。" method="区域提议`(Region Proposals)`：使用`selective search`生成候选。" experiment="在`PASCAL VOC 2012`取得`mAP 53.3%`，在`ILSVRC 2013`竞赛数据集取得`mAP 31.4%`。" />
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>更多笔记</X.H3>
                 <X.P>转载自@动手学深度学习 - 区域卷积神经网络系列[https://zh-v2.d2l.ai/chapter_computer-vision/rcnn.html]@</X.P>
@@ -145,7 +145,7 @@ export default function Post() {
                 experiment={
                     <>
                         <X.Image src="maskrcnn2.jpg" width="600px" filterDarkTheme />
-                        <X.P>在COCO数据集上表现优异，超过了`2015`和`2016`年COCO分割任务的冠军。</X.P>
+                        <X.P>在COCO数据集上表现优异，超过了2015和2016年COCO分割任务的冠军。</X.P>
                     </>
                 }
                 innovation="

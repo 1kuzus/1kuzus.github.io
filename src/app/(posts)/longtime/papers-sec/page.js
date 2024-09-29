@@ -20,8 +20,13 @@ https://www.usenix.org/system/files/sec22-sudhodanan.pdf
 O Single Sign-Off, Where Art Thou? An Empirical Analysis of Single Sign-On Account Hijacking and Session Management on the Web
 https://www.usenix.org/system/files/conference/usenixsecurity18/sec18-ghasemisharif_0.pdf
 
-Cross Miniapp Request Forgery: Root Causes, Attacks, and Vulnerability Detection
-https://dl.acm.org/doi/pdf/10.1145/3548606.3560597
+Unauthorized Origin Crossing on Mobile Platforms: Threats and Mitigation 
+https://homes.luddy.indiana.edu/xw7/papers/wang2013unauthorized.pdf
+
+Unleashing the Walking Dead: Understanding Cross-App Remote Infections on Mobile WebViews
+https://homes.luddy.indiana.edu/luyixing/bib/ccs17-unleashing.pdf
+
+https://homes.luddy.indiana.edu/xw7/papers/wang2013unauthorized.pdf （精读一下）
 ******/
 
 export default function Post() {
@@ -45,7 +50,7 @@ export default function Post() {
             </X.HighlightBlock>
             <X.H2 href="https://ink.library.smu.edu.sg/cgi/viewcontent.cgi?params=/context/sis_research/article/5214/&path_info=p53_liu.pdf">Typing-Proof: Usable, Secure and Low-Cost Two-Factor Authentication Based on Keystroke Timings (ACSAC 2018)</X.H2>
             <X.HighlightBlock bgcolor="gray">
-                <X.P>Sound-Proof虽然简化了用户操作，但是存在一些问题比如安静环境、电脑设备没有内置麦克风等，在一些攻击场景如近距离`co-located attack`下有安全问题。文章提出的Typing-Proof：</X.P>
+                <X.P>Sound-Proof虽然简化了用户操作，但是存在一些问题比如安静环境、电脑设备没有内置麦克风等，在一些攻击场景如近距离`co-located attack`下有安全问题。论文提出的Typing-Proof：</X.P>
                 <X.Uli>PC端输入密码后，要求用户输入一些随机的字符</X.Uli>
                 <X.Uli>PC端通过JavaScript记录所有按键发生的时间戳序列，手机端通过麦克风记录敲击声音</X.Uli>
                 <X.Uli>时间戳序列通过服务器发送到手机端，比较是否匹配</X.Uli>
@@ -62,6 +67,9 @@ export default function Post() {
             <X.H2 href="https://dl.acm.org/doi/pdf/10.1145/3548606.3560597">Cross Miniapp Request Forgery: Root Causes, Attacks, and Vulnerability Detection (CCS 2022)</X.H2>
             <X.HighlightBlock bgcolor="gray">
                 <X.P>当发生微信小程序跳转时，如果接收端没有检查`referrerInfo.appId`，就有可能收到CMRF攻击。攻击者可以用自己的恶意小程序通过`wx.navigateToMiniProgram`跳转到受害者的小程序，携带自定义的`extraData`实现攻击。</X.P>
+                <X.P>两种类型的攻击：CMRF for Data Manipulation (CMRF-DM)、CMRF for Data Stealing (CMRF-DS)</X.P>
+                <X.Image src="cmrf.jpg" width="600px" filterDarkTheme />
+                <X.P>数据篡改：攻击方是发送方，使接收方收到恶意的非预期数据；\n数据盗窃：在攻击方发送假请求之后，如果还能收到响应的数据（这里指接收方通过`wx.navigateBackMiniProgram`的`extraData`返回给发送方的数据），则还可能造成意外的隐私泄露。</X.P>
             </X.HighlightBlock>
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>更多笔记</X.H3>
@@ -97,8 +105,31 @@ export default function Post() {
                     `}
                 />
             </X.HighlightBlock>
-
+            <X.H2 href="https://people.eecs.berkeley.edu/~daw/papers/intents-mobisys11.pdf">Analyzing Inter-Application Communication in Android (MobiSys 2011)</X.H2>
+            <X.HighlightBlock bgcolor="gray">
+                <X.P>Android应用程序消息传递中的漏洞与检测工具ComDroid。</X.P>
+                <X.P>基于`Intent`的攻击方式：</X.P>
+                <X.Oli reset>
+                    <X.P>未经授权的Intent接收（Unauthorized Intent Receipt） -- 攻击方是接收方</X.P>
+                    <X.Uli>Broadcast Theft：广播可能被精心注册了匹配规则`(intent-filter)`的恶意第三方应用窃听；如果是有序广播还可能被拦截。</X.Uli>
+                    <X.Uli>Activity Hijacking：同样地，恶意应用也可以在`Activity`中注册匹配目标隐式`Intent`的规则；尽管出现多个可匹配应用时会提示用户选择用哪个应用打开，攻击者可以伪装恶意应用的名字等信息以增加欺骗成功的可能性。</X.Uli>
+                    <X.Uli>Service Hijacking：恶意服务拦截了一个启动预期服务的`Intent`。（2014年的Android 5.0以后要求服务必须显式启动）</X.Uli>
+                    <X.Uli>Special Intents</X.Uli>
+                </X.Oli>
+                <X.Oli>
+                    <X.P>Intent欺骗攻击（Intent Spoofing） -- 攻击方是发送方</X.P>
+                    <X.Uli>Malicious Broadcast Injection：如果导出的（`android:exported="true"`）`BroadcastReceiver`盲目信任外部广播`Intent`，可能造成非预期行为。</X.Uli>
+                    <X.Uli>Malicious Activity Launch：导出的`Activity`可以被外部的显式/隐式`Intent`启动。</X.Uli>
+                    <X.Uli>Malicious Service Launch：类似地，导出的未受`permission`保护的`Service`可以被任何应用程序绑定。</X.Uli>
+                </X.Oli>
+            </X.HighlightBlock>
             <X.H1>其他</X.H1>
+            <X.H2 href="https://www.usenix.org/system/files/sec20-elsabagh.pdf">FIRMSCOPE: Automatic Uncovering of Privilege-Escalation Vulnerabilities in Pre-Installed Apps in Android Firmware (Security 2020)</X.H2>
+            <X.HighlightBlock bgcolor="gray">
+                <X.P>Android系统会有一些预安装的应用程序，这些应用程序随着固件一起发布，通常具有一些特权并且用户无法卸载。这些应用程序由设备供应商“精心”开发、并且通常被认为是安全的；论文发现这些应用程序中存在提权漏洞，并设计了工具FIRMSCOPE来自动发现这些漏洞。</X.P>
+                <X.P>例如一个攻击实例：</X.P>
+                <X.Image src="firmscope.jpg" width="100%" filterDarkTheme />
+            </X.HighlightBlock>
             <X.H2 href="https://www.usenix.org/system/files/sec22-sanusi-bohuk.pdf">Gossamer: Securely Measuring Password-based Logins (Security 2022)</X.H2>
             <X.HighlightBlock bgcolor="gray">
                 <X.P>用户提交的登录信息（如密码）的特征对于制定更好的安全策略、提升系统的易用性以及检测攻击至关重要。然而，由于密码的高度敏感性，直接监测存在很大的安全风险，因此需要开发一种既能提供有用统计信息又能确保密码安全的测量基础设施。</X.P>
