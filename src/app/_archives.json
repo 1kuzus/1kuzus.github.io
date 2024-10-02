@@ -1,4 +1,8 @@
 {
+    "/24d/crypto-1/": {
+        "title": "【密码学】流密码",
+        "time": "2024-10-02"
+    },
     "/24c/papers-sec-240922-pre-hijacked-accounts/": {
         "title": "论文概要：Pre-hijacked accounts: An Empirical Study of Security Failures in User Account Creation on the Web",
         "time": "2024-09-22"
@@ -293,11 +297,11 @@
     },
     "/longtime/demo/": {
         "title": "示例",
-        "todo":"删除！！！1"
+        "todo": "删除！！！1"
     },
     "/longtime/updates/": {
         "title": "更新日志",
-        "todo":"删除！！！1"
+        "todo": "删除！！！1"
     },
     "/longtime/papers-dl/": {
         "title": "论文速记：深度学习"

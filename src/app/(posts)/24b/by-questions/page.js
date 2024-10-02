@@ -133,19 +133,19 @@ export default function Post() {
             </X.Oli>
             <X.Oli>
                 <X.P>什么是依概率收敛？</X.P>
-                <X.P>依概率收敛是指对于任意$\epsilon \gt 0$，有$P(|X_n-X| \gt \epsilon) \to 0$，则称$X_n$依概率收敛到$X$。</X.P>
+                <X.P>依概率收敛是指对于任意$\varepsilon \gt 0$，有$P(|X_n-X| \gt \varepsilon) \to 0$，则称$X_n$依概率收敛到$X$。</X.P>
             </X.Oli>
             <X.Oli>
                 <X.P>介绍一下大数定律？</X.P>
                 <X.P>如果随机变量序列$X_1, X_2, \dots, X_n, \dots$满足</X.P>
-                <X.Formula text="\frac{1}{n}\sum_{i=1}^n X_i\stackrel{P}{\rightarrow} \frac{1}{n}\sum_{i=1}^n E(X_i)" />
+                <X.Formula text="\frac{1}{n}\sum_{i=1}^n X_i\stackrel{P}{\longrightarrow} \frac{1}{n}\sum_{i=1}^n E(X_i)" />
                 <X.P>则称{`$\\{X_n\\}$`}服从大数定律。</X.P>
                 <X.P>大数定律刻画了随机变量的平均值依概率收敛为期望的均值。</X.P>
                 <X.Divider />
                 <X.P>
                     切比雪夫大数定律：如果{`$\\{X_n\\}$`}两两不相关，且方差有限，则{`$\\{X_n\\}$`}服从大数定律。
                 </X.P>
-                <X.P>伯努利大数定律：如果事件$A$在$n$次伯努利试验中发生了$n_A$次，事件$A$发生的概率为$p$，则有{`$\\frac{n_A}{n}\\stackrel{P}{\\rightarrow}p$`}</X.P>
+                <X.P>伯努利大数定律：如果事件$A$在$n$次伯努利试验中发生了$n_A$次，事件$A$发生的概率为$p$，则有{`$\\frac{n_A}{n}\\stackrel{P}{\\longrightarrow}p$`}</X.P>
                 <X.P>
                     辛钦大数定律：如果{`$\\{X_n\\}$`}独立同分布，且期望存在，则{`$\\{X_n\\}$`}服从大数定律。
                 </X.P>

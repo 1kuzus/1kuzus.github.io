@@ -213,7 +213,7 @@ export default function Post() {
                 <X.P>答：</X.P>
                 <X.Formula text="\text{BN}(x)=\gamma \cdot \frac{x-\text{E}(x)}{\text{Var}(x)} + \beta" />
                 <X.HighlightBlock bgcolor="red">
-                    <X.Uli>分母常写为{`$\\sqrt{\\text{Var}(x)^2+\\epsilon}$`}</X.Uli>
+                    <X.Uli>分母常写为{`$\\sqrt{\\text{Var}(x)^2+\\varepsilon}$`}</X.Uli>
                     <X.Uli>参数$\gamma$和$\beta$通常是向量，公式中的乘法应为按元素乘。</X.Uli>
                 </X.HighlightBlock>
             </X.Oli>

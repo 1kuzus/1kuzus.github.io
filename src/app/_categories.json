@@ -86,7 +86,7 @@
         ]
     },
     {
-        "categoryName": "课程",
+        "categoryName": "课程笔记",
         "posts": [
             "/24b/rank-inequality/",
             "/23c/pattern-recognition-1/",
@@ -105,7 +105,8 @@
             "/24c/assembly-3/",
             "/24c/assembly-4/",
             "/24c/assembly-5/",
-            "/24c/assembly-6/"
+            "/24c/assembly-6/",
+            "/24d/crypto-1/"
         ]
     },
     {
