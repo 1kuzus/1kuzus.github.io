@@ -110,14 +110,14 @@ export default function Post() {
                 <X.P>Android应用程序消息传递中的漏洞与检测工具ComDroid。</X.P>
                 <X.P>基于`Intent`的攻击方式：</X.P>
                 <X.Oli reset>
-                    <X.P>未经授权的Intent接收（Unauthorized Intent Receipt） -- 攻击方是接收方</X.P>
+                    <X.P>未经授权的Intent接收（Unauthorized Intent Receipt） - 攻击方是接收方</X.P>
                     <X.Uli>Broadcast Theft：广播可能被精心注册了匹配规则`(intent-filter)`的恶意第三方应用窃听；如果是有序广播还可能被拦截。</X.Uli>
                     <X.Uli>Activity Hijacking：同样地，恶意应用也可以在`Activity`中注册匹配目标隐式`Intent`的规则；尽管出现多个可匹配应用时会提示用户选择用哪个应用打开，攻击者可以伪装恶意应用的名字等信息以增加欺骗成功的可能性。</X.Uli>
                     <X.Uli>Service Hijacking：恶意服务拦截了一个启动预期服务的`Intent`。（2014年的Android 5.0以后要求服务必须显式启动）</X.Uli>
                     <X.Uli>Special Intents</X.Uli>
                 </X.Oli>
                 <X.Oli>
-                    <X.P>Intent欺骗攻击（Intent Spoofing） -- 攻击方是发送方</X.P>
+                    <X.P>Intent欺骗攻击（Intent Spoofing） - 攻击方是发送方</X.P>
                     <X.Uli>Malicious Broadcast Injection：如果导出的（`android:exported="true"`）`BroadcastReceiver`盲目信任外部广播`Intent`，可能造成非预期行为。</X.Uli>
                     <X.Uli>Malicious Activity Launch：导出的`Activity`可以被外部的显式/隐式`Intent`启动。</X.Uli>
                     <X.Uli>Malicious Service Launch：类似地，导出的未受`permission`保护的`Service`可以被任何应用程序绑定。</X.Uli>

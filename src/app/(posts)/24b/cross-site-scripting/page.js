@@ -4,6 +4,7 @@ import metas from 'src/app/_metas';
 const path = '/24b/cross-site-scripting/';
 export const {metadata} = metas[path];
 
+// todo: xss!!
 export default function Post() {
     return (
         <>
