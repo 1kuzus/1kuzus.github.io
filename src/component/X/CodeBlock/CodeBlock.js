@@ -14,6 +14,7 @@ import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-typescript';
 import 'prismjs/components/prism-markup-templating';
 import 'src/assets/prismjs/prism-asm8086';
+import {assert} from 'src/utils/utils';
 import './CodeBlock.css';
 
 export default function CodeBlock(props) {
@@ -36,13 +37,10 @@ export default function CodeBlock(props) {
     allStartEnd.sort((a, b) => a[0] - b[0]);
     //检验区间是否重叠
     for (let i = 0; i < allStartEnd.length - 1; i++) {
-        if (allStartEnd[i][1] > allStartEnd[i + 1][0])
-            throw new Error(
-                '[in X.Codeblock]: highlight lines range overlap: ' +
-                    allStartEnd[i].slice(0, 2) +
-                    ' and ' +
-                    allStartEnd[i + 1].slice(0, 2)
-            );
+        assert(
+            allStartEnd[i][1] <= allStartEnd[i + 1][0],
+            'highlight lines range overlap: ' + allStartEnd[i].slice(0, 2) + ' and ' + allStartEnd[i + 1].slice(0, 2)
+        );
     }
     //渲染背景
     const colorMap = {
