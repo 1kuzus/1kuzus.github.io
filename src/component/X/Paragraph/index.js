@@ -15,8 +15,8 @@ export function XParser(children) {
     assert(isStringOrStringArray(children), 'children should be string or string array.');
     let htmlContent = Array.isArray(children) ? children.join('') : children;
     htmlContent = htmlContent
-        // .replace(/</g, '&#60;')
-        // .replace(/>/g, '&#62;')
+        .replace(/</g, '&#60;')
+        .replace(/>/g, '&#62;')
         .replace(/\\\\/g, '&#92;')
         .replace(/\\`/g, '&#96;')
         .replace(/\\\*/g, '&#42;')
