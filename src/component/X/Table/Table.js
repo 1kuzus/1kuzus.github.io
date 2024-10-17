@@ -1,4 +1,4 @@
-import L from '../Line/Line';
+import {XParser} from '../Paragraph';
 import {isStringOrStringArray} from 'src/utils/utils';
 import './Table.css';
 
@@ -27,7 +27,11 @@ export default function Table(props) {
                         ? data.map((tr, tr_index) => (
                               <tr key={tr_index}>
                                   {tr.map((td, td_index) => {
-                                      const child = isStringOrStringArray(td) ? <L>{td}</L> : td;
+                                      const child = isStringOrStringArray(td) ? (
+                                          <p dangerouslySetInnerHTML={{__html: XParser(td)}} />
+                                      ) : (
+                                          td
+                                      );
                                       const fmt = align[td_index];
                                       const className = fmt === 'l' || fmt === 'r' ? 'x-cell-align-' + fmt : null;
                                       const w = width[td_index] || null;

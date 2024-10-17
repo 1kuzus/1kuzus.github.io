@@ -5,9 +5,8 @@ import Formula from './Formula/Formula';
 import {Title, H1, H2, H3} from './Headers';
 import HighlightBlock from './HighlightBlock/HighlightBlock';
 import Image from './Image/Image';
-import L from './Line/Line';
 import {Uli, Oli} from './ListItem';
-import P from './Paragraph/Paragraph';
+import {P} from './Paragraph';
 import Table from './Table/Table';
 import TOC from './TOC/TOC';
 
@@ -22,7 +21,6 @@ const X = {
     H3,
     HighlightBlock,
     Image,
-    L,
     Uli,
     Oli,
     P,
