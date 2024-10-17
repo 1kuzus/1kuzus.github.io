@@ -1,4 +1,5 @@
 import Prism from 'prismjs';
+import {assert} from 'src/utils/utils';
 import 'prismjs/components/prism-c';
 import 'prismjs/components/prism-cpp';
 import 'prismjs/components/prism-jsx';
@@ -14,7 +15,6 @@ import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-typescript';
 import 'prismjs/components/prism-markup-templating';
 import 'src/assets/prismjs/prism-asm8086';
-import {assert} from 'src/utils/utils';
 import './CodeBlock.css';
 
 export default function CodeBlock(props) {
