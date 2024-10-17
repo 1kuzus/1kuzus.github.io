@@ -126,7 +126,7 @@ export default function Post() {
                 `}
             />
             <X.P>虽然前面做了长度检查，但是后续的逻辑将`'&'`和`'&lt;'`转为HTML实体时，可能导致长度增长。如果恶意构造包含大量`'&'`的输入，可能导致越界写入。</X.P>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2023-0841[https://www.opencve.io/cve/CVE-2023-0841]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://github.com/gpac/gpac/issues/2396]@</X.Uli>
@@ -161,10 +161,10 @@ export default function Post() {
             </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/79.html">【B】CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')</X.H2>
             <X.P>跨站脚本攻击。</X.P>
-            <X.HighlightBlock bgcolor="gray">
+            <X.HighlightBlock background="gray">
                 <X.P>详见@Learn XSS[/24b/cross-site-scripting/]@。</X.P>
             </X.HighlightBlock>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2014-8958[https://www.opencve.io/cve/CVE-2014-8958]@</X.Uli>
                 <X.Uli>`Patch`：@[https://github.com/phpmyadmin/phpmyadmin/commit/d32da348c4de2379482a48661ce968a55eebe5c4]@</X.Uli>
@@ -218,7 +218,7 @@ export default function Post() {
             />
             <X.P>由于cookie是可以在本地修改的，这仍然是一个输入用户可控的例子。注意到PHP语句中的单引号包裹着`$id`，一个可以注入的载荷是`1432' or '1' = '1`。请求会变成：</X.P>
             <X.CodeBlock language="sql" code="SELECT MessageID, Subject FROM messages WHERE MessageID = '1432' or '1' = '1'" />
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2018-1000869[https://www.opencve.io/cve/CVE-2018-1000869]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://github.com/phpipam/phpipam/issues/2344]@</X.Uli>
@@ -286,7 +286,7 @@ export default function Post() {
                 `}
             />
             <X.P>在发生异常时指针已经释放，但随后又在`logError`错误地使用。</X.P>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2018-1000217[https://www.opencve.io/cve/CVE-2018-1000217]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://github.com/DaveGamble/cJSON/issues/248]@</X.Uli>
@@ -362,7 +362,7 @@ export default function Post() {
             />
             <X.P>如果缺乏相应的认证，攻击者可以通过命令分隔符执行攻击命令，例如参数传入`;rm -rf /`，命令就等价于：</X.P>
             <X.CodeBlock language="bash" code="ls -l /home/;rm -rf /" />
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2019-1010200[https://www.opencve.io/cve/CVE-2019-1010200]@</X.Uli>
                 <X.Uli>`patch`：@[https://github.com/google/voice-builder/commit/c145d4604df67e6fc625992412eef0bf9a85e26b]@</X.Uli>
@@ -446,7 +446,7 @@ export default function Post() {
                 `}
             />
             <X.P>这个示例尝试根据用户指定的值构建列表，并判断了提供值为负的情况，但还是忽略了输入`0`值的情况，可能导致后续抛出异常。</X.P>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2008-2223[https://www.opencve.io/cve/CVE-2008-2223]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://www.exploit-db.com/exploits/5565]@</X.Uli>
@@ -541,7 +541,7 @@ export default function Post() {
                 `}
             />
             <X.P>这段代码只检查了`index &lt; len`的情况；在判断条件中还应加入`index &gt;= 0`。</X.P>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2022-1452[https://www.opencve.io/cve/CVE-2022-1452]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://huntr.com/bounties/c8f4c2de-7d96-4ad4-857a-c099effca2d6]@</X.Uli>
@@ -627,7 +627,7 @@ export default function Post() {
                 main()
                 `}
             />
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2023-35947[https://www.opencve.io/cve/CVE-2023-35947]@</X.Uli>
                 <X.Uli>`Patch`：@[https://github.com/gradle/gradle/commit/1096b309520a8c315e3b6109a6526de4eabcb879]@</X.Uli>
@@ -697,10 +697,10 @@ export default function Post() {
             </X.HighlightBlock>
             <X.H2 href="https://cwe.mitre.org/data/definitions/352.html">【Compo】CWE-352: Cross-Site Request Forgery (CSRF)</X.H2>
             <X.P>跨站请求伪造。</X.P>
-            <X.HighlightBlock bgcolor="gray">
+            <X.HighlightBlock background="gray">
                 <X.P>详见@Learn CSRF[/24b/cross-site-request-forgery/]@。</X.P>
             </X.HighlightBlock>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2009-3022[https://www.opencve.io/cve/CVE-2009-3022]@</X.Uli>
                 <X.Uli>报告：@[https://jvndb.jvn.jp/ja/contents/2009/JVNDB-2009-000058.html]@</X.Uli>
@@ -753,7 +753,7 @@ export default function Post() {
             />
             <X.P>上传成功后通过类似以下形式的URL调用：</X.P>
             <X.CodeBlock language="text" code="http://server.example.com/upload_dir/malicious.php?cmd=ls%20-l" />
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2019-1010062[https://www.opencve.io/cve/CVE-2019-1010062]@</X.Uli>
                 <X.Uli>`Patch`：@[https://github.com/pluck-cms/pluck/commit/09f0ab871bf633973cfd9fc4fe59d4a912397cf8]@</X.Uli>
@@ -802,7 +802,7 @@ export default function Post() {
                 `}
             />
             <X.P>这段代码小心地检查了SQL注入风险（通过`prepare`函数），但却没有验证执行数据库操作的用户是否具有权限。</X.P>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2022-24730[https://www.opencve.io/cve/CVE-2022-24730]@</X.Uli>
                 <X.Uli>报告：@[https://github.com/argoproj/argo-cd/security/advisories/GHSA-r9cr-hvjj-496v]@</X.Uli>
@@ -842,7 +842,7 @@ export default function Post() {
                 `}
             />
             <X.P>如果`gethostbyaddr`返回`NULL`，`hp`就是空指针，`strcpy`会导致空指针解引用。程序缺少对其返回值的检查。</X.P>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2008-5183[https://www.opencve.io/cve/CVE-2008-5183]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://www.exploit-db.com/exploits/7150]@</X.Uli>
@@ -911,7 +911,7 @@ export default function Post() {
                 `}
             />
             <X.P>使用cookie做认证，是可以直接被绕过的！</X.P>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2022-36436[https://www.opencve.io/cve/CVE-2022-36436]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://cert.grnet.gr/en/blog/cve-2022-36436-twisted-vnc-authentication-proxy-authentication-bypass/]@</X.Uli>
@@ -988,7 +988,7 @@ export default function Post() {
                 `}
             />
             <X.P>`bytesRec`定义为`short int`类型，当`MAXGET`很大时，很可能导致`bytesRec`溢出（永远小于`MAXGET`），循环不会终止，并不断地覆盖`buf`中的内容。</X.P>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2018-20330[https://www.opencve.io/cve/CVE-2018-20330]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://github.com/libjpeg-turbo/libjpeg-turbo/issues/304]@</X.Uli>
@@ -1053,7 +1053,7 @@ export default function Post() {
                 `}
             />
             <X.P>这段代码没有验证传入数据是否合法。攻击者可以构造一个非法的序列化对象`AuthToken`，该对象通过实例化Python的子进程之一来执行任意命令。例如，攻击者可以构建一个利用Python子进程模块的`pickle`，该模块会生成新进程并包含许多用于各种用途的参数。由于`Pickle`库允许对象定义如何`unpickle`，因此攻击者可以指示`unpickle`进程在子进程模块中调用`Popen`并执行`/bin/sh`。</X.P>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2020-13091[https://www.opencve.io/cve/CVE-2020-13091]@</X.Uli>
                 <X.P>如果`__reduce__`调用了`os.system`，1.0.3版本的Python Pandas库可以从传递给`read_pickle()`函数的不信任文件中反序列化，并执行命令。注意`read_pickle()`在@文档[https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_pickle.html]@中已经被标记为不安全的，用户有责任确保传入的文件是可信的。</X.P>
@@ -1091,7 +1091,7 @@ export default function Post() {
                 `}
             />
             <X.P>原因是类似的，`btype`参数有被注入的风险。</X.P>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2024-32027[https://www.opencve.io/cve/CVE-2024-32027]@</X.Uli>
                 <X.Uli>`Patch`：@[https://github.com/bmaltais/kohya_ss/commit/831af8babeb75faff62bcc6a8c6a4f80354f1ff1]@</X.Uli>
@@ -1149,7 +1149,7 @@ export default function Post() {
                 }
                 `}
             />
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2020-35296[https://www.opencve.io/cve/CVE-2020-35296]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://github.com/Shrimant12/CVE-References/blob/main/CVE-2020-35296.md]@</X.Uli>
@@ -1158,7 +1158,7 @@ export default function Post() {
             <X.H2 href="https://cwe.mitre.org/data/definitions/918.html">【B】CWE-918: Server-Side Request Forgery (SSRF)</X.H2>
             <X.P>服务端请求伪造，攻击者通过伪造服务器发起的请求，使服务器端的应用程序访问受信任的第三方服务器或资源。通常，攻击者利用此漏洞访问内部系统。SSRF可以看作一种跳板攻击。</X.P>
             <X.Image src="ssrf.jpg" width="800px" filterDarkTheme />
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2024-3149[https://www.opencve.io/cve/CVE-2024-3149]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://huntr.com/bounties/b230d76b-ae2d-440e-a25b-94ffaa7c4ff1]@</X.Uli>
@@ -1331,7 +1331,7 @@ export default function Post() {
                 `}
             />
             <X.P>上面代码中高亮的部分是*正确*的做法。如果忽视了验证，就存在风险了。</X.P>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2020-25966[https://www.opencve.io/cve/CVE-2020-25966]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://gitlab.com/Gazzaz/Spectra_API_Issue/]@</X.Uli>
@@ -1411,7 +1411,7 @@ export default function Post() {
                 }
                 `}
             />
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2024-24254[https://www.opencve.io/cve/CVE-2024-24254]@</X.Uli>
                 <X.Uli>`Exploit``Patch`：@[https://github.com/Drone-Lab/PX4-Autopilot/blob/report-can-not-pause-vulnerability/Multi-Threaded%20Race%20Condition%20bug%20found%20in%20PX4%20cause%20drone%20can%20not%20PAUSE.md]@</X.Uli>
@@ -1476,7 +1476,7 @@ export default function Post() {
                 `}
             />
             <X.P>这个系统定义了不同等级的用户，`ADMIN`和`OPERATOR`都可以重置密码。系统设计的初衷是想让`OPERATOR`拥有稍弱于`ADMIN`的权限；然而既然`OPERATOR`可以修改密码，那么就可以通过重置`ADMIN`账号的密码来控制一个管理员账号。此例的权限管理是有缺陷的。</X.P>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2017-11747[https://www.opencve.io/cve/CVE-2017-11747]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://github.com/tinyproxy/tinyproxy/issues/106]@</X.Uli>
@@ -1566,7 +1566,7 @@ export default function Post() {
                 `}
             />
             <X.P>`eval`函数会执行用户输入的代码，一个可以注入的载荷是`__import__('subprocess').getoutput('rm -r *')`。</X.P>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2023-1947[https://www.opencve.io/cve/CVE-2023-1947]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://gitee.com/misak7in/cve/blob/master/taocms.md]@</X.Uli>
@@ -1649,7 +1649,7 @@ export default function Post() {
                 `}
             />
             <X.P>修改cookie即可绕过授权。</X.P>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2024-22208[https://www.opencve.io/cve/CVE-2024-22208]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://github.com/thorsten/phpMyFAQ/security/advisories/GHSA-9hhf-xmcw-r3xg]@</X.Uli>
@@ -1687,7 +1687,7 @@ export default function Post() {
             <X.H3>Example 1</X.H3>
             <X.P>软件在安装或初始化时，通常会创建一些文件、目录或资源。这些资源会被分配默认的权限（读、写、执行权限等）。</X.P>
             <X.P>如果这些默认权限设置得过于宽松，比如允许所有用户都具有读写权限，那么未授权的用户可能会访问、修改或删除这些文件，导致数据泄露、篡改或破坏。</X.P>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2005-1941[https://www.opencve.io/cve/CVE-2005-1941]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://bugs.gentoo.org/93558]@</X.Uli>

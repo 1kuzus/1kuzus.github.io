@@ -683,7 +683,7 @@ export default function Post() {
             <X.HighlightBlock>
                 <X.P>严格的来说“势函数”应为$-h$。</X.P>
             </X.HighlightBlock>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.Uli>
                     <X.P>为什么新的$w'$可以保证非负？</X.P>
                     <X.P>由于势函数$h$的含义是最短路，考虑最短路的三角不等式，一定有$h(u)+w \geq h(v)$，移项即有$w' \geq 0$。</X.P>

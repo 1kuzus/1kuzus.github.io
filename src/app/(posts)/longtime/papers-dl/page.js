@@ -7,7 +7,7 @@ export const {metadata} = metas[path];
 function PaperSummary(props) {
     const {topic, method, experiment, innovation, limitation} = props;
     return (
-        <X.HighlightBlock bgcolor="gray">
+        <X.HighlightBlock background="gray">
             {[
                 [topic, '文章的主题 / 文章要解决什么问题？'],
                 [method, '文章的核心方法 / 具体是如何做的？'],
@@ -45,7 +45,7 @@ export default function Post() {
             <X.H1>研究</X.H1>
             <X.H2 href="https://arxiv.org/pdf/2003.08934.pdf">【NeRF】NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis (2020)</X.H2>
             <PaperSummary topic="使用稀疏输入2D图片集实现场景的3D视图合成。" method={<X.P>从`($x,y,z,\theta,\phi$)`到`($R,G,B,\sigma$)`。</X.P>} experiment="测试数据集是`Diffuse Synthetic 360`、`Realistic Synthetic 360`和`Real Forward-Facing`。" innovation="将输入坐标位置编码，帮助MLP表示高频函数；分层采样" limitation="有效地优化和渲染神经辐射场；可解释性" />
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>更多笔记</X.H3>
                 <X.P>神经辐射场用于从2D的图片重建3D的场景。</X.P>
                 <X.P>文中出现的三个指标PSNR、SSIM、LPIPS：</X.P>
@@ -55,7 +55,7 @@ export default function Post() {
             </X.HighlightBlock>
             <X.H2 href="https://arxiv.org/pdf/2201.05989.pdf">【Instant NGP】Instant Neural Graphics Primitives with a Multiresolution Hash Encoding (2022)</X.H2>
             <PaperSummary topic="主要用于解决NeRF在对全连接神经网络进行参数化时的效率问题。" innovation="提出了一种基于哈希搜索的编码方法。" />
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>更多笔记</X.H3>
                 <X.H3>Instant NGP与NeRF的异同</X.H3>
                 <X.P>转载自@知乎：从NeRF到Instant-NGP[https://zhuanlan.zhihu.com/p/631284285]@</X.P>
@@ -64,7 +64,7 @@ export default function Post() {
             </X.HighlightBlock>
             <X.H2 href="https://arxiv.org/pdf/2308.04079.pdf">【3DGS】3D Gaussian Splatting for Real-Time Radiance Field Rendering (2023)</X.H2>
             <PaperSummary topic="实现实时辐射场渲染，同时保持高质量的视觉效果，并且保持较短的训练时间。" />
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>更多笔记</X.H3>
                 <X.H3>文章的相关工作部分</X.H3>
                 <X.P>传统的场景重建与渲染：基于光场的，密集采样、非结构化捕获；*运动恢复结构*`(Structure from Motion, SFM)`用一组照片估计稀疏点云合成新视图；*多视点立体视觉*`(Multi-View Stereo, MVS)`；\n神经渲染和辐射场：用CNN估计混合权重，用于纹理空间；Soft3D提出`Volumetric representations`；NeRF提出重要性采样和位置编码来提高质量，但使用了大型多层感知器，对速度有负面影响。</X.P>
@@ -93,7 +93,7 @@ export default function Post() {
                     </>
                 }
             />
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>更多笔记</X.H3>
                 <X.H3>包围体：AABB和OBB</X.H3>
                 <X.P>*AABB*：轴对齐包围盒`(Axis-Aligned Bounding Box)`\n*OBB*：有向包围盒`(Oriented Bounding Box)`</X.P>
@@ -114,7 +114,7 @@ export default function Post() {
             <X.H1>学习</X.H1>
             <X.H2 href="https://www.cv-foundation.org/openaccess/content_cvpr_2014/papers/Girshick_Rich_Feature_Hierarchies_2014_CVPR_paper.pdf">【R-CNN】Rich Feature Hierarchies for Accurate Object Detection and Semantic Segmentation (2014)</X.H2>
             <PaperSummary topic="提出R-CNN`(Regions with CNN features)`提高目标检测性能。" method="区域提议`(Region Proposals)`：使用`selective search`生成候选。" experiment="在`PASCAL VOC 2012`取得`mAP 53.3%`，在`ILSVRC 2013`竞赛数据集取得`mAP 31.4%`。" />
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>更多笔记</X.H3>
                 <X.P>转载自@动手学深度学习 - 区域卷积神经网络系列[https://zh-v2.d2l.ai/chapter_computer-vision/rcnn.html]@</X.P>
                 <X.H3>R-CNN</X.H3>
@@ -153,7 +153,7 @@ export default function Post() {
                 分割任务的精细程度更高，因此文章提出了`ROI Align`，使用双线性插值来保留特征图上的空间信息。
                 "
             />
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>更多笔记</X.H3>
                 <X.H3>语义分割与实例分割</X.H3>
                 <X.Image src="ss_and_is.jpg" width="600px" />
@@ -167,7 +167,7 @@ export default function Post() {
                 改造的方式是将最后的全连接层替换成卷积层。
                 "
             />
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>更多笔记</X.H3>
                 <X.H3>转置卷积</X.H3>
                 <X.P>卷积通常不会增大输入的高宽，而是保持不变或降低。由于语义分割任务需要像素级别的输出，转置卷积被用来增大输入的高宽。</X.P>

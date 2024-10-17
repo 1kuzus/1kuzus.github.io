@@ -105,7 +105,7 @@ export default function Post() {
                 <X.P>`c.`它是一种非常有效的反向传播方法</X.P>
                 <X.P>`d.`这些均不是</X.P>
                 <X.P>答：`a`</X.P>
-                <X.HighlightBlock bgcolor="red">
+                <X.HighlightBlock background="red">
                     <X.P>BN是对数据做批规范化，不是对权重。</X.P>
                 </X.HighlightBlock>
             </X.Oli>
@@ -124,7 +124,7 @@ export default function Post() {
                 <X.P>`c.`只对最后几层进行调参`(fine-tuning)`</X.P>
                 <X.P>`d.`对每一层模型进行评估，选择其中的少数来使用</X.P>
                 <X.P>答：`c`</X.P>
-                <X.HighlightBlock bgcolor="red">
+                <X.HighlightBlock background="red">
                     <X.P>在考虑微调时，根据新数据集的大小、新数据集与预训练模型数据集相似度，不同策略如下：</X.P>
                     <X.Table
                         fromText={`
@@ -212,7 +212,7 @@ export default function Post() {
                 <X.P>BN层有两个可学习参数：拉伸参数$\gamma$和偏移参数$\beta$，它们的形状与$x$相同。请写出经过批量归一化转换后的$x$表达式。</X.P>
                 <X.P>答：</X.P>
                 <X.Formula text="\text{BN}(x)=\gamma \cdot \frac{x-\text{E}(x)}{\text{Var}(x)} + \beta" />
-                <X.HighlightBlock bgcolor="red">
+                <X.HighlightBlock background="red">
                     <X.Uli>分母常写为{`$\\sqrt{\\text{Var}(x)^2+\\varepsilon}$`}</X.Uli>
                     <X.Uli>参数$\gamma$和$\beta$通常是向量，公式中的乘法应为按元素乘。</X.Uli>
                 </X.HighlightBlock>
@@ -314,7 +314,7 @@ export default function Post() {
                 <X.P>`a.`对</X.P>
                 <X.P>`b.`错</X.P>
                 <X.P>答：`b`</X.P>
-                <X.HighlightBlock bgcolor="red">
+                <X.HighlightBlock background="red">
                     <X.P>通常认为卷积核数量等于输出通道数。</X.P>
                 </X.HighlightBlock>
             </X.Oli>
@@ -354,7 +354,7 @@ export default function Post() {
                 <X.P>`c.`GRU相对于LSTM参数更少</X.P>
                 <X.P>`d.`所有选项都正确</X.P>
                 <X.P>答：`d`</X.P>
-                <X.HighlightBlock bgcolor="red">
+                <X.HighlightBlock background="red">
                     <X.P>*门控循环单元*`(Gated Recurrent Unit, GRU)`通过简化LSTM神经网络循环函数达到了类似的效果并节省了计算成本。在GRU中，遗忘门和输入门合并成了一个新的重置门，且加入了一个更新门。</X.P>
                 </X.HighlightBlock>
             </X.Oli>
@@ -462,7 +462,7 @@ export default function Post() {
             <X.Oli reset>
                 <X.P>最优动作价值函数依赖于（）。</X.P>
                 <X.P>答：状态、行动。</X.P>
-                <X.HighlightBlock bgcolor="red">
+                <X.HighlightBlock background="red">
                     <X.Uli>*策略*：智能体根据状态进行下一步行动的函数。\n确定性策略：$\pi(s)=a$，即状态$s$下执行动作$a$\n随机性策略：$\pi(s,a)=p$，即在状态$s$下执行动作$a$的概率为$p$</X.Uli>
                     <X.Uli>*奖励*`(reward)`：在$t$时刻得到的奖励$R_t$，$R_t$依赖于$s_t$和$a_t$。</X.Uli>
                     <X.Uli>*回报*`(return)`：在$t$时刻的*折扣回报*是{`$U_t=R_t+\\gamma R_{t+1}+\\gamma^2 R_{t+2}+\\dots$`}</X.Uli>
@@ -518,7 +518,7 @@ export default function Post() {
                 <X.P>`c.`用ReLU激活函数，因为$Q$值非负</X.P>
                 <X.P>`d.`用SoftMax激活函数，因为DQN的输出是一个概率分布</X.P>
                 <X.P>答：`a`</X.P>
-                <X.HighlightBlock bgcolor="red">
+                <X.HighlightBlock background="red">
                     <X.P>DQN的目标是估计每个可能动作的$Q$值（动作价值函数），而这些$Q$值可以是任意实数。如果在输出层使用了某种激活函数，它可能会对输出值进行限制，导致无法灵活地表示$Q$值。</X.P>
                 </X.HighlightBlock>
             </X.Oli>

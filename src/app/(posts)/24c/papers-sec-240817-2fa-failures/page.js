@@ -11,7 +11,7 @@ export default function Post() {
             <X.Title>{metas[path].title}</X.Title>
             <X.P>相关链接：</X.P>
             <X.Uli>@Security and Privacy Failures in Popular 2FA Apps[https://www.usenix.org/system/files/sec23summer_198-gilsenan-prepub.pdf]@</X.Uli>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>笔记</X.H3>
                 <X.H3>TOTP</X.H3>
                 <X.P>TOTP`(Time-based One-Time Passwords)`是一种常见的2FA形式。常见的工作流程是：</X.P>

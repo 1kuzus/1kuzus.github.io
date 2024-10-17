@@ -12,7 +12,7 @@ export default function Post() {
             <X.P>相关链接：</X.P>
             <X.Uli>@A Systematic Study of the Consistency of Two-Factor Authentication User Journeys on Top-Ranked Websites[https://www.ndss-symposium.org/wp-content/uploads/2023/02/ndss2023_s362_paper.pdf]@</X.Uli>
             <X.Uli>@arxiv Extended Version[https://arxiv.org/pdf/2210.09373]@</X.Uli>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>笔记</X.H3>
                 <X.H3>认证因素 Authentication Factor</X.H3>
                 <X.P>一般来说有三种：</X.P>

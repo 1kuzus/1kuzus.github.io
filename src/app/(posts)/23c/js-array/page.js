@@ -358,7 +358,7 @@ export default function Post() {
                 arr.sort(compareFn)
                 `}
             />
-            <X.HighlightBlock bgcolor="red">
+            <X.HighlightBlock background="red">
                 <X.P>如果省略`compareFn`，数组元素会被转换为字符串，然后根据每个字符的Unicode码位值进行排序。</X.P>
             </X.HighlightBlock>
             <X.CodeBlock

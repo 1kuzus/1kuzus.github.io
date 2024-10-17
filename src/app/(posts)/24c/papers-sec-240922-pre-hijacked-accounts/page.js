@@ -11,7 +11,7 @@ export default function Post() {
             <X.Title>{metas[path].title}</X.Title>
             <X.P>相关链接：</X.P>
             <X.Uli>@Pre-hijacked accounts: An Empirical Study of Security Failures in User Account Creation on the Web[https://www.usenix.org/system/files/sec22-sudhodanan.pdf]@</X.Uli>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.H3>笔记</X.H3>
                 <X.H3>IdP</X.H3>
                 <X.P>IdP`(Identity Provider)`是？todo？</X.P>
@@ -44,9 +44,3 @@ export default function Post() {
         </>
     );
 }
-
-
-
-
-
-

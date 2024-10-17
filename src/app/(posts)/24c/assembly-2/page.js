@@ -224,7 +224,7 @@ export default function Post() {
             <X.Image src="fig8.jpg" width="100%" />
             <X.H1>练习</X.H1>
             <X.H2>loop指令实现乘法</X.H2>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.P>编程计算`ffff:6`字节单元的数值乘以`3`（连加三次），结果保存在`DX`中。</X.P>
             </X.HighlightBlock>
             <X.CodeBlock
@@ -253,7 +253,7 @@ export default function Post() {
             <X.Image src="fig3.jpg" width="100%" />
             <X.P>注：在汇编程序中数据不能以字母开头，因此`ffffh`要写为`0ffffh`。</X.P>
             <X.H2>计算连续内存单元之和</X.H2>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.P>编程计算`ffff:0`~`ffff:b`字节单元的数据之和，结果保存在`DX`中。</X.P>
             </X.HighlightBlock>
             <X.P>注意我们要计算的字节单元（`8`位），每个单元最大为`255`，理论上总和一定不会超过`DX`的上限值（`16`位），但单次相加时要注意需要取出`8`位的数据，同时加到`16`位的寄存器，以保证结果正确且单次相加不会溢出。</X.P>
@@ -283,7 +283,7 @@ export default function Post() {
             <X.P>结果是`405h`。</X.P>
             <X.Image src="fig4.jpg" width="100%" />
             <X.H2>复制内存（使用loop和段前缀）</X.H2>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.P>编程实现将`ffff:0`~`ffff:b`的数据复制到`0:200`~`0:20b`。</X.P>
             </X.HighlightBlock>
             <X.P>在本题中需要两个段的数据，默认的段前缀是`DS`，我们再使用附加段寄存器`ES`，使得`(ds)=ffffh`，`(es)=20h`，这样就可以对齐两个段的数据（`ds:[bx]`直接对应`es:[bx]`），可以使得程序更简明。</X.P>

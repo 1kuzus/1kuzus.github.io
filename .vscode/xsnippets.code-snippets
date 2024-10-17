@@ -149,13 +149,13 @@
 		],
 		"description": "X.HighlightBlock tag"
 	},
-	"X.HighlightBlock tag with bgcolor": {
+	"X.HighlightBlock tag with background props": {
 		"scope": "javascript,typescript",
 		"prefix": "xhbg",
 		"body": [
-			"<X.HighlightBlock bgcolor=\"$1\"></X.HighlightBlock>",
+			"<X.HighlightBlock background=\"$1\"></X.HighlightBlock>",
 		],
-		"description": "X.HighlightBlock tag with bgcolor"
+		"description": "X.HighlightBlock tag with background props"
 	},
 	"X.Image tag": {
 		"scope": "javascript,typescript",
@@ -188,7 +188,7 @@
 		],
 		"description": "X.Table tag"
 	},
-	"X.Table tag with fromText": {
+	"X.Table tag with fromText props": {
 		"scope": "javascript,typescript",
 		"prefix": "xtft",
 		"body": [
@@ -200,9 +200,9 @@
 			"\t`}",
 			"/>",
 		],
-		"description": "X.Table tag with fromText"
+		"description": "X.Table tag with fromText props"
 	},
-	"X.Table tag with fromData": {
+	"X.Table tag with fromData props": {
 		"scope": "javascript,typescript",
 		"prefix": "xtfd",
 		"body": [
@@ -224,9 +224,9 @@
 			"\t]}",
 			"/>",
 		],
-		"description": "X.Table tag with fromData"
+		"description": "X.Table tag with fromData props"
 	},
-	"X.Table tag with fromText and tableStyle": {
+	"X.Table tag with fromText and tableStyle props": {
 		"scope": "javascript,typescript",
 		"prefix": "xtfttbs",
 		"body": [
@@ -244,9 +244,9 @@
 			"\t}}",
 			"/>",
 		],
-		"description": "X.Table tag with fromText and tableStyle"
+		"description": "X.Table tag with fromText and tableStyle props"
 	},
-	"X.Table tag with fromData and tableStyle": {
+	"X.Table tag with fromData and tableStyle props": {
 		"scope": "javascript,typescript",
 		"prefix": "xtfdtbs",
 		"body": [
@@ -264,7 +264,7 @@
 			"\t}}",
 			"/>",
 		],
-		"description": "X.Table tag with fromData and tableStyle"
+		"description": "X.Table tag with fromData and tableStyle props"
 	},
 	"tableStyle props": {
 		"scope": "javascript,typescript",

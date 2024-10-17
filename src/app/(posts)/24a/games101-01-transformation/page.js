@@ -78,7 +78,7 @@ export default function Post() {
                 \begin{bmatrix} x+t_x \\y+t_y \\ 1 \end{bmatrix}
                 "
             />
-            <X.HighlightBlock bgcolor="gray">
+            <X.HighlightBlock background="gray">
                 <X.P>在齐次坐标下，前面提及的变换都可以表示为矩阵</X.P>
                 <X.Formula
                     text="
@@ -320,7 +320,7 @@ export default function Post() {
                 \end{bmatrix}
                 "
             />
-            <X.HighlightBlock bgcolor="gray">
+            <X.HighlightBlock background="gray">
                 <X.P>无论正交投影还是透视投影，物体在视锥体之外的部分将会变得不可见，这也是*裁剪空间*的得名。</X.P>
             </X.HighlightBlock>
             <X.HighlightBlock>

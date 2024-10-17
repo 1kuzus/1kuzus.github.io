@@ -100,7 +100,7 @@ export default function Post() {
                 cli  ;设置IF=0，CPU不响应可屏蔽中断
                 `}
             />
-            <X.HighlightBlock bgcolor="red">
+            <X.HighlightBlock background="red">
                 <X.H3>讨论</X.H3>
                 <X.Uli>
                     <X.P>8086 CPU中断过程第`3`步中，为什么要设置`TF=0`？</X.P>
@@ -392,7 +392,7 @@ export default function Post() {
             <X.P>`int 16h`中断和`int 9`中断是一对相互配合的程序，`int 9`中断处理程序向键盘缓冲区中写入，`int 16h`中断处理程序从缓冲区中读出。它们写入和读出的时机不同，`int 9`中断处理程序在有键按下的时候向键盘缓冲区中写入数据；而`int 16h`中断处理程序是在应用程序对其进行调用的时候，将数据从键盘缓冲区中读出。</X.P>
             <X.H1>练习</X.H1>
             <X.H2>编写除法错误的中断处理程序</X.H2>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.P>编程自定义除法错误中断，除以`0`时在屏幕上提示`Cannot divide by zero!`然后返回操作系统。</X.P>
                 <X.CodeBlock
                     language="asm8086"
@@ -514,7 +514,7 @@ export default function Post() {
             <X.P>依次执行，在`div0.EXE`执行完成返回后，执行`bad.EXE`能够触发自定义的中断处理程序并在屏幕上输出提示内容。</X.P>
             <X.Image src="fig2.jpg" width="100%" />
             <X.H2>自定义键盘输入处理</X.H2>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.P>下面的程序可以在屏幕的中心以红底黑字依次显示字符`A`~`Z`，然后结束程序。子程序`delay`的作用是控制相邻两个字符显示的时间间隔。</X.P>
                 <X.CodeBlock
                     language="asm8086"
@@ -614,7 +614,7 @@ export default function Post() {
                 `}
             />
             <X.P>前面提到8086 CPU的中断过程为：</X.P>
-            <X.HighlightBlock bgcolor="gray">
+            <X.HighlightBlock background="gray">
                 <X.Oli reset>从中断信息中取得中断类型码</X.Oli>
                 <X.Oli>标志寄存器入栈（中断过程会改变标志，需要先进行保护）</X.Oli>
                 <X.Oli>设置`IF=0`，`TF=0`</X.Oli>

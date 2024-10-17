@@ -26,7 +26,8 @@ function UpdateLog() {
         },
         {
             date: '2023-08-31',
-            description: '新组件`Br``Divider``Uli``Oli`\\n新组件`HighlightBlock`\\n创建第1篇博客 - @模式识别 · 统计决策方法[/23c/pattern-recognition-1/]@',
+            description:
+                '新组件`Br``Divider``Uli``Oli`\\n新组件`HighlightBlock`\\n创建第1篇博客 - @模式识别 · 统计决策方法[/23c/pattern-recognition-1/]@',
         },
         {date: '2023-09-02', description: '调整亮色、暗色两套代码高亮配色'},
         {date: '2023-09-03', description: '部署后遇到刷新404问题，将`BrowserRouter`改为`HashRouter`'},
@@ -59,7 +60,7 @@ function UpdateLog() {
         {date: '2024-01-23', description: '迁移项目到`non-ejected`版'},
         {date: '2024-01-26', description: '使用语义化更佳的路由方案'},
         {date: '2024-01-27', description: '支持直接在列表项中写含有jsx表达式的`children`'},
-        {date: '2024-02-01', description: '`HighlightBlock`组件支持`bgcolor="blue"`'},
+        {date: '2024-02-01', description: '`HighlightBlock`组件支持`background="blue"`'},
         {version: '1.1'},
         {
             date: '2024-02-12',
@@ -74,7 +75,7 @@ function UpdateLog() {
         {date: '2024-06-07', description: '`Image`组件支持`center`属性\\n`Table`组件支持`fromData`属性'},
         {
             date: '2024-06-10',
-            description: '`HighlightBlock`组件支持`bgcolor="green"`\\n通过高亮背景色作为`diff`高亮方案',
+            description: '`HighlightBlock`组件支持`background="green"`\\n通过高亮背景色作为`diff`高亮方案',
         },
         {version: '3.0'},
         {date: '2024-07-04', description: '更新目录生成逻辑'},

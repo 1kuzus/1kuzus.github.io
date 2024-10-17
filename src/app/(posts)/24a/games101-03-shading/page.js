@@ -101,7 +101,7 @@ export default function Post() {
                     <X.HighlightBlock>
                         <X.Formula text="V=\alpha V_A + \beta V_B + \gamma V_C" />
                     </X.HighlightBlock>
-                    <X.HighlightBlock bgcolor="red">
+                    <X.HighlightBlock background="red">
                         <X.P>重心坐标插值并不具有投影不变性。</X.P>
                     </X.HighlightBlock>
                 </div>

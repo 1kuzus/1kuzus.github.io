@@ -35,7 +35,7 @@ export default function Post() {
             </X.P>
             <X.Formula text="\min L(\bm{W})=\frac{1}{N}(\bm{\chi W}-\bm{y})^T(\bm{\chi W}-\bm{y})" />
             <X.H2>最优解</X.H2>
-            <X.HighlightBlock bgcolor="gray">
+            <X.HighlightBlock background="gray">
                 <X.Formula text="\bm{W}^*=(\bm{\chi}^T\bm{\chi})^{-1}\bm{\chi}^T\bm{y}" />
             </X.HighlightBlock>
             <X.H1>Fisher线性判别</X.H1>
@@ -52,11 +52,11 @@ export default function Post() {
             <X.Formula text="\max J_F(\bm{W})=\frac{\bm{W}^T\bm{S}_b\bm{W}}{\bm{W}^T\bm{S}_w\bm{W}}" />
             <X.H2>最优解</X.H2>
             <X.P>Fisher判别准则下的最优投影方向为：</X.P>
-            <X.HighlightBlock bgcolor="gray">
+            <X.HighlightBlock background="gray">
                 <X.Formula text="\bm{W}^*=\bm{S}_w^{-1}(\bm{m}_1-\bm{m}_2)" />
             </X.HighlightBlock>
             <X.P>确定了方向后，分类的阈值可以取两类均值的中心的投影，即：</X.P>
-            <X.HighlightBlock bgcolor="gray">
+            <X.HighlightBlock background="gray">
                 <X.Formula text="threshold=\bm{W}^{*T}\frac{\bm{m}_1+\bm{m}_2}{2}" />
             </X.HighlightBlock>
             <X.H1>感知器</X.H1>

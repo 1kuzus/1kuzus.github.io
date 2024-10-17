@@ -168,7 +168,7 @@ export default function Post() {
                 <X.P>如果先验概率相等，则决策只与欧氏距离有关。此时决策为：</X.P>
                 <X.P>若{`$\\Vert\\bm{X}-\\bm{\\mu_i}\\Vert^2 = \\min_{j=1,...,c} \\Vert\\bm{X}-\\bm{\\mu_j}\\Vert^2$`}，则$x$属于$\omega_i$类</X.P>
             </X.HighlightBlock>
-            <X.HighlightBlock bgcolor="gray">
+            <X.HighlightBlock background="gray">
                 <X.P>从几何的视角来看，以上决策规则实际就是比较样本点和各类的中心点距离，并且选择距离最近的类别作为决策结果。\n以上分类器也称`最小距离分类器`，把每个`均值`看作一个`典型的样本`，则这种分类方法也称为`模板匹配技术`。</X.P>
             </X.HighlightBlock>
             <X.P>如果对于上述判别函数{`$g(\\bm{X})$`}的欧式距离项展开，并删掉与类别无关的二次项，得：</X.P>
@@ -198,7 +198,7 @@ export default function Post() {
             <X.Oli>
                 <X.Formula text="\bm{\Sigma_1} = \bm{\Sigma_2}=...=\bm{\Sigma_c} = \bm{\Sigma}" alignLeft />
             </X.Oli>
-            <X.HighlightBlock bgcolor="gray">
+            <X.HighlightBlock background="gray">
                 <X.H3>马氏距离</X.H3>
                 <X.P>马氏距离可以看作对欧氏距离的修正。考虑下面的例子：\n黑色的点距离`green`类样本中心更近，与`red`、`blue`类样本中心等距。它应该被归为哪一类？\n</X.P>
                 <X.Image src="fig6.png" width="500px" filterDarkTheme />

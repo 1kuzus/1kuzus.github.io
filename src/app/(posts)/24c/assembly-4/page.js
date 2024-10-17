@@ -239,7 +239,7 @@ export default function Post() {
             <X.P>$7^3=343$也就是`157h`。</X.P>
             <X.H1>练习</X.H1>
             <X.H2>将字符串全部转大写</X.H2>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.P>编程操作数据段中的字符串，把所有字母都改为大写。</X.P>
                 <X.CodeBlock
                     language="asm8086"

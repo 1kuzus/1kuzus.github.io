@@ -15,12 +15,12 @@ export default function Post() {
                 假设样本的分布形式已知，现在想确定参数{'$\\bm{\\theta}$'}。如果已经观测到了一些样本，记这些样本为{'$\\bm{\\chi}$'}，则我们要找的参数即为：使得出现观测样本{'$\\bm{\\chi}$'}概率最大的参数{'$\\bm{\\theta}$'}。
             </X.P>
             <X.P>考虑下面的例题：</X.P>
-            <X.HighlightBlock bgcolor="gray">
+            <X.HighlightBlock background="gray">
                 <X.P>
                     每一个样本都形如{`$\\bm{X}=[x_1, x_2, \\dots, x_d]^T$`}，其中的每个维度都是二值变量，其分布可以由{`$\\bm{\\theta}=[\\theta_1, \\theta_2, \\dots, \\theta_d]^T$`}描述，即$s_i=1$的概率为$\theta_i$，相应地，$s_i=0$的概率为$1-\theta_i$。假设现在已经观察到样本{'$\\bm{\\chi}=\\{\\bm{X}_1, \\bm{X}_2, \\dots, \\bm{X}_n\\}$'}，希望估计参数{'$\\bm{\\theta}$'}。
                 </X.P>
             </X.HighlightBlock>
-            <X.HighlightBlock bgcolor="red">
+            <X.HighlightBlock background="red">
                 <X.P>注意，如果样本有多个维度，这里记为{`$\\bm{X}=[x_1, x_2, \\dots, x_d]^T$`}，$x_1$、$x_2$表示样本的分量；\n有时，若样本只有一个维度，则样本会直接简记为$x$；此时$x_1$、$x_2$表示两个样本。\n请注意语义。</X.P>
             </X.HighlightBlock>
             <X.P>观测到样本{'$\\bm{\\chi}$'}的概率为：</X.P>
@@ -74,7 +74,7 @@ export default function Post() {
                     {'$\\bm{\\theta}$'}的贝叶斯估计量是{`$\\int_{\\bm{\\Theta}} \\bm{\\theta} P(\\bm{\\theta}|\\bm{\\chi}) d\\bm{\\theta}$`}
                 </X.P>
             </X.Oli>
-            <X.HighlightBlock bgcolor="gray">
+            <X.HighlightBlock background="gray">
                 <X.H3>重新理解</X.H3>
                 <X.P>重述上面四个步骤，以免迷失在众多符号之中。</X.P>
                 <X.P>假设我们拿到了正态分布下的样本集{`$\\bm{\\chi}=\\{x_1,x_2,x_3\\}$`}，其中$x_1=1.3$，$x_2=4.1$，$x_3=3.7$，已知正态分布的方差$\sigma=3$，现在只需要估计均值$\mu$。</X.P>

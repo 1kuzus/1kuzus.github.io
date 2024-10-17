@@ -24,7 +24,7 @@ export default function Post() {
             <X.H1>平均精度AP</X.H1>
             <X.P>*平均精度*`(Average Precision, AP)`由近似计算`Precision`-`Recall`曲线下面积得出。</X.P>
             <X.P>通常的计算方法是取曲线`11`点插值，不过无论如何计算，最后的含义都是希望得到近似的曲线下面积。因此在这里不展开介绍计算过程，而是讨论“曲线下面积”是如何与“平均精度”建立起联系的。</X.P>
-            <X.HighlightBlock bgcolor="gray">
+            <X.HighlightBlock background="gray">
                 <X.H3>个人理解</X.H3>
                 <X.P>当我们说模型在一个类别上预测精度是`80%`时，直观上的体会是“模型的`10`个预测框中，大约有`8`个是对目标的正确预测”。然而这并不能与`Precision`-`Recall`曲线下的面积建立起直观的联系。但注意到曲线的纵坐标的含义就是精度，从这个角度出发，以下是对`AP`指标的个人理解：</X.P>
                 <X.P>下面是一个常见的`Precision`-`Recall`曲线示意图。尽管现实任务中的曲线通常是不平滑、不单调的，但大致可以用图中的较为理想的曲线走势描述。我们通常用*平衡点*去衡量一个模型的好坏，也就是曲线上`Precision`=`Recall`的点。</X.P>

@@ -145,7 +145,7 @@ export default function Post() {
             <X.Uli>若有，且原表项的下一跳路由器就是发来更新信息的路由器，则用新表项替换原表项，但距离要+1，且下一跳路由器应修改为自己；</X.Uli>
             <X.Uli>若有，且原表项的下一跳路由器不是发来更新信息的路由器，那么比较`原表项的距离`和`新表项的距离+1`，选择较小的。\n同上一条，填入新表项时距离要+1，下一跳路由器应修改为自己。</X.Uli>
             <X.P>考虑一个例子：</X.P>
-            <X.HighlightBlock bgcolor="gray">
+            <X.HighlightBlock background="gray">
                 <X.P>R6和R4是两个相邻路由器，现在R6收到R4发来的更新信息，试更新R6的路由表。</X.P>
                 <X.Divider />
                 <X.FlexRow gap="32px">
@@ -202,7 +202,7 @@ export default function Post() {
             <X.P>在不同自治系统内，度量路由的代价可能不同；自治系统之间的路由选择也需要考虑相关的政治、经济、安全因素。BGP只希望选择一条可达，无环路，且相对较优的路由。</X.P>
             <X.Image src="bgp3.png" width="600px" filterDarkTheme />
             <X.P>在配置BGP时，每个AS需要选择至少一个路由器作为*BGP发言人*，不同自治系统的BGP发言人要通过TCP连接交换路由信息。当BGP发言人互相交换了网络可达性信息后，各BGP发言人就根据自己的策略选择出到达各自治系统的较好的路由，也就是构造出树形结构、不存在回路的连通图。</X.P>
-            <X.HighlightBlock bgcolor="red">
+            <X.HighlightBlock background="red">
                 <X.P>关于协议所属层次的划分：\nRIP基于UDP，BGP基于TCP，归类到应用层协议比较合理；\nOSPF基于IP，归类到传输层协议比较合理；\n只不过，它们计算出的路径都服务于网络层，因此按照课程目录划在了网络层下。</X.P>
             </X.HighlightBlock>
             <X.H2>IPv4编址</X.H2>
@@ -365,7 +365,7 @@ export default function Post() {
                 <X.Uli>拥塞控制是网络上的全局问题，由发送方主动根据对网络拥塞程度的估计调整发送窗口的值</X.Uli>
                 <X.P>发送方发送窗口大小应该取$\min(rwnd,cwnd)$。</X.P>
             </X.HighlightBlock>
-            <X.HighlightBlock bgcolor="gray">
+            <X.HighlightBlock background="gray">
                 <X.H3>拥塞控制的实现</X.H3>
                 <X.Image src="tcp3.jpg" width="600" filterDarkTheme />
                 <X.H3>慢开始</X.H3>

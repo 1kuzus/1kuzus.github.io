@@ -147,7 +147,7 @@ export default function Post() {
             />
             <X.H1>练习</X.H1>
             <X.H2>大整数加法</X.H2>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.P>编程实现`128`位大整数加法。</X.P>
                 <X.CodeBlock
                     language="asm8086"
@@ -215,7 +215,7 @@ export default function Post() {
             />
             <X.Image src="fig3.jpg" width="100%" />
             <X.H2>条件分支：统计数据</X.H2>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.P>编程统计数据段中的数据，将大于`9`的数据个数存放在`AH`，小于`9`的数据个数存放在`AL`。</X.P>
                 <X.CodeBlock
                     language="asm8086"
@@ -275,7 +275,7 @@ export default function Post() {
             <X.P>`endif`并不是关键字，只是自定义的标号名；执行结束后`AX`的值为`0302h`。</X.P>
             <X.Image src="fig4.jpg" width="100%" />
             <X.H2>复制字符串</X.H2>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.P>将字符串复制到它后面的空间中。</X.P>
                 <X.CodeBlock
                     language="asm8086"

@@ -70,6 +70,10 @@ export default function Post() {
                 <X.P>当$Adv$接近$1$，表明检验$A$能够区分PRG生成的伪随机数$G(k)$和真随机数$r$；反之同理。</X.P>
             </X.Uli>
             <X.P>现在，一个安全的PRG就可以定义为：$\forall A: Adv(A,G)$都是可以忽略不计的。</X.P>
+            <X.H2>不可预测性与安全性的关系</X.H2>
+            <X.HighlightBlock background=""></X.HighlightBlock>
+            <X.P></X.P>
+
             <X.H1>流密码</X.H1>
             <X.H2>概念</X.H2>
             <X.P>有了PRG以后，可以根据一个较短的密钥$k$生成一个较长的伪随机密钥流$G(k)$，然后就可以像一次性密码本那样，与消息进行逐比特异或进行加密，$c=m \oplus G(k)$。</X.P>

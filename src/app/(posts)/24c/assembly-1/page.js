@@ -157,13 +157,13 @@ export default function Post() {
             <X.Image src="fig1.jpg" width="100%" />
             <X.H1>练习</X.H1>
             <X.H2>A+B</X.H2>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.P>使用`debug`编写、运行一个程序，计算`0789h + 0abch`的值。</X.P>
             </X.HighlightBlock>
             <X.Image src="fig2.jpg" width="100%" />
             <X.P>运行后`AX`的值为`1245h`。</X.P>
             <X.H2>jmp指令</X.H2>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.P>编程实现下图所示的程序，并分析从`2000:0`开始的执行流程。</X.P>
                 <X.Image src="fig3.jpg" width="600px" />
             </X.HighlightBlock>
@@ -175,7 +175,7 @@ export default function Post() {
             <X.Oli>`mov ax,0123`</X.Oli>
             <X.Oli>`mov ax,0000`（回到第三步，循环了）</X.Oli>
             <X.H2>从内存单元读取数据</X.H2>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.P>使用`debug`将内存单元赋值为：</X.P>
                 <X.CodeBlock
                     language="text"
@@ -206,7 +206,7 @@ export default function Post() {
             <X.Image src="fig5.jpg" width="100%" />
             <X.P>注意操作对象是字型数据，一次操作`16`位数据，例如`mov cx,[1]`是将`2211h`送入寄存器`CX`。</X.P>
             <X.H2>栈操作</X.H2>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.P>使用`debug`编写、运行如下程序，分析最终寄存器`AX`、`BX`的值。</X.P>
                 <X.CodeBlock
                     language="asm8086"

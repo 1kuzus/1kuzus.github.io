@@ -74,7 +74,7 @@ export default function Post() {
             <X.Uli>`BX`：通用寄存器，常作为基址寄存器使用</X.Uli>
             <X.Uli>`SI`：源变址寄存器`(Source Index)`</X.Uli>
             <X.Uli>`DI`：目的变址寄存器`(Destination Index)`</X.Uli>
-            <X.HighlightBlock bgcolor="red">
+            <X.HighlightBlock background="red">
                 <X.P>`SI`和`DI`不能够像`BX`一样分成`BH`和`BL`两个`8`位寄存器使用。</X.P>
             </X.HighlightBlock>
             <X.H2>[bx+si]和[bx+di]方式</X.H2>
@@ -122,7 +122,7 @@ export default function Post() {
             <X.Image src="fig5.jpg" width="100%" />
             <X.H1>练习</X.H1>
             <X.H2>大小写转换</X.H2>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.P>编程操作数据段中的字符串，将第一个字符串小写字母转换为大写字母，第二个字符串大写字母转换为小写字母。</X.P>
                 <X.CodeBlock
                     language="asm8086"
@@ -181,7 +181,7 @@ export default function Post() {
             />
             <X.Image src="fig3.jpg" width="100%" />
             <X.H2>二重循环将字符串全部转大写</X.H2>
-            <X.HighlightBlock bgcolor="blue">
+            <X.HighlightBlock background="blue">
                 <X.P>编程操作数据段中的字符串，把所有字母都改为大写。</X.P>
                 <X.CodeBlock
                     language="asm8086"
