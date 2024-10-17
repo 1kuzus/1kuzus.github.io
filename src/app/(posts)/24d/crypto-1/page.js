@@ -51,7 +51,9 @@ export default function Post() {
             <X.P>根据异或的性质不难看出一次性密码本具有完美安全性。（从概念上理解，这意味着从密文中无法获得任何关于明文的有效信息，因为对于任何一个可能的明文$m$，总能找到一个密钥$k=m \oplus c$使得加密后的密文恰好就是$c$。）遗憾的是如果一个加密算法想具有完美安全性，则必须有$|K| \geq |M|$，然而过长的密钥难以投入实际应用。（如果能保证密钥的安全传输，也就能保证明文的安全传输了）</X.P>
             <X.H1>伪随机数生成器PRG</X.H1>
             <X.P>为了使得一次性密码本加密算法能够实际应用，希望能使得密钥空间不至于过长。伪随机数生成器`(Pseudo Random Generator, PRG)`是一个函数{`$G:\\{0,1\\}^s\\rightarrow\\{0,1\\}^n$`}，其中$s$是种子长度，$n$是输出长度，$n \gg s$。</X.P>
-            <X.H2>定义PRG的安全性</X.H2>
+            <X.H2>PRG的不可预测性</X.H2>
+            <X.P>PRG的不可预测性是指：对于一个输出序列$G(k)$和任意一个中间位置$i$，已知$i$之前的序列{`$G(k)_{1\\dots i}$`}，都不存在一个多项式时间算法，能够概率不可忽略地预测出{`$G(k)_{i+1}$`}。（即{`$P \\gt \\frac{1}{2}+\\varepsilon$`}）</X.P>
+            <X.H2>PRG的安全性</X.H2>
             <X.P>
                 我们希望PRG的输出和一个真实的随机数（串）是“不可区分”的，也就是说希望对于{`$k\\stackrel{R}{\\longleftarrow}\\{0,1\\}^s$`}，{`$r\\stackrel{R}{\\longleftarrow}\\{0,1\\}^n$`}，$G(k)$与$r$是“不可区分”的。
             </X.P>
@@ -67,6 +69,48 @@ export default function Post() {
             </X.Uli>
             <X.P>现在，一个安全的PRG就可以定义为：$\forall A: Adv(A,G)$都是可以忽略不计的。</X.P>
             <X.H1>流密码</X.H1>
+            <X.H2>概念</X.H2>
+            <X.P>有了PRG以后，可以根据一个较短的密钥$k$生成一个较长的伪随机密钥流$G(k)$，然后就可以像一次性密码本那样，与消息进行逐比特异或进行加密，$c=m \oplus G(k)$。</X.P>
+            <X.H2>RC4（代码实现）</X.H2>
+            <X.CodeBlock
+                language="python"
+                code={`
+                def rc4_enc(message, key):
+                    # 初始化并根据key打乱S盒
+                    S = [i for i in range(256)]
+                    j = 0
+                    for i in range(256):
+                        j = (j + S[i] + key[i % len(key)]) % 256
+                        S[i], S[j] = S[j], S[i]
+                    # 生成密文
+                    i = 0
+                    j = 0
+                    res = []
+                    for ch in message:
+                        i = (i + 1) % 256
+                        j = (j + S[i]) % 256
+                        S[i], S[j] = S[j], S[i]
+                        ch ^= S[(S[i] + S[j]) % 256]
+                        res.append(ch)
+                    return res
+
+
+                def rc4_dec(cipher, key):
+                    return rc4_enc(cipher, key)
+
+
+                key = [0x63, 0x72, 0x79, 0x70, 0x74, 0x69, 0x69]
+                message = "Hello RC4!"
+                message = [ord(ch) for ch in message]
+
+                cipher = rc4_enc(message, key)
+                print([hex(i) for i in cipher])  # ['0x36', '0xcf', '0xf7', '0x81', '0xc6', '0xae', '0x83', '0x66', '0x67', '0xe2']
+
+                decoded_message = rc4_dec(cipher, key)
+                decoded_message = [chr(ch) for ch in decoded_message]
+                print(decoded_message)  # ['H', 'e', 'l', 'l', 'o', ' ', 'R', 'C', '4', '!']
+                `}
+            />
         </>
     );
 }
