@@ -106,6 +106,7 @@ const propertyOrderList = [
     'box-shadow',
     'opacity',
     'transform',
+    'object-fit',
     'cursor',
     'user-select',
     'pointer-events',

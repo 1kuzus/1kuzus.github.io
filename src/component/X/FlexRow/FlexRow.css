@@ -4,9 +4,9 @@
     overflow-x: auto;
 }
 .x-flexrow {
-    padding: 4px;
     display: inline-flex;
     flex-direction: row;
+    padding: 4px;
 }
 .x-flexrow > * {
     margin: 0 !important;
