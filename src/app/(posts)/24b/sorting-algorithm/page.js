@@ -23,190 +23,190 @@ export default function Post() {
                 </tr>
                 <tr>
                     <th rowSpan={7}>
-                        <X.L>基于\n比较</X.L>
+                        <X.P>基于\n比较</X.P>
                     </th>
                     <td>冒泡排序</td>
                     <td>
-                        <X.L>$n^2$</X.L>
+                        <X.P>$n^2$</X.P>
                     </td>
                     <td>
-                        <X.L>$n^2$</X.L>
+                        <X.P>$n^2$</X.P>
                     </td>
                     <td>
-                        <X.L>$n^2$</X.L>
+                        <X.P>$n^2$</X.P>
                     </td>
                     <td>
-                        <X.L>$1$</X.L>
+                        <X.P>$1$</X.P>
                     </td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>
-                        <X.L>选择排序</X.L>
+                        <X.P>选择排序</X.P>
                     </td>
                     <td>
-                        <X.L>$n^2$</X.L>
+                        <X.P>$n^2$</X.P>
                     </td>
                     <td>
-                        <X.L>$n^2$</X.L>
+                        <X.P>$n^2$</X.P>
                     </td>
                     <td>
-                        <X.L>$n^2$</X.L>
+                        <X.P>$n^2$</X.P>
                     </td>
                     <td>
-                        <X.L>$1$</X.L>
+                        <X.P>$1$</X.P>
                     </td>
                     <td>否</td>
                 </tr>
                 <tr>
                     <td>插入排序</td>
                     <td>
-                        <X.L>$n^2$</X.L>
+                        <X.P>$n^2$</X.P>
                     </td>
                     <td>
-                        <X.L>$n$</X.L>
+                        <X.P>$n$</X.P>
                     </td>
                     <td>
-                        <X.L>$n^2$</X.L>
+                        <X.P>$n^2$</X.P>
                     </td>
                     <td>
-                        <X.L>$1$</X.L>
+                        <X.P>$1$</X.P>
                     </td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>希尔排序</td>
                     <td>
-                        <X.L>{`$n^{1.3}$`}</X.L>
+                        <X.P>{`$n^{1.3}$`}</X.P>
                     </td>
                     <td>
-                        <X.L>$n\log n$</X.L>
+                        <X.P>$n\log n$</X.P>
                     </td>
                     <td>
-                        <X.L>$n^2$</X.L>
+                        <X.P>$n^2$</X.P>
                     </td>
                     <td>
-                        <X.L>$1$</X.L>
+                        <X.P>$1$</X.P>
                     </td>
                     <td>否</td>
                 </tr>
                 <tr>
                     <td>归并排序</td>
                     <td>
-                        <X.L>$n\log n$</X.L>
+                        <X.P>$n\log n$</X.P>
                     </td>
                     <td>
-                        <X.L>$n\log n$</X.L>
+                        <X.P>$n\log n$</X.P>
                     </td>
                     <td>
-                        <X.L>$n\log n$</X.L>
+                        <X.P>$n\log n$</X.P>
                     </td>
                     <td>
-                        <X.L>$n$</X.L>
+                        <X.P>$n$</X.P>
                     </td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>快速排序</td>
                     <td>
-                        <X.L>$n\log n$</X.L>
+                        <X.P>$n\log n$</X.P>
                     </td>
                     <td>
-                        <X.L>$n\log n$</X.L>
+                        <X.P>$n\log n$</X.P>
                     </td>
                     <td>
-                        <X.L>$n^2$</X.L>
+                        <X.P>$n^2$</X.P>
                     </td>
                     <td>
-                        <X.L>$\log n$</X.L>
+                        <X.P>$\log n$</X.P>
                     </td>
                     <td>否</td>
                 </tr>
                 <tr>
                     <td>堆排序</td>
                     <td>
-                        <X.L>$n\log n$</X.L>
+                        <X.P>$n\log n$</X.P>
                     </td>
                     <td>
-                        <X.L>$n\log n$</X.L>
+                        <X.P>$n\log n$</X.P>
                     </td>
                     <td>
-                        <X.L>$n\log n$</X.L>
+                        <X.P>$n\log n$</X.P>
                     </td>
                     <td>
-                        <X.L>$1$</X.L>
+                        <X.P>$1$</X.P>
                     </td>
                     <td>否</td>
                 </tr>
                 <tr>
                     <th rowSpan={4}>
-                        <X.L>不基于\n比较</X.L>
+                        <X.P>不基于\n比较</X.P>
                     </th>
                     <td>计数排序</td>
                     <td>
-                        <X.L>$n+k$</X.L>
+                        <X.P>$n+k$</X.P>
                     </td>
                     <td>
-                        <X.L>$n+k$</X.L>
+                        <X.P>$n+k$</X.P>
                     </td>
                     <td>
-                        <X.L>$n+k$</X.L>
+                        <X.P>$n+k$</X.P>
                     </td>
                     <td>
-                        <X.L>$n+k$</X.L>
+                        <X.P>$n+k$</X.P>
                     </td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>桶排序/插入</td>
                     <td>
-                        <X.L>$n^2/k$</X.L>
+                        <X.P>$n^2/k$</X.P>
                     </td>
                     <td>
-                        <X.L>$n+k$</X.L>
+                        <X.P>$n+k$</X.P>
                     </td>
                     <td>
-                        <X.L>$n^2$</X.L>
+                        <X.P>$n^2$</X.P>
                     </td>
                     <td>
-                        <X.L>$n+k$</X.L>
+                        <X.P>$n+k$</X.P>
                     </td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>桶排序/归并</td>
                     <td>
-                        <X.L>$n\log(n/k)$</X.L>
+                        <X.P>$n\log(n/k)$</X.P>
                     </td>
                     <td>
-                        <X.L>$n+k$</X.L>
+                        <X.P>$n+k$</X.P>
                     </td>
                     <td>
-                        <X.L>$n\log n$</X.L>
+                        <X.P>$n\log n$</X.P>
                     </td>
                     <td>
-                        <X.L>$n+k$</X.L>
+                        <X.P>$n+k$</X.P>
                     </td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>基数排序</td>
                     <td>
-                        <X.L>$dn$</X.L>
+                        <X.P>$dn$</X.P>
                     </td>
                     <td>
-                        <X.L>$dn$</X.L>
+                        <X.P>$dn$</X.P>
                     </td>
                     <td>
-                        <X.L>$dn$</X.L>
+                        <X.P>$dn$</X.P>
                     </td>
                     <td>
-                        <X.L>$n+d$</X.L>
+                        <X.P>$n+d$</X.P>
                     </td>
                     <td></td>
                 </tr>
             </X.Table>
-            <X.L>注：</X.L>
+            <X.P>注：</X.P>
             <X.Uli>希尔排序的时间复杂度与增量序列有关，表格给出的只是一组较为常见的数据。</X.Uli>
             <X.Uli>计数排序中的$k$为数据最大值与最小值之差。</X.Uli>
             <X.Uli>桶排序中的$k$为桶的数量，对于最好情况，元素在桶中均匀分布且当$k$近似等于元素数量$n$时，桶排序时间复杂度是线性的；对于最坏情况，大多数元素都分布在一个桶里，此时桶排序时间复杂度取决于桶内排序算法。如果桶内排序使用稳定排序算法，则桶排序也是稳定的。</X.Uli>

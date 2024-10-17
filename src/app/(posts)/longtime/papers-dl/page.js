@@ -48,7 +48,7 @@ export default function Post() {
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>更多笔记</X.H3>
                 <X.P>神经辐射场用于从2D的图片重建3D的场景。</X.P>
-                <X.P>文中出现的三个指标：PSNR、SSIM、LPIPS</X.P>
+                <X.P>文中出现的三个指标PSNR、SSIM、LPIPS：</X.P>
                 <X.Uli>*峰值信噪比*`(Peak Signal to Noise Ratio, PSNR)`：用于衡量图像恢复的质量，数值越高表示图像质量越好。接近`50 dB`代表误差非常小，大于`30 dB`人眼难察觉差异。</X.Uli>
                 <X.Uli>*结构相似性*`(Structural Similarity Index Measure, SSIM)`：用于衡量图像的结构相似性，得分通常在`0`~`1`之间，数值越高表示图像结构越相似。相较于PSNR在图像质量的衡量上更能符合人眼对图像质量的判断。</X.Uli>
                 <X.Uli>*基于学习的感知图像质量评价*`(Learned Perceptual Image Patch Similarity, LPIPS)`：测量从预训练网络中提取的两个图像的特征之间的相似性，得分通常在`0`~`1`之间，数值越低表示感知质量越高。</X.Uli>
@@ -113,7 +113,7 @@ export default function Post() {
             <PaperSummary topic="交互式3D分割`(promptable segmentation)`。" />
             <X.H1>学习</X.H1>
             <X.H2 href="https://www.cv-foundation.org/openaccess/content_cvpr_2014/papers/Girshick_Rich_Feature_Hierarchies_2014_CVPR_paper.pdf">【R-CNN】Rich Feature Hierarchies for Accurate Object Detection and Semantic Segmentation (2014)</X.H2>
-            <PaperSummary topic="提出`Regions with CNN features, R-CNN`提高目标检测性能。" method="区域提议`(Region Proposals)`：使用`selective search`生成候选。" experiment="在`PASCAL VOC 2012`取得`mAP 53.3%`，在`ILSVRC 2013`竞赛数据集取得`mAP 31.4%`。" />
+            <PaperSummary topic="提出R-CNN`(Regions with CNN features)`提高目标检测性能。" method="区域提议`(Region Proposals)`：使用`selective search`生成候选。" experiment="在`PASCAL VOC 2012`取得`mAP 53.3%`，在`ILSVRC 2013`竞赛数据集取得`mAP 31.4%`。" />
             <X.HighlightBlock bgcolor="blue">
                 <X.H3>更多笔记</X.H3>
                 <X.P>转载自@动手学深度学习 - 区域卷积神经网络系列[https://zh-v2.d2l.ai/chapter_computer-vision/rcnn.html]@</X.P>
@@ -157,8 +157,7 @@ export default function Post() {
                 <X.H3>更多笔记</X.H3>
                 <X.H3>语义分割与实例分割</X.H3>
                 <X.Image src="ss_and_is.jpg" width="600px" />
-                <X.L>*语义分割*`(semantic segmentation)`：为每一个像素分配一个类别，但不区分同一类别之间的对象。</X.L>
-                <X.L>*实例分割*`(instance segmentation)`：会区分属于同一类别的不同实例。</X.L>
+                <X.P>*语义分割*`(semantic segmentation)`：为每一个像素分配一个类别，但不区分同一类别之间的对象。\n*实例分割*`(instance segmentation)`：会区分属于同一类别的不同实例。</X.P>
             </X.HighlightBlock>
             <X.H2 href="https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Long_Fully_Convolutional_Networks_2015_CVPR_paper.pdf">【FCN】Fully Convolutional Networks for Semantic Segmentation (2015)</X.H2>
             <PaperSummary

@@ -122,18 +122,18 @@ export default function Post() {
                 <tr>
                     <td rowSpan={2}>IGP</td>
                     <td>
-                        <X.L>*路由信息协议*`(Routing Information Protocol, RIP)`</X.L>
+                        <X.P>*路由信息协议*`(Routing Information Protocol, RIP)`</X.P>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <X.L>*开放最短路径优先*`(Open Shortest Path First, OSPF)`</X.L>
+                        <X.P>*开放最短路径优先*`(Open Shortest Path First, OSPF)`</X.P>
                     </td>
                 </tr>
                 <tr>
                     <td>EGP</td>
                     <td>
-                        <X.L>*边界网关协议*`(Border Gateway Protocol, BGP)`</X.L>
+                        <X.P>*边界网关协议*`(Border Gateway Protocol, BGP)`</X.P>
                     </td>
                 </tr>
             </X.Table>
@@ -220,39 +220,39 @@ export default function Post() {
                 <tr>
                     <td>A</td>
                     <td>
-                        <X.L>前`8`位</X.L>
+                        <X.P>前`8`位</X.P>
                     </td>
                     <td>
-                        <X.L>后`24`位</X.L>
+                        <X.P>后`24`位</X.P>
                     </td>
                     <td>
-                        <X.L>`0`~`127`</X.L>
+                        <X.P>`0`~`127`</X.P>
                     </td>
                     <td>-</td>
                 </tr>
                 <tr>
                     <td>B</td>
                     <td>
-                        <X.L>前`16`位</X.L>
+                        <X.P>前`16`位</X.P>
                     </td>
                     <td>
-                        <X.L>后`16`位</X.L>
+                        <X.P>后`16`位</X.P>
                     </td>
                     <td>
-                        <X.L>`128`~`191`</X.L>
+                        <X.P>`128`~`191`</X.P>
                     </td>
                     <td>-</td>
                 </tr>
                 <tr>
                     <td>C</td>
                     <td>
-                        <X.L>前`24`位</X.L>
+                        <X.P>前`24`位</X.P>
                     </td>
                     <td>
-                        <X.L>后`8`位</X.L>
+                        <X.P>后`8`位</X.P>
                     </td>
                     <td>
-                        <X.L>`192`~`223`</X.L>
+                        <X.P>`192`~`223`</X.P>
                     </td>
                     <td>-</td>
                 </tr>
@@ -260,7 +260,7 @@ export default function Post() {
                     <td>D</td>
                     <td colSpan={2}>不区分</td>
                     <td>
-                        <X.L>`224`~`239`</X.L>
+                        <X.P>`224`~`239`</X.P>
                     </td>
                     <td>D类IPv4地址不区分网络号与主机号，作多播地址用，不做介绍</td>
                 </tr>
@@ -268,10 +268,10 @@ export default function Post() {
                     <td>E</td>
                     <td colSpan={2}>不区分</td>
                     <td>
-                        <X.L>`240`~`255`</X.L>
+                        <X.P>`240`~`255`</X.P>
                     </td>
                     <td>
-                        <X.L>E类IPv4地址不区分网络号与主机号，\n仅保留为搜索、Internet的实验和开发用，不做介绍</X.L>
+                        <X.P>E类IPv4地址不区分网络号与主机号，\n仅保留为搜索、Internet的实验和开发用，不做介绍</X.P>
                     </td>
                 </tr>
             </X.Table>
