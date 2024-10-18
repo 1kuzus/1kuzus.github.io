@@ -71,9 +71,21 @@ export default function Post() {
             </X.Uli>
             <X.P>现在，一个安全的PRG就可以定义为：$\forall A: Adv(A,G)$都是可以忽略不计的。</X.P>
             <X.H2>不可预测性与安全性的关系</X.H2>
-            <X.HighlightBlock background=""></X.HighlightBlock>
-            <X.P></X.P>
-
+            <X.HighlightBlock>
+                <X.P>结论：二者是等价的，一个PRG是安全的当且仅当它是不可预测的。</X.P>
+            </X.HighlightBlock>
+            <X.HighlightBlock background="red">
+                <X.P>不可预测性的定义会让人怀疑这是不是太弱了：如果不是能用前缀预测下一位，而是能用后缀预测上一位、能用其他位预测中间位、或者甚至其他某种可利用的统计学特性呢？</X.P>
+                <X.P>安全性的定义则相对来说更直观一些。当然事实上二者已经被证明是等价的，如果用前缀预测做统计检验无法区别一个PRG和真随机数，则任何统计检验都不能。</X.P>
+            </X.HighlightBlock>
+            <X.H3>安全的PRG是不可预测的</X.H3>
+            <X.P>即：可预测的PRG是不安全的。这是比较容易证明的，可以构造一个统计检验$A$：</X.P>
+            <X.Formula text="A(x)=1 \; \text{if} \; pred(x_{i+1})=x_{i+1}, \; \text{else} \; 0" />
+            <X.P>显然可预测就意味着$Adv$是不可忽略的，因此PRG是不安全的。</X.P>
+            <X.H3>不可预测的PRG是安全的</X.H3>
+            <X.P>证明起来复杂一点，可以参考@[https://www.noahsd.com/crypto_lecture_notes/CS4830_Lecture_7____PRGs.pdf]@的`1.3`节，这里贴出截图：</X.P>
+            <X.Image src="fig1.jpg" width="800px" filterDarkTheme />
+            <X.Image src="fig2.jpg" width="800px" filterDarkTheme />
             <X.H1>流密码</X.H1>
             <X.H2>概念</X.H2>
             <X.P>有了PRG以后，可以根据一个较短的密钥$k$生成一个较长的伪随机密钥流$G(k)$，然后就可以像一次性密码本那样，与消息进行逐比特异或进行加密，$c=m \oplus G(k)$。</X.P>
@@ -117,6 +129,11 @@ export default function Post() {
                 print(decoded_message)  # ['H', 'e', 'l', 'l', 'o', ' ', 'R', 'C', '4', '!']
                 `}
             />
+            <X.H1>练习题</X.H1>
+            <X.H2>先压缩还是先加密？</X.H2>
+            <X.P>如题，假如想在传输数据时同时应用压缩和加密，则应该*先压缩后加密*。因为压缩本来就是利用信息冗余，而如果先加密，生成的密文近似随机，则很难再有压缩空间。</X.P>
+            <X.H2>编程作业</X.H2>
+            
         </>
     );
 }
