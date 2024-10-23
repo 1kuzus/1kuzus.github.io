@@ -22,6 +22,12 @@ export default function Post() {
             <X.CodeBlock language="bash" code='find / -maxdepth 2 -type f -name "*rc"' />
             <X.H2>查看磁盘空间</X.H2>
             <X.CodeBlock language="bash" code="df -h" />
+            <X.H2>取输出的前、后n行</X.H2>
+            <X.P>`head`和`tail`命令可以取文件的首、尾`n`行：</X.P>
+            <X.CodeBlock language="bash" code="head -n 3 file.txt" />
+            <X.CodeBlock language="bash" code="tail -n 4 file.txt" />
+            <X.P>对于命令则使用管道：</X.P>
+            <X.CodeBlock language="bash" code="ls | head -n 5" />
             <X.H1>Mac OS</X.H1>
             <X.H2>在当前路径打开访达</X.H2>
             <X.CodeBlock language="bash" code="open ." />
