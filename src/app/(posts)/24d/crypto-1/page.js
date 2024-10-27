@@ -89,6 +89,7 @@ export default function Post() {
             <X.H1>流密码</X.H1>
             <X.H2>概念</X.H2>
             <X.P>有了PRG以后，可以根据一个较短的密钥$k$生成一个较长的伪随机密钥流$G(k)$，然后就可以像一次性密码本那样，与消息进行逐比特异或进行加密，$c=m \oplus G(k)$。</X.P>
+            <X.P>流密码是*对称加密算法*，这意味着加密和解密使用的是同一个密钥。</X.P>
             <X.H2>RC4（代码实现）</X.H2>
             <X.CodeBlock
                 language="python"

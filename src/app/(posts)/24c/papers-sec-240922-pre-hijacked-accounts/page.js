@@ -14,7 +14,7 @@ export default function Post() {
             <X.HighlightBlock background="blue">
                 <X.H3>笔记</X.H3>
                 <X.H3>IdP</X.H3>
-                <X.P>IdP`(Identity Provider)`是？todo？</X.P>
+                <X.P>IdP`(Identity Provider)`是身份提供商，</X.P>
             </X.HighlightBlock>
             <X.H1>中心思想</X.H1>
             <X.P>相比于一般的账户劫持`(Account Hijacking)`目的是获取受害者的账号权限或隐私，本文的`Pre-Hijacking`是指攻击者可以在用户账户*创建之前*执行某些操作，使得账户创建后攻击者可以容易地获取权限。</X.P>

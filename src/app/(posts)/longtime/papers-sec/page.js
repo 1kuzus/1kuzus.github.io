@@ -10,9 +10,7 @@ https://www.ndss-symposium.org/wp-content/uploads/ndss2021_2A-1_23091_paper.pdf
 
 Leaking the Privacy of Groups and More: Understanding Privacy Risks of Cross-App Content Sharing in Mobile Ecosystem 
 https://www.ndss-symposium.org/wp-content/uploads/2024-138-paper.pdf
-
-“If I could do this, I feel anyone could:” The Design and Evaluation of a Secondary Authentication Factor Manager
-https://www.usenix.org/system/files/usenixsecurity23-smith.pdf
+https://www.youtube.com/watch?v=7IvzrBEfwx4
 
 Pre-hijacked accounts: An Empirical Study of Security Failures in User Account Creation on the Web
 https://www.usenix.org/system/files/sec22-sudhodanan.pdf
@@ -27,6 +25,15 @@ Unleashing the Walking Dead: Understanding Cross-App Remote Infections on Mobile
 https://homes.luddy.indiana.edu/luyixing/bib/ccs17-unleashing.pdf
 
 https://homes.luddy.indiana.edu/xw7/papers/wang2013unauthorized.pdf （精读一下）
+
+
+iccta https://dl.acm.org/doi/pdf/10.5555/2818754.2818791
+
+inurl:dl.acm.org OR inurl:ndss OR inurl:usenix.org "inter-app" OR "cross-app"
+
+Dina: Detecting hidden android inter-app communication in dynamic loaded code
+A SEALANT for Inter-App Security Holes in Android 
+Uncovering Intent based Leak of Sensitive Data in Android Framework
 ******/
 
 export default function Post() {
