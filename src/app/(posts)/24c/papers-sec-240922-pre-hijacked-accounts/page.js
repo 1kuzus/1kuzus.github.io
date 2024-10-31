@@ -14,7 +14,7 @@ export default function Post() {
             <X.HighlightBlock background="blue">
                 <X.H3>笔记</X.H3>
                 <X.H3>IdP</X.H3>
-                <X.P>IdP`(Identity Provider)`是身份提供商，??</X.P>
+                <X.P>身份提供商`(Identity Provider, IdP)`是一个系统或服务，负责管理用户身份信息和验证用户身份。IdP可以是SSO（单点登录）的重要组成部分，当用户登录时，SSO提供商与IdP核对用户身份。一些例子是：统一身份认证平台、Facebook、Google等。</X.P>
             </X.HighlightBlock>
             <X.H1>中心思想</X.H1>
             <X.P>相比于一般的账户劫持`(Account Hijacking)`目的是获取受害者的账号权限或隐私，本文的`Pre-Hijacking`是指攻击者可以在用户账户*创建之前*执行某些操作，使得账户创建后攻击者可以容易地获取权限。</X.P>
