@@ -22,12 +22,19 @@ export default function Post() {
             <X.CodeBlock language="bash" code='find / -maxdepth 2 -type f -name "*rc"' />
             <X.H2>查看磁盘空间</X.H2>
             <X.CodeBlock language="bash" code="df -h" />
+            <X.H2>查看文件夹大小</X.H2>
+            <X.P>查看指定文件夹的大小：</X.P>
+            <X.CodeBlock language="bash" code="du -sh <dir>" />
+            <X.P>查看当前目录下所有文件夹的大小：</X.P>
+            <X.CodeBlock language="bash" code="du -h -d 1" />
             <X.H2>取输出的前、后n行</X.H2>
             <X.P>`head`和`tail`命令可以取文件的首、尾`n`行：</X.P>
             <X.CodeBlock language="bash" code="head -n 3 file.txt" />
             <X.CodeBlock language="bash" code="tail -n 4 file.txt" />
             <X.P>对于命令则使用管道：</X.P>
             <X.CodeBlock language="bash" code="ls | head -n 5" />
+            <X.H2>运行top命令，3秒后自动结束</X.H2>
+            <X.CodeBlock language="bash" code="timeout 3 top" />
             <X.H1>Mac OS</X.H1>
             <X.H2>在当前路径打开访达</X.H2>
             <X.CodeBlock language="bash" code="open ." />
