@@ -20,6 +20,10 @@ export default function Post() {
             <X.H2>查找文件、设置查找深度</X.H2>
             <X.P>查找根目录下所有`rc`结尾的文件，只递归两层：</X.P>
             <X.CodeBlock language="bash" code='find / -maxdepth 2 -type f -name "*rc"' />
+            <X.H2>查找文件内容</X.H2>
+            <X.P>查找当前目录下所有内容包含`export`结尾的文件，不查找二级目录：</X.P>
+            <X.CodeBlock language="bash" code='find . -maxdepth 1 -type f | xargs grep --color=always "export"' />
+            <X.Uli>`--color=always`：始终高亮`grep`命令的匹配内容</X.Uli>
             <X.H2>查看磁盘空间</X.H2>
             <X.CodeBlock language="bash" code="df -h" />
             <X.H2>查看文件夹大小</X.H2>
