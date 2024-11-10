@@ -10,13 +10,19 @@
         ]
     },
     {
-        "categoryName": "安全",
+        "categoryName": "安全学习",
         "posts": [
-            "/longtime/papers-sec/",
             "/23d/hust-cas-login/",
             "/24b/learn-cwes/",
             "/24b/cross-site-scripting/",
             "/24b/cross-site-request-forgery/",
+            "/24d/wp-bluehensctf-2024/"
+        ]
+    },
+    {
+        "categoryName": "安全研究",
+        "posts": [
+            "/longtime/papers-sec/",
             "/24b/papers-sec-240514-taintmini/",
             "/24c/papers-sec-240728-2fa-consistency/",
             "/24c/papers-sec-240810-conquer/",
