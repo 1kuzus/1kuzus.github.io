@@ -9,7 +9,7 @@ export default function Post() {
         <>
             <X.TOC />
             <X.Title>{metas[path].title}</X.Title>
-            <X.P>想打Web但是不务正业的我（x），非常有“纪念意义”的一次CTF。队友做Crypto和Misc还是很厉害的。</X.P>
+            <X.P>想打Web但是不务正业的我（x），非常有“纪念意义”的一次CTF。队友做Crypto和杂项还是非常厉害的。</X.P>
             <X.Image src="overview.png" width="100%" />
             <X.H1>Web</X.H1>
             <X.H2>lists of JSONs</X.H2>
@@ -163,13 +163,13 @@ export default function Post() {
                 `}
             />
             <X.CodeBlock language="text" code="udctf{i_am_th3_un5p0k3n_0h!0_5ki8idi_gyatt_r!zz13r}" />
-            <X.H1>Pwn</X.H1>
+            {/* <X.H1>Pwn</X.H1>
             <X.H2>Intro</X.H2>
             <X.P>虽然是签到题，但是毕竟很少做Pwn，还是记录下。</X.P>
             <X.Image src="fig8.jpg" filterDarkTheme />
             <X.Image src="fig9.jpg" filterDarkTheme />
             <X.P>`gets`缓冲区溢出，填充`48`字节`v1`和`8`字节的`rbp`（这里是被`win`函数`push`的），接下来`8`字节覆盖`vuln`的返回地址，劫持控制流到`win`函数的`lea`指令（`0x40119E`）。</X.P>
-            <X.Image src="fig10.jpg" />
+            <X.Image src="fig10.jpg" /> */}
             <X.H1>XOR School系列</X.H1>
             <X.P>应该是这次比赛的特色吧，感觉偏向密码学一点。一共解了三题，后两题思路都非常相似（靠猜）。</X.P>
             <X.H2>XS1</X.H2>
