@@ -325,6 +325,9 @@
     "/longtime/papers-sec/": {
         "title": "论文速记：安全"
     },
+    "/longtime/wp-portswigger/": {
+        "title": "PortSwigger Writeup"
+    },
     "/longtime/hundred-thousand/": {
         "title": "十万"
     },

@@ -12,6 +12,7 @@
     {
         "categoryName": "安全学习",
         "posts": [
+            "/longtime/wp-portswigger/",
             "/23d/hust-cas-login/",
             "/24b/learn-cwes/",
             "/24b/cross-site-scripting/",
