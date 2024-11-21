@@ -142,6 +142,27 @@ export default function Post() {
                 <X.P>用户提交的登录信息（如密码）的特征对于制定更好的安全策略、提升系统的易用性以及检测攻击至关重要。然而，由于密码的高度敏感性，直接监测存在很大的安全风险，因此需要开发一种既能提供有用统计信息又能确保密码安全的测量基础设施。</X.P>
                 <X.P>论文设计了一个名为Gossamer的测量系统，可以安全地记录登录请求，包括提交的密码的统计数据。</X.P>
             </X.HighlightBlock>
+            <X.H2 href="https://www.comp.nus.edu.sg/~liangzk/papers/asiaccs11.pdf">Jump-Oriented Programming: A New Class of Code-Reuse Attack (AsiaCCS 2011)</X.H2>
+            <X.HighlightBlock background="gray">
+                <X.P>ROP在栈溢出漏洞的基础上，利用程序中已有的gadgets（以`ret`结尾的指令序列），把参数和指向gadgets的地址写入栈中，从而操纵控制流；由于最终是由`ret`完成跳转，ROP攻击对栈有依赖。（因而也存在一些防御手段）</X.P>
+                <X.P>JOP利用以`jmp`结尾的gadgets，有不依赖栈的好处，然而需要解决的问题是，并没有一个统一的机制将这些gadgets连接起来。（在ROP里，`ret`会从栈上读取数据改变`ip`，而栈上的数据可控）</X.P>
+                <X.P>核心设计：</X.P>
+                <X.Image src="jop.jpg" width="600px" filterDarkTheme />
+                <X.Uli>
+                    <X.P>Dispatcher Gadget：起到一个虚拟PC的作用，能够遍历Dispatch Table；抽象地说，类似于：</X.P>
+                    <X.Formula text="pc \leftarrow f(pc); \\ goto \; *pc;" />
+                    <X.P>更具体地，比如以下代码：</X.P>
+                    <X.CodeBlock
+                        language="text"
+                        code={`
+                        add  edx, 4
+                        jmp  [edx]
+                        `}
+                    />
+                </X.Uli>
+                <X.Uli>Dispatch Table：就像一个虚拟的栈，每一项可能是下一个gadget的地址，或者一些指令（比如`pop`）要用到的中间数据等。由Dispatcher Gadget来实现控制流。这也是前面提到*【没有一个统一的机制将这些gadgets连接起来】*的解决方案。</X.Uli>
+                <X.Uli>Functional Gadgets：真正执行目标逻辑的代码片段，以`jmp`指令结尾，并且需要最终跳转到Dispatcher Gadget（这样才能完成循环）。</X.Uli>
+            </X.HighlightBlock>
         </>
     );
 }
