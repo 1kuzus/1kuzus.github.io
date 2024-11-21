@@ -160,7 +160,7 @@ export default function Post() {
                         `}
                     />
                 </X.Uli>
-                <X.Uli>Dispatch Table：就像一个虚拟的栈，每一项可能是下一个gadget的地址，或者一些指令（比如`pop`）要用到的中间数据等。由Dispatcher Gadget来实现控制流。这也是前面提到*【没有一个统一的机制将这些gadgets连接起来】*的解决方案。</X.Uli>
+                <X.Uli>Dispatch Table：就像一个虚拟的栈，每一项可能是下一个Functional Gadget的地址，或者一些指令（比如`pop`）要用到的中间数据等。由Dispatcher Gadget来实现控制流。这也是前面提到*【没有一个统一的机制将这些gadgets连接起来】*的解决方案。</X.Uli>
                 <X.Uli>Functional Gadgets：真正执行目标逻辑的代码片段，以`jmp`指令结尾，并且需要最终跳转到Dispatcher Gadget（这样才能完成循环）。</X.Uli>
             </X.HighlightBlock>
         </>
