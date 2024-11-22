@@ -47,7 +47,7 @@ export default function Post() {
                 CHR: ! NEXTCHR: (191 * 1) + 46
                 CHR: E NEXTCHR: (2074 * 0) + 415
                 CHR: | NEXTCHR: (3310 * 0) + 1422
-                CHR: \ NEXTCHR: -1963 + 3668
+                CHR: \\ NEXTCHR: -1963 + 3668
                 CHR: o NEXTCHR: 3775 - 3429
                 CHR: END NEXTCHR: You got the flag"""
 
@@ -85,21 +85,21 @@ export default function Post() {
                 language="js"
                 code={`
                 const tryDecode = (boardData) => {
-                let encBytes = aesjs.utils.hex.toBytes(
-                   "ebab19591082e96b3db6d083e73b70350b008c5c33950b3b0cbb3bcb0001b643ef875cbecf0622"
-                );
-                let keyHex = md5(boardData.join(","));
-                let keyBytes = aesjs.utils.hex.toBytes(keyHex);
-                let aesCtr = new aesjs.ModeOfOperation.ctr(keyBytes);
-                let message = aesCtr.decrypt(encBytes);
-                let text = aesjs.utils.utf8.fromBytes(message);
-                if (text.includes("ctf")) console.log(text);
+                    let encBytes = aesjs.utils.hex.toBytes(
+                        "ebab19591082e96b3db6d083e73b70350b008c5c33950b3b0cbb3bcb0001b643ef875cbecf0622"
+                    );
+                    let keyHex = md5(boardData.join(","));
+                    let keyBytes = aesjs.utils.hex.toBytes(keyHex);
+                    let aesCtr = new aesjs.ModeOfOperation.ctr(keyBytes);
+                    let message = aesCtr.decrypt(encBytes);
+                    let text = aesjs.utils.utf8.fromBytes(message);
+                    if (text.includes("ctf")) console.log(text);
                 };
 
                 for (let i = 0; i < 2 ** 16; i++) {
-                  const boardDataStr = i.toString(2).padStart(16, "0"); // 例如："1100110000110011"
-                  const boardData = Array.from(boardDataStr).map((bit) => parseInt(bit, 10)); // 例如：[1, 1, 0, 0, ...]
-                  tryDecode(boardData);
+                    const boardDataStr = i.toString(2).padStart(16, "0"); // 例如："1100110000110011"
+                    const boardData = Array.from(boardDataStr).map((bit) => parseInt(bit, 10)); // 例如：[1, 1, 0, 0, ...]
+                    tryDecode(boardData);
                 }
                 `}
             />
@@ -252,7 +252,7 @@ export default function Post() {
             <X.CodeBlock language="text" code=".dctf{..r_in_..m.n_.._ten.r..p.ra_s.ng..k}" />
             <X.P>剩下的部分中`.`可能是这一位上刚好没有任何密文的对应位置是空格，或者这一位是ASCII码值小于`64`的字符（比如数字）等等。但是先验知识一眼看出`flag`前几位是`udctf`，就可以进入第二阶段的猜测，因为题目说了密文是诗歌中的句子，总可以根据某句话的语义推测出一个没拼写完的单词，只要恢复任意一条密文的下一个位置，就可以恢复`key`的一位。</X.P>
             <X.P>理论上可以一直重复下去，但其实猜到一定数量就可以Google一下了，找到原文：@[https://milton.host.dartmouth.edu/reading_room/comus/text.shtml]@</X.P>
-            <X.P>找到其中一句（长度够的话）就可以恢复全部到密钥。最后的代码如下，但这并不是一次就写完的，是边猜边补充的。</X.P>
+            <X.P>第三阶段，找到其中一句（长度够的话）就可以恢复全部到密钥。最后的代码如下，但这并不是一次就写完的，是边猜边补充的。</X.P>
             <X.CodeBlock
                 language="python"
                 code={`

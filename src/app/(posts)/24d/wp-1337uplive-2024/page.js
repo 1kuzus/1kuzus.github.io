@@ -11,7 +11,7 @@ export default function Post() {
             <X.Title>{metas[path].title}</X.Title>
             <X.H1>Web</X.H1>
             <X.H2>Pizza Paradise</X.H2>
-            <X.P>在`robots.txt`中找到登录页面`/secret_172346606e1d24062e891d537e917a90.html`，在JS中找到用户名和密码的哈希值；队友找到一个查弱口令的网站@[https://crackstation.net/]@，查到密码是`intel420`，登录。</X.P>
+            <X.P>在`robots.txt`中找到登录页面`/secret_172346606e1d24062e891d537e917a90.html`，在JS中找到用户名和密码的哈希值；队友找到一个查弱口令的网站@[https://crackstation.net]@，查到密码是`intel420`，登录。</X.P>
             <X.Image src="fig1.jpg" width="100%" />
             <X.P>登录后是下载图片的页面，有路径遍历漏洞。`flag`在页面的PHP源码中。</X.P>
             <X.CodeBlock
@@ -55,7 +55,16 @@ export default function Post() {
             />
             <X.H2>Cat Club</X.H2>
             <X.P>JWT算法混淆+Pug模板引擎的SSTI。</X.P>
-            <X.P>给了源码，网页中有一处会显示用户的用户名，审计后发现存在SSTI，但是常规手段注册不允许出现非数字和字母的字符，考虑直接构造用户名为`payload`的JWT`token`。</X.P>
+            <X.P>注册登录后`/cats`页面会显示用户的用户名，审计后发现存在SSTI：</X.P>
+            <X.CodeBlock
+                language="js"
+                code={`
+                if (typeof req.user != "undefined") {
+                    template = template.replace(/guest/g, req.user);
+                }
+                `}
+            />
+            <X.P>但是常规手段注册不允许出现非数字和字母的字符，考虑直接构造用户名为`payload`的JWT`token`。</X.P>
             <X.P>`/jwks.json`接口泄露了`publicKey`，并且服务端检验JWT的函数是：</X.P>
             <X.CodeBlock
                 language="js"
