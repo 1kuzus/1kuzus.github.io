@@ -279,6 +279,7 @@
 		"description": "tableStyle props"
 	},
 	"inline latex": {
+		"scope": "javascript,typescript",
 		"prefix": "il",
 		"body": [
 			"{`$$1$`}",
