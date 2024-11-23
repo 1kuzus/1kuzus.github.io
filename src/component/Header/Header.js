@@ -17,7 +17,7 @@ function LogoButton() {
 function ShowSidebarButton() {
     const {showSidebar, setShowSidebar} = useGlobalContext();
     return (
-        <div
+        <button
             id="header-show-sidebar-button"
             className="header-button-bg"
             onClick={() => {
@@ -25,13 +25,13 @@ function ShowSidebarButton() {
             }}
         >
             <div className={showSidebar ? 'show-sidebar' : null} />
-        </div>
+        </button>
     );
 }
 
 function ThemeButton() {
     return (
-        <div
+        <button
             className="header-button-bg"
             onClick={() => {
                 if (localStorage.getItem('theme') === 'dark') {
@@ -49,7 +49,7 @@ function ThemeButton() {
             <div id="header-light-theme-icon">
                 <LightThemeIcon />
             </div>
-        </div>
+        </button>
     );
 }
 

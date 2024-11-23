@@ -1,24 +1,45 @@
 .x-codeblock {
     position: relative;
     margin: 24px 0;
-    padding: 24px 0;
     line-height: 24px;
     font-size: 15px;
     font-family: var(--font-code);
-    overflow-x: auto;
     border-radius: 12px;
     background-color: var(--bg-main);
     box-shadow: var(--light-theme-box-shadow);
 }
-/* .x-codeblock .x-codeblock-header {
+.x-codeblock .x-codeblock-header {
+    display: flex;
+    align-items: center;
     position: absolute;
-    top: 0;
-    right: 0;
-    padding-right: 24px;
-} */
+    top: -8px;
+    right: -8px;
+    height: 32px;
+    padding: 0px 6px 0 10px;
+    border-radius: 6px;
+    background-color: var(--bg-main);
+    box-shadow: var(--light-theme-box-shadow);
+}
+.x-codeblock .x-codeblock-header > * {
+    opacity: 0.4;
+    transition: opacity 200ms;
+}
+.x-codeblock:hover .x-codeblock-header > * {
+    opacity: 1;
+}
+.x-codeblock .x-codeblock-header .svg-copy-icon path {
+    fill: var(--fg-gray-300);
+}
+.x-codeblock .x-codeblock-header-copy {
+    display: flex;
+    align-items: center;
+    margin-left: 4px;
+    padding: 2px;
+    border-radius: 2px;
+}
 .x-codeblock pre {
-    width: fit-content;
-    min-width: 100%;
+    padding: 24px 0;
+    overflow-x: auto;
 }
 .x-codeblock pre code {
     display: block;
@@ -26,17 +47,6 @@
     padding: 0 32px;
     text-align: left;
 }
-
-/*todo: format&简化*/
-/*.x-codeblock div {
-    font-size: 95%;
-    line-height: 24px;
-    font-family: var(--font-code);
-    position: absolute;
-    left: 0;
-    top: 24px;
-} */
-
 @media (max-width: 600px) {
     .x-codeblock pre code {
         padding: 0 18px;

@@ -99,6 +99,7 @@ const propertyOrderList = [
     'border-spacing',
 
     //其他
+    'fill',
     'background',
     'background-color',
     'backdrop-filter',

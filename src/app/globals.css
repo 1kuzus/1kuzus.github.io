@@ -1,7 +1,6 @@
 :root {
     --font-code: Menlo, Consolas, Consolas_Latin_Subset, 'Courier New', Courier, 'Ubuntu Mono', monospace;
 }
-/* games101-03-shading/ img挤扁 */
 :root,
 :root.light {
     /*背景色*/

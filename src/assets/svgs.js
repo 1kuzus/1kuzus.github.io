@@ -51,3 +51,28 @@ export function RightArrowIcon() {
         </svg>
     );
 }
+
+export function CopyIcon() {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 1024 1024"
+            className="svg-copy-icon"
+        >
+            <path d="M337 138a27 27 0 0 0-27 27v78h377c50 0 92 41 92 91v377h78a28 28 0 0 0 27-28V166a28 28 0 0 0-27-27H337z m441 640v78c0 50-41 91-92 91H166a92 92 0 0 1-91-91V337c0-50 41-92 91-92h78V166c0-50 41-91 91-91h520c50 0 91 41 91 91v520c0 50-41 92-91 92h-78zM166 309a27 27 0 0 0-27 28v520c0 15 12 27 27 27h520a28 28 0 0 0 28-27V337a28 28 0 0 0-28-28H166z" />
+        </svg>
+    );
+}
+
+export function SuccessfullyCopiedIcon() {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 1024 1024">
+            <path
+                d="M392 690l-149-149a41 41 0 0 0-59 0 41 41 0 0 0 0 59l178 178c16 16 43 16 60 0l452-451a41 41 0 0 0 0-59 41 41 0 0 0-59 0l-422 422z"
+                fill="#40E040"
+            />
+        </svg>
+    );
+}

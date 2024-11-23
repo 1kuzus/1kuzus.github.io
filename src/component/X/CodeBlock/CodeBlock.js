@@ -1,4 +1,5 @@
 import Prism from 'prismjs';
+import CopyButton from './CopyButton';
 import {assert} from 'src/utils/utils';
 import 'prismjs/components/prism-c';
 import 'prismjs/components/prism-cpp';
@@ -17,8 +18,29 @@ import 'prismjs/components/prism-markup-templating';
 import 'src/assets/prismjs/prism-asm8086';
 import './CodeBlock.css';
 
+const languageNameMap = {
+    c: 'C',
+    cpp: 'C++',
+    jsx: 'JSX',
+    tsx: 'TSX',
+    php: 'PHP',
+    sql: 'SQL',
+    java: 'Java',
+    perl: 'Perl',
+    bash: 'Bash',
+    python: 'Python',
+    markdown: 'Markdown',
+    js: 'JavaScript',
+    ts: 'TypeScript',
+    text: 'Plain Text',
+    html: 'HTML',
+    css: 'CSS',
+    asm8086: 'ASM8086',
+};
+
 export default function CodeBlock(props) {
     const {language, code, highlightLines, diffRemovedLines, diffAddedLines} = props;
+    assert(languageNameMap[language], 'unsupported language: ' + language);
     //处理代码行，处理空白，统一缩进
     let lines = code.split('\n').map((line) => line.trimRight());
     if (!lines[0]) lines = lines.slice(1);
@@ -27,7 +49,7 @@ export default function CodeBlock(props) {
     //将普通高亮、diff增加、diff删除合并为三元组[start:number,end:number,type:'n'|'r'|'a']
     const processLines = (ls, t) =>
         ls
-            ? ls.split(',').map((i) => (i.includes('-') ? [i.split('-')[0] - 1, +i.split('-')[1], t] : [i - 1, +i, t]))
+            ? ls.split(',').map((i) => (i.includes('-') ? [i.split('-')[0], +i.split('-')[1] + 1, t] : [i, +i + 1, t]))
             : [];
     const allStartEnd = [
         ...processLines(highlightLines, 'n'),
@@ -62,25 +84,17 @@ export default function CodeBlock(props) {
     const highlightedCode = Prism.highlight(lines.join('\n'), Prism.languages[language], language);
     return (
         <div className="x-codeblock">
-            {/* <div className="x-codeblock-header">123</div> */}
+            <div className="x-codeblock-header">
+                <div className="x-codeblock-header-language">{languageNameMap[language]}</div>
+                <CopyButton className="x-codeblock-header-copy" text={lines.join('\n')} />
+            </div>
             <pre
                 style={{
                     background: allStartEnd.length ? backgroundStyle : null,
-                    // paddingLeft: n 'em',
                 }}
             >
                 <code dangerouslySetInnerHTML={{__html: highlightedCode}} />
-                {/*
-                todo: support +/- and line number
-                 <div>
-                    1322
-                    <br />
-                    1323
-                    {placeholder}
-                </div> */}
             </pre>
         </div>
     );
 }
-
-//todo: font-family: Menlo,DejaVu Sans Mono,Liberation Mono,Consolas,Ubuntu Mono,Courier New,andale mono,lucida console,monospace;
