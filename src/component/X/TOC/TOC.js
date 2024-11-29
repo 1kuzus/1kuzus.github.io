@@ -11,8 +11,8 @@ export default function Contents() {
         const maxContainerScrollTop = container.scrollHeight - container.clientHeight;
         const ot_i = titleNodesOffsetTop.findLast((offset) => offset <= maxContainerScrollTop) || 0;
         const ot_n = titleNodesOffsetTop[titleNodes.length - 1];
-        const line = (a, b, c, d, x) => ((d - b) / (c - a)) * (x - a) + b;
-        return titleNodesOffsetTop.map((ot) => (ot <= ot_i ? ot : line(ot_i, ot_i, ot_n, maxContainerScrollTop, ot)));
+        const linear = (a, b, c, d, x) => ((d - b) / (c - a)) * (x - a) + b;
+        return titleNodesOffsetTop.map((ot) => (ot <= ot_i ? ot : linear(ot_i, ot_i, ot_n, maxContainerScrollTop, ot)));
     };
     useLayoutEffect(() => {
         const nodes = Array.from(
