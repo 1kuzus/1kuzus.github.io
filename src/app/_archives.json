@@ -1,4 +1,8 @@
 {
+    "/24d/about-interactive-multimedia/": {
+        "title": "关于交互式多媒体",
+        "time": "2024-11-30"
+    },
     "/24d/wp-1337uplive-2024/": {
         "title": "1337UP LIVE CTF 2024 Writeup",
         "time": "2024-11-16"
@@ -310,14 +314,6 @@
     "/23c/pattern-recognition-1/": {
         "title": "【模式识别】统计决策方法",
         "time": "2023-08-31"
-    },
-    "/longtime/demo/": {
-        "title": "示例",
-        "todo": "删除！！！1"
-    },
-    "/longtime/updates/": {
-        "title": "更新日志",
-        "todo": "删除！！！1"
     },
     "/longtime/papers-dl/": {
         "title": "论文速记：深度学习"

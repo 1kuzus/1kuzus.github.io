@@ -1,6 +1,6 @@
 import X from 'src/component/X';
 import metas from 'src/app/_metas';
-import styles from './page.module.css';
+import Boxes from './imm';
 
 const path = '/23c/pattern-recognition-1/';
 export const {metadata} = metas[path];
@@ -16,13 +16,7 @@ export default function Post() {
                 <X.P>$P(\omega_i)$为`先验概率`，表示没有进行任何观测时的主观推测概率\n$P(x|\omega_i)$为`类条件密度`，已知\n$P(\omega_i|x)$为`后验概率`，希望得到其值，并用于决策</X.P>
             </X.HighlightBlock>
             <X.P>考虑如下例子，记$A$为`抓到方形`，$B$为`抓到实心图形`：</X.P>
-            <div className={styles['boxes']}>
-                <div className={[styles['box'], styles['fill']].join(' ')} />
-                <div className={styles['box']} />
-                <div className={styles['box']} />
-                <div className={[styles['box'], styles['circle'], styles['fill']].join(' ')} />
-                <div className={[styles['box'], styles['circle']].join(' ')} />
-            </div>
+            <Boxes />
             <X.P>
                 {`$P(A)=\\frac{3}{5}$`}，{`$P(B)=\\frac{2}{5}$`}，{`$P(AB)=\\frac{1}{5}$`}
             </X.P>

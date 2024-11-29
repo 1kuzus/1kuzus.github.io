@@ -1,113 +1,113 @@
-#wrapper1 {
+.wrapper1 {
     min-width: 200px;
     height: fit-content;
     padding: 16px 24px;
     border-radius: 12px;
     background-color: var(--bg-transparent-golden);
 }
-#content1 p {
+.content1 p {
     line-height: 32px;
 }
-#content1 {
+.content1 {
     height: 0;
     overflow: hidden;
     transition: height 500ms;
 }
-#wrapper1:hover #content1 {
+.wrapper1:hover .content1 {
     height: auto;
 }
 
-#wrapper2 {
+.wrapper2 {
     min-width: 200px;
     height: fit-content;
     padding: 16px 24px;
     border-radius: 12px;
     background-color: var(--bg-transparent-golden);
 }
-#content2 p {
+.content2 p {
     line-height: 32px;
 }
-#content2 {
+.content2 {
     max-height: 0;
     overflow: hidden;
     transition: max-height 500ms;
 }
-#wrapper2:hover #content2 {
+.wrapper2:hover .content2 {
     max-height: 600px;
 }
 
-#wrapper3 {
+.wrapper3 {
     min-width: 200px;
     height: fit-content;
     padding: 16px 24px;
     border-radius: 12px;
     background-color: var(--bg-transparent-golden);
 }
-#content3 p {
+.content3 p {
     line-height: 32px;
 }
-#content3 {
+.content3 {
     display: grid;
     grid-template-rows: 0fr;
     transition: grid-template-rows 500ms;
 }
-#content3 > div {
+.content3 > div {
     grid-row: 1 / span 2;
     overflow: hidden;
 }
-#wrapper3:hover #content3 {
+.wrapper3:hover .content3 {
     grid-template-rows: 1fr;
 }
 
-#wrapper4 {
+.wrapper4 {
     min-width: 200px;
     height: fit-content;
     padding: 16px 24px;
     border-radius: 12px;
     background-color: var(--bg-transparent-golden);
 }
-#content4 p {
+.content4 p {
     line-height: 32px;
 }
-#content4 {
+.content4 {
     display: grid;
     grid-template-rows: 0fr;
     background-color: var(--bg-transparent-gray-500);
     transition: grid-template-rows 3000ms;
 }
-#content4 > div {
+.content4 > div {
     overflow: hidden;
     background-color: var(--bg-transparent-red);
 }
-#wrapper4:hover #content4 {
+.wrapper4:hover .content4 {
     grid-template-rows: 1fr;
 }
 
-#wrapper5 {
+.wrapper5 {
     min-width: 200px;
     height: fit-content;
     padding: 16px 24px;
     border-radius: 12px;
     background-color: var(--bg-transparent-golden);
 }
-#content5 p {
+.content5 p {
     line-height: 32px;
 }
-#content5 {
+.content5 {
     display: grid;
     grid-template-rows: 0fr;
     background-color: var(--bg-transparent-gray-500);
     transition: grid-template-rows 3000ms;
 }
-#content5 > div {
+.content5 > div {
     grid-row: 1 / span 2;
     overflow: hidden;
     background-color: var(--bg-transparent-red);
 }
-#wrapper5:hover #content5 {
+.wrapper5:hover .content5 {
     grid-template-rows: 1fr;
 }
 
-#flex-spacer {
+.flex-spacer {
     height: 240px;
 }

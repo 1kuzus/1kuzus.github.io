@@ -123,15 +123,17 @@
         "categoryName": "杂记",
         "posts": [
             "/24b/by-questions/",
+            "/24d/about-interactive-multimedia/",
             "/longtime/hundred-thousand/",
             "/longtime/linux-commands/"
         ]
     },
     {
-        "categoryName": "其他",
+        "categoryName": "交互式多媒体",
         "posts": [
-            "/longtime/demo/",
-            "/longtime/updates/"
+            "/24d/about-interactive-multimedia/",
+            "/23c/pattern-recognition-1/",
+            "/23d/css-auto-height-transition/"
         ]
     }
 ]
