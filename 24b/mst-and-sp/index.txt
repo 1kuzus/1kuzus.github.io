@@ -1,10 +1,75 @@
-2:I[10579,["2202","static/chunks/2202-f6a33033a4b04b0a.js","2993","static/chunks/2993-1cdd302267b13ab8.js","5982","static/chunks/app/(posts)/24b/mst-and-sp/page-1eaec3b71152a006.js"],""]
-16:I[5613,[],""]
-17:I[31778,[],""]
-18:I[30389,["2202","static/chunks/2202-f6a33033a4b04b0a.js","5250","static/chunks/5250-f85259527308ce47.js","2993","static/chunks/2993-1cdd302267b13ab8.js","1993","static/chunks/app/(posts)/layout-77cfb8fd4a4b44e7.js"],""]
-19:I[25694,["5250","static/chunks/5250-f85259527308ce47.js","3185","static/chunks/app/layout-7e8ae40d9eceb952.js"],"GlobalProvider"]
-1a:I[30397,["5250","static/chunks/5250-f85259527308ce47.js","3185","static/chunks/app/layout-7e8ae40d9eceb952.js"],""]
-3:Tf93,数学角度，最坏情况对于稠密图仍有<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span></span></span></span>接近<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>，<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">2</span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mclose">)</span></span></span></span>。4:T84f,编程实现角度，对于本文给出的代码，优先队列中存在节点编号相同，但<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">d</span></span></span></span>值不同的元素；也就是说使用STL的优先队列会有<span class="x-inline-strong">节点编号重复</span>的元素，队列的长度可能达到<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span></span></span></span>级别，因此单次操作也是<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mclose">)</span></span></span></span>的。如果优先队列使用其他实现方式，将元素总数维护在<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span></span></span></span>级别，对松弛操作修改已有节点，而不是插入新节点，此时单次操作时间复杂度就是<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mclose">)</span></span></span></span>。5:T2e3c,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+2:I[10579,["2202","static/chunks/2202-c94dd0688c9a9cf1.js","7197","static/chunks/7197-fbfe003e0dc31b13.js","5982","static/chunks/app/(posts)/24b/mst-and-sp/page-570dd40731a3c2b3.js"],""]
+5:I[62029,["2202","static/chunks/2202-c94dd0688c9a9cf1.js","7197","static/chunks/7197-fbfe003e0dc31b13.js","5982","static/chunks/app/(posts)/24b/mst-and-sp/page-570dd40731a3c2b3.js"],""]
+20:I[5613,[],""]
+21:I[31778,[],""]
+22:I[30389,["2202","static/chunks/2202-c94dd0688c9a9cf1.js","5250","static/chunks/5250-9192d080d30d8ff7.js","7197","static/chunks/7197-fbfe003e0dc31b13.js","1993","static/chunks/app/(posts)/layout-64a2d12ca4e5a8ea.js"],""]
+23:I[25694,["5250","static/chunks/5250-9192d080d30d8ff7.js","3185","static/chunks/app/layout-3bcdb418b19b279c.js"],"GlobalProvider"]
+24:I[30397,["5250","static/chunks/5250-9192d080d30d8ff7.js","3185","static/chunks/app/layout-3bcdb418b19b279c.js"],""]
+3:Tf93,数学角度，最坏情况对于稠密图仍有<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span></span></span></span>接近<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>，<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">2</span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mclose">)</span></span></span></span>。4:T84f,编程实现角度，对于本文给出的代码，优先队列中存在节点编号相同，但<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">d</span></span></span></span>值不同的元素；也就是说使用STL的优先队列会有<span class="x-inline-strong">节点编号重复</span>的元素，队列的长度可能达到<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span></span></span></span>级别，因此单次操作也是<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mclose">)</span></span></span></span>的。如果优先队列使用其他实现方式，将元素总数维护在<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span></span></span></span>级别，对松弛操作修改已有节点，而不是插入新节点，此时单次操作时间复杂度就是<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mclose">)</span></span></span></span>。6:T4ae,#include <iostream>
+#include <algorithm>
+#define N 5005
+#define M 200005
+using namespace std;
+int n,m,ne,ans,cnt;
+struct EDGE{
+    int u,v;
+    int w;
+    friend bool operator <(EDGE a,EDGE b)
+    {
+        return a.w<b.w;
+    }
+}edge[M];
+void addEdge(int u,int v,int w)
+{
+    edge[ne].u=u;
+    edge[ne].v=v;
+    edge[ne].w=w;
+    ne++;
+    return;
+}
+
+int f[N];
+int find(int x)
+{
+    return (f[x]==x)?x:(f[x]=find(f[x]));
+}
+void uni(int x,int y)
+{
+    f[find(x)]=find(y);
+    return;
+}
+bool connected(int x,int y)
+{
+    return find(x)==find(y);
+}
+
+int main()
+{
+    cin>>n>>m;
+    for(int i=0;i<n;i++) f[i]=i;//初始化并查集
+    for(int i=0;i<m;i++)
+    {
+        int u,v,w;
+        cin>>u>>v>>w;
+        addEdge(u-1,v-1,w);//输入是从1计数的
+    }
+    sort(edge,edge+m);//对边排序
+    for(int i=0;i<m;i++)
+    {
+        int u=edge[i].u,v=edge[i].v;
+        if(!connected(u,v))//不成环就加入
+        {
+            uni(u,v);
+            cnt++;
+            ans+=edge[i].w;//不成环就加入
+        }
+    }
+    //题目让判断图不连通的情况，因此检查得到的边数是否为顶点数-1
+    if(cnt==n-1) cout<<ans<<endl;
+    else cout<<"orz"<<endl;
+    return 0;
+}
+7:T2e3c,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;algorithm></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">N</span> <span class="token expression"><span class="token number">5005</span></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">M</span> <span class="token expression"><span class="token number">200005</span></span></span>
@@ -68,7 +133,58 @@
     <span class="token keyword">else</span> cout<span class="token operator">&lt;&lt;</span><span class="token string">"orz"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-6:T2f09,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">N</span> <span class="token expression"><span class="token number">1005</span></span></span>
+8:T4ca,#define N 1005
+#define M 1000005
+class Solution {
+public:
+    int ne,ans;
+    struct EDGE{
+        int u,v;
+        int w;
+        friend bool operator <(EDGE a,EDGE b)
+        {
+            return a.w<b.w;
+        }
+    }edge[M];
+    void addEdge(int u,int v,int w)
+    {
+        edge[ne].u=u;
+        edge[ne].v=v;
+        edge[ne].w=w;
+        ne++;
+        return;
+    }
+
+    int f[N];
+    int find(int x){return (f[x]==x)?x:(f[x]=find(f[x]));}
+    void uni(int x,int y){f[find(x)]=find(y);return;}
+    bool connected(int x,int y){return find(x)==find(y);}
+
+    int minCostConnectPoints(vector<vector<int>>& points) {
+        int n=points.size();
+        for(int i=0;i<n;i++)
+        {
+            f[i]=i;//初始化并查集
+            for(int j=i+1;j<n;j++)
+            {
+                int w=abs(points[i][0]-points[j][0])+abs(points[i][1]-points[j][1]);
+                addEdge(i,j,w);
+            }
+        }
+        sort(edge,edge+ne);
+        for(int i=0;i<ne;i++)
+        {
+            int u=edge[i].u,v=edge[i].v;
+            if(!connected(u,v))//不成环就加入
+            {
+                uni(u,v);
+                ans+=edge[i].w;//不成环就加入
+            }
+        }
+        return ans;
+    }
+};
+9:T2f09,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">N</span> <span class="token expression"><span class="token number">1005</span></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">M</span> <span class="token expression"><span class="token number">1000005</span></span></span>
 <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
@@ -119,7 +235,60 @@
         <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-7:T66e,Prim算法维护一个集合<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span></span></span>，开始时<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span></span></span>包含一个起点，结束时包含所有顶点。Prim算法的每一步在连接<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span></span></span>和<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span></span></span>之外的点的边中选择一条最短的边，将其加入最小生成树，并将这条边连接的另一个顶点加入<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span></span></span>中，然后更新其他点到<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span></span></span>的距离。8:T2c61,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+a:T66e,Prim算法维护一个集合<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span></span></span>，开始时<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span></span></span>包含一个起点，结束时包含所有顶点。Prim算法的每一步在连接<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span></span></span>和<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span></span></span>之外的点的边中选择一条最短的边，将其加入最小生成树，并将这条边连接的另一个顶点加入<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span></span></span>中，然后更新其他点到<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span></span></span>的距离。b:T4b5,#include <iostream>
+#define N 5005
+#define INF 2147483647
+using namespace std;
+int n,m,ans,cnt,d[N];
+bool vis[N];//顶点是否在集合T中，把0作为起点
+int g[N][N];
+
+int main()
+{
+    cin>>n>>m;
+    for(int i=1;i<n;i++) d[i]=INF;
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+            if(i!=j) g[i][j]=INF;
+        }
+    }
+    for(int i=0;i<m;i++)
+    {
+        int u,v,w;
+        cin>>u>>v>>w;
+        if(w<g[u-1][v-1])//可能有重边
+        {
+            g[u-1][v-1]=w;
+            g[v-1][u-1]=w;
+        }
+    }
+    for(int t=0;t<n;t++)
+    {
+        //选择不在T中的顶点中，d[u]最小的顶点u
+        int u=0,minval=INF;
+        for(int i=0;i<n;i++)
+        {
+            if(vis[i]) continue;
+            if(d[i]<minval)	minval=d[i],u=i;
+        }
+        if(minval==INF) break;//说明不连通
+        vis[u]=true;
+        cnt++;
+        ans+=minval;
+        for(int v=0;v<n;v++)
+        {
+            if(vis[v]) continue;
+            if(g[u][v]<d[v]) d[v]=g[u][v];
+        }
+    }
+    //题目让判断图不连通的情况，因此检查得到的边数是否为顶点数-1
+    if(cnt==n) cout<<ans<<endl;
+    else cout<<"orz"<<endl;
+    return 0;
+}
+c:T2c61,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">N</span> <span class="token expression"><span class="token number">5005</span></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">INF</span> <span class="token expression"><span class="token number">2147483647</span></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
@@ -172,7 +341,54 @@
     <span class="token keyword">else</span> cout<span class="token operator">&lt;&lt;</span><span class="token string">"orz"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-9:T2bcd,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">N</span> <span class="token expression"><span class="token number">1005</span></span></span>
+d:T45e,#define N 1005
+#define INF 2147483647
+class Solution {
+public:
+    int ans,cnt,d[N];
+    bool vis[N];
+    int g[N][N];
+
+    int minCostConnectPoints(vector<vector<int>>& points) {
+        int n=points.size();
+        for(int i=1;i<n;i++) d[i]=INF;
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                if(i!=j) g[i][j]=INF;
+            }
+        }
+        for(int i=0;i<n;i++)
+        {
+            for(int j=i+1;j<n;j++)
+            {
+                int w=abs(points[i][0]-points[j][0])+abs(points[i][1]-points[j][1]);
+                g[i][j]=w;
+                g[j][i]=w;
+            }
+        }
+        for(int t=0;t<n;t++)
+        {
+            int u=0,minval=INF;
+            for(int i=0;i<n;i++)
+            {
+                if(vis[i]) continue;
+                if(d[i]<minval)	minval=d[i],u=i;
+            }
+            vis[u]=true;
+            cnt++;
+            ans+=minval;
+            for(int v=0;v<n;v++)
+            {
+                if(vis[v]) continue;
+                if(g[u][v]<d[v]) d[v]=g[u][v];
+            }
+        }
+        return ans;
+    }
+};
+e:T2bcd,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">N</span> <span class="token expression"><span class="token number">1005</span></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">INF</span> <span class="token expression"><span class="token number">2147483647</span></span></span>
 <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
@@ -219,7 +435,67 @@
         <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-a:T2cb4,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+f:T49f,#include <iostream>
+#include <queue>
+#define N 5005
+#define INF 2147483647
+using namespace std;
+int n,m,ans,cnt,d[N];
+bool vis[N];//顶点是否在集合T中，把0作为起点
+struct EDGE{
+    int to,w;
+};
+vector<EDGE> g[N];
+void addEdge(int u,int v,int w)
+{
+    g[u].emplace_back((EDGE){v,w});
+    return;
+}
+struct NODE{
+    int id,d;
+    friend bool operator <(NODE a,NODE b)
+    {
+        return a.d>b.d;
+    }
+};
+priority_queue<NODE> q;
+
+int main()
+{
+    cin>>n>>m;
+    for(int i=1;i<n;i++) d[i]=INF;
+    q.push((NODE){0,0});
+    for(int i=0;i<m;i++)
+    {
+        int u,v,w;
+        cin>>u>>v>>w;
+        addEdge(u-1,v-1,w);
+        addEdge(v-1,u-1,w);
+    }
+    while(!q.empty())
+    {
+        int u=q.top().id;
+        q.pop();
+        if(vis[u]) continue;
+        vis[u]=true;
+        cnt++;
+        ans+=d[u];
+        for(auto e:g[u])
+        {
+            int v=e.to;
+            if(d[v]>e.w)
+            {
+                d[v]=e.w;
+                q.push((NODE){v,d[v]});
+            }
+        }
+    }
+    //题目让判断图不连通的情况，因此检查得到的边数是否为顶点数-1
+    if(cnt==n) cout<<ans<<endl;
+    else cout<<"orz"<<endl;
+    return 0;
+}
+10:T2cb4,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;queue></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">N</span> <span class="token expression"><span class="token number">5005</span></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">INF</span> <span class="token expression"><span class="token number">2147483647</span></span></span>
@@ -279,7 +555,65 @@ priority_queue<span class="token operator">&lt;</span>NODE<span class="token ope
     <span class="token keyword">else</span> cout<span class="token operator">&lt;&lt;</span><span class="token string">"orz"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-b:T2fa0,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">N</span> <span class="token expression"><span class="token number">1005</span></span></span>
+11:T518,#define N 1005
+#define INF 2147483647
+class Solution {
+public:
+    int ans,cnt,d[N];
+    bool vis[N];
+    struct EDGE{
+        int to,w;
+    };
+    vector<EDGE> g[N];
+    void addEdge(int u,int v,int w)
+    {
+        g[u].emplace_back((EDGE){v,w});
+        return;
+    }
+    struct NODE{
+        int id,d;
+        friend bool operator <(NODE a,NODE b)
+        {
+            return a.d>b.d;
+        }
+    };
+    priority_queue<NODE> q;
+
+    int minCostConnectPoints(vector<vector<int>>& points) {
+        int n=points.size();
+        for(int i=1;i<n;i++) d[i]=INF;
+        q.push((NODE){0,0});
+        for(int i=0;i<n;i++)
+        {
+            for(int j=i+1;j<n;j++)
+            {
+                int w=abs(points[i][0]-points[j][0])+abs(points[i][1]-points[j][1]);
+                addEdge(i,j,w);
+                addEdge(j,i,w);
+            }
+        }
+        while(!q.empty())
+        {
+            int u=q.top().id;
+            q.pop();
+            if(vis[u]) continue;
+            vis[u]=true;
+            cnt++;
+            ans+=d[u];
+            for(auto e:g[u])
+            {
+                int v=e.to;
+                if(d[v]>e.w)
+                {
+                    d[v]=e.w;
+                    q.push((NODE){v,d[v]});
+                }
+            }
+        }
+        return ans;
+    }
+};
+12:T2fa0,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">N</span> <span class="token expression"><span class="token number">1005</span></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">INF</span> <span class="token expression"><span class="token number">2147483647</span></span></span>
 <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
@@ -337,7 +671,7 @@ b:T2fa0,<span class="token macro property"><span class="token directive-hash">#<
         <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-c:T6ea,洛谷题目的数据范围<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord">5000</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span>，算是一张稀疏图，因此优先队列优化的Prim效率更优；力扣题目是一张完全图，此时朴素Prim反而效率更高。d:T6de,Bellman-Ford算法思想非常简单，由于源点到任意点的最短路径最多包含<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>条边，因此对所有边进行<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>次松弛操作，一定能得到最短路。<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>次循环后，如果还能存在能继续松弛的边，则说明存在负环。e:T234d,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+13:T6ea,洛谷题目的数据范围<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord">5000</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span>，算是一张稀疏图，因此优先队列优化的Prim效率更优；力扣题目是一张完全图，此时朴素Prim反而效率更高。14:T6de,Bellman-Ford算法思想非常简单，由于源点到任意点的最短路径最多包含<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>条边，因此对所有边进行<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>次松弛操作，一定能得到最短路。<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>次循环后，如果还能存在能继续松弛的边，则说明存在负环。15:T234d,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">N</span> <span class="token expression"><span class="token number">100005</span></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">INF</span> <span class="token expression"><span class="token number">2147483647</span></span></span>
@@ -387,7 +721,74 @@ vector<span class="token operator">&lt;</span>EDGE<span class="token operator">>
     cout<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-f:T31bf,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+16:T66b,#include <iostream>
+#include <vector>
+#define N 2005
+#define INF 1000000009
+using namespace std;
+int T,n,m,d[N];
+struct EDGE{
+    int to,w;
+};
+vector<EDGE> g[N];
+void addEdge(int u,int v,int w)
+{
+    g[u].emplace_back((EDGE){v,w});
+    return;
+}
+
+int main()
+{
+    cin>>T;
+    while(T--)
+    {
+        cin>>n>>m;
+        for(int i=0;i<n;i++) g[i].clear();
+        for(int i=0;i<n;i++) d[i]=INF;
+        d[0]=0;
+        for(int i=0;i<m;i++)
+        {
+            int u,v,w;
+            cin>>u>>v>>w;
+            addEdge(u-1,v-1,w);
+            if(w>=0) addEdge(v-1,u-1,w);//题目要求
+        }
+        //每次循环都对全图所有边进行一次松弛操作，一共执行n-1次循环
+        for(int i=0;i<n-1;i++)
+        {
+            //下面两重循环遍历了m条边
+            for(int u=0;u<n;u++)
+            {
+                for(EDGE e:g[u])
+                {
+                    int v=e.to;
+                    if(d[v]>d[u]+e.w)
+                    {
+                        d[v]=d[u]+e.w;
+                    }
+                }
+            }
+        }
+        bool flag=false;
+        for(int u=0;u<n;u++)
+        {
+            //题目要求判断是否存在从顶点1出发能到达的负环，因此d值过大的顶点视为不与1联通
+            if(d[u]>1e8) continue;
+            for(EDGE e:g[u])
+            {
+                int v=e.to;
+                //如果n-1轮松弛后，仍然有可以松弛的边，说明有负环
+                if(d[v]-e.w>d[u])
+                {
+                    flag=true;
+                }
+            }
+        }
+        cout<<(flag?"YES":"NO")<<endl;
+    }
+    return 0;
+}
+17:T31bf,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">N</span> <span class="token expression"><span class="token number">2005</span></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">INF</span> <span class="token expression"><span class="token number">1000000009</span></span></span>
@@ -454,7 +855,68 @@ vector<span class="token operator">&lt;</span>EDGE<span class="token operator">>
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-10:T5b9,注意Dijkstra维护的<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">d</span></span></span></span>与Prim维护的<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">d</span></span></span></span>的含义不同，Prim维护的是<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span></span></span>之外的点到<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span></span></span>的最短距离，<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">d</span></span></span></span>值一定是一条边的长度；而Dijkstra维护的是源点到顶点的“最短路径估计”，<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">d</span></span></span></span>值是一条路径的长度。11:T2d62,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+18:T5b9,注意Dijkstra维护的<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">d</span></span></span></span>与Prim维护的<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">d</span></span></span></span>的含义不同，Prim维护的是<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span></span></span>之外的点到<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span></span></span>的最短距离，<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">d</span></span></span></span>值一定是一条边的长度；而Dijkstra维护的是源点到顶点的“最短路径估计”，<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">d</span></span></span></span>值是一条路径的长度。19:T413,#include <iostream>
+#include <vector>
+#include <queue>
+#define N 100005
+#define INF 2147483647
+using namespace std;
+int n,m,s,d[N];
+bool vis[N];
+struct EDGE{
+    int to,w;
+};
+vector<EDGE> g[N];
+void addEdge(int u,int v,int w)
+{
+    g[u].emplace_back((EDGE){v,w});
+    return;
+}
+struct NODE{
+    int id,d;
+    friend bool operator <(NODE a,NODE b)
+    {
+        return a.d>b.d;
+    }
+};
+priority_queue<NODE> q;
+
+int main()
+{
+    cin>>n>>m>>s;
+    for(int i=0;i<n;i++) d[i]=INF;
+    d[s-1]=0;
+    q.push((NODE){s-1,0});
+    for(int i=0;i<m;i++)
+    {
+        int u,v,w;
+        cin>>u>>v>>w;
+        addEdge(u-1,v-1,w);
+    }
+    while(!q.empty())
+    {
+        int u=q.top().id;
+        q.pop();
+        if(vis[u]) continue;
+        vis[u]=true;
+        for(auto e:g[u])
+        {
+            int v=e.to;
+            if(d[v]-e.w>d[u])
+            {
+                d[v]=d[u]+e.w;
+                q.push((NODE){v,d[v]});
+            }
+        }
+    }
+    for(int i=0;i<n;i++)
+    {
+        cout<<d[i]<<' ';
+    }
+    cout<<endl;
+    return 0;
+}
+1a:T2d62,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;queue></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">N</span> <span class="token expression"><span class="token number">100005</span></span></span>
@@ -515,7 +977,7 @@ priority_queue<span class="token operator">&lt;</span>NODE<span class="token ope
     cout<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-12:T2894,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+1b:T2894,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">N</span> <span class="token expression"><span class="token number">3005</span></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">INF</span> <span class="token expression"><span class="token number">1000000009</span></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
@@ -564,7 +1026,133 @@ priority_queue<span class="token operator">&lt;</span>NODE<span class="token ope
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-13:T9d1,接下来对每条边进行操作：对于连接节点<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">u</span></span></span></span>和<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span></span></span></span>，权重为<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span></span></span></span>的边，更新其权重为<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7519em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">h</span><span class="mopen">(</span><span class="mord mathnormal">u</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">h</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mclose">)</span></span></span></span>。然后对每个顶点运行一次Dijkstra算法。14:T8ae,由于势函数<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">h</span></span></span></span>的含义是最短路，考虑最短路的三角不等式，一定有<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">h</span><span class="mopen">(</span><span class="mord mathnormal">u</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">h</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mclose">)</span></span></span></span>，移项即有<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8879em;vertical-align:-0.136em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>。15:T58bb,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+1c:T9d1,接下来对每条边进行操作：对于连接节点<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">u</span></span></span></span>和<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span></span></span></span>，权重为<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span></span></span></span>的边，更新其权重为<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7519em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">h</span><span class="mopen">(</span><span class="mord mathnormal">u</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">h</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mclose">)</span></span></span></span>。然后对每个顶点运行一次Dijkstra算法。1d:T8ae,由于势函数<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">h</span></span></span></span>的含义是最短路，考虑最短路的三角不等式，一定有<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">h</span><span class="mopen">(</span><span class="mord mathnormal">u</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">h</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mclose">)</span></span></span></span>，移项即有<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8879em;vertical-align:-0.136em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>。1e:T97c,#include <iostream>
+#include <vector>
+#include <queue>
+#define N 3005
+#define INF 1000000009
+using namespace std;
+int n,m;
+int h[N];//势函数
+struct EDGE{
+    int to,w;//边的终点和边权
+};
+vector<EDGE> g[N];
+void addEdge(int u,int v,int w)
+{
+    g[u].emplace_back((EDGE){v,w});
+    return;
+}
+struct NODE{
+    int id,d;
+    friend bool operator <(NODE a,NODE b)
+    {
+        return a.d>b.d;
+    }
+};
+
+bool BellmanFord()//求出势函数，同时返回是否存在负环
+{
+    //注意在这里n是加入了虚拟节点之后的
+    for(int t=0;t<n;t++)
+    {
+        for(int u=0;u<=n;u++)
+        {
+            for(auto e:g[u])
+            {
+                int v=e.to;
+                if(h[v]-e.w>h[u])
+                {
+                    h[v]=h[u]+e.w;
+                }
+            }
+        }
+    }
+    for(int u=0;u<=n;u++)
+    {
+        for(auto e:g[u])
+        {
+            int v=e.to;
+            if(h[v]-e.w>h[u])
+            {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+long long Dijkstra(int s)
+{
+    priority_queue<NODE> q;
+    int d[N]={};
+    bool vis[N]={};
+    for(int i=0;i<n;i++) d[i]=INF;
+    d[s]=0;
+    q.push((NODE){s,0});
+    while(!q.empty())
+    {
+        int u=q.top().id;
+        q.pop();
+        if(vis[u]) continue;
+        vis[u]=true;
+        for(auto e:g[u])
+        {
+            int v=e.to;
+            if(d[v]-e.w>d[u])
+            {
+                d[v]=d[u]+e.w;
+                q.push((NODE){v,d[v]});
+            }
+        }
+    }
+    long long ans=0;
+    for(int i=0;i<n;i++)
+    {
+        int dis=d[i]+h[i]-h[s];
+        if(dis>1e8) dis=1e9;//题目要求不连通按1e9计算
+        ans+=(long long)(i+1)*dis;
+    }
+    return ans;
+}
+
+int main()
+{
+    cin>>n>>m;
+    for(int i=0;i<m;i++)
+    {
+        int u,v,w;
+        cin>>u>>v>>w;
+        addEdge(u-1,v-1,w);
+    }
+    //构造一个虚拟顶点n，其到所有顶点距离为0
+    for(int i=0;i<n;i++)
+    {
+        addEdge(n,i,0);
+    }
+    //一次BellmanFord求出势函数，并判断负环
+    for(int i=0;i<n;i++) h[i]=INF;
+    if(BellmanFord())
+    {
+        cout<<-1<<endl;
+        return 0;
+    }
+    //调整边权为非负，然后跑n次Dijkstra
+    for(int u=0;u<n;u++)
+    {
+        for(auto &e:g[u])
+        {
+            int v=e.to;
+            e.w=e.w+h[u]-h[v];
+        }
+    }
+    for(int i=0;i<n;i++)
+    {
+        cout<<Dijkstra(i)<<endl;
+    }
+    return 0;
+}
+1f:T58bb,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;queue></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">N</span> <span class="token expression"><span class="token number">3005</span></span></span>
@@ -690,6 +1278,6 @@ vector<span class="token operator">&lt;</span>EDGE<span class="token operator">>
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-0:["pNpI1VZDzTUu1DgK4LVte",[[["",{"children":["(posts)",{"children":["24b",{"children":["mst-and-sp",{"children":["__PAGE__",{}]}]}]}]},"$undefined","$undefined",true],["",{"children":["(posts)",{"children":["24b",{"children":["mst-and-sp",{"children":["__PAGE__",{},["$L1",[["$","$L2",null,{}],["$","h1",null,{"className":"x-title","children":"最小生成树与最短路算法"}],["$","h2",null,{"className":"x-h1","children":"汇总"}],["$","div",null,{"className":"x-table-wrapper","children":["$","table",null,{"className":"x-table","children":["$","tbody",null,{"children":[["$","tr","0",{"children":[["$","th","0",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"求解问题"}}]}],["$","th","1",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"算法名称"}}]}],["$","th","2",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"时间复杂度"}}]}]]}],["$","tr","1",{"children":[["$","td","0",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"最小生成树"}}]}],["$","td","1",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"Kruskal"}}]}],["$","td","2",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.8889em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.05764em;\">E</span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mop\">lo<span style=\"margin-right:0.01389em;\">g</span></span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.05764em;\">E</span></span></span></span>"}}]}]]}],["$","tr","2",{"children":[["$","td","0",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"最小生成树"}}]}],["$","td","1",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"Prim（朴素）"}}]}],["$","td","2",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.8141em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.22222em;\">V</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">2</span></span></span></span></span></span></span></span></span></span></span>"}}]}]]}],["$","tr","3",{"children":[["$","td","0",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"最小生成树"}}]}],["$","td","1",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"Prim（优先队列）"}}]}],["$","td","2",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.8889em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.05764em;\">E</span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mop\">lo<span style=\"margin-right:0.01389em;\">g</span></span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.05764em;\">E</span></span></span></span>"}}]}]]}],["$","tr","4",{"children":[["$","td","0",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"单源最短路"}}]}],["$","td","1",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"Bellman-Ford"}}]}],["$","td","2",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.6833em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.22222em;\">V</span><span class=\"mord mathnormal\" style=\"margin-right:0.05764em;\">E</span></span></span></span>"}}]}]]}],["$","tr","5",{"children":[["$","td","0",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"单源最短路"}}]}],["$","td","1",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"Dijkstra（优先队列）"}}]}],["$","td","2",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.8889em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.05764em;\">E</span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mop\">lo<span style=\"margin-right:0.01389em;\">g</span></span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.05764em;\">E</span></span></span></span>"}}]}]]}],["$","tr","6",{"children":[["$","td","0",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"全源最短路"}}]}],["$","td","1",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"Floyd"}}]}],["$","td","2",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.8141em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.22222em;\">V</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">3</span></span></span></span></span></span></span></span></span></span></span>"}}]}]]}],["$","tr","7",{"children":[["$","td","0",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"全源最短路"}}]}],["$","td","1",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"Johnson"}}]}],["$","td","2",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.8889em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.22222em;\">V</span><span class=\"mord mathnormal\" style=\"margin-right:0.05764em;\">E</span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mop\">lo<span style=\"margin-right:0.01389em;\">g</span></span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.05764em;\">E</span></span></span></span>"}}]}]]}]]}]}]}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"本文用<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.6833em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.22222em;\">V</span></span></span></span>表示顶点数，<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.6833em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.05764em;\">E</span></span></span></span>表示边数。"}}]}]]}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":[["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"有的文章写优先队列实现的Dijkstra算法时间复杂度为<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.8889em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.05764em;\">E</span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mop\">lo<span style=\"margin-right:0.01389em;\">g</span></span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.22222em;\">V</span></span></span></span>，可以作如下理解："}}],["$","div",null,{"className":"x-oli","children":[["$","div",null,{"className":"x-oli-number","children":"1."}],["$","div",null,{"className":"x-oli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}]}]]}],["$","div",null,{"className":"x-oli","children":[["$","div",null,{"className":"x-oli-number","children":"2."}],["$","div",null,{"className":"x-oli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"$4"}}]}]]}]]}]]}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"对于Prim算法时间复杂度的争论是类似的。"}}]}]]}],["$","h2",null,{"className":"x-h1","children":"最小生成树"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"最小生成树部分会分别给出可以提交到以下两道题目的代码："}}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<a href=\"https://www.luogu.com.cn/problem/P3366\" target=\"_blank\" rel=\"noreferrer\" class=\"x-inline-link\">洛谷 - P3366【模板】最小生成树</a>"}}]}]]}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<a href=\"https://leetcode.cn/problems/min-cost-to-connect-all-points/description/\" target=\"_blank\" rel=\"noreferrer\" class=\"x-inline-link\">力扣 - 1584.连接所有点的最小费用</a>"}}]}]]}],["$","h3",null,{"className":"x-h2","children":"Kruskal"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"Kruskal算法将所有边按权值排序，然后从小到大考虑将边加入最小生成树，如果这条边加入后会形成环，就舍弃之。使用并查集判断是否会成环。"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"洛谷AC/<code class=\"x-inline-highlight\">342ms</code>，代码如下："}}],["$","div",null,{"className":"x-codeblock","children":["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$5"}}]}]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"力扣AC/<code class=\"x-inline-highlight\">315ms</code>，代码如下："}}],["$","div",null,{"className":"x-codeblock","children":["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$6"}}]}]}],["$","h3",null,{"className":"x-h2","children":"Prim（朴素）"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"$7"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"洛谷AC/<code class=\"x-inline-highlight\">812ms</code>，代码如下："}}],["$","div",null,{"className":"x-codeblock","children":["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$8"}}]}]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"力扣AC/<code class=\"x-inline-highlight\">44ms</code>，代码如下："}}],["$","div",null,{"className":"x-codeblock","children":["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$9"}}]}]}],["$","h3",null,{"className":"x-h2","children":"Prim（优先队列）"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"洛谷AC/<code class=\"x-inline-highlight\">346ms</code>，代码如下："}}],["$","div",null,{"className":"x-codeblock","children":["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$a"}}]}]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"力扣AC/<code class=\"x-inline-highlight\">113ms</code>，代码如下："}}],["$","div",null,{"className":"x-codeblock","children":["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$b"}}]}]}],["$","h3",null,{"className":"x-h2","children":"分析"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"$c"}}],["$","h2",null,{"className":"x-h1","children":"单源最短路"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"单源最短路部分会给出可以提交到以下两道题目的代码（两道题目只是数据不同，代码是一样的）："}}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<a href=\"https://www.luogu.com.cn/problem/P3371\" target=\"_blank\" rel=\"noreferrer\" class=\"x-inline-link\">洛谷 - P3371【模板】单源最短路径（弱化版）</a>"}}]}]]}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<a href=\"https://www.luogu.com.cn/problem/P4779\" target=\"_blank\" rel=\"noreferrer\" class=\"x-inline-link\">洛谷 - P4779【模板】单源最短路径（标准版）</a>"}}]}]]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"对于Bellman-Ford算法，会给出判负环测试题目的代码："}}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<a href=\"https://www.luogu.com.cn/problem/P3385\" target=\"_blank\" rel=\"noreferrer\" class=\"x-inline-link\">洛谷 - P3385【模板】负环</a>"}}]}]]}],["$","h3",null,{"className":"x-h2","children":"Bellman-Ford"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"$d"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"洛谷弱化版通过<code class=\"x-inline-highlight\">7</code>/<code class=\"x-inline-highlight\">10</code>，标准版通过<code class=\"x-inline-highlight\">0</code>/<code class=\"x-inline-highlight\">6</code>，代码如下："}}],["$","div",null,{"className":"x-codeblock","children":["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$e"}}]}]}],["$","h3",null,{"className":"x-h2","children":"Bellman-Ford（判负环）"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"洛谷AC/<code class=\"x-inline-highlight\">703ms</code>，代码如下："}}],["$","div",null,{"className":"x-codeblock","children":["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$f"}}]}]}],["$","h3",null,{"className":"x-h2","children":"Dijkstra（优先队列）"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"Dijkstra算法从源点开始，每次选择最短路估计距离最小的点进行松弛操作，并把这个点标记为已访问，直到所有点都被标记。"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"$10"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"洛谷弱化版AC/<code class=\"x-inline-highlight\">963ms</code>，标准版AC/<code class=\"x-inline-highlight\">667ms</code>，代码如下："}}],["$","div",null,{"className":"x-codeblock","children":["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$11"}}]}]}],["$","h2",null,{"className":"x-h1","children":"全源最短路"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"全源最短路部分会给出可以提交到以下题目的代码："}}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<a href=\"https://www.luogu.com.cn/problem/P5905\" target=\"_blank\" rel=\"noreferrer\" class=\"x-inline-link\">洛谷 - P5905【模板】全源最短路</a>"}}]}]]}],["$","h3",null,{"className":"x-h2","children":"Floyd"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"Floyd算法维护图<code class=\"x-inline-highlight\">g[i][j]</code>，最外层用<code class=\"x-inline-highlight\">k</code>次循环更新，每次循环<code class=\"x-inline-highlight\">g[i][j]</code>的含义是：<br/>从<code class=\"x-inline-highlight\">i</code>到<code class=\"x-inline-highlight\">j</code>，所有中间结点取自<code class=\"x-inline-highlight\">1</code>~<code class=\"x-inline-highlight\">k</code>的最短路。"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"洛谷通过<code class=\"x-inline-highlight\">7</code>/<code class=\"x-inline-highlight\">12</code>，代码如下："}}],["$","div",null,{"className":"x-codeblock","children":["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$12"}}]}]}],["$","h3",null,{"className":"x-h2","children":"Johnson"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"一个朴素的想法是对每个顶点都运行一次Dijkstra算法，但Dijkstra算法不能处理负权边。Johnson算法的思想是先把所有边权变为非负，然后就可以放心使用Dijkstra算法了。Johnson算法首先构造一个虚拟顶点，这个虚拟顶点通过一条权值为<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.6444em;\"></span><span class=\"mord\">0</span></span></span></span>的边与所有其他顶点都相连。然后，使用Bellman-Ford算法求出虚拟顶点到其他所有顶点的最短距离，这个距离称为“势函数”<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.6944em;\"></span><span class=\"mord mathnormal\">h</span></span></span></span>，可以理解为取虚拟顶点为“零势能面”，其余顶点的势能就是虚拟顶点到其的最短路。"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","div",null,{"className":"x-highlightblock highlight-background-golden","children":["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"严格的来说“势函数”应为<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.7778em;vertical-align:-0.0833em;\"></span><span class=\"mord\">−</span><span class=\"mord mathnormal\">h</span></span></span></span>。"}}]}],["$","div",null,{"className":"x-highlightblock highlight-background-blue","children":[["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":[["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"为什么新的<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.7519em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.02691em;\">w</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.7519em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">′</span></span></span></span></span></span></span></span></span></span></span></span>可以保证非负？"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"$14"}}]]}]]}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":[["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"为什么不能给每条边加上一个大正数来保证边权为正？"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"这样操作会导致对最短路的影响取决于<span class=\"x-inline-strong\">最短路经过的边数</span>。原图中经过较多边的最短路，可能会因为相比其他路径增长的更多，变为非最短路，导致结果错误。"}}]]}]]}]]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"洛谷AC/<code class=\"x-inline-highlight\">1.39s</code>，代码如下："}}],["$","div",null,{"className":"x-codeblock","children":["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$15"}}]}]}]],null]]},["$","$L16",null,{"parallelRouterKey":"children","segmentPath":["children","(posts)","children","24b","children","mst-and-sp","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L17",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/55722f4e6a890f7d.css","precedence":"next","crossOrigin":""}]]}]]},["$","$L16",null,{"parallelRouterKey":"children","segmentPath":["children","(posts)","children","24b","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L17",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},[null,["$","div",null,{"id":"post-layout","children":[false,["$","div",null,{"id":"main","className":"y-center-wrapper","children":["$","$L16",null,{"parallelRouterKey":"children","segmentPath":["children","(posts)","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L17",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]}],["$","$L18",null,{}]]}],null]]},[null,["$","html",null,{"lang":"zh-CN","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","link",null,{"rel":"icon","href":"/favicon.ico","type":"image/x-icon"}],["$","script",null,{"async":true,"src":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"}],["$","script",null,{"async":true,"src":"https://www.googletagmanager.com/gtag/js?id=G-45BYSZ6WPY"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nwindow.dataLayer = window.dataLayer || [];\nfunction gtag() {\n    dataLayer.push(arguments);\n}\ngtag('js', new Date());\ngtag('config', 'G-45BYSZ6WPY');\n"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"const a=z=>h.getItem(z),b=(y,z)=>h.setItem(y,z),c=(y,z)=>document.documentElement.setAttribute(y,z),d='theme',e='dark',f='light',g='class',h=localStorage;a(d)!==e&&a(d)!==f&&b(d,f);a(d)===e?c(g,e):c(g,f);"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nif (!Array.prototype.findLast) {\n    Array.prototype.findLast = function (callback) {\n        for (let i = this.length - 1; i >= 0; i--) {\n            if (callback(this[i])) return this[i];\n        }\n        return undefined;\n    };\n}\nif (!Array.prototype.findLastIndex) {\n    Array.prototype.findLastIndex = function (callback) {\n        for (let i = this.length - 1; i >= 0; i--) {\n            if (callback(this[i])) return i;\n        }\n        return -1;\n    };\n}\n"}}]]}],["$","body",null,{"children":["$","$L19",null,{"children":[["$","$L1a",null,{}],["$","$L16",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L17",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"id":"notfound","children":[["$","img",null,{"alt":"img","src":"/images/cry.gif"}],["$","div",null,{"id":"notfound-404","children":"404"}],["$","div",null,{"id":"notfound-text","children":"Page Not Found"}]]}],"notFoundStyles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/0f7cce8b0dae9908.css","precedence":"next","crossOrigin":""}]],"styles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/208b2f0c8f733ab9.css","precedence":"next","crossOrigin":""}]]}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/54d581b7516b52b4.css","precedence":"next","crossOrigin":""}]],"$L1b"]]]]
-1b:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"最小生成树与最短路算法 - 铃木的网络日记"}],["$","link","3",{"rel":"canonical","href":"https://1kuzus.github.io/24b/mst-and-sp/"}]]
+0:["mOSxNIhZz6aihDpxyXnIa",[[["",{"children":["(posts)",{"children":["24b",{"children":["mst-and-sp",{"children":["__PAGE__",{}]}]}]}]},"$undefined","$undefined",true],["",{"children":["(posts)",{"children":["24b",{"children":["mst-and-sp",{"children":["__PAGE__",{},["$L1",[["$","$L2",null,{}],["$","h1",null,{"className":"x-title","children":"最小生成树与最短路算法"}],["$","h2",null,{"className":"x-h1","children":"汇总"}],["$","div",null,{"className":"x-table-wrapper","children":["$","table",null,{"className":"x-table","children":["$","tbody",null,{"children":[["$","tr","0",{"children":[["$","th","0",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"求解问题"}}]}],["$","th","1",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"算法名称"}}]}],["$","th","2",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"时间复杂度"}}]}]]}],["$","tr","1",{"children":[["$","td","0",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"最小生成树"}}]}],["$","td","1",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"Kruskal"}}]}],["$","td","2",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.8889em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.05764em;\">E</span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mop\">lo<span style=\"margin-right:0.01389em;\">g</span></span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.05764em;\">E</span></span></span></span>"}}]}]]}],["$","tr","2",{"children":[["$","td","0",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"最小生成树"}}]}],["$","td","1",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"Prim（朴素）"}}]}],["$","td","2",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.8141em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.22222em;\">V</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">2</span></span></span></span></span></span></span></span></span></span></span>"}}]}]]}],["$","tr","3",{"children":[["$","td","0",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"最小生成树"}}]}],["$","td","1",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"Prim（优先队列）"}}]}],["$","td","2",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.8889em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.05764em;\">E</span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mop\">lo<span style=\"margin-right:0.01389em;\">g</span></span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.05764em;\">E</span></span></span></span>"}}]}]]}],["$","tr","4",{"children":[["$","td","0",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"单源最短路"}}]}],["$","td","1",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"Bellman-Ford"}}]}],["$","td","2",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.6833em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.22222em;\">V</span><span class=\"mord mathnormal\" style=\"margin-right:0.05764em;\">E</span></span></span></span>"}}]}]]}],["$","tr","5",{"children":[["$","td","0",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"单源最短路"}}]}],["$","td","1",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"Dijkstra（优先队列）"}}]}],["$","td","2",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.8889em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.05764em;\">E</span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mop\">lo<span style=\"margin-right:0.01389em;\">g</span></span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.05764em;\">E</span></span></span></span>"}}]}]]}],["$","tr","6",{"children":[["$","td","0",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"全源最短路"}}]}],["$","td","1",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"Floyd"}}]}],["$","td","2",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.8141em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.22222em;\">V</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">3</span></span></span></span></span></span></span></span></span></span></span>"}}]}]]}],["$","tr","7",{"children":[["$","td","0",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"全源最短路"}}]}],["$","td","1",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"Johnson"}}]}],["$","td","2",{"className":null,"width":null,"children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.8889em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.22222em;\">V</span><span class=\"mord mathnormal\" style=\"margin-right:0.05764em;\">E</span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mop\">lo<span style=\"margin-right:0.01389em;\">g</span></span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.05764em;\">E</span></span></span></span>"}}]}]]}]]}]}]}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"本文用<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.6833em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.22222em;\">V</span></span></span></span>表示顶点数，<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.6833em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.05764em;\">E</span></span></span></span>表示边数。"}}]}]]}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":[["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"有的文章写优先队列实现的Dijkstra算法时间复杂度为<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.8889em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.05764em;\">E</span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mop\">lo<span style=\"margin-right:0.01389em;\">g</span></span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.22222em;\">V</span></span></span></span>，可以作如下理解："}}],["$","div",null,{"className":"x-oli","children":[["$","div",null,{"className":"x-oli-number","children":"1."}],["$","div",null,{"className":"x-oli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}]}]]}],["$","div",null,{"className":"x-oli","children":[["$","div",null,{"className":"x-oli-number","children":"2."}],["$","div",null,{"className":"x-oli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"$4"}}]}]]}]]}]]}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"对于Prim算法时间复杂度的争论是类似的。"}}]}]]}],["$","h2",null,{"className":"x-h1","children":"最小生成树"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"最小生成树部分会分别给出可以提交到以下两道题目的代码："}}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<a href=\"https://www.luogu.com.cn/problem/P3366\" target=\"_blank\" rel=\"noreferrer\" class=\"x-inline-link\">洛谷 - P3366【模板】最小生成树</a>"}}]}]]}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<a href=\"https://leetcode.cn/problems/min-cost-to-connect-all-points/description/\" target=\"_blank\" rel=\"noreferrer\" class=\"x-inline-link\">力扣 - 1584.连接所有点的最小费用</a>"}}]}]]}],["$","h3",null,{"className":"x-h2","children":"Kruskal"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"Kruskal算法将所有边按权值排序，然后从小到大考虑将边加入最小生成树，如果这条边加入后会形成环，就舍弃之。使用并查集判断是否会成环。"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"洛谷AC/<code class=\"x-inline-highlight\">342ms</code>，代码如下："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"C++"}],["$","$L5",null,{"className":"x-codeblock-header-copy","text":"$6"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$7"}}]}]]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"力扣AC/<code class=\"x-inline-highlight\">315ms</code>，代码如下："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"C++"}],["$","$L5",null,{"className":"x-codeblock-header-copy","text":"$8"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$9"}}]}]]}],["$","h3",null,{"className":"x-h2","children":"Prim（朴素）"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"$a"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"洛谷AC/<code class=\"x-inline-highlight\">812ms</code>，代码如下："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"C++"}],["$","$L5",null,{"className":"x-codeblock-header-copy","text":"$b"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$c"}}]}]]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"力扣AC/<code class=\"x-inline-highlight\">44ms</code>，代码如下："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"C++"}],["$","$L5",null,{"className":"x-codeblock-header-copy","text":"$d"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$e"}}]}]]}],["$","h3",null,{"className":"x-h2","children":"Prim（优先队列）"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"洛谷AC/<code class=\"x-inline-highlight\">346ms</code>，代码如下："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"C++"}],["$","$L5",null,{"className":"x-codeblock-header-copy","text":"$f"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$10"}}]}]]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"力扣AC/<code class=\"x-inline-highlight\">113ms</code>，代码如下："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"C++"}],["$","$L5",null,{"className":"x-codeblock-header-copy","text":"$11"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$12"}}]}]]}],["$","h3",null,{"className":"x-h2","children":"分析"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","h2",null,{"className":"x-h1","children":"单源最短路"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"单源最短路部分会给出可以提交到以下两道题目的代码（两道题目只是数据不同，代码是一样的）："}}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<a href=\"https://www.luogu.com.cn/problem/P3371\" target=\"_blank\" rel=\"noreferrer\" class=\"x-inline-link\">洛谷 - P3371【模板】单源最短路径（弱化版）</a>"}}]}]]}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<a href=\"https://www.luogu.com.cn/problem/P4779\" target=\"_blank\" rel=\"noreferrer\" class=\"x-inline-link\">洛谷 - P4779【模板】单源最短路径（标准版）</a>"}}]}]]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"对于Bellman-Ford算法，会给出判负环测试题目的代码："}}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<a href=\"https://www.luogu.com.cn/problem/P3385\" target=\"_blank\" rel=\"noreferrer\" class=\"x-inline-link\">洛谷 - P3385【模板】负环</a>"}}]}]]}],["$","h3",null,{"className":"x-h2","children":"Bellman-Ford"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"$14"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"洛谷弱化版通过<code class=\"x-inline-highlight\">7</code>/<code class=\"x-inline-highlight\">10</code>，标准版通过<code class=\"x-inline-highlight\">0</code>/<code class=\"x-inline-highlight\">6</code>，代码如下："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"C++"}],["$","$L5",null,{"className":"x-codeblock-header-copy","text":"#include <iostream>\n#include <vector>\n#define N 100005\n#define INF 2147483647\nusing namespace std;\nint n,m,s,d[N];\nstruct EDGE{\n    int to,w;\n};\nvector<EDGE> g[N];\nvoid addEdge(int u,int v,int w)\n{\n    g[u].emplace_back((EDGE){v,w});\n    return;\n}\n\nint main()\n{\n    cin>>n>>m>>s;\n    for(int i=0;i<n;i++) d[i]=INF;\n    d[s-1]=0;\n    for(int i=0;i<m;i++)\n    {\n        int u,v,w;\n        cin>>u>>v>>w;\n        addEdge(u-1,v-1,w);\n    }\n    //每次循环都对全图所有边进行一次松弛操作，一共执行n-1次循环\n    for(int t=0;t<n-1;t++)\n    {\n        //下面两重循环遍历了m条边\n        for(int u=0;u<n;u++)\n        {\n            for(EDGE e:g[u])\n            {\n                int v=e.to;\n                if(d[v]-e.w>d[u])//注意加法可能溢出\n                {\n                    d[v]=d[u]+e.w;\n                }\n            }\n        }\n    }\n    for(int i=0;i<n;i++)\n    {\n        cout<<d[i]<<' ';\n    }\n    cout<<endl;\n    return 0;\n}\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$15"}}]}]]}],["$","h3",null,{"className":"x-h2","children":"Bellman-Ford（判负环）"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"洛谷AC/<code class=\"x-inline-highlight\">703ms</code>，代码如下："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"C++"}],["$","$L5",null,{"className":"x-codeblock-header-copy","text":"$16"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$17"}}]}]]}],["$","h3",null,{"className":"x-h2","children":"Dijkstra（优先队列）"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"Dijkstra算法从源点开始，每次选择最短路估计距离最小的点进行松弛操作，并把这个点标记为已访问，直到所有点都被标记。"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"$18"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"洛谷弱化版AC/<code class=\"x-inline-highlight\">963ms</code>，标准版AC/<code class=\"x-inline-highlight\">667ms</code>，代码如下："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"C++"}],["$","$L5",null,{"className":"x-codeblock-header-copy","text":"$19"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$1a"}}]}]]}],["$","h2",null,{"className":"x-h1","children":"全源最短路"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"全源最短路部分会给出可以提交到以下题目的代码："}}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<a href=\"https://www.luogu.com.cn/problem/P5905\" target=\"_blank\" rel=\"noreferrer\" class=\"x-inline-link\">洛谷 - P5905【模板】全源最短路</a>"}}]}]]}],["$","h3",null,{"className":"x-h2","children":"Floyd"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"Floyd算法维护图<code class=\"x-inline-highlight\">g[i][j]</code>，最外层用<code class=\"x-inline-highlight\">k</code>次循环更新，每次循环<code class=\"x-inline-highlight\">g[i][j]</code>的含义是：<br/>从<code class=\"x-inline-highlight\">i</code>到<code class=\"x-inline-highlight\">j</code>，所有中间结点取自<code class=\"x-inline-highlight\">1</code>~<code class=\"x-inline-highlight\">k</code>的最短路。"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"洛谷通过<code class=\"x-inline-highlight\">7</code>/<code class=\"x-inline-highlight\">12</code>，代码如下："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"C++"}],["$","$L5",null,{"className":"x-codeblock-header-copy","text":"#include <iostream>\n#define N 3005\n#define INF 1000000009\nusing namespace std;\nint n,m;\nint g[N][N];\n\nint main()\n{\n    cin>>n>>m;\n    for(int i=0;i<n;i++)\n    {\n        for(int j=0;j<n;j++)\n        {\n            if(i!=j) g[i][j]=INF;\n        }\n    }\n    for(int i=0;i<m;i++)\n    {\n        int u,v,w;\n        cin>>u>>v>>w;\n        if(w<g[u-1][v-1]) g[u-1][v-1]=w;//可能存在重边\n    }\n    //每个循环k，g[i][j]表示从i到j，所有中间结点取自集合{0,1,...,k-1}的最短路\n    for(int k=0;k<n;k++)\n    {\n        for(int i=0;i<n;i++)\n        {\n            for(int j=0;j<n;j++)\n            {\n                if(g[i][j]>g[i][k]+g[k][j])\n                {\n                    g[i][j]=g[i][k]+g[k][j];\n                }\n            }\n        }\n    }\n    for(int i=0;i<n;i++)\n    {\n        long long ans=0;\n        for(int j=0;j<n;j++)\n        {\n            int dis=g[i][j]>1e8?1e9:g[i][j];//题目要求不连通按1e9计算\n            ans+=(long long)(j+1)*dis;\n        }\n        cout<<ans<<endl;\n    }\n    return 0;\n}\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$1b"}}]}]]}],["$","h3",null,{"className":"x-h2","children":"Johnson"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"一个朴素的想法是对每个顶点都运行一次Dijkstra算法，但Dijkstra算法不能处理负权边。Johnson算法的思想是先把所有边权变为非负，然后就可以放心使用Dijkstra算法了。Johnson算法首先构造一个虚拟顶点，这个虚拟顶点通过一条权值为<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.6444em;\"></span><span class=\"mord\">0</span></span></span></span>的边与所有其他顶点都相连。然后，使用Bellman-Ford算法求出虚拟顶点到其他所有顶点的最短距离，这个距离称为“势函数”<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.6944em;\"></span><span class=\"mord mathnormal\">h</span></span></span></span>，可以理解为取虚拟顶点为“零势能面”，其余顶点的势能就是虚拟顶点到其的最短路。"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"$1c"}}],["$","div",null,{"className":"x-highlightblock highlight-background-golden","children":["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"严格的来说“势函数”应为<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.7778em;vertical-align:-0.0833em;\"></span><span class=\"mord\">−</span><span class=\"mord mathnormal\">h</span></span></span></span>。"}}]}],["$","div",null,{"className":"x-highlightblock highlight-background-blue","children":[["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":[["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"为什么新的<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.7519em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.02691em;\">w</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.7519em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">′</span></span></span></span></span></span></span></span></span></span></span></span>可以保证非负？"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"$1d"}}]]}]]}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":[["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"为什么不能给每条边加上一个大正数来保证边权为正？"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"这样操作会导致对最短路的影响取决于<span class=\"x-inline-strong\">最短路经过的边数</span>。原图中经过较多边的最短路，可能会因为相比其他路径增长的更多，变为非最短路，导致结果错误。"}}]]}]]}]]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"洛谷AC/<code class=\"x-inline-highlight\">1.39s</code>，代码如下："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"C++"}],["$","$L5",null,{"className":"x-codeblock-header-copy","text":"$1e"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$1f"}}]}]]}]],null]]},["$","$L20",null,{"parallelRouterKey":"children","segmentPath":["children","(posts)","children","24b","children","mst-and-sp","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L21",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/55722f4e6a890f7d.css","precedence":"next","crossOrigin":""}]]}]]},["$","$L20",null,{"parallelRouterKey":"children","segmentPath":["children","(posts)","children","24b","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L21",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},[null,["$","div",null,{"id":"post-layout","children":[false,["$","div",null,{"id":"main","className":"y-center-wrapper","children":["$","$L20",null,{"parallelRouterKey":"children","segmentPath":["children","(posts)","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L21",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]}],["$","$L22",null,{}]]}],null]]},[null,["$","html",null,{"lang":"zh-CN","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","link",null,{"rel":"icon","href":"/favicon.ico","type":"image/x-icon"}],["$","script",null,{"async":true,"src":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"}],["$","script",null,{"async":true,"src":"https://www.googletagmanager.com/gtag/js?id=G-45BYSZ6WPY"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nwindow.dataLayer = window.dataLayer || [];\nfunction gtag() {\n    dataLayer.push(arguments);\n}\ngtag('js', new Date());\ngtag('config', 'G-45BYSZ6WPY');\n"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"const a=z=>h.getItem(z),b=(y,z)=>h.setItem(y,z),c=(y,z)=>document.documentElement.setAttribute(y,z),d='theme',e='dark',f='light',g='class',h=localStorage;a(d)!==e&&a(d)!==f&&b(d,f);a(d)===e?c(g,e):c(g,f);"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nif (!Array.prototype.findLast) {\n    Array.prototype.findLast = function (callback) {\n        for (let i = this.length - 1; i >= 0; i--) {\n            if (callback(this[i])) return this[i];\n        }\n        return undefined;\n    };\n}\nif (!Array.prototype.findLastIndex) {\n    Array.prototype.findLastIndex = function (callback) {\n        for (let i = this.length - 1; i >= 0; i--) {\n            if (callback(this[i])) return i;\n        }\n        return -1;\n    };\n}\n"}}]]}],["$","body",null,{"children":["$","$L23",null,{"children":[["$","$L24",null,{}],["$","$L20",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L21",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"id":"notfound","children":[["$","img",null,{"alt":"img","src":"/images/cry.gif"}],["$","div",null,{"id":"notfound-404","children":"404"}],["$","div",null,{"id":"notfound-text","children":"Page Not Found"}]]}],"notFoundStyles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/0f7cce8b0dae9908.css","precedence":"next","crossOrigin":""}]],"styles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/421d0808425e209e.css","precedence":"next","crossOrigin":""}]]}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/dac94f68c1ae2954.css","precedence":"next","crossOrigin":""}]],"$L25"]]]]
+25:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"最小生成树与最短路算法 - 铃木的网络日记"}],["$","link","3",{"rel":"canonical","href":"https://1kuzus.github.io/24b/mst-and-sp/"}]]
 1:null

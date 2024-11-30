@@ -1,10 +1,11 @@
-2:I[10579,["2202","static/chunks/2202-f6a33033a4b04b0a.js","2993","static/chunks/2993-1cdd302267b13ab8.js","1540","static/chunks/app/(posts)/24a/csp-2023-09/page-9a4c4021750b6df8.js"],""]
-7:I[5613,[],""]
-8:I[31778,[],""]
-9:I[30389,["2202","static/chunks/2202-f6a33033a4b04b0a.js","5250","static/chunks/5250-f85259527308ce47.js","2993","static/chunks/2993-1cdd302267b13ab8.js","1993","static/chunks/app/(posts)/layout-77cfb8fd4a4b44e7.js"],""]
-a:I[25694,["5250","static/chunks/5250-f85259527308ce47.js","3185","static/chunks/app/layout-7e8ae40d9eceb952.js"],"GlobalProvider"]
-b:I[30397,["5250","static/chunks/5250-f85259527308ce47.js","3185","static/chunks/app/layout-7e8ae40d9eceb952.js"],""]
-3:Tc02,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+2:I[10579,["2202","static/chunks/2202-c94dd0688c9a9cf1.js","7197","static/chunks/7197-fbfe003e0dc31b13.js","1540","static/chunks/app/(posts)/24a/csp-2023-09/page-843c4bb3be02da0b.js"],""]
+3:I[62029,["2202","static/chunks/2202-c94dd0688c9a9cf1.js","7197","static/chunks/7197-fbfe003e0dc31b13.js","1540","static/chunks/app/(posts)/24a/csp-2023-09/page-843c4bb3be02da0b.js"],""]
+b:I[5613,[],""]
+c:I[31778,[],""]
+d:I[30389,["2202","static/chunks/2202-c94dd0688c9a9cf1.js","5250","static/chunks/5250-9192d080d30d8ff7.js","7197","static/chunks/7197-fbfe003e0dc31b13.js","1993","static/chunks/app/(posts)/layout-64a2d12ca4e5a8ea.js"],""]
+e:I[25694,["5250","static/chunks/5250-9192d080d30d8ff7.js","3185","static/chunks/app/layout-3bcdb418b19b279c.js"],"GlobalProvider"]
+f:I[30397,["5250","static/chunks/5250-9192d080d30d8ff7.js","3185","static/chunks/app/layout-3bcdb418b19b279c.js"],""]
+4:Tc02,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">int</span> n<span class="token punctuation">,</span>m<span class="token punctuation">,</span>dx<span class="token punctuation">,</span>dy<span class="token punctuation">;</span>
 <span class="token keyword">int</span> dxi<span class="token punctuation">,</span>dyi<span class="token punctuation">,</span>x<span class="token punctuation">,</span>y<span class="token punctuation">;</span>
@@ -36,7 +37,73 @@ out:
 21 -11
 20 -10
 */</span>
-4:T1e9d,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+5:T44c,#include <iostream>
+#include <cmath>
+using namespace std;
+int n,m,opt;
+double vi;
+double k[100005]={1},theta[100005];
+int main()
+{
+    cin>>n>>m;
+    for(int i=1;i<=n;i++)
+    {
+        cin>>opt>>vi;
+        //拉伸
+        if(opt==1)
+        {
+            k[i]=k[i-1]*vi;
+            theta[i]=theta[i-1];
+        }
+        //旋转
+        else
+        {
+            k[i]=k[i-1];
+            theta[i]=theta[i-1]+vi;
+        }
+    }
+    for(int i=0;i<m;i++)
+    {
+        int qi,qj,x,y;
+        cin>>qi>>qj>>x>>y;
+        double kij=k[qj]/k[qi-1];
+        double thetaij=theta[qj]-theta[qi-1];
+        double new_x=x*cos(thetaij)-y*sin(thetaij);
+        double new_y=x*sin(thetaij)+y*cos(thetaij);
+        new_x*=kij;
+        new_y*=kij;
+        printf("%.6lf %.6lf
+
+    }
+    return 0;
+}
+/*
+in:
+10 5
+2 0.59
+2 4.956
+1 0.997
+1 1.364
+1 1.242
+1 0.82
+2 2.824
+1 0.716
+2 0.178
+2 4.094
+1 6 -953188 -946637
+1 9 969538 848081
+4 7 -114758 522223
+1 9 -535079 601597
+8 8 159430 -511187
+
+out:
+-1858706.758 -83259.993
+-1261428.46 201113.678
+-75099.123 -738950.159
+-119179.897 -789457.532
+114151.88 -366009.892
+*/
+6:T1e9d,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cmath></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">int</span> n<span class="token punctuation">,</span>m<span class="token punctuation">,</span>opt<span class="token punctuation">;</span>
@@ -102,7 +169,173 @@ out:
 -119179.897 -789457.532
 114151.88 -366009.892
 */</span>
-5:T63fe,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+7:Tc51,#include <iostream>
+#include <vector>
+#include <stack>
+#define MOD 1000000007
+using namespace std;
+struct POLYNODE{
+    int type;//0:运算符 1:xi 2:常数
+    int c;//常数值
+    int xid;//xi的i
+    string opt;//运算符
+    int val;//前向传播节点值
+    POLYNODE *lchild,*rchild;
+};
+int n,m,xid;
+string poly;
+vector<string> split(string str,string sep)
+{
+    vector<string> res;
+    int p=0;
+    for(int i=str.find(sep);i!=-1;p=i+=sep.length(),i=str.find(sep,i))
+        res.push_back(str.substr(p,i-p));
+    res.push_back(str.substr(p,str.size()-p));
+    return res;
+}
+POLYNODE *makePolyTree()
+{
+    vector<string> parts=split(poly," ");
+    stack<POLYNODE*> s;
+    for(auto p:parts)
+    {
+        POLYNODE *node=new(POLYNODE);
+        //运算符
+        if(p=="+"||p=="-"||p=="*")
+        {
+            POLYNODE *lc,*rc;
+            lc=s.top(),s.pop();
+            rc=s.top(),s.pop();
+            node->type=0;
+            node->opt=p;
+            node->lchild=lc;
+            node->rchild=rc;
+            s.push(node);
+        }
+        //xi
+        else if(p[0]=='x')
+        {
+            node->type=1;
+            node->xid=stoi(p.substr(1));
+            s.push(node);
+        }
+        //常数
+        else
+        {
+            node->type=2;
+            node->c=stoi(p);
+            s.push(node);
+        }
+    }
+    return s.top();
+}
+void forward(POLYNODE *root,vector<int> a)
+{
+    if(root->type==1)
+    {
+        root->val=a[root->xid-1];
+    }
+    else if(root->type==2)
+    {
+        root->val=root->c;
+    }
+    else
+    {
+        POLYNODE *lc=root->lchild,*rc=root->rchild;
+        forward(lc,a);
+        forward(rc,a);
+        if(root->opt=="+")
+        {
+            root->val=(lc->val+rc->val)%MOD;
+        }
+        else if(root->opt=="-")
+        {
+            root->val=(rc->val-lc->val)%MOD;
+        }
+        else if(root->opt=="*")
+        {
+            root->val=((long long)lc->val*rc->val)%MOD;
+        }
+    }
+    return;
+}
+int grad(POLYNODE *root,int xid)
+{
+    if(root->type==1)
+    {
+        return (root->xid==xid)?1:0;
+    }
+    else if(root->type==2)
+    {
+        return 0;
+    }
+    else
+    {
+        POLYNODE *lc=root->lchild,*rc=root->rchild;
+        if(root->opt=="+")
+        {
+            return (grad(lc,xid)+grad(rc,xid))%MOD;
+        }
+        else if(root->opt=="-")
+        {
+            return (grad(rc,xid)-grad(lc,xid))%MOD;
+        }
+        else if(root->opt=="*")
+        {
+            long long lgrad=grad(lc,xid);
+            long long rgrad=grad(rc,xid);
+            return (lgrad*rc->val+rgrad*lc->val)%MOD;
+        }
+    }
+}
+int main()
+{
+    cin>>n>>m;
+    getline(cin,poly);//读回车
+    getline(cin,poly);
+    POLYNODE *root=makePolyTree();
+
+    for(int i=0;i<m;i++)
+    {
+        cin>>xid;
+        vector<int> a(n);
+        for(int j=0;j<n;j++)
+        {
+            cin>>a[j];
+        }
+        forward(root,a);
+        cout<<(grad(root,xid)+MOD)%MOD<<endl;
+    }
+    return 0;
+}
+/*
+in:
+2 2
+x1 x1 x1 * x2 + *
+1 2 3
+2 3 4
+
+out:
+15
+3
+
+in:
+3 5
+x2 x2 * x2 * 0 + -100000 -100000 * x2 * -
+3 100000 100000 100000
+2 0 0 0
+2 0 -1 0
+2 0 1 0
+2 0 100000 0
+
+out:
+0
+70
+73
+73
+999999867
+*/
+8:T63fe,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stack></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">MOD</span> <span class="token expression"><span class="token number">1000000007</span></span></span>
@@ -268,7 +501,152 @@ out:
 73
 999999867
 */</span>
-6:T74c4,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+9:Tc06,#include <iostream>
+#include <vector>
+#include <map>
+#include <unordered_map>
+/*
+    3     2     1
+     \    |    /
+      \   |   /
+       \  |  /
+        \ | /
+_________\|/_________0
+*/
+using namespace std;
+int n,m,p,q,k;
+long long ans;
+int pos[100005][2];
+int cos[8]={1,1,0,-1,-1,-1,0,1};
+int sin[8]={0,1,1,1,0,-1,-1,-1};
+vector<int> changes;//需要变换的员工的id
+unordered_map<int,map<int,int>> dirs[4];
+void addPos(int x,int y,int id)
+{
+    dirs[0][y]  [x]=id;
+    dirs[1][y-x][x]=id;
+    dirs[2][x]  [y]=id;
+    dirs[3][y+x][x]=id;
+    return;
+}
+void deletePos(int x,int y)
+{
+    dirs[0][y]  .erase(x);
+    dirs[1][y-x].erase(x);
+    dirs[2][x]  .erase(y);
+    dirs[3][y+x].erase(x);
+    return;
+}
+pair<int,int> nextPos(int x,int y,int u,int v,int t)
+{
+    int dx=x-u,dy=y-v;
+    int new_dx=dx*cos[t]-dy*sin[t],new_dy=dx*sin[t]+dy*cos[t];
+    //非90度整数倍方向旋转非90度整数倍角单独修正
+    if(t%2&&dx&&dy) new_dx/=2,new_dy/=2;
+    return make_pair(u+new_dx,v+new_dy);
+}
+//检查一个新找到的员工能不能更新k
+void checkDirectionUpdate(map<int,int>::iterator it,int pos_val)
+{
+    if(abs(it->first-pos_val)==k)
+    {
+        changes.push_back(it->second);
+    }
+    else if(abs(it->first-pos_val)<k)
+    {
+        changes.clear();
+        k=abs(it->first-pos_val);
+        changes.push_back(it->second);
+    }
+    return;
+}
+//检查四个方向上能不能找到员工
+void checkDirection(int dir_id,int locator,int pos_val)
+{
+    if(dirs[dir_id].find(locator)!=dirs[dir_id].end())
+    {
+        auto it=dirs[dir_id][locator].upper_bound(pos_val);
+        if(it!=dirs[dir_id][locator].end())
+        {
+            checkDirectionUpdate(it,pos_val);
+        }
+        it=dirs[dir_id][locator].lower_bound(pos_val);
+        if(it!=dirs[dir_id][locator].begin())
+        {
+            it--;
+            checkDirectionUpdate(it,pos_val);
+        }
+    }
+    return;
+}
+void work(int u,int v,int t)
+{
+    k=2147483647;
+    changes.clear();
+    checkDirection(0,v  ,u);
+    checkDirection(1,v-u,u);
+    checkDirection(2,u  ,v);
+    checkDirection(3,v+u,u);
+    //k不能大于到(u,v)到边界的位置
+    if(k<=min(min(u-1,n-u),min(v-1,m-v)))
+    {
+        for(auto id:changes)
+        {
+            int old_x=pos[id][0],old_y=pos[id][1];
+            deletePos(old_x,old_y);
+        }
+        for(auto id:changes)
+        {
+            int old_x=pos[id][0],old_y=pos[id][1];
+            int new_x,new_y;
+            tie(new_x,new_y)=nextPos(old_x,old_y,u,v,t);
+            pos[id][0]=new_x,pos[id][1]=new_y;
+            addPos(new_x,new_y,id);
+        }
+    }
+    return;
+}
+int main()
+{
+    cin>>n>>m>>p>>q;
+    for(int id=0;id<p;id++)
+    {
+        int x,y;
+        cin>>x>>y;
+        pos[id][0]=x,pos[id][1]=y;
+        addPos(x,y,id);
+    }
+    for(int i=0;i<q;i++)
+    {
+        int u,v,t;
+        cin>>u>>v>>t;
+        work(u,v,t);
+    }
+    for(int id=0;id<p;id++)
+    {
+        ans^=(long long)(id+1)*pos[id][0]+pos[id][1];
+    }
+    cout<<ans<<endl;
+    return 0;
+}
+/*
+in:
+3 3 9 1
+1 1
+1 2
+1 3
+2 1
+2 2
+2 3
+3 1
+3 2
+3 3
+2 2 1
+
+out:
+20
+*/
+a:T74c4,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;map></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;unordered_map></span></span>
@@ -413,6 +791,6 @@ in:
 out:
 20
 */</span>
-0:["pNpI1VZDzTUu1DgK4LVte",[[["",{"children":["(posts)",{"children":["24a",{"children":["csp-2023-09",{"children":["__PAGE__",{}]}]}]}]},"$undefined","$undefined",true],["",{"children":["(posts)",{"children":["24a",{"children":["csp-2023-09",{"children":["__PAGE__",{},["$L1",[["$","$L2",null,{}],["$","h1",null,{"className":"x-title","children":"CSP 202309 T1-T4题解"}],["$","h2",null,{"className":"x-h1","children":"T1 坐标变换（其一）"}],["$","div",null,{"className":"x-codeblock","children":["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}]}]}],["$","h2",null,{"className":"x-h1","children":"T2 坐标变换（其二）"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"维护前缀和、前缀积。"}}],["$","div",null,{"className":"x-codeblock","children":["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$4"}}]}]}],["$","h2",null,{"className":"x-h1","children":"T3 梯度求解"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"可以就把后缀表达式原封不动的存在一颗树上，然后对每个节点记录前向传播值，前向传播过程和接下来求梯度都可以递归实现。"}}],["$","div",null,{"className":"x-codeblock","children":["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$5"}}]}]}],["$","h2",null,{"className":"x-h1","children":"T4 阴阳龙"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"看到员工数量级是比较小的，想到去维护行、列、正反对角线四个方向上的员工位置，利用C++ STL的<code class=\"x-inline-highlight\">map</code>存储，键值对为<code class=\"x-inline-highlight\">(pos_val,id)</code>，其中这个<code class=\"x-inline-highlight\">pos_val</code>在竖直方向是员工的<code class=\"x-inline-highlight\">y</code>坐标，其他方向是<code class=\"x-inline-highlight\">x</code>坐标（其实两条对角线方向上取哪个都行），<code class=\"x-inline-highlight\">id</code>是员工的编号。"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"<code class=\"x-inline-highlight\">map</code>提供了<code class=\"x-inline-highlight\">lower_bound</code>和<code class=\"x-inline-highlight\">upper_bound</code>函数，可以二分找到第一个键值<span class=\"x-inline-strong\">大于等于</span>和<span class=\"x-inline-strong\">大于</span>给定键的元素；如果想找到第一个键值<span class=\"x-inline-strong\">小于</span>给定键的元素，可以在判断<code class=\"x-inline-highlight\">lower_bound</code>返回的不指向容器首部后，再移到前一个位置（<code class=\"x-inline-highlight\">it--</code>）。"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"在每个方向上我们都需要若干个这样的<code class=\"x-inline-highlight\">map</code>，具体地说，我们需要<code class=\"x-inline-highlight\">n</code>个存储垂直方向的、<code class=\"x-inline-highlight\">m</code>个存储水平方向的、<code class=\"x-inline-highlight\">2</code>*<code class=\"x-inline-highlight\">n+m-1</code>个存储两条对角线方向的。提前开好的话占空间比较大，考虑用<code class=\"x-inline-highlight\">unordered_map</code>存储这些<code class=\"x-inline-highlight\">map</code>。以对角线方向为例，可以用<code class=\"x-inline-highlight\">x+y</code>和<code class=\"x-inline-highlight\">y-x</code>作为定位到具体<code class=\"x-inline-highlight\">map</code>的键，我们并不需要这些键是有序的，所以用<code class=\"x-inline-highlight\">unordered_map</code>就可以了。"}}],["$","div",null,{"className":"x-codeblock","children":["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$6"}}]}]}]],null]]},["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children","(posts)","children","24a","children","csp-2023-09","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L8",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/55722f4e6a890f7d.css","precedence":"next","crossOrigin":""}]]}]]},["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children","(posts)","children","24a","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L8",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},[null,["$","div",null,{"id":"post-layout","children":[false,["$","div",null,{"id":"main","className":"y-center-wrapper","children":["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children","(posts)","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L8",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]}],["$","$L9",null,{}]]}],null]]},[null,["$","html",null,{"lang":"zh-CN","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","link",null,{"rel":"icon","href":"/favicon.ico","type":"image/x-icon"}],["$","script",null,{"async":true,"src":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"}],["$","script",null,{"async":true,"src":"https://www.googletagmanager.com/gtag/js?id=G-45BYSZ6WPY"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nwindow.dataLayer = window.dataLayer || [];\nfunction gtag() {\n    dataLayer.push(arguments);\n}\ngtag('js', new Date());\ngtag('config', 'G-45BYSZ6WPY');\n"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"const a=z=>h.getItem(z),b=(y,z)=>h.setItem(y,z),c=(y,z)=>document.documentElement.setAttribute(y,z),d='theme',e='dark',f='light',g='class',h=localStorage;a(d)!==e&&a(d)!==f&&b(d,f);a(d)===e?c(g,e):c(g,f);"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nif (!Array.prototype.findLast) {\n    Array.prototype.findLast = function (callback) {\n        for (let i = this.length - 1; i >= 0; i--) {\n            if (callback(this[i])) return this[i];\n        }\n        return undefined;\n    };\n}\nif (!Array.prototype.findLastIndex) {\n    Array.prototype.findLastIndex = function (callback) {\n        for (let i = this.length - 1; i >= 0; i--) {\n            if (callback(this[i])) return i;\n        }\n        return -1;\n    };\n}\n"}}]]}],["$","body",null,{"children":["$","$La",null,{"children":[["$","$Lb",null,{}],["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L8",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"id":"notfound","children":[["$","img",null,{"alt":"img","src":"/images/cry.gif"}],["$","div",null,{"id":"notfound-404","children":"404"}],["$","div",null,{"id":"notfound-text","children":"Page Not Found"}]]}],"notFoundStyles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/0f7cce8b0dae9908.css","precedence":"next","crossOrigin":""}]],"styles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/208b2f0c8f733ab9.css","precedence":"next","crossOrigin":""}]]}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/54d581b7516b52b4.css","precedence":"next","crossOrigin":""}]],"$Lc"]]]]
-c:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"CSP 202309 T1-T4题解 - 坐标变换（其一） 坐标变换（其二） 梯度求解 阴阳龙 - 铃木的网络日记"}],["$","link","3",{"rel":"canonical","href":"https://1kuzus.github.io/24a/csp-2023-09/"}]]
+0:["mOSxNIhZz6aihDpxyXnIa",[[["",{"children":["(posts)",{"children":["24a",{"children":["csp-2023-09",{"children":["__PAGE__",{}]}]}]}]},"$undefined","$undefined",true],["",{"children":["(posts)",{"children":["24a",{"children":["csp-2023-09",{"children":["__PAGE__",{},["$L1",[["$","$L2",null,{}],["$","h1",null,{"className":"x-title","children":"CSP 202309 T1-T4题解"}],["$","h2",null,{"className":"x-h1","children":"T1 坐标变换（其一）"}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"C++"}],["$","$L3",null,{"className":"x-codeblock-header-copy","text":"#include <iostream>\nusing namespace std;\nint n,m,dx,dy;\nint dxi,dyi,x,y;\nint main()\n{\n    cin>>n>>m;\n    for(int i=0;i<n;i++)\n    {\n        cin>>dxi>>dyi;\n        dx+=dxi,dy+=dyi;\n    }\n    for(int i=0;i<m;i++)\n    {\n        cin>>x>>y;\n        cout<<x+dx<<' '<<y+dy<<endl;\n    }\n    return 0;\n}\n/*\nin:\n3 2\n10 10\n0 0\n10 -20\n1 -1\n0 0\n\nout:\n21 -11\n20 -10\n*/\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$4"}}]}]]}],["$","h2",null,{"className":"x-h1","children":"T2 坐标变换（其二）"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"维护前缀和、前缀积。"}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"C++"}],["$","$L3",null,{"className":"x-codeblock-header-copy","text":"$5"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$6"}}]}]]}],["$","h2",null,{"className":"x-h1","children":"T3 梯度求解"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"可以就把后缀表达式原封不动的存在一颗树上，然后对每个节点记录前向传播值，前向传播过程和接下来求梯度都可以递归实现。"}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"C++"}],["$","$L3",null,{"className":"x-codeblock-header-copy","text":"$7"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$8"}}]}]]}],["$","h2",null,{"className":"x-h1","children":"T4 阴阳龙"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"看到员工数量级是比较小的，想到去维护行、列、正反对角线四个方向上的员工位置，利用C++ STL的<code class=\"x-inline-highlight\">map</code>存储，键值对为<code class=\"x-inline-highlight\">(pos_val,id)</code>，其中这个<code class=\"x-inline-highlight\">pos_val</code>在竖直方向是员工的<code class=\"x-inline-highlight\">y</code>坐标，其他方向是<code class=\"x-inline-highlight\">x</code>坐标（其实两条对角线方向上取哪个都行），<code class=\"x-inline-highlight\">id</code>是员工的编号。"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"<code class=\"x-inline-highlight\">map</code>提供了<code class=\"x-inline-highlight\">lower_bound</code>和<code class=\"x-inline-highlight\">upper_bound</code>函数，可以二分找到第一个键值<span class=\"x-inline-strong\">大于等于</span>和<span class=\"x-inline-strong\">大于</span>给定键的元素；如果想找到第一个键值<span class=\"x-inline-strong\">小于</span>给定键的元素，可以在判断<code class=\"x-inline-highlight\">lower_bound</code>返回的不指向容器首部后，再移到前一个位置（<code class=\"x-inline-highlight\">it--</code>）。"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"在每个方向上我们都需要若干个这样的<code class=\"x-inline-highlight\">map</code>，具体地说，我们需要<code class=\"x-inline-highlight\">n</code>个存储垂直方向的、<code class=\"x-inline-highlight\">m</code>个存储水平方向的、<code class=\"x-inline-highlight\">2</code>*<code class=\"x-inline-highlight\">n+m-1</code>个存储两条对角线方向的。提前开好的话占空间比较大，考虑用<code class=\"x-inline-highlight\">unordered_map</code>存储这些<code class=\"x-inline-highlight\">map</code>。以对角线方向为例，可以用<code class=\"x-inline-highlight\">x+y</code>和<code class=\"x-inline-highlight\">y-x</code>作为定位到具体<code class=\"x-inline-highlight\">map</code>的键，我们并不需要这些键是有序的，所以用<code class=\"x-inline-highlight\">unordered_map</code>就可以了。"}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"C++"}],["$","$L3",null,{"className":"x-codeblock-header-copy","text":"$9"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$a"}}]}]]}]],null]]},["$","$Lb",null,{"parallelRouterKey":"children","segmentPath":["children","(posts)","children","24a","children","csp-2023-09","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$Lc",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/55722f4e6a890f7d.css","precedence":"next","crossOrigin":""}]]}]]},["$","$Lb",null,{"parallelRouterKey":"children","segmentPath":["children","(posts)","children","24a","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$Lc",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},[null,["$","div",null,{"id":"post-layout","children":[false,["$","div",null,{"id":"main","className":"y-center-wrapper","children":["$","$Lb",null,{"parallelRouterKey":"children","segmentPath":["children","(posts)","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$Lc",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]}],["$","$Ld",null,{}]]}],null]]},[null,["$","html",null,{"lang":"zh-CN","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","link",null,{"rel":"icon","href":"/favicon.ico","type":"image/x-icon"}],["$","script",null,{"async":true,"src":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"}],["$","script",null,{"async":true,"src":"https://www.googletagmanager.com/gtag/js?id=G-45BYSZ6WPY"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nwindow.dataLayer = window.dataLayer || [];\nfunction gtag() {\n    dataLayer.push(arguments);\n}\ngtag('js', new Date());\ngtag('config', 'G-45BYSZ6WPY');\n"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"const a=z=>h.getItem(z),b=(y,z)=>h.setItem(y,z),c=(y,z)=>document.documentElement.setAttribute(y,z),d='theme',e='dark',f='light',g='class',h=localStorage;a(d)!==e&&a(d)!==f&&b(d,f);a(d)===e?c(g,e):c(g,f);"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nif (!Array.prototype.findLast) {\n    Array.prototype.findLast = function (callback) {\n        for (let i = this.length - 1; i >= 0; i--) {\n            if (callback(this[i])) return this[i];\n        }\n        return undefined;\n    };\n}\nif (!Array.prototype.findLastIndex) {\n    Array.prototype.findLastIndex = function (callback) {\n        for (let i = this.length - 1; i >= 0; i--) {\n            if (callback(this[i])) return i;\n        }\n        return -1;\n    };\n}\n"}}]]}],["$","body",null,{"children":["$","$Le",null,{"children":[["$","$Lf",null,{}],["$","$Lb",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$Lc",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"id":"notfound","children":[["$","img",null,{"alt":"img","src":"/images/cry.gif"}],["$","div",null,{"id":"notfound-404","children":"404"}],["$","div",null,{"id":"notfound-text","children":"Page Not Found"}]]}],"notFoundStyles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/0f7cce8b0dae9908.css","precedence":"next","crossOrigin":""}]],"styles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/421d0808425e209e.css","precedence":"next","crossOrigin":""}]]}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/dac94f68c1ae2954.css","precedence":"next","crossOrigin":""}]],"$L10"]]]]
+10:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"CSP 202309 T1-T4题解 - 坐标变换（其一） 坐标变换（其二） 梯度求解 阴阳龙 - 铃木的网络日记"}],["$","link","3",{"rel":"canonical","href":"https://1kuzus.github.io/24a/csp-2023-09/"}]]
 1:null

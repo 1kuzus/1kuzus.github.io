@@ -1,10 +1,281 @@
-2:I[10579,["2202","static/chunks/2202-f6a33033a4b04b0a.js","2993","static/chunks/2993-1cdd302267b13ab8.js","6391","static/chunks/app/(posts)/24b/yolov5-obb-nms-rotated/page-9c5e64cd63cf66c0.js"],""]
-4:I[5613,[],""]
-5:I[31778,[],""]
-6:I[30389,["2202","static/chunks/2202-f6a33033a4b04b0a.js","5250","static/chunks/5250-f85259527308ce47.js","2993","static/chunks/2993-1cdd302267b13ab8.js","1993","static/chunks/app/(posts)/layout-77cfb8fd4a4b44e7.js"],""]
-7:I[25694,["5250","static/chunks/5250-f85259527308ce47.js","3185","static/chunks/app/layout-7e8ae40d9eceb952.js"],"GlobalProvider"]
-8:I[30397,["5250","static/chunks/5250-f85259527308ce47.js","3185","static/chunks/app/layout-7e8ae40d9eceb952.js"],""]
-3:T11e09,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;ATen/ATen.h></span></span>
+2:I[10579,["2202","static/chunks/2202-c94dd0688c9a9cf1.js","7197","static/chunks/7197-fbfe003e0dc31b13.js","6391","static/chunks/app/(posts)/24b/yolov5-obb-nms-rotated/page-bdc6869fa0a58edf.js"],""]
+3:I[62029,["2202","static/chunks/2202-c94dd0688c9a9cf1.js","7197","static/chunks/7197-fbfe003e0dc31b13.js","6391","static/chunks/app/(posts)/24b/yolov5-obb-nms-rotated/page-bdc6869fa0a58edf.js"],""]
+6:I[5613,[],""]
+7:I[31778,[],""]
+8:I[30389,["2202","static/chunks/2202-c94dd0688c9a9cf1.js","5250","static/chunks/5250-9192d080d30d8ff7.js","7197","static/chunks/7197-fbfe003e0dc31b13.js","1993","static/chunks/app/(posts)/layout-64a2d12ca4e5a8ea.js"],""]
+9:I[25694,["5250","static/chunks/5250-9192d080d30d8ff7.js","3185","static/chunks/app/layout-3bcdb418b19b279c.js"],"GlobalProvider"]
+a:I[30397,["5250","static/chunks/5250-9192d080d30d8ff7.js","3185","static/chunks/app/layout-3bcdb418b19b279c.js"],""]
+4:T243f,#include <ATen/ATen.h>
+#include <ATen/cuda/CUDAContext.h>
+
+// #include <THC/THC.h>
+// #include <THC/THCDeviceUtils.cuh>
+#include <ATen/cuda/CUDAUtils.h>
+#include <ATen/ceil_div.h>
+#include <c10/cuda/CUDACachingAllocator.h>
+
+#include <vector>
+#include <iostream>
+
+#define CUDA_CHECK(condition) \
+/* Code block avoids redefinition of cudaError_t error */ \
+do { \
+    cudaError_t error = condition; \
+    if (error != cudaSuccess) { \
+    std::cout << cudaGetErrorString(error) << std::endl; \
+    } \
+} while (0)
+
+#define DIVUP(m,n) ((m) / (n) + ((m) % (n) > 0))
+int const threadsPerBlock = sizeof(unsigned long long) * 8;
+
+#define maxn 10
+// const double eps=1E-8;
+
+__device__ inline int sig(float d){
+    const double eps=1E-8;
+    return(d>eps)-(d<-eps);
+}
+
+__device__ inline int point_eq(const float2 a, const float2 b) {
+    return sig(a.x - b.x) == 0 && sig(a.y - b.y)==0;
+}
+
+__device__ inline void point_swap(float2 *a, float2 *b) {
+    float2 temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+__device__ inline void point_reverse(float2 *first, float2* last)
+{
+    while ((first!=last)&&(first!=--last)) {
+        point_swap (first,last);
+        ++first;
+    }
+}
+
+__device__ inline float cross(float2 o,float2 a,float2 b){  //叉积
+    return(a.x-o.x)*(b.y-o.y)-(b.x-o.x)*(a.y-o.y);
+}
+__device__ inline float area(float2* ps,int n){
+    ps[n]=ps[0];
+    float res=0;
+    for(int i=0;i<n;i++){
+        res+=ps[i].x*ps[i+1].y-ps[i].y*ps[i+1].x;
+    }
+    return res/2.0;
+}
+__device__ inline int lineCross(float2 a,float2 b,float2 c,float2 d,float2&p){
+    float s1,s2;
+    s1=cross(a,b,c);
+    s2=cross(a,b,d);
+    if(sig(s1)==0&&sig(s2)==0) return 2;
+    if(sig(s2-s1)==0) return 0;
+    p.x=(c.x*s2-d.x*s1)/(s2-s1);
+    p.y=(c.y*s2-d.y*s1)/(s2-s1);
+    return 1;
+}
+
+__device__ inline void polygon_cut(float2*p,int&n,float2 a,float2 b, float2* pp){
+
+    int m=0;p[n]=p[0];
+    for(int i=0;i<n;i++){
+        if(sig(cross(a,b,p[i]))>0) pp[m++]=p[i];
+        if(sig(cross(a,b,p[i]))!=sig(cross(a,b,p[i+1])))
+            lineCross(a,b,p[i],p[i+1],pp[m++]);
+    }
+    n=0;
+    for(int i=0;i<m;i++)
+        if(!i||!(point_eq(pp[i], pp[i-1])))
+            p[n++]=pp[i];
+    // while(n>1&&p[n-1]==p[0])n--;
+    while(n>1&&point_eq(p[n-1], p[0]))n--;
+}
+
+//---------------华丽的分隔线-----------------//
+//返回三角形oab和三角形ocd的有向交面积,o是原点//
+__device__ inline float intersectArea(float2 a,float2 b,float2 c,float2 d){
+    float2 o = make_float2(0,0);
+    int s1=sig(cross(o,a,b));
+    int s2=sig(cross(o,c,d));
+    if(s1==0||s2==0)return 0.0;//退化，面积为0
+    // if(s1==-1) swap(a,b);
+    // if(s2==-1) swap(c,d);
+    if (s1 == -1) point_swap(&a, &b);
+    if (s2 == -1) point_swap(&c, &d);
+    float2 p[10]={o,a,b};
+    int n=3;
+    float2 pp[maxn];
+    polygon_cut(p,n,o,c,pp);
+    polygon_cut(p,n,c,d,pp);
+    polygon_cut(p,n,d,o,pp);
+    float res=fabs(area(p,n));
+    if(s1*s2==-1) res=-res;return res;
+}
+//求两多边形的交面积
+__device__ inline float intersectArea(float2*ps1,int n1,float2*ps2,int n2){
+    if(area(ps1,n1)<0) point_reverse(ps1,ps1+n1);
+    if(area(ps2,n2)<0) point_reverse(ps2,ps2+n2);
+    ps1[n1]=ps1[0];
+    ps2[n2]=ps2[0];
+    float res=0;
+    for(int i=0;i<n1;i++){
+        for(int j=0;j<n2;j++){
+            res+=intersectArea(ps1[i],ps1[i+1],ps2[j],ps2[j+1]);
+        }
+    }
+    return res;//assumeresispositive!
+}
+
+// TODO: optimal if by first calculate the iou between two hbbs
+__device__ inline float devPolyIoU(float const * const p, float const * const q) {
+    float2 ps1[maxn], ps2[maxn];
+    int n1 = 4;
+    int n2 = 4;
+    for (int i = 0; i < 4; i++) {
+        ps1[i].x = p[i * 2];
+        ps1[i].y = p[i * 2 + 1];
+
+        ps2[i].x = q[i * 2];
+        ps2[i].y = q[i * 2 + 1];
+    }
+    float inter_area = intersectArea(ps1, n1, ps2, n2);
+    float union_area = fabs(area(ps1, n1)) + fabs(area(ps2, n2)) - inter_area;
+    float iou = 0;
+    if (union_area == 0) {
+        iou = (inter_area + 1) / (union_area + 1);
+    } else {
+        iou = inter_area / union_area;
+    }
+    return iou;
+}
+
+__global__ void poly_nms_kernel(const int n_polys, const float nms_overlap_thresh,
+                            const float *dev_polys, unsigned long long *dev_mask) {
+    const int row_start = blockIdx.y;
+    const int col_start = blockIdx.x;
+
+    const int row_size =
+            min(n_polys - row_start * threadsPerBlock, threadsPerBlock);
+    const int cols_size =
+            min(n_polys - col_start * threadsPerBlock, threadsPerBlock);
+
+    __shared__ float block_polys[threadsPerBlock * 9];
+    if (threadIdx.x < cols_size) {
+        block_polys[threadIdx.x * 9 + 0] =
+            dev_polys[(threadsPerBlock * col_start + threadIdx.x) * 9 + 0];
+        block_polys[threadIdx.x * 9 + 1] =
+            dev_polys[(threadsPerBlock * col_start + threadIdx.x) * 9 + 1];
+        block_polys[threadIdx.x * 9 + 2] =
+            dev_polys[(threadsPerBlock * col_start + threadIdx.x) * 9 + 2];
+        block_polys[threadIdx.x * 9 + 3] =
+            dev_polys[(threadsPerBlock * col_start + threadIdx.x) * 9 + 3];
+        block_polys[threadIdx.x * 9 + 4] =
+            dev_polys[(threadsPerBlock * col_start + threadIdx.x) * 9 + 4];
+        block_polys[threadIdx.x * 9 + 5] =
+            dev_polys[(threadsPerBlock * col_start + threadIdx.x) * 9 + 5];
+        block_polys[threadIdx.x * 9 + 6] =
+            dev_polys[(threadsPerBlock * col_start + threadIdx.x) * 9 + 6];
+        block_polys[threadIdx.x * 9 + 7] =
+            dev_polys[(threadsPerBlock * col_start + threadIdx.x) * 9 + 7];
+        block_polys[threadIdx.x * 9 + 8] =
+            dev_polys[(threadsPerBlock * col_start + threadIdx.x) * 9 + 8];
+    }
+    __syncthreads();
+
+    if (threadIdx.x < row_size) {
+        const int cur_box_idx = threadsPerBlock * row_start + threadIdx.x;
+        const float *cur_box = dev_polys + cur_box_idx * 9;
+        int i = 0;
+        unsigned long long t = 0;
+        int start = 0;
+        if (row_start == col_start) {
+            start = threadIdx.x + 1;
+        }
+        for (i = start; i < cols_size; i++) {
+            if (devPolyIoU(cur_box, block_polys + i * 9) > nms_overlap_thresh) {
+                t |= 1ULL << i;
+            }
+        }
+//      const int col_blocks = THCCeilDiv(n_polys, threadsPerBlock);
+        const int col_blocks = at::ceil_div(n_polys, threadsPerBlock);
+        dev_mask[cur_box_idx * col_blocks + col_start] = t;
+    }
+}
+
+// boxes is a N x 9 tensor
+at::Tensor poly_nms_cuda(const at::Tensor boxes, float nms_overlap_thresh) {
+
+    at::DeviceGuard guard(boxes.device());
+
+    using scalar_t = float;
+    AT_ASSERTM(boxes.device().is_cuda(), "boxes must be a CUDA tensor");
+    auto scores = boxes.select(1, 8);
+    auto order_t = std::get<1>(scores.sort(0, /*descending=*/true));
+    auto boxes_sorted = boxes.index_select(0, order_t);
+
+    int boxes_num = boxes.size(0);
+
+//  const int col_blocks = THCCeilDiv(boxes_num, threadsPerBlock);
+    const int col_blocks = at::ceil_div(boxes_num, threadsPerBlock);
+
+    scalar_t* boxes_dev = boxes_sorted.data_ptr<scalar_t>();
+
+//  THCState *state = at::globalContext().lazyInitCUDA();
+
+    unsigned long long* mask_dev = NULL;
+
+//  mask_dev = (unsigned long long*) THCudaMalloc(state, boxes_num * col_blocks * sizeof(unsigned long long));
+    mask_dev = (unsigned long long *) c10::cuda::CUDACachingAllocator::raw_alloc(boxes_num * col_blocks * sizeof(unsigned long long));
+
+//  dim3 blocks(THCCeilDiv(boxes_num, threadsPerBlock),
+//                THCCeilDiv(boxes_num, threadsPerBlock));
+    dim3 blocks(at::ceil_div(boxes_num, threadsPerBlock), at::ceil_div(boxes_num, threadsPerBlock));
+
+    dim3 threads(threadsPerBlock);
+    poly_nms_kernel<<<blocks, threads, 0, at::cuda::getCurrentCUDAStream()>>>(boxes_num,
+                                        nms_overlap_thresh,
+                                        boxes_dev,
+                                        mask_dev);
+
+    std::vector<unsigned long long> mask_host(boxes_num * col_blocks);
+//  THCudaCheck(cudaMemcpyAsync(
+    AT_CUDA_CHECK(cudaMemcpyAsync(
+                &mask_host[0],
+                            mask_dev,
+                            sizeof(unsigned long long) * boxes_num * col_blocks,
+                            cudaMemcpyDeviceToHost,
+                at::cuda::getCurrentCUDAStream()
+                ));
+
+    std::vector<unsigned long long> remv(col_blocks);
+    memset(&remv[0], 0, sizeof(unsigned long long) * col_blocks);
+
+    at::Tensor keep = at::empty({boxes_num}, boxes.options().dtype(at::kLong).device(at::kCPU));
+    int64_t* keep_out = keep.data_ptr<int64_t>();
+
+    int num_to_keep = 0;
+    for (int i = 0; i < boxes_num; i++) {
+        int nblock = i / threadsPerBlock;
+        int inblock = i % threadsPerBlock;
+
+        if (!(remv[nblock] & (1ULL << inblock))) {
+            keep_out[num_to_keep++] = i;
+            unsigned long long *p = &mask_host[0] + i * col_blocks;
+            for (int j = nblock; j < col_blocks; j++) {
+                remv[j] |= p[j];
+            }
+        }
+    }
+
+//  THCudaFree(state, mask_dev);
+    c10::cuda::CUDACachingAllocator::raw_delete(mask_dev);
+    return order_t.index({
+        keep.narrow(/*dim=*/0, /*start=*/0, /*length=*/num_to_keep).to(
+        order_t.device(), keep.scalar_type())});
+}
+5:T11e09,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;ATen/ATen.h></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;ATen/cuda/CUDAContext.h></span></span>
 
 <span class="token comment">// #include &lt;THC/THC.h></span>
@@ -274,6 +545,6 @@ at<span class="token double-colon punctuation">::</span>Tensor <span class="toke
         keep<span class="token punctuation">.</span><span class="token function">narrow</span><span class="token punctuation">(</span><span class="token comment">/*dim=*/</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">/*start=*/</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">/*length=*/</span>num_to_keep<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">to</span><span class="token punctuation">(</span>
         order_t<span class="token punctuation">.</span><span class="token function">device</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> keep<span class="token punctuation">.</span><span class="token function">scalar_type</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-0:["pNpI1VZDzTUu1DgK4LVte",[[["",{"children":["(posts)",{"children":["24b",{"children":["yolov5-obb-nms-rotated",{"children":["__PAGE__",{}]}]}]}]},"$undefined","$undefined",true],["",{"children":["(posts)",{"children":["24b",{"children":["yolov5-obb-nms-rotated",{"children":["__PAGE__",{},["$L1",[["$","$L2",null,{}],["$","h1",null,{"className":"x-title","children":"解决：nms_rotated报错\"THC/THC.h\": No such file or directory"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"使用<code class=\"x-inline-highlight\"><a href=\"https://github.com/hukaixuan19970627/yolov5_obb\" target=\"_blank\" rel=\"noreferrer\" class=\"x-inline-link\">yolov5_obb</a></code>时，我使用已有环境运行，此环境中的<code class=\"x-inline-highlight\">pytorch</code>版本是<code class=\"x-inline-highlight\">1.12.1</code>，而在<code class=\"x-inline-highlight\">1.11</code>版本已经弃用了<code class=\"x-inline-highlight\">\"THC/THC.h\"</code>。"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"解决办法是回退版本或者修改编译失败的文件<code class=\"x-inline-highlight\">utils&#92;nms_rotated&#92;src&#92;poly_nms_cuda.cu</code>，替换已经弃用的库。<br/>修改的内容已经高亮标注，下面的代码可以直接复制替换原文件："}}],["$","div",null,{"className":"x-codeblock","children":["$","pre",null,{"style":{"background":"linear-gradient(180deg, transparent 72px, var(--bg-transparent-golden) 72px 192px, transparent 192px, transparent 600px, var(--bg-transparent-golden) 600px 624px, transparent 624px, transparent 672px, var(--bg-transparent-golden) 672px 696px, transparent 696px, transparent 4632px, var(--bg-transparent-golden) 4632px 4680px, transparent 4680px, transparent 5088px, var(--bg-transparent-golden) 5088px 5136px, transparent 5136px, transparent 5208px, var(--bg-transparent-golden) 5208px 5232px, transparent 5232px, transparent 5304px, var(--bg-transparent-golden) 5304px 5352px, transparent 5352px, transparent 5376px, var(--bg-transparent-golden) 5376px 5448px, transparent 5448px, transparent 5640px, var(--bg-transparent-golden) 5640px 5688px, transparent 5688px, transparent 6336px, var(--bg-transparent-golden) 6336px 6384px, transparent 6384px)"},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}]}]}]],null]]},["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children","(posts)","children","24b","children","yolov5-obb-nms-rotated","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/55722f4e6a890f7d.css","precedence":"next","crossOrigin":""}]]}]]},["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children","(posts)","children","24b","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},[null,["$","div",null,{"id":"post-layout","children":[false,["$","div",null,{"id":"main","className":"y-center-wrapper","children":["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children","(posts)","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]}],["$","$L6",null,{}]]}],null]]},[null,["$","html",null,{"lang":"zh-CN","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","link",null,{"rel":"icon","href":"/favicon.ico","type":"image/x-icon"}],["$","script",null,{"async":true,"src":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"}],["$","script",null,{"async":true,"src":"https://www.googletagmanager.com/gtag/js?id=G-45BYSZ6WPY"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nwindow.dataLayer = window.dataLayer || [];\nfunction gtag() {\n    dataLayer.push(arguments);\n}\ngtag('js', new Date());\ngtag('config', 'G-45BYSZ6WPY');\n"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"const a=z=>h.getItem(z),b=(y,z)=>h.setItem(y,z),c=(y,z)=>document.documentElement.setAttribute(y,z),d='theme',e='dark',f='light',g='class',h=localStorage;a(d)!==e&&a(d)!==f&&b(d,f);a(d)===e?c(g,e):c(g,f);"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nif (!Array.prototype.findLast) {\n    Array.prototype.findLast = function (callback) {\n        for (let i = this.length - 1; i >= 0; i--) {\n            if (callback(this[i])) return this[i];\n        }\n        return undefined;\n    };\n}\nif (!Array.prototype.findLastIndex) {\n    Array.prototype.findLastIndex = function (callback) {\n        for (let i = this.length - 1; i >= 0; i--) {\n            if (callback(this[i])) return i;\n        }\n        return -1;\n    };\n}\n"}}]]}],["$","body",null,{"children":["$","$L7",null,{"children":[["$","$L8",null,{}],["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"id":"notfound","children":[["$","img",null,{"alt":"img","src":"/images/cry.gif"}],["$","div",null,{"id":"notfound-404","children":"404"}],["$","div",null,{"id":"notfound-text","children":"Page Not Found"}]]}],"notFoundStyles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/0f7cce8b0dae9908.css","precedence":"next","crossOrigin":""}]],"styles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/208b2f0c8f733ab9.css","precedence":"next","crossOrigin":""}]]}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/54d581b7516b52b4.css","precedence":"next","crossOrigin":""}]],"$L9"]]]]
-9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"解决：nms_rotated报错\"THC/THC.h\": No such file or directory - 铃木的网络日记"}],["$","link","3",{"rel":"canonical","href":"https://1kuzus.github.io/24b/yolov5-obb-nms-rotated/"}]]
+0:["mOSxNIhZz6aihDpxyXnIa",[[["",{"children":["(posts)",{"children":["24b",{"children":["yolov5-obb-nms-rotated",{"children":["__PAGE__",{}]}]}]}]},"$undefined","$undefined",true],["",{"children":["(posts)",{"children":["24b",{"children":["yolov5-obb-nms-rotated",{"children":["__PAGE__",{},["$L1",[["$","$L2",null,{}],["$","h1",null,{"className":"x-title","children":"解决：nms_rotated报错\"THC/THC.h\": No such file or directory"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"使用<code class=\"x-inline-highlight\"><a href=\"https://github.com/hukaixuan19970627/yolov5_obb\" target=\"_blank\" rel=\"noreferrer\" class=\"x-inline-link\">yolov5_obb</a></code>时，我使用已有环境运行，此环境中的<code class=\"x-inline-highlight\">pytorch</code>版本是<code class=\"x-inline-highlight\">1.12.1</code>，而在<code class=\"x-inline-highlight\">1.11</code>版本已经弃用了<code class=\"x-inline-highlight\">\"THC/THC.h\"</code>。"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"解决办法是回退版本或者修改编译失败的文件<code class=\"x-inline-highlight\">utils&#92;nms_rotated&#92;src&#92;poly_nms_cuda.cu</code>，替换已经弃用的库。<br/>修改的内容已经高亮标注，下面的代码可以直接复制替换原文件："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"C++"}],["$","$L3",null,{"className":"x-codeblock-header-copy","text":"$4"}]]}],["$","pre",null,{"style":{"background":"linear-gradient(180deg, transparent 96px, var(--bg-transparent-golden) 96px 216px, transparent 216px, transparent 624px, var(--bg-transparent-golden) 624px 648px, transparent 648px, transparent 696px, var(--bg-transparent-golden) 696px 720px, transparent 720px, transparent 4656px, var(--bg-transparent-golden) 4656px 4704px, transparent 4704px, transparent 5112px, var(--bg-transparent-golden) 5112px 5160px, transparent 5160px, transparent 5232px, var(--bg-transparent-golden) 5232px 5256px, transparent 5256px, transparent 5328px, var(--bg-transparent-golden) 5328px 5376px, transparent 5376px, transparent 5400px, var(--bg-transparent-golden) 5400px 5472px, transparent 5472px, transparent 5664px, var(--bg-transparent-golden) 5664px 5712px, transparent 5712px, transparent 6360px, var(--bg-transparent-golden) 6360px 6408px, transparent 6408px)"},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$5"}}]}]]}]],null]]},["$","$L6",null,{"parallelRouterKey":"children","segmentPath":["children","(posts)","children","24b","children","yolov5-obb-nms-rotated","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/55722f4e6a890f7d.css","precedence":"next","crossOrigin":""}]]}]]},["$","$L6",null,{"parallelRouterKey":"children","segmentPath":["children","(posts)","children","24b","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},[null,["$","div",null,{"id":"post-layout","children":[false,["$","div",null,{"id":"main","className":"y-center-wrapper","children":["$","$L6",null,{"parallelRouterKey":"children","segmentPath":["children","(posts)","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]}],["$","$L8",null,{}]]}],null]]},[null,["$","html",null,{"lang":"zh-CN","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","link",null,{"rel":"icon","href":"/favicon.ico","type":"image/x-icon"}],["$","script",null,{"async":true,"src":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"}],["$","script",null,{"async":true,"src":"https://www.googletagmanager.com/gtag/js?id=G-45BYSZ6WPY"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nwindow.dataLayer = window.dataLayer || [];\nfunction gtag() {\n    dataLayer.push(arguments);\n}\ngtag('js', new Date());\ngtag('config', 'G-45BYSZ6WPY');\n"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"const a=z=>h.getItem(z),b=(y,z)=>h.setItem(y,z),c=(y,z)=>document.documentElement.setAttribute(y,z),d='theme',e='dark',f='light',g='class',h=localStorage;a(d)!==e&&a(d)!==f&&b(d,f);a(d)===e?c(g,e):c(g,f);"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nif (!Array.prototype.findLast) {\n    Array.prototype.findLast = function (callback) {\n        for (let i = this.length - 1; i >= 0; i--) {\n            if (callback(this[i])) return this[i];\n        }\n        return undefined;\n    };\n}\nif (!Array.prototype.findLastIndex) {\n    Array.prototype.findLastIndex = function (callback) {\n        for (let i = this.length - 1; i >= 0; i--) {\n            if (callback(this[i])) return i;\n        }\n        return -1;\n    };\n}\n"}}]]}],["$","body",null,{"children":["$","$L9",null,{"children":[["$","$La",null,{}],["$","$L6",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"id":"notfound","children":[["$","img",null,{"alt":"img","src":"/images/cry.gif"}],["$","div",null,{"id":"notfound-404","children":"404"}],["$","div",null,{"id":"notfound-text","children":"Page Not Found"}]]}],"notFoundStyles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/0f7cce8b0dae9908.css","precedence":"next","crossOrigin":""}]],"styles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/421d0808425e209e.css","precedence":"next","crossOrigin":""}]]}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/dac94f68c1ae2954.css","precedence":"next","crossOrigin":""}]],"$Lb"]]]]
+b:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"解决：nms_rotated报错\"THC/THC.h\": No such file or directory - 铃木的网络日记"}],["$","link","3",{"rel":"canonical","href":"https://1kuzus.github.io/24b/yolov5-obb-nms-rotated/"}]]
 1:null
