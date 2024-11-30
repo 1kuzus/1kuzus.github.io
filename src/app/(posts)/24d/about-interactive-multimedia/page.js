@@ -10,14 +10,14 @@ export default function Post() {
         <>
             <X.TOC />
             <X.Title>{metas[path].title}</X.Title>
+            <X.H1>Click Me!</X.H1>
             <Confetto>
                 <X.HighlightBlock>
                     <X.Image src="cheer.gif" />
-                    <X.P>Hello, world!</X.P>
-                    <X.P>rm sha256</X.P>
-                    <X.P>flexrow pad 8px</X.P>
                 </X.HighlightBlock>
             </Confetto>
+            <X.H1>关于</X.H1>
+            <X.P>敬请期待！</X.P>
         </>
     );
 }

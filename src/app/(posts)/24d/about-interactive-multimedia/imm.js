@@ -83,17 +83,17 @@ export default function Confetto(props) {
             if (done) window.requestAnimationFrame(render);
         };
         trigger.onclick = run;
+        setTimeout(run, 500);
         const resizeHandler = () => {
             canvas.width = document.documentElement.clientWidth;
             canvas.height = document.documentElement.clientHeight;
         };
         window.addEventListener('resize', resizeHandler);
-        setTimeout(run, 500);
         return () => window.removeEventListener('resize', resizeHandler);
     }, []);
     return (
         <>
-            <canvas id={'confetto-canvas'} />
+            <canvas id="confetto-canvas" />
             <div id="confetto-trigger">{children}</div>
         </>
     );
