@@ -5,7 +5,6 @@
   "scripts": {
     "new": "node src/utils/createNewPost.js",
     "checkcss": "node src/utils/checkCss.js",
-    "sha256": "node src/utils/sha256.js",
     "dev": "next dev -p 3030",
     "build": "next build",
     "predeploy": "npm run build && next-sitemap && touch out/.nojekyll",
