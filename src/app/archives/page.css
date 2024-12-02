@@ -3,6 +3,8 @@
     color: var(--brand-300);
 }
 .archives-post-time {
+    display: inline-block;
+    width: 50px;
     margin-right: 32px;
     color: var(--brand-300);
 }
