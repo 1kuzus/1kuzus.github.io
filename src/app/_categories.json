@@ -91,7 +91,8 @@
     {
         "categoryName": "前端",
         "posts": [
-            "/23d/css-auto-height-transition/"
+            "/23d/css-auto-height-transition/",
+            "/24d/android-send-explicit-intent-to-dynamically-registered-receiver/"
         ]
     },
     {

@@ -1,4 +1,8 @@
 {
+    "/24d/android-send-explicit-intent-to-dynamically-registered-receiver/": {
+        "title": "不能向动态注册的广播接收器发送显式Intent",
+        "time": "2024-12-02"
+    },
     "/24d/about-interactive-multimedia/": {
         "title": "关于交互式多媒体",
         "time": "2024-11-30"
