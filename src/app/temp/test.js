@@ -55,3 +55,13 @@ y.transaction(function (e) {
         },
     ].concat(e.slice(0, e.length - 1));
 });
+
+firebase
+    .firestore()
+    .collection('views')
+    .doc('test')
+    .get()
+    .then((doc) => {
+        if (doc.exists) console.log('doc.data:', doc.data());
+        else console.log("doc doesn't exist!");
+    });
