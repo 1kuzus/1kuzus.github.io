@@ -5,7 +5,7 @@ import Y from 'src/component/Y';
 import TOC from 'src/component/TOC/TOC';
 import Sidebar from 'src/component/Sidebar/Sidebar';
 import archives from 'src/app/_archives.json';
-import PostMeta from 'src/component/PostMeta/PostMeta';
+import ViewsCount from 'src/component/ViewsCount/ViewsCount';
 import './page.css';
 // 审计一下这一页 fallback
 // 3. code: font --- 统一
@@ -43,7 +43,7 @@ export default function Page({params}) {
                 {X.Oli({reset: 0}) && false}
                 <Y.CenterWrapper id="main">
                     <X.Title>{archives[path].title}</X.Title>
-                    <PostMeta path={path} />
+                    <ViewsCount path={path} />
                     <Suspense fallback={<p>Loading...</p>}>
                         <Post />
                     </Suspense>
