@@ -9,7 +9,6 @@ import {Uli, Oli} from './ListItem';
 import {P} from './Paragraph';
 import Table from './Table/Table';
 import Title from './Title/Title';
-import TOC from './TOC/TOC';
 
 const X = {
     CodeBlock,
@@ -26,7 +25,6 @@ const X = {
     P,
     Table,
     Title,
-    TOC,
 };
 
 export default X;

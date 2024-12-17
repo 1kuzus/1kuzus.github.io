@@ -1,0 +1,9 @@
+.x-post-meta {
+    display: flex;
+    /* justify-content: center; */
+    font-size: 14px;
+    margin-bottom: 32px;
+}
+.x-post-meta *{
+    color: var(--fg-gray-300);
+}

@@ -9,7 +9,7 @@ export default function Image(props) {
     return (
         <NextImage
             className={`x-image${filterDarkTheme ? ' x-image-invert' : ''}`}
-            src={require('src/assets/images' + pathname + src)}
+            src={require('src/posts' + pathname + src)}
             alt="img"
             style={{width: width, height: 'auto'}}
         />

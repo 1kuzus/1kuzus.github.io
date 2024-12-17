@@ -11,8 +11,8 @@ const m = date.getMonth();
 const mstr = String.fromCharCode(97 + m / 3);
 
 const postPath = `/${isLongTime ? 'longtime' : ystr + mstr}/${param}/`;
-const dir = path.join('src', 'app', '(posts)', postPath);
-const filePath = path.join(dir, 'page.js');
+const dir = path.join('src', 'posts', postPath);
+const filePath = path.join(dir, 'index.js');
 
 if (fs.existsSync(dir)) {
     console.log('\x1b[31m%s\x1b[0m', 'Path already exists.');
@@ -47,16 +47,11 @@ console.log(`Updated src/app/_archives.json`);
 
 fs.mkdirSync(dir, {recursive: true});
 const template = `import X from 'src/component/X';
-import metas from 'src/app/_metas';
-
-const path = '${postPath}';
-export const {metadata} = metas[path];
 
 export default function Post() {
     return (
         <>
-            <X.TOC />
-            <X.Title>{metas[path].title}</X.Title>
+            <X.H1>Hello.</X.H1>
         </>
     );
 }
