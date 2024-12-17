@@ -4,8 +4,8 @@ import {usePathname} from 'next/navigation';
 import './Image.css';
 
 export default function Image(props) {
-    const pathname = usePathname();
     const {src, width, filterDarkTheme} = props;
+    const pathname = usePathname();
     return (
         <NextImage
             className={`x-image${filterDarkTheme ? ' x-image-invert' : ''}`}

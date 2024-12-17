@@ -12,7 +12,7 @@ import './page.css';
 // context & localstorage
 // y组件库 headers level
 // toc独立
-// 404 not found
+// 代码审计：导入顺序
 
 export function generateStaticParams() {
     return Object.keys(archives)
@@ -20,13 +20,12 @@ export function generateStaticParams() {
         .map((slug) => ({slug}));
 }
 
-const BASE_URL = 'https://1kuzus.github.io';
 export function generateMetadata({params}) {
     const path = '/' + params.slug.join('/') + '/';
     return {
         title: archives[path].title + ' - 铃木的网络日记', //page title
         alternates: {
-            canonical: BASE_URL + path,
+            canonical: 'https://1kuzus.github.io' + path,
         },
     };
 }
@@ -44,7 +43,7 @@ export default function Page({params}) {
                 {X.Oli({reset: 0}) && false}
                 <Y.CenterWrapper id="main">
                     <X.Title>{archives[path].title}</X.Title>
-                    {/* <PostMeta path={path}/> */}
+                    <PostMeta path={path} />
                     <Suspense fallback={<p>Loading...</p>}>
                         <Post />
                     </Suspense>

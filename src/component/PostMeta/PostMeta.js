@@ -1,14 +1,15 @@
 'use client';
-import './PostMeta.css';
-import {increaseViews, getViews} from 'src/firebase/views';
 import {useEffect, useState} from 'react';
+import {increaseViews, getViews} from 'src/firebase/views';
+import './PostMeta.css';
 
 export default function PostMeta(props) {
     const {path} = props;
     const [viewsCount, setViewsCount] = useState(0);
+    const isDev = typeof window === 'undefined' || window.location.hostname !== '1kuzus.github.io';
     useEffect(() => {
-        getViews().then((count) => {
-            increaseViews();
+        getViews(path, isDev).then((count) => {
+            increaseViews(path, isDev);
             setViewsCount(count);
         });
     }, []);
