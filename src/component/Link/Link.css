@@ -1,4 +1,4 @@
-.y-link {
+.link {
     display: block;
     width: 100%;
     margin-top: 0.2em;
@@ -10,12 +10,12 @@
     border-radius: 0.5em;
     transition: color, background-color 200ms;
 }
-.y-link:hover {
+.link:hover {
     background-color: var(--bg-transparent-gray-300);
 }
-.y-link.active {
+.link.active {
     background-color: var(--bg-transparent-gray-300);
 }
-.y-link.active * {
+.link.active * {
     color: var(--brand-300);
 }

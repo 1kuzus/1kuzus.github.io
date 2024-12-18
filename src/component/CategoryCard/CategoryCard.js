@@ -1,6 +1,6 @@
 'use client';
 import {useState} from 'react';
-import Y from 'src/component/Y';
+import Link from 'src/component/Link/Link';
 import {RightArrowIcon} from 'src/assets/svgs';
 import archives from 'src/app/_archives.json';
 import './CategoryCard.css';
@@ -22,9 +22,9 @@ export default function CategoryCard(props) {
                 <ul className="category-card-ul">
                     {category.posts.map((path, index) => (
                         <li key={index}>
-                            <Y.Link href={path} active={activeIndex === index}>
+                            <Link href={path} active={activeIndex === index}>
                                 <span className="post-title">{archives[path].title}</span>
-                            </Y.Link>
+                            </Link>
                         </li>
                     ))}
                 </ul>

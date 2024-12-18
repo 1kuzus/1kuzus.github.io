@@ -1,4 +1,5 @@
-import Y from 'src/component/Y';
+import Heading from 'src/component/Heading/Heading';
+import CenterWrapper from 'src/component/CenterWrapper/CenterWrapper';
 import CategoryCard from 'src/component/CategoryCard/CategoryCard';
 import categories from 'src/app/_categories.json';
 
@@ -8,8 +9,8 @@ export const metadata = {
 
 export default function Categories() {
     return (
-        <Y.CenterWrapper>
-            <Y.H1>全部分类</Y.H1>
+        <CenterWrapper>
+            <Heading>全部分类</Heading>
             <ul>
                 {categories.map((category, index) => (
                     <li key={index}>
@@ -17,6 +18,6 @@ export default function Categories() {
                     </li>
                 ))}
             </ul>
-        </Y.CenterWrapper>
+        </CenterWrapper>
     );
 }

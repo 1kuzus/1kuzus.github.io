@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic';
 import {Suspense} from 'react';
 import X from 'src/component/X';
-import Y from 'src/component/Y';
+import CenterWrapper from 'src/component/CenterWrapper/CenterWrapper';
 import TOC from 'src/component/TOC/TOC';
 import Sidebar from 'src/component/Sidebar/Sidebar';
 import archives from 'src/app/_archives.json';
@@ -10,7 +10,6 @@ import './page.css';
 // 审计一下这一页 fallback
 // context & localstorage
 // y组件库 headers level
-// toc独立
 // 代码审计：导入顺序
 
 export function generateStaticParams() {
@@ -40,13 +39,13 @@ export default function Page({params}) {
             <TOC />
             <div id="post-layout">
                 {X.Oli({reset: 0}) && false}
-                <Y.CenterWrapper id="main">
+                <CenterWrapper id="main">
                     <X.Title>{archives[path].title}</X.Title>
                     <ViewsCount path={path} />
                     <Suspense fallback={<p>Loading...</p>}>
                         <Post />
                     </Suspense>
-                </Y.CenterWrapper>
+                </CenterWrapper>
                 <Sidebar />
             </div>
         </>
