@@ -51,6 +51,9 @@
     pointer-events: all;
 }
 @media (min-width: 1441px) {
+    #sidebar {
+        transform: translateX(0);
+    }
     #sidebar-mask {
         opacity: 0 !important;
         pointer-events: none !important;

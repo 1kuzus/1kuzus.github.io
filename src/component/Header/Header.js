@@ -1,7 +1,7 @@
 'use client';
 import NextLink from 'next/link';
 import {useGlobalContext} from 'src/context/GlobalContext';
-import {LogoIcon, LightThemeIcon, DarkThemeIcon, GithubIcon} from 'src/assets/svgs';
+import {LogoIcon, ShowSidebarIcon, HideSidebarIcon, LightThemeIcon, DarkThemeIcon, GithubIcon} from 'src/assets/svgs';
 import './Header.css';
 
 function LogoButton() {
@@ -24,7 +24,7 @@ function ShowSidebarButton() {
                 setShowSidebar((prev) => !prev);
             }}
         >
-            <div className={showSidebar ? 'show-sidebar' : null} />
+            {showSidebar ? <HideSidebarIcon /> : <ShowSidebarIcon />}
         </button>
     );
 }

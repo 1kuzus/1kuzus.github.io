@@ -162,10 +162,10 @@ cssFiles.forEach((cssFile) => {
             if (idx !== -1) propertyIndices.push(idx);
             else if (propertyName.slice(0, 2) !== '--')
                 // 排除css变量
-                console.log(`在${cssFile}中发现未定义顺序的属性${propertyName}`);
+                console.log(`[*] 在 ${cssFile} 中发现未定义次序的属性${propertyName}`);
         });
         if (!propertyIndices.every((i, idx) => !idx || i >= propertyIndices[idx - 1])) {
-            console.log(`\n在${cssFile}中发现属性顺序异常：`);
+            console.log(`\n[*] 在 ${cssFile} 中：`);
             console.log(`selector:\n${selector}`);
             console.log('属性次序:', propertyIndices);
         }

@@ -9,7 +9,6 @@ import ViewsCount from 'src/component/ViewsCount/ViewsCount';
 import './page.css';
 // 审计一下这一页 fallback
 // context & localstorage
-// y组件库 headers level
 // 代码审计：导入顺序
 
 export function generateStaticParams() {

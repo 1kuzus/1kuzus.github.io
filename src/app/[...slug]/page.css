@@ -1,10 +1,7 @@
 #post-layout {
     min-width: 240px;
-    padding-right: 360px;
-    transition: padding-left 200ms;
-}
-#post-layout:has(#sidebar.show-sidebar) {
-    padding-left: 360px;
+    padding: 0 360px;
+    transition: padding 200ms;
 }
 @media (max-width: 1440px) {
     #post-layout {
