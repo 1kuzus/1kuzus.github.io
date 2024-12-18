@@ -1,5 +1,5 @@
 :root {
-    --font-code: Consolas_Latin_Subset, Consolas, Menlo, 'Courier New', Courier, 'Ubuntu Mono', monospace;
+    --font-code: Menlo, Consolas, Consolas_Latin_Subset, 'Courier New', Courier, 'Ubuntu Mono', monospace;
 }
 :root,
 :root.light {
