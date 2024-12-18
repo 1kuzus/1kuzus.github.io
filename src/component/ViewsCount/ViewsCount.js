@@ -15,7 +15,7 @@ export default function ViewsCount(props) {
     }, []);
     return (
         <div className="views-count">
-            <span className="views-count-views">{viewsCount} Views.</span>
+            <span className="views-count-views">{viewsCount > 0 && viewsCount + ' Views.'}</span>
         </div>
     );
 }
