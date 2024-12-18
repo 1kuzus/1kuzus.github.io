@@ -8,7 +8,6 @@ import archives from 'src/app/_archives.json';
 import ViewsCount from 'src/component/ViewsCount/ViewsCount';
 import './page.css';
 // 审计一下这一页 fallback
-// 3. code: font --- 统一
 // context & localstorage
 // y组件库 headers level
 // toc独立

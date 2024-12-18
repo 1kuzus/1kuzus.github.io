@@ -1,8 +1,7 @@
 .views-count {
     display: flex;
-    /* justify-content: center; */
-    font-size: 14px;
     margin-bottom: 32px;
+    font-size: 14px;
 }
 .views-count * {
     color: var(--fg-gray-300);

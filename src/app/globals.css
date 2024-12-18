@@ -149,3 +149,6 @@ button {
 img {
     -webkit-user-drag: none;
 }
+code {
+    font-family: var(--font-code);
+}

@@ -16,10 +16,10 @@ function Logo() {
 function Author() {
     return (
         <h2 id="author-wrapper">
-            <span>\author</span>
-            <span>&#123;</span>
-            <span id="author">1kuzus</span>
-            <span>&#125;</span>
+            <code>\author</code>
+            <code>&#123;</code>
+            <code id="author">1kuzus</code>
+            <code>&#125;</code>
         </h2>
     );
 }
@@ -45,7 +45,7 @@ export default function Homepage() {
                 <Logo />
                 <Author />
                 <h1 id="homepage-title">铃木的网络日记</h1>
-                <div id="homepage-subtitle">&nbsp;Rage, Perfectionism, Geek.</div>
+                <code id="homepage-subtitle">&nbsp;Rage, Perfectionism, Geek.</code>
                 <ViewsCount path="homepage" homepage />
             </div>
             <div id="homepage-navs">

@@ -3,7 +3,7 @@ import X from 'src/component/X';
 export default function Post() {
     return (
         <>
-            <X.P>想打Web但是不务正业的我（x），很有“纪念意义”的CTF。队友做Crypto和杂项还是非常厉害的。</X.P>
+            <X.P>非常有“纪念意义”的CTF。</X.P>
             <X.Image src="overview.png" width="100%" />
             <X.H1>Web</X.H1>
             <X.H2>lists of JSONs</X.H2>

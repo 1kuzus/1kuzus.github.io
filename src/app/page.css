@@ -71,7 +71,6 @@
 #author-wrapper {
     margin-top: 16px;
     font-size: 24px;
-    font-family: var(--font-code);
 }
 #author {
     color: var(--brand-300);
@@ -124,7 +123,6 @@
 .homepage-nav-card-title-en {
     top: 54px;
     font-size: 18px;
-    font-family: var(--font-code);
 }
 #homepage-title::before {
     content: '#';
@@ -137,7 +135,6 @@
 }
 #homepage-subtitle {
     font-size: 18px;
-    font-family: var(--font-code);
 }
 @media (max-width: 600px) {
     .homepage-nav-card-title-zh,
