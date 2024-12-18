@@ -7,9 +7,8 @@ import Sidebar from 'src/component/Sidebar/Sidebar';
 import archives from 'src/app/_archives.json';
 import ViewsCount from 'src/component/ViewsCount/ViewsCount';
 import './page.css';
-// 审计一下这一页 fallback
+// fallback
 // 代码审计：导入顺序
-// uselocalstorage
 // TOC no contents
 
 export function generateStaticParams() {

@@ -43,12 +43,8 @@ function ThemeButton() {
                 }
             }}
         >
-            <div id="header-dark-theme-icon">
-                <DarkThemeIcon />
-            </div>
-            <div id="header-light-theme-icon">
-                <LightThemeIcon />
-            </div>
+            <DarkThemeIcon />
+            <LightThemeIcon />
         </button>
     );
 }
