@@ -3,6 +3,7 @@
     margin: 24px 0;
     line-height: 24px;
     font-size: 15px;
+    text-size-adjust: none;
     border-radius: 12px;
     background-color: var(--bg-main);
     box-shadow: var(--light-theme-box-shadow);
