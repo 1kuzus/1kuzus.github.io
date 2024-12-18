@@ -4,7 +4,7 @@ import {increaseViews, getViews} from 'src/firebase/views';
 import './ViewsCount.css';
 
 export default function ViewsCount(props) {
-    const {path, homepage=false} = props;
+    const {path, homepage = false} = props;
     const [viewsCount, setViewsCount] = useState(0);
     const isDev = typeof window === 'undefined' || window.location.hostname !== '1kuzus.github.io';
     useEffect(() => {

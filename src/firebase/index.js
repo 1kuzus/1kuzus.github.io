@@ -1,9 +1,10 @@
 import {initializeApp} from 'firebase/app';
-import {getFirestore} from 'firebase/firestore';
+import {getDatabase} from 'firebase/database';
 
 const firebaseConfig = {
     apiKey: 'AIzaSyDAJWeEbFsfJSlhDEJeFYzjhlJnevrjVrw',
     authDomain: 'githubio-fa4e0.firebaseapp.com',
+    databaseURL: 'https://githubio-fa4e0-default-rtdb.asia-southeast1.firebasedatabase.app',
     projectId: 'githubio-fa4e0',
     storageBucket: 'githubio-fa4e0.firebasestorage.app',
     messagingSenderId: '836364974060',
@@ -11,6 +12,6 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const firestore = getFirestore(app);
+const database = getDatabase(app);
 
-export default firestore;
+export default database;
