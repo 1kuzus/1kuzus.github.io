@@ -4,7 +4,6 @@ export default function Post() {
     return (
         <>
             <X.P>登录地址是@[https://pass.hust.edu.cn/cas/login]@。</X.P>
-            <X.P>程序的Github在@[https://github.com/1kuzus/HustCASLogin]@。</X.P>
             <X.Image src="fig1.jpg" width="100%" />
             <X.H1>分析</X.H1>
             <X.P>

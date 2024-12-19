@@ -15,5 +15,5 @@ export async function getViews(path, isDev) {
 export function increaseViews(path, isDev) {
     const refPath = isDev ? 'test-dev' : path.replace(/\//g, '_');
     const pathRef = ref(database, refPath);
-    return update(pathRef, {views: increment(1)});
+    update(pathRef, {views: increment(1)});
 }
