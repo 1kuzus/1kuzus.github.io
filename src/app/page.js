@@ -46,7 +46,7 @@ export default function Homepage() {
                 <Author />
                 <h1 id="homepage-title">铃木的网络日记</h1>
                 <code id="homepage-subtitle">&nbsp;Rage, Perfectionism, Geek.</code>
-                <ViewsCount path="homepage" />
+                <ViewsCount path="total" />
             </div>
             <div id="homepage-navs">
                 <HomepageNavCard titleZh="全部分类" titleEn="Categories." href="/categories/" />

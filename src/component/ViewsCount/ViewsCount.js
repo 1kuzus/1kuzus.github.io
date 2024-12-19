@@ -10,7 +10,7 @@ export default function ViewsCount(props) {
     useEffect(() => {
         getViews(path, isDev).then((count) => {
             increaseViews(path, isDev);
-            increaseViews("homepage", isDev);
+            if (path !== 'total') increaseViews('total', isDev);
             setViewsCount(count);
         });
     }, []);
