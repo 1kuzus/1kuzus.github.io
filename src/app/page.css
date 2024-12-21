@@ -77,13 +77,16 @@
     animation: author-color 12s infinite;
 }
 #homepage-navs {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     height: 25vh;
 }
 .homepage-nav-card {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    width: 50%;
 }
 .homepage-nav-card:nth-child(1) {
     background-color: var(--bg-gray-400);
@@ -112,16 +115,7 @@
 }
 .homepage-nav-card-title-zh,
 .homepage-nav-card-title-en {
-    position: absolute;
-    left: 48px;
     z-index: 1;
-}
-.homepage-nav-card-title-zh {
-    top: 24px;
-    font-size: 18px;
-}
-.homepage-nav-card-title-en {
-    top: 54px;
     font-size: 18px;
 }
 #homepage-title::before {
@@ -137,14 +131,12 @@
     font-size: 18px;
 }
 @media (max-width: 600px) {
+    #homepage-navs {
+        grid-template-columns: 1fr;
+    }
     .homepage-nav-card-title-zh,
     .homepage-nav-card-title-en {
         left: 24px;
-    }
-    .homepage-nav-card-title-zh {
-        font-size: 16px;
-    }
-    .homepage-nav-card-title-en {
         font-size: 16px;
     }
 }

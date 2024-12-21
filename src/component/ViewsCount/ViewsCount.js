@@ -7,10 +7,11 @@ export default function ViewsCount(props) {
     const {path} = props;
     const [viewsCount, setViewsCount] = useState(0);
     const isDev = typeof window === 'undefined' || window.location.hostname !== '1kuzus.github.io';
+    const isHomepage = path === 'total';
     useEffect(() => {
         getViews(path, isDev).then((count) => {
             increaseViews(path, isDev);
-            if (path !== 'total') increaseViews('total', isDev);
+            isHomepage && increaseViews('total', isDev);
             setViewsCount(count);
         });
     }, []);

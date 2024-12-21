@@ -18,6 +18,7 @@ const propertyOrderList = [
     //grid系列
     'grid-row',
     'grid-template-rows',
+    'grid-template-columns',
 
     //position系列
     'position',
