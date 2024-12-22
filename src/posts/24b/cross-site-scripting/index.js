@@ -1,6 +1,5 @@
 import X from 'src/component/X';
 
-// todo: xss!!
 export default function Post() {
     return (
         <>

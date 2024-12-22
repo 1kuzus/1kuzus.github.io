@@ -6,9 +6,6 @@ import ViewCount from 'src/component/ViewCount/ViewCount';
 import CenterWrapper from 'src/component/CenterWrapper/CenterWrapper';
 import archives from 'src/app/_archives.json';
 import './page.css';
-// fallback
-// 代码审计：导入顺序
-// TOC no contents
 
 export function generateStaticParams() {
     return Object.keys(archives)
@@ -29,8 +26,7 @@ export function generateMetadata({params}) {
 export default function Page({params}) {
     const path = '/' + params.slug.join('/') + '/';
     const Post = dynamic(() => import('src/posts' + path), {
-        loading: () => <p>Loading component...</p>,
-        fallback: true,
+        loading: () => <p>Loading component...</p>
     });
     return (
         <>
@@ -39,7 +35,7 @@ export default function Page({params}) {
                 {X.Oli({reset: 0}) && false}
                 <CenterWrapper id="main">
                     <h1 className="post-title">{archives[path].title}</h1>
-                    <ViewCount path={path} />
+                    {archives[path].time}<ViewCount path={path} />
                     <Post />
                 </CenterWrapper>
                 <Sidebar />
