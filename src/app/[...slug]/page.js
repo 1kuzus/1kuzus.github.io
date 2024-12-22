@@ -35,7 +35,7 @@ export default function Page({params}) {
                 {X.Oli({reset: 0}) && false}
                 <CenterWrapper id="main">
                     <h1 className="post-title">{archives[path].title}</h1>
-                    {archives[path].time}<ViewCount path={path} />
+                    <ViewCount path={path} />
                     <Post />
                 </CenterWrapper>
                 <Sidebar />
