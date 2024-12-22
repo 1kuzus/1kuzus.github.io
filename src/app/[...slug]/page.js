@@ -5,7 +5,7 @@ import CenterWrapper from 'src/component/CenterWrapper/CenterWrapper';
 import TOC from 'src/component/TOC/TOC';
 import Sidebar from 'src/component/Sidebar/Sidebar';
 import archives from 'src/app/_archives.json';
-import ViewsCount from 'src/component/ViewsCount/ViewsCount';
+import ViewCount from 'src/component/ViewCount/ViewCount';
 import './page.css';
 // fallback
 // 代码审计：导入顺序
@@ -40,7 +40,7 @@ export default function Page({params}) {
                 {X.Oli({reset: 0}) && false}
                 <CenterWrapper id="main">
                     <X.Title>{archives[path].title}</X.Title>
-                    <ViewsCount path={path} />
+                    <ViewCount path={path} />
                     <Suspense fallback={<p>Loading...</p>}>
                         <Post />
                     </Suspense>

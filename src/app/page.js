@@ -1,5 +1,5 @@
 import NextLink from 'next/link';
-import ViewsCount from 'src/component/ViewsCount/ViewsCount';
+import ViewCount from 'src/component/ViewCount/ViewCount';
 import './page.css';
 
 function Logo() {
@@ -46,7 +46,7 @@ export default function Homepage() {
                 <Author />
                 <h1 id="homepage-title">铃木的网络日记</h1>
                 <code id="homepage-subtitle">&nbsp;Rage, Perfectionism, Geek.</code>
-                <ViewsCount path="total" />
+                <ViewCount path="total" />
             </div>
             <div id="homepage-navs">
                 <HomepageNavCard titleZh="全部分类" titleEn="Categories." href="/categories/" />

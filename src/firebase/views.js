@@ -12,19 +12,18 @@ export async function getViews(path, isDev) {
     return viewsSnapshot.val() + 1;
 }
 
-export function increaseViews(path, isDev) {
+export async function increaseViews(path, isDev) {
     const refPath = isDev ? 'test-dev' : path.replace(/\//g, '_');
     const pathRef = ref(database, refPath);
-    update(pathRef, {views: increment(1)});
+    return update(pathRef, {views: increment(1)});
 }
 
-export function viewsOnValue(path, isDev, callback) {
+export function onViewsChange(path, isDev, callback) {
     const refPath = isDev ? 'test-dev' : path.replace(/\//g, '_');
     const viewsRef = ref(database, refPath + '/views');
     // 返回值为取消订阅函数
     return onValue(viewsRef, (viewsSnapshot) => {
         const views = viewsSnapshot.val();
-        console.log('onvalue', views);
         callback(views);
     });
 }
