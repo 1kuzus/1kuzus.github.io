@@ -1,11 +1,10 @@
 import dynamic from 'next/dynamic';
-import {Suspense} from 'react';
 import X from 'src/component/X';
-import CenterWrapper from 'src/component/CenterWrapper/CenterWrapper';
 import TOC from 'src/component/TOC/TOC';
 import Sidebar from 'src/component/Sidebar/Sidebar';
-import archives from 'src/app/_archives.json';
 import ViewCount from 'src/component/ViewCount/ViewCount';
+import CenterWrapper from 'src/component/CenterWrapper/CenterWrapper';
+import archives from 'src/app/_archives.json';
 import './page.css';
 // fallback
 // 代码审计：导入顺序
@@ -39,11 +38,9 @@ export default function Page({params}) {
             <div id="post-layout">
                 {X.Oli({reset: 0}) && false}
                 <CenterWrapper id="main">
-                    <X.Title>{archives[path].title}</X.Title>
+                    <h1 className="post-title">{archives[path].title}</h1>
                     <ViewCount path={path} />
-                    <Suspense fallback={<p>Loading...</p>}>
-                        <Post />
-                    </Suspense>
+                    <Post />
                 </CenterWrapper>
                 <Sidebar />
             </div>

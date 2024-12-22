@@ -1,6 +1,6 @@
 import Heading from 'src/component/Heading/Heading';
-import CenterWrapper from 'src/component/CenterWrapper/CenterWrapper';
 import CategoryCard from 'src/component/CategoryCard/CategoryCard';
+import CenterWrapper from 'src/component/CenterWrapper/CenterWrapper';
 import categories from 'src/app/_categories.json';
 
 export const metadata = {

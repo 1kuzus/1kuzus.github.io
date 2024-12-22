@@ -11,3 +11,7 @@
 #main * {
     word-break: break-word;
 }
+.post-title {
+    margin-bottom: 12px;
+    font-size: 28px;
+}

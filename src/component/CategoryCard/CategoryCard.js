@@ -23,7 +23,7 @@ export default function CategoryCard(props) {
                     {category.posts.map((path, index) => (
                         <li key={index}>
                             <Link href={path} active={activeIndex === index}>
-                                <span className="post-title">{archives[path].title}</span>
+                                <span>{archives[path].title}</span>
                             </Link>
                         </li>
                     ))}
