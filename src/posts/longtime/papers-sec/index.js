@@ -2,7 +2,7 @@ import X from 'src/component/X';
 
 /******
  
-Attacks on WebView in the Android System 
+Attacks on WebView in the Android System (ACSAC 2011)
 https://surface.syr.edu/cgi/viewcontent.cgi?article=1217&context=eecs
 
 1.Dina: Detecting hidden android inter-app communication in dynamic loaded code
@@ -35,7 +35,146 @@ inurl:dl.acm.org OR inurl:ndss OR inurl:usenix.org "inter-app" OR "cross-app"
 export default function Post() {
     return (
         <>
-            <X.H1>2FA</X.H1>
+            <X.H1>移动</X.H1>
+            <X.H2 href="https://people.eecs.berkeley.edu/~daw/papers/intents-mobisys11.pdf">
+                Analyzing Inter-Application Communication in Android (MobiSys 2011)
+            </X.H2>
+            <X.HighlightBlock background="gray">
+                <X.P>Android应用程序消息传递中的漏洞与检测工具ComDroid。</X.P>
+                <X.P>基于`Intent`的攻击方式：</X.P>
+                <X.Oli reset>
+                    <X.P>未经授权的Intent接收（Unauthorized Intent Receipt） - 攻击方是接收方</X.P>
+                    <X.Uli>
+                        Broadcast
+                        Theft：广播可能被精心注册了匹配规则`(intent-filter)`的恶意第三方应用窃听；如果是有序广播还可能被拦截。
+                    </X.Uli>
+                    <X.Uli>
+                        Activity
+                        Hijacking：同样地，恶意应用也可以在`Activity`中注册匹配目标隐式`Intent`的规则；尽管出现多个可匹配应用时会提示用户选择用哪个应用打开，攻击者可以伪装恶意应用的名字等信息以增加欺骗成功的可能性。
+                    </X.Uli>
+                    <X.Uli>
+                        Service Hijacking：恶意服务拦截了一个启动预期服务的`Intent`。（2014年的Android
+                        5.0以后要求服务必须显式启动）
+                    </X.Uli>
+                    <X.Uli>Special Intents</X.Uli>
+                </X.Oli>
+                <X.Oli>
+                    <X.P>Intent欺骗攻击（Intent Spoofing） - 攻击方是发送方</X.P>
+                    <X.Uli>
+                        Malicious Broadcast
+                        Injection：如果导出的（`android:exported="true"`）`BroadcastReceiver`盲目信任外部广播`Intent`，可能造成非预期行为。
+                    </X.Uli>
+                    <X.Uli>Malicious Activity Launch：导出的`Activity`可以被外部的显式/隐式`Intent`启动。</X.Uli>
+                    <X.Uli>
+                        Malicious Service Launch：类似地，导出的未受`permission`保护的`Service`可以被任何应用程序绑定。
+                    </X.Uli>
+                </X.Oli>
+            </X.HighlightBlock>
+            {/* -------------------------------- */}
+            <X.H1>小程序</X.H1>
+            <X.H2 href="https://dl.acm.org/doi/pdf/10.1145/3548606.3560597">
+                Cross Miniapp Request Forgery: Root Causes, Attacks, and Vulnerability Detection (CCS 2022)
+            </X.H2>
+            <X.HighlightBlock background="gray">
+                <X.P>
+                    当发生微信小程序跳转时，如果接收端没有检查`referrerInfo.appId`，就有可能收到CMRF攻击。攻击者可以用自己的恶意小程序通过`wx.navigateToMiniProgram`跳转到受害者的小程序，携带自定义的`extraData`实现攻击。
+                </X.P>
+                <X.P>两种类型的攻击：CMRF for Data Manipulation (CMRF-DM)、CMRF for Data Stealing (CMRF-DS)</X.P>
+                <X.Image src="cmrf.jpg" width="600px" filterDarkTheme />
+                <X.P>
+                    数据篡改：攻击方是发送方，使接收方收到恶意的非预期数据；\n数据盗窃：在攻击方发送假请求之后，如果还能收到响应的数据（这里指接收方通过`wx.navigateBackMiniProgram`的`extraData`返回给发送方的数据），则还可能造成意外的隐私泄露。
+                </X.P>
+            </X.HighlightBlock>
+            <X.HighlightBlock background="blue">
+                <X.H3>更多笔记</X.H3>
+                <X.P>跨小程序通信代码（发起端）：</X.P>
+                <X.CodeBlock
+                    language="js"
+                    code={`
+                    wx.navigateToMiniProgram({
+                        appId: 'wxfdcee92a299bcaf1', // 例：腾讯公益
+                        // path: 'page/index/index?id=123',
+                        extraData: {
+                            foo: 'bar'
+                        },
+                        success(res) {
+                            // ...
+                        }
+                    })
+                    `}
+                />
+                <X.P>跨小程序通信代码（接收端，如果有`extraData`）：</X.P>
+                <X.CodeBlock
+                    language="js"
+                    code={`
+                    // app.js
+                    App({
+                        onShow(options) {
+                            if(options.referrerInfo.extraData) {
+                                // ...
+                            }
+                        },
+                        // ...
+                    })
+                    `}
+                />
+            </X.HighlightBlock>
+            {/* -------------------------------- */}
+            <X.H1>其他</X.H1>
+            <X.H2 href="https://www.comp.nus.edu.sg/~liangzk/papers/asiaccs11.pdf">
+                Jump-Oriented Programming: A New Class of Code-Reuse Attack (AsiaCCS 2011)
+            </X.H2>
+            <X.HighlightBlock background="gray">
+                <X.P>
+                    ROP在栈溢出漏洞的基础上，利用程序中已有的gadgets（以`ret`结尾的指令序列），把参数和指向gadgets的地址写入栈中，从而操纵控制流；由于最终是由`ret`完成跳转，ROP攻击对栈有依赖。（因而也存在一些防御手段）
+                </X.P>
+                <X.P>
+                    JOP利用以`jmp`结尾的gadgets，有不依赖栈的好处，然而需要解决的问题是，并没有一个统一的机制将这些gadgets连接起来。（在ROP里，`ret`会从栈上读取数据改变`ip`，而栈上的数据可控）
+                </X.P>
+                <X.P>核心设计：</X.P>
+                <X.Image src="jop.jpg" width="600px" filterDarkTheme />
+                <X.Uli>
+                    <X.P>Dispatcher Gadget：起到一个虚拟PC的作用，能够遍历Dispatch Table；抽象地说，类似于：</X.P>
+                    <X.Formula text="pc \leftarrow f(pc); \\ goto \; *pc;" />
+                    <X.P>更具体地，比如以下代码：</X.P>
+                    <X.CodeBlock
+                        language="text"
+                        code={`
+                        add  edx, 4
+                        jmp  [edx]
+                        `}
+                    />
+                </X.Uli>
+                <X.Uli>
+                    Dispatch Table：就像一个虚拟的栈，每一项可能是下一个Functional
+                    Gadget的地址，或者一些指令（比如`pop`）要用到的中间数据等。由Dispatcher
+                    Gadget来实现控制流。这也是前面提到*【没有一个统一的机制将这些gadgets连接起来】*的解决方案。
+                </X.Uli>
+                <X.Uli>
+                    Functional Gadgets：真正执行目标逻辑的代码片段，以`jmp`指令结尾，并且需要最终跳转到Dispatcher
+                    Gadget（这样才能完成循环）。
+                </X.Uli>
+            </X.HighlightBlock>
+            <X.H2 href="https://www.usenix.org/system/files/sec20-elsabagh.pdf">
+                FIRMSCOPE: Automatic Uncovering of Privilege-Escalation Vulnerabilities in Pre-Installed Apps in Android
+                Firmware (Security 2020)
+            </X.H2>
+            <X.HighlightBlock background="gray">
+                <X.P>
+                    Android系统会有一些预安装的应用程序，这些应用程序随着固件一起发布，通常具有一些特权并且用户无法卸载。这些应用程序由设备供应商“精心”开发、并且通常被认为是安全的；论文发现这些应用程序中存在提权漏洞，并设计了工具FIRMSCOPE来自动发现这些漏洞。
+                </X.P>
+                <X.P>例如一个攻击实例：</X.P>
+                <X.Image src="firmscope.jpg" width="100%" filterDarkTheme />
+            </X.HighlightBlock>
+            <X.H2 href="https://www.usenix.org/system/files/sec22-sanusi-bohuk.pdf">
+                Gossamer: Securely Measuring Password-based Logins (Security 2022)
+            </X.H2>
+            <X.HighlightBlock background="gray">
+                <X.P>
+                    用户提交的登录信息（如密码）的特征对于制定更好的安全策略、提升系统的易用性以及检测攻击至关重要。然而，由于密码的高度敏感性，直接监测存在很大的安全风险，因此需要开发一种既能提供有用统计信息又能确保密码安全的测量基础设施。
+                </X.P>
+                <X.P>论文设计了一个名为Gossamer的测量系统，可以安全地记录登录请求，包括提交的密码的统计数据。</X.P>
+            </X.HighlightBlock>
             <X.H2 href="https://www.usenix.org/system/files/conference/usenixsecurity15/sec15-paper-karapanos.pdf">
                 Sound-Proof: Usable Two-Factor Authentication Based on Ambient Sound (Security 2015)
             </X.H2>
@@ -87,143 +226,6 @@ export default function Post() {
                 <X.Uli>
                     One-Button
                     Authentication：一键认证，用户在PC登录时手机端会有提示，用户选择允许/拒绝即可；如果攻击者在短时间内同步登录，用户如果没有正确分辨出请求的发起方，可能存在安全问题。
-                </X.Uli>
-            </X.HighlightBlock>
-            <X.H1>跨x通信</X.H1>
-            <X.H2 href="https://dl.acm.org/doi/pdf/10.1145/3548606.3560597">
-                Cross Miniapp Request Forgery: Root Causes, Attacks, and Vulnerability Detection (CCS 2022)
-            </X.H2>
-            <X.HighlightBlock background="gray">
-                <X.P>
-                    当发生微信小程序跳转时，如果接收端没有检查`referrerInfo.appId`，就有可能收到CMRF攻击。攻击者可以用自己的恶意小程序通过`wx.navigateToMiniProgram`跳转到受害者的小程序，携带自定义的`extraData`实现攻击。
-                </X.P>
-                <X.P>两种类型的攻击：CMRF for Data Manipulation (CMRF-DM)、CMRF for Data Stealing (CMRF-DS)</X.P>
-                <X.Image src="cmrf.jpg" width="600px" filterDarkTheme />
-                <X.P>
-                    数据篡改：攻击方是发送方，使接收方收到恶意的非预期数据；\n数据盗窃：在攻击方发送假请求之后，如果还能收到响应的数据（这里指接收方通过`wx.navigateBackMiniProgram`的`extraData`返回给发送方的数据），则还可能造成意外的隐私泄露。
-                </X.P>
-            </X.HighlightBlock>
-            <X.HighlightBlock background="blue">
-                <X.H3>更多笔记</X.H3>
-                <X.P>跨小程序通信代码（发起端）：</X.P>
-                <X.CodeBlock
-                    language="js"
-                    code={`
-                    wx.navigateToMiniProgram({
-                        appId: 'wxfdcee92a299bcaf1', // 例：腾讯公益
-                        // path: 'page/index/index?id=123',
-                        extraData: {
-                            foo: 'bar'
-                        },
-                        success(res) {
-                            // ...
-                        }
-                    })
-                    `}
-                />
-                <X.P>跨小程序通信代码（接收端，如果有`extraData`）：</X.P>
-                <X.CodeBlock
-                    language="js"
-                    code={`
-                    // app.js
-                    App({
-                        onShow(options) {
-                            if(options.referrerInfo.extraData) {
-                                // ...
-                            }
-                        },
-                        // ...
-                    })
-                    `}
-                />
-            </X.HighlightBlock>
-            <X.H2 href="https://people.eecs.berkeley.edu/~daw/papers/intents-mobisys11.pdf">
-                Analyzing Inter-Application Communication in Android (MobiSys 2011)
-            </X.H2>
-            <X.HighlightBlock background="gray">
-                <X.P>Android应用程序消息传递中的漏洞与检测工具ComDroid。</X.P>
-                <X.P>基于`Intent`的攻击方式：</X.P>
-                <X.Oli reset>
-                    <X.P>未经授权的Intent接收（Unauthorized Intent Receipt） - 攻击方是接收方</X.P>
-                    <X.Uli>
-                        Broadcast
-                        Theft：广播可能被精心注册了匹配规则`(intent-filter)`的恶意第三方应用窃听；如果是有序广播还可能被拦截。
-                    </X.Uli>
-                    <X.Uli>
-                        Activity
-                        Hijacking：同样地，恶意应用也可以在`Activity`中注册匹配目标隐式`Intent`的规则；尽管出现多个可匹配应用时会提示用户选择用哪个应用打开，攻击者可以伪装恶意应用的名字等信息以增加欺骗成功的可能性。
-                    </X.Uli>
-                    <X.Uli>
-                        Service Hijacking：恶意服务拦截了一个启动预期服务的`Intent`。（2014年的Android
-                        5.0以后要求服务必须显式启动）
-                    </X.Uli>
-                    <X.Uli>Special Intents</X.Uli>
-                </X.Oli>
-                <X.Oli>
-                    <X.P>Intent欺骗攻击（Intent Spoofing） - 攻击方是发送方</X.P>
-                    <X.Uli>
-                        Malicious Broadcast
-                        Injection：如果导出的（`android:exported="true"`）`BroadcastReceiver`盲目信任外部广播`Intent`，可能造成非预期行为。
-                    </X.Uli>
-                    <X.Uli>Malicious Activity Launch：导出的`Activity`可以被外部的显式/隐式`Intent`启动。</X.Uli>
-                    <X.Uli>
-                        Malicious Service Launch：类似地，导出的未受`permission`保护的`Service`可以被任何应用程序绑定。
-                    </X.Uli>
-                </X.Oli>
-            </X.HighlightBlock>
-            <X.H1>其他</X.H1>
-            <X.H2 href="https://www.usenix.org/system/files/sec20-elsabagh.pdf">
-                FIRMSCOPE: Automatic Uncovering of Privilege-Escalation Vulnerabilities in Pre-Installed Apps in Android
-                Firmware (Security 2020)
-            </X.H2>
-            <X.HighlightBlock background="gray">
-                <X.P>
-                    Android系统会有一些预安装的应用程序，这些应用程序随着固件一起发布，通常具有一些特权并且用户无法卸载。这些应用程序由设备供应商“精心”开发、并且通常被认为是安全的；论文发现这些应用程序中存在提权漏洞，并设计了工具FIRMSCOPE来自动发现这些漏洞。
-                </X.P>
-                <X.P>例如一个攻击实例：</X.P>
-                <X.Image src="firmscope.jpg" width="100%" filterDarkTheme />
-            </X.HighlightBlock>
-            <X.H2 href="https://www.usenix.org/system/files/sec22-sanusi-bohuk.pdf">
-                Gossamer: Securely Measuring Password-based Logins (Security 2022)
-            </X.H2>
-            <X.HighlightBlock background="gray">
-                <X.P>
-                    用户提交的登录信息（如密码）的特征对于制定更好的安全策略、提升系统的易用性以及检测攻击至关重要。然而，由于密码的高度敏感性，直接监测存在很大的安全风险，因此需要开发一种既能提供有用统计信息又能确保密码安全的测量基础设施。
-                </X.P>
-                <X.P>论文设计了一个名为Gossamer的测量系统，可以安全地记录登录请求，包括提交的密码的统计数据。</X.P>
-            </X.HighlightBlock>
-            <X.H2 href="https://www.comp.nus.edu.sg/~liangzk/papers/asiaccs11.pdf">
-                Jump-Oriented Programming: A New Class of Code-Reuse Attack (AsiaCCS 2011)
-            </X.H2>
-            <X.HighlightBlock background="gray">
-                <X.P>
-                    ROP在栈溢出漏洞的基础上，利用程序中已有的gadgets（以`ret`结尾的指令序列），把参数和指向gadgets的地址写入栈中，从而操纵控制流；由于最终是由`ret`完成跳转，ROP攻击对栈有依赖。（因而也存在一些防御手段）
-                </X.P>
-                <X.P>
-                    JOP利用以`jmp`结尾的gadgets，有不依赖栈的好处，然而需要解决的问题是，并没有一个统一的机制将这些gadgets连接起来。（在ROP里，`ret`会从栈上读取数据改变`ip`，而栈上的数据可控）
-                </X.P>
-                <X.P>核心设计：</X.P>
-                <X.Image src="jop.jpg" width="600px" filterDarkTheme />
-                <X.Uli>
-                    <X.P>Dispatcher Gadget：起到一个虚拟PC的作用，能够遍历Dispatch Table；抽象地说，类似于：</X.P>
-                    <X.Formula text="pc \leftarrow f(pc); \\ goto \; *pc;" />
-                    <X.P>更具体地，比如以下代码：</X.P>
-                    <X.CodeBlock
-                        language="text"
-                        code={`
-                        add  edx, 4
-                        jmp  [edx]
-                        `}
-                    />
-                </X.Uli>
-                <X.Uli>
-                    Dispatch Table：就像一个虚拟的栈，每一项可能是下一个Functional
-                    Gadget的地址，或者一些指令（比如`pop`）要用到的中间数据等。由Dispatcher
-                    Gadget来实现控制流。这也是前面提到*【没有一个统一的机制将这些gadgets连接起来】*的解决方案。
-                </X.Uli>
-                <X.Uli>
-                    Functional Gadgets：真正执行目标逻辑的代码片段，以`jmp`指令结尾，并且需要最终跳转到Dispatcher
-                    Gadget（这样才能完成循环）。
                 </X.Uli>
             </X.HighlightBlock>
         </>
