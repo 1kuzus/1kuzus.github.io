@@ -1,9 +1,6 @@
 import X from 'src/component/X';
 
 /******
- 
-Attacks on WebView in the Android System (ACSAC 2011)
-https://surface.syr.edu/cgi/viewcontent.cgi?article=1217&context=eecs
 
 1.Dina: Detecting hidden android inter-app communication in dynamic loaded code
 
@@ -13,7 +10,6 @@ https://surface.syr.edu/cgi/viewcontent.cgi?article=1217&context=eecs
 
 Unauthorized Origin Crossing on Mobile Platforms: Threats and Mitigation
 https://homes.luddy.indiana.edu/xw7/papers/wang2013unauthorized.pdf （精读一下）
-
 
 
 Unleashing the Walking Dead: Understanding Cross-App Remote Infections on Mobile WebViews
@@ -36,6 +32,15 @@ export default function Post() {
     return (
         <>
             <X.H1>移动</X.H1>
+            <X.H2 href="https://surface.syr.edu/cgi/viewcontent.cgi?article=1217&context=eecs">Attacks on WebView in the Android System (ACSAC 2011)</X.H2>
+            <X.HighlightBlock background="gray">
+                <X.P>普通浏览器的一个重要作用是隔离网页（中的JS）和操作系统，因此使用可信的浏览器很重要；但`WebView`恰好是为了使得网页与Android系统更灵活的交互，因此打破了浏览器的这种隔离机制。本文主要介绍了和`WebView`相关的攻击。</X.P>
+                <X.P>`addJavascriptInterface`是Android中`WebView`类的一个方法，用于将Java对象暴露给JavaScript代码，然后JavaScript可以直接调用Android中Java对象的方法，从而实现Android与网页中的JavaScript进行交互。此外，如果赋予`WebView`读写文件的能力，则打破了浏览器的同源机制，因为不同的站点都可以在同一份文件上进行读写。</X.P>
+                <X.P>如果网页是恶意的，并且App通过`addJavascriptInterface`提供了接口，则可能导致被执行恶意代码（危害App），或污染其他站点需要访问的数据（危害其他站点）。</X.P>
+                <X.P>如果App是恶意的，可能会被：</X.P>
+                <X.Uli>JS注入：`WebView`给App提供了在网页中注入JS的能力；</X.Uli>
+                <X.Uli>事件劫持：`WebViewClient`类提供了一些网页事件的钩子，App可以重写这些方法。</X.Uli>
+            </X.HighlightBlock>
             <X.H2 href="https://people.eecs.berkeley.edu/~daw/papers/intents-mobisys11.pdf">Analyzing Inter-Application Communication in Android (MobiSys 2011)</X.H2>
             <X.HighlightBlock background="gray">
                 <X.P>Android应用程序消息传递中的漏洞与检测工具ComDroid。</X.P>
