@@ -7,9 +7,7 @@ export default function Post() {
             <X.H1>贝叶斯公式</X.H1>
             <X.HighlightBlock>
                 <X.Formula text="P(\omega_i|x) = \frac{P(x|\omega_i) \cdot P(\omega_i)}{P(x)}" />
-                <X.P>
-                    $P(\omega_i)$为`先验概率`，表示没有进行任何观测时的主观推测概率\n$P(x|\omega_i)$为`类条件密度`，已知\n$P(\omega_i|x)$为`后验概率`，希望得到其值，并用于决策
-                </X.P>
+                <X.P>$P(\omega_i)$为`先验概率`，表示没有进行任何观测时的主观推测概率\n$P(x|\omega_i)$为`类条件密度`，已知\n$P(\omega_i|x)$为`后验概率`，希望得到其值，并用于决策</X.P>
             </X.HighlightBlock>
             <X.P>考虑如下例子，记$A$为`抓到方形`，$B$为`抓到实心图形`：</X.P>
             <Boxes />
@@ -38,32 +36,23 @@ export default function Post() {
             </X.Oli>
             <X.Oli>
                 <X.P>似然比$l$、似然比阈值$\lambda$</X.P>
-                <X.Formula
-                    text="l(x) = \frac{P(x|\omega_1)}{P(x|\omega_2)}, \; \lambda = \frac{P(\omega_2)}{P(\omega_1)}, \; l(x) \gt \lambda"
-                    alignLeft
-                />
+                <X.Formula text="l(x) = \frac{P(x|\omega_1)}{P(x|\omega_2)}, \; \lambda = \frac{P(\omega_2)}{P(\omega_1)}, \; l(x) \gt \lambda" alignLeft />
             </X.Oli>
             <X.Oli>
                 <X.P>对数似然比</X.P>
                 <X.Formula text="-\ln [l(x)] \lt \ln\frac{P(\omega_1)}{P(\omega_2)}" alignLeft />
             </X.Oli>
             <X.HighlightBlock>
-                <X.P>
-                    可以把每一类的后验概率$P(\omega_i|x)$或者$P(x|\omega_i)P(\omega_i)$看作该类的一个`判别函数`$g(x)$，决策的过程就是各类的判别函数比较大小
-                </X.P>
+                <X.P>可以把每一类的后验概率$P(\omega_i|x)$或者$P(x|\omega_i)P(\omega_i)$看作该类的一个`判别函数`$g(x)$，决策的过程就是各类的判别函数比较大小</X.P>
             </X.HighlightBlock>
             <X.H1>最小风险贝叶斯决策</X.H1>
             <X.H2>条件风险</X.H2>
             <X.Formula text="R(\alpha_i|x) = \sum_j\lambda(\alpha_i,\omega_j)P(\omega_j|x)" />
-            <X.P>
-                $\lambda(\alpha_i,\omega_j)$表示样本$x \in \omega_j$但被决策为$\omega_i$类的损失，$i=j$表示正确决策
-            </X.P>
+            <X.P>$\lambda(\alpha_i,\omega_j)$表示样本$x \in \omega_j$但被决策为$\omega_i$类的损失，$i=j$表示正确决策</X.P>
             <X.H2>最小风险贝叶斯决策</X.H2>
             <X.P>研究的类别有`c`个，做了`k`个决策。</X.P>
             <X.HighlightBlock>
-                <X.P>
-                    若{`$R(\\alpha_i|x)=\\min_{j=1,...,k}R(\\alpha_j|x)$`}，则采用决策$\alpha_i$，即$x$属于$\omega_i$类
-                </X.P>
+                <X.P>若{`$R(\\alpha_i|x)=\\min_{j=1,...,k}R(\\alpha_j|x)$`}，则采用决策$\alpha_i$，即$x$属于$\omega_i$类</X.P>
             </X.HighlightBlock>
             <X.H2>两分类情况下的最小风险贝叶斯决策</X.H2>
             <X.P>简记$\lambda(\alpha_i,\omega_j)$为{`$\\lambda_{ij}$`}：</X.P>
@@ -76,8 +65,7 @@ export default function Post() {
                 ，则决策$x \in \omega_1$
             </X.P>
             <X.P>
-                若
-                {`$l(x)=\\frac{P(x|\\omega_1)}{P(x|\\omega_2)} \\gt \\frac{\\lambda_{12} - \\lambda_{22}}{\\lambda_{21} - \\lambda_{11}} \\cdot \\frac{P(\\omega_2)}{P(\\omega_1)}$`}
+                若{`$l(x)=\\frac{P(x|\\omega_1)}{P(x|\\omega_2)} \\gt \\frac{\\lambda_{12} - \\lambda_{22}}{\\lambda_{21} - \\lambda_{11}} \\cdot \\frac{P(\\omega_2)}{P(\\omega_1)}$`}
                 ，则决策$x \in \omega_1$
             </X.P>
             <X.HighlightBlock>
@@ -135,9 +123,7 @@ export default function Post() {
                 />
                 <X.P>此式通用于高维正态分布。</X.P>
             </X.HighlightBlock>
-            <X.P>
-                理解这个长公式，先从两个概念入手：$\Sigma$矩阵代表什么？$\rho$似乎没有在通式中体现，其含义是什么？\n对于二维正态分布例子中的两个变量来说，它们的*协方差*定义为：
-            </X.P>
+            <X.P>理解这个长公式，先从两个概念入手：$\Sigma$矩阵代表什么？$\rho$似乎没有在通式中体现，其含义是什么？\n对于二维正态分布例子中的两个变量来说，它们的*协方差*定义为：</X.P>
             <X.Formula text="cov(x_1,x_2)=E[(x_1-\mu_1)(x_2-\mu_2)]=E(x_1x_2)-\mu_1\mu_2" />
             <X.P>$\Sigma$矩阵的含义其实是两个变量的协方差矩阵，也就是：</X.P>
             <X.Formula
@@ -184,22 +170,18 @@ export default function Post() {
                 </X.P>
             </X.HighlightBlock>
             <X.HighlightBlock background="gray">
-                <X.P>
-                    从几何的视角来看，以上决策规则实际就是比较样本点和各类的中心点距离，并且选择距离最近的类别作为决策结果。\n以上分类器也称`最小距离分类器`，把每个`均值`看作一个`典型的样本`，则这种分类方法也称为`模板匹配技术`。
-                </X.P>
+                <X.P>从几何的视角来看，以上决策规则实际就是比较样本点和各类的中心点距离，并且选择距离最近的类别作为决策结果。\n以上分类器也称`最小距离分类器`，把每个`均值`看作一个`典型的样本`，则这种分类方法也称为`模板匹配技术`。</X.P>
             </X.HighlightBlock>
             <X.P>如果对于上述判别函数{`$g(\\bm{X})$`}的欧式距离项展开，并删掉与类别无关的二次项，得：</X.P>
             <X.Formula text="g_i(\bm{X}) = \bm{W_i}^T\bm{X} + b" />
             <X.P>
-                其中{`$\\bm{W_i} = \\frac{1}{\\sigma^2}\\bm{\\mu_i}$`}，
-                {`$b = -\\frac{1}{2\\sigma^2}\\bm{\\mu_i}^T\\bm{\\mu_i} + \\ln P(\\omega_i)$`}
+                其中{`$\\bm{W_i} = \\frac{1}{\\sigma^2}\\bm{\\mu_i}$`}，{`$b = -\\frac{1}{2\\sigma^2}\\bm{\\mu_i}^T\\bm{\\mu_i} + \\ln P(\\omega_i)$`}
             </X.P>
             <X.P>判别函数是{`$\\bm{X}$`}的线性函数，称为`线性分类器`。</X.P>
             <X.P>接下来考虑决策面方程：</X.P>
             <X.Formula text="g_i(\bm{X}) = g_j(\bm{X}) \; \Rightarrow \; \bm{W}^T(\bm{X}-\bm{X_0}) = 0" />
             <X.P>
-                其中{`$\\bm{W} = \\bm{\\mu_i} - \\bm{\\mu_j}$`}，
-                {`$\\bm{X_0} = \\frac{1}{2}(\\bm{\\mu_i} + \\bm{\\mu_j}) - \\sigma^2\\frac{\\bm{\\mu_i}-\\bm{\\mu_j}}{\\Vert \\bm{\\mu_i}-\\bm{\\mu_j} \\Vert^2}\\ln\\frac{P(\\omega_i)}{P(\\omega_j)}$`}
+                其中{`$\\bm{W} = \\bm{\\mu_i} - \\bm{\\mu_j}$`}，{`$\\bm{X_0} = \\frac{1}{2}(\\bm{\\mu_i} + \\bm{\\mu_j}) - \\sigma^2\\frac{\\bm{\\mu_i}-\\bm{\\mu_j}}{\\Vert \\bm{\\mu_i}-\\bm{\\mu_j} \\Vert^2}\\ln\\frac{P(\\omega_i)}{P(\\omega_j)}$`}
             </X.P>
             <X.P>
                 这个方程确定了决策面是通过{`$\\bm{X}_0$`}并正交于向量{`$\\bm{W}$`}
@@ -208,17 +190,13 @@ export default function Post() {
                 的后项为`0`，此时决策线就是样本中心连线的中垂线。\n来看一个具体的例子！我们需要对平面上的点进行分类任务，第一堆样本点中心为`(2,3)`，第二堆样本点中心为`(4,4)`：
             </X.P>
             <X.Image src="fig1.png" width="500px" filterDarkTheme />
-            <X.P>
-                红色和蓝色分别标记了两类样本点的分布情况，其中加粗的红点和蓝点表示样本中心的位置；\n生成两组样本时使用的方差均为`0.8`；样本的$x,y$坐标相关性为`0`。\n现在对平面上的所有点计算判别函数`g_red`和`g_blue`。`g_red`更大的区域用红色阴影表示，`g_blue`更大的区域用蓝色阴影表示。\n两个区域的交界处即为自然生成的决策线。结果如下：
-            </X.P>
+            <X.P>红色和蓝色分别标记了两类样本点的分布情况，其中加粗的红点和蓝点表示样本中心的位置；\n生成两组样本时使用的方差均为`0.8`；样本的$x,y$坐标相关性为`0`。\n现在对平面上的所有点计算判别函数`g_red`和`g_blue`。`g_red`更大的区域用红色阴影表示，`g_blue`更大的区域用蓝色阴影表示。\n两个区域的交界处即为自然生成的决策线。结果如下：</X.P>
             <X.FlexRow minWidth="600px">
                 <X.Image src="fig2.png" width="33%" filterDarkTheme />
                 <X.Image src="fig3.png" width="33%" filterDarkTheme />
                 <X.Image src="fig4.png" width="33%" filterDarkTheme />
             </X.FlexRow>
-            <X.P>
-                决策线垂直于样本中心的连线并且在先验概率相等的前提下过样本中心连线中点`(左图)`。\n如果先验概率不相等，决策线会偏向先验概率小的一侧`(中图)`，而且有可能超过端点`(右图)`。
-            </X.P>
+            <X.P>决策线垂直于样本中心的连线并且在先验概率相等的前提下过样本中心连线中点`(左图)`。\n如果先验概率不相等，决策线会偏向先验概率小的一侧`(中图)`，而且有可能超过端点`(右图)`。</X.P>
             <X.P>对于三分类问题，得到的结果类似：</X.P>
             <X.Image src="fig5.png" width="500px" filterDarkTheme />
             <X.Oli>
@@ -226,13 +204,9 @@ export default function Post() {
             </X.Oli>
             <X.HighlightBlock background="gray">
                 <X.H3>马氏距离</X.H3>
-                <X.P>
-                    马氏距离可以看作对欧氏距离的修正。考虑下面的例子：\n黑色的点距离`green`类样本中心更近，与`red`、`blue`类样本中心等距。它应该被归为哪一类？\n
-                </X.P>
+                <X.P>马氏距离可以看作对欧氏距离的修正。考虑下面的例子：\n黑色的点距离`green`类样本中心更近，与`red`、`blue`类样本中心等距。它应该被归为哪一类？\n</X.P>
                 <X.Image src="fig6.png" width="500px" filterDarkTheme />
-                <X.P>
-                    按照欧氏距离判别，它应该被归为`green`类；然而从直觉上判断，它更可能属于`red`类。\n欧式距离并没有考虑样本的方差，以及样本各个维度之间的相关性。\n定义马氏距离：
-                </X.P>
+                <X.P>按照欧氏距离判别，它应该被归为`green`类；然而从直觉上判断，它更可能属于`red`类。\n欧式距离并没有考虑样本的方差，以及样本各个维度之间的相关性。\n定义马氏距离：</X.P>
                 <X.Formula text="r^2 = (\bm{X}-\bm{\mu})^T \bm{\Sigma}^{-1} (\bm{X}-\bm{\mu})" />
                 <X.P>如果样本是二维的，且协方差矩阵$\sigma$为对角矩阵，马氏距离表示为：</X.P>
                 <X.Formula
@@ -258,8 +232,7 @@ export default function Post() {
             <X.P>决策面方程：</X.P>
             <X.Formula text="\bm{W}^T(\bm{X}-\bm{X_0}) = 0" />
             <X.P>
-                其中{`$\\bm{W} =\\bm{\\Sigma}^{-1} (\\bm{\\mu_i} - \\bm{\\mu_j})$`}，
-                {`$\\bm{X_0} = \\frac{1}{2}(\\bm{\\mu_i} + \\bm{\\mu_j}) - \\frac{\\bm{\\mu_i}-\\bm{\\mu_j}}{(\\bm{\\mu_i}-\\bm{\\mu_j})^T \\bm{\\Sigma}^{-1} (\\bm{\\mu_i}-\\bm{\\mu_j})}\\ln\\frac{P(\\omega_i)}{P(\\omega_j)}$`}
+                其中{`$\\bm{W} =\\bm{\\Sigma}^{-1} (\\bm{\\mu_i} - \\bm{\\mu_j})$`}，{`$\\bm{X_0} = \\frac{1}{2}(\\bm{\\mu_i} + \\bm{\\mu_j}) - \\frac{\\bm{\\mu_i}-\\bm{\\mu_j}}{(\\bm{\\mu_i}-\\bm{\\mu_j})^T \\bm{\\Sigma}^{-1} (\\bm{\\mu_i}-\\bm{\\mu_j})}\\ln\\frac{P(\\omega_i)}{P(\\omega_j)}$`}
             </X.P>
             <X.P>此时，先验概率相等的前提下，决策线仍然过样本中心连线中点；但不一定垂直于样本中心的连线。</X.P>
             <X.Image src="fig7.png" width="500px" filterDarkTheme />

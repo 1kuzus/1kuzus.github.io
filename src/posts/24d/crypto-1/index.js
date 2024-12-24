@@ -18,12 +18,9 @@ export default function Post() {
             </X.Uli>
             <X.H2>异或的重要性质</X.H2>
             <X.P>
-                $Y$是{`$\\{0,1\\}^n$`}上的随机变量，$X$与$Y$独立，且是{`$\\{0,1\\}^n$`}上的均匀分布的随机变量，则$Z = X
-                \oplus Y$是{`$\\{0,1\\}^n$`}上的均匀分布的随机变量。
+                $Y$是{`$\\{0,1\\}^n$`}上的随机变量，$X$与$Y$独立，且是{`$\\{0,1\\}^n$`}上的均匀分布的随机变量，则$Z = X \oplus Y$是{`$\\{0,1\\}^n$`}上的均匀分布的随机变量。
             </X.P>
-            <X.P>
-                证明：无论$Y$的分布如何，考虑其中一位$Y_i$，假设$P(Y_i=0)=p_0$、$P(Y_i=1)=p_1$，由于$X$是均匀分布，$X_i$取$0$或$1$的概率都是一半，因此有：
-            </X.P>
+            <X.P>证明：无论$Y$的分布如何，考虑其中一位$Y_i$，假设$P(Y_i=0)=p_0$、$P(Y_i=1)=p_1$，由于$X$是均匀分布，$X_i$取$0$或$1$的概率都是一半，因此有：</X.P>
             <X.Formula text="P(X_i \oplus Y_i = 0)=\frac{p_0}{2}+\frac{p_1}{2}=\frac{1}{2}" />
             <X.Formula text="P(X_i \oplus Y_i = 1)=\frac{p_1}{2}+\frac{p_0}{2}=\frac{1}{2}" />
             <X.H2>生日悖论</X.H2>
@@ -34,12 +31,8 @@ export default function Post() {
             <X.H2>密码分析中的几种攻击模式</X.H2>
             <X.Uli>唯密文攻击`(Ciphertext Only Attack, COA)`：攻击者只能获得密文</X.Uli>
             <X.Uli>已知明文攻击`(Known Plaintext Attack, KPA)`：攻击者有一些密文并且知道相对应的明文</X.Uli>
-            <X.Uli>
-                选择明文攻击`(Chosen Plaintext Attack, CPA)`：攻击者可以选择一些明文，并从系统中获得相对应的密文
-            </X.Uli>
-            <X.Uli>
-                选择密文攻击`(Chosen Ciphertext Attack, CCA)`：攻击者可以选择一些密文，并从系统中获得相对应的明文
-            </X.Uli>
+            <X.Uli>选择明文攻击`(Chosen Plaintext Attack, CPA)`：攻击者可以选择一些明文，并从系统中获得相对应的密文</X.Uli>
+            <X.Uli>选择密文攻击`(Chosen Ciphertext Attack, CCA)`：攻击者可以选择一些密文，并从系统中获得相对应的明文</X.Uli>
             <X.H1>一次性密码本与完美安全性</X.H1>
             <X.P>
                 一次性密码本`(one-time pad)`的加密方式即：{`$M=C=K=\\{0,1\\}^n$`}
@@ -54,15 +47,10 @@ export default function Post() {
                 <X.Formula text="\forall m \in M, c \in C: E(k,m)=c" />
                 <X.P>成立的$k$有且仅有一个。</X.P>
             </X.HighlightBlock>
-            <X.P>
-                根据异或的性质不难看出一次性密码本具有完美安全性。（从概念上理解，这意味着从密文中无法获得任何关于明文的有效信息，因为对于任何一个可能的明文$m$，总能找到一个密钥$k=m
-                \oplus c$使得加密后的密文恰好就是$c$。）遗憾的是如果一个加密算法想具有完美安全性，则必须有$|K| \geq
-                |M|$，然而过长的密钥难以投入实际应用。（如果能保证密钥的安全传输，也就能保证明文的安全传输了）
-            </X.P>
+            <X.P>根据异或的性质不难看出一次性密码本具有完美安全性。（从概念上理解，这意味着从密文中无法获得任何关于明文的有效信息，因为对于任何一个可能的明文$m$，总能找到一个密钥$k=m \oplus c$使得加密后的密文恰好就是$c$。）遗憾的是如果一个加密算法想具有完美安全性，则必须有$|K| \geq |M|$，然而过长的密钥难以投入实际应用。（如果能保证密钥的安全传输，也就能保证明文的安全传输了）</X.P>
             <X.H1>伪随机数生成器PRG</X.H1>
             <X.P>
-                为了使得一次性密码本加密算法能够实际应用，希望能使得密钥空间不至于过长。伪随机数生成器`(Pseudo Random
-                Generator, PRG)`是一个函数{`$G:\\{0,1\\}^s\\rightarrow\\{0,1\\}^n$`}
+                为了使得一次性密码本加密算法能够实际应用，希望能使得密钥空间不至于过长。伪随机数生成器`(Pseudo Random Generator, PRG)`是一个函数{`$G:\\{0,1\\}^s\\rightarrow\\{0,1\\}^n$`}
                 ，其中$s$是种子长度，$n$是输出长度，$n \gg s$。
             </X.P>
             <X.H2>PRG的不可预测性</X.H2>
@@ -93,29 +81,20 @@ export default function Post() {
                 <X.P>结论：二者是等价的，一个PRG是安全的当且仅当它是不可预测的。</X.P>
             </X.HighlightBlock>
             <X.HighlightBlock background="red">
-                <X.P>
-                    不可预测性的定义会让人怀疑这是不是太弱了：如果不是能用前缀预测下一位，而是能用后缀预测上一位、能用其他位预测中间位、或者甚至其他某种可利用的统计学特性呢？
-                </X.P>
-                <X.P>
-                    安全性的定义则相对来说更直观一些。当然事实上二者已经被证明是等价的，如果用前缀预测做统计检验无法区别一个PRG和真随机数，则任何统计检验都不能。
-                </X.P>
+                <X.P>不可预测性的定义会让人怀疑这是不是太弱了：如果不是能用前缀预测下一位，而是能用后缀预测上一位、能用其他位预测中间位、或者甚至其他某种可利用的统计学特性呢？</X.P>
+                <X.P>安全性的定义则相对来说更直观一些。当然事实上二者已经被证明是等价的，如果用前缀预测做统计检验无法区别一个PRG和真随机数，则任何统计检验都不能。</X.P>
             </X.HighlightBlock>
             <X.H3>安全的PRG是不可预测的</X.H3>
             <X.P>即：可预测的PRG是不安全的。这是比较容易证明的，可以构造一个统计检验$A$：</X.P>
             <X.Formula text="A(x)=1 \; \text{if} \; pred(x_{i+1})=x_{i+1}, \; \text{else} \; 0" />
             <X.P>显然可预测就意味着$Adv$是不可忽略的，因此PRG是不安全的。</X.P>
             <X.H3>不可预测的PRG是安全的</X.H3>
-            <X.P>
-                证明起来复杂一点，可以参考@[https://www.noahsd.com/crypto_lecture_notes/CS4830_Lecture_7____PRGs.pdf]@的`1.3`节，这里贴出截图：
-            </X.P>
+            <X.P>证明起来复杂一点，可以参考@[https://www.noahsd.com/crypto_lecture_notes/CS4830_Lecture_7____PRGs.pdf]@的`1.3`节，这里贴出截图：</X.P>
             <X.Image src="fig1.jpg" width="800px" filterDarkTheme />
             <X.Image src="fig2.jpg" width="800px" filterDarkTheme />
             <X.H1>流密码</X.H1>
             <X.H2>概念</X.H2>
-            <X.P>
-                有了PRG以后，可以根据一个较短的密钥$k$生成一个较长的伪随机密钥流$G(k)$，然后就可以像一次性密码本那样，与消息进行逐比特异或进行加密，$c=m
-                \oplus G(k)$。
-            </X.P>
+            <X.P>有了PRG以后，可以根据一个较短的密钥$k$生成一个较长的伪随机密钥流$G(k)$，然后就可以像一次性密码本那样，与消息进行逐比特异或进行加密，$c=m \oplus G(k)$。</X.P>
             <X.P>流密码是*对称加密算法*，这意味着加密和解密使用的是同一个密钥。</X.P>
             <X.H2>RC4（代码实现）</X.H2>
             <X.CodeBlock
@@ -159,9 +138,7 @@ export default function Post() {
             />
             <X.H1>练习题</X.H1>
             <X.H2>先压缩还是先加密？</X.H2>
-            <X.P>
-                如题，假如想在传输数据时同时应用压缩和加密，则应该*先压缩后加密*。因为压缩本来就是利用信息冗余，而如果先加密，生成的密文近似随机，则很难再有压缩空间。
-            </X.P>
+            <X.P>如题，假如想在传输数据时同时应用压缩和加密，则应该*先压缩后加密*。因为压缩本来就是利用信息冗余，而如果先加密，生成的密文近似随机，则很难再有压缩空间。</X.P>
             <X.H2>编程作业</X.H2>
             <X.P>使用同一个流密码密钥多次加密存在安全隐患。给出了以下`11`个密文：</X.P>
             <X.CodeBlock
@@ -184,9 +161,7 @@ export default function Post() {
                 target = "32510ba9babebbbefd001547a810e67149caee11d945cd7fc81a05e9f85aac650e9052ba6a8cd8257bf14d13e6f0a803b54fde9e77472dbff89d71b57bddef121336cb85ccb8f3315f4b52e301d16e9f52f904"
                 `}
             />
-            <X.P>
-                已知这些密文都是使用同一个密钥进行的加密，加密的方法是直接异或（就是一次性密码本），这里密钥足够长，对于每条明文，只取与明文等长的密钥前缀进行加密。（后面的讨论中对于串长度不同的情况，也默认以最短的为准。）目标是求出最后一条密文`target`对应的明文。
-            </X.P>
+            <X.P>已知这些密文都是使用同一个密钥进行的加密，加密的方法是直接异或（就是一次性密码本），这里密钥足够长，对于每条明文，只取与明文等长的密钥前缀进行加密。（后面的讨论中对于串长度不同的情况，也默认以最短的为准。）目标是求出最后一条密文`target`对应的明文。</X.P>
             <X.P>当两条消息使用相同的密钥$k$进行加密时，由于$c_1=m_1 \oplus k$，$c_2=m_2 \oplus k$，则有：</X.P>
             <X.Formula text="c_1 \oplus c_2 = m_1 \oplus m_2" />
             <X.P>考虑两个ASCII字符异或的结果，ASCII字符存在一些特性：</X.P>
@@ -194,9 +169,7 @@ export default function Post() {
             <X.Uli>同一英文字母，大小写的ASCII码值差`32`（翻转第`6`位）；</X.Uli>
             <X.Uli>空格的ASCII码值刚好是`32`，因此字符异或空格的结果相当于翻转大小写；</X.Uli>
             <X.Uli>字符异或字符的值小于`64`，字符异或空格的值大于`64`。</X.Uli>
-            <X.P>
-                根据上述规律，思想是将`target`与前`10`条密文分别异或，如果结果大于`64`，则有可能泄露`target`在这一位上的字符。不过消息明文中可能含有特殊符号或者非英文字符干扰结果，例如ASCII码值小于`64`的英文标点与字符异或后也会结果大于`64`，因此要根据统计结果综合判断。
-            </X.P>
+            <X.P>根据上述规律，思想是将`target`与前`10`条密文分别异或，如果结果大于`64`，则有可能泄露`target`在这一位上的字符。不过消息明文中可能含有特殊符号或者非英文字符干扰结果，例如ASCII码值小于`64`的英文标点与字符异或后也会结果大于`64`，因此要根据统计结果综合判断。</X.P>
             <X.P>首先为了方便编程，先把字符串密文逐字节转成列表：</X.P>
             <X.CodeBlock
                 language="python"
@@ -209,9 +182,7 @@ export default function Post() {
                 target = cipher_to_byte_list(target)
                 `}
             />
-            <X.P>
-                然后编写`leak`函数，统计每一位`i`上，`target[i]`与`cipher[i]`异或的结果，大于等于`64`则保存下来（保存的时候再次异或`32`，记录原始的字符）：
-            </X.P>
+            <X.P>然后编写`leak`函数，统计每一位`i`上，`target[i]`与`cipher[i]`异或的结果，大于等于`64`则保存下来（保存的时候再次异或`32`，记录原始的字符）：</X.P>
             <X.CodeBlock
                 language="python"
                 code={`
@@ -229,12 +200,8 @@ export default function Post() {
                 `}
             />
             <X.P>当异或结果大于等于`64`时有以下几种情况：</X.P>
-            <X.Uli>
-                `target[i]`是字符，`cipher[i]`是空格，此时通常`stats[i]`中会有`1`~`3`个相同的值，这个值就是`target[i]`的明文字符；
-            </X.Uli>
-            <X.Uli>
-                `target[i]`是空格，`cipher[i]`是字符，通常只有这种情况下`stats[i]`的长度比较长，并且值各不相同，因为同一个位置出现字符的概率显然更大；
-            </X.Uli>
+            <X.Uli>`target[i]`是字符，`cipher[i]`是空格，此时通常`stats[i]`中会有`1`~`3`个相同的值，这个值就是`target[i]`的明文字符；</X.Uli>
+            <X.Uli>`target[i]`是空格，`cipher[i]`是字符，通常只有这种情况下`stats[i]`的长度比较长，并且值各不相同，因为同一个位置出现字符的概率显然更大；</X.Uli>
             <X.Uli>出现了特殊字符，此时可能会干扰结果，因此通过取众数来决定结果；</X.Uli>
             <X.CodeBlock
                 language="python"
@@ -262,14 +229,9 @@ export default function Post() {
                 `}
             />
             <X.P>最后还需要手动修正一些字符，最后猜测的明文为：</X.P>
-            <X.CodeBlock
-                language="text"
-                code="The secret message is: When using a stream cipher, never use the key more than once"
-            />
+            <X.CodeBlock language="text" code="The secret message is: When using a stream cipher, never use the key more than once" />
             <X.Divider />
-            <X.P>
-                到这里已经做完了，但还可以通过恢复的明文进一步反求出`ciphers`中的原始消息，观察为何求出的`target`的部分位置会有错误：
-            </X.P>
+            <X.P>到这里已经做完了，但还可以通过恢复的明文进一步反求出`ciphers`中的原始消息，观察为何求出的`target`的部分位置会有错误：</X.P>
             <X.CodeBlock
                 language="python"
                 code={`

@@ -6,9 +6,7 @@ export default function Post() {
             <X.HighlightBlock>
                 <X.P>原题链接：@放置盒子[https://leetcode.cn/problems/building-boxes/description/]@</X.P>
             </X.HighlightBlock>
-            <X.P>
-                数学找规律题目，我推出了$O(1)$的函数$f(i)$，表示最下层有$i$个盒子时，最大的可能总盒子数。然而题目是想反求，因此可以使用二分。
-            </X.P>
+            <X.P>数学找规律题目，我推出了$O(1)$的函数$f(i)$，表示最下层有$i$个盒子时，最大的可能总盒子数。然而题目是想反求，因此可以使用二分。</X.P>
             <X.P>二分的复杂度为$\log$级别，有更优雅的整体复杂度为常数的数学解法，可以参考官方题解。</X.P>
             <X.Divider />
             <X.P>不过，我们可以考虑使用不精确的数学方法优化二分的初始区间，考虑对$f(i)$进行放缩。</X.P>

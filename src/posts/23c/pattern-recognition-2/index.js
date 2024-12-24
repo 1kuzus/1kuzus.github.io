@@ -3,9 +3,7 @@ import X from 'src/component/X';
 export default function Post() {
     return (
         <>
-            <X.P>
-                上一篇提到的统计决策方法，类条件密度按已知处理。但实际问题中，往往只有已知样本，需要根据已知样本推测分布。\n本章讨论的是`参数估计`，也就是分布的表达式形式是已知的，只是希望确定其中参数的值。
-            </X.P>
+            <X.P>上一篇提到的统计决策方法，类条件密度按已知处理。但实际问题中，往往只有已知样本，需要根据已知样本推测分布。\n本章讨论的是`参数估计`，也就是分布的表达式形式是已知的，只是希望确定其中参数的值。</X.P>
             <X.H1>最大似然估计</X.H1>
             <X.P>
                 假设样本的分布形式已知，现在想确定参数{'$\\bm{\\theta}$'}。如果已经观测到了一些样本，记这些样本为
@@ -35,8 +33,7 @@ export default function Post() {
             <X.P>求偏导得：</X.P>
             <X.Formula text="\frac{\partial l(\bm{\theta})}{\partial \theta_i} = \sum_{k=1}^n [\frac{x_{ki}}{\theta_i} - \frac{1-x_{ki}}{1-\theta_i}]" />
             <X.P>
-                {`$\\frac{\\partial l(\\bm{\\theta})}{\\partial \\theta_i} = 0$`}得
-                {`$\\sum_{k=1}^n (x_{ki} - \\theta_i) = 0$`}，即{`$\\theta_i = \\frac{1}{n} \\sum_{k=1}^n x_{ki}$`}
+                {`$\\frac{\\partial l(\\bm{\\theta})}{\\partial \\theta_i} = 0$`}得{`$\\sum_{k=1}^n (x_{ki} - \\theta_i) = 0$`}，即{`$\\theta_i = \\frac{1}{n} \\sum_{k=1}^n x_{ki}$`}
             </X.P>
             <X.P>把每一个分量都叠加起来，就得到最终的参数估计：</X.P>
             <X.Formula text="\hat{\bm{\theta}} = \frac{1}{n} \sum_{k=1}^n \bm{X}_k" />
@@ -51,10 +48,7 @@ export default function Post() {
             <X.Formula text="\hat{\sigma}^2 = \frac{1}{n} \sum (x_k - \hat{\mu})^2" alignLeft />
             <X.H3>多变量正态分布</X.H3>
             <X.Formula text="\hat{\bm{\mu}} = \frac{1}{n} \sum \bm{X}_k" alignLeft />
-            <X.Formula
-                text="\hat{\bm{\Sigma}} = \frac{1}{n} \sum (\bm{X}_k - \hat{\bm{\mu}})(\bm{X}_k - \hat{\bm{\mu}})^T"
-                alignLeft
-            />
+            <X.Formula text="\hat{\bm{\Sigma}} = \frac{1}{n} \sum (\bm{X}_k - \hat{\bm{\mu}})(\bm{X}_k - \hat{\bm{\mu}})^T" alignLeft />
             <X.H1>贝叶斯估计</X.H1>
             <X.P>
                 贝叶斯估计与最大似然估计一个根本的区别是，最大似然估计把未知参数当作固定的量，而贝叶斯估计把未知参数本身也看作随机变量。假设未知参数是
@@ -64,10 +58,7 @@ export default function Post() {
             </X.P>
             <X.HighlightBlock>
                 <X.P>最小化期望风险：</X.P>
-                <X.Formula
-                    text="\int_{\bm{\Theta}} \lambda(\bm{\theta},\hat{\bm{\theta}}) P(\bm{\theta}|\bm{\chi}) d\bm{\theta}"
-                    alignLeft
-                />
+                <X.Formula text="\int_{\bm{\Theta}} \lambda(\bm{\theta},\hat{\bm{\theta}}) P(\bm{\theta}|\bm{\chi}) d\bm{\theta}" alignLeft />
             </X.HighlightBlock>
             <X.P>
                 通常情况下损失函数取
@@ -127,18 +118,13 @@ export default function Post() {
                     </X.P>
                 </X.Uli>
                 <X.Uli>
-                    <X.P>
-                        概率论的两个学派中，`频率学派`认为应从客观掌握的数据来计算概率；而`贝叶斯学派`则认为概率是有先验和后验的，我们要计算的是后验概率，这个后验概率又是以先验概率为基础的。如果采用贝叶斯估计，会假设参数$\mu$存在先验分布（`步骤1`），这里假设$\mu$服从均匀分布：
-                    </X.P>
+                    <X.P>概率论的两个学派中，`频率学派`认为应从客观掌握的数据来计算概率；而`贝叶斯学派`则认为概率是有先验和后验的，我们要计算的是后验概率，这个后验概率又是以先验概率为基础的。如果采用贝叶斯估计，会假设参数$\mu$存在先验分布（`步骤1`），这里假设$\mu$服从均匀分布：</X.P>
                     <X.Formula text="P(\mu) = \frac{1}{5} \quad (0 \leq \mu \leq 5)" />
                 </X.Uli>
                 <X.Uli>
                     <X.P>`步骤3`中，公式可以重写为：</X.P>
                     <X.Formula text="P(\mu|\bm{\chi}) = \frac{f(\mu) P(\mu)}{\int_0^5 f(\mu) P(\mu) d\mu}" />
-                    <X.P>
-                        首先来看分母$\int_0^5 f(\mu) P(\mu)
-                        d\mu$，其含义是综合考虑所有可能的$\mu$取值，求出一个“平均的”样本集出现概率。这个积分式可以求出具体数值，而不是含$\mu$的式子。从数学的角度可以理解为，使等号左侧后验概率密度积分为`1`的归一化常数。
-                    </X.P>
+                    <X.P>首先来看分母$\int_0^5 f(\mu) P(\mu) d\mu$，其含义是综合考虑所有可能的$\mu$取值，求出一个“平均的”样本集出现概率。这个积分式可以求出具体数值，而不是含$\mu$的式子。从数学的角度可以理解为，使等号左侧后验概率密度积分为`1`的归一化常数。</X.P>
                     <X.P>
                         再看其他的三个量，{`$P(\\mu|\\bm{\\chi})$`}、{`$f(\\mu)=P(\\bm{\\chi}|\\mu)$`}
                         、$P(\mu)$，这是贝叶斯学派的经典思想：用样本修正先验概率，得到后验概率。这三个式子都可以写为仅含$\mu$的函数。当然，因为假设的先验分布简单（均匀分布），$P(\mu)$为常数。\n这三个式子虽然都是$\mu$的函数，但描述的含义有所区别。
@@ -225,22 +211,16 @@ export default function Post() {
             />
             <X.P>观察迭代结果：</X.P>
             <X.Image src="fig1.png" width="100%" filterDarkTheme />
-            <X.P>
-                如果随着样本数增加，后验概率序列逐渐尖锐，最终趋向于以参数真实值为中心的一个尖峰，则这一过程称为贝叶斯学习。
-            </X.P>
+            <X.P>如果随着样本数增加，后验概率序列逐渐尖锐，最终趋向于以参数真实值为中心的一个尖峰，则这一过程称为贝叶斯学习。</X.P>
             <X.H2>正态分布下的贝叶斯估计</X.H2>
-            <X.P>
-                假设要估计的正态分布均值$\mu$未知，方差$\sigma^2$已知。假定$\mu$的先验分布也是正态分布，均值为$\mu_0$，方差为$\sigma_0^2$。
-            </X.P>
+            <X.P>假设要估计的正态分布均值$\mu$未知，方差$\sigma^2$已知。假定$\mu$的先验分布也是正态分布，均值为$\mu_0$，方差为$\sigma_0^2$。</X.P>
             <X.P>假设观测到的$N$个样本的均值为$m$，这里直接给出结论：</X.P>
             <X.Formula text="\hat{\mu} = \frac{N\sigma_0^2}{N\sigma_0^2+\sigma^2}m + \frac{\sigma^2}{N\sigma_0^2+\sigma^2}\mu_0" />
             <X.P>可以看到贝叶斯估计结果由两部分构成，第一项是样本知识，第二项是先验知识。</X.P>
             <X.Uli>样本数量为`0`时，估计值完全等于先验$\mu_0$；样本数量为`无穷`时，估计值趋于样本均值$m$；</X.Uli>
             <X.Uli>若$\sigma_0^2=0$，则先验知识绝对可靠，样本不起作用；</X.Uli>
             <X.Uli>若$\sigma_0 \gg \sigma$，则先验知识十分不确定，估计值近似等于样本均值。</X.Uli>
-            <X.P>
-                贝叶斯估计的优势在于，可以结合样本信息和先验知识，并且根据`样本数量`和`先验知识的确定程度`调和两部分信息的相对贡献。
-            </X.P>
+            <X.P>贝叶斯估计的优势在于，可以结合样本信息和先验知识，并且根据`样本数量`和`先验知识的确定程度`调和两部分信息的相对贡献。</X.P>
         </>
     );
 }

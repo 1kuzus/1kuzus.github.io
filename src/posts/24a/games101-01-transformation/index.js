@@ -41,10 +41,7 @@ export default function Post() {
             <X.Image src="fig4.jpg" width="600px" filterDarkTheme />
             <X.HighlightBlock>
                 <X.H3>引入齐次坐标</X.H3>
-                <X.P>
-                    我们不希望将平移操作看待为一个特例，而是想要找到一个统一的、适用于各种变换的方法。\n这个解决方案就是引入*齐次坐标*`Homogeneous
-                    Coordinates`：
-                </X.P>
+                <X.P>我们不希望将平移操作看待为一个特例，而是想要找到一个统一的、适用于各种变换的方法。\n这个解决方案就是引入*齐次坐标*`Homogeneous Coordinates`：</X.P>
                 <X.P>现在我们用`3`个维度来表示一个2D的点或向量：</X.P>
                 <X.Uli>2D点：$(x,y,1)^T$</X.Uli>
                 <X.Uli>2D向量：$(x,y,0)^T$</X.Uli>
@@ -164,9 +161,7 @@ export default function Post() {
             <X.Uli>找到一个好角度放置相机（*视图变换*`View Transformation`）</X.Uli>
             <X.Uli>按下快门，得到照片（*投影变换*`Projection Transformation`）</X.Uli>
             <X.H2>模型变换</X.H2>
-            <X.P>
-                3D物体有基于自身的坐标系表示，原点是只与这个物体有关的某个指定参考点。其他顶点的坐标值都是相对于这个原点而言的。
-            </X.P>
+            <X.P>3D物体有基于自身的坐标系表示，原点是只与这个物体有关的某个指定参考点。其他顶点的坐标值都是相对于这个原点而言的。</X.P>
             <X.P>然后，将模型摆放到世界空间中指定的位置，需要依次进行缩放、旋转、平移操作，也就是：</X.P>
             <X.Formula text="M_{model}=TRS" />
             <X.HighlightBlock>
@@ -210,8 +205,7 @@ export default function Post() {
                 。然而这个变换并不好直接写出。因此我们现在考虑旋转操作的逆变换{`$R_{view}^{-1}$`}：
             </X.P>
             <X.P>
-                {`$R_{view}^{-1}$`}的操作就是把{`$\\bm{x}$`}方向旋转到{`$\\bm{g}\\times\\bm{t}$`}，{`$\\bm{y}$`}到
-                {`$\\bm{t}$`}，{`$\\bm{z}$`}到{`$-\\bm{g}$`}：
+                {`$R_{view}^{-1}$`}的操作就是把{`$\\bm{x}$`}方向旋转到{`$\\bm{g}\\times\\bm{t}$`}，{`$\\bm{y}$`}到{`$\\bm{t}$`}，{`$\\bm{z}$`}到{`$-\\bm{g}$`}：
             </X.P>
             <X.Formula
                 text="
@@ -242,17 +236,11 @@ export default function Post() {
             </X.HighlightBlock>
             <X.H2>投影变换</X.H2>
             <X.Image src="fig5.jpg" width="100%" />
-            <X.P>
-                投影变换有如上图两种：*正交投影*`(Orthographic Projection)`和*透视投影*`(Perspective Projection)`。
-            </X.P>
+            <X.P>投影变换有如上图两种：*正交投影*`(Orthographic Projection)`和*透视投影*`(Perspective Projection)`。</X.P>
             <X.H3>正交投影</X.H3>
             <X.P>简单理解来说，正交投影的结果相当于直接丢弃了$z$坐标，“拍扁”在$xy$平面上。</X.P>
-            <X.P>
-                正交投影更正式的做法是，我们希望将一个空间中$[l,r]\times[b,t]\times[f,n]$的立方体变换至$[-1,1]^3$。
-            </X.P>
-            <X.P>
-                这个过程可以分解为两步：先将立方体移动至中心与原点重合，再将各轴缩放至$[-1,1]$范围。用矩阵表示为：
-            </X.P>
+            <X.P>正交投影更正式的做法是，我们希望将一个空间中$[l,r]\times[b,t]\times[f,n]$的立方体变换至$[-1,1]^3$。</X.P>
+            <X.P>这个过程可以分解为两步：先将立方体移动至中心与原点重合，再将各轴缩放至$[-1,1]$范围。用矩阵表示为：</X.P>
             <X.Formula
                 text="
                 M_{ortho}=
@@ -283,10 +271,7 @@ export default function Post() {
                 alignLeft
             />
             <X.H3>透视投影</X.H3>
-            <X.P>
-                透视投影符合近大远小的视觉效果，观感上更为自然。透视投影可以首先将*视锥体*`(View
-                Frustum)`“挤压”至长方体内，再应用正交投影：
-            </X.P>
+            <X.P>透视投影符合近大远小的视觉效果，观感上更为自然。透视投影可以首先将*视锥体*`(View Frustum)`“挤压”至长方体内，再应用正交投影：</X.P>
             <X.Image src="fig6.jpg" width="500px" filterDarkTheme />
             <X.Formula
                 text="

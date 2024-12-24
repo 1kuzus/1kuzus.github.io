@@ -3,9 +3,7 @@ import X from 'src/component/X';
 export default function Post() {
     return (
         <>
-            <X.P>
-                本文对面向对象的基本理论（为什么要有类、什么是属性、什么是方法等）不多做解释，重点在Python中的编程实现。
-            </X.P>
+            <X.P>本文对面向对象的基本理论（为什么要有类、什么是属性、什么是方法等）不多做解释，重点在Python中的编程实现。</X.P>
             <X.H1>基本操作</X.H1>
             <X.H2>定义一个类</X.H2>
             <X.CodeBlock
@@ -32,16 +30,10 @@ export default function Post() {
                 print(u1.damage)  # 20
                 `}
             />
-            <X.P>
-                上面的代码定义了一个`Unit`类，这个例子中暂且理解为一个游戏中的作战单位，每个单位具有名字`name`、生命值`hp`、攻击力`damage`这些属性。
-            </X.P>
-            <X.P>
-                `__init__`方法称作类的*初始化方法*/*构造函数*，实例本身会作为函数的第一个参数`self`被传入。从这个角度理解，实际上`__init__`方法是将传入的参数“绑定”到新创建的实例上。
-            </X.P>
+            <X.P>上面的代码定义了一个`Unit`类，这个例子中暂且理解为一个游戏中的作战单位，每个单位具有名字`name`、生命值`hp`、攻击力`damage`这些属性。</X.P>
+            <X.P>`__init__`方法称作类的*初始化方法*/*构造函数*，实例本身会作为函数的第一个参数`self`被传入。从这个角度理解，实际上`__init__`方法是将传入的参数“绑定”到新创建的实例上。</X.P>
             <X.H2>类属性和实例属性</X.H2>
-            <X.P>
-                我们在类下直接定义了一个属性`utype`，它是一个`类属性`；与之对应的是`__init__`方法为实例创建的属性，我们称之为`实例属性`。
-            </X.P>
+            <X.P>我们在类下直接定义了一个属性`utype`，它是一个`类属性`；与之对应的是`__init__`方法为实例创建的属性，我们称之为`实例属性`。</X.P>
             <X.CodeBlock
                 language="python"
                 highlightLines="3"
@@ -100,17 +92,13 @@ export default function Post() {
                     print(Unit.utype, u1.utype, u2.utype)  # spell hero spell
                     `}
                 />
-                <X.P>
-                    如果同样的属性名称同时出现在实例和类中，则属性查找会优先选择实例属性。上面的例子相当于给`u1`添加了一个与类属性同名实例属性，`u1.utype`访问到的不是类属性。
-                </X.P>
+                <X.P>如果同样的属性名称同时出现在实例和类中，则属性查找会优先选择实例属性。上面的例子相当于给`u1`添加了一个与类属性同名实例属性，`u1.utype`访问到的不是类属性。</X.P>
                 <X.P>要想访问`u1`的类属性，可以通过`__class__`访问：</X.P>
                 <X.CodeBlock language="python" code="print(u1.__class__.utype)  # spell" />
             </X.HighlightBlock>
             <X.H1>继承</X.H1>
             <X.H2>实现一个子类</X.H2>
-            <X.P>
-                我们还是定义一个`Unit`类，并实现两个方法：`info`用于输出自身基本信息，`attack`模拟攻击另一个单位。
-            </X.P>
+            <X.P>我们还是定义一个`Unit`类，并实现两个方法：`info`用于输出自身基本信息，`attack`模拟攻击另一个单位。</X.P>
             <X.CodeBlock
                 language="python"
                 code={`
@@ -128,9 +116,7 @@ export default function Post() {
                         print(f"{self.name} attacks {unit.name}, {unit.name}.hp = {unit.hp}")
                 `}
             />
-            <X.P>
-                现在我们希望实现一个`GroundUnit`类，表示地面单位，并且地面单位具有特有的伤害加成，用属性`buff`定义。显然，会有大量的逻辑与`Unit`类是重复的。这时可以通过继承来实现：
-            </X.P>
+            <X.P>现在我们希望实现一个`GroundUnit`类，表示地面单位，并且地面单位具有特有的伤害加成，用属性`buff`定义。显然，会有大量的逻辑与`Unit`类是重复的。这时可以通过继承来实现：</X.P>
             <X.CodeBlock
                 language="python"
                 highlightLines="3"
@@ -154,14 +140,9 @@ export default function Post() {
                 gu2.info()  # name: gu2, hp: 176.0, damage: 10
                 `}
             />
-            <X.P>
-                定义类时，用`class
-                子类(父类):`表示继承。如果子类有自己的构造函数，会覆盖父类的构造函数；否则会继承父类的构造函数。
-            </X.P>
+            <X.P>定义类时，用`class 子类(父类):`表示继承。如果子类有自己的构造函数，会覆盖父类的构造函数；否则会继承父类的构造函数。</X.P>
             <X.P>代码中`super()`函数可以找到父类，高亮的代码等价于`Unit.__init__(self, name, hp, damage)`。</X.P>
-            <X.P>
-                如果子类需要对父类的方法进行重写，只需要在子类下定义同名方法，然后重写逻辑。其他父类的方法会被继承到子类中，例如这个例子中的`info()`。
-            </X.P>
+            <X.P>如果子类需要对父类的方法进行重写，只需要在子类下定义同名方法，然后重写逻辑。其他父类的方法会被继承到子类中，例如这个例子中的`info()`。</X.P>
             <X.H2>isinstance函数</X.H2>
             <X.P>`isinstance(实例,类)`可以判断一个实例是否属于给定的类。*子类的实例同时也是父类的实例*。</X.P>
             <X.CodeBlock
@@ -177,9 +158,7 @@ export default function Post() {
                 `}
             />
             <X.H2>多继承</X.H2>
-            <X.P>
-                假设我们的游戏复杂起来，引入了稀有度系统，每个单位有一个所属的稀有度，例如普通、稀有、史诗、传奇等等。以史诗级为例，假设对于这些不同稀有度的单位有着其他独特的机制，以至于我们不得不新创建一个`EpicRarity`类：
-            </X.P>
+            <X.P>假设我们的游戏复杂起来，引入了稀有度系统，每个单位有一个所属的稀有度，例如普通、稀有、史诗、传奇等等。以史诗级为例，假设对于这些不同稀有度的单位有着其他独特的机制，以至于我们不得不新创建一个`EpicRarity`类：</X.P>
             <X.CodeBlock
                 language="python"
                 code={`
@@ -192,9 +171,7 @@ export default function Post() {
                 `}
             />
             <X.P>当然，为了便于演示，我们只定义了一个`level`属性和`info`方法。</X.P>
-            <X.P>
-                现在，我们想实现`EpicGroundUnit`子类，表示史诗级地面单位。显然它需要同时继承父类`EpicRarity`和`GroundUnit`，这就是*多继承*。
-            </X.P>
+            <X.P>现在，我们想实现`EpicGroundUnit`子类，表示史诗级地面单位。显然它需要同时继承父类`EpicRarity`和`GroundUnit`，这就是*多继承*。</X.P>
             <X.CodeBlock
                 language="python"
                 highlightLines="3-4"
@@ -210,9 +187,7 @@ export default function Post() {
                 `}
             />
             <X.P>在构造函数中我们需要分别对父类进行初始化。</X.P>
-            <X.P>
-                注意到两个父类都实现了`info`方法并且没有被子类重写。调用之后我们发现，子类继承的是`EpicRarity`的`info`方法。如果代码改写为：
-            </X.P>
+            <X.P>注意到两个父类都实现了`info`方法并且没有被子类重写。调用之后我们发现，子类继承的是`EpicRarity`的`info`方法。如果代码改写为：</X.P>
             <X.CodeBlock
                 language="python"
                 highlightLines="1"
@@ -227,15 +202,9 @@ export default function Post() {
                 egu1.info()  # name: egu1, hp: 100, damage: 20
                 `}
             />
-            <X.P>
-                就会发现，调换父类的顺序后，现在子类继承的是`GroundUnit`的`info`方法。这就引出了下一节的内容：*方法解析顺序*。
-            </X.P>
+            <X.P>就会发现，调换父类的顺序后，现在子类继承的是`GroundUnit`的`info`方法。这就引出了下一节的内容：*方法解析顺序*。</X.P>
             <X.H2>方法解析顺序MRO</X.H2>
-            <X.P>
-                对于多继承情况下的同名方法，如何从父类中找应该优先使用哪个父类的方法就叫*方法解析顺序*`(Method
-                Resolution Order, MRO)`。
-                Python采用@C3线性化[https://zh.wikipedia.org/zh-cn/C3%E7%BA%BF%E6%80%A7%E5%8C%96]@算法来计算线性化列表，保证继承顺序列表中每个类只出现一次。
-            </X.P>
+            <X.P>对于多继承情况下的同名方法，如何从父类中找应该优先使用哪个父类的方法就叫*方法解析顺序*`(Method Resolution Order, MRO)`。 Python采用@C3线性化[https://zh.wikipedia.org/zh-cn/C3%E7%BA%BF%E6%80%A7%E5%8C%96]@算法来计算线性化列表，保证继承顺序列表中每个类只出现一次。</X.P>
             <X.CodeBlock
                 language="python"
                 code={`
@@ -267,17 +236,13 @@ export default function Post() {
                 print(D.mro())  # [<class '__main__.D'>, <class '__main__.C'>, <class '__main__.A'>, <class '__main__.B'>, <class 'object'>]
                 `}
             />
-            <X.P>
-                输出的列表中，从左到右的顺序为查找方法的顺序。上述例子中，`D`和`C`类都没有定义`test`方法，因此顺次使用了`A`类的`test`方法。
-            </X.P>
+            <X.P>输出的列表中，从左到右的顺序为查找方法的顺序。上述例子中，`D`和`C`类都没有定义`test`方法，因此顺次使用了`A`类的`test`方法。</X.P>
             <X.HighlightBlock>
                 <X.H3>注意</X.H3>
                 <X.P>MRO顺序不是简单的深度优先或广度优先！</X.P>
             </X.HighlightBlock>
             <X.H1>封装</X.H1>
-            <X.P>
-                在前面`Unit`类的例子中，我们可以通过直接访问`u1.hp`修改其值，这样并不安全（这岂不是像外挂一样）！*封装*的目的是为了保护数据，不让外部直接访问和修改。在Python中，约定通过在属性名称前加两个下划线`__`来将属性私有化。这种命名约定会使Python解释器修改变量名为`_类名__属性名`的形式，使其在类外部变得难以访问。
-            </X.P>
+            <X.P>在前面`Unit`类的例子中，我们可以通过直接访问`u1.hp`修改其值，这样并不安全（这岂不是像外挂一样）！*封装*的目的是为了保护数据，不让外部直接访问和修改。在Python中，约定通过在属性名称前加两个下划线`__`来将属性私有化。这种命名约定会使Python解释器修改变量名为`_类名__属性名`的形式，使其在类外部变得难以访问。</X.P>
             <X.H2>将实例属性私有化</X.H2>
             <X.CodeBlock
                 language="python"
@@ -299,9 +264,7 @@ export default function Post() {
                         return self.__hp
                 `}
             />
-            <X.P>
-                在定义私有属性后，对外开放一个公有方法`get_hp`，通过这个公有方法可以间接的访问到`__hp`属性。这样相当于让此属性对外部“只读”。
-            </X.P>
+            <X.P>在定义私有属性后，对外开放一个公有方法`get_hp`，通过这个公有方法可以间接的访问到`__hp`属性。这样相当于让此属性对外部“只读”。</X.P>
             <X.CodeBlock
                 language="python"
                 code={`
@@ -324,16 +287,10 @@ export default function Post() {
                 />
             </X.HighlightBlock>
             <X.H2>类比于C++</X.H2>
-            <X.P>
-                C++中的封装有三种：`public`、`protected`、`private`；Python中没有这些关键字，但是可以通过属性名命名约定来实现。
-            </X.P>
+            <X.P>C++中的封装有三种：`public`、`protected`、`private`；Python中没有这些关键字，但是可以通过属性名命名约定来实现。</X.P>
             <X.Uli>`public`：公有变量，可以在*类的内部和外部*访问，正常命名即可。</X.Uli>
-            <X.Uli>
-                `protected`：保护变量，只能在*类内和子类*访问，属性名前加单下划线`_`。这只是一种命名约定，实际上是可以访问的。
-            </X.Uli>
-            <X.Uli>
-                `private`：私有变量，只能在*类的内部*访问，属性名前加双下划线`__`，这样会使Python解释器修改变量名为`_类名__属性名`的形式。
-            </X.Uli>
+            <X.Uli>`protected`：保护变量，只能在*类内和子类*访问，属性名前加单下划线`_`。这只是一种命名约定，实际上是可以访问的。</X.Uli>
+            <X.Uli>`private`：私有变量，只能在*类的内部*访问，属性名前加双下划线`__`，这样会使Python解释器修改变量名为`_类名__属性名`的形式。</X.Uli>
             <X.CodeBlock
                 language="python"
                 code={`
@@ -367,16 +324,12 @@ export default function Post() {
             />
             <X.HighlightBlock>
                 <X.H3>注意</X.H3>
-                <X.P>
-                    C++中的`protected`关键字是一种严格的访问控制机制，而Python中的单下划线变量只是一种命名约定，不具有强制性，实际上是可以访问的。只不过有时违反了这样的约定时，有些代码编辑器会给出警告。
-                </X.P>
+                <X.P>C++中的`protected`关键字是一种严格的访问控制机制，而Python中的单下划线变量只是一种命名约定，不具有强制性，实际上是可以访问的。只不过有时违反了这样的约定时，有些代码编辑器会给出警告。</X.P>
                 <X.CodeBlock language="python" code="print(b._y)  # 2" />
             </X.HighlightBlock>
             <X.H1>多态</X.H1>
             <X.H2>举个例子</X.H2>
-            <X.P>
-                多态是当一个类继承自另一个类并重写了其方法时，可以在不改变原有接口的情况下，根据对象的实际类型来调用不同的方法实现。这听起来有些复杂，我们来举一个具体的例子：
-            </X.P>
+            <X.P>多态是当一个类继承自另一个类并重写了其方法时，可以在不改变原有接口的情况下，根据对象的实际类型来调用不同的方法实现。这听起来有些复杂，我们来举一个具体的例子：</X.P>
             <X.CodeBlock
                 language="python"
                 code={`
@@ -406,13 +359,9 @@ export default function Post() {
                 show_info(au1)  # This is an air unit.
                 `}
             />
-            <X.P>
-                这个例子中，`show_info`函数接受一个`Unit`类型的参数，但是我们传入的是其子类`GroundUnit`和`AirUnit`类型的实例。子类重写了父类的`info`方法，相当于共用了父类的接口，但是子类又通过继承重写了接口，从而实现了不同的功能。
-            </X.P>
+            <X.P>这个例子中，`show_info`函数接受一个`Unit`类型的参数，但是我们传入的是其子类`GroundUnit`和`AirUnit`类型的实例。子类重写了父类的`info`方法，相当于共用了父类的接口，但是子类又通过继承重写了接口，从而实现了不同的功能。</X.P>
             <X.H2>通过抽象类实现多态</X.H2>
-            <X.P>
-                *抽象类*是指包含*抽象方法*的类；抽象类只能被继承，不能被实例化。\n抽象方法是指只有声明，没有实现的方法，它存在的意义是让子类重写这个方法。
-            </X.P>
+            <X.P>*抽象类*是指包含*抽象方法*的类；抽象类只能被继承，不能被实例化。\n抽象方法是指只有声明，没有实现的方法，它存在的意义是让子类重写这个方法。</X.P>
             <X.P>上面的例子中，如果我们将`Unit`类的`info`方法定义为：</X.P>
             <X.CodeBlock
                 language="python"
@@ -441,9 +390,7 @@ export default function Post() {
                 `}
             />
             <X.H2>Python中的abc模块</X.H2>
-            <X.P>
-                Python的`abc`模块中定义了*抽象基类*`ABC (Abstract Base Classes)`，可以强制其子类必须实现某些方法。
-            </X.P>
+            <X.P>Python的`abc`模块中定义了*抽象基类*`ABC (Abstract Base Classes)`，可以强制其子类必须实现某些方法。</X.P>
             <X.P>上面的例子使用`abc`模块可以改写为：</X.P>
             <X.CodeBlock
                 language="python"
@@ -475,9 +422,7 @@ export default function Post() {
             />
             <X.H1>三大方法</X.H1>
             <X.H2>类方法</X.H2>
-            <X.P>
-                类方法用修饰器`@classmethod`定义，传入的第一个参数是类本身而不是实例，通常命名为`cls`。通过它可以访问到类属性。
-            </X.P>
+            <X.P>类方法用修饰器`@classmethod`定义，传入的第一个参数是类本身而不是实例，通常命名为`cls`。通过它可以访问到类属性。</X.P>
             <X.CodeBlock
                 language="python"
                 highlightLines="9-12"
@@ -533,13 +478,9 @@ export default function Post() {
                 print(Unit.get_unit_num())  # 3
                 `}
             />
-            <X.P>
-                我们在`__init__`方法中调用一次类方法`add_unit_num()`，就可以把总实例数统计到类属性`__unit_num`中。
-            </X.P>
+            <X.P>我们在`__init__`方法中调用一次类方法`add_unit_num()`，就可以把总实例数统计到类属性`__unit_num`中。</X.P>
             <X.H2>静态方法</X.H2>
-            <X.P>
-                静态方法用修饰器`@staticmethod`定义。静态方法不能访问类属性，也不能访问实例属性。静态方法可以在类的命名空间内定义一些功能性代码，通常用于实现一些与类相关的工具函数。
-            </X.P>
+            <X.P>静态方法用修饰器`@staticmethod`定义。静态方法不能访问类属性，也不能访问实例属性。静态方法可以在类的命名空间内定义一些功能性代码，通常用于实现一些与类相关的工具函数。</X.P>
             <X.CodeBlock
                 language="python"
                 highlightLines="9-11"
@@ -563,12 +504,8 @@ export default function Post() {
             />
             <X.H2>属性方法</X.H2>
             <X.P>属性方法以方法的形式定义，但是可以像属性一样进行访问，其作用是支持对属性的灵活操作。</X.P>
-            <X.P>
-                属性方法相当于允许更细致的设置一个属性的*访问*、*更改*、*删除*操作，具体的做法是：实现属性的`getter`、`setter`、`deleter`方法。
-            </X.P>
-            <X.P>
-                假设我们有这样的需求：定义一个`Circle`类，它具有直径`diameter`和半径`radius`两个属性。我们希望修改其中一个属性时，另外一个属性也随之变化。也就是：
-            </X.P>
+            <X.P>属性方法相当于允许更细致的设置一个属性的*访问*、*更改*、*删除*操作，具体的做法是：实现属性的`getter`、`setter`、`deleter`方法。</X.P>
+            <X.P>假设我们有这样的需求：定义一个`Circle`类，它具有直径`diameter`和半径`radius`两个属性。我们希望修改其中一个属性时，另外一个属性也随之变化。也就是：</X.P>
             <X.CodeBlock
                 language="python"
                 code={`
@@ -613,9 +550,7 @@ export default function Post() {
                         self.__radius = value * 0.5
                 `}
             />
-            <X.P>
-                将访问、修改属性的操作定义为函数，就允许了我们除了获取、修改变量本身之外，还可以做一些其他的手脚。
-            </X.P>
+            <X.P>将访问、修改属性的操作定义为函数，就允许了我们除了获取、修改变量本身之外，还可以做一些其他的手脚。</X.P>
             <X.P>上面的例子没有体现属性的`deleter`方法。它的一般实现可以是：</X.P>
             <X.CodeBlock
                 language="python"
@@ -640,9 +575,7 @@ export default function Post() {
             />
             <X.H1>反射</X.H1>
             <X.H2>Python中的反射</X.H2>
-            <X.P>
-                在计算机科学中*反射*`(reflection)`是指计算机程序在运行时可以检查、访问、和修改它本身状态或行为的一种能力。表现在Python面向对象编程中有四个内置函数：`getattr()`、`setattr()`、`hasattr()`和`delattr()`，可以通过字符串的形式操作对象的属性和方法。
-            </X.P>
+            <X.P>在计算机科学中*反射*`(reflection)`是指计算机程序在运行时可以检查、访问、和修改它本身状态或行为的一种能力。表现在Python面向对象编程中有四个内置函数：`getattr()`、`setattr()`、`hasattr()`和`delattr()`，可以通过字符串的形式操作对象的属性和方法。</X.P>
             <X.CodeBlock
                 language="python"
                 code={`
@@ -699,9 +632,7 @@ export default function Post() {
                 `}
             />
             <X.H2>反射的应用</X.H2>
-            <X.P>
-                假如我们现在想创建一个类`A2Z`，它具有`a`-`z``26`个属性与`info_a()`到`info_z()``26`个方法，手动创建这些属性和方法是非常繁琐的。这时我们可以利用反射来动态的创建它们：
-            </X.P>
+            <X.P>假如我们现在想创建一个类`A2Z`，它具有`a`-`z``26`个属性与`info_a()`到`info_z()``26`个方法，手动创建这些属性和方法是非常繁琐的。这时我们可以利用反射来动态的创建它们：</X.P>
             <X.CodeBlock
                 language="python"
                 highlightLines="10,16"
@@ -728,9 +659,7 @@ export default function Post() {
                 `}
             />
             <X.H1>魔术方法</X.H1>
-            <X.P>
-                魔术方法通常以双下划线包围，用于实现类的特殊行为。下面以一个`Vector3d`类为例，介绍一些常用的魔术方法。
-            </X.P>
+            <X.P>魔术方法通常以双下划线包围，用于实现类的特殊行为。下面以一个`Vector3d`类为例，介绍一些常用的魔术方法。</X.P>
             <X.CodeBlock
                 language="python"
                 code={`
@@ -759,12 +688,8 @@ export default function Post() {
                 `}
             />
             <X.H2>__repr__和__str__</X.H2>
-            <X.P>
-                `__repr__`方法的返回值应该是一个*可以用来重新创建对象*的字符串。\n`__str__`方法在`str(obj)`时调用，应当返回实例格式良好、可读性强的字符串表示。
-            </X.P>
-            <X.P>
-                在`print(obj)`时会优先使用`__str__`方法的返回值，如果没有定义`__str__`方法，则会使用`__repr__`方法。
-            </X.P>
+            <X.P>`__repr__`方法的返回值应该是一个*可以用来重新创建对象*的字符串。\n`__str__`方法在`str(obj)`时调用，应当返回实例格式良好、可读性强的字符串表示。</X.P>
+            <X.P>在`print(obj)`时会优先使用`__str__`方法的返回值，如果没有定义`__str__`方法，则会使用`__repr__`方法。</X.P>
             <X.CodeBlock
                 language="python"
                 code={`
@@ -802,9 +727,7 @@ export default function Post() {
                 `}
             />
             <X.H2>运算符重载</X.H2>
-            <X.P>
-                我们为`Vector3d`类定义加法、减法、乘法操作。这个例子中我们约定，加减法就是普通的按元素加减，而乘法满足：
-            </X.P>
+            <X.P>我们为`Vector3d`类定义加法、减法、乘法操作。这个例子中我们约定，加减法就是普通的按元素加减，而乘法满足：</X.P>
             <X.Uli>`obj*常数`时返回缩放后的向量</X.Uli>
             <X.Uli>`obj1*obj2`时返回点乘数值</X.Uli>
             <X.CodeBlock
@@ -838,10 +761,7 @@ export default function Post() {
             />
             <X.H2>反运算（右侧运算）</X.H2>
             <X.P>如果只有上述运算符重载，下面的代码会报错：</X.P>
-            <X.CodeBlock
-                language="python"
-                code="print(2 * v1)  # TypeError: unsupported operand type(s) for *: 'int' and 'Vector3d'"
-            />
+            <X.CodeBlock language="python" code="print(2 * v1)  # TypeError: unsupported operand type(s) for *: 'int' and 'Vector3d'" />
             <X.P>这是因为整数类型的乘法不适用。解决这个问题需要定义`Vector3d`类的右侧乘法`__rmul__`：</X.P>
             <X.CodeBlock
                 language="python"
@@ -857,9 +777,7 @@ export default function Post() {
             />
             <X.H2>__getitem__和__setitem__</X.H2>
             <X.P>`__getitem__`在取`obj[key]`时调用，这个例子中我们约定`obj[key]`返回向量第`i`个分量；</X.P>
-            <X.P>
-                `__setitem__`在设置`obj[key]=value`时调用，这个例子中我们约定`obj[key]=value`设置向量第`i`个分量。
-            </X.P>
+            <X.P>`__setitem__`在设置`obj[key]=value`时调用，这个例子中我们约定`obj[key]=value`设置向量第`i`个分量。</X.P>
             <X.CodeBlock
                 language="python"
                 code={`

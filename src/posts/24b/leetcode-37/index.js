@@ -6,9 +6,7 @@ export default function Post() {
             <X.HighlightBlock>
                 <X.P>原题链接：@解数独[https://leetcode.cn/problems/sudoku-solver/description/]@</X.P>
             </X.HighlightBlock>
-            <X.P>
-                练习一下位运算和DFS。注意这个题目找到唯一解之后，就要通过`halt`判断终止，在回溯时直接返回，否则会把填好的数值改回成`.`。
-            </X.P>
+            <X.P>练习一下位运算和DFS。注意这个题目找到唯一解之后，就要通过`halt`判断终止，在回溯时直接返回，否则会把填好的数值改回成`.`。</X.P>
             <X.CodeBlock
                 language="cpp"
                 code={`

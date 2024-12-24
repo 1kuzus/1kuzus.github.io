@@ -33,10 +33,7 @@ export default function Post() {
             />
             <X.H2>Locked Door</X.H2>
             <X.P>查看元素看到跳转到`/xugpuhru`的按钮有`disabled`属性，把它移除再点击，或手动跳转。</X.P>
-            <X.P>
-                在Previous Accesses页面，用`1' or 1=1
-                --`登录可以下载`.pcap`文件，从文件内容看到需要做一个RSA解密。由于`n`比较小，可以直接借助@Sage[https://sagecell.sagemath.org/]@分解。解密后的`8`位数字就是密码。
-            </X.P>
+            <X.P>在Previous Accesses页面，用`1' or 1=1 --`登录可以下载`.pcap`文件，从文件内容看到需要做一个RSA解密。由于`n`比较小，可以直接借助@Sage[https://sagecell.sagemath.org/]@分解。解密后的`8`位数字就是密码。</X.P>
             <X.CodeBlock
                 language="python"
                 code={`

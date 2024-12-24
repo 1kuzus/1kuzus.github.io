@@ -4,26 +4,17 @@ export default function Post() {
     return (
         <>
             <X.H1>标志寄存器</X.H1>
-            <X.P>
-                标志寄存器是按位起作用的，8086CPU中没有使用标志寄存器的`1`、`3`、`5`、`12`、`13`、`14`、`15`位，这些位不具有任何含义。
-            </X.P>
-            <X.P>
-                标志位用来存储相关指令的某些执行结果、用来为CPU执行相关指令提供行为依据、或用来控制CPU的相关工作方式。
-            </X.P>
+            <X.P>标志寄存器是按位起作用的，8086CPU中没有使用标志寄存器的`1`、`3`、`5`、`12`、`13`、`14`、`15`位，这些位不具有任何含义。</X.P>
+            <X.P>标志位用来存储相关指令的某些执行结果、用来为CPU执行相关指令提供行为依据、或用来控制CPU的相关工作方式。</X.P>
             <X.Image src="fig1.jpg" width="600px" filterDarkTheme />
             <X.Image src="fig2.jpg" width="600px" filterDarkTheme />
-            <X.P>
-                8086
-                CPU的指令集中，有些指令执行后会改变标志寄存器中的标志位，比如`add`、`sub`、`mul`、`div`、`inc`、`or`、`and`等指令，它们大多数是算术运算指令。
-            </X.P>
+            <X.P>8086 CPU的指令集中，有些指令执行后会改变标志寄存器中的标志位，比如`add`、`sub`、`mul`、`div`、`inc`、`or`、`and`等指令，它们大多数是算术运算指令。</X.P>
             <X.H2>ZF(Zero Flag)零标志</X.H2>
             <X.P>`ZF=1`表示“结果为`0`”，`ZF=0`表示“结果不为`0`”。</X.P>
             <X.H2>PF(Parity Flag)奇偶标志</X.H2>
             <X.P>`PF=1`表示“结果的二进制位中`1`的个数为偶数”，`PF=0`表示“结果的二进制位中`1`的个数为奇数”。</X.P>
             <X.H2>SF(Sign Flag)符号标志</X.H2>
-            <X.P>
-                `SF=1`表示“结果为负数”，`SF=0`表示“结果为非负数”。\n讨论`SF`时，默认将结果看作有符号数；如果将数据看作无符号数，那么`SF`就没有意义。
-            </X.P>
+            <X.P>`SF=1`表示“结果为负数”，`SF=0`表示“结果为非负数”。\n讨论`SF`时，默认将结果看作有符号数；如果将数据看作无符号数，那么`SF`就没有意义。</X.P>
             <X.H2>CF(Carry Flag)进位标志</X.H2>
             <X.P>`CF=1`表示“结果有进位或借位”，`CF=0`表示“结果没有进位或借位”。</X.P>
             <X.H2>OF(Overflow Flag)溢出标志</X.H2>
@@ -92,15 +83,9 @@ export default function Post() {
                 'jng'/'jle'|不大于则转移|'ZF=1'或'SF!=OF'
                 `}
             />
-            <X.P>
-                上述指令包含了很多具有特定含义的字母，可以了解以便记忆。它们是：`j - jump`、`n - not`、`z - zero`、`p -
-                parity`、`s - sign`、`c - carry`、`o - overflow`、`e - equal`、`b - below`、`a - above`、`l - less`、`g
-                - greater`。
-            </X.P>
+            <X.P>上述指令包含了很多具有特定含义的字母，可以了解以便记忆。它们是：`j - jump`、`n - not`、`z - zero`、`p - parity`、`s - sign`、`c - carry`、`o - overflow`、`e - equal`、`b - below`、`a - above`、`l - less`、`g - greater`。</X.P>
             <X.H1>串传送指令和DF(Direction Flag)方向标志</X.H1>
-            <X.P>
-                `DF`标志在串传送指令中起作用，控制每次传送后`SI`和`DI`的自动递增或递减。`DF=0`表示递增，`DF=1`表示递减。
-            </X.P>
+            <X.P>`DF`标志在串传送指令中起作用，控制每次传送后`SI`和`DI`的自动递增或递减。`DF=0`表示递增，`DF=1`表示递减。</X.P>
             <X.P>串传送指令有：`movsb`（传送字节）和`movsw`（传送字）。</X.P>
             <X.H2>movsb指令</X.H2>
             <X.CodeBlock
@@ -134,9 +119,7 @@ export default function Post() {
                 `}
             />
             <X.H1>pushf指令和popf指令</X.H1>
-            <X.P>
-                `pushf`指令是将标志寄存器的内容压入栈中，`popf`指令是将栈中的内容弹出到标志寄存器中，后面不需要其他参数。注意标志寄存器大小是两个字节。
-            </X.P>
+            <X.P>`pushf`指令是将标志寄存器的内容压入栈中，`popf`指令是将栈中的内容弹出到标志寄存器中，后面不需要其他参数。注意标志寄存器大小是两个字节。</X.P>
             <X.CodeBlock
                 language="asm8086"
                 code={`

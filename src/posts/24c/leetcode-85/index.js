@@ -16,9 +16,7 @@ export default function Post() {
                 1 0 0 1 0
                 `}
             />
-            <X.P>
-                我们求出数组`heights_of_line`，`heights_of_line[i]`代表以第`i`行为底的柱状图`heights`数组。对于上述样例，`heights_of_line`为：
-            </X.P>
+            <X.P>我们求出数组`heights_of_line`，`heights_of_line[i]`代表以第`i`行为底的柱状图`heights`数组。对于上述样例，`heights_of_line`为：</X.P>
             <X.CodeBlock
                 language="text"
                 code={`
@@ -28,9 +26,7 @@ export default function Post() {
                 4 0 0 3 0
                 `}
             />
-            <X.P>
-                对于每一行，我们都可以求出最大矩形面积，最后统计最大值即可。这里的`largestRectangleArea`函数就是@柱状图中最大的矩形[/24b/leetcode-84/]@的解。
-            </X.P>
+            <X.P>对于每一行，我们都可以求出最大矩形面积，最后统计最大值即可。这里的`largestRectangleArea`函数就是@柱状图中最大的矩形[/24b/leetcode-84/]@的解。</X.P>
             <X.CodeBlock
                 language="cpp"
                 code={`

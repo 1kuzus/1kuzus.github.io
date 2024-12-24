@@ -1,14 +1,14 @@
 {
-    "tabWidth": 4,
-    "singleQuote": true,
-    "bracketSpacing": false,
-    "printWidth": 120,
-    "overrides": [
-        {
-          "files": "src/app/**/page.js",
-          "options": {
-            "printWidth": 9999
-          }
-        }
-      ]
+  "tabWidth": 4,
+  "singleQuote": true,
+  "bracketSpacing": false,
+  "printWidth": 120,
+  "overrides": [
+    {
+      "files": "src/posts/**/index.js",
+      "options": {
+        "printWidth": 9999
+      }
+    }
+  ]
 }

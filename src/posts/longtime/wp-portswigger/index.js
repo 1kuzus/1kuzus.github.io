@@ -60,9 +60,7 @@ export default function Post() {
                 });
                 `}
             />
-            <X.P>
-                注入点是`a`标签的`href`，`payload`为`javascript:alert(0)`。输入URL`/feedback?returnPath=javascript:alert(0)`，然后点击这个`a`标签。
-            </X.P>
+            <X.P>注入点是`a`标签的`href`，`payload`为`javascript:alert(0)`。输入URL`/feedback?returnPath=javascript:alert(0)`，然后点击这个`a`标签。</X.P>
             <X.H2>Ap: DOM XSS in jQuery selector sink using a hashchange event</X.H2>
             <X.P>注入点：</X.P>
             <X.CodeBlock
@@ -74,12 +72,8 @@ export default function Post() {
                 });
                 `}
             />
-            <X.P>
-                此题目用到特定版本jQuery的漏洞，`$()`可以被利用向DOM中注入恶意元素。这道题目需要构造一个恶意网页发送给目标用户，所以需要在用户侧触发`hashchange`，因此使用`iframe`。
-            </X.P>
-            <X.P>
-                官方题解直接在`onload`中改变`this.src`，尽管也可以触发`print()`函数，但是这样做会导致循环（`this.src`改变时，再次调用`onload`，然后再改变`this.src`）。所以这里加了判断。
-            </X.P>
+            <X.P>此题目用到特定版本jQuery的漏洞，`$()`可以被利用向DOM中注入恶意元素。这道题目需要构造一个恶意网页发送给目标用户，所以需要在用户侧触发`hashchange`，因此使用`iframe`。</X.P>
+            <X.P>官方题解直接在`onload`中改变`this.src`，尽管也可以触发`print()`函数，但是这样做会导致循环（`this.src`改变时，再次调用`onload`，然后再改变`this.src`）。所以这里加了判断。</X.P>
             <X.CodeBlock
                 language="html"
                 code={`
@@ -141,13 +135,31 @@ export default function Post() {
             <X.H1>OS command injection</X.H1>
             <X.H2>Ap: OS command injection, simple case</X.H2>
             <X.P>提示了网站会用参数直接执行shell脚本，所以：</X.P>
-            <X.CodeBlock
-                language="python"
-                code={`resp = requests.post(url, data={"productId": 1, "storeId": "; whoami"})`}
-            />
+            <X.CodeBlock language="python" code={`resp = requests.post(url, data={"productId": 1, "storeId": "; whoami"})`} />
             <X.H1>Path traversal</X.H1>
             <X.H2>Ap: File path traversal, simple case</X.H2>
             <X.P>随便检查一个图片，地址为`/image?filename=23.jpg`，改为`/txt?filename=../../../etc/passwd`即可。</X.P>
+            <X.H1>Information disclosure</X.H1>
+            <X.H2>Ap: Information disclosure in error messages</X.H2>
+            <X.P>要寻找的信息是在报错中泄露的使用的库的版本号，注意后端会把报错信息返回。把请求的参数改为单引号：`/product?productId=%27`，可以看到报错：</X.P>
+            <X.CodeBlock
+                language="text"
+                code={`
+                Internal Server Error: java.lang.NumberFormatException: For input string: "a"
+                    at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+                    at java.base/java.lang.Integer.parseInt(Integer.java:661)
+                    ...
+                    at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+                    at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+                    at java.base/java.lang.Thread.run(Thread.java:1583)
+
+                Apache Struts 2 2.3.31
+                `}
+            />
+            <X.H2>Ap: Information disclosure on debug page</X.H2>
+            <X.P>根据提示扫目录发现`/cgi-bin`，然后在`/cgi-bin/phpinfo.php`中找到`SECRET_KEY`为`wmxjxsr1m446564ya43mb4f1vvueyvfo`。</X.P>
+            <X.H2>Ap: Source code disclosure via backup files</X.H2>
+            <X.P>扫目录发现`/backup`，找到源代码文件，发现写在源码里的数据库密码`muwgq3v6l0w2jhuw8cbrya9lmcbs4bx9`。</X.P>
         </>
     );
 }
