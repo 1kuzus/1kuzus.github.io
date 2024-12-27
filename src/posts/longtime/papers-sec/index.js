@@ -2,13 +2,7 @@ import X from 'src/component/X';
 
 /******
 
-1.Dina: Detecting hidden android inter-app communication in dynamic loaded code
-
-2.A SEALANT for Inter-App Security Holes in Android 
-
-3.Uncovering Intent based Leak of Sensitive Data in Android Framework
-
-Unauthorized Origin Crossing on Mobile Platforms: Threats and Mitigation
+Unauthorized Origin Crossing on Mobile Platforms: Threats and Mitigation (CCS 2013)
 https://homes.luddy.indiana.edu/xw7/papers/wang2013unauthorized.pdf （精读一下）
 
 
@@ -32,6 +26,16 @@ export default function Post() {
     return (
         <>
             <X.H1>移动</X.H1>
+            <X.H2 href="https://www.ronia.net/papers/Lee17ICSE.pdf">A SEALANT for Inter-App Security Holes in Android (ICSE 2017)</X.H2>
+            <X.HighlightBlock background="gray">
+                <X.P>SEALANT是论文提出的一种*防护跨应用攻击*的技术。SEALANT有Analyzer和Interceptor两部分，Analyzer通过静态分析识别潜在的易受攻击的组件间通信路径，Interceptor在应用运行时对这些路径上的`Intent`通信进行实时监控。</X.P>
+                <X.P>实现方面，是在ASOP上实现了Interceptor，修改了一些标准Android组件的源码。</X.P>
+            </X.HighlightBlock>
+            <X.H2 href="https://moonzhh.github.io/files/LeakDetector.pdf">Uncovering Intent based Leak of Sensitive Data in Android Framework (CCS 2022)</X.H2>
+            <X.HighlightBlock background="gray">
+                <X.P>一个新的攻击面：Android框架发送的`Intent`对象，被一个未授权（没有申请任何权限的）App接收。</X.P>
+                <X.P>之前的工作有研究App之间基于`Intent`的信息泄露，发送方是App，而这篇论文研究的问题*发送方是Android框架*。</X.P>
+            </X.HighlightBlock>
             <X.H2 href="https://surface.syr.edu/cgi/viewcontent.cgi?article=1217&context=eecs">Attacks on WebView in the Android System (ACSAC 2011)</X.H2>
             <X.HighlightBlock background="gray">
                 <X.P>普通浏览器的一个重要作用是隔离网页（中的JS）和操作系统，因此使用可信的浏览器很重要；但`WebView`恰好是为了使得网页与Android系统更灵活的交互，因此打破了浏览器的这种隔离机制。本文主要介绍了和`WebView`相关的攻击。</X.P>
