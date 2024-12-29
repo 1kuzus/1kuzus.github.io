@@ -1,8 +1,0 @@
-.view-count {
-    display: flex;
-    margin-bottom: 32px;
-    font-size: 14px;
-}
-.view-count * {
-    color: var(--fg-gray-300);
-}

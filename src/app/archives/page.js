@@ -1,7 +1,7 @@
 import Link from 'src/component/Link/Link';
 import Heading from 'src/component/Heading/Heading';
 import CenterWrapper from 'src/component/CenterWrapper/CenterWrapper';
-import posts from 'src/app/_archives.json';
+import archives from 'src/app/_archives.json';
 import './page.css';
 
 export const metadata = {
@@ -9,10 +9,10 @@ export const metadata = {
 };
 
 export default function Archives() {
-    const paths = Object.keys(posts);
+    const paths = Object.keys(archives);
     const postsByYears = {};
     for (let path of paths) {
-        const y = posts[path].time?.split('-')[0] || '0';
+        const y = archives[path].time?.split('-')[0] || '0';
         if (!postsByYears[y]) postsByYears[y] = [path];
         else postsByYears[y].push(path);
     }
@@ -30,8 +30,10 @@ export default function Archives() {
                         {postsByYears[year].map((path, index) => (
                             <li key={index}>
                                 <Link href={path} prefetch={true}>
-                                    {posts[path].time && <code className="archives-post-time">{posts[path].time.slice(5)}</code>}
-                                    {<span className="archives-post-title">{posts[path].title}</span>}
+                                    {archives[path].time && (
+                                        <code className="archives-post-time">{archives[path].time.slice(5)}</code>
+                                    )}
+                                    {<span className="archives-post-title">{archives[path].title}</span>}
                                 </Link>
                             </li>
                         ))}

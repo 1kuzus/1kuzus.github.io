@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic';
 import X from 'src/component/X';
 import TOC from 'src/component/TOC/TOC';
 import Sidebar from 'src/component/Sidebar/Sidebar';
-import ViewCount from 'src/component/ViewCount/ViewCount';
+import {PostMeta} from 'src/component/Metadata';
 import CenterWrapper from 'src/component/CenterWrapper/CenterWrapper';
 import archives from 'src/app/_archives.json';
 import './page.css';
@@ -26,7 +26,7 @@ export function generateMetadata({params}) {
 export default function Page({params}) {
     const path = '/' + params.slug.join('/') + '/';
     const Post = dynamic(() => import('src/posts' + path), {
-        loading: () => <p>Loading component...</p>
+        loading: () => <p>Loading component...</p>,
     });
     return (
         <>
@@ -35,7 +35,7 @@ export default function Page({params}) {
                 {X.Oli({reset: 0}) && false}
                 <CenterWrapper id="main">
                     <h1 className="post-title">{archives[path].title}</h1>
-                    <ViewCount path={path} />
+                    <PostMeta path={path} />
                     <Post />
                 </CenterWrapper>
                 <Sidebar />
