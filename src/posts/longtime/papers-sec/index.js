@@ -1,25 +1,77 @@
 import X from 'src/component/X';
 
-/******
+/*
+related:
+MALintent: Coverage Guided Intent Fuzzing Framework for Android (NDSS 2025)
+Leaking the Privacy of Groups and More: Understanding Privacy Risks of Cross-App Content Sharing in Mobile Ecosystem (NDSS 2024)
+* Understanding the (In)Security of Cross-side Face Verification Systems in Mobile Apps: A System Perspective. (s&p 2023)
+Uncovering Intent based Leak of Sensitive Data in Android Framework (CCS 2022)
+RAICC: Revealing Atypical Inter-Component Communication in Android Apps (ICSE 2021)
+* Understanding Malicious Cross-library Data Harvesting on Android (Usenix 2021)
+A SEALANT for Inter-App Security Holes in Android (ICSE 2017)
+* Composite Constant Propagation: Application to Android Inter-Component Communication Analysis (ICSE 2015)
+IccTA: detecting inter-component privacy leaks in Android apps (ICSE 2015)
+Analysis of Android Inter-App Security Vulnerabilities Using COVERT (ICSE 2015)
+Amandroid: A Precise and General Inter-component Data Flow Analysis Framework for Security Vetting of Android Apps (CCS 2014)
 
+
+强相关
 Unauthorized Origin Crossing on Mobile Platforms: Threats and Mitigation (CCS 2013)
-https://homes.luddy.indiana.edu/xw7/papers/wang2013unauthorized.pdf （精读一下）
+Effective Inter-Component Communication Mapping in Android: An Essential Step Towards Holistic Security Analysis (Usenix 2013)
+Analyzing Inter-Application Communication in Android (MobiSys 2011)
+
+部分相关
+AppIntent: analyzing sensitive data transmission in android for privacy leakage detection (CCS 2013) 想法：根据数据传输是否符合用户意图来判断是否存在隐私泄露
+
+*/
 
 
-Unleashing the Walking Dead: Understanding Cross-App Remote Infections on Mobile WebViews
-https://homes.luddy.indiana.edu/luyixing/bib/ccs17-unleashing.pdf
+/******
+============ inter-app ===========
+==== NDSS ====
+MALintent: Coverage Guided Intent Fuzzing Framework for Android (NDSS 2025)
 
-IccTA: detecting inter-component privacy leaks in Android apps
-https://dl.acm.org/doi/pdf/10.5555/2818754.2818791
+==== Usenix ====
 
-Leaking the Privacy of Groups and More: Understanding Privacy Risks of Cross-App Content Sharing in Mobile Ecosystem 
+==== CCS ====
+Unauthorized Origin Crossing on Mobile Platforms: Threats and Mitigation (CCS 2013)
+https://homes.luddy.indiana.edu/xw7/papers/wang2013unauthorized.pdf
+
+Amandroid: A Precise and General Inter-component Data Flow Analysis Framework for Security Vetting of Android Apps (CCS 2014)
+https://www.cs.bgsu.edu/sanroy/Files/papers/amandroid2018.pdf
+
+==== S&P ====
+
+==== ICSE ====
+IccTA: detecting inter-component privacy leaks in Android apps (ICSE 2015)
+https://www.abartel.net/static/p/icse2015-IccTA.pdf
+
+==== ACSAC ====
+
+
+==== Mobisys ====
+Analyzing Inter-Application Communication in Android (MobiSys 2011) 概要
+https://people.eecs.berkeley.edu/~daw/papers/intents-mobisys11.pdf
+
+
+
+
+=========== others ===========
+Leaking the Privacy of Groups and More: Understanding Privacy Risks of Cross-App Content Sharing in Mobile Ecosystem (NDSS 2024)
 https://www.ndss-symposium.org/wp-content/uploads/2024-138-paper.pdf
 https://www.youtube.com/watch?v=7IvzrBEfwx4
 
-O Single Sign-Off, Where Art Thou? An Empirical Analysis of Single Sign-On Account Hijacking and Session Management on the Web
-https://www.usenix.org/system/files/conference/usenixsecurity18/sec18-ghasemisharif_0.pdf
+Unleashing the Walking Dead: Understanding Cross-App Remote Infections on Mobile WebViews (CCS 2017)
+https://homes.luddy.indiana.edu/luyixing/bib/ccs17-unleashing.pdf
 
-inurl:dl.acm.org OR inurl:ndss OR inurl:usenix.org "inter-app" OR "cross-app"
+AppIntent: Analyzing Sensitive Data Transmission in Android for Privacy Leakage Detection (CCS 2013)
+https://yangzhemin.github.io/papers/appintent-ccs2013.pdf
+
+Unauthorized Origin Crossing on Mobile Platforms: Threats and Mitigation (CCS 2013) 精读
+https://homes.luddy.indiana.edu/xw7/papers/wang2013unauthorized.pdf
+
+
+Uncovering and Exploiting Hidden APIs in Mobile Super Apps (CCS 2023)
 ******/
 
 export default function Post() {
