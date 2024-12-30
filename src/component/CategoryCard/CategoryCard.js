@@ -14,9 +14,9 @@ export default function CategoryCard(props) {
                 <div className="category-name">
                     {category.categoryName} ({category.posts.length})
                 </div>
-                <div className="category-rightarrow" onClick={() => setShowList((prev) => !prev)}>
+                <button className="category-rightarrow" onClick={() => setShowList((prev) => !prev)}>
                     <RightArrowIcon />
-                </div>
+                </button>
             </div>
             <div className="category-card-ul-wrapper">
                 <ul className="category-card-ul">

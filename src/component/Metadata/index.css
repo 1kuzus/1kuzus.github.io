@@ -1,4 +1,4 @@
-#homepage-view-count *{
+#homepage-view-count * {
     font-size: 13px;
     color: var(--fg-gray-300);
 }
@@ -9,7 +9,6 @@
 .post-meta * {
     font-size: 13px;
     color: var(--fg-gray-300);
-    opacity: 1;
     transition: opacity 200ms;
 }
 .post-meta .not-loaded {
