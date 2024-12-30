@@ -8,10 +8,29 @@ export function HomepageViewCount() {
     const [viewCount, setViewCount] = useState(0);
     const isDev = typeof window === 'undefined' || window.location.hostname !== '1kuzus.github.io';
     useEffect(() => {
-        getViews('total', isDev).then((count) => setViewCount(count));
+        // getViews('total', isDev).then((count) => setViewCount(count));
+        // return onViewsChange('total', isDev, (views) => setViewCount(views));
+
+        function animateViewCount(start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                setViewCount(Math.floor(progress * (end - start) + start));
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+        getViews('total', isDev).then((count) => animateViewCount(0, count, 1000));
         return onViewsChange('total', isDev, (views) => setViewCount(views));
     }, []);
-    return <span className="view-count-views">&nbsp;{viewCount > 0 && viewCount + ' Views in total.'}</span>;
+    return (
+        <div id="homepage-view-count">
+            <code>{viewCount > 0 && '- ' + viewCount + ' -'}</code>
+        </div>
+    );
 }
 
 export function PostMeta(props) {

@@ -1,9 +1,13 @@
+#homepage-view-count *{
+    font-size: 13px;
+    color: var(--fg-gray-300);
+}
 .post-meta {
     display: flex;
     justify-content: end;
-    font-size: 14px;
 }
 .post-meta * {
+    font-size: 13px;
     color: var(--fg-gray-300);
     opacity: 1;
     transition: opacity 200ms;
