@@ -13,12 +13,13 @@
     border-radius: 12px;
     background-color: var(--bg-main);
     box-shadow: var(--light-theme-box-shadow);
-    transition: opacity 200ms;
+    transition: opacity 400ms ease-in;
 }
 @media (max-width: 1440px) {
     #contents {
         opacity: 0;
         pointer-events: none;
+        transition: opacity 0ms;
     }
 }
 #contents::-webkit-scrollbar {
