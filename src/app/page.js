@@ -25,11 +25,10 @@ function Author() {
 }
 
 function HomepageNavCard(props) {
-    const {titleZh, titleEn, href} = props;
+    const {titleZh, href} = props;
     return (
         <NextLink href={href} className="homepage-nav-card">
-            <h3 className="homepage-nav-card-title-zh">{titleZh}</h3>
-            <div className="homepage-nav-card-title-en">{titleEn}</div>
+            <h3>{titleZh}</h3>
         </NextLink>
     );
 }
@@ -49,8 +48,8 @@ export default function Homepage() {
                 <HomepageViewCount />
             </div>
             <div id="homepage-navs">
-                <HomepageNavCard titleZh="全部分类" titleEn="Categories." href="/categories/" />
-                <HomepageNavCard titleZh="归档" titleEn="Archives." href="/archives/" />
+                <HomepageNavCard titleZh="· 全部分类 ·" href="/categories/" />
+                <HomepageNavCard titleZh="· 归档 ·" href="/archives/" />
             </div>
         </div>
     );

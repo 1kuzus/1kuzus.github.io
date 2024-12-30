@@ -8,27 +8,26 @@ export function HomepageViewCount() {
     const [viewCount, setViewCount] = useState(0);
     const isDev = typeof window === 'undefined' || window.location.hostname !== '1kuzus.github.io';
     useEffect(() => {
-        // getViews('total', isDev).then((count) => setViewCount(count));
-        // return onViewsChange('total', isDev, (views) => setViewCount(views));
-
+        const {min, floor, log} = Math;
         function animateViewCount(start, end, duration) {
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                setViewCount(Math.floor(progress * (end - start) + start));
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
+            let t0 = null;
+            const step = (t) => {
+                if (!t0) t0 = t;
+                const progress = min((t - t0) ** 0.5 / duration ** 0.5, 1);
+                setViewCount(floor(progress * (end - start) + start));
+                if (progress < 1) window.requestAnimationFrame(step);
             };
             window.requestAnimationFrame(step);
         }
-        getViews('total', isDev).then((count) => animateViewCount(0, count, 1000));
+        getViews('total', isDev).then((count) => {
+            animateViewCount(0, count, floor(144 * log(count)));
+            increaseViews('total', isDev);
+        });
         return onViewsChange('total', isDev, (views) => setViewCount(views));
     }, []);
     return (
         <div id="homepage-view-count">
-            <code>{viewCount > 0 && '- ' + viewCount + ' -'}</code>
+            <code className={viewCount > 0 ? '' : 'not-loaded'}>{viewCount + ' views'}</code>
         </div>
     );
 }
@@ -46,7 +45,7 @@ export function PostMeta(props) {
     }, []);
     return (
         <div className="post-meta">
-            <code className={viewCount > 0 ? '' : 'not-loaded'}>{viewCount + ' Views'}&nbsp;·&nbsp;</code>
+            <code className={viewCount > 0 ? '' : 'not-loaded'}>{viewCount + ' views'}&nbsp;·&nbsp;</code>
             <code>{archives[path].time || 'longtime'}</code>
         </div>
     );
