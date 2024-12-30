@@ -35,10 +35,10 @@ export default function Post() {
             <X.H1>Reversing</X.H1>
             <X.H2>chessato</X.H2>
             <X.P>Using dnSpy to decompile the file `Managed/Assembly-CSharp.dll`, we can see the decryption logic in the `Winner` method of the `Game` class:</X.P>
-            <X.Image src="1.jpg" width="800px" />
+            <X.Image src="1.jpg" />
             <X.P>In this process, `F1`, `F2` and `RM` perform some calculations on the input array to ultimately derive the `key` and `iv`, and the `FW` method performs AES decryption. The logic of these functions is simple, and I rewrite them in Python in the exploit scripts.</X.P>
             <X.P>Similarly, in the `Winner` method, we can observe that `array` and `array2` represent the board states of the white and black sides:</X.P>
-            <X.Image src="2.jpg" width="400px" />
+            <X.Image src="2.jpg" />
             <X.P>Therefore, the next step is to obtain a board state that can be correctly used for decryption. Playing this chess game, the rules are customized: if we (the white side) have any pieces crossing the second row, they will be captured by the black side's pieces. If there are no white pieces above the second row, the black king will directly capture our king.</X.P>
             <X.Image src="3.jpg" width="600px" />
             <X.P>The challenge hints "Can you beat me in 1 move?", which implies that the board state won't differ significantly from the initial state. This part was somewhat guessy for me. At first, I spent a long time trying to modify the initial position of the black king so that my pawn or knight could capture it in one move, but after winning I always got "Not Good Enough".</X.P>
