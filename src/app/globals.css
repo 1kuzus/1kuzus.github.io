@@ -122,12 +122,13 @@ body::-webkit-scrollbar {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: var(--fg-main);
 }
 body {
     padding-top: 64px;
     font-size: 16px;
     background-color: var(--bg-body);
+    color: var(--fg-main);
+    -webkit-text-size-adjust: 100%;
 }
 div,
 li,

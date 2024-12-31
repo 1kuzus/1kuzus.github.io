@@ -307,14 +307,14 @@ export default function Post() {
                 <X.P>变换前：*观察空间*`(View Space)`\n变换后：*裁剪空间*`(Clip Space)`</X.P>
             </X.HighlightBlock>
             <X.H1>视口变换</X.H1>
-            <X.P>视口变换希望在$xy$平面上将$[-1,1]^2$变换至屏幕上$[0,width]\times[0,height]$，这个矩阵是：</X.P>
+            <X.P>视口变换希望在$xy$平面上将$[-1,1]^2$变换至屏幕上$[0,w]\times[0,h]$，这个矩阵是：</X.P>
             <X.Formula
                 text="
                 M_{viewport}=
                 \begin{bmatrix}
-                \frac{width}{2} & 0 & 0 & \frac{width}{2} \\
+                w/2 & 0 & 0 & w/2 \\
                 \\
-                0 & \frac{height}{2} & 0 & \frac{height}{2} \\
+                0 & h/2 & 0 & h/2 \\
                 \\
                 0 & 0 & 1 & 0 \\
                 \\

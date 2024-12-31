@@ -6,16 +6,13 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    color: var(--fg-main);
     border-radius: 0.5em;
     transition: color, background-color 200ms;
 }
-.link:hover {
-    background-color: var(--bg-transparent-gray-300);
+.link.active {
+    color: var(--brand-300);
 }
+.link:hover,
 .link.active {
     background-color: var(--bg-transparent-gray-300);
-}
-.link.active * {
-    color: var(--brand-300);
 }
