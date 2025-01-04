@@ -8,6 +8,7 @@ import 'prismjs/components/prism-tsx';
 import 'prismjs/components/prism-php';
 import 'prismjs/components/prism-sql';
 import 'prismjs/components/prism-java';
+import 'prismjs/components/prism-json';
 import 'prismjs/components/prism-perl';
 import 'prismjs/components/prism-bash';
 import 'prismjs/components/prism-python';
@@ -26,6 +27,7 @@ const languageNameMap = {
     php: 'PHP',
     sql: 'SQL',
     java: 'Java',
+    json: 'JSON',
     perl: 'Perl',
     bash: 'Bash',
     python: 'Python',

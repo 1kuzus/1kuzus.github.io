@@ -168,6 +168,31 @@ export default function Post() {
             <X.H1>Path traversal</X.H1>
             <X.H2>Ap: File path traversal, simple case</X.H2>
             <X.P>随便检查一个图片，地址为`/image?filename=23.jpg`，改为`/txt?filename=../../../etc/passwd`即可。</X.P>
+            <X.H1>Access control vulnerabilities</X.H1>
+            <X.H2>Ap: Unprotected admin functionality</X.H2>
+            <X.P>在`robots.txt`中发现`/administrator-panel`，可以直接访问管理员面板。</X.P>
+            <X.H2>Ap: Unprotected admin functionality with unpredictable URL</X.H2>
+            <X.P>在前端代码中可以发现管理员面板路径`/admin-h132ly`。</X.P>
+            <X.H2>Ap: User role controlled by request parameter</X.H2>
+            <X.P>是否为管理员保存在Cookie中，把`Admin`的值改为`true`，再访问`/admin`即可。</X.P>
+            <X.H2>Ap: User role can be modified in user profile</X.H2>
+            <X.P>在更新电子邮件的POST请求参数中加入`roleid`：</X.P>
+            <X.CodeBlock
+                language="json"
+                diffAddedLines="3"
+                code={`
+                {
+                    "email": "1@1.com",
+                    "roleid": 2
+                }
+                `}
+            />
+            <X.P>更新后即可访问管理员面板。</X.P>
+            <X.H2>Ap: User ID controlled by request parameter</X.H2>
+            <X.P>登录自己的账号后，URL为`/my-account?id=wiener`，改为`/my-account?id=carlos`就可以获得目标用户的API Key。</X.P>
+            <X.H2>Ap: User ID controlled by request parameter, with unpredictable user IDs</X.H2>
+            <X.P>登录自己的账号后，URL为`/my-account?id=81861f68-9ff9-4641-aa12-cd2ead96ef58`，目标用户`carlos`的`id`无法预测。</X.P>
+            <X.P>浏览网站，发现博客页面包含其他用户的`userId`，可以找到`carlos`发的帖子，进而拿到其`id`。</X.P>
             <X.H1>Information disclosure</X.H1>
             <X.H2>Ap: Information disclosure in error messages</X.H2>
             <X.P>要寻找的信息是在报错中泄露的使用的库的版本号，注意后端会把报错信息返回。把请求的参数改为单引号：`/product?productId=%27`，可以看到报错：</X.P>
