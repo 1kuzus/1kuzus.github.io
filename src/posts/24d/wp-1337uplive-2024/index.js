@@ -58,7 +58,7 @@ export default function Post() {
                 }
                 `}
             />
-            <X.P>但是常规手段注册不允许出现非数字和字母的字符，考虑直接构造用户名为`payload`的JWT`token`。</X.P>
+            <X.P>但是常规手段注册不允许出现非数字和字母的字符，考虑直接构造用户名为payload的JWT`token`。</X.P>
             <X.P>`/jwks.json`接口泄露了`publicKey`，并且服务端检验JWT的函数是：</X.P>
             <X.CodeBlock
                 language="js"

