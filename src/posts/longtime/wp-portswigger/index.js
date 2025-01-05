@@ -176,7 +176,7 @@ export default function Post() {
             <X.H2>Ap: User role controlled by request parameter</X.H2>
             <X.P>是否为管理员保存在Cookie中，把`Admin`的值改为`true`，再访问`/admin`即可。</X.P>
             <X.H2>Ap: User role can be modified in user profile</X.H2>
-            <X.P>在更新电子邮件的POST请求参数中加入`roleid`：</X.P>
+            <X.P>在更新电子邮件的`POST`请求参数中加入`roleid`：</X.P>
             <X.CodeBlock
                 language="json"
                 diffAddedLines="3"
@@ -190,9 +190,32 @@ export default function Post() {
             <X.P>更新后即可访问管理员面板。</X.P>
             <X.H2>Ap: User ID controlled by request parameter</X.H2>
             <X.P>登录自己的账号后，URL为`/my-account?id=wiener`，改为`/my-account?id=carlos`就可以获得目标用户的API Key。</X.P>
-            <X.H2>Ap: User ID controlled by request parameter, with unpredictable user IDs</X.H2>
+            <X.H2>Ap: User ID controlled by request parameter with unpredictable user IDs</X.H2>
             <X.P>登录自己的账号后，URL为`/my-account?id=81861f68-9ff9-4641-aa12-cd2ead96ef58`，目标用户`carlos`的`id`无法预测。</X.P>
             <X.P>浏览网站，发现博客页面包含其他用户的`userId`，可以找到`carlos`发的帖子，进而拿到其`id`。</X.P>
+            <X.H2>Ap: User ID controlled by request parameter with data leakage in redirect</X.H2>
+            <X.P>直接把URL改为`/my-account?id=carlos`，尽管触发了`302`重定向到`/login`，但重定向请求的响应体中包含了HTML文档，从而泄露了`carlos`的API Key。</X.P>
+            <X.H2>Ap: User ID controlled by request parameter with password disclosure</X.H2>
+            <X.P>同样发现可以直接修改`id`切换到`administrator`的主页，主页中的修改密码表单泄露了管理员密码。</X.P>
+            <X.H2>Ap: Insecure direct object references</X.H2>
+            <X.P>在Live chat页面点击View transcript，发现请求了`/download-transcript/2.txt`，再次点击序号递增。改为`1.txt`，下载的文件包含了`carlos`的密码。</X.P>
+            <X.H2>Pr: URL-based access control can be circumvented</X.H2>
+            <X.P>题目说后端支持`X-Original-URL`，可以利用这点绕过鉴权：</X.P>
+            <X.CodeBlock
+                language="python"
+                code={`
+                import requests
+
+                url = "https://0afe00820447d83281885ea4004a00fe.web-security-academy.net/?username=carlos"
+                resp = requests.get(url, headers={"X-Original-URL": "/admin/delete"})
+                `}
+            />
+            <X.H2>Pr: Method-based access control can be circumvented</X.H2>
+            <X.P>用管理员账号登录，可以进行提升用户权限操作，但题目要求我们用普通账号登录并完成提权。用`wiener`账号登录，伪造管理员发起的请求，会提示Unauthorized。把`POST`方法改为`GET`，请求`/admin-roles?username=wiener&action=upgrade`可以绕过鉴权。</X.P>
+            <X.H2>Pr: Multi-step process with no access control on one step</X.H2>
+            <X.P>重放Are you sure这一步的请求即可。</X.P>
+            <X.H2>Pr: Referer-based access control</X.H2>
+            <X.P>用普通用户登录后，重放提权请求，把`Referer`改为`https://.../admin`可以绕过鉴权。</X.P>
             <X.H1>Information disclosure</X.H1>
             <X.H2>Ap: Information disclosure in error messages</X.H2>
             <X.P>要寻找的信息是在报错中泄露的使用的库的版本号，注意后端会把报错信息返回。把请求的参数改为单引号：`/product?productId=%27`，可以看到报错：</X.P>
