@@ -50,6 +50,21 @@ export default function Post() {
             <X.H2>修改截图的输出格式</X.H2>
             <X.P>Mac自带截图功能（`command`+`shift`+`3`/`4`/`5`）默认输出格式为`png`，可以修改为`jpg`：</X.P>
             <X.CodeBlock language="text" code="defaults write com.apple.screencapture type jpg" />
+            <X.H2>清空Mac图标缓存</X.H2>
+            <X.P>有时在访达中更改了某文件类型的默认打开方式后，会发现图标并没有跟着改变过来。可以执行以下命令：</X.P>
+            <X.CodeBlock
+                language="bash"
+                code={`
+                sudo rm -rfv /Library/Caches/com.apple.iconservices.store
+                sudo find /private/var/folders/ \\( -name com.apple.dock.iconcache -or -name com.apple.iconservices \\) -exec rm -rfv {} \\;
+                sleep 3
+                killall Dock; killall Finder
+                `}
+            />
+            <X.P>参考：</X.P>
+            <X.Uli>@[https://gist.github.com/ismyrnow/e92c6010cda9325b2d8811387a05f224]@</X.Uli>
+            <X.Uli>@[https://apple.stackexchange.com/questions/125402/icons-remains-the-same-after-i-have-changed-the-default-program-for-opening-the/450863#450863]@</X.Uli>
+            <X.Uli>@[https://nolebase.ayaka.io/zh-CN/笔记/🎛%EF%B8%8F%20操作系统/🍎%20macOS/修复%20Finder（访达）在变更默认打开程序之后图标依然维持原样的异常问题.html]@</X.Uli>
         </>
     );
 }
