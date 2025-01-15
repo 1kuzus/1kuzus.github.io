@@ -80,6 +80,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 25vh;
+    min-height: 200px;
 }
 .homepage-nav-card {
     display: flex;
