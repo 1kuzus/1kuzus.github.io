@@ -75,7 +75,7 @@ export default function Post() {
             <X.P>此题目用到特定版本jQuery的漏洞，`$()`可以被利用向DOM中注入恶意元素。这道题目需要构造一个恶意网页发送给目标用户，所以需要在用户侧触发`hashchange`，因此使用`iframe`。</X.P>
             <X.P>官方题解直接在`onload`中改变`this.src`，尽管也可以触发`print()`函数，但是这样做会导致循环（`this.src`改变时，再次调用`onload`，然后再改变`this.src`）。所以这里加了判断。</X.P>
             <X.CodeBlock
-                language="html"
+                language="text"
                 code={`
                 <iframe
                     src="https://0a47005704554525834f7e66009e008f.web-security-academy.net/#"
@@ -83,6 +83,40 @@ export default function Post() {
                 >
                 `}
             />
+            <X.H2>Ap: Reflected XSS into attribute with angle brackets HTML-encoded</X.H2>
+            <X.P>输入的内容被加载到`input`元素的`value`属性：</X.P>
+            <X.Image src="lab-attribute-angle-brackets-html-encoded.jpg" filterDarkTheme />
+            <X.P>在本地`"onblur="alert(0)`这样的payload就可以触发，但是测试发现好像只有`onmouseover`，`onmouseenter`这种才能通过远程，暂时不清楚原因。</X.P>
+            <X.H2>Ap: Stored XSS into anchor href attribute with double quotes HTML-encoded</X.H2>
+            <X.P>表单的`website`域直接将传入的字符串作为`href`，因此payload为`javascript:alert(0)`。</X.P>
+            <X.H2>Ap: Reflected XSS into a JavaScript string with angle brackets HTML encoded</X.H2>
+            <X.P>搜索内容在后端被直接拼接在JavaScript代码里，注入点仍然是一个埋点（用于数据跟踪），比如搜索`123';123`，观察得到的HTML文档：</X.P>
+            <X.Image src="lab-javascript-string-angle-brackets-html-encoded.jpg" filterDarkTheme />
+            <X.P>可以看到第二个`123`是有语法高亮的，因此可以构造payload为`0';alert(0);//`。</X.P>
+            <X.H2>Pr: DOM XSS in document.write sink using source location.search inside a select element</X.H2>
+            <X.P>注入点是`window.location.search`：</X.P>
+            <X.CodeBlock
+                language="js"
+                code={`
+                var stores = ["London","Paris","Milan"];
+                var store = (new URLSearchParams(window.location.search)).get('storeId');
+                document.write('<select name="storeId">');
+                if(store) {
+                    document.write('<option selected>'+store+'</option>');
+                }
+                for(var i=0;i<stores.length;i++) {
+                    if(stores[i] === store) {
+                        continue;
+                    }
+                    document.write('<option>'+stores[i]+'</option>');
+                }
+                document.write('</select>');
+                `}
+            />
+            <X.P>那么直接访问{'`/product?productId=2&storeId=<script>alert(0)</script>`'}即可。</X.P>
+
+            
+
             <X.H1>SSRF: Server-side request forgery</X.H1>
             <X.H2>Ap: Basic SSRF against the local server</X.H2>
             <X.P>根据提示，发送请求：</X.P>
