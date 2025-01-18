@@ -16,6 +16,7 @@ export default function Post() {
                 `document.write`和`innerHTML`：`innerHTML`写入的`script`标签不会被解析执行；`document.write`会直接将内容插入文档流，写入的`script`标签会被执行。对于`innerHTML`的情况可以考虑使用
                 {'`<img src=0 onerror="alert(0)">`'}。
             </X.Uli>
+            <X.Uli>@XSS Cheat Sheet[https://portswigger.net/web-security/cross-site-scripting/cheat-sheet]@</X.Uli>
             <X.H2>Ap: Reflected XSS into HTML context with nothing encoded</X.H2>
             <X.P>反射型XSS，搜索{'`<script>alert(0)</script>`'}。</X.P>
             <X.H2>Ap: Stored XSS into HTML context with nothing encoded</X.H2>
@@ -114,9 +115,42 @@ export default function Post() {
                 `}
             />
             <X.P>那么直接访问{'`/product?productId=2&storeId=<script>alert(0)</script>`'}即可。</X.P>
-
-            
-
+            <X.H2>Pr: DOM XSS in AngularJS expression with angle brackets and double quotes HTML-encoded</X.H2>
+            <X.HighlightBlock background="red">
+                <X.P>待做！</X.P>
+            </X.HighlightBlock>
+            <X.H2>Pr: Reflected DOM XSS</X.H2>
+            <X.P>网站请求了`searchResults.js`，审计一下代码，发现有调用`eval`函数：</X.P>
+            <X.CodeBlock
+                language="js"
+                highlightLines="4"
+                code={`
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        eval('var searchResultsObj = ' + this.responseText);
+                        displaySearchResults(searchResultsObj);
+                    }
+                };
+                `}
+            />
+            <X.P>
+                抓包看到`responseText`的形式为：{'`{"results":[],"searchTerm":"1234"}`'}，因此可以构造payload为{'`0"};alert(0);//`'}。
+            </X.P>
+            <X.P>尝试下发现不成功，因为`"`被转义成`\\"`，不过反斜杠没有被转义，因此再插入一个反斜杠抵消掉即可，最终payload为{'`0\\"};alert(0);//`'}。</X.P>
+            <X.H2>Pr: Stored DOM XSS</X.H2>
+            <X.P>网站请求了`loadCommentsWithVulnerableEscapeHtml.js`，审计一下代码，使用了`replace`函数：</X.P>
+            <X.CodeBlock
+                language="js"
+                code={`
+                function escapeHTML(html) {
+                    return html.replace('<', '&lt;').replace('>', '&gt;');
+                }
+                `}
+            />
+            <X.P>`replace`函数这样调用只会转义首次出现的地方，正确实践应该使用正则表达式：</X.P>
+            <X.Image src="lab-dom-xss-stored.jpg" filterDarkTheme />
+            <X.P>本题可以用{'`<><img src=0 onerror="alert(0)">`'}注入。</X.P>
             <X.H1>SSRF: Server-side request forgery</X.H1>
             <X.H2>Ap: Basic SSRF against the local server</X.H2>
             <X.P>根据提示，发送请求：</X.P>

@@ -1,29 +1,32 @@
 import X from 'src/component/X';
 
 /*
-
-强相关
-A SEALANT for Inter-App Security Holes in Android (ICSE 2017)还没看
-Analysis of Android Inter-App Security Vulnerabilities Using COVERT (ICSE 2015)
-Unauthorized Origin Crossing on Mobile Platforms: Threats and Mitigation (CCS 2013)
-CHEX: Statically Vetting Android Apps for Component Hijacking Vulnerabilities (CCS 2012) 再看一眼
-Analyzing Inter-Application Communication in Android (MobiSys 2011)
-Permission Re-Delegation: Attacks and Defenses (Security 2011)
-
-ICC相关
-RAICC: Revealing Atypical Inter-Component Communication in Android Apps (ICSE 2021)
-Amandroid: A Precise and General Inter-component Data Flow Analysis Framework for Security Vetting of Android Apps (TOPS 2018)
-Composite Constant Propagation: Application to Android Inter-Component Communication Analysis (ICSE 2015)
-IccTA: detecting inter-component privacy leaks in Android apps (ICSE 2015) 
-Effective Inter-Component Communication Mapping in Android: An Essential Step Towards Holistic Security Analysis (Security 2013)
-
-部分相关
-MALintent: Coverage Guided Intent Fuzzing Framework for Android (NDSS 2025)
-Leaking the Privacy of Groups and More: Understanding Privacy Risks of Cross-App Content Sharing in Mobile Ecosystem (NDSS 2024) 跨应用内容分享
-Understanding the (In)Security of Cross-side Face Verification Systems in Mobile Apps: A System Perspective. (s&p 2023) 
-Uncovering Intent based Leak of Sensitive Data in Android Framework (CCS 2022)
-Understanding Malicious Cross-library Data Harvesting on Android (Security 2021)
-AppIntent: analyzing sensitive data transmission in android for privacy leakage detection (CCS 2013) 想法：根据数据传输是否符合用户意图来判断是否存在隐私泄露
+A Measurement Study of Wechat Mini-Apps
+A Small Leak Will Sink Many Ships: Vulnerabilities Related to mini-programs Permissions
+Characterizing and detecting bugs in WeChat mini-programs
+Cross Miniapp Request Forgery: Root Causes, Attacks, and Vulnerability Detection
+Demystifying Resource Management Risks in Emerging Mobile App-in-App Ecosystems
+Do as You Say: Consistency Detection of Data Practice in Program Code and Privacy Policy in Mini-App
+Don't Leak Your Keys: Understanding, Measuring, and Exploiting the AppSecret Leaks in Mini-Programs
+Identity Confusion in ｛WebView-based｝ Mobile App-in-app Ecosystems
+Industry practice of Javascript dynamic analysis on WeChat mini-programs
+JSLibD: Reliable and Heuristic Detection of Third-party Libraries in Miniapps
+Measuring the Leakage and Exploitability of Authentication Secrets in Super-apps: The WeChat Case
+MiniTaintDev: Unveiling Mini-App Vulnerabilities through Dynamic Taint Analysis
+MiniTracker: Large-Scale Sensitive Information Tracking in Mini Apps
+MUID: Detecting Sensitive User Inputs in Miniapp Ecosystems
+On the Usage-scenario-based Data Minimization in Mini Programs
+One Size Does Not Fit All: Uncovering and Exploiting Cross Platform Discrepant APIs in WeChat
+Potential Risks Arising from the Absence of Signature Verification in Miniapp Plugins
+Shared Account Problem in Super Apps
+SoK: Decoding the Super App Enigma: The Security Mechanisms, Threats, and Trade-offs in OS-alike Apps
+Systematic Analysis of Security and Vulnerabilities in Miniapps
+TAINTMINI: Detecting Flow of Sensitive Data in Mini-Programs with Static Taint Analysis
+Towards a Better Super-App Architecture from a Browser Security Perspective
+TrustedDomain Compromise Attack in App-in-app Ecosystems
+Uncovering and Exploiting Hidden APls in Mobile Super Apps
+Understanding Privacy Over-collection in WeChat Sub-app Ecosystem
+Wemint:Tainting Sensitive Data Leaks in WeChat Mini-Programs
 */
 
 /******
@@ -31,8 +34,6 @@ Unleashing the Walking Dead: Understanding Cross-App Remote Infections on Mobile
 https://homes.luddy.indiana.edu/luyixing/bib/ccs17-unleashing.pdf
 
 Uncovering and Exploiting Hidden APIs in Mobile Super Apps (CCS 2023)
-
-
 ******/
 
 export default function Post() {
@@ -49,6 +50,10 @@ export default function Post() {
                 <X.P>一个新的攻击面：Android框架发送的`Intent`对象，被一个未授权（没有申请任何权限的）App接收。</X.P>
                 <X.P>之前的工作有研究App之间基于`Intent`的信息泄露，发送方是App，而这篇论文研究的问题*发送方是Android框架*。</X.P>
             </X.HighlightBlock>
+            <X.H2 href="https://seal.ics.uci.edu/projects/covert/2015ICSE.pdf">Analysis of Android Inter-App Security Vulnerabilities Using COVERT (ICSE 2015)</X.H2>
+            <X.HighlightBlock background="gray">
+                <X.P>本文侧重点是*多应用复合*漏洞，期望对输入的一组apk进行检测分析。</X.P>
+            </X.HighlightBlock>
             <X.H2 href="https://surface.syr.edu/cgi/viewcontent.cgi?article=1217&context=eecs">Attacks on WebView in the Android System (ACSAC 2011)</X.H2>
             <X.HighlightBlock background="gray">
                 <X.P>普通浏览器的一个重要作用是隔离网页（中的JS）和操作系统，因此使用可信的浏览器很重要；但`WebView`恰好是为了使得网页与Android系统更灵活的交互，因此打破了浏览器的这种隔离机制。本文主要介绍了和`WebView`相关的攻击。</X.P>
@@ -58,23 +63,29 @@ export default function Post() {
                 <X.Uli>JS注入：`WebView`给App提供了在网页中注入JS的能力；</X.Uli>
                 <X.Uli>事件劫持：`WebViewClient`类提供了一些网页事件的钩子，App可以重写这些方法。</X.Uli>
             </X.HighlightBlock>
+            <X.H2 href="https://www.usenix.org/legacy/event/sec11/tech/full_papers/Felt.pdf">Permission re-delegation: attacks and defenses (Security 2011)</X.H2>
+            <X.HighlightBlock background="gray">
+                <X.Image src="permission-re-delegation.jpg" width="400px" filterDarkTheme />
+                <X.P>重授权攻击：Requester没有访问某个API的权限，而Deputy有；如果Deputy有公共的接口，则可以被Requester间接访问API。</X.P>
+            </X.HighlightBlock>
             <X.H2 href="https://people.eecs.berkeley.edu/~daw/papers/intents-mobisys11.pdf">Analyzing Inter-Application Communication in Android (MobiSys 2011)</X.H2>
             <X.HighlightBlock background="gray">
                 <X.P>Android应用程序消息传递中的漏洞与检测工具ComDroid。</X.P>
                 <X.P>基于`Intent`的攻击方式：</X.P>
                 <X.Oli reset>
-                    <X.P>未经授权的Intent接收（Unauthorized Intent Receipt） - 攻击方是接收方</X.P>
+                    <X.P>未经授权的Intent接收（Unauthorized Intent Receipt）：攻击方是接收方</X.P>
                     <X.Uli>Broadcast Theft：广播可能被精心注册了匹配规则`(intent-filter)`的恶意第三方应用窃听；如果是有序广播还可能被拦截。</X.Uli>
                     <X.Uli>Activity Hijacking：同样地，恶意应用也可以在`Activity`中注册匹配目标隐式`Intent`的规则；尽管出现多个可匹配应用时会提示用户选择用哪个应用打开，攻击者可以伪装恶意应用的名字等信息以增加欺骗成功的可能性。</X.Uli>
                     <X.Uli>Service Hijacking：恶意服务拦截了一个启动预期服务的`Intent`。（2014年的Android 5.0以后要求服务必须显式启动）</X.Uli>
                     <X.Uli>Special Intents</X.Uli>
                 </X.Oli>
                 <X.Oli>
-                    <X.P>Intent欺骗攻击（Intent Spoofing） - 攻击方是发送方</X.P>
+                    <X.P>Intent欺骗攻击（Intent Spoofing）：攻击方是发送方</X.P>
                     <X.Uli>Malicious Broadcast Injection：如果导出的（`android:exported="true"`）`BroadcastReceiver`盲目信任外部广播`Intent`，可能造成非预期行为。</X.Uli>
                     <X.Uli>Malicious Activity Launch：导出的`Activity`可以被外部的显式/隐式`Intent`启动。</X.Uli>
                     <X.Uli>Malicious Service Launch：类似地，导出的未受`permission`保护的`Service`可以被任何应用程序绑定。</X.Uli>
                 </X.Oli>
+                <X.P>ComDroid只是报告*不受保护的导出的组件*，不会区分那些为了应用间协作而刻意导出的组件（由开发者自行确认）。</X.P>
             </X.HighlightBlock>
             {/* -------------------------------- */}
             <X.H1>小程序</X.H1>
