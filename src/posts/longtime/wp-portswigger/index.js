@@ -349,6 +349,25 @@ export default function Post() {
             <X.P>重放Are you sure这一步的请求即可。</X.P>
             <X.H2>Pr: Referer-based access control</X.H2>
             <X.P>用普通用户登录后，重放提权请求，把`Referer`改为`https://.../admin`可以绕过鉴权。</X.P>
+            <X.H1>Authentication</X.H1>
+            <X.H2>Ap: Username enumeration via different responses</X.H2>
+            <X.P>用户名枚举攻击：用户不存在会提示`Invalid username`，否则会提示`Incorrect password`。题目给了用户名和密码的字典，先枚举出用户名为`acceso`，然后枚举出密码为`1234567`。</X.P>
+            <X.H2>Ap: 2FA simple bypass</X.H2>
+            <X.P>用户名密码登录后，可以直接改URL为`/my-account`跳过2FA。（用户名密码登录后登录态已经保存，2FA“形同虚设”。）</X.P>
+            <X.H2>Ap: Password reset broken logic</X.H2>
+            <X.P>用`wiener`账号抓到重置密码请求的包，发现参数里有`username=wiener`，改为`username=carlos`重放请求就重置了`carlos`用户的密码。</X.P>
+            <X.H2>Pr: Username enumeration via subtly different responses</X.H2>
+            <X.P>用户名枚举攻击，回显有微小的差别，名为`accounts`的账号回显为`Invalid username or password`，相比于其他的结尾少了一个句号`.`。然后枚举出密码为`buster`。</X.P>
+            <X.H2>Pr: Username enumeration via response timing</X.H2>
+            <X.P>基于时间的用户名枚举：</X.P>
+            <X.Uli>爆破发现有频率限制，本题可以添加`X-Forwarded-For`头绕过；</X.Uli>
+            <X.Uli>枚举用户名时，把密码设置为一个较长的字符串，对于合法的用户名，服务端可能还会判断密码是否正确，比起不存在的用户名可能在处理时间上有差异。利用这一点观察Burp Intruder的fuzz结果的响应时间一列，`autodiscover`账号响应时间明显长于其他；</X.Uli>
+            <X.Uli>枚举出密码为`ginger`。</X.Uli>
+            <X.H2>Pr: Broken brute-force protection, IP block</X.H2>
+            <X.P>频率限制有逻辑缺陷：成功登录可以重置频率限制。因此间隔地用本题给的`wiener`账号登录、枚举字典尝试登录`carlos`，确保在触发频率限制前重置，即可枚举出密码为`matrix`。（然而这样不能并行了，因为要保证请求有序到达）</X.P>
+            <X.H2>Pr: Username enumeration via account lock</X.H2>
+            <X.P>频率限制有逻辑缺陷：只有存在的用户多次尝试登录才会被限制，如果用户不存在则会一直报用户名密码错误。利用这一点可以对字典上所有用户名发出几次请求（大于三次就会触发频率限制），然后找出最后一轮请求中回显不同的用户名`af`，然后枚举出密码为`moscow`。</X.P>
+
             <X.H1>Information disclosure</X.H1>
             <X.H2>Ap: Information disclosure in error messages</X.H2>
             <X.P>要寻找的信息是在报错中泄露的使用的库的版本号，注意后端会把报错信息返回。把请求的参数改为单引号：`/product?productId=%27`，可以看到报错：</X.P>
