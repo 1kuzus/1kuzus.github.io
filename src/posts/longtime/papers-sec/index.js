@@ -1,39 +1,68 @@
 import X from 'src/component/X';
 
 /*
-A Measurement Study of Wechat Mini-Apps
-A Small Leak Will Sink Many Ships: Vulnerabilities Related to mini-programs Permissions
-Characterizing and detecting bugs in WeChat mini-programs
-Cross Miniapp Request Forgery: Root Causes, Attacks, and Vulnerability Detection
-Demystifying Resource Management Risks in Emerging Mobile App-in-App Ecosystems
-Do as You Say: Consistency Detection of Data Practice in Program Code and Privacy Policy in Mini-App
-Don't Leak Your Keys: Understanding, Measuring, and Exploiting the AppSecret Leaks in Mini-Programs
-Identity Confusion in ｛WebView-based｝ Mobile App-in-app Ecosystems
-Industry practice of Javascript dynamic analysis on WeChat mini-programs
+Demystifying Resource Management Risks in Emerging Mobile App-in-App Ecosystems (CCS 2020)
+https://xw48.github.io/files/lu2020demystifying.pdf
+
+Industry practice of Javascript dynamic analysis on WeChat mini-programs (ASE 2020)
+https://yepangliu.github.io/files/WeJalangi_ASE2020_Industry_Track.pdf
+
+Characterizing and detecting bugs in WeChat mini-programs (ICSE 2022)
+https://dl.acm.org/doi/pdf/10.1145/3510003.3510114
+
+Identity Confusion in WebView-based Mobile App-in-app Ecosystems (Security 2022)
+https://www.usenix.org/system/files/sec22-zhang-lei.pdf
+
+A Small Leak Will Sink Many Ships: Vulnerabilities Related to mini-programs Permissions (COMPSAC 2023)
+https://arxiv.org/pdf/2205.15202
+
+Don't Leak Your Keys: Understanding, Measuring, and Exploiting the AppSecret Leaks in Mini-Programs (CCS 2023)
+https://dl.acm.org/doi/pdf/10.1145/3576915.3616591
+
+Measuring the Leakage and Exploitability of Authentication Secrets in Super-apps: The WeChat Case (RAID 2023)
+https://arxiv.org/pdf/2307.09317
+
+MiniTracker: Large-Scale Sensitive Information Tracking in Mini Apps (TDSC 2023)
+https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10197457
+
+TAINTMINI: Detecting Flow of Sensitive Data in Mini-Programs with Static Taint Analysis (ICSE 2023)
+https://chaowang.dev/publications/icse23.pdf
+
+Uncovering and Exploiting Hidden APIs in Mobile Super Apps (CCS 2023)
+https://dl.acm.org/doi/pdf/10.1145/3576915.3616676
+
+One Size Does Not Fit All: Uncovering and Exploiting Cross Platform Discrepant APIs in WeChat (Security 2023)
+https://www.usenix.org/system/files/usenixsecurity23-wang-chao.pdf
+
+Wemint:Tainting Sensitive Data Leaks in WeChat Mini-Programs (ASE 2023)
+https://shenaow.github.io/files/ase23wemint.pdf
+
+SoK: Decoding the Super App Enigma: The Security Mechanisms, Threats, and Trade-offs in OS-alike Apps
+https://arxiv.org/pdf/2306.07495
+
+Understanding Privacy Over-collection in WeChat Sub-app Ecosystem
+https://arxiv.org/pdf/2306.08391
+
+Do as You Say: Consistency Detection of Data Practice in Program Code and Privacy Policy in Mini-App (TSE 2024)
+https://arxiv.org/pdf/2302.13860
+
+# SaTS 2023 https://www.sigsac.org/ccs/CCS2023/tocs/tocs-sats23.html
 JSLibD: Reliable and Heuristic Detection of Third-party Libraries in Miniapps
-Measuring the Leakage and Exploitability of Authentication Secrets in Super-apps: The WeChat Case
+TrustedDomain Compromise Attack in App-in-app Ecosystems
 MiniTaintDev: Unveiling Mini-App Vulnerabilities through Dynamic Taint Analysis
-MiniTracker: Large-Scale Sensitive Information Tracking in Mini Apps
 MUID: Detecting Sensitive User Inputs in Miniapp Ecosystems
 On the Usage-scenario-based Data Minimization in Mini Programs
-One Size Does Not Fit All: Uncovering and Exploiting Cross Platform Discrepant APIs in WeChat
 Potential Risks Arising from the Absence of Signature Verification in Miniapp Plugins
-Shared Account Problem in Super Apps
-SoK: Decoding the Super App Enigma: The Security Mechanisms, Threats, and Trade-offs in OS-alike Apps
 Systematic Analysis of Security and Vulnerabilities in Miniapps
-TAINTMINI: Detecting Flow of Sensitive Data in Mini-Programs with Static Taint Analysis
 Towards a Better Super-App Architecture from a Browser Security Perspective
-TrustedDomain Compromise Attack in App-in-app Ecosystems
-Uncovering and Exploiting Hidden APls in Mobile Super Apps
-Understanding Privacy Over-collection in WeChat Sub-app Ecosystem
-Wemint:Tainting Sensitive Data Leaks in WeChat Mini-Programs
+Shared Account Problem in Super Apps
 */
 
 /******
 Unleashing the Walking Dead: Understanding Cross-App Remote Infections on Mobile WebViews (CCS 2017)
 https://homes.luddy.indiana.edu/luyixing/bib/ccs17-unleashing.pdf
 
-Uncovering and Exploiting Hidden APIs in Mobile Super Apps (CCS 2023)
+{CryptoREX}: Large-scale analysis of cryptographic misuse in {IoT} devices,
 ******/
 
 export default function Post() {
@@ -89,6 +118,27 @@ export default function Post() {
             </X.HighlightBlock>
             {/* -------------------------------- */}
             <X.H1>小程序</X.H1>
+            <X.H2 href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10197457">MiniTracker: Large-Scale Sensitive Information Tracking in Mini Apps (TDSC 2023)</X.H2>
+            <X.HighlightBlock background="gray">
+                <X.P>为检测小程序生态中的敏感数据泄露设计的静态污点分析工具MiniTracker。</X.P>
+                <X.P>考虑的污点源与污点汇：</X.P>
+                <X.Uli>
+                    <X.P>污点源：</X.P>
+                    <X.Uli>设备信息：可用于确定设备状态、唯一识别用户或描述用户习惯的信息</X.Uli>
+                    <X.Uli>定位</X.Uli>
+                    <X.Uli>本地文件读取：比如`wx.chooseImage`</X.Uli>
+                    <X.Uli>开放API：主应用提供的开放能力，比如`wx.getUserInfo`可以获取用户的帐户昵称和头像</X.Uli>
+                </X.Uli>
+                <X.Uli>
+                    <X.P>污点汇：</X.P>
+                    <X.Uli>网络请求</X.Uli>
+                    <X.Uli>不通过网络的信息传输：比如蓝牙、短信、电话等</X.Uli>
+                    <X.Uli>本地文件写入：比如`wx.setClipboardData`写入剪贴板后，其他应用可以从中读出信息</X.Uli>
+                    <X.Uli>开放API：同样，有些开放API会把信息泄露给第三方，例如`wx.requestPayment`传递的参数会传输到支付服务</X.Uli>
+                </X.Uli>
+                <X.P>精读一下。</X.P>
+            </X.HighlightBlock>
+
             <X.H2 href="https://dl.acm.org/doi/pdf/10.1145/3548606.3560597">Cross Miniapp Request Forgery: Root Causes, Attacks, and Vulnerability Detection (CCS 2022)</X.H2>
             <X.HighlightBlock background="gray">
                 <X.P>当发生微信小程序跳转时，如果接收端没有检查`referrerInfo.appId`，就有可能收到CMRF攻击。攻击者可以用自己的恶意小程序通过`wx.navigateToMiniProgram`跳转到受害者的小程序，携带自定义的`extraData`实现攻击。</X.P>

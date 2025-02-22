@@ -20,7 +20,7 @@
         "time": "2024-12-23"
     },
     "/24d/papers-sec-241207-aimie/": {
-        "title": "论文精读：Understanding and Detecting Abused Image Hosting Modules as Malicious Services (CCS 2023)",
+        "title": "论文阅读：Understanding and Detecting Abused Image Hosting Modules as Malicious Services (CCS 2023)",
         "time": "2024-12-07"
     },
     "/24d/android-send-explicit-intent-to-dynamically-registered-receiver/": {
@@ -52,7 +52,7 @@
         "time": "2024-10-02"
     },
     "/24c/papers-sec-240922-pre-hijacked-accounts/": {
-        "title": "论文概要：Pre-hijacked accounts: An Empirical Study of Security Failures in User Account Creation on the Web (Security 2022)",
+        "title": "论文阅读：Pre-hijacked accounts: An Empirical Study of Security Failures in User Account Creation on the Web (Security 2022)",
         "time": "2024-09-22"
     },
     "/24c/asm8086-snake/": {
@@ -64,7 +64,7 @@
         "time": "2024-09-13"
     },
     "/24c/papers-sec-240902-pafa-authentication/": {
-        "title": "论文精读：Maginot Line: Assessing a New Cross-app Threat to PII-as-Factor Authentication in Chinese Mobile Apps (NDSS 2024)",
+        "title": "论文阅读：Maginot Line: Assessing a New Cross-app Threat to PII-as-Factor Authentication in Chinese Mobile Apps (NDSS 2024)",
         "time": "2024-09-02"
     },
     "/24c/assembly-6/": {
@@ -76,7 +76,7 @@
         "time": "2024-08-26"
     },
     "/24c/papers-sec-240824-zxcvbn/": {
-        "title": "论文精读：zxcvbn: Low-Budget Password Strength Estimation (Security 2016)",
+        "title": "论文阅读：zxcvbn: Low-Budget Password Strength Estimation (Security 2016)",
         "time": "2024-08-24"
     },
     "/24c/assembly-5/": {
@@ -88,7 +88,7 @@
         "time": "2024-08-20"
     },
     "/24c/papers-sec-240817-2fa-failures/": {
-        "title": "论文精读：Security and Privacy Failures in Popular 2FA Apps (Security 2023)",
+        "title": "论文阅读：Security and Privacy Failures in Popular 2FA Apps (Security 2023)",
         "time": "2024-08-17"
     },
     "/24c/winograd/": {
@@ -100,7 +100,7 @@
         "time": "2024-08-14"
     },
     "/24c/papers-sec-240810-conquer/": {
-        "title": "论文精读：Do Not Give A Dog Bread Every Time He Wags His Tail: Stealing Passwords through Content Queries (CONQUER) Attack (NDSS 2023)",
+        "title": "论文阅读：Do Not Give A Dog Bread Every Time He Wags His Tail: Stealing Passwords through Content Queries (CONQUER) Attack (NDSS 2023)",
         "time": "2024-08-10"
     },
     "/24c/leetcode-52/": {
@@ -124,7 +124,7 @@
         "time": "2024-08-06"
     },
     "/24c/papers-sec-240728-2fa-consistency/": {
-        "title": "论文精读：A Systematic Study of the Consistency of Two-Factor Authentication User Journeys on Top-Ranked Websites (NDSS 2023)",
+        "title": "论文阅读：A Systematic Study of the Consistency of Two-Factor Authentication User Journeys on Top-Ranked Websites (NDSS 2023)",
         "time": "2024-07-28"
     },
     "/24c/leetcode-42/": {
@@ -192,7 +192,7 @@
         "time": "2024-05-19"
     },
     "/24b/papers-sec-240514-taintmini/": {
-        "title": "论文精读：TAINTMINI: Detecting Flow of Sensitive Data in Mini-Programs with Static Taint Analysis (ICSE 2023)",
+        "title": "论文阅读：TAINTMINI: Detecting Flow of Sensitive Data in Mini-Programs with Static Taint Analysis (ICSE 2023)",
         "time": "2024-05-14"
     },
     "/24b/sorting-algorithm/": {
