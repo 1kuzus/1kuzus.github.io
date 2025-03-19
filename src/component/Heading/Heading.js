@@ -1,4 +1,4 @@
-import './heading.css';
+import './Heading.css';
 
 export default function Heading(props) {
     const {children, level = 1} = props;
