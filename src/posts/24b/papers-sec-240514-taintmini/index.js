@@ -5,6 +5,7 @@ export default function Post() {
         <>
             <X.P>相关链接：</X.P>
             <X.Uli>@TAINTMINI: Detecting Flow of Sensitive Data in Mini-Programs with Static Taint Analysis[https://chaowang.dev/publications/icse23.pdf]@</X.Uli>
+            <X.Uli>@Github仓库：OSUSecLab/TaintMini[https://github.com/OSUSecLab/TaintMini]@</X.Uli>
             <X.H1>1.Introduction</X.H1>
             <X.P>小程序市场发展迅速，已有的针对Mobile Apps的污点分析技术在以下情况存在一些不足：</X.P>
             <X.Uli>多语言（WXML/JavaScript）</X.Uli>

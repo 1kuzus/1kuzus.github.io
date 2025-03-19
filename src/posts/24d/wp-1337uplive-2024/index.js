@@ -102,7 +102,7 @@ export default function Post() {
                 code={`
                 const fs = require("fs");
                 const jwt = require("json-web-token");
-                const jwkToPem = require('jwk-to-pem');
+                const jwkToPem = require("jwk-to-pem");
 
                 // const publicKey = fs.readFileSync("public_key.pem", "utf8");
 
