@@ -59,7 +59,7 @@
 		"body": [
 			"<X.CodeBlock",
 			"\tlanguage=\"$1\"",
-			"\tcode={`",
+			"\tcode={String.raw`",
 			"\t`}",
 			"/>",
 		],
@@ -71,7 +71,7 @@
 		"body": [
 			"<X.CodeBlock",
 			"\tlanguage=\"cpp\"",
-			"\tcode={`$1",
+			"\tcode={String.raw`$1",
 			"\t`}",
 			"/>",
 		],
@@ -83,7 +83,7 @@
 		"body": [
 			"<X.CodeBlock",
 			"\tlanguage=\"python\"",
-			"\tcode={`$1",
+			"\tcode={String.raw`$1",
 			"\t`}",
 			"/>",
 		],
@@ -95,7 +95,7 @@
 		"body": [
 			"<X.CodeBlock",
 			"\tlanguage=\"js\"",
-			"\tcode={`$1",
+			"\tcode={String.raw`$1",
 			"\t`}",
 			"/>",
 		],
