@@ -311,7 +311,7 @@ export default function Post() {
             />
             <X.H1>Misc</X.H1>
             <X.H2>Blue</X.H2>
-            <X.P>Brute force the container name:</X.P>
+            <X.P>Fuzz the container name:</X.P>
             <X.Image src="misc1-1.jpg" width="100%" filterDarkTheme />
             <X.P>The flag is `https://swampctf.blob.core.windows.net/test/flag_020525.txt`.</X.P>
             <X.CodeBlock language="text" code="swampCTF{345y_4zur3_bl0b_020525}" />
