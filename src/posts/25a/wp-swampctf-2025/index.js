@@ -3,6 +3,7 @@ import X from 'src/component/X';
 export default function Post() {
     return (
         <>
+            <X.Image src="overview.jpg" width="800px" />
             <X.H1>Web</X.H1>
             <X.H2>Maybe Happy Ending GPT</X.H2>
             <X.CodeBlock
@@ -198,7 +199,7 @@ export default function Post() {
                 `}
             />
             <X.P>In x86_64, when the number of parameters is less than `6`, they are passed via registers `rdi`, `rsi`, `rdx`, `rcx`, `r8` and `r9`. So the first several instructions are:</X.P>
-            <X.Image src="rev1-3.jpg" width="800px" />
+            <X.Image src="rev1-3.jpg" width="800px" filterDarkTheme />
             <X.P>The highlighted part of the code (`4b`~`97`) is a loop, which is used to compare the `al ^ input[i]` (`78`~`7d`) with `unk_4140[i]` (`84`~`89`). Fortunately the content of `unk_4140` is not modified dynamically, so we can get the content of `unk_4140` by statically analyzing the code.</X.P>
             <X.P>If the `input` is real flag, the comparison will be passed. So the last step is to recover the calculation process of `al ^ input[i]`. Here's the Python code:</X.P>
             <X.CodeBlock
@@ -311,7 +312,7 @@ export default function Post() {
             <X.H1>Misc</X.H1>
             <X.H2>Blue</X.H2>
             <X.P>Brute force the container name:</X.P>
-            <X.Image src="misc1-1.jpg" width="100%" />
+            <X.Image src="misc1-1.jpg" width="100%" filterDarkTheme />
             <X.P>The flag is `https://swampctf.blob.core.windows.net/test/flag_020525.txt`.</X.P>
             <X.CodeBlock language="text" code="swampCTF{345y_4zur3_bl0b_020525}" />
             <X.H2>Lost In Translation</X.H2>
@@ -344,6 +345,15 @@ export default function Post() {
             />
             <X.H1>Forensics</X.H1>
             <X.H2>Proto Proto</X.H2>
+            <X.P>After analyzing the UDP frames in `proto_proto.pcap`, there are two important "custom commands":</X.P>
+            <X.Uli>
+                <X.P>`\x00`</X.P>
+                <X.P>This will list the files in the directory. We get `b'\x00\x01\x00\x00\x00\x01\x08\x00\x00\x00flag.txt'`.</X.P>
+            </X.Uli>
+            <X.Uli>
+                <X.P>`\x02\x08flag.txt`</X.P>
+                <X.P>This will return the content of the file `flag.txt`, note that `\x08` is the length of the filename `"flag.txt"`.</X.P>
+            </X.Uli>
             <X.CodeBlock
                 language="python"
                 code={String.raw`
@@ -369,6 +379,9 @@ export default function Post() {
                 `}
             />
             <X.H2>Proto Proto 2</X.H2>
+            <X.P>In summary, command `\x02\x15super_secret_password\x08flag.txt` conforms to the format of:</X.P>
+            <X.Uli>`\x02[key_length][key][filename_length][filename]`</X.Uli>
+            <X.P>The key is circularly xor-ed with the flag.</X.P>
             <X.CodeBlock
                 language="python"
                 code={String.raw`
@@ -382,7 +395,7 @@ export default function Post() {
                 udp_socket.sendto(b"\x00", (host, port))
                 resp, addr = udp_socket.recvfrom(1024)
                 print(f"Received from {addr}:")  # Received from ('34.72.68.85', 44255):
-                print(resp)  # '\x00\x02\x00\x00\x00\x01\x08\x00\x00\x00flag.txt\x01\r\x00\x00\x00real_flag.txt'
+                print(resp)  # b'\x00\x02\x00\x00\x00\x01\x08\x00\x00\x00flag.txt\x01\r\x00\x00\x00real_flag.txt'
 
 
                 def send(data):  # make my life easier
