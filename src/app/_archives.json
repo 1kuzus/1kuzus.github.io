@@ -1,4 +1,12 @@
 {
+    "/25b/wp-1753ctf-2025/": {
+        "title": "1753CTF 2025 Writeup",
+        "time": "2025-04-13"
+    },
+    "/25b/debug-x86_64-program-in-arm64-system/": {
+        "title": "使用QEMU在ARM64系统上调试x86_64程序",
+        "time": "2025-04-08"
+    },
     "/25a/wp-swampctf-2025/": {
         "title": "SwampCTF 2025 Writeup",
         "time": "2025-03-29"
