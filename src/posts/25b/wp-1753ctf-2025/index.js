@@ -5,7 +5,6 @@ export default function Post() {
         <>
             <X.P>In this event, we scored 1490 points and solved 14 out of 26 challenges. Here I will pick 4 interesting challenges to write about.</X.P>
             <X.H1>Web // Do Not Cheat</X.H1>
-            <X.P></X.P>
             <X.P>My teammate found this challenge is vulnerable to @CVE-2024-4367[https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-4367]@, and the PoC script can be found @here[https://github.com/LOURC0D3/CVE-2024-4367-PoC]@.</X.P>
             <X.HighlightBlock background="gray">
                 <X.P>A type check was missing when handling fonts in PDF.js, which would allow arbitrary JavaScript execution in the PDF.js context. This vulnerability affects Firefox &lt; 126, Firefox ESR &lt; 115.11, and Thunderbird &lt; 115.11.</X.P>
@@ -153,7 +152,7 @@ export default function Post() {
                 `}
             />
             <X.H2>Flag #2</X.H2>
-            <X.P>We need an `ADMIN` role to get the second flag, let's first see how the server checks the `ADMIN role:</X.P>
+            <X.P>We need an `ADMIN` role to get the second flag, let's first see how the server checks the `ADMIN` role:</X.P>
             <X.P>During the registration:</X.P>
             <X.CodeBlock
                 language="js"
@@ -196,7 +195,7 @@ export default function Post() {
                 // 8490 K.toLowerCase() = k
                 `}
             />
-            <X.P>This a cheat sheet of this trick, and for this challenge we can use `ı` for `admın` to bypass the check during registration, and `"admın".toUpperCase()` will be `"ADMIN"`.</X.P>
+            <X.P>This a cheat sheet of this trick, and for this challenge we can use `ı` for `admın` to bypass the check during registration, because `"admın".toUpperCase()` will be `"ADMIN"`.</X.P>
             <X.CodeBlock
                 language="python"
                 code={String.raw`
