@@ -118,7 +118,7 @@ export default function Post() {
             />
             <X.H3>Step 4</X.H3>
             <X.P>Open the URL, wait a while, and we will get `flag.pdf`.</X.P>
-            <X.Image src="2.jpg" width="400px" filterDarkTheme/>
+            <X.Image src="2.jpg" width="400px" filterDarkTheme />
             <X.CodeBlock language="text" code="1753c{m0zz4r3ll4_pdfjs_h4d_4_bug}" />
             <X.H1>Web // Escatlate</X.H1>
             <X.H2>Flag #1</X.H2>
