@@ -195,7 +195,7 @@ export default function Post() {
                 // 8490 K.toLowerCase() = k
                 `}
             />
-            <X.P>This a cheat sheet of this trick, and for this challenge we can use `ı` for `admın` to bypass the check during registration, because `"admın".toUpperCase()` will be `"ADMIN"`.</X.P>
+            <X.P>This is a cheat sheet of this trick, and for this challenge we can use `ı` for `admın` to bypass the check during registration, and also during verification because `"admın".toUpperCase()` will be `"ADMIN"`.</X.P>
             <X.CodeBlock
                 language="python"
                 code={String.raw`
