@@ -75,6 +75,7 @@ const propertyOrderList = [
 
     //border系列
     'border',
+    'border-width',
     'border-top',
     'border-top-width',
     'border-top-style',

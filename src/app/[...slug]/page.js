@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic';
 import X from 'src/component/X';
 import TOC from 'src/component/TOC/TOC';
 import Sidebar from 'src/component/Sidebar/Sidebar';
-import {PostMeta} from 'src/component/Metadata';
+import {PostMeta, LikeButton} from 'src/component/Metadata';
 import CenterWrapper from 'src/component/CenterWrapper/CenterWrapper';
 import archives from 'src/app/_archives.json';
 import './page.css';
@@ -37,6 +37,7 @@ export default function Page({params}) {
                     <h1 className="post-title">{archives[path].title}</h1>
                     <PostMeta path={path} />
                     <Post />
+                    <LikeButton path={path} />
                 </CenterWrapper>
                 <Sidebar />
             </div>

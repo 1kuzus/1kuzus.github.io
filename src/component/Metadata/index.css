@@ -1,6 +1,6 @@
 .post-meta {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
 #homepage-view-count *,
 .post-meta * {
@@ -11,4 +11,47 @@
 #homepage-view-count .not-loaded,
 .post-meta .not-loaded {
     opacity: 0;
+}
+.like-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 48px;
+    height: 48px;
+    margin: 48px auto 0;
+    border-radius: 50%;
+    background-color: var(--low-contrast-gray-100);
+}
+.like-button:hover {
+    background-color: var(--low-contrast-gray-300);
+}
+.like-button.liked,
+.like-button.liked:hover {
+    background-color: #fc90a0;
+}
+.like-button.liked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 48px;
+    height: 48px;
+    border: 0 solid #fc90a0;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+.like-button.liked.animate::after {
+    animation: pulse 800ms;
+}
+@keyframes pulse {
+    20% {
+        border-width: 8px;
+    }
+    100% {
+        width: 72px;
+        height: 72px;
+        border-width: 0;
+        opacity: 0;
+    }
 }
