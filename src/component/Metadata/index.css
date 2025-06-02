@@ -22,6 +22,10 @@
     margin: 48px auto 0;
     border-radius: 50%;
     background-color: var(--low-contrast-gray-100);
+    transition: opacity 200ms;
+}
+.like-button.not-loaded {
+    opacity: 0;
 }
 .like-button:hover {
     background-color: var(--low-contrast-gray-300);

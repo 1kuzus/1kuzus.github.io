@@ -7,41 +7,45 @@ import archives from 'src/app/_archives.json';
 import './index.css';
 
 const isDev = typeof window === 'undefined' || window.location.hostname !== '1kuzus.github.io';
+const {min, max, log, floor} = Math;
+
+function animateCount(start, end, duration, setter) {
+    let t0 = null;
+    duration = max(duration, 100);
+    const step = (t) => {
+        if (!t0) t0 = t;
+        const progress = min((t - t0) ** 0.5 / duration ** 0.5, 1);
+        setter(floor(progress * (end - start) + start));
+        if (progress < 1) window.requestAnimationFrame(step);
+    };
+    window.requestAnimationFrame(step);
+}
 
 export function HomepageViewCount() {
-    const [viewCount, setViewCount] = useState(0);
+    const [viewCount, setViewCount] = useState(null);
     useEffect(() => {
-        const {min, floor, log} = Math;
-        function animateViewCount(start, end, duration) {
-            let t0 = null;
-            const step = (t) => {
-                if (!t0) t0 = t;
-                const progress = min((t - t0) ** 0.5 / duration ** 0.5, 1);
-                setViewCount(floor(progress * (end - start) + start));
-                if (progress < 1) window.requestAnimationFrame(step);
-            };
-            window.requestAnimationFrame(step);
-        }
         getViews('total', isDev).then((count) => {
-            animateViewCount(0, count, floor(144 * log(count)));
+            // setViewCount(count);
+            animateCount(0, count, floor(144 * log(count)), setViewCount);
             increaseViews('total', isDev);
         });
         return onViewsChange('total', isDev, (views) => setViewCount(views));
     }, []);
     return (
         <div id="homepage-view-count">
-            <code className={viewCount > 0 ? '' : 'not-loaded'}>{viewCount + ' views'}</code>
+            <code className={viewCount === null ? 'not-loaded' : ''}>{viewCount + ' views'}</code>
         </div>
     );
 }
 
 export function PostMeta(props) {
     const {path} = props;
-    const [viewCount, setViewCount] = useState(0);
-    const [likeCount, setLikeCount] = useState(0);
+    const [viewCount, setViewCount] = useState(null);
+    const [likeCount, setLikeCount] = useState(null);
     useEffect(() => {
         getViews(path, isDev).then((count) => {
             setViewCount(count);
+            animateCount(0, count, floor(144 * log(count)), setViewCount);
             increaseViews(path, isDev);
             increaseViews('total', isDev);
         });
@@ -49,14 +53,19 @@ export function PostMeta(props) {
     }, []);
     useEffect(() => {
         getLikes(path, isDev).then((count) => {
-            setLikeCount(count);
+            // setLikeCount(count);
+            animateCount(0, count, floor(288 * log(count)), setLikeCount);
         });
         return onLikesChange(path, isDev, (likes) => setLikeCount(likes));
     }, []);
     return (
         <div className="post-meta">
-            <code className={likeCount > 0 ? '' : 'not-loaded'}>{likeCount + ' likes'}&nbsp;·&nbsp;</code>
-            <code className={viewCount > 0 ? '' : 'not-loaded'}>{viewCount + ' views'}&nbsp;·&nbsp;</code>
+            <code className={likeCount === null || viewCount === null ? 'not-loaded' : ''}>
+                {likeCount + ' likes'}&nbsp;·&nbsp;
+            </code>
+            <code className={likeCount === null || viewCount === null ? 'not-loaded' : ''}>
+                {viewCount + ' views'}&nbsp;·&nbsp;
+            </code>
             <code>{archives[path].time || 'longtime'}</code>
         </div>
     );
@@ -99,10 +108,14 @@ export function LikeButton(props) {
     useEffect(() => {
         setLiked(isLiked(path));
     }, []);
-    if (liked === null) return null;
     return (
         <button
-            className={`like-button${liked ? ' liked' : ''}${animate ? ' animate' : ''}`}
+            className={
+                'like-button' +
+                (liked === null ? ' not-loaded' : '') +
+                (liked ? ' liked' : '') +
+                (animate ? ' animate' : '')
+            }
             onClick={() => {
                 if (!liked) {
                     setLiked(true);
