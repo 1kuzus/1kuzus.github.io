@@ -71,12 +71,26 @@ export function PostMeta(props) {
     );
 }
 
+function myB64Transform(s, isEncode = true) {
+    let src = 'ABC' + 'DEF' + 'GHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+    let dst = '1KU' + 'zus' + 'aGmgiLwvQANpFI9Vhl76yCeDW3YOkPH5fqdbtBZM402RXxnjScrJETo8+/=';
+    if (!isEncode) [src, dst] = [dst, src];
+    return s
+        .split('')
+        .map((ch) => dst[src.indexOf(ch)])
+        .join('');
+}
+
 function myB64Enc(x) {
-    return btoa(x);
+    let result = btoa(x);
+    result = myB64Transform(result, true);
+    return result;
 }
 
 function myB64Dec(y) {
-    return atob(y);
+    let result = myB64Transform(y, false);
+    result = atob(result);
+    return result;
 }
 
 function getLikedPosts() {
