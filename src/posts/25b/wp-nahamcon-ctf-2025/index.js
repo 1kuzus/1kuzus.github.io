@@ -302,6 +302,8 @@ export default function Post() {
             <X.P>Here `str` turns out to be `"R=2105\\n\\n"`.</X.P>
 
             <X.P>...</X.P>
+
+            <X.CodeBlock language="text" code="flag{f2ea4caf879bde891f0174f528c20682}" />
         </>
     );
 }
