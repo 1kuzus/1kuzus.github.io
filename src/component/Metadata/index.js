@@ -60,20 +60,18 @@ export function PostMeta(props) {
     }, []);
     return (
         <div className="post-meta">
-            <code className={likeCount === null || viewCount === null ? 'not-loaded' : ''}>
+            <code className={viewCount === null || !likeCount ? 'not-loaded' : ''}>
                 {likeCount + ' likes'}&nbsp;·&nbsp;
             </code>
-            <code className={likeCount === null || viewCount === null ? 'not-loaded' : ''}>
-                {viewCount + ' views'}&nbsp;·&nbsp;
-            </code>
+            <code className={viewCount === null ? 'not-loaded' : ''}>{viewCount + ' views'}&nbsp;·&nbsp;</code>
             <code>{archives[path].time || 'longtime'}</code>
         </div>
     );
 }
 
 function myB64Transform(s, isEncode = true) {
-    let src = 'ABC' + 'DEF' + 'GHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
-    let dst = '1KU' + 'zus' + 'aGmgiLwvQANpFI9Vhl76yCeDW3YOkPH5fqdbtBZM402RXxnjScrJETo8+/=';
+    let src = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+    let dst = '1KUzusaGmgiLwvQANpFI9Vhl76yCeDW3YOkPH5fqdbtBZM402RXxnjScrJETo8+/=';
     if (!isEncode) [src, dst] = [dst, src];
     return s
         .split('')
