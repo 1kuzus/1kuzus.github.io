@@ -1,5 +1,10 @@
 import './index.css';
 
+export function PostTitle(props) {
+    const {children} = props;
+    return <h1 className="x-post-title">{children}</h1>;
+}
+
 export function H1(props) {
     const {href, excludeFromContents, children} = props;
     return (
