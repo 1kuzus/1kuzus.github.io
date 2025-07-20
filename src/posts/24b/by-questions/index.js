@@ -356,7 +356,7 @@ export default function Post() {
             </X.Oli>
             <X.H1>杂题</X.H1>
             <X.Oli reset>
-                <X.P>只能用加、减、乘、除、乘方、开方六则运算，$x,y \gt 0$，怎么从数学上近似表示$\max(x,y)$和$\min(x,y)$？</X.P>
+                <X.P>只能用加、减、乘、除、乘方，$x,y \gt 0$，怎么从数学上近似表示$\max(x,y)$和$\min(x,y)$？</X.P>
                 <X.Formula text="\lim_{n \to \infty} (x^n+y^n)^{1/n} = \max(x,y)" />
                 <X.Formula text="\lim_{n \to -\infty} (x^n+y^n)^{1/n} = \min(x,y)" />
             </X.Oli>
