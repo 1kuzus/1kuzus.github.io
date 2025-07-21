@@ -95,7 +95,7 @@
 		"body": [
 			"<X.CodeBlock",
 			"\tlanguage=\"js\"",
-			"\tcode={`$1",
+			"\tcode={String.raw`$1",
 			"\t`}",
 			"/>",
 		],
