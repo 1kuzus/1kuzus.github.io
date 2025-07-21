@@ -19,26 +19,28 @@ if (fs.existsSync(dir)) {
     exit(1);
 }
 
-const archives = require('../app/_archives.json');
+const archivesPath = path.join('src', 'posts-indexing', 'archives.json');
+const archives = JSON.parse(fs.readFileSync(archivesPath));
 const pad0 = (n) => (n < 10 ? '0' : '') + n;
 fs.writeFileSync(
-    'src/app/_archives.json',
+    archivesPath,
     JSON.stringify(
         isLongTime
             ? {
                   ...archives,
                   [postPath]: {
                       title: `Untitled__${param.replace('-', '_')}`,
+                      inactive: true,
                   },
               }
             : {
                   [postPath]: {
                       title: `Untitled__${param.replace('-', '_')}`,
                       time: `${date.getFullYear()}-${pad0(m + 1)}-${pad0(date.getDate())}`,
+                      inactive: true,
                   },
                   ...archives,
               },
-
         null,
         4
     )
