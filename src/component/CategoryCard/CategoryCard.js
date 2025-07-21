@@ -2,7 +2,7 @@
 import {useState} from 'react';
 import Link from 'src/component/Link/Link';
 import {RightArrowIcon} from 'src/assets/svgs';
-import archives from 'src/posts-indexing/archives.json';
+import {archives} from 'src/posts-indexing';
 import './CategoryCard.css';
 
 export default function CategoryCard(props) {

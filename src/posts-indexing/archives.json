@@ -169,11 +169,13 @@
     },
     "/24b/cross-site-scripting/": {
         "title": "Learn XSS",
-        "time": "2024-06-10"
+        "time": "2024-06-10",
+        "inactive": true
     },
     "/24b/cross-site-request-forgery/": {
         "title": "Learn CSRF",
-        "time": "2024-06-10"
+        "time": "2024-06-10",
+        "inactive": true
     },
     "/24b/leetcode-312/": {
         "title": "LeetCode 312.戳气球",

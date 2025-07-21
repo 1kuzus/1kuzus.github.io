@@ -2,7 +2,7 @@
 import {usePathname} from 'next/navigation';
 import CategoryCard from 'src/component/CategoryCard/CategoryCard';
 import {useGlobalContext} from 'src/context/GlobalContext';
-import categories from 'src/posts-indexing/categories.json';
+import {categories} from 'src/posts-indexing';
 import './Sidebar.css';
 
 export default function Sidebar() {
