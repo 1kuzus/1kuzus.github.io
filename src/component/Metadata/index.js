@@ -24,12 +24,14 @@ function animateCount(start, end, duration, setter) {
 export function HomepageViewCount() {
     const [viewCount, setViewCount] = useState(null);
     useEffect(() => {
-        getViews('total', isDev).then((count) => {
+        getViews('total').then((count) => {
             // setViewCount(count);
             animateCount(0, count, floor(144 * log(count)), setViewCount);
-            increaseViews('total', isDev);
+            if (!isDev) {
+                increaseViews('total');
+            }
         });
-        return onViewsChange('total', isDev, (views) => setViewCount(views));
+        return onViewsChange('total', (views) => setViewCount(views));
     }, []);
     return (
         <div id="homepage-view-count">
@@ -43,20 +45,22 @@ export function PostMeta(props) {
     const [viewCount, setViewCount] = useState(null);
     const [likeCount, setLikeCount] = useState(null);
     useEffect(() => {
-        getViews(path, isDev).then((count) => {
-            setViewCount(count);
+        getViews(path).then((count) => {
+            // setViewCount(count);
             animateCount(0, count, floor(144 * log(count)), setViewCount);
-            increaseViews(path, isDev);
-            increaseViews('total', isDev);
+            if (!isDev) {
+                increaseViews(path);
+                increaseViews('total');
+            }
         });
-        return onViewsChange(path, isDev, (views) => setViewCount(views));
+        return onViewsChange(path, (views) => setViewCount(views));
     }, []);
     useEffect(() => {
-        getLikes(path, isDev).then((count) => {
+        getLikes(path).then((count) => {
             // setLikeCount(count);
             animateCount(0, count, floor(288 * log(count)), setLikeCount);
         });
-        return onLikesChange(path, isDev, (likes) => setLikeCount(likes));
+        return onLikesChange(path, (likes) => setLikeCount(likes));
     }, []);
     return (
         <div className="post-meta">
@@ -132,7 +136,7 @@ export function LikeButton(props) {
                 if (!liked) {
                     setLiked(true);
                     addLikedPost(path);
-                    increaseLikes(path, isDev);
+                    increaseLikes(path); // 点赞是主动行为，不区分开发/线上环境
                 }
                 if (!animate) {
                     setAnimate(true);

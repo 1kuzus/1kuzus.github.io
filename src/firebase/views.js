@@ -1,8 +1,8 @@
 import database from '.';
 import {ref, get, set, update, increment, onValue} from 'firebase/database';
 
-export async function getViews(path, isDev) {
-    const refPath = isDev ? 'test-dev' : path.replace(/\//g, '_');
+export async function getViews(path) {
+    const refPath = path.replace(/\//g, '_');
     const viewsRef = ref(database, refPath + '/views');
     const viewsSnapshot = await get(viewsRef);
     if (!viewsSnapshot.exists()) {
@@ -12,14 +12,14 @@ export async function getViews(path, isDev) {
     return viewsSnapshot.val() + 1;
 }
 
-export async function increaseViews(path, isDev) {
-    const refPath = isDev ? 'test-dev' : path.replace(/\//g, '_');
+export async function increaseViews(path) {
+    const refPath = path.replace(/\//g, '_');
     const pathRef = ref(database, refPath);
     return update(pathRef, {views: increment(1)});
 }
 
-export function onViewsChange(path, isDev, callback) {
-    const refPath = isDev ? 'test-dev' : path.replace(/\//g, '_');
+export function onViewsChange(path, callback) {
+    const refPath = path.replace(/\//g, '_');
     const viewsRef = ref(database, refPath + '/views');
     // 返回值为取消订阅函数
     return onValue(viewsRef, (viewsSnapshot) => {
