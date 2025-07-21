@@ -361,10 +361,6 @@ export default function Post() {
                 <X.Formula text="\lim_{n \to -\infty} (x^n+y^n)^{1/n} = \min(x,y)" />
             </X.Oli>
             <X.Oli>
-                <X.P>说说你接触/听说过的研究方向，有哪些顶会顶刊？</X.P>
-                <X.P>计算机视觉：CVPR、ICCV、ECCV、TPAMI（顶刊）\n机器学习：ICML、ICLR、NIPS\n自然语言处理：ACL、NAACL、EMNLP\n安全：ACM CCS、NDSS、USENIX Security、IEEE S&P\n</X.P>
-            </X.Oli>
-            <X.Oli>
                 <X.P>你怎么理解计算机网络中的可靠传输？</X.P>
                 <X.P>可靠传输服务希望实现发送端发送什么，接收端就接收到什么。希望解决数据位出错、分组丢失、分组失序、分组重复等错误。</X.P>
             </X.Oli>

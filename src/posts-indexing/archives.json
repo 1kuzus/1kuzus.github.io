@@ -57,7 +57,8 @@
     },
     "/24d/about-interactive-multimedia/": {
         "title": "关于交互式多媒体",
-        "time": "2024-11-30"
+        "time": "2024-11-30",
+        "inactive": true
     },
     "/24d/wp-1337uplive-2024/": {
         "title": "1337UP LIVE CTF 2024 Writeup",
@@ -73,7 +74,8 @@
     },
     "/24d/crypto-2/": {
         "title": "【密码学】块密码",
-        "time": "2024-10-23"
+        "time": "2024-10-23",
+        "inactive": true
     },
     "/24d/crypto-1/": {
         "title": "【密码学】流密码",
@@ -368,12 +370,6 @@
     "/23c/pattern-recognition-1/": {
         "title": "【模式识别】统计决策方法",
         "time": "2023-08-31"
-    },
-    "/longtime/papers-dl/": {
-        "title": "论文速记：深度学习"
-    },
-    "/longtime/papers-sec/": {
-        "title": "论文速记：安全"
     },
     "/longtime/wp-portswigger/": {
         "title": "PortSwigger Writeup"

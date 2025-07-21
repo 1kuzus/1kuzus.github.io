@@ -1,22 +1,8 @@
 [
     {
-        "categoryName": "网络杂识",
-        "posts": [
-            "/23d/database-3nf/",
-            "/23d/github-linguist-vendored/",
-            "/24a/deepl-shortcut-setting/",
-            "/24a/git-merge-allow-unrelated-histories/",
-            "/24b/injective-surjective-bijective/",
-            "/25a/tai-e-a2-additional-case/",
-            "/25a/tai-e-a3-solution/",
-            "/25b/debug-x86_64-program-in-arm64-system/"
-        ]
-    },
-    {
         "categoryName": "安全学习",
         "posts": [
             "/longtime/wp-portswigger/",
-            "/23d/hust-cas-login/",
             "/24b/learn-cwes/",
             "/24b/cross-site-scripting/",
             "/24b/cross-site-request-forgery/",
@@ -36,7 +22,6 @@
     {
         "categoryName": "安全研究",
         "posts": [
-            "/longtime/papers-sec/",
             "/24b/papers-sec-240514-taintmini/",
             "/24c/papers-sec-240728-2fa-consistency/",
             "/24c/papers-sec-240810-conquer/",
@@ -45,6 +30,20 @@
             "/24c/papers-sec-240902-pafa-authentication/",
             "/24c/papers-sec-240922-pre-hijacked-accounts/",
             "/24d/papers-sec-241207-aimie/"
+        ]
+    },
+    {
+        "categoryName": "网络杂识",
+        "posts": [
+            "/23d/database-3nf/",
+            "/23d/hust-cas-login/",
+            "/23d/github-linguist-vendored/",
+            "/24a/deepl-shortcut-setting/",
+            "/24a/git-merge-allow-unrelated-histories/",
+            "/24b/injective-surjective-bijective/",
+            "/25a/tai-e-a2-additional-case/",
+            "/25a/tai-e-a3-solution/",
+            "/25b/debug-x86_64-program-in-arm64-system/"
         ]
     },
     {
@@ -81,7 +80,6 @@
     {
         "categoryName": "深度学习",
         "posts": [
-            "/longtime/papers-dl/",
             "/23d/r2plus1d/",
             "/23d/object-detection-map/",
             "/23d/learn-rnn-lstm/",
@@ -139,14 +137,6 @@
             "/24d/about-interactive-multimedia/",
             "/longtime/hundred-thousand/",
             "/longtime/linux-commands/"
-        ]
-    },
-    {
-        "categoryName": "交互式多媒体",
-        "posts": [
-            "/24d/about-interactive-multimedia/",
-            "/23c/pattern-recognition-1/",
-            "/23d/css-auto-height-transition/"
         ]
     }
 ]
