@@ -1,7 +1,7 @@
 import Heading from 'src/component/Heading/Heading';
 import CategoryCard from 'src/component/CategoryCard/CategoryCard';
 import CenterWrapper from 'src/component/CenterWrapper/CenterWrapper';
-import categories from 'src/app/_categories.json';
+import categories from 'src/posts-indexing/categories.json';
 
 export const metadata = {
     title: '全部分类 - 铃木的网络日记',

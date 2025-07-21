@@ -3,7 +3,7 @@ import {useEffect, useState} from 'react';
 import {getViews, increaseViews, onViewsChange} from 'src/firebase/views';
 import {getLikes, increaseLikes, onLikesChange} from 'src/firebase/likes';
 import {HeartIcon} from 'src/assets/svgs';
-import archives from 'src/app/_archives.json';
+import archives from 'src/posts-indexing/archives.json';
 import './index.css';
 
 const isDev = typeof window === 'undefined' || window.location.hostname !== '1kuzus.github.io';

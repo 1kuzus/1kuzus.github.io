@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic';
 import X from 'src/component/X';
 import TOC from 'src/component/TOC/TOC';
 import {PostMeta, LikeButton} from 'src/component/Metadata';
-import archives from 'src/app/_archives.json';
+import archives from 'src/posts-indexing/archives.json';
 
 export function generateStaticParams() {
     return Object.keys(archives)

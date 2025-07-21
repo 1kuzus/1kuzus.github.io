@@ -1,7 +1,7 @@
 import Link from 'src/component/Link/Link';
 import Heading from 'src/component/Heading/Heading';
 import CenterWrapper from 'src/component/CenterWrapper/CenterWrapper';
-import archives from 'src/app/_archives.json';
+import archives from 'src/posts-indexing/archives.json';
 import './page.css';
 
 export const metadata = {
