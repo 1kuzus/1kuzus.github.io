@@ -1,7 +1,7 @@
 import archives from './archives.json';
 import categories from './categories.json';
 
-const isDev = typeof window === 'undefined' || window.location.hostname !== '1kuzus.github.io';
+const isDev = process.env.NODE_ENV === 'development';
 
 // 线上环境，归档页面不展示inactive文章
 // activeArchives仅在app/archives/page.js中使用

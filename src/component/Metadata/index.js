@@ -6,7 +6,7 @@ import {HeartIcon} from 'src/assets/svgs';
 import {archives} from 'src/posts-indexing';
 import './index.css';
 
-const isDev = typeof window === 'undefined' || window.location.hostname !== '1kuzus.github.io';
+const isDev = process.env.NODE_ENV === 'development';
 const {min, max, log, floor} = Math;
 
 function animateCount(start, end, duration, setter) {
