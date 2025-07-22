@@ -422,7 +422,7 @@ export default function Post() {
             />
             <X.H1>三大方法</X.H1>
             <X.H2>类方法</X.H2>
-            <X.P>类方法用修饰器`@classmethod`定义，传入的第一个参数是类本身而不是实例，通常命名为`cls`。通过它可以访问到类属性。</X.P>
+            <X.P>类方法用装饰器`@classmethod`定义，传入的第一个参数是类本身而不是实例，通常命名为`cls`。通过它可以访问到类属性。</X.P>
             <X.CodeBlock
                 language="python"
                 highlightLines="9-12"
@@ -480,7 +480,7 @@ export default function Post() {
             />
             <X.P>我们在`__init__`方法中调用一次类方法`add_unit_num()`，就可以把总实例数统计到类属性`__unit_num`中。</X.P>
             <X.H2>静态方法</X.H2>
-            <X.P>静态方法用修饰器`@staticmethod`定义。静态方法不能访问类属性，也不能访问实例属性。静态方法可以在类的命名空间内定义一些功能性代码，通常用于实现一些与类相关的工具函数。</X.P>
+            <X.P>静态方法用装饰器`@staticmethod`定义。静态方法不能访问类属性，也不能访问实例属性。静态方法可以在类的命名空间内定义一些功能性代码，通常用于实现一些与类相关的工具函数。</X.P>
             <X.CodeBlock
                 language="python"
                 highlightLines="9-11"
