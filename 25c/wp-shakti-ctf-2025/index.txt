@@ -1,0 +1,133 @@
+2:I[55329,["481","static/chunks/457b8330-b5c9cf3fcf214847.js","954","static/chunks/d3ac728e-0c798b3b8aa3bf53.js","612","static/chunks/612-fa632c1349770315.js","120","static/chunks/120-aab2c7424ca78adb.js","842","static/chunks/842-dce450cd96773e9f.js","318","static/chunks/app/(posts)/%5B...slug%5D/page-e9e759b7bbaf69d2.js"],""]
+3:I[76842,["481","static/chunks/457b8330-b5c9cf3fcf214847.js","954","static/chunks/d3ac728e-0c798b3b8aa3bf53.js","612","static/chunks/612-fa632c1349770315.js","120","static/chunks/120-aab2c7424ca78adb.js","842","static/chunks/842-dce450cd96773e9f.js","318","static/chunks/app/(posts)/%5B...slug%5D/page-e9e759b7bbaf69d2.js"],"PostMeta"]
+4:"$Sreact.suspense"
+6:I[76842,["481","static/chunks/457b8330-b5c9cf3fcf214847.js","954","static/chunks/d3ac728e-0c798b3b8aa3bf53.js","612","static/chunks/612-fa632c1349770315.js","120","static/chunks/120-aab2c7424ca78adb.js","842","static/chunks/842-dce450cd96773e9f.js","318","static/chunks/app/(posts)/%5B...slug%5D/page-e9e759b7bbaf69d2.js"],"LikeButton"]
+7:I[5613,[],""]
+9:I[31778,[],""]
+a:I[89806,["250","static/chunks/250-0ef8476c0fa8ee24.js","372","static/chunks/372-d4ef474e704f1afd.js","993","static/chunks/app/(posts)/layout-e15e5287e741ad91.js"],""]
+b:I[25694,["250","static/chunks/250-0ef8476c0fa8ee24.js","185","static/chunks/app/layout-8f33aca7be8ff34b.js"],"GlobalProvider"]
+c:I[30397,["250","static/chunks/250-0ef8476c0fa8ee24.js","185","static/chunks/app/layout-8f33aca7be8ff34b.js"],""]
+8:["slug","25c/wp-shakti-ctf-2025","c"]
+0:["0wU0bGg-i0jYBeP716xqR",[[["",{"children":["(posts)",{"children":[["slug","25c/wp-shakti-ctf-2025","c"],{"children":["__PAGE__?{\"slug\":[\"25c\",\"wp-shakti-ctf-2025\"]}",{}]}]}]},"$undefined","$undefined",true],["",{"children":["(posts)",{"children":[["slug","25c/wp-shakti-ctf-2025","c"],{"children":["__PAGE__",{},["$L1",[["$","$L2",null,{}],false,["$","h1",null,{"className":"x-post-title","children":"Shakti CTF 2025 Writeup"}],["$","$L3",null,{"path":"/25c/wp-shakti-ctf-2025/"}],["$","$4",null,{"fallback":["$","p",null,{"children":"Loading component..."}],"children":"$L5"}],["$","$L6",null,{"path":"/25c/wp-shakti-ctf-2025/"}]],null]]},["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children","(posts)","children","$8","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L9",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/82b97b807ab55020.css","precedence":"next","crossOrigin":""}]]}]]},[null,["$","div",null,{"id":"post-layout","children":[["$","div",null,{"id":"main","className":"center-wrapper","children":["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children","(posts)","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L9",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]}],["$","$La",null,{}]]}],null]]},[null,["$","html",null,{"lang":"zh-CN","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","link",null,{"rel":"icon","href":"/favicon.ico","type":"image/x-icon"}],["$","script",null,{"async":true,"src":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"}],["$","script",null,{"async":true,"src":"https://www.googletagmanager.com/gtag/js?id=G-45BYSZ6WPY"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nwindow.dataLayer = window.dataLayer || [];\nfunction gtag() {\n    dataLayer.push(arguments);\n}\ngtag('js', new Date());\ngtag('config', 'G-45BYSZ6WPY');\n"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"const a=z=>h.getItem(z),b=(y,z)=>h.setItem(y,z),c=(y,z)=>document.documentElement.setAttribute(y,z),d='theme',e='dark',f='light',g='class',h=localStorage;a(d)!==e&&a(d)!==f&&b(d,f);a(d)===e?c(g,e):c(g,f);"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nif (!Array.prototype.findLast) {\n    Array.prototype.findLast = function (callback) {\n        for (let i = this.length - 1; i >= 0; i--) {\n            if (callback(this[i])) return this[i];\n        }\n        return undefined;\n    };\n}\nif (!Array.prototype.findLastIndex) {\n    Array.prototype.findLastIndex = function (callback) {\n        for (let i = this.length - 1; i >= 0; i--) {\n            if (callback(this[i])) return i;\n        }\n        return -1;\n    };\n}\n"}}]]}],["$","body",null,{"children":["$","$Lb",null,{"children":[["$","$Lc",null,{}],["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L9",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"id":"notfound","children":[["$","img",null,{"alt":"img","src":"/images/cry.gif"}],["$","code",null,{"id":"notfound-404","children":"404"}],["$","code",null,{"id":"notfound-text","children":"Page Not Found"}]]}],"notFoundStyles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/98e601cf5ba3633d.css","precedence":"next","crossOrigin":""}]],"styles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/3bc7e8f21884ab46.css","precedence":"next","crossOrigin":""}]]}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/268aef745a7b3740.css","precedence":"next","crossOrigin":""}]],"$Ld"]]]]
+e:I[74365,["481","static/chunks/457b8330-b5c9cf3fcf214847.js","954","static/chunks/d3ac728e-0c798b3b8aa3bf53.js","612","static/chunks/612-fa632c1349770315.js","120","static/chunks/120-aab2c7424ca78adb.js","842","static/chunks/842-dce450cd96773e9f.js","318","static/chunks/app/(posts)/%5B...slug%5D/page-e9e759b7bbaf69d2.js"],""]
+f:I[62029,["481","static/chunks/457b8330-b5c9cf3fcf214847.js","954","static/chunks/d3ac728e-0c798b3b8aa3bf53.js","612","static/chunks/612-fa632c1349770315.js","120","static/chunks/120-aab2c7424ca78adb.js","842","static/chunks/842-dce450cd96773e9f.js","318","static/chunks/app/(posts)/%5B...slug%5D/page-e9e759b7bbaf69d2.js"],""]
+10:T18fd,<span class="token keyword">const</span> base <span class="token operator">=</span> Module<span class="token punctuation">.</span><span class="token function">findBaseAddress</span><span class="token punctuation">(</span><span class="token string">"havana32.exe"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> fn_read <span class="token operator">=</span> base<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">0x6a40</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// read buffer</span>
+<span class="token keyword">const</span> var_buffer <span class="token operator">=</span> base<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">0x474c0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// buffer</span>
+Interceptor<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>
+fn_read<span class="token punctuation">,</span>
+<span class="token keyword">new</span> <span class="token class-name">NativeCallback</span><span class="token punctuation">(</span>
+    <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">a1<span class="token punctuation">,</span> a2<span class="token punctuation">,</span> a3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>
+        <span class="token string">"fn_read called, arg1="</span> <span class="token operator">+</span> a1 <span class="token operator">+</span> <span class="token string">", (buffer="</span> <span class="token operator">+</span> var_buffer <span class="token operator">+</span> <span class="token string">")"</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> input <span class="token operator">=</span> <span class="token string">"[INPUT]"</span><span class="token punctuation">;</span>
+    Memory<span class="token punctuation">.</span><span class="token function">writeAnsiString</span><span class="token punctuation">(</span>var_buffer<span class="token punctuation">,</span> input<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>
+        <span class="token string">"Data written to var_buffer: "</span> <span class="token operator">+</span> var_buffer<span class="token punctuation">.</span><span class="token function">readAnsiString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        input<span class="token punctuation">.</span>length
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">"int"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">"pointer"</span><span class="token punctuation">,</span> <span class="token string">"int"</span><span class="token punctuation">,</span> <span class="token string">"int"</span><span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> fn_vm_main <span class="token operator">=</span> base<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">0x1300</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> var_matched <span class="token operator">=</span> base<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">0x474b8</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// matched count</span>
+Interceptor<span class="token punctuation">.</span><span class="token function">attach</span><span class="token punctuation">(</span>fn_vm_main<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+<span class="token function-variable function">onLeave</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> matched <span class="token operator">=</span> Memory<span class="token punctuation">.</span><span class="token function">readU32</span><span class="token punctuation">(</span>var_matched<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"matched:"</span><span class="token punctuation">,</span> matched<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">send</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">matched</span><span class="token operator">:</span> matched <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+11:T446,import frida
+import time
+
+
+def pad49(password):
+    return (password + "." * 100)[:49]
+
+
+def try_password(password, expected_matched):
+    pid = frida.spawn(["havana32.exe"])
+    session = frida.attach(pid)
+    script_code = open("hook.js", "r").read()
+    script_code = script_code.replace("[INPUT]", pad49(password))
+    script = session.create_script(script_code)
+    ok = False
+
+    def on_message(message, data):
+        nonlocal ok
+        if message["type"] == "send":
+            matched = message["payload"]["matched"]
+            if matched == expected_matched:
+                ok = True
+
+    script.on("message", on_message)
+    script.load()
+    frida.resume(pid)
+    time.sleep(0.2)
+    session.detach()
+    return ok
+
+
+alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_{}"
+flag = "shaktictf{"
+while not flag.endswith("}"):
+    for ch in alphabet:
+        ok = try_password(flag + ch, len(flag) + 1)
+        if ok:
+            flag += ch
+            print(f"[*] Current flag: {flag}")
+            break
+
+# shaktictf{H4lf_0f_mY_H34rt_1s_1n_H4v4n4_0oH_n4n4}
+12:T18fd,<span class="token keyword">import</span> frida
+<span class="token keyword">import</span> time
+
+
+<span class="token keyword">def</span> <span class="token function">pad49</span><span class="token punctuation">(</span>password<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>password <span class="token operator">+</span> <span class="token string">"."</span> <span class="token operator">*</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">49</span><span class="token punctuation">]</span>
+
+
+<span class="token keyword">def</span> <span class="token function">try_password</span><span class="token punctuation">(</span>password<span class="token punctuation">,</span> expected_matched<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    pid <span class="token operator">=</span> frida<span class="token punctuation">.</span>spawn<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"havana32.exe"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    session <span class="token operator">=</span> frida<span class="token punctuation">.</span>attach<span class="token punctuation">(</span>pid<span class="token punctuation">)</span>
+    script_code <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"hook.js"</span><span class="token punctuation">,</span> <span class="token string">"r"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    script_code <span class="token operator">=</span> script_code<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">"[INPUT]"</span><span class="token punctuation">,</span> pad49<span class="token punctuation">(</span>password<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    script <span class="token operator">=</span> session<span class="token punctuation">.</span>create_script<span class="token punctuation">(</span>script_code<span class="token punctuation">)</span>
+    ok <span class="token operator">=</span> <span class="token boolean">False</span>
+
+    <span class="token keyword">def</span> <span class="token function">on_message</span><span class="token punctuation">(</span>message<span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">nonlocal</span> ok
+        <span class="token keyword">if</span> message<span class="token punctuation">[</span><span class="token string">"type"</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">"send"</span><span class="token punctuation">:</span>
+            matched <span class="token operator">=</span> message<span class="token punctuation">[</span><span class="token string">"payload"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"matched"</span><span class="token punctuation">]</span>
+            <span class="token keyword">if</span> matched <span class="token operator">==</span> expected_matched<span class="token punctuation">:</span>
+                ok <span class="token operator">=</span> <span class="token boolean">True</span>
+
+    script<span class="token punctuation">.</span>on<span class="token punctuation">(</span><span class="token string">"message"</span><span class="token punctuation">,</span> on_message<span class="token punctuation">)</span>
+    script<span class="token punctuation">.</span>load<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    frida<span class="token punctuation">.</span>resume<span class="token punctuation">(</span>pid<span class="token punctuation">)</span>
+    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">0.2</span><span class="token punctuation">)</span>
+    session<span class="token punctuation">.</span>detach<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> ok
+
+
+alphabet <span class="token operator">=</span> <span class="token string">"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_{}"</span>
+flag <span class="token operator">=</span> <span class="token string">"shaktictf{"</span>
+<span class="token keyword">while</span> <span class="token keyword">not</span> flag<span class="token punctuation">.</span>endswith<span class="token punctuation">(</span><span class="token string">"}"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> ch <span class="token keyword">in</span> alphabet<span class="token punctuation">:</span>
+        ok <span class="token operator">=</span> try_password<span class="token punctuation">(</span>flag <span class="token operator">+</span> ch<span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> ok<span class="token punctuation">:</span>
+            flag <span class="token operator">+=</span> ch
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"[*] Current flag: </span><span class="token interpolation"><span class="token punctuation">{</span>flag<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+            <span class="token keyword">break</span>
+
+<span class="token comment"># shaktictf{H4lf_0f_mY_H34rt_1s_1n_H4v4n4_0oH_n4n4}</span>
+5:[["$","h2",null,{"className":"x-h1","children":"Rev/havana32"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"The binary checks a password:"}}],["$","$Le",null,{"src":"1.jpg"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"After some quick static analysis, I notice that there's a suspicious function <code class=\"x-inline-highlight\">sub_401300</code>, it calls <code class=\"x-inline-highlight\">sub_406A40</code> to read data into a buffer <code class=\"x-inline-highlight\">byte_4474C0</code>, and verifies the length is <code class=\"x-inline-highlight\">49</code>."}}],["$","$Le",null,{"src":"2.jpg","filterDarkTheme":true}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"There's great chance that the password is the flag, which is <code class=\"x-inline-highlight\">49</code> bytes long."}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"Function <code class=\"x-inline-highlight\">sub_401300</code> seems to implement a VM with a custom instruction set, however, we don't need to fully understand it to solve the challenge. I notice that <code class=\"x-inline-highlight\">dword_4474B8 == 49</code> is checked before the function returns, and there's also <code class=\"x-inline-highlight\">++dword_4474B8</code> at line 104, this looks like a verification of the password byte by byte."}}],["$","$Le",null,{"src":"3.jpg","filterDarkTheme":true}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"So the idea is to hook the function <code class=\"x-inline-highlight\">sub_401300</code> and dump the buffer <code class=\"x-inline-highlight\">byte_4474C0</code> before the function returns."}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"When I input with the flag prefix <code class=\"x-inline-highlight\">shaktictf</code>, the value of <code class=\"x-inline-highlight\">byte_4474C0</code> before <code class=\"x-inline-highlight\">sub_401300</code> returns is the length of matched bytes. This allows me to brute-force the password byte by byte."}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"<code class=\"x-inline-highlight\">hook.js</code>:"}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"JavaScript"}],["$","$Lf",null,{"className":"x-codeblock-header-copy","text":"const base = Module.findBaseAddress(\"havana32.exe\");\n\nconst fn_read = base.add(0x6a40); // read buffer\nconst var_buffer = base.add(0x474c0); // buffer\nInterceptor.replace(\nfn_read,\nnew NativeCallback(\n    function (a1, a2, a3) {\n    console.log(\n        \"fn_read called, arg1=\" + a1 + \", (buffer=\" + var_buffer + \")\"\n    );\n    const input = \"[INPUT]\";\n    Memory.writeAnsiString(var_buffer, input);\n    console.log(\n        \"Data written to var_buffer: \" + var_buffer.readAnsiString(),\n        input.length\n    );\n    return 1;\n    },\n    \"int\",\n    [\"pointer\", \"int\", \"int\"]\n)\n);\n\nconst fn_vm_main = base.add(0x1300);\nconst var_matched = base.add(0x474b8); // matched count\nInterceptor.attach(fn_vm_main, {\nonLeave: function () {\n    const matched = Memory.readU32(var_matched);\n    console.log(\"matched:\", matched);\n    send({ matched: matched });\n},\n});\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$10"}}]}]]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"<code class=\"x-inline-highlight\">exp.py</code>:"}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-language","children":"Python"}],["$","$Lf",null,{"className":"x-codeblock-header-copy","text":"$11"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$12"}}]}]]}]]
+d:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"Shakti CTF 2025 Writeup - 铃木的网络日记"}],["$","link","3",{"rel":"canonical","href":"https://1kuzus.github.io/25c/wp-shakti-ctf-2025/"}]]
+1:null
