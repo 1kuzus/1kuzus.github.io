@@ -136,7 +136,9 @@ export function LikeButton(props) {
                 if (!liked) {
                     setLiked(true);
                     addLikedPost(path);
-                    increaseLikes(path); // 点赞是主动行为，不区分开发/线上环境
+                    if (!isDev) {
+                        increaseLikes(path);
+                    }
                 }
                 if (!animate) {
                     setAnimate(true);
