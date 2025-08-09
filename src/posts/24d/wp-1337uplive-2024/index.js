@@ -7,7 +7,7 @@ export default function Post() {
             <X.H2>Pizza Paradise</X.H2>
             <X.P>在`robots.txt`中找到登录页面`/secret_172346606e1d24062e891d537e917a90.html`，在JS中找到用户名和密码的哈希值；队友找到一个查弱口令的网站@[https://crackstation.net]@，查到密码是`intel420`，登录。</X.P>
             <X.Image src="fig1.jpg" width="100%" />
-            <X.P>登录后是下载图片的页面，有路径遍历漏洞。`flag`在页面的PHP源码中。</X.P>
+            <X.P>登录后是下载图片的页面，有路径遍历漏洞。flag在页面的PHP源码中。</X.P>
             <X.CodeBlock
                 language="python"
                 code={`
