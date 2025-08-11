@@ -328,7 +328,7 @@
         "time": "2024-01-07"
     },
     "/24a/reproduce-nerf-rpn/": {
-        "title": "记录：复现NeRF-RPN代码",
+        "title": "复现：NeRF-RPN",
         "time": "2024-01-01"
     },
     "/23d/github-linguist-vendored/": {

@@ -858,7 +858,7 @@ export default function Post() {
                 }
                 `}
             />
-            <X.P>于是试了下问它能调用哪些工具，结果AI直接说了：</X.P>
+            <X.P>于是试了下问它能调用哪些工具：</X.P>
             <X.CodeBlock
                 language="text"
                 code={`
