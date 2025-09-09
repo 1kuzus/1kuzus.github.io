@@ -16,7 +16,7 @@ categories.forEach((category) => {
 // 开发环境，将inactive文章添加到一个新的分类中
 if (isDev) {
     categories.push({
-        categoryName: '* Inactive Posts',
+        categoryName: '[*] Inactive Posts',
         posts: Object.keys(archives).filter((path) => archives[path].inactive),
     });
 }
