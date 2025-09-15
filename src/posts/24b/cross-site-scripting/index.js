@@ -28,7 +28,7 @@ export default function Post() {
             <X.Oli reset>攻击者发现有漏洞的站点，并构造恶意URL；</X.Oli>
             <X.Oli>诱骗用户打开链接；</X.Oli>
             <X.Oli>服务器正常返回数据；</X.Oli>
-            <X.Oli>对请求参数的处理在前端完成，例如在前端通过`innerHTML`了操作DOM，由此导致恶意代码被执行。</X.Oli>
+            <X.Oli>对请求参数的处理在前端完成，例如在前端通过`innerHTML`操作了DOM，由此导致恶意代码被执行。</X.Oli>
             <X.H1>练习</X.H1>
             <X.P>下文给出的PortSwigger靶场中有关XSS的Lab目标是使得网站调用`alert()`函数。</X.P>
             <X.H2>Reflected XSS</X.H2>

