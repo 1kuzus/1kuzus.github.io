@@ -91,7 +91,8 @@
     },
     "/24d/crypto-1/": {
         "title": "【密码学】流密码",
-        "time": "2024-10-02"
+        "time": "2024-10-02",
+        "inactive": true
     },
     "/24c/papers-sec-240922-pre-hijacked-accounts/": {
         "title": "论文阅读：Pre-hijacked accounts: An Empirical Study of Security Failures in User Account Creation on the Web (Security 2022)",
