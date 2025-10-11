@@ -44,12 +44,16 @@
         "time": "2025-02-02"
     },
     "/25a/tai-e-a3-solution/": {
-        "title": "南京大学程序分析Lab3（死代码消除）思路",
+        "title": "【程序分析】南京大学软件分析Lab3（死代码消除）思路",
         "time": "2025-01-19"
     },
     "/25a/tai-e-a2-additional-case/": {
-        "title": "南京大学程序分析Lab2（常量传播）易错样例补充",
+        "title": "【程序分析】南京大学软件分析Lab2（常量传播）易错样例补充",
         "time": "2025-01-15"
+    },
+    "/25a/program-analysis-summary/": {
+        "title": "【程序分析】知识汇总",
+        "time": "2025-01-10"
     },
     "/24d/wp-0xl4ugh-2024/": {
         "title": "0xl4ugh CTF 2024 Writeup",

@@ -43,8 +43,6 @@
             "/24a/deepl-shortcut-setting/",
             "/24a/git-merge-allow-unrelated-histories/",
             "/24b/injective-surjective-bijective/",
-            "/25a/tai-e-a2-additional-case/",
-            "/25a/tai-e-a3-solution/",
             "/25b/debug-x86_64-program-in-arm64-system/"
         ]
     },
@@ -129,6 +127,9 @@
             "/24c/assembly-4/",
             "/24c/assembly-5/",
             "/24c/assembly-6/",
+            "/25a/program-analysis-summary/",
+            "/25a/tai-e-a2-additional-case/",
+            "/25a/tai-e-a3-solution/",
             "/24d/crypto-1/",
             "/24d/crypto-2/"
         ]
