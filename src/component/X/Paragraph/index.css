@@ -11,6 +11,9 @@
 .x-inline-strong {
     font-weight: bold;
 }
+.x-inline-link > .x-inline-highlight {
+    color: var(--brand-300);
+}
 .x-inline-link {
     color: var(--brand-300);
     border-bottom: 1px solid transparent;
