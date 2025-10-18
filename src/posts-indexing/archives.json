@@ -258,7 +258,8 @@
     },
     "/24b/by-questions/": {
         "title": "专业课复习",
-        "time": "2024-04-18"
+        "time": "2024-04-18",
+        "inactive": true
     },
     "/24a/csp-2023-05/": {
         "title": "CSP 202305 T1-T5题解",
@@ -326,7 +327,8 @@
     },
     "/24a/machine-learning-exercises/": {
         "title": "【机器学习】习题",
-        "time": "2024-01-07"
+        "time": "2024-01-07",
+        "inactive": true
     },
     "/24a/games101-01-transformation/": {
         "title": "【GAMES101】Transformation",
@@ -392,9 +394,11 @@
         "title": "PortSwigger Writeup"
     },
     "/longtime/hundred-thousand/": {
-        "title": "十万"
+        "title": "十万",
+        "inactive": true
     },
     "/longtime/linux-commands/": {
-        "title": "三开"
+        "title": "三开",
+        "inactive": true
     }
 }

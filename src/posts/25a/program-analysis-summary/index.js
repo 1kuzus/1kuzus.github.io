@@ -16,6 +16,9 @@ export default function Post() {
             <X.H1>参考资料</X.H1>
             <X.Uli>@课程主页 - 南京大学《软件分析》[https://tai-e.pascal-lab.net/lectures.html]@</X.Uli>
             <X.Uli>@静态分析基础教程[https://static-analysis.cuijiacai.com/]@</X.Uli>
+            <X.Uli>@[https://github.com/Ling-Yuchen/Tai-e-assignments]@</X.Uli>
+            <X.Uli>@[https://github.com/MirageLyu/Tai-e-assignments]@</X.Uli>
+            <X.Uli>@[https://github.com/RicoloveFeng/SPA-Freestyle-Guidance]@</X.Uli>
             <X.H1>L1. Introduction</X.H1>
             <Pdfref file="introduction" page="23" desc="莱斯定理 - 不存在“完美”的静态分析算法" />
             <Pdfref file="introduction" page="35" desc="Soundness vs. Completeness" />
@@ -56,6 +59,8 @@ export default function Post() {
             <Pdfref file="DFA-AP" page="289" desc="例子" />
             <X.H2>总结</X.H2>
             <Pdfref file="DFA-AP" page="298" desc="三个算法的总结表格" />
+            <X.H2>Assignment 1 Tips</X.H2>
+            <X.P>new boundray fact?</X.P>
             <X.H1>L5-L6. Data Flow Analysis - Foundations</X.H1>
             <Pdfref file="DFA-FD" page="30" desc="偏序关系（自反性、反对称性、传递性）" />
             <X.Uli>
@@ -89,8 +94,10 @@ export default function Post() {
             <Pdfref file="DFA-FD" page="247" desc="Transfer Function" />
             <Pdfref file="DFA-FD" page="253" desc="常量传播的Transfer Function是不满足分配律的（这个例子也解释了为什么MOP更准）" />
             <Pdfref file="DFA-FD" page="259" desc="Worklist算法" />
+            <X.H2>Assignment 2 Tips</X.H2>
+            <X.Uli>@【程序分析】南京大学软件分析Lab2（常量传播）易错样例补充[/25a/tai-e-a2-additional-case/]@</X.Uli>
             <X.Uli>
-                <X.P>此处的Worklist算法可以使用集合实现，因为同一个Node （或Basic Block）如果同时是多个Node （或Basic Block）的后继，则可能被重复添加多次。</X.P>
+                <X.P>Worklist算法可以使用集合实现，因为同一个Node （或Basic Block）如果同时是多个Node （或Basic Block）的后继，则可能被重复添加多次。</X.P>
                 <X.CodeBlock
                     language="text"
                     highlightLines="4"
@@ -101,8 +108,119 @@ export default function Post() {
                             Add all successors of B to Worklist
                     `}
                 />
+                <X.P>具体写法为：</X.P>
+                <X.CodeBlock language="java" code="Set<Node> worklist = new HashSet<>();" />
+                <X.P>取出一个元素并从集合中删除：</X.P>
+                <X.CodeBlock
+                    language="java"
+                    code={String.raw`
+                    while (!worklist.isEmpty()) {
+                        Iterator<Node> it = worklist.iterator();
+                        Node node = it.next();
+                        it.remove();
+                        // ...
+                    }
+                    `}
+                />
             </X.Uli>
+            <X.H2>Assignment 3 Tips</X.H2>
+            <X.Uli>@【程序分析】南京大学软件分析Lab3（死代码消除）思路[/25a/tai-e-a3-solution/]@</X.Uli>
             <X.H1>L7. Interprocedural Analysis</X.H1>
+            <Pdfref file="Inter" page="17" desc="建Call Graph的几种方法（本节讲CHA，后续讲指针分析）" />
+            <Pdfref file="Inter" page="21" desc="Static call / Special call / Virtual call" />
+            <Pdfref file="Inter" page="25" desc="方法签名" />
+            <Pdfref file="Inter" page="26" desc="`Dispatch`：Method Dispatch of Virtual Calls" />
+            <Pdfref file="Inter" page="29" desc="`Dispatch`（例子）" />
+            <Pdfref file="Inter" page="32" desc="Class Hierarchy Analysis (CHA)" />
+            <Pdfref file="Inter" page="39" desc="`Resolve`：Call Resolution of CHA，解析调用点处可能的目标方法" />
+            <Pdfref file="Inter" page="46" desc="`Resolve`（例子）" />
+            <X.Uli>
+                <X.P>receiver object指的是在面向对象方法调用中，实际接收并执行该方法的对象实例：</X.P>
+                <X.CodeBlock language="java" code="obj.func()" />
+                <X.P>例子中`obj`就是receiver object。</X.P>
+            </X.Uli>
+            <X.Uli>
+                <X.P>关于`Dispatch`和`Resolve`：</X.P>
+                <X.Image src="fig1.jpg" width="600px" filterDarkTheme />
+                <X.P>对于以下代码：</X.P>
+                <X.CodeBlock
+                    language="java"
+                    code={String.raw`
+                    A x = new B();
+                    x.foo();
+                    `}
+                />
+                <X.Uli>
+                    <X.P>`Dispatch(B, A.foo())`用于模拟*运行时*的方法分派，传入的两个参数是receiver object的实际类型`B`和`foo`的部分方法签名（只需要method name + descriptor）。</X.P>
+                    <X.P>注意由于多态允许`x`被赋值为其他子类`C`/`D`或类`A`本身，因此实际上静态分析时，不保证能够确定receiver object的实际类型。</X.P>
+                </X.Uli>
+                <X.Uli>
+                    <X.P>`Resolve(callsite of x.foo())`用于*静态*的调用解析，根据receiver object `x`的声明类型`A`（不考虑等号右边）确定可能的目标方法集合。</X.P>
+                    <X.P>当`callsite`是一个virtual call时，由于不确定`x`的实际类型，因此需要考虑`A`及其所有子类中是否有重写`foo`方法的情况。此时`Resolve`会在`A`的直接或间接子类上运行`Dispatch`。</X.P>
+                </X.Uli>
+            </X.Uli>
+            <Pdfref file="Inter" page="51" desc="Call Graph (CG)" />
+            <Pdfref file="Inter" page="56" desc="建CG的算法" />
+            <Pdfref file="Inter" page="77" desc="Interprocedural Control-Flow Graph (ICFG)" />
+            <Pdfref file="Inter" page="81" desc="ICFG例子" />
+            <Pdfref file="Inter" page="86" desc="过程间数据流分析" />
+            <Pdfref file="Inter" page="87" desc="过程间常量传播" />
+            <Pdfref file="Inter" page="99" desc="过程间常量传播（例子）：保留call-to-return边是为了更高效地传方法内的局部变量" />
+            <Pdfref file="Inter" page="103" desc="过程间常量传播（例子）：对于call-to-return边，要kill掉调用点的等号左侧变量（否则与return edge的结果meet时就变成NAC了）" />
+            <Pdfref file="Inter" page="105" desc="过程间常量传播（总结）" />
+            <X.H2>Assignment 3 Tips</X.H2>
+            <X.Uli>
+                <X.P>对于call node，`transferCallNode`是恒等函数，不做任何处理。（后面会由edge transfer处理）</X.P>
+                <X.CodeBlock
+                    language="java"
+                    code={String.raw`
+                    protected boolean transferCallNode(Stmt stmt, CPFact in, CPFact out) {
+                        return out.copyFrom(in);
+                    }
+                    `}
+                />
+            </X.Uli>
+            <X.H1>L8. Pointer Analysis</X.H1>
+            <Pdfref file="PTA" page="18" desc="指针分析：分析指针（变量或字段）可能指向哪些对象，是 May-Analysis" />
+            <Pdfref file="PTA" page="29" desc="指针分析（Pointer Analysis）和别名分析（Alias Analysis）的区别" />
+            <X.Uli>
+                <X.P>指针分析的四个要素：</X.P>
+                <Pdfref file="PTA" page="47" desc="1. 堆抽象（其中最常用的是分配点抽象）" />
+                <Pdfref file="PTA" page="52" desc="2. 上下文敏感/上下文不敏感" />
+                <Pdfref file="PTA" page="69" desc="3. 流敏感/流不敏感" />
+                <Pdfref file="PTA" page="76" desc="4. 分析范围，全程序/需求驱动" />
+                <Pdfref file="PTA" page="78" desc="本课程中学习的范围（也是目前主流的做法）" />
+            </X.Uli>
+            <X.Uli>
+                <X.P>Java中的指针：Local variable、Static field、Instance field、Array element</X.P>
+                <Pdfref file="PTA" page="86" desc="对Array element的建模" />
+                <Pdfref file="PTA" page="87" desc="本课程只关注Local variable和Instance field两种指针" />
+            </X.Uli>
+            <Pdfref file="PTA" page="90" desc="指针影响型语句：Pointer-Affecting Statements" />
+            <X.H1>L9-L10. Pointer Analysis - Foundations</X.H1>
+            <Pdfref file="PTA-FD" page="6" desc="符号约定" />
+            <Pdfref file="PTA-FD" page="8" desc="规则推导式" />
+            <Pdfref file="PTA-FD" page="13" desc="规则推导式（图示）" />
+            <X.Uli>
+                <X.P>指针分析的一个关键是，当$pt(x)$变化时，把改变的部分传播给与$x$相关的其他指针</X.P>
+                <X.P>为此，我们构建一个图来连接相关指针，当$pt(x)$变化时，把改变的部分传播给$x$的后继</X.P>
+                <Pdfref file="PTA-FD" page="19" desc="（见：实现指针分析的思路）" />
+            </X.Uli>
+            <Pdfref file="PTA-FD" page="21" desc="指针流图（Pointer Flow Graph, PFG）：有向图，节点是指针（变量或字段），边$x \rightarrow y$表示指针$x$指向的对象可能流向$y$（即也被$y$指向）" />
+            <Pdfref file="PTA-FD" page="37" desc="PFG例子：指针分析可以看作求PFG的传递闭包" />
+            <X.Uli>
+                <X.P>指针分析算法</X.P>
+                <Pdfref file="PTA-FD" page="44" desc="总览" />
+                <Pdfref file="PTA-FD" page="46" desc="算法中worklist的元素是一个pair，包含一个指针和一个指向集（Points-to Set）：$\langle n,pts \rangle$" />
+                <X.Uli>
+                    把$\langle n,pts \rangle$加入worklist，宏观上意味着在随后的过程中$pts$会被并入$pt(n)$
+                </X.Uli>
+                <Pdfref file="PTA-FD" page="52" desc="`AddEdge(s,t)`：除了加一条PFG边$s \rightarrow t$之外，还把$\langle t,pt(s) \rangle$加入worklist，确保$s$指向的对象也流向$t$（被$t$指向）" />
+                <Pdfref file="PTA-FD" page="57" desc="`Propagate(n,pts)`：把$pts$并入$pt(n)$，并且对于所有$n$的后继$s$，把$\langle s,pts \rangle$加入worklist" />
+                <Pdfref file="PTA-FD" page="64" desc="差分传播：从worklist取出$\langle n,pts \rangle$后，实际执行`Propagate`的参数是$n$和$pts-pt(n)$，也就是只传播改变的部分" />
+                <Pdfref file="PTA-FD" page="68" desc="处理store和load语句" />
+                <X.HighlightBlock background="red">为什么不用c.f而是obj3.f</X.HighlightBlock>
+            </X.Uli>
 
         </>
     );
