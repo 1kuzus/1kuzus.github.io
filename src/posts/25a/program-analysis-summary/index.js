@@ -60,7 +60,11 @@ export default function Post() {
             <X.H2>总结</X.H2>
             <Pdfref file="DFA-AP" page="298" desc="三个算法的总结表格" />
             <X.H2>Assignment 1 Tips</X.H2>
-            <X.P>new boundray fact?</X.P>
+            <X.Uli>
+                <X.P>在活跃变量分析中，`newInitialFact`和`newBoundaryFact`都是空集，本次作业中用不到`newBoundaryFact`的参数`cfg`。</X.P>
+                <X.CodeBlock language="java" code="public SetFact<Var> newBoundaryFact(CFG<Stmt> cfg)" />
+                <X.P>（在下一次常量分析作业中，就需要用到`cfg`来获取方法的参数，`newBoundaryFact`中要把参数初始化成`NAC`）</X.P>
+            </X.Uli>
             <X.H1>L5-L6. Data Flow Analysis - Foundations</X.H1>
             <Pdfref file="DFA-FD" page="30" desc="偏序关系（自反性、反对称性、传递性）" />
             <X.Uli>
@@ -168,17 +172,122 @@ export default function Post() {
             <Pdfref file="Inter" page="99" desc="过程间常量传播（例子）：保留call-to-return边是为了更高效地传方法内的局部变量" />
             <Pdfref file="Inter" page="103" desc="过程间常量传播（例子）：对于call-to-return边，要kill掉调用点的等号左侧变量（否则与return edge的结果meet时就变成NAC了）" />
             <Pdfref file="Inter" page="105" desc="过程间常量传播（总结）" />
-            <X.H2>Assignment 3 Tips</X.H2>
+            <X.H2>Assignment 4 Tips</X.H2>
             <X.Uli>
-                <X.P>对于call node，`transferCallNode`是恒等函数，不做任何处理。（后面会由edge transfer处理）</X.P>
+                <X.P>在过程内常量分析中，`newBoundaryFact`中要把参数初始化成`NAC`，因为方法被调用时，参数的值是不确定的，为了保证Soundness，只能视为`NAC`。在本次作业做更精细的过程间常量分析，因此不再需要对大部分方法的参数做特殊处理，只需要处理整个ICFG的入口方法（如`main`方法）。</X.P>
+                <X.CodeBlock
+                    language="java"
+                    code={String.raw`
+                    private void initialize() {
+                        // TODO - finish me
+                        for (Node node : icfg) {
+                            result.setInFact(node, analysis.newInitialFact());
+                            result.setOutFact(node, analysis.newInitialFact());
+                        }
+                        icfg.entryMethods().forEach(method -> {
+                            Node entry = icfg.getEntryOf(method);
+                            result.setOutFact(entry, analysis.newBoundaryFact(entry));
+                        });
+                    }
+                    `}
+                />
+                <X.P>（然而作业只考虑整数类型，`main`的`String[] args`参数不会被考虑，实测不对ICFG的入口方法做`newBoundaryFact`初始化也能过OJ）</X.P>
+            </X.Uli>
+            <X.Uli>
+                <X.P>过程内常量传播分析时，节点的$IN$是其所有前驱节点的$OUT$的meet；过程间常量传播分析时，节点的$IN$是其所有前驱节点的$OUT$先经过`transferEdge`，再meet；`transferEdge`主要是为了解决传参和返回的过程，对于过程内的普通边，`transferEdge`什么都不做。</X.P>
+                <X.P>`transferEdge`的框架已经实现好了，作业中需要分别实现不同的细分情况。</X.P>
+                <X.CodeBlock
+                    language="java"
+                    code={String.raw`
+                    @Override
+                    public Fact transferEdge(ICFGEdge<Node> edge, Fact out) {
+                        if (edge instanceof NormalEdge) {
+                            return transferNormalEdge((NormalEdge<Node>) edge, out);
+                        } else if (edge instanceof CallToReturnEdge) {
+                            return transferCallToReturnEdge((CallToReturnEdge<Node>) edge, out);
+                        } else if (edge instanceof CallEdge) {
+                            return transferCallEdge((CallEdge<Node>) edge, out);
+                        } else {
+                            return transferReturnEdge((ReturnEdge<Node>) edge, out);
+                        }
+                    }
+                    `}
+                />
+            </X.Uli>
+            <X.Uli>
+                <X.P>对于call node，`transferCallNode`是恒等函数，不做任何处理。（参数会由`transferCallEdge`处理）</X.P>
                 <X.CodeBlock
                     language="java"
                     code={String.raw`
                     protected boolean transferCallNode(Stmt stmt, CPFact in, CPFact out) {
+                        // TODO - finish me
                         return out.copyFrom(in);
                     }
                     `}
                 />
+            </X.Uli>
+            <X.Uli>
+                <X.P>`transferCallEdge`时，核心是对应实参和形参，实参可以这样获取：</X.P>
+                <X.CodeBlock
+                    language="java"
+                    code={String.raw`
+                    Invoke invoke = (Invoke) edge.getSource();
+                    List<Var> actualParams = invoke.getInvokeExp().getArgs();
+                    `}
+                />
+                <X.P>形参可以这样获取：</X.P>
+                <X.CodeBlock
+                    language="java"
+                    code={String.raw`
+                    JMethod callee = edge.getCallee();
+                    List<Var> formalParams = callee.getIR().getParams();
+                    `}
+                />
+                <X.P>整个`transferCallEdge`的实现：</X.P>
+                <X.CodeBlock
+                    language="java"
+                    code={String.raw`
+                    @Override
+                    protected CPFact transferCallEdge(CallEdge<Stmt> edge, CPFact callSiteOut) {
+                        // TODO - finish me
+
+                        // 实参
+                        Invoke invoke = (Invoke) edge.getSource();
+                        List<Var> actualParams = invoke.getInvokeExp().getArgs();
+
+                        // 形参
+                        JMethod callee = edge.getCallee();
+                        List<Var> formalParams = callee.getIR().getParams();
+
+                        assert actualParams.size() == formalParams.size();
+
+                        CPFact result = newInitialFact();
+                        for (int i = 0; i < actualParams.size(); i++) {
+                            Var actual = actualParams.get(i);
+                            Var formal = formalParams.get(i);
+                            result.update(formal, callSiteOut.get(actual));
+                        }
+                        return result;
+                    }
+                    `}
+                />
+                <X.P>注意`result`是从`newInitialFact`开始添加，而不是基于`callSiteOut`。本地变量不需要流入被调用方法。（本地变量由call-to-return边处理）</X.P>
+            </X.Uli>
+            <X.Uli>
+                <X.P>`transferReturnEdge`时，`edge.getReturnVars`在有多个`return`语句时会返回多个`returnVar`，比如这种情况：</X.P>
+                <X.CodeBlock
+                    language="java"
+                    code={String.raw`
+                    int foo(...) {
+                        if (...) {
+                            return x;
+                        } else {
+                            return y;
+                        }
+                    }
+                    `}
+                />
+                <X.P>此时需要对这些返回值做`meetValue`。</X.P>
             </X.Uli>
             <X.H1>L8. Pointer Analysis</X.H1>
             <Pdfref file="PTA" page="18" desc="指针分析：分析指针（变量或字段）可能指向哪些对象，是 May-Analysis" />
@@ -219,7 +328,7 @@ export default function Post() {
                 <Pdfref file="PTA-FD" page="57" desc="`Propagate(n,pts)`：把$pts$并入$pt(n)$，并且对于所有$n$的后继$s$，把$\langle s,pts \rangle$加入worklist" />
                 <Pdfref file="PTA-FD" page="64" desc="差分传播：从worklist取出$\langle n,pts \rangle$后，实际执行`Propagate`的参数是$n$和$pts-pt(n)$，也就是只传播改变的部分" />
                 <Pdfref file="PTA-FD" page="68" desc="处理store和load语句" />
-                <X.HighlightBlock background="red">为什么不用c.f而是obj3.f</X.HighlightBlock>
+                <X.HighlightBlock background="red">为什么不用c.f而是obj3.f??</X.HighlightBlock>
             </X.Uli>
 
         </>
