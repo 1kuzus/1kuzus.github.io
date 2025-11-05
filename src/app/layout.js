@@ -1,5 +1,5 @@
 import Header from 'src/component/Header/Header';
-import {GlobalProvider} from 'src/context/GlobalContext';
+import { GlobalProvider } from 'src/context/GlobalContext';
 import 'src/assets/styles/fonts.css';
 import 'src/assets/styles/katex.css';
 import 'src/assets/styles/media.css';
@@ -17,7 +17,8 @@ gtag('config', 'G-45BYSZ6WPY');
 `;
 
 // 初始化色彩主题
-/*
+// const a=z=>h.getItem(z),b=(y,z)=>h.setItem(y,z),c=(y,z)=>document.documentElement.setAttribute(y,z),d='theme',e='dark',f='light',g='class',h=localStorage;a(d)!==e&&a(d)!==f&&b(d,f);a(d)===e?c(g,e):c(g,f);
+const scriptTheme = `
 const currentTheme = localStorage.getItem('theme');
 if (currentTheme !== 'light' && currentTheme !== 'dark') {
     localStorage.setItem('theme', 'light');
@@ -27,9 +28,7 @@ if (localStorage.getItem('theme') === 'dark') {
 } else {
     document.documentElement.setAttribute('class', 'light');
 }
-*/
-const scriptTheme =
-    "const a=z=>h.getItem(z),b=(y,z)=>h.setItem(y,z),c=(y,z)=>document.documentElement.setAttribute(y,z),d='theme',e='dark',f='light',g='class',h=localStorage;a(d)!==e&&a(d)!==f&&b(d,f);a(d)===e?c(g,e):c(g,f);";
+`;
 
 // 兼容性
 const scriptFindLast = `
@@ -51,16 +50,16 @@ if (!Array.prototype.findLastIndex) {
 }
 `;
 
-export default function RootLayout({children}) {
+export default function RootLayout({ children }) {
     return (
         <html lang="zh-CN" suppressHydrationWarning>
             <head>
                 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
                 <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" />
                 <script async src="https://www.googletagmanager.com/gtag/js?id=G-45BYSZ6WPY" />
-                <script dangerouslySetInnerHTML={{__html: scriptGA}} />
-                <script dangerouslySetInnerHTML={{__html: scriptTheme}} />
-                <script dangerouslySetInnerHTML={{__html: scriptFindLast}} />
+                <script dangerouslySetInnerHTML={{ __html: scriptGA }} />
+                <script dangerouslySetInnerHTML={{ __html: scriptTheme }} />
+                <script dangerouslySetInnerHTML={{ __html: scriptFindLast }} />
             </head>
             <body>
                 <GlobalProvider>

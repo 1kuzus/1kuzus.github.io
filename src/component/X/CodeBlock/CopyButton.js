@@ -11,7 +11,7 @@ export default function CopyButton(props) {
             onClick={() => {
                 if (isCopied) return;
                 navigator.clipboard.writeText(text).then(() => {
-                    console.log('Copied!');
+                    // console.log('Copied!');
                     setIsCopied(true);
                     setTimeout(() => {
                         setIsCopied(false);
