@@ -23,7 +23,7 @@ export default function Post() {
                 `}
             />
             <X.HighlightBlock>
-                <X.H3>遇到问题</X.H3>
+                <X.H3>问题解决</X.H3>
                 <X.H3>git clone 失败，报错 fatal: early EOF</X.H3>
                 <X.P>报错：</X.P>
                 <X.CodeBlock
@@ -95,7 +95,7 @@ export default function Post() {
             <X.P>由于我的设备显存小，所以把`batch_size`改为了`1`。原始的参数是`2`。</X.P>
             <X.P>运行后会在`NeRFrpn\\nerf_rpn\\results\\front3d_test`中得到`eval.json`文件和储存了`17`个测试场景的提议框的`proposals`目录。</X.P>
             <X.HighlightBlock>
-                <X.H3>遇到问题</X.H3>
+                <X.H3>问题解决</X.H3>
                 <X.H3>CUDA device 不匹配</X.H3>
                 <X.P>报错：</X.P>
                 <X.CodeBlock

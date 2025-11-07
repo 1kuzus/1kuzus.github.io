@@ -11,7 +11,7 @@ export default function Post() {
             <X.Uli>@Object Internal Methods and Internal Slots[https://262.ecma-international.org/16.0/index.html#sec-object-internal-methods-and-internal-slots]@</X.Uli>
             <X.H1>this指向问题引入</X.H1>
             <X.HighlightBlock>
-                <X.P>这一部分将讨论普通函数中的`this`指向问题。箭头函数的`this`指向规则与普通函数不同，后面会单独讨论。</X.P>
+                <X.P>这一部分将引入一些例子来讨论普通函数中的`this`指向问题。箭头函数的`this`指向规则与普通函数不同，后面会单独讨论。</X.P>
             </X.HighlightBlock>
             <X.H2>对象方法中</X.H2>
             <X.P>在对象的方法中，`this`通常指向调用该方法的对象。</X.P>
@@ -67,7 +67,7 @@ export default function Post() {
                 `}
             />
             <X.H2>this丢失</X.H2>
-            <X.P>`this`的指向由*调用点*决定，即便是对于同一个函数，不同的调用方式（如`obj.f()`和`g=obj.f, g()`）会导致`this`指向不同。</X.P>
+            <X.P>`this`的指向由*调用点*决定，即便是对于同一个函数，不同的调用方式（如`obj.f()`和`g = obj.f, g()`）会导致`this`指向不同。</X.P>
             <X.P>当将对象的方法赋值给一个变量或作为回调函数传递时，`this`可能会丢失其原始指向。</X.P>
             <X.CodeBlock
                 language="js"
@@ -91,7 +91,7 @@ export default function Post() {
             <X.HighlightBlock>
                 <X.P>你或许还见过这样的代码：</X.P>
                 <X.CodeBlock language="js" code="(0, obj1.f)(); // Window {...}" />
-                <X.P>这里利用了逗号运算符，表达式`(0, obj1.f)`的值与`obj1.f`是对同一个函数的引用，但由于调用点不是对象方法调用，因此`this`指向全局对象。这个“解绑定”技巧常用于将对象方法转换为独立函数调用。</X.P>
+                <X.P>这里利用了逗号运算符，尽管表达式`(0, obj1.f)`的值与`obj1.f`是对同一个函数的引用，但由于调用点不再是对象方法调用，此时`this`指向全局对象。这个“解绑定”技巧常用于将对象方法转换为独立函数调用。</X.P>
             </X.HighlightBlock>
             <X.H1>apply/bind/call</X.H1>
             <X.P>`apply`、`bind`和`call`是JavaScript中用于改变函数执行时`this`指向的三种方法。</X.P>
@@ -247,8 +247,8 @@ export default function Post() {
             </X.HighlightBlock>
             <X.HighlightBlock background="blue">
                 <X.P>当使用`new f(1)`时，我们会把`f`称作“构造函数”。然而JavaScript中的面向对象和真正的OOP语言有所不同，JavaScript中没有真正的“类”的概念（即便是ES6中的`class`关键字也只是语法糖），此处的“构造函数”`f`也与普通函数没什么不同。</X.P>
-                <X.P>因此对`new f(1)`一个更形象的描述是“对函数`f`的构造调用”。</X.P>
-                <X.P>直接调用`f(1)`时，非严格模式下`this`指向全局对象，因此会在全局对象上创建属性`x`和`text`。</X.P>
+                <X.P>因此对`new f(1)`一个更形象的描述是“对普通函数`f`的构造调用”。</X.P>
+                <X.P>如果直接调用`f(1)`，由于非严格模式下`this`指向全局对象，此时会在全局对象上创建属性`x`和`text`。</X.P>
             </X.HighlightBlock>
             <X.P>当使用`new`调用的函数有`return`语句时，如果返回的是一个对象，则该对象会作为`new`表达式的结果返回；如果返回的是一个原始类型，则忽略该返回值，仍然返回新创建的对象。</X.P>
             <X.CodeBlock
@@ -276,13 +276,12 @@ export default function Post() {
                 `}
             />
             <X.H1>普通函数的this绑定</X.H1>
-            <X.P>前面。。。。。</X.P>
-            <X.Uli>`new`绑定：</X.Uli>
-            <X.Uli>显式绑定：
-
-            </X.Uli>
-            <X.Uli>隐式绑定：</X.Uli>
-            <X.Uli>默认绑定：</X.Uli>
+            <X.P>现在系统地总结一下普通函数的`this`绑定规则。</X.P>
+            <X.P>确定普通函数的`this`绑定时，按照优先级从高到低依次考虑以下几种绑定方式：</X.P>
+            <X.Oli>*`new`绑定*：如果函数是通过`new`调用的，`this`指向新创建的对象；</X.Oli>
+            <X.Oli>*显式绑定*：`apply`、`bind`和`call`可以显式地改变`this`指向；</X.Oli>
+            <X.Oli>*隐式绑定*：如果调用点处函数作为对象的方法调用（如`obj.func()`），那么`this`指向该对象；</X.Oli>
+            <X.Oli>*默认绑定*：在非严格模式下，未通过上述三种方式绑定的函数调用中，`this`指向全局对象；在严格模式下为`undefined`。</X.Oli>
             <X.H1>箭头函数的this绑定</X.H1>
             <X.P>箭头函数不遵循标准的`this`绑定规则。当*创建箭头函数的语句被执行*时，箭头函数会从外层作用域中捕获`this`，此时其`this`值就被确定，且无法被`apply`、`bind`或`call`改变。</X.P>
             <X.HighlightBlock>
@@ -359,7 +358,7 @@ export default function Post() {
             <X.H1>原型</X.H1>
             <X.H2>继承与原型链</X.H2>
             <X.P>JavaScript基于对象实现继承。每一个对象都有一个*原型对象*，原型对象要么是另一个对象，要么是`null`。</X.P>
-            <X.P>原型对象也是普通对象，因此也会有自己的原型对象、原型对象的原型对象，直到到达原型链的顶端`null`。这种通过原型对象形成的链式结构称为*原型链*。当访问一个对象的属性时，如果该对象本身没有这个属性，JavaScript引擎会沿着原型链向上查找原型对象上的属性。</X.P>
+            <X.P>原型对象也是普通对象，因此也会有自己的原型对象、自己的原型对象的原型对象...，直到到达原型链的顶端`null`。这种通过原型对象形成的链式结构称为*原型链*。当访问一个对象的属性时，如果该对象本身没有这个属性，JavaScript引擎会沿着原型链向上查找原型对象上的属性。</X.P>
             <X.P>下面的例子手动创造了一条原型链：{"`objx -> objy -> objz`"}。</X.P>
             <X.CodeBlock
                 language="js"
@@ -374,7 +373,7 @@ export default function Post() {
                 console.log(objx.z); // 3
                 `}
             />
-            <X.P>只有在读取属性时，才会沿着原型链查找；在写入属性时直接在当前对象上创建或更新该属性。下面的例子中，给`objx`赋值`z`属性，相当于在`objx`上创建了一个新的属性`z`，而不会修改原型链上`objz`的`z`属性。这也被称为*属性遮蔽*。</X.P>
+            <X.P>只有在读取属性时，才会沿着原型链查找；在写入属性时，直接在当前对象上创建或更新该属性。下面的例子中，给`objx`赋值`z`属性，相当于在`objx`上创建了一个新的属性`z`，而不会修改原型链上`objz`的`z`属性。这也被称为*属性遮蔽*。</X.P>
             <X.CodeBlock
                 language="js"
                 code={String.raw`
@@ -385,7 +384,7 @@ export default function Post() {
                 `}
             />
             <X.H2>prototype与constructor</X.H2>
-            <X.P>默认情况下，函数有一个`prototype`属性，`fn.prototype`是一个普通对象，这个对象又有一个`constructor`属性，指向函数自身。</X.P>
+            <X.P>默认情况下，函数对象有一个`prototype`属性，`fn.prototype`是一个普通对象，这个对象又有一个`constructor`属性，指向函数自身。</X.P>
             <X.CodeBlock
                 language="js"
                 code={String.raw`
