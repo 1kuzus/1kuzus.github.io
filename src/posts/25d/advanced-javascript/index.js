@@ -359,7 +359,7 @@ export default function Post() {
             <X.H2>继承与原型链</X.H2>
             <X.P>JavaScript基于对象实现继承。每一个对象都有一个*原型对象*，原型对象要么是另一个对象，要么是`null`。</X.P>
             <X.P>原型对象也是普通对象，因此也会有自己的原型对象、自己的原型对象的原型对象...，直到到达原型链的顶端`null`。这种通过原型对象形成的链式结构称为*原型链*。当访问一个对象的属性时，如果该对象本身没有这个属性，JavaScript引擎会沿着原型链向上查找原型对象上的属性。</X.P>
-            <X.P>下面的例子手动创造了一条原型链：{"`objx -> objy -> objz`"}。</X.P>
+            <X.P>下面的例子手动创造了一条原型链：{'`objx -> objy -> objz`'}。</X.P>
             <X.CodeBlock
                 language="js"
                 code={String.raw`
@@ -472,7 +472,7 @@ export default function Post() {
             <X.P>在前面的表述中，我刻意回避了“对象的`__proto__`属性”这种说法，因为这会引起歧义，听起来好像每一个对象都天生带有一个`__proto__`属性。</X.P>
             <X.P>事实上，`__proto__`可以看作是内部属性`[[Prototype]]`的getter/setter，它定义在`Object.prototype`上。我们几乎可以在任意对象上访问`__proto__`，本质上是沿着原型链找到了`Object.prototype.__proto__`。</X.P>
             <X.Image src="1.jpg" filterDarkTheme />
-            <X.P>为什么是“几乎”？我们可以通过`Object.create(null);`直接创建一个原型对象为`null`的对象，它比`{"const obj = {};"}`创建的空对象还要“纯净”。注意下面两个对象的区别：</X.P>
+            <X.P>为什么是“几乎”？我们可以通过`Object.create(null);`直接创建一个原型对象为`null`的对象，它比`{'const obj = {};'}`创建的空对象还要“纯净”。注意下面两个对象的区别：</X.P>
             <X.Image src="2.jpg" filterDarkTheme />
             <X.P>由于`pure`的原型对象是`null`，没有继承`Object.prototype`，也就无法通过`__proto__`访问原型对象`[[Prototype]]`。同理，它也无法使用定义在`Object.prototype`上的方法，如`toString`。</X.P>
             <X.H1>杂项</X.H1>

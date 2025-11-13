@@ -1,7 +1,7 @@
 import X from 'src/component/X';
 
 function Pdfref(props) {
-    const { file, page, desc, children } = props;
+    const {file, page, desc, children} = props;
     return (
         <X.Uli>
             <X.P>{`@${desc}[https://cs.nju.edu.cn/tiantan/software-analysis/${file}.pdf#page=${page}]@`}</X.P>
@@ -318,19 +318,36 @@ export default function Post() {
             <Pdfref file="PTA-FD" page="21" desc="指针流图（Pointer Flow Graph, PFG）：有向图，节点是指针（变量或字段），边$x \rightarrow y$表示指针$x$指向的对象可能流向$y$（即也被$y$指向）" />
             <Pdfref file="PTA-FD" page="37" desc="PFG例子：指针分析可以看作求PFG的传递闭包" />
             <X.Uli>
-                <X.P>指针分析算法</X.P>
-                <Pdfref file="PTA-FD" page="44" desc="总览" />
+                <X.P>指针分析算法（过程内）</X.P>
+                <Pdfref file="PTA-FD" page="44" desc="算法总览" />
                 <Pdfref file="PTA-FD" page="46" desc="算法中worklist的元素是一个pair，包含一个指针和一个指向集（Points-to Set）：$\langle n,pts \rangle$" />
-                <X.Uli>
-                    把$\langle n,pts \rangle$加入worklist，宏观上意味着在随后的过程中$pts$会被并入$pt(n)$
-                </X.Uli>
+                <X.Uli>把$\langle n,pts \rangle$加入worklist，宏观上意味着在随后的过程中$pts$会被并入$pt(n)$</X.Uli>
                 <Pdfref file="PTA-FD" page="52" desc="`AddEdge(s,t)`：除了加一条PFG边$s \rightarrow t$之外，还把$\langle t,pt(s) \rangle$加入worklist，确保$s$指向的对象也流向$t$（被$t$指向）" />
                 <Pdfref file="PTA-FD" page="57" desc="`Propagate(n,pts)`：把$pts$并入$pt(n)$，并且对于所有$n$的后继$s$，把$\langle s,pts \rangle$加入worklist" />
                 <Pdfref file="PTA-FD" page="64" desc="差分传播：从worklist取出$\langle n,pts \rangle$后，实际执行`Propagate`的参数是$n$和$pts-pt(n)$，也就是只传播改变的部分" />
                 <Pdfref file="PTA-FD" page="68" desc="处理store和load语句" />
-                <X.HighlightBlock background="red">为什么不用c.f而是obj3.f??</X.HighlightBlock>
+                <Pdfref file="PTA-FD" page="91" desc="例子" />
+            </X.Uli>
+            <X.Uli>
+                <X.P>指针分析算法（过程间）</X.P>
+                <Pdfref file="PTA-FD" page="106" desc="处理call语句的规则推导式" />
+
+                <X.HighlightBlock background="red">
+                    <Pdfref file="PTA-FD" page="113" desc="不加x -> m_this" />
+                </X.HighlightBlock>
+
+                <Pdfref file="PTA-FD" page="116" desc="算法总览" />
+                <Pdfref file="PTA-FD" page="119" desc="`AddReachable(m)`" />
+                <Pdfref file="PTA-FD" page="124" desc="`ProcessCall(x,oi)`：对于所有$x$作receiver object的调用语句`r=x.foo(a1,a2,...)`，【】【】【】【】【】【】【】【】【】【】【】【】" />
+                <Pdfref file="PTA-FD" page="152" desc="例子" />
             </X.Uli>
 
+            <X.HighlightBlock background="red">为什么不用c.f而是obj3.f ??</X.HighlightBlock>
+
+            <X.H1>L14. Datalog-Based Program Analysis</X.H1>
+            <Pdfref file="Datalog" page="17" desc="Datalog语言介绍" />
+            <Pdfref file="Datalog" page="60" desc="Pointer Analysis via Datalog" />
+            <Pdfref file="Datalog" page="89" desc="Taint Analysis via Datalog" />
         </>
     );
 }

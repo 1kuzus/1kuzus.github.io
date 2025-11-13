@@ -1,289 +1,312 @@
 {
-	// Place your Githubio 工作区 snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
-	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
-	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
-	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
-	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
-	// Placeholders with the same ids are connected.
-	"X.H1 tag": {
-		"scope": "javascript,typescript",
-		"prefix": ["xh1","#"],
-		"body": [
-			"<X.H1>$1</X.H1>",
-		],
-		"description": "X.H1 tag"
-	},
-	"X.H2 tag": {
-		"scope": "javascript,typescript",
-		"prefix": ["xh2","##"],
-		"body": [
-			"<X.H2>$1</X.H2>",
-		],
-		"description": "X.H2 tag"
-	},
-	"X.H3 tag": {
-		"scope": "javascript,typescript",
-		"prefix": ["xh3","###"],
-		"body": [
-			"<X.H3>$1</X.H3>",
-		],
-		"description": "X.H3 tag"
-	},
-	"X.P tag": {
-		"scope": "javascript,typescript",
-		"prefix": "xp",
-		"body": [
-			"<X.P>$1</X.P>",
-		],
-		"description": "X.P tag"
-	},
-	"X.Uli tag": {
-		"scope": "javascript,typescript",
-		"prefix": ["xuli","-"],
-		"body": [
-			"<X.Uli>$1</X.Uli>",
-		],
-		"description": "X.Uli tag"
-	},
-	"X.Oli tag": {
-		"scope": "javascript,typescript",
-		"prefix": ["xoli","--"],
-		"body": [
-			"<X.Oli>$1</X.Oli>",
-		],
-		"description": "X.Oli tag"
-	},
-	"X.CodeBlock tag": {
-		"scope": "javascript,typescript",
-		"prefix": "xc",
-		"body": [
-			"<X.CodeBlock",
-			"\tlanguage=\"$1\"",
-			"\tcode={String.raw`",
-			"\t`}",
-			"/>",
-		],
-		"description": "X.CodeBlock tag"
-	},
-	"X.CodeBlock tag for C++": {
-		"scope": "javascript,typescript",
-		"prefix": "xccpp",
-		"body": [
-			"<X.CodeBlock",
-			"\tlanguage=\"cpp\"",
-			"\tcode={String.raw`$1",
-			"\t`}",
-			"/>",
-		],
-		"description": "X.CodeBlock tag for C++"
-	},
-	"X.CodeBlock tag for Python": {
-		"scope": "javascript,typescript",
-		"prefix": "xcpy",
-		"body": [
-			"<X.CodeBlock",
-			"\tlanguage=\"python\"",
-			"\tcode={String.raw`$1",
-			"\t`}",
-			"/>",
-		],
-		"description": "X.CodeBlock tag for Python"
-	},
-	"X.CodeBlock tag for JavaScript": {
-		"scope": "javascript,typescript",
-		"prefix": "xcjs",
-		"body": [
-			"<X.CodeBlock",
-			"\tlanguage=\"js\"",
-			"\tcode={String.raw`$1",
-			"\t`}",
-			"/>",
-		],
-		"description": "X.CodeBlock tag for JavaScript"
-	},
-	"highlightLines props": {
-		"scope": "javascript,typescript",
-		"prefix": "hll",
-		"body": [
-			"highlightLines"
-		],
-		"description": "highlightLines props"
-	},
-	"diffRemovedLines props": {
-		"scope": "javascript,typescript",
-		"prefix": "drl",
-		"body": [
-			"diffRemovedLines"
-		],
-		"description": "diffRemovedLines props"
-	},
-	"diffAddedLines props": {
-		"scope": "javascript,typescript",
-		"prefix": "dal",
-		"body": [
-			"diffAddedLines"
-		],
-		"description": "diffAddedLines props"
-	},
-	"X.FlexRow tag": {
-		"scope": "javascript,typescript",
-		"prefix": "xflex",
-		"body": [
-			"<X.FlexRow>$1</X.FlexRow>",
-		],
-		"description": "X.FlexRow tag"
-	},
-	"X.Formula tag": {
-		"scope": "javascript,typescript",
-		"prefix": "xformula",
-		"body": [
-			"<X.Formula text=\"$1\" />",
-		],
-		"description": "X.Formula tag"
-	},
-	"X.HighlightBlock tag": {
-		"scope": "javascript,typescript",
-		"prefix": "xh",
-		"body": [
-			"<X.HighlightBlock>$1</X.HighlightBlock>",
-		],
-		"description": "X.HighlightBlock tag"
-	},
-	"X.HighlightBlock tag with background props": {
-		"scope": "javascript,typescript",
-		"prefix": "xhbg",
-		"body": [
-			"<X.HighlightBlock background=\"$1\"></X.HighlightBlock>",
-		],
-		"description": "X.HighlightBlock tag with background props"
-	},
-	"X.Image tag": {
-		"scope": "javascript,typescript",
-		"prefix": "ximage",
-		"body": [
-			"<X.Image src=\"fig1$1.jpg\" width=\"100%\" />"
-		],
-		"description": "X.Image tag"
-	},
-	"filterDarkTheme props": {
-		"scope": "javascript,typescript",
-		"prefix": "fdt",
-		"body": [
-			"filterDarkTheme"
-		],
-		"description": "filterDarkTheme props"
-	},
-	"X.Table tag": {
-		"scope": "javascript,typescript",
-		"prefix": "xtable",
-		"body": [
-			"<X.Table>",
-			"\t<tr>",
-			"\t\t<th>$1</th>",
-			"\t</tr>",
-			"\t<tr>",
-			"\t\t<td></td>",
-			"\t</tr>",
-			"</X.Table>",
-		],
-		"description": "X.Table tag"
-	},
-	"X.Table tag with fromText props": {
-		"scope": "javascript,typescript",
-		"prefix": "xtft",
-		"body": [
-			"<X.Table",
-			"\tfromText={`",
-			"\t'index'|列一|列二$1",
-			"\t行一|@百度[https://www.baidu.com]@|你好*世界*",
-			"\t行二|$(x+y)^2$|'Hello, World!'",
-			"\t`}",
-			"/>",
-		],
-		"description": "X.Table tag with fromText props"
-	},
-	"X.Table tag with fromData props": {
-		"scope": "javascript,typescript",
-		"prefix": "xtfd",
-		"body": [
-			"<X.Table",
-			"\tfromData={[",
-			"\t\t['列一', '列二'],$1",
-			"\t\t['*你好*', '世界'],",
-			"\t\t[<X.CodeBlock language=\"python\" code=\"print('hello')\" />, '$(x+y)^2$'],",
-			"\t\t[",
-			"\t\t\t'`Hello, World!`',",
-			"\t\t\t<>",
-			"\t\t\t\t<X.P>lorem ipsum dolor sit amet</X.P>",
-			"\t\t\t\t<X.Formula text=\"x^2+y^2+2xy\" />",
-			"\t\t\t\t<X.HighlightBlock>",
-			"\t\t\t\t\t<X.P>`consectetur adipiscing elit`</X.P>",
-			"\t\t\t\t</X.HighlightBlock>",
-			"\t\t\t</>",
-			"\t\t]",
-			"\t]}",
-			"/>",
-		],
-		"description": "X.Table tag with fromData props"
-	},
-	"X.Table tag with fromText and tableStyle props": {
-		"scope": "javascript,typescript",
-		"prefix": "xtfttbs",
-		"body": [
-			"<X.Table",
-			"\tfromText={`",
-			"\t属性|值|示例$1",
-			"\t'align'|'string'|'\"lcccr\"'",
-			"\t'thead'|'\"all\"'/'\"row\"'/'\"column\"'/'\"none\"'|'\"row\"'",
-			"\t'width'|'number[]'|'[0, 0, 200, 320]'",
-			"\t`}",
-			"\ttableStyle={{",
-			"\t\talign: 'lll',",
-			"\t\tthead: 'all',",
-			"\t\twidth: [100, 0, 200],",
-			"\t}}",
-			"/>",
-		],
-		"description": "X.Table tag with fromText and tableStyle props"
-	},
-	"X.Table tag with fromData and tableStyle props": {
-		"scope": "javascript,typescript",
-		"prefix": "xtfdtbs",
-		"body": [
-			"<X.Table",
-			"\tfromData={[",
-			"\t\t['属性', '值', '示例'],$1",
-			"\t\t['`align`', '`string`', '`\"lcccr\"`'],",
-			"\t\t['`thead`', '`\"all\"`/`\"row\"`/`\"column\"`/`\"none\"`', '`\"row\"`'],",
-			"\t\t['`width`', '`number[]`', '`[0, 0, 200, 320]`'],",
-			"\t]}",
-			"\ttableStyle={{",
-			"\t\talign: 'lll',",
-			"\t\tthead: 'all',",
-			"\t\twidth: [100, 0, 200],",
-			"\t}}",
-			"/>",
-		],
-		"description": "X.Table tag with fromData and tableStyle props"
-	},
-	"tableStyle props": {
-		"scope": "javascript,typescript",
-		"prefix": "tbs",
-		"body": [
-			"tableStyle={{",
-			"\talign: 'lll',",
-			"\tthead: 'all',",
-			"\twidth: [100, 0, 200],",
-			"}}",
-		],
-		"description": "tableStyle props"
-	},
-	"inline latex": {
-		"scope": "javascript,typescript",
-		"prefix": "il",
-		"body": [
-			"{`$$1$`}",
-		],
-		"description": "inline latex"
-	}
+    // Place your Githubio 工作区 snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+    // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+    // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+    // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+    // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+    // Placeholders with the same ids are connected.
+    "X.H1 tag": {
+        "scope": "javascript,typescript",
+        "prefix": [
+            "xh1",
+            "#",
+        ],
+        "body": [
+            "<X.H1>$1</X.H1>",
+        ],
+        "description": "X.H1 tag"
+    },
+    "X.H2 tag": {
+        "scope": "javascript,typescript",
+        "prefix": [
+            "xh2",
+            "##",
+        ],
+        "body": [
+            "<X.H2>$1</X.H2>",
+        ],
+        "description": "X.H2 tag"
+    },
+    "X.H3 tag": {
+        "scope": "javascript,typescript",
+        "prefix": [
+            "xh3",
+            "###",
+        ],
+        "body": [
+            "<X.H3>$1</X.H3>",
+        ],
+        "description": "X.H3 tag"
+    },
+    "X.P tag": {
+        "scope": "javascript,typescript",
+        "prefix": "xp",
+        "body": [
+            "<X.P>$1</X.P>",
+        ],
+        "description": "X.P tag"
+    },
+    "X.Uli tag": {
+        "scope": "javascript,typescript",
+        "prefix": [
+            "xuli",
+            "-",
+        ],
+        "body": [
+            "<X.Uli>$1</X.Uli>",
+        ],
+        "description": "X.Uli tag"
+    },
+    "X.Oli tag": {
+        "scope": "javascript,typescript",
+        "prefix": [
+            "xoli",
+            "--",
+        ],
+        "body": [
+            "<X.Oli>$1</X.Oli>",
+        ],
+        "description": "X.Oli tag"
+    },
+    "X.CodeBlock tag": {
+        "scope": "javascript,typescript",
+        "prefix": "xc",
+        "body": [
+            "<X.CodeBlock",
+            "\tlanguage=\"$1\"",
+            "\tcode={String.raw`",
+            "\t`}",
+            "/>",
+        ],
+        "description": "X.CodeBlock tag"
+    },
+    "X.CodeBlock tag (oneline)": {
+        "scope": "javascript,typescript",
+        "prefix": "xco",
+        "body": [
+            "<X.CodeBlock language=\"$1\" code=\"\" />",
+        ],
+        "description": "X.CodeBlock tag"
+    },
+    "X.CodeBlock tag for C++": {
+        "scope": "javascript,typescript",
+        "prefix": "xccpp",
+        "body": [
+            "<X.CodeBlock",
+            "\tlanguage=\"cpp\"",
+            "\tcode={String.raw`$1",
+            "\t`}",
+            "/>",
+        ],
+        "description": "X.CodeBlock tag for C++"
+    },
+    "X.CodeBlock tag for Python": {
+        "scope": "javascript,typescript",
+        "prefix": "xcpy",
+        "body": [
+            "<X.CodeBlock",
+            "\tlanguage=\"python\"",
+            "\tcode={String.raw`$1",
+            "\t`}",
+            "/>",
+        ],
+        "description": "X.CodeBlock tag for Python"
+    },
+    "X.CodeBlock tag for JavaScript": {
+        "scope": "javascript,typescript",
+        "prefix": "xcjs",
+        "body": [
+            "<X.CodeBlock",
+            "\tlanguage=\"js\"",
+            "\tcode={String.raw`$1",
+            "\t`}",
+            "/>",
+        ],
+        "description": "X.CodeBlock tag for JavaScript"
+    },
+    "highlightLines props": {
+        "scope": "javascript,typescript",
+        "prefix": "hll",
+        "body": [
+            "highlightLines",
+        ],
+        "description": "highlightLines props"
+    },
+    "diffRemovedLines props": {
+        "scope": "javascript,typescript",
+        "prefix": "drl",
+        "body": [
+            "diffRemovedLines",
+        ],
+        "description": "diffRemovedLines props"
+    },
+    "diffAddedLines props": {
+        "scope": "javascript,typescript",
+        "prefix": "dal",
+        "body": [
+            "diffAddedLines",
+        ],
+        "description": "diffAddedLines props"
+    },
+    "X.FlexRow tag": {
+        "scope": "javascript,typescript",
+        "prefix": "xflex",
+        "body": [
+            "<X.FlexRow>$1</X.FlexRow>",
+        ],
+        "description": "X.FlexRow tag"
+    },
+    "X.Formula tag": {
+        "scope": "javascript,typescript",
+        "prefix": "xformula",
+        "body": [
+            "<X.Formula text=\"$1\" />",
+        ],
+        "description": "X.Formula tag"
+    },
+    "X.HighlightBlock tag": {
+        "scope": "javascript,typescript",
+        "prefix": "xh",
+        "body": [
+            "<X.HighlightBlock>$1</X.HighlightBlock>",
+        ],
+        "description": "X.HighlightBlock tag"
+    },
+    "X.HighlightBlock tag with background props": {
+        "scope": "javascript,typescript",
+        "prefix": "xhbg",
+        "body": [
+            "<X.HighlightBlock background=\"$1\"></X.HighlightBlock>",
+        ],
+        "description": "X.HighlightBlock tag with background props"
+    },
+    "X.Image tag": {
+        "scope": "javascript,typescript",
+        "prefix": "ximage",
+        "body": [
+            "<X.Image src=\"fig1$1.jpg\" width=\"100%\" />",
+        ],
+        "description": "X.Image tag"
+    },
+    "filterDarkTheme props": {
+        "scope": "javascript,typescript",
+        "prefix": "fdt",
+        "body": [
+            "filterDarkTheme",
+        ],
+        "description": "filterDarkTheme props"
+    },
+    "X.Table tag": {
+        "scope": "javascript,typescript",
+        "prefix": "xtable",
+        "body": [
+            "<X.Table>",
+            "\t<tr>",
+            "\t\t<th>$1</th>",
+            "\t</tr>",
+            "\t<tr>",
+            "\t\t<td></td>",
+            "\t</tr>",
+            "</X.Table>",
+        ],
+        "description": "X.Table tag"
+    },
+    "X.Table tag with fromText props": {
+        "scope": "javascript,typescript",
+        "prefix": "xtft",
+        "body": [
+            "<X.Table",
+            "\tfromText={`",
+            "\t'index'|列一|列二$1",
+            "\t行一|@百度[https://www.baidu.com]@|你好*世界*",
+            "\t行二|$(x+y)^2$|'Hello, World!'",
+            "\t`}",
+            "/>",
+        ],
+        "description": "X.Table tag with fromText props"
+    },
+    "X.Table tag with fromData props": {
+        "scope": "javascript,typescript",
+        "prefix": "xtfd",
+        "body": [
+            "<X.Table",
+            "\tfromData={[",
+            "\t\t['列一', '列二'],$1",
+            "\t\t['*你好*', '世界'],",
+            "\t\t[<X.CodeBlock language=\"python\" code=\"print('hello')\" />, '$(x+y)^2$'],",
+            "\t\t[",
+            "\t\t\t'`Hello, World!`',",
+            "\t\t\t<>",
+            "\t\t\t\t<X.P>lorem ipsum dolor sit amet</X.P>",
+            "\t\t\t\t<X.Formula text=\"x^2+y^2+2xy\" />",
+            "\t\t\t\t<X.HighlightBlock>",
+            "\t\t\t\t\t<X.P>`consectetur adipiscing elit`</X.P>",
+            "\t\t\t\t</X.HighlightBlock>",
+            "\t\t\t</>",
+            "\t\t]",
+            "\t]}",
+            "/>",
+        ],
+        "description": "X.Table tag with fromData props"
+    },
+    "X.Table tag with fromText and tableStyle props": {
+        "scope": "javascript,typescript",
+        "prefix": "xtfttbs",
+        "body": [
+            "<X.Table",
+            "\tfromText={`",
+            "\t属性|值|示例$1",
+            "\t'align'|'string'|'\"lcccr\"'",
+            "\t'thead'|'\"all\"'/'\"row\"'/'\"column\"'/'\"none\"'|'\"row\"'",
+            "\t'width'|'number[]'|'[0, 0, 200, 320]'",
+            "\t`}",
+            "\ttableStyle={{",
+            "\t\talign: 'lll',",
+            "\t\tthead: 'all',",
+            "\t\twidth: [100, 0, 200],",
+            "\t}}",
+            "/>",
+        ],
+        "description": "X.Table tag with fromText and tableStyle props"
+    },
+    "X.Table tag with fromData and tableStyle props": {
+        "scope": "javascript,typescript",
+        "prefix": "xtfdtbs",
+        "body": [
+            "<X.Table",
+            "\tfromData={[",
+            "\t\t['属性', '值', '示例'],$1",
+            "\t\t['`align`', '`string`', '`\"lcccr\"`'],",
+            "\t\t['`thead`', '`\"all\"`/`\"row\"`/`\"column\"`/`\"none\"`', '`\"row\"`'],",
+            "\t\t['`width`', '`number[]`', '`[0, 0, 200, 320]`'],",
+            "\t]}",
+            "\ttableStyle={{",
+            "\t\talign: 'lll',",
+            "\t\tthead: 'all',",
+            "\t\twidth: [100, 0, 200],",
+            "\t}}",
+            "/>",
+        ],
+        "description": "X.Table tag with fromData and tableStyle props"
+    },
+    "tableStyle props": {
+        "scope": "javascript,typescript",
+        "prefix": "tbs",
+        "body": [
+            "tableStyle={{",
+            "\talign: 'lll',",
+            "\tthead: 'all',",
+            "\twidth: [100, 0, 200],",
+            "}}",
+        ],
+        "description": "tableStyle props"
+    },
+    "inline latex": {
+        "scope": "javascript,typescript",
+        "prefix": "il",
+        "body": [
+            "{`$$1$`}",
+        ],
+        "description": "inline latex"
+    }
 }

@@ -1,5 +1,5 @@
 import Header from 'src/component/Header/Header';
-import { GlobalProvider } from 'src/context/GlobalContext';
+import {GlobalProvider} from 'src/context/GlobalContext';
 import 'src/assets/styles/fonts.css';
 import 'src/assets/styles/katex.css';
 import 'src/assets/styles/media.css';
@@ -50,16 +50,16 @@ if (!Array.prototype.findLastIndex) {
 }
 `;
 
-export default function RootLayout({ children }) {
+export default function RootLayout({children}) {
     return (
         <html lang="zh-CN" suppressHydrationWarning>
             <head>
                 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
                 <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" />
                 <script async src="https://www.googletagmanager.com/gtag/js?id=G-45BYSZ6WPY" />
-                <script dangerouslySetInnerHTML={{ __html: scriptGA }} />
-                <script dangerouslySetInnerHTML={{ __html: scriptTheme }} />
-                <script dangerouslySetInnerHTML={{ __html: scriptFindLast }} />
+                <script dangerouslySetInnerHTML={{__html: scriptGA}} />
+                <script dangerouslySetInnerHTML={{__html: scriptTheme}} />
+                <script dangerouslySetInnerHTML={{__html: scriptFindLast}} />
             </head>
             <body>
                 <GlobalProvider>
