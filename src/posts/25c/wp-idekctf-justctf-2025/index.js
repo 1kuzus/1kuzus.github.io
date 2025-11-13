@@ -548,7 +548,7 @@ export default function Post() {
             <X.Image src="1.jpg" filterDarkTheme />
             <X.P>（如果不用`srcdoc`而是`src=".../view.js"`，则会返回纯文本的JavaScript代码内容，这样就没有办法加载`index`页面了。）</X.P>
             <X.H3>Step 2</X.H3>
-            <X.P>现在`index`页面中有我们需要的jQuery库和`#noteContent`元素，但是`showNote`函数是未定义的，而这个函数就是定义在`/view.js`中。因此我们上一步将第一个`iframe`的`location.href`操作成`/view.js`，就是为了这一步空参调用`$._evalUrl`做铺垫。空参调用时默认使用`location.href`做参数，也就会解析执行我们需要的`/view.js`了。</X.P>
+            <X.P>现在`index`页面中有我们需要的jQuery库和`#noteContent`元素，但是`showNote`函数是未定义的，而这个函数就定义在`/view.js`中。因此我们上一步将第一个`iframe`的`location.href`操作成`/view.js`，就是为了这一步空参调用`$._evalUrl`做铺垫。空参调用时默认使用`location.href`做参数，也就会解析执行我们需要的`/view.js`了。</X.P>
             <X.P>现在在攻击页面中添加下面的代码：</X.P>
             <X.CodeBlock
                 language="html"
@@ -709,7 +709,7 @@ export default function Post() {
                 """
                 `}
             />
-            <X.Uli>为`a`标签设置了`id=xxx`后，可以通过window.xxx访问到这个元素；（对任意标签都适用）</X.Uli>
+            <X.Uli>为`a`标签设置了`id=xxx`后，可以通过`window.xxx`访问到这个元素；（对任意标签都适用）</X.Uli>
             <X.Uli>
                 <X.P>注意这些`a`标签是在`iframe`中定义并被点击的，而这里的`iframe`作为笔记内容被加载；此时JSONP回调中：</X.P>
                 <X.Uli>`top`取得的是笔记页面的`window`对象；</X.Uli>
@@ -740,7 +740,7 @@ export default function Post() {
             <X.P>`exp.py`：</X.P>
             <X.CodeBlock
                 language="python"
-                code={`
+                code={String.raw`
                 from flask import Flask, render_template
                 import requests
 
