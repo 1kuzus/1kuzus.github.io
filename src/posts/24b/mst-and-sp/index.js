@@ -198,7 +198,7 @@ export default function Post() {
                         for(int i=0;i<n;i++)
                         {
                             if(vis[i]) continue;
-                            if(d[i]<minval)	minval=d[i],u=i;
+                            if(d[i]<minval) minval=d[i],u=i;
                         }
                         if(minval==INF) break;//说明不连通
                         vis[u]=true;
@@ -254,7 +254,7 @@ export default function Post() {
                             for(int i=0;i<n;i++)
                             {
                                 if(vis[i]) continue;
-                                if(d[i]<minval)	minval=d[i],u=i;
+                                if(d[i]<minval) minval=d[i],u=i;
                             }
                             vis[u]=true;
                             cnt++;
