@@ -1,4 +1,12 @@
 {
+    "/25d/bugku-apache-log4j2-rce/": {
+        "title": "Bugku靶场Apache Log4j2 RCE",
+        "time": "2025-11-22"
+    },
+    "/25d/sqli-labs/": {
+        "title": "SQLi Labs",
+        "time": "2025-11-13"
+    },
     "/25d/advanced-javascript/": {
         "title": "JavaScript进阶特性",
         "time": "2025-11-03"

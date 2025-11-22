@@ -18,7 +18,9 @@
             "/25b/wp-nahamcon-ctf-2025/",
             "/25c/wp-downunder-ctf-2025/",
             "/25c/wp-shakti-ctf-2025/",
-            "/25c/wp-idekctf-justctf-2025/"
+            "/25c/wp-idekctf-justctf-2025/",
+            "/25d/sqli-labs/",
+            "/25d/bugku-apache-log4j2-rce/"
         ]
     },
     {
