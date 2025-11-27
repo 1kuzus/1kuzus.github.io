@@ -19,13 +19,13 @@ export default function Post() {
                 code={String.raw`
                 const base = Module.findBaseAddress('havana32.exe');
 
-                const fn_read = base.add(0x6a40); // read buffer
+                const ptr_read = base.add(0x6a40); // read buffer
                 const var_buffer = base.add(0x474c0); // buffer
                 Interceptor.replace(
-                    fn_read,
+                    ptr_read,
                     new NativeCallback(
                         function (a1, a2, a3) {
-                            console.log('fn_read called, arg1=' + a1 + ', (buffer=' + var_buffer + ')');
+                            console.log('ptr_read called, arg1=' + a1 + ', (buffer=' + var_buffer + ')');
                             const input = '[INPUT]';
                             Memory.writeAnsiString(var_buffer, input);
                             console.log('Data written to var_buffer: ' + var_buffer.readAnsiString(), input.length);
@@ -36,9 +36,9 @@ export default function Post() {
                     )
                 );
 
-                const fn_vm_main = base.add(0x1300);
+                const ptr_vm_main = base.add(0x1300);
                 const var_matched = base.add(0x474b8); // matched count
-                Interceptor.attach(fn_vm_main, {
+                Interceptor.attach(ptr_vm_main, {
                     onLeave: function () {
                         const matched = Memory.readU32(var_matched);
                         console.log('matched:', matched);
