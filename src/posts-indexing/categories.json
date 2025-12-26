@@ -1,9 +1,7 @@
 [
     {
-        "categoryName": "安全学习",
+        "categoryName": "CTF",
         "posts": [
-            "/24d/wp-portswigger/",
-            "/24b/learn-cwes/",
             "/24d/wp-bluehens-2024/",
             "/24d/wp-1337uplive-2024/",
             "/24d/wp-m0lecon-2025/",
@@ -16,22 +14,24 @@
             "/25b/wp-nahamcon-ctf-2025/",
             "/25c/wp-downunder-ctf-2025/",
             "/25c/wp-shakti-ctf-2025/",
-            "/25c/wp-idekctf-justctf-2025/",
-            "/25d/sqli-labs/",
-            "/25d/bugku-apache-log4j2-rce/"
+            "/25c/wp-idekctf-justctf-2025/"
         ]
     },
     {
-        "categoryName": "安全研究",
+        "categoryName": "安全学习",
         "posts": [
             "/24b/papers-sec-240514-taintmini/",
+            "/24b/learn-cwes/",
             "/24c/papers-sec-240728-2fa-consistency/",
             "/24c/papers-sec-240810-conquer/",
             "/24c/papers-sec-240817-2fa-failures/",
             "/24c/papers-sec-240824-zxcvbn/",
             "/24c/papers-sec-240902-pafa-authentication/",
             "/24c/papers-sec-240922-pre-hijacked-accounts/",
-            "/24d/papers-sec-241207-aimie/"
+            "/24d/wp-portswigger/",
+            "/24d/papers-sec-241207-aimie/",
+            "/25d/sqli-labs/",
+            "/25d/bugku-apache-log4j2-rce/"
         ]
     },
     {

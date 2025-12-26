@@ -16,10 +16,8 @@ function Logo() {
 function Author() {
     return (
         <h2 id="author-wrapper">
-            <code>\author</code>
-            <code>&#123;</code>
+            <code>by&nbsp;</code>
             <code id="author">1kuzus</code>
-            <code>&#125;</code>
         </h2>
     );
 }
@@ -42,14 +40,13 @@ export default function Homepage() {
         <div id="homepage">
             <div id="homepage-banner">
                 <Logo />
-                <Author />
                 <h1 id="homepage-title">铃木的网络日记</h1>
-                <code id="homepage-subtitle">&nbsp;Rage, Perfectionism, Geek.</code>
+                <Author />
                 <HomepageViewCount />
             </div>
             <div id="homepage-navs">
-                <HomepageNavCard titleZh="· 全部分类 ·" href="/categories/" />
-                <HomepageNavCard titleZh="· 归档 ·" href="/archives/" />
+                <HomepageNavCard titleZh="全部分类" href="/categories/" />
+                <HomepageNavCard titleZh="归档" href="/archives/" />
             </div>
         </div>
     );
