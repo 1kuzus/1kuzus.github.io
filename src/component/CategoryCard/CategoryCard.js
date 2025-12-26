@@ -20,7 +20,7 @@ export default function CategoryCard(props) {
             </div>
             <div className="category-card-ul-wrapper">
                 <ul className="category-card-ul">
-                    {category.posts.toReversed().map((path, index) => (
+                    {category.posts.slice().reverse().map((path, index) => (
                         <li key={index}>
                             <Link href={path} active={activeIndex === index}>
                                 <span>{archives[path].title}</span>
