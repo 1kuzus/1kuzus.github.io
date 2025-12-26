@@ -2,10 +2,8 @@
     {
         "categoryName": "安全学习",
         "posts": [
-            "/longtime/wp-portswigger/",
+            "/24d/wp-portswigger/",
             "/24b/learn-cwes/",
-            "/24b/cross-site-scripting/",
-            "/24b/cross-site-request-forgery/",
             "/24d/wp-bluehens-2024/",
             "/24d/wp-1337uplive-2024/",
             "/24d/wp-m0lecon-2025/",
@@ -119,7 +117,6 @@
             "/23c/pattern-recognition-3/",
             "/23d/pattern-recognition-4/",
             "/23d/protocols/",
-            "/24a/machine-learning-exercises/",
             "/24a/games101-01-transformation/",
             "/24a/games101-02-rasterization/",
             "/24a/games101-03-shading/",
@@ -140,10 +137,7 @@
     {
         "categoryName": "杂记",
         "posts": [
-            "/24b/by-questions/",
-            "/24d/about-interactive-multimedia/",
-            "/longtime/hundred-thousand/",
-            "/longtime/linux-commands/"
+            "/24d/about-interactive-multimedia/"
         ]
     }
 ]

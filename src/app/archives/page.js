@@ -25,7 +25,7 @@ export default function Archives() {
             </Heading>
             {years.map((year, index) => (
                 <div key={index}>
-                    <Heading level={2}>{+year || '长期维护'}</Heading>
+                    <Heading level={2}>{year}</Heading>
                     <ul>
                         {postsByYears[year].map((path, index) => (
                             <li key={index}>

@@ -68,7 +68,7 @@ export function PostMeta(props) {
                 {likeCount + ' likes'}&nbsp;·&nbsp;
             </code>
             <code className={viewCount === null ? 'not-loaded' : ''}>{viewCount + ' views'}&nbsp;·&nbsp;</code>
-            <code>{archives[path].time || 'longtime'}</code>
+            <code>{archives[path].time}</code>
         </div>
     );
 }

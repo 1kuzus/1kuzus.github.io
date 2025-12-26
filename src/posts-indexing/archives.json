@@ -85,8 +85,7 @@
     },
     "/24d/about-interactive-multimedia/": {
         "title": "关于交互式多媒体",
-        "time": "2024-11-30",
-        "inactive": true
+        "time": "2024-11-30"
     },
     "/24d/wp-1337uplive-2024/": {
         "title": "1337UP LIVE CTF 2024 Writeup",
@@ -95,6 +94,10 @@
     "/24d/wp-bluehens-2024/": {
         "title": "BlueHens CTF 2024 Writeup",
         "time": "2024-11-09"
+    },
+    "/24d/wp-portswigger/": {
+        "title": "PortSwigger Writeup",
+        "time": "2024-11-01"
     },
     "/24d/leetcode-282/": {
         "title": "LeetCode 282.给表达式添加运算符",
@@ -198,16 +201,6 @@
         "title": "LeetCode 84.柱状图中最大的矩形",
         "time": "2024-06-30"
     },
-    "/24b/cross-site-scripting/": {
-        "title": "Learn XSS",
-        "time": "2024-06-10",
-        "inactive": true
-    },
-    "/24b/cross-site-request-forgery/": {
-        "title": "Learn CSRF",
-        "time": "2024-06-10",
-        "inactive": true
-    },
     "/24b/leetcode-312/": {
         "title": "LeetCode 312.戳气球",
         "time": "2024-06-09"
@@ -267,11 +260,6 @@
     "/24b/yolov5-obb-nms-rotated/": {
         "title": "解决：nms_rotated报错\"THC/THC.h\": No such file or directory",
         "time": "2024-04-24"
-    },
-    "/24b/by-questions/": {
-        "title": "专业课复习",
-        "time": "2024-04-18",
-        "inactive": true
     },
     "/24a/csp-2023-05/": {
         "title": "CSP 202305 T1-T5题解",
@@ -337,11 +325,6 @@
         "title": "在pytorch和numpy中取top-k值和索引",
         "time": "2024-01-10"
     },
-    "/24a/machine-learning-exercises/": {
-        "title": "【机器学习】习题",
-        "time": "2024-01-07",
-        "inactive": true
-    },
     "/24a/games101-01-transformation/": {
         "title": "【GAMES101】Transformation",
         "time": "2024-01-07"
@@ -401,16 +384,5 @@
     "/23c/pattern-recognition-1/": {
         "title": "【模式识别】统计决策方法",
         "time": "2023-08-31"
-    },
-    "/longtime/wp-portswigger/": {
-        "title": "PortSwigger Writeup"
-    },
-    "/longtime/hundred-thousand/": {
-        "title": "十万",
-        "inactive": true
-    },
-    "/longtime/linux-commands/": {
-        "title": "三开",
-        "inactive": true
     }
 }
