@@ -1,4 +1,8 @@
 {
+    "/25d/wp-asisctf-2025/": {
+        "title": "ASIS CTF 2025 Writeup",
+        "time": "2025-12-29"
+    },
     "/25d/bugku-apache-log4j2-rce/": {
         "title": "Bugku靶场Apache Log4j2 RCE",
         "time": "2025-11-22"
