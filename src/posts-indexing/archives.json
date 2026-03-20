@@ -1,4 +1,8 @@
 {
+    "/26a/src-agent-workflow-sandbox-rce/": {
+        "title": "一次SRC挖掘中遇到的Python沙箱RCE",
+        "time": "2026-03-20"
+    },
     "/26a/wp-lactf-2026/": {
         "title": "LACTF 2026 Writeup",
         "time": "2026-02-07"
