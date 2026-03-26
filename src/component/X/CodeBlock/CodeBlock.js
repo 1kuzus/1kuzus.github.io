@@ -41,7 +41,7 @@ const languageNameMap = {
 };
 
 export default function CodeBlock(props) {
-    const {language, code, highlightLines, diffRemovedLines, diffAddedLines} = props;
+    const {language, code, title, highlightLines, diffRemovedLines, diffAddedLines} = props;
     assert(languageNameMap[language], 'unsupported language: ' + language);
     //处理代码行，处理空白，统一缩进
     let lines = code.split('\n').map((line) => line.trimRight());
@@ -87,7 +87,9 @@ export default function CodeBlock(props) {
     return (
         <div className="x-codeblock">
             <div className="x-codeblock-header">
-                <div className="x-codeblock-header-language">{languageNameMap[language]}</div>
+                <div className="x-codeblock-header-language">
+                    {(title ? title + ' / ' : '') + languageNameMap[language]}
+                </div>
                 <CopyButton className="x-codeblock-header-copy" text={lines.join('\n')} />
             </div>
             <pre
