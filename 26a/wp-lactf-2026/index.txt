@@ -1,0 +1,194 @@
+2:I[55329,["481","static/chunks/457b8330-b5c9cf3fcf214847.js","954","static/chunks/d3ac728e-0c798b3b8aa3bf53.js","612","static/chunks/612-fa632c1349770315.js","120","static/chunks/120-aab2c7424ca78adb.js","842","static/chunks/842-c34937e356df3122.js","318","static/chunks/app/(posts)/%5B...slug%5D/page-ede090a8310641a6.js"],""]
+3:I[76842,["481","static/chunks/457b8330-b5c9cf3fcf214847.js","954","static/chunks/d3ac728e-0c798b3b8aa3bf53.js","612","static/chunks/612-fa632c1349770315.js","120","static/chunks/120-aab2c7424ca78adb.js","842","static/chunks/842-c34937e356df3122.js","318","static/chunks/app/(posts)/%5B...slug%5D/page-ede090a8310641a6.js"],"PostMeta"]
+4:"$Sreact.suspense"
+6:I[76842,["481","static/chunks/457b8330-b5c9cf3fcf214847.js","954","static/chunks/d3ac728e-0c798b3b8aa3bf53.js","612","static/chunks/612-fa632c1349770315.js","120","static/chunks/120-aab2c7424ca78adb.js","842","static/chunks/842-c34937e356df3122.js","318","static/chunks/app/(posts)/%5B...slug%5D/page-ede090a8310641a6.js"],"LikeButton"]
+7:I[5613,[],""]
+9:I[31778,[],""]
+a:I[89806,["250","static/chunks/250-0ef8476c0fa8ee24.js","372","static/chunks/372-d4f6d8bcfbfafb52.js","993","static/chunks/app/(posts)/layout-e15e5287e741ad91.js"],""]
+b:I[25694,["250","static/chunks/250-0ef8476c0fa8ee24.js","185","static/chunks/app/layout-9af8316721e2155d.js"],"GlobalProvider"]
+c:I[30397,["250","static/chunks/250-0ef8476c0fa8ee24.js","185","static/chunks/app/layout-9af8316721e2155d.js"],""]
+8:["slug","26a/wp-lactf-2026","c"]
+0:["laovm6XE1uYNajIaapiXb",[[["",{"children":["(posts)",{"children":[["slug","26a/wp-lactf-2026","c"],{"children":["__PAGE__?{\"slug\":[\"26a\",\"wp-lactf-2026\"]}",{}]}]}]},"$undefined","$undefined",true],["",{"children":["(posts)",{"children":[["slug","26a/wp-lactf-2026","c"],{"children":["__PAGE__",{},["$L1",[["$","$L2",null,{}],false,["$","h1",null,{"className":"x-post-title","children":"LACTF 2026 Writeup"}],["$","$L3",null,{"path":"/26a/wp-lactf-2026/"}],["$","$4",null,{"fallback":["$","p",null,{"children":"Loading component..."}],"children":"$L5"}],["$","$L6",null,{"path":"/26a/wp-lactf-2026/"}]],null]]},["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children","(posts)","children","$8","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L9",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/e79a2122734bb4c0.css","precedence":"next","crossOrigin":""}]]}]]},[null,["$","div",null,{"id":"post-layout","children":[["$","div",null,{"id":"main","className":"center-wrapper","children":["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children","(posts)","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L9",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]}],["$","$La",null,{}]]}],null]]},[null,["$","html",null,{"lang":"zh-CN","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","link",null,{"rel":"icon","href":"/favicon.ico","type":"image/x-icon"}],["$","script",null,{"async":true,"src":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"}],["$","script",null,{"async":true,"src":"https://www.googletagmanager.com/gtag/js?id=G-45BYSZ6WPY"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nwindow.dataLayer = window.dataLayer || [];\nfunction gtag() {\n    dataLayer.push(arguments);\n}\ngtag('js', new Date());\ngtag('config', 'G-45BYSZ6WPY');\n"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nconst currentTheme = localStorage.getItem('theme');\nif (currentTheme !== 'light' && currentTheme !== 'dark') {\n    localStorage.setItem('theme', 'light');\n}\nif (localStorage.getItem('theme') === 'dark') {\n    document.documentElement.setAttribute('class', 'dark');\n} else {\n    document.documentElement.setAttribute('class', 'light');\n}\n"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nif (!Array.prototype.findLast) {\n    Array.prototype.findLast = function (callback) {\n        for (let i = this.length - 1; i >= 0; i--) {\n            if (callback(this[i])) return this[i];\n        }\n        return undefined;\n    };\n}\nif (!Array.prototype.findLastIndex) {\n    Array.prototype.findLastIndex = function (callback) {\n        for (let i = this.length - 1; i >= 0; i--) {\n            if (callback(this[i])) return i;\n        }\n        return -1;\n    };\n}\n"}}]]}],["$","body",null,{"children":["$","$Lb",null,{"children":[["$","$Lc",null,{}],["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L9",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"id":"notfound","children":[["$","img",null,{"alt":"img","src":"/images/cry.gif"}],["$","code",null,{"id":"notfound-404","children":"404"}],["$","code",null,{"id":"notfound-text","children":"Page Not Found"}]]}],"notFoundStyles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/98e601cf5ba3633d.css","precedence":"next","crossOrigin":""}]],"styles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/3bc7e8f21884ab46.css","precedence":"next","crossOrigin":""}]]}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/17b3c4485edf7c41.css","precedence":"next","crossOrigin":""}]],"$Ld"]]]]
+e:I[74365,["481","static/chunks/457b8330-b5c9cf3fcf214847.js","954","static/chunks/d3ac728e-0c798b3b8aa3bf53.js","612","static/chunks/612-fa632c1349770315.js","120","static/chunks/120-aab2c7424ca78adb.js","842","static/chunks/842-c34937e356df3122.js","318","static/chunks/app/(posts)/%5B...slug%5D/page-ede090a8310641a6.js"],""]
+f:I[62029,["481","static/chunks/457b8330-b5c9cf3fcf214847.js","954","static/chunks/d3ac728e-0c798b3b8aa3bf53.js","612","static/chunks/612-fa632c1349770315.js","120","static/chunks/120-aab2c7424ca78adb.js","842","static/chunks/842-c34937e356df3122.js","318","static/chunks/app/(posts)/%5B...slug%5D/page-ede090a8310641a6.js"],""]
+10:T904,def display_name(username: str) -> str:
+    return "".join(p.capitalize() for p in username.split("_"))
+
+
+def validate_conf(old_cfg: dict, uploaded_conf: str) -> dict | str:
+    try:
+        conf = yaml.safe_load(uploaded_conf)
+
+        # validate all blog entries
+        for i, blog in enumerate(conf["blogs"]):
+            if not isinstance(blog.get("title"), str):
+                return f"please provide a 'title' to the {i + 1}th blog"
+
+            # no lfi
+            file_name = blog["name"]
+            assert isinstance(file_name, str)
+            file_path = (blog_path / file_name).resolve()
+            if "../" in file_name or file_name.startswith("/") or not file_path.is_relative_to(blog_path):
+                return f"file path {file_name!r} is a hacking attempt. this incident will be reported"
+
+        # recover from missing display name/passwords with sane default of old one
+        if not isinstance(conf.get("user"), dict):
+            conf["user"] = dict()
+
+        conf["user"]["name"] = display_name(conf["user"].get("name", old_cfg["user"]["name"]))
+        conf["user"]["password"] = conf["user"].get("password", old_cfg["user"]["password"])
+        if not isinstance(conf["user"]["password"], str):
+            return "provide a valid password bro"
+        return conf
+    except Exception as e:
+        return f"exception - {e}"
+
+
+@app.post("/config")
+def update_config():
+    config = request.form.get("config")
+    if config is None:
+        return "give a config..."
+    if "username" not in session:
+        return redirect("/login")
+
+    validated_config = validate_conf(users[session["username"]], config)
+
+    # this means there was an error in validation - return err string
+    if isinstance(validated_config, str):
+        return validated_config, 400
+
+    # update the user conf if it is valid
+    users[session["username"]] = validated_config
+
+    return redirect("/")
+
+
+@app.get("/blog/<string:username>")
+def serve_blog(username):
+    if username not in users:
+        return "username does not exist", 404
+    blogs = [
+        {"title": blog["title"], "content": mistune.html((blog_path / blog["name"]).read_text())}
+        for blog in users[username]["blogs"]
+    ]
+    return render_template("blog.html", blogs=blogs, name=users[username]["user"]["name"])
+11:T3a35,<span class="token keyword">def</span> <span class="token function">display_name</span><span class="token punctuation">(</span>username<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string">""</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>p<span class="token punctuation">.</span>capitalize<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">for</span> p <span class="token keyword">in</span> username<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">"_"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">def</span> <span class="token function">validate_conf</span><span class="token punctuation">(</span>old_cfg<span class="token punctuation">:</span> <span class="token builtin">dict</span><span class="token punctuation">,</span> uploaded_conf<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">dict</span> <span class="token operator">|</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        conf <span class="token operator">=</span> yaml<span class="token punctuation">.</span>safe_load<span class="token punctuation">(</span>uploaded_conf<span class="token punctuation">)</span>
+
+        <span class="token comment"># validate all blog entries</span>
+        <span class="token keyword">for</span> i<span class="token punctuation">,</span> blog <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>conf<span class="token punctuation">[</span><span class="token string">"blogs"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> <span class="token keyword">not</span> <span class="token builtin">isinstance</span><span class="token punctuation">(</span>blog<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"title"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token string-interpolation"><span class="token string">f"please provide a 'title' to the </span><span class="token interpolation"><span class="token punctuation">{</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">}</span></span><span class="token string">th blog"</span></span>
+
+            <span class="token comment"># no lfi</span>
+            file_name <span class="token operator">=</span> blog<span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span>
+            <span class="token keyword">assert</span> <span class="token builtin">isinstance</span><span class="token punctuation">(</span>file_name<span class="token punctuation">,</span> <span class="token builtin">str</span><span class="token punctuation">)</span>
+            file_path <span class="token operator">=</span> <span class="token punctuation">(</span>blog_path <span class="token operator">/</span> file_name<span class="token punctuation">)</span><span class="token punctuation">.</span>resolve<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> <span class="token string">"../"</span> <span class="token keyword">in</span> file_name <span class="token keyword">or</span> file_name<span class="token punctuation">.</span>startswith<span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">)</span> <span class="token keyword">or</span> <span class="token keyword">not</span> file_path<span class="token punctuation">.</span>is_relative_to<span class="token punctuation">(</span>blog_path<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token string-interpolation"><span class="token string">f"file path </span><span class="token interpolation"><span class="token punctuation">{</span>file_name<span class="token conversion-option punctuation">!r</span><span class="token punctuation">}</span></span><span class="token string"> is a hacking attempt. this incident will be reported"</span></span>
+
+        <span class="token comment"># recover from missing display name/passwords with sane default of old one</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span> <span class="token builtin">isinstance</span><span class="token punctuation">(</span>conf<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">dict</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            conf<span class="token punctuation">[</span><span class="token string">"user"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+        conf<span class="token punctuation">[</span><span class="token string">"user"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span> <span class="token operator">=</span> display_name<span class="token punctuation">(</span>conf<span class="token punctuation">[</span><span class="token string">"user"</span><span class="token punctuation">]</span><span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span> old_cfg<span class="token punctuation">[</span><span class="token string">"user"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        conf<span class="token punctuation">[</span><span class="token string">"user"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"password"</span><span class="token punctuation">]</span> <span class="token operator">=</span> conf<span class="token punctuation">[</span><span class="token string">"user"</span><span class="token punctuation">]</span><span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"password"</span><span class="token punctuation">,</span> old_cfg<span class="token punctuation">[</span><span class="token string">"user"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"password"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span> <span class="token builtin">isinstance</span><span class="token punctuation">(</span>conf<span class="token punctuation">[</span><span class="token string">"user"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"password"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token string">"provide a valid password bro"</span>
+        <span class="token keyword">return</span> conf
+    <span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string-interpolation"><span class="token string">f"exception - </span><span class="token interpolation"><span class="token punctuation">{</span>e<span class="token punctuation">}</span></span><span class="token string">"</span></span>
+
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>post</span><span class="token punctuation">(</span><span class="token string">"/config"</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">update_config</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    config <span class="token operator">=</span> request<span class="token punctuation">.</span>form<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"config"</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> config <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">"give a config..."</span>
+    <span class="token keyword">if</span> <span class="token string">"username"</span> <span class="token keyword">not</span> <span class="token keyword">in</span> session<span class="token punctuation">:</span>
+        <span class="token keyword">return</span> redirect<span class="token punctuation">(</span><span class="token string">"/login"</span><span class="token punctuation">)</span>
+
+    validated_config <span class="token operator">=</span> validate_conf<span class="token punctuation">(</span>users<span class="token punctuation">[</span>session<span class="token punctuation">[</span><span class="token string">"username"</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span> config<span class="token punctuation">)</span>
+
+    <span class="token comment"># this means there was an error in validation - return err string</span>
+    <span class="token keyword">if</span> <span class="token builtin">isinstance</span><span class="token punctuation">(</span>validated_config<span class="token punctuation">,</span> <span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> validated_config<span class="token punctuation">,</span> <span class="token number">400</span>
+
+    <span class="token comment"># update the user conf if it is valid</span>
+    users<span class="token punctuation">[</span>session<span class="token punctuation">[</span><span class="token string">"username"</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> validated_config
+
+    <span class="token keyword">return</span> redirect<span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">)</span>
+
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">"/blog/&lt;string:username>"</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">serve_blog</span><span class="token punctuation">(</span>username<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> username <span class="token keyword">not</span> <span class="token keyword">in</span> users<span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">"username does not exist"</span><span class="token punctuation">,</span> <span class="token number">404</span>
+    blogs <span class="token operator">=</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span><span class="token string">"title"</span><span class="token punctuation">:</span> blog<span class="token punctuation">[</span><span class="token string">"title"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"content"</span><span class="token punctuation">:</span> mistune<span class="token punctuation">.</span>html<span class="token punctuation">(</span><span class="token punctuation">(</span>blog_path <span class="token operator">/</span> blog<span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read_text<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+        <span class="token keyword">for</span> blog <span class="token keyword">in</span> users<span class="token punctuation">[</span>username<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"blogs"</span><span class="token punctuation">]</span>
+    <span class="token punctuation">]</span>
+    <span class="token keyword">return</span> render_template<span class="token punctuation">(</span><span class="token string">"blog.html"</span><span class="token punctuation">,</span> blogs<span class="token operator">=</span>blogs<span class="token punctuation">,</span> name<span class="token operator">=</span>users<span class="token punctuation">[</span>username<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"user"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+12:T4e8,def validate_conf(old_cfg: dict, uploaded_conf: str) -> dict | str:
+    try:
+        conf = yaml.safe_load(uploaded_conf)
+
+        # validate all blog entries
+        for i, blog in enumerate(conf["blogs"]):
+            if not isinstance(blog.get("title"), str):
+                return f"please provide a 'title' to the {i + 1}th blog"
+
+            # no lfi
+            file_name = blog["name"]
+            assert isinstance(file_name, str)
+            file_path = (blog_path / file_name).resolve()
+            if "../" in file_name or file_name.startswith("/") or not file_path.is_relative_to(blog_path):
+                return f"file path {file_name!r} is a hacking attempt. this incident will be reported"
+
+        # recover from missing display name/passwords with sane default of old one
+        if not isinstance(conf.get("user"), dict):
+            conf["user"] = dict()
+
+        conf["user"]["name"] = display_name(conf["user"].get("name", old_cfg["user"]["name"]))
+        conf["user"]["password"] = conf["user"].get("password", old_cfg["user"]["password"])
+        if not isinstance(conf["user"]["password"], str):
+            return "provide a valid password bro"
+        return conf
+    except Exception as e:
+        return f"exception - {e}"
+13:T1fce,<span class="token keyword">def</span> <span class="token function">validate_conf</span><span class="token punctuation">(</span>old_cfg<span class="token punctuation">:</span> <span class="token builtin">dict</span><span class="token punctuation">,</span> uploaded_conf<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">dict</span> <span class="token operator">|</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        conf <span class="token operator">=</span> yaml<span class="token punctuation">.</span>safe_load<span class="token punctuation">(</span>uploaded_conf<span class="token punctuation">)</span>
+
+        <span class="token comment"># validate all blog entries</span>
+        <span class="token keyword">for</span> i<span class="token punctuation">,</span> blog <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>conf<span class="token punctuation">[</span><span class="token string">"blogs"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> <span class="token keyword">not</span> <span class="token builtin">isinstance</span><span class="token punctuation">(</span>blog<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"title"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token string-interpolation"><span class="token string">f"please provide a 'title' to the </span><span class="token interpolation"><span class="token punctuation">{</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">}</span></span><span class="token string">th blog"</span></span>
+
+            <span class="token comment"># no lfi</span>
+            file_name <span class="token operator">=</span> blog<span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span>
+            <span class="token keyword">assert</span> <span class="token builtin">isinstance</span><span class="token punctuation">(</span>file_name<span class="token punctuation">,</span> <span class="token builtin">str</span><span class="token punctuation">)</span>
+            file_path <span class="token operator">=</span> <span class="token punctuation">(</span>blog_path <span class="token operator">/</span> file_name<span class="token punctuation">)</span><span class="token punctuation">.</span>resolve<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> <span class="token string">"../"</span> <span class="token keyword">in</span> file_name <span class="token keyword">or</span> file_name<span class="token punctuation">.</span>startswith<span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">)</span> <span class="token keyword">or</span> <span class="token keyword">not</span> file_path<span class="token punctuation">.</span>is_relative_to<span class="token punctuation">(</span>blog_path<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token string-interpolation"><span class="token string">f"file path </span><span class="token interpolation"><span class="token punctuation">{</span>file_name<span class="token conversion-option punctuation">!r</span><span class="token punctuation">}</span></span><span class="token string"> is a hacking attempt. this incident will be reported"</span></span>
+
+        <span class="token comment"># recover from missing display name/passwords with sane default of old one</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span> <span class="token builtin">isinstance</span><span class="token punctuation">(</span>conf<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">dict</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            conf<span class="token punctuation">[</span><span class="token string">"user"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+        conf<span class="token punctuation">[</span><span class="token string">"user"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span> <span class="token operator">=</span> display_name<span class="token punctuation">(</span>conf<span class="token punctuation">[</span><span class="token string">"user"</span><span class="token punctuation">]</span><span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span> old_cfg<span class="token punctuation">[</span><span class="token string">"user"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        conf<span class="token punctuation">[</span><span class="token string">"user"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"password"</span><span class="token punctuation">]</span> <span class="token operator">=</span> conf<span class="token punctuation">[</span><span class="token string">"user"</span><span class="token punctuation">]</span><span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"password"</span><span class="token punctuation">,</span> old_cfg<span class="token punctuation">[</span><span class="token string">"user"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"password"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span> <span class="token builtin">isinstance</span><span class="token punctuation">(</span>conf<span class="token punctuation">[</span><span class="token string">"user"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"password"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token string">"provide a valid password bro"</span>
+        <span class="token keyword">return</span> conf
+    <span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string-interpolation"><span class="token string">f"exception - </span><span class="token interpolation"><span class="token punctuation">{</span>e<span class="token punctuation">}</span></span><span class="token string">"</span></span>
+5:[["$","h2",null,{"className":"x-h1","children":"Web/blogler"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"题目允许上传新博客，或直接编辑YAML格式的配置文件："}}],["$","$Le",null,{"src":"1.jpg","width":"100%"}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"Python"}],["$","$Lf",null,{"className":"x-codeblock-header-copy","text":"$10"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$11"}}]}]]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"本题的需要读取<code class=\"x-inline-highlight\">/flag</code>中的flag，需要利用<code class=\"x-inline-highlight\">blog[\"name\"]</code>触发<code class=\"x-inline-highlight\">(blog_path / blog[\"name\"]).read_text()</code>的LFI漏洞。"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"通过<code class=\"x-inline-highlight\">update_config</code>更新的YAML配置会经过<code class=\"x-inline-highlight\">validate_conf</code>的检查，直接在<code class=\"x-inline-highlight\">blog[\"name\"]</code>中使用<code class=\"x-inline-highlight\">../</code>会被拒绝；本题切入点是，注意到<code class=\"x-inline-highlight\">blog</code>（<code class=\"x-inline-highlight\">conf[\"blogs\"][i]</code>）和<code class=\"x-inline-highlight\">conf[\"user\"]</code>都包含<code class=\"x-inline-highlight\">name</code>字段，且<code class=\"x-inline-highlight\">validate_conf</code>在验证过<code class=\"x-inline-highlight\">blog[\"name\"]</code>后，会通过<code class=\"x-inline-highlight\">display_name</code>函数删除<code class=\"x-inline-highlight\">conf[\"user\"][\"name\"]</code>中的下划线："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"Python"}],["$","$Lf",null,{"className":"x-codeblock-header-copy","text":"$12"}]]}],["$","pre",null,{"style":{"background":"linear-gradient(180deg, transparent 240px, var(--bg-transparent-golden) 240px 384px, transparent 384px, transparent 504px, var(--bg-transparent-golden) 504px 528px, transparent 528px)"},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$13"}}]}]]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"利用YAML的<a href=\"https://yaml.org/spec/1.2.2/#71-alias-nodes\" target=\"_blank\" rel=\"noreferrer\" class=\"x-inline-link\">别名</a>功能，可以使得<code class=\"x-inline-highlight\">conf[\"blogs\"][0]</code>和<code class=\"x-inline-highlight\">conf[\"user\"]</code>在解析后指向同一个字典对象："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"Plain Text"}],["$","$Lf",null,{"className":"x-codeblock-header-copy","text":"blogs:\n- &id001\n  name: .._/.._/flag\n  password: abc\n  title: Blog Title\n- name: abc_blog_3e2256dc5fcaedb0.md\n  title: Blog Title\nuser: *id001\n"}]]}],["$","pre",null,{"style":{"background":"linear-gradient(180deg, transparent 48px, var(--bg-transparent-golden) 48px 144px, transparent 144px, transparent 192px, var(--bg-transparent-golden) 192px 216px, transparent 216px)"},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"blogs:\n- &amp;id001\n  name: .._/.._/flag\n  password: abc\n  title: Blog Title\n- name: abc_blog_3e2256dc5fcaedb0.md\n  title: Blog Title\nuser: *id001\n"}}]}]]}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"此时先验证<code class=\"x-inline-highlight\">blog[\"name\"]</code>时<code class=\"x-inline-highlight\">.._/.._/flag</code>能够通过验证，随后该属性又在<code class=\"x-inline-highlight\">display_name</code>处理后被修改为<code class=\"x-inline-highlight\">../../flag</code>，从而实现LFI。"}}],["$","$Le",null,{"src":"2.jpg","width":"100%"}]]
+d:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"LACTF 2026 Writeup - 铃木的网络日记"}],["$","link","3",{"rel":"canonical","href":"https://1kuzus.github.io/26a/wp-lactf-2026/"}]]
+1:null
