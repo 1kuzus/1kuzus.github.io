@@ -87,7 +87,7 @@ export default function CodeBlock(props) {
     return (
         <div className="x-codeblock">
             <div className="x-codeblock-header">
-                <div className="x-codeblock-header-language">
+                <div className="x-codeblock-header-title">
                     {(title ? title + ' / ' : '') + languageNameMap[language]}
                 </div>
                 <CopyButton className="x-codeblock-header-copy" text={lines.join('\n')} />

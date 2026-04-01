@@ -13,11 +13,17 @@
     position: absolute;
     top: -8px;
     right: -8px;
+    max-width: 96%;
     height: 32px;
     padding: 0px 6px 0 10px;
     border-radius: 6px;
     background-color: var(--bg-main);
     box-shadow: var(--light-theme-box-shadow);
+}
+.x-codeblock-header-title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden; 
 }
 .x-codeblock .x-codeblock-header > * {
     opacity: 0.4;
