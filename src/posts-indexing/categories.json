@@ -22,6 +22,8 @@
     {
         "categoryName": "安全学习",
         "posts": [
+            "/26b/csapp-attack-lab/",
+            "/26a/wx-jsapi/",
             "/26a/src-agent-workflow-sandbox-rce/",
             "/25d/bugku-apache-log4j2-rce/",
             "/25d/sqli-labs/",

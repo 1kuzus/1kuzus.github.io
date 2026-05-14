@@ -1,6 +1,14 @@
 {
+    "/26b/csapp-attack-lab/": {
+        "title": "CSAPP Attack Lab Writeup",
+        "time": "2026-05-12"
+    },
+    "/26a/wx-jsapi/": {
+        "title": "微信小程序JSAPI调用原理逆向分析",
+        "time": "2026-03-25"
+    },
     "/26a/src-agent-workflow-sandbox-rce/": {
-        "title": "一次SRC挖掘中遇到的Python沙箱RCE",
+        "title": "一次测试中遇到的Python沙箱RCE",
         "time": "2026-03-20"
     },
     "/26a/wp-lactf-2026/": {
@@ -77,7 +85,8 @@
     },
     "/25a/program-analysis-summary/": {
         "title": "【程序分析】知识汇总",
-        "time": "2025-01-10"
+        "time": "2025-01-10",
+        "inactive": true
     },
     "/24d/wp-0xl4ugh-2024/": {
         "title": "0xl4ugh CTF 2024 Writeup",

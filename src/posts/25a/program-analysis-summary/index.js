@@ -338,11 +338,13 @@ export default function Post() {
 
                 <Pdfref file="PTA-FD" page="116" desc="算法总览" />
                 <Pdfref file="PTA-FD" page="119" desc="`AddReachable(m)`" />
-                <Pdfref file="PTA-FD" page="124" desc="`ProcessCall(x,oi)`：对于所有$x$作receiver object的调用语句`r=x.foo(a1,a2,...)`，【】【】【】【】【】【】【】【】【】【】【】【】" />
+                {/* TODO */}
+                <Pdfref file="PTA-FD" page="124" desc="`ProcessCall(x,oi)`：对于所有$x$作receiver object的调用语句`r=x.foo(a1,a2,...)` [TODO]" />
                 <Pdfref file="PTA-FD" page="152" desc="例子" />
             </X.Uli>
 
-            <X.HighlightBlock background="red">为什么不用c.f而是obj3.f ??</X.HighlightBlock>
+            {/* TODO */}
+            <X.HighlightBlock background="red">为什么不用c.f而是obj3.f? [TODO]</X.HighlightBlock>
 
             <X.H1>L14. Datalog-Based Program Analysis</X.H1>
             <Pdfref file="Datalog" page="17" desc="Datalog语言介绍" />
