@@ -7,7 +7,7 @@ export default function Post() {
             <X.P>在做渗透测试的时候看到一个Agent平台，允许用户创建并发布自己的智能体。平台支持“工作流”，用户可以通过连接各类“节点”实现对用户输入的灵活处理。</X.P>
             <X.Image src="1.jpg" width="100%" />
             <X.P>其中有一类“代码节点”允许用户执行代码（通常是Python）对中间数据进行处理。大部分提供了此功能的Agent平台都会把代码运行在docker中，或者受控的环境中（如只读文件系统），而对于运行的代码本身没有太多管控，通过`os`，`subprocess`等模块能够轻松执行shell命令。</X.P>
-            <X.P>而在这个平台上，代码节点的执行环境是一个Python沙箱，对于常见模块的导入、built-in函数的使用都做了严格限制，于是引起了我测试的兴趣。最终是利用`pandas`和`numpy`这两个库的文件读写和pickle反序列化能力实现了RCE。</X.P>
+            <X.P>而在这个平台上，代码节点的执行环境是一个Python沙箱，对于常见模块的导入、built-in函数的使用都做了严格限制，最终是利用`pandas`和`numpy`这两个库的文件读写和pickle反序列化能力实现了RCE。</X.P>
             <X.H1>探索</X.H1>
             <X.H2>限制</X.H2>
             <X.Uli>对常见库的导入做了限制，包括但不限于`os`、`subprocess`、`sys`、`importlib`、`pickle`等。</X.Uli>
