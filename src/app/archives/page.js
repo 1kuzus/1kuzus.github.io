@@ -29,7 +29,7 @@ export default function Archives() {
                     <ul>
                         {postsByYears[year].map((path, index) => (
                             <li key={index}>
-                                <Link href={path} prefetch={true}>
+                                <Link href={path}>
                                     {activeArchives[path].time && (
                                         <code className="archives-post-time">{activeArchives[path].time.slice(5)}</code>
                                     )}

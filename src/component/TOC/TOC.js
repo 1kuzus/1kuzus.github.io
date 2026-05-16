@@ -2,7 +2,7 @@
 import {useState, useLayoutEffect} from 'react';
 import './TOC.css';
 
-export default function Contents() {
+export default function TOC() {
     const [titleNodes, setTitleNodes] = useState([]);
     const [activeIndex, setActiveIndex] = useState();
     const getMappedOffsetTop = (titleNodes, container) => {

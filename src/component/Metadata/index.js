@@ -11,27 +11,33 @@ const {min, max, log, floor} = Math;
 
 function animateCount(start, end, duration, setter) {
     let t0 = null;
+    let cancelled = false;
     duration = max(duration, 100);
     const step = (t) => {
+        if (cancelled) return;
         if (!t0) t0 = t;
         const progress = min((t - t0) ** 0.5 / duration ** 0.5, 1);
         setter(floor(progress * (end - start) + start));
         if (progress < 1) window.requestAnimationFrame(step);
     };
     window.requestAnimationFrame(step);
+    return () => {
+        cancelled = true;
+    };
 }
 
 export function HomepageViewCount() {
     const [viewCount, setViewCount] = useState(null);
     useEffect(() => {
+        let cancelAnim;
         getViews('total').then((count) => {
-            // setViewCount(count);
-            animateCount(0, count, floor(144 * log(count)), setViewCount);
+            cancelAnim = animateCount(0, count, floor(144 * log(count)), setViewCount);
             if (!isDev) {
                 increaseViews('total');
             }
         });
-        return onViewsChange('total', (views) => setViewCount(views));
+        const unsubscribe = onViewsChange('total', (views) => (cancelAnim && cancelAnim(), setViewCount(views)));
+        return () => (cancelAnim && cancelAnim(), unsubscribe());
     }, []);
     return (
         <div id="homepage-view-count">
@@ -45,23 +51,25 @@ export function PostMeta(props) {
     const [viewCount, setViewCount] = useState(null);
     const [likeCount, setLikeCount] = useState(null);
     useEffect(() => {
+        let cancelAnim;
         getViews(path).then((count) => {
-            // setViewCount(count);
-            animateCount(0, count, floor(144 * log(count)), setViewCount);
+            cancelAnim = animateCount(0, count, floor(144 * log(count)), setViewCount);
             if (!isDev) {
                 increaseViews(path);
                 increaseViews('total');
             }
         });
-        return onViewsChange(path, (views) => setViewCount(views));
-    }, []);
+        const unsubscribe = onViewsChange(path, (views) => (cancelAnim && cancelAnim(), setViewCount(views)));
+        return () => (cancelAnim && cancelAnim(), unsubscribe());
+    }, [path]);
     useEffect(() => {
+        let cancelAnim;
         getLikes(path).then((count) => {
-            // setLikeCount(count);
-            animateCount(0, count, floor(288 * log(count)), setLikeCount);
+            cancelAnim = animateCount(0, count, floor(288 * log(count)), setLikeCount);
         });
-        return onLikesChange(path, (likes) => setLikeCount(likes));
-    }, []);
+        const unsubscribe = onLikesChange(path, (likes) => (cancelAnim && cancelAnim(), setLikeCount(likes)));
+        return () => (cancelAnim && cancelAnim(), unsubscribe());
+    }, [path]);
     return (
         <div className="post-meta">
             <code className={viewCount === null || !likeCount ? 'not-loaded' : ''}>
@@ -123,7 +131,7 @@ export function LikeButton(props) {
     const [animate, setAnimate] = useState(false);
     useEffect(() => {
         setLiked(isLiked(path));
-    }, []);
+    }, [path]);
     return (
         <button
             className={

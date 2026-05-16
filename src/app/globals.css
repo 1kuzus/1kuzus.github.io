@@ -122,6 +122,8 @@ body::-webkit-scrollbar {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scrollbar-width: thin;
+    scrollbar-color: var(--bg-gray-500) transparent;
 }
 body {
     padding-top: 64px;
@@ -129,6 +131,7 @@ body {
     background-color: var(--bg-body);
     color: var(--fg-main);
     -webkit-text-size-adjust: 100%;
+    scrollbar-width: auto;
 }
 div,
 li,
