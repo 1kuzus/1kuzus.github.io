@@ -1,7 +1,6 @@
 .category-card {
     padding: 12px;
     border-bottom: var(--border);
-    transition: height 1000ms;
 }
 .category-card.sidebar-card {
     font-size: 14px;
