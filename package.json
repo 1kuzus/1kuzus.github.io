@@ -5,8 +5,8 @@
   "scripts": {
     "new": "node src/utils/createNewPost.js",
     "checkcss": "node src/utils/checkCss.js",
-    "dev": "next dev -p 3030",
-    "build": "next build",
+    "dev": "next dev -p 3030 --webpack",
+    "build": "next build --webpack",
     "predeploy": "npm run build && next-sitemap && touch out/.nojekyll",
     "deploy": "gh-pages -d out --dotfiles",
     "serve": "serve out -p 3039"
@@ -14,10 +14,10 @@
   "dependencies": {
     "firebase": "^11.0.2",
     "katex": "^0.16.10",
-    "next": "^14.1.4",
+    "next": "^16.2.6",
     "prismjs": "^1.29.0",
-    "react": "^18",
-    "react-dom": "^18"
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
   },
   "devDependencies": {
     "gh-pages": "^6.1.1",

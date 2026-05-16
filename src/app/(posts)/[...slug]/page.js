@@ -10,8 +10,9 @@ export function generateStaticParams() {
         .map((slug) => ({slug}));
 }
 
-export function generateMetadata({params}) {
-    const path = '/' + params.slug.join('/') + '/';
+export async function generateMetadata({params}) {
+    const {slug} = await params;
+    const path = '/' + slug.join('/') + '/';
     return {
         title: archives[path].title + ' - 铃木的网络日记', //page title
         alternates: {
@@ -20,8 +21,9 @@ export function generateMetadata({params}) {
     };
 }
 
-export default function Page({params}) {
-    const path = '/' + params.slug.join('/') + '/';
+export default async function Page({params}) {
+    const {slug} = await params;
+    const path = '/' + slug.join('/') + '/';
     const Post = dynamic(() => import('src/posts' + path), {
         loading: () => <p>Loading component...</p>,
     });
