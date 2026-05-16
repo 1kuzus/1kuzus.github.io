@@ -1,0 +1,9 @@
+1:"$Sreact.fragment"
+2:I[31698,["507","static/chunks/457b8330-3be30b04990478c7.js","500","static/chunks/500-e2a7ab501ac40f90.js","589","static/chunks/589-9fde9febffa50a4d.js","698","static/chunks/698-2aae93d980e9e01d.js","974","static/chunks/app/page-6bf0379b668d6b5a.js"],"HomepageViewCount"]
+3:I[98500,["507","static/chunks/457b8330-3be30b04990478c7.js","500","static/chunks/500-e2a7ab501ac40f90.js","589","static/chunks/589-9fde9febffa50a4d.js","698","static/chunks/698-2aae93d980e9e01d.js","974","static/chunks/app/page-6bf0379b668d6b5a.js"],""]
+4:I[90484,[],"OutletBoundary"]
+5:"$Sreact.suspense"
+:HL["/_next/static/css/62d0f9e001cb1305.css","style"]
+:HL["/_next/static/css/d11fb5a2813f7e78.css","style"]
+0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"id":"homepage","children":[["$","div",null,{"id":"homepage-banner","children":[["$","div",null,{"id":"logopart-wrapper","children":[["$","div",null,{"id":"logopart-x"}],["$","div",null,{"id":"logopart-y"}],["$","div",null,{"id":"logopart-vl"}],["$","div",null,{"id":"logopart-vr"}]]}],["$","h1",null,{"id":"homepage-title","children":"铃木的网络日记"}],["$","h2",null,{"id":"author-wrapper","children":[["$","code",null,{"children":"by "}],["$","code",null,{"id":"author","children":"1kuzus"}]]}],["$","$L2",null,{}]]}],["$","div",null,{"id":"homepage-navs","children":[["$","$L3",null,{"href":"/categories/","className":"homepage-nav-card","children":["$","h3",null,{"children":"全部分类"}]}],["$","$L3",null,{"href":"/archives/","className":"homepage-nav-card","children":["$","h3",null,{"children":"归档"}]}]]}]]}],[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/62d0f9e001cb1305.css","precedence":"next"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/d11fb5a2813f7e78.css","precedence":"next"}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"4HMjQRkkbw0xsQIttcbAw"}
+6:null

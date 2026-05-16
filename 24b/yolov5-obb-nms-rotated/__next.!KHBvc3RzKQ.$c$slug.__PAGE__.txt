@@ -1,0 +1,557 @@
+1:"$Sreact.fragment"
+2:I[5224,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-2aae93d980e9e01d.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-2a7a8d2bf85b0317.js"],"default"]
+3:I[31698,["507","static/chunks/457b8330-3be30b04990478c7.js","500","static/chunks/500-e2a7ab501ac40f90.js","589","static/chunks/589-9fde9febffa50a4d.js","698","static/chunks/698-2aae93d980e9e01d.js","974","static/chunks/app/page-6bf0379b668d6b5a.js"],"PostMeta"]
+4:"$Sreact.suspense"
+5:I[21957,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-2aae93d980e9e01d.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-2a7a8d2bf85b0317.js"],"PreloadChunks"]
+6:I[63942,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-2aae93d980e9e01d.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-2a7a8d2bf85b0317.js"],"default"]
+e:I[31698,["507","static/chunks/457b8330-3be30b04990478c7.js","500","static/chunks/500-e2a7ab501ac40f90.js","589","static/chunks/589-9fde9febffa50a4d.js","698","static/chunks/698-2aae93d980e9e01d.js","974","static/chunks/app/page-6bf0379b668d6b5a.js"],"LikeButton"]
+f:I[90484,[],"OutletBoundary"]
+:HL["/_next/static/css/d11fb5a2813f7e78.css","style"]
+:HL["/_next/static/css/0befe080061721ab.css","style"]
+7:T243f,#include <ATen/ATen.h>
+#include <ATen/cuda/CUDAContext.h>
+
+// #include <THC/THC.h>
+// #include <THC/THCDeviceUtils.cuh>
+#include <ATen/cuda/CUDAUtils.h>
+#include <ATen/ceil_div.h>
+#include <c10/cuda/CUDACachingAllocator.h>
+
+#include <vector>
+#include <iostream>
+
+#define CUDA_CHECK(condition) \
+/* Code block avoids redefinition of cudaError_t error */ \
+do { \
+    cudaError_t error = condition; \
+    if (error != cudaSuccess) { \
+    std::cout << cudaGetErrorString(error) << std::endl; \
+    } \
+} while (0)
+
+#define DIVUP(m,n) ((m) / (n) + ((m) % (n) > 0))
+int const threadsPerBlock = sizeof(unsigned long long) * 8;
+
+#define maxn 10
+// const double eps=1E-8;
+
+__device__ inline int sig(float d){
+    const double eps=1E-8;
+    return(d>eps)-(d<-eps);
+}
+
+__device__ inline int point_eq(const float2 a, const float2 b) {
+    return sig(a.x - b.x) == 0 && sig(a.y - b.y)==0;
+}
+
+__device__ inline void point_swap(float2 *a, float2 *b) {
+    float2 temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+__device__ inline void point_reverse(float2 *first, float2* last)
+{
+    while ((first!=last)&&(first!=--last)) {
+        point_swap (first,last);
+        ++first;
+    }
+}
+
+__device__ inline float cross(float2 o,float2 a,float2 b){  //叉积
+    return(a.x-o.x)*(b.y-o.y)-(b.x-o.x)*(a.y-o.y);
+}
+__device__ inline float area(float2* ps,int n){
+    ps[n]=ps[0];
+    float res=0;
+    for(int i=0;i<n;i++){
+        res+=ps[i].x*ps[i+1].y-ps[i].y*ps[i+1].x;
+    }
+    return res/2.0;
+}
+__device__ inline int lineCross(float2 a,float2 b,float2 c,float2 d,float2&p){
+    float s1,s2;
+    s1=cross(a,b,c);
+    s2=cross(a,b,d);
+    if(sig(s1)==0&&sig(s2)==0) return 2;
+    if(sig(s2-s1)==0) return 0;
+    p.x=(c.x*s2-d.x*s1)/(s2-s1);
+    p.y=(c.y*s2-d.y*s1)/(s2-s1);
+    return 1;
+}
+
+__device__ inline void polygon_cut(float2*p,int&n,float2 a,float2 b, float2* pp){
+
+    int m=0;p[n]=p[0];
+    for(int i=0;i<n;i++){
+        if(sig(cross(a,b,p[i]))>0) pp[m++]=p[i];
+        if(sig(cross(a,b,p[i]))!=sig(cross(a,b,p[i+1])))
+            lineCross(a,b,p[i],p[i+1],pp[m++]);
+    }
+    n=0;
+    for(int i=0;i<m;i++)
+        if(!i||!(point_eq(pp[i], pp[i-1])))
+            p[n++]=pp[i];
+    // while(n>1&&p[n-1]==p[0])n--;
+    while(n>1&&point_eq(p[n-1], p[0]))n--;
+}
+
+//---------------华丽的分隔线-----------------//
+//返回三角形oab和三角形ocd的有向交面积,o是原点//
+__device__ inline float intersectArea(float2 a,float2 b,float2 c,float2 d){
+    float2 o = make_float2(0,0);
+    int s1=sig(cross(o,a,b));
+    int s2=sig(cross(o,c,d));
+    if(s1==0||s2==0)return 0.0;//退化，面积为0
+    // if(s1==-1) swap(a,b);
+    // if(s2==-1) swap(c,d);
+    if (s1 == -1) point_swap(&a, &b);
+    if (s2 == -1) point_swap(&c, &d);
+    float2 p[10]={o,a,b};
+    int n=3;
+    float2 pp[maxn];
+    polygon_cut(p,n,o,c,pp);
+    polygon_cut(p,n,c,d,pp);
+    polygon_cut(p,n,d,o,pp);
+    float res=fabs(area(p,n));
+    if(s1*s2==-1) res=-res;return res;
+}
+//求两多边形的交面积
+__device__ inline float intersectArea(float2*ps1,int n1,float2*ps2,int n2){
+    if(area(ps1,n1)<0) point_reverse(ps1,ps1+n1);
+    if(area(ps2,n2)<0) point_reverse(ps2,ps2+n2);
+    ps1[n1]=ps1[0];
+    ps2[n2]=ps2[0];
+    float res=0;
+    for(int i=0;i<n1;i++){
+        for(int j=0;j<n2;j++){
+            res+=intersectArea(ps1[i],ps1[i+1],ps2[j],ps2[j+1]);
+        }
+    }
+    return res;//assumeresispositive!
+}
+
+// TODO: optimal if by first calculate the iou between two hbbs
+__device__ inline float devPolyIoU(float const * const p, float const * const q) {
+    float2 ps1[maxn], ps2[maxn];
+    int n1 = 4;
+    int n2 = 4;
+    for (int i = 0; i < 4; i++) {
+        ps1[i].x = p[i * 2];
+        ps1[i].y = p[i * 2 + 1];
+
+        ps2[i].x = q[i * 2];
+        ps2[i].y = q[i * 2 + 1];
+    }
+    float inter_area = intersectArea(ps1, n1, ps2, n2);
+    float union_area = fabs(area(ps1, n1)) + fabs(area(ps2, n2)) - inter_area;
+    float iou = 0;
+    if (union_area == 0) {
+        iou = (inter_area + 1) / (union_area + 1);
+    } else {
+        iou = inter_area / union_area;
+    }
+    return iou;
+}
+
+__global__ void poly_nms_kernel(const int n_polys, const float nms_overlap_thresh,
+                            const float *dev_polys, unsigned long long *dev_mask) {
+    const int row_start = blockIdx.y;
+    const int col_start = blockIdx.x;
+
+    const int row_size =
+            min(n_polys - row_start * threadsPerBlock, threadsPerBlock);
+    const int cols_size =
+            min(n_polys - col_start * threadsPerBlock, threadsPerBlock);
+
+    __shared__ float block_polys[threadsPerBlock * 9];
+    if (threadIdx.x < cols_size) {
+        block_polys[threadIdx.x * 9 + 0] =
+            dev_polys[(threadsPerBlock * col_start + threadIdx.x) * 9 + 0];
+        block_polys[threadIdx.x * 9 + 1] =
+            dev_polys[(threadsPerBlock * col_start + threadIdx.x) * 9 + 1];
+        block_polys[threadIdx.x * 9 + 2] =
+            dev_polys[(threadsPerBlock * col_start + threadIdx.x) * 9 + 2];
+        block_polys[threadIdx.x * 9 + 3] =
+            dev_polys[(threadsPerBlock * col_start + threadIdx.x) * 9 + 3];
+        block_polys[threadIdx.x * 9 + 4] =
+            dev_polys[(threadsPerBlock * col_start + threadIdx.x) * 9 + 4];
+        block_polys[threadIdx.x * 9 + 5] =
+            dev_polys[(threadsPerBlock * col_start + threadIdx.x) * 9 + 5];
+        block_polys[threadIdx.x * 9 + 6] =
+            dev_polys[(threadsPerBlock * col_start + threadIdx.x) * 9 + 6];
+        block_polys[threadIdx.x * 9 + 7] =
+            dev_polys[(threadsPerBlock * col_start + threadIdx.x) * 9 + 7];
+        block_polys[threadIdx.x * 9 + 8] =
+            dev_polys[(threadsPerBlock * col_start + threadIdx.x) * 9 + 8];
+    }
+    __syncthreads();
+
+    if (threadIdx.x < row_size) {
+        const int cur_box_idx = threadsPerBlock * row_start + threadIdx.x;
+        const float *cur_box = dev_polys + cur_box_idx * 9;
+        int i = 0;
+        unsigned long long t = 0;
+        int start = 0;
+        if (row_start == col_start) {
+            start = threadIdx.x + 1;
+        }
+        for (i = start; i < cols_size; i++) {
+            if (devPolyIoU(cur_box, block_polys + i * 9) > nms_overlap_thresh) {
+                t |= 1ULL << i;
+            }
+        }
+//      const int col_blocks = THCCeilDiv(n_polys, threadsPerBlock);
+        const int col_blocks = at::ceil_div(n_polys, threadsPerBlock);
+        dev_mask[cur_box_idx * col_blocks + col_start] = t;
+    }
+}
+
+// boxes is a N x 9 tensor
+at::Tensor poly_nms_cuda(const at::Tensor boxes, float nms_overlap_thresh) {
+
+    at::DeviceGuard guard(boxes.device());
+
+    using scalar_t = float;
+    AT_ASSERTM(boxes.device().is_cuda(), "boxes must be a CUDA tensor");
+    auto scores = boxes.select(1, 8);
+    auto order_t = std::get<1>(scores.sort(0, /*descending=*/true));
+    auto boxes_sorted = boxes.index_select(0, order_t);
+
+    int boxes_num = boxes.size(0);
+
+//  const int col_blocks = THCCeilDiv(boxes_num, threadsPerBlock);
+    const int col_blocks = at::ceil_div(boxes_num, threadsPerBlock);
+
+    scalar_t* boxes_dev = boxes_sorted.data_ptr<scalar_t>();
+
+//  THCState *state = at::globalContext().lazyInitCUDA();
+
+    unsigned long long* mask_dev = NULL;
+
+//  mask_dev = (unsigned long long*) THCudaMalloc(state, boxes_num * col_blocks * sizeof(unsigned long long));
+    mask_dev = (unsigned long long *) c10::cuda::CUDACachingAllocator::raw_alloc(boxes_num * col_blocks * sizeof(unsigned long long));
+
+//  dim3 blocks(THCCeilDiv(boxes_num, threadsPerBlock),
+//                THCCeilDiv(boxes_num, threadsPerBlock));
+    dim3 blocks(at::ceil_div(boxes_num, threadsPerBlock), at::ceil_div(boxes_num, threadsPerBlock));
+
+    dim3 threads(threadsPerBlock);
+    poly_nms_kernel<<<blocks, threads, 0, at::cuda::getCurrentCUDAStream()>>>(boxes_num,
+                                        nms_overlap_thresh,
+                                        boxes_dev,
+                                        mask_dev);
+
+    std::vector<unsigned long long> mask_host(boxes_num * col_blocks);
+//  THCudaCheck(cudaMemcpyAsync(
+    AT_CUDA_CHECK(cudaMemcpyAsync(
+                &mask_host[0],
+                            mask_dev,
+                            sizeof(unsigned long long) * boxes_num * col_blocks,
+                            cudaMemcpyDeviceToHost,
+                at::cuda::getCurrentCUDAStream()
+                ));
+
+    std::vector<unsigned long long> remv(col_blocks);
+    memset(&remv[0], 0, sizeof(unsigned long long) * col_blocks);
+
+    at::Tensor keep = at::empty({boxes_num}, boxes.options().dtype(at::kLong).device(at::kCPU));
+    int64_t* keep_out = keep.data_ptr<int64_t>();
+
+    int num_to_keep = 0;
+    for (int i = 0; i < boxes_num; i++) {
+        int nblock = i / threadsPerBlock;
+        int inblock = i % threadsPerBlock;
+
+        if (!(remv[nblock] & (1ULL << inblock))) {
+            keep_out[num_to_keep++] = i;
+            unsigned long long *p = &mask_host[0] + i * col_blocks;
+            for (int j = nblock; j < col_blocks; j++) {
+                remv[j] |= p[j];
+            }
+        }
+    }
+
+//  THCudaFree(state, mask_dev);
+    c10::cuda::CUDACachingAllocator::raw_delete(mask_dev);
+    return order_t.index({
+        keep.narrow(/*dim=*/0, /*start=*/0, /*length=*/num_to_keep).to(
+        order_t.device(), keep.scalar_type())});
+}
+0:{"rsc":["$","$1","c",{"children":[[["$","$L2",null,{}],false,["$","h1",null,{"className":"x-post-title","children":"解决：nms_rotated报错\"THC/THC.h\": No such file or directory"}],["$","$L3",null,{"path":"/24b/yolov5-obb-nms-rotated/"}],["$","$4",null,{"fallback":["$","p",null,{"children":"Loading component..."}],"children":[["$","$L5",null,{}],[["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"使用<code class=\"x-inline-highlight\"><a href=\"https://github.com/hukaixuan19970627/yolov5_obb\" target=\"_blank\" rel=\"noreferrer\" class=\"x-inline-link\">yolov5_obb</a></code>时，我使用已有环境运行，此环境中的<code class=\"x-inline-highlight\">pytorch</code>版本是<code class=\"x-inline-highlight\">1.12.1</code>，而在<code class=\"x-inline-highlight\">1.11</code>版本已经弃用了<code class=\"x-inline-highlight\">\"THC/THC.h\"</code>。"}}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"解决办法是回退版本或者修改编译失败的文件<code class=\"x-inline-highlight\">utils&#92;nms_rotated&#92;src&#92;poly_nms_cuda.cu</code>，替换已经弃用的库。<br/>修改的内容已经高亮标注，下面的代码可以直接复制替换原文件："}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L6",null,{"className":"x-codeblock-header-copy","text":"$7"}]]}],"$L8"]}]]]}],"$L9"],["$La","$Lb"],"$Lc"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"4HMjQRkkbw0xsQIttcbAw"}
+d:T11e09,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;ATen/ATen.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;ATen/cuda/CUDAContext.h></span></span>
+
+<span class="token comment">// #include &lt;THC/THC.h></span>
+<span class="token comment">// #include &lt;THC/THCDeviceUtils.cuh></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;ATen/cuda/CUDAUtils.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;ATen/ceil_div.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;c10/cuda/CUDACachingAllocator.h></span></span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name function">CUDA_CHECK</span><span class="token expression"><span class="token punctuation">(</span>condition<span class="token punctuation">)</span> </span><span class="token punctuation">\</span>
+<span class="token comment">/* Code block avoids redefinition of cudaError_t error */</span> <span class="token punctuation">\</span>
+<span class="token expression"><span class="token keyword">do</span> <span class="token punctuation">{</span> </span><span class="token punctuation">\</span>
+    <span class="token expression">cudaError_t error <span class="token operator">=</span> condition<span class="token punctuation">;</span> </span><span class="token punctuation">\</span>
+    <span class="token expression"><span class="token keyword">if</span> <span class="token punctuation">(</span>error <span class="token operator">!=</span> cudaSuccess<span class="token punctuation">)</span> <span class="token punctuation">{</span> </span><span class="token punctuation">\</span>
+    <span class="token expression">std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token function">cudaGetErrorString</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span> </span><span class="token punctuation">\</span>
+    <span class="token expression"><span class="token punctuation">}</span> </span><span class="token punctuation">\</span>
+<span class="token expression"><span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span></span></span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name function">DIVUP</span><span class="token expression"><span class="token punctuation">(</span>m<span class="token punctuation">,</span>n<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span></span>
+<span class="token keyword">int</span> <span class="token keyword">const</span> threadsPerBlock <span class="token operator">=</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">long</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">8</span><span class="token punctuation">;</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">maxn</span> <span class="token expression"><span class="token number">10</span></span></span>
+<span class="token comment">// const double eps=1E-8;</span>
+
+__device__ <span class="token keyword">inline</span> <span class="token keyword">int</span> <span class="token function">sig</span><span class="token punctuation">(</span><span class="token keyword">float</span> d<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token keyword">double</span> eps<span class="token operator">=</span><span class="token number">1E-8</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">(</span>d<span class="token operator">></span>eps<span class="token punctuation">)</span><span class="token operator">-</span><span class="token punctuation">(</span>d<span class="token operator">&lt;</span><span class="token operator">-</span>eps<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+__device__ <span class="token keyword">inline</span> <span class="token keyword">int</span> <span class="token function">point_eq</span><span class="token punctuation">(</span><span class="token keyword">const</span> float2 a<span class="token punctuation">,</span> <span class="token keyword">const</span> float2 b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">sig</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>x <span class="token operator">-</span> b<span class="token punctuation">.</span>x<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> <span class="token function">sig</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>y <span class="token operator">-</span> b<span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+__device__ <span class="token keyword">inline</span> <span class="token keyword">void</span> <span class="token function">point_swap</span><span class="token punctuation">(</span>float2 <span class="token operator">*</span>a<span class="token punctuation">,</span> float2 <span class="token operator">*</span>b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    float2 temp <span class="token operator">=</span> <span class="token operator">*</span>a<span class="token punctuation">;</span>
+    <span class="token operator">*</span>a <span class="token operator">=</span> <span class="token operator">*</span>b<span class="token punctuation">;</span>
+    <span class="token operator">*</span>b <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+__device__ <span class="token keyword">inline</span> <span class="token keyword">void</span> <span class="token function">point_reverse</span><span class="token punctuation">(</span>float2 <span class="token operator">*</span>first<span class="token punctuation">,</span> float2<span class="token operator">*</span> last<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>first<span class="token operator">!=</span>last<span class="token punctuation">)</span><span class="token operator">&amp;&amp;</span><span class="token punctuation">(</span>first<span class="token operator">!=</span><span class="token operator">--</span>last<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">point_swap</span> <span class="token punctuation">(</span>first<span class="token punctuation">,</span>last<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token operator">++</span>first<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+__device__ <span class="token keyword">inline</span> <span class="token keyword">float</span> <span class="token function">cross</span><span class="token punctuation">(</span>float2 o<span class="token punctuation">,</span>float2 a<span class="token punctuation">,</span>float2 b<span class="token punctuation">)</span><span class="token punctuation">{</span>  <span class="token comment">//叉积</span>
+    <span class="token keyword">return</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>x<span class="token operator">-</span>o<span class="token punctuation">.</span>x<span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>y<span class="token operator">-</span>o<span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token operator">-</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>x<span class="token operator">-</span>o<span class="token punctuation">.</span>x<span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>y<span class="token operator">-</span>o<span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+__device__ <span class="token keyword">inline</span> <span class="token keyword">float</span> <span class="token function">area</span><span class="token punctuation">(</span>float2<span class="token operator">*</span> ps<span class="token punctuation">,</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    ps<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token operator">=</span>ps<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">float</span> res<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        res<span class="token operator">+=</span>ps<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>x<span class="token operator">*</span>ps<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>y<span class="token operator">-</span>ps<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>y<span class="token operator">*</span>ps<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>x<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> res<span class="token operator">/</span><span class="token number">2.0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+__device__ <span class="token keyword">inline</span> <span class="token keyword">int</span> <span class="token function">lineCross</span><span class="token punctuation">(</span>float2 a<span class="token punctuation">,</span>float2 b<span class="token punctuation">,</span>float2 c<span class="token punctuation">,</span>float2 d<span class="token punctuation">,</span>float2<span class="token operator">&amp;</span>p<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">float</span> s1<span class="token punctuation">,</span>s2<span class="token punctuation">;</span>
+    s1<span class="token operator">=</span><span class="token function">cross</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    s2<span class="token operator">=</span><span class="token function">cross</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">sig</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">0</span><span class="token operator">&amp;&amp;</span><span class="token function">sig</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">sig</span><span class="token punctuation">(</span>s2<span class="token operator">-</span>s1<span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    p<span class="token punctuation">.</span>x<span class="token operator">=</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span>x<span class="token operator">*</span>s2<span class="token operator">-</span>d<span class="token punctuation">.</span>x<span class="token operator">*</span>s1<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>s2<span class="token operator">-</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    p<span class="token punctuation">.</span>y<span class="token operator">=</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span>y<span class="token operator">*</span>s2<span class="token operator">-</span>d<span class="token punctuation">.</span>y<span class="token operator">*</span>s1<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>s2<span class="token operator">-</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+__device__ <span class="token keyword">inline</span> <span class="token keyword">void</span> <span class="token function">polygon_cut</span><span class="token punctuation">(</span>float2<span class="token operator">*</span>p<span class="token punctuation">,</span><span class="token keyword">int</span><span class="token operator">&amp;</span>n<span class="token punctuation">,</span>float2 a<span class="token punctuation">,</span>float2 b<span class="token punctuation">,</span> float2<span class="token operator">*</span> pp<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+    <span class="token keyword">int</span> m<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>p<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token operator">=</span>p<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">sig</span><span class="token punctuation">(</span><span class="token function">cross</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">></span><span class="token number">0</span><span class="token punctuation">)</span> pp<span class="token punctuation">[</span>m<span class="token operator">++</span><span class="token punctuation">]</span><span class="token operator">=</span>p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">sig</span><span class="token punctuation">(</span><span class="token function">cross</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">!=</span><span class="token function">sig</span><span class="token punctuation">(</span><span class="token function">cross</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>p<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token function">lineCross</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>p<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>pp<span class="token punctuation">[</span>m<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    n<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>m<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>i<span class="token operator">||</span><span class="token operator">!</span><span class="token punctuation">(</span><span class="token function">point_eq</span><span class="token punctuation">(</span>pp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> pp<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            p<span class="token punctuation">[</span>n<span class="token operator">++</span><span class="token punctuation">]</span><span class="token operator">=</span>pp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token comment">// while(n>1&amp;&amp;p[n-1]==p[0])n--;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>n<span class="token operator">></span><span class="token number">1</span><span class="token operator">&amp;&amp;</span><span class="token function">point_eq</span><span class="token punctuation">(</span>p<span class="token punctuation">[</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> p<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>n<span class="token operator">--</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//---------------华丽的分隔线-----------------//</span>
+<span class="token comment">//返回三角形oab和三角形ocd的有向交面积,o是原点//</span>
+__device__ <span class="token keyword">inline</span> <span class="token keyword">float</span> <span class="token function">intersectArea</span><span class="token punctuation">(</span>float2 a<span class="token punctuation">,</span>float2 b<span class="token punctuation">,</span>float2 c<span class="token punctuation">,</span>float2 d<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    float2 o <span class="token operator">=</span> <span class="token function">make_float2</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> s1<span class="token operator">=</span><span class="token function">sig</span><span class="token punctuation">(</span><span class="token function">cross</span><span class="token punctuation">(</span>o<span class="token punctuation">,</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> s2<span class="token operator">=</span><span class="token function">sig</span><span class="token punctuation">(</span><span class="token function">cross</span><span class="token punctuation">(</span>o<span class="token punctuation">,</span>c<span class="token punctuation">,</span>d<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>s1<span class="token operator">==</span><span class="token number">0</span><span class="token operator">||</span>s2<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token keyword">return</span> <span class="token number">0.0</span><span class="token punctuation">;</span><span class="token comment">//退化，面积为0</span>
+    <span class="token comment">// if(s1==-1) swap(a,b);</span>
+    <span class="token comment">// if(s2==-1) swap(c,d);</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>s1 <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token function">point_swap</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>a<span class="token punctuation">,</span> <span class="token operator">&amp;</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>s2 <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token function">point_swap</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>c<span class="token punctuation">,</span> <span class="token operator">&amp;</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    float2 p<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">{</span>o<span class="token punctuation">,</span>a<span class="token punctuation">,</span>b<span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> n<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">;</span>
+    float2 pp<span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token function">polygon_cut</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span>n<span class="token punctuation">,</span>o<span class="token punctuation">,</span>c<span class="token punctuation">,</span>pp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">polygon_cut</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span>n<span class="token punctuation">,</span>c<span class="token punctuation">,</span>d<span class="token punctuation">,</span>pp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">polygon_cut</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span>n<span class="token punctuation">,</span>d<span class="token punctuation">,</span>o<span class="token punctuation">,</span>pp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">float</span> res<span class="token operator">=</span><span class="token function">fabs</span><span class="token punctuation">(</span><span class="token function">area</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>s1<span class="token operator">*</span>s2<span class="token operator">==</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> res<span class="token operator">=</span><span class="token operator">-</span>res<span class="token punctuation">;</span><span class="token keyword">return</span> res<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//求两多边形的交面积</span>
+__device__ <span class="token keyword">inline</span> <span class="token keyword">float</span> <span class="token function">intersectArea</span><span class="token punctuation">(</span>float2<span class="token operator">*</span>ps1<span class="token punctuation">,</span><span class="token keyword">int</span> n1<span class="token punctuation">,</span>float2<span class="token operator">*</span>ps2<span class="token punctuation">,</span><span class="token keyword">int</span> n2<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">area</span><span class="token punctuation">(</span>ps1<span class="token punctuation">,</span>n1<span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token function">point_reverse</span><span class="token punctuation">(</span>ps1<span class="token punctuation">,</span>ps1<span class="token operator">+</span>n1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">area</span><span class="token punctuation">(</span>ps2<span class="token punctuation">,</span>n2<span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token function">point_reverse</span><span class="token punctuation">(</span>ps2<span class="token punctuation">,</span>ps2<span class="token operator">+</span>n2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ps1<span class="token punctuation">[</span>n1<span class="token punctuation">]</span><span class="token operator">=</span>ps1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    ps2<span class="token punctuation">[</span>n2<span class="token punctuation">]</span><span class="token operator">=</span>ps2<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">float</span> res<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n1<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>n2<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            res<span class="token operator">+=</span><span class="token function">intersectArea</span><span class="token punctuation">(</span>ps1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>ps1<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>ps2<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span>ps2<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> res<span class="token punctuation">;</span><span class="token comment">//assumeresispositive!</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// TODO: optimal if by first calculate the iou between two hbbs</span>
+__device__ <span class="token keyword">inline</span> <span class="token keyword">float</span> <span class="token function">devPolyIoU</span><span class="token punctuation">(</span><span class="token keyword">float</span> <span class="token keyword">const</span> <span class="token operator">*</span> <span class="token keyword">const</span> p<span class="token punctuation">,</span> <span class="token keyword">float</span> <span class="token keyword">const</span> <span class="token operator">*</span> <span class="token keyword">const</span> q<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    float2 ps1<span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">,</span> ps2<span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> n1 <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> n2 <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">4</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        ps1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>x <span class="token operator">=</span> p<span class="token punctuation">[</span>i <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        ps1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>y <span class="token operator">=</span> p<span class="token punctuation">[</span>i <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+        ps2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>x <span class="token operator">=</span> q<span class="token punctuation">[</span>i <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        ps2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>y <span class="token operator">=</span> q<span class="token punctuation">[</span>i <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">float</span> inter_area <span class="token operator">=</span> <span class="token function">intersectArea</span><span class="token punctuation">(</span>ps1<span class="token punctuation">,</span> n1<span class="token punctuation">,</span> ps2<span class="token punctuation">,</span> n2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">float</span> union_area <span class="token operator">=</span> <span class="token function">fabs</span><span class="token punctuation">(</span><span class="token function">area</span><span class="token punctuation">(</span>ps1<span class="token punctuation">,</span> n1<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">fabs</span><span class="token punctuation">(</span><span class="token function">area</span><span class="token punctuation">(</span>ps2<span class="token punctuation">,</span> n2<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">-</span> inter_area<span class="token punctuation">;</span>
+    <span class="token keyword">float</span> iou <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>union_area <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        iou <span class="token operator">=</span> <span class="token punctuation">(</span>inter_area <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span>union_area <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        iou <span class="token operator">=</span> inter_area <span class="token operator">/</span> union_area<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> iou<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+__global__ <span class="token keyword">void</span> <span class="token function">poly_nms_kernel</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">int</span> n_polys<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">float</span> nms_overlap_thresh<span class="token punctuation">,</span>
+                            <span class="token keyword">const</span> <span class="token keyword">float</span> <span class="token operator">*</span>dev_polys<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">long</span> <span class="token operator">*</span>dev_mask<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token keyword">int</span> row_start <span class="token operator">=</span> blockIdx<span class="token punctuation">.</span>y<span class="token punctuation">;</span>
+    <span class="token keyword">const</span> <span class="token keyword">int</span> col_start <span class="token operator">=</span> blockIdx<span class="token punctuation">.</span>x<span class="token punctuation">;</span>
+
+    <span class="token keyword">const</span> <span class="token keyword">int</span> row_size <span class="token operator">=</span>
+            <span class="token function">min</span><span class="token punctuation">(</span>n_polys <span class="token operator">-</span> row_start <span class="token operator">*</span> threadsPerBlock<span class="token punctuation">,</span> threadsPerBlock<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> <span class="token keyword">int</span> cols_size <span class="token operator">=</span>
+            <span class="token function">min</span><span class="token punctuation">(</span>n_polys <span class="token operator">-</span> col_start <span class="token operator">*</span> threadsPerBlock<span class="token punctuation">,</span> threadsPerBlock<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    __shared__ <span class="token keyword">float</span> block_polys<span class="token punctuation">[</span>threadsPerBlock <span class="token operator">*</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>threadIdx<span class="token punctuation">.</span>x <span class="token operator">&lt;</span> cols_size<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        block_polys<span class="token punctuation">[</span>threadIdx<span class="token punctuation">.</span>x <span class="token operator">*</span> <span class="token number">9</span> <span class="token operator">+</span> <span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span>
+            dev_polys<span class="token punctuation">[</span><span class="token punctuation">(</span>threadsPerBlock <span class="token operator">*</span> col_start <span class="token operator">+</span> threadIdx<span class="token punctuation">.</span>x<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">9</span> <span class="token operator">+</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        block_polys<span class="token punctuation">[</span>threadIdx<span class="token punctuation">.</span>x <span class="token operator">*</span> <span class="token number">9</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span>
+            dev_polys<span class="token punctuation">[</span><span class="token punctuation">(</span>threadsPerBlock <span class="token operator">*</span> col_start <span class="token operator">+</span> threadIdx<span class="token punctuation">.</span>x<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">9</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        block_polys<span class="token punctuation">[</span>threadIdx<span class="token punctuation">.</span>x <span class="token operator">*</span> <span class="token number">9</span> <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span>
+            dev_polys<span class="token punctuation">[</span><span class="token punctuation">(</span>threadsPerBlock <span class="token operator">*</span> col_start <span class="token operator">+</span> threadIdx<span class="token punctuation">.</span>x<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">9</span> <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        block_polys<span class="token punctuation">[</span>threadIdx<span class="token punctuation">.</span>x <span class="token operator">*</span> <span class="token number">9</span> <span class="token operator">+</span> <span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span>
+            dev_polys<span class="token punctuation">[</span><span class="token punctuation">(</span>threadsPerBlock <span class="token operator">*</span> col_start <span class="token operator">+</span> threadIdx<span class="token punctuation">.</span>x<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">9</span> <span class="token operator">+</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        block_polys<span class="token punctuation">[</span>threadIdx<span class="token punctuation">.</span>x <span class="token operator">*</span> <span class="token number">9</span> <span class="token operator">+</span> <span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">=</span>
+            dev_polys<span class="token punctuation">[</span><span class="token punctuation">(</span>threadsPerBlock <span class="token operator">*</span> col_start <span class="token operator">+</span> threadIdx<span class="token punctuation">.</span>x<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">9</span> <span class="token operator">+</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        block_polys<span class="token punctuation">[</span>threadIdx<span class="token punctuation">.</span>x <span class="token operator">*</span> <span class="token number">9</span> <span class="token operator">+</span> <span class="token number">5</span><span class="token punctuation">]</span> <span class="token operator">=</span>
+            dev_polys<span class="token punctuation">[</span><span class="token punctuation">(</span>threadsPerBlock <span class="token operator">*</span> col_start <span class="token operator">+</span> threadIdx<span class="token punctuation">.</span>x<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">9</span> <span class="token operator">+</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        block_polys<span class="token punctuation">[</span>threadIdx<span class="token punctuation">.</span>x <span class="token operator">*</span> <span class="token number">9</span> <span class="token operator">+</span> <span class="token number">6</span><span class="token punctuation">]</span> <span class="token operator">=</span>
+            dev_polys<span class="token punctuation">[</span><span class="token punctuation">(</span>threadsPerBlock <span class="token operator">*</span> col_start <span class="token operator">+</span> threadIdx<span class="token punctuation">.</span>x<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">9</span> <span class="token operator">+</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        block_polys<span class="token punctuation">[</span>threadIdx<span class="token punctuation">.</span>x <span class="token operator">*</span> <span class="token number">9</span> <span class="token operator">+</span> <span class="token number">7</span><span class="token punctuation">]</span> <span class="token operator">=</span>
+            dev_polys<span class="token punctuation">[</span><span class="token punctuation">(</span>threadsPerBlock <span class="token operator">*</span> col_start <span class="token operator">+</span> threadIdx<span class="token punctuation">.</span>x<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">9</span> <span class="token operator">+</span> <span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        block_polys<span class="token punctuation">[</span>threadIdx<span class="token punctuation">.</span>x <span class="token operator">*</span> <span class="token number">9</span> <span class="token operator">+</span> <span class="token number">8</span><span class="token punctuation">]</span> <span class="token operator">=</span>
+            dev_polys<span class="token punctuation">[</span><span class="token punctuation">(</span>threadsPerBlock <span class="token operator">*</span> col_start <span class="token operator">+</span> threadIdx<span class="token punctuation">.</span>x<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">9</span> <span class="token operator">+</span> <span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">__syncthreads</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>threadIdx<span class="token punctuation">.</span>x <span class="token operator">&lt;</span> row_size<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> <span class="token keyword">int</span> cur_box_idx <span class="token operator">=</span> threadsPerBlock <span class="token operator">*</span> row_start <span class="token operator">+</span> threadIdx<span class="token punctuation">.</span>x<span class="token punctuation">;</span>
+        <span class="token keyword">const</span> <span class="token keyword">float</span> <span class="token operator">*</span>cur_box <span class="token operator">=</span> dev_polys <span class="token operator">+</span> cur_box_idx <span class="token operator">*</span> <span class="token number">9</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">long</span> t <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> start <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>row_start <span class="token operator">==</span> col_start<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            start <span class="token operator">=</span> threadIdx<span class="token punctuation">.</span>x <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> start<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> cols_size<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">devPolyIoU</span><span class="token punctuation">(</span>cur_box<span class="token punctuation">,</span> block_polys <span class="token operator">+</span> i <span class="token operator">*</span> <span class="token number">9</span><span class="token punctuation">)</span> <span class="token operator">></span> nms_overlap_thresh<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                t <span class="token operator">|=</span> <span class="token number">1ULL</span> <span class="token operator">&lt;&lt;</span> i<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+<span class="token comment">//      const int col_blocks = THCCeilDiv(n_polys, threadsPerBlock);</span>
+        <span class="token keyword">const</span> <span class="token keyword">int</span> col_blocks <span class="token operator">=</span> at<span class="token double-colon punctuation">::</span><span class="token function">ceil_div</span><span class="token punctuation">(</span>n_polys<span class="token punctuation">,</span> threadsPerBlock<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        dev_mask<span class="token punctuation">[</span>cur_box_idx <span class="token operator">*</span> col_blocks <span class="token operator">+</span> col_start<span class="token punctuation">]</span> <span class="token operator">=</span> t<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// boxes is a N x 9 tensor</span>
+at<span class="token double-colon punctuation">::</span>Tensor <span class="token function">poly_nms_cuda</span><span class="token punctuation">(</span><span class="token keyword">const</span> at<span class="token double-colon punctuation">::</span>Tensor boxes<span class="token punctuation">,</span> <span class="token keyword">float</span> nms_overlap_thresh<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    at<span class="token double-colon punctuation">::</span>DeviceGuard <span class="token function">guard</span><span class="token punctuation">(</span>boxes<span class="token punctuation">.</span><span class="token function">device</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">using</span> scalar_t <span class="token operator">=</span> <span class="token keyword">float</span><span class="token punctuation">;</span>
+    <span class="token function">AT_ASSERTM</span><span class="token punctuation">(</span>boxes<span class="token punctuation">.</span><span class="token function">device</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">is_cuda</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"boxes must be a CUDA tensor"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">auto</span> scores <span class="token operator">=</span> boxes<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">auto</span> order_t <span class="token operator">=</span> std<span class="token double-colon punctuation">::</span><span class="token generic-function"><span class="token function">get</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token number">1</span><span class="token operator">></span></span></span><span class="token punctuation">(</span>scores<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">/*descending=*/</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">auto</span> boxes_sorted <span class="token operator">=</span> boxes<span class="token punctuation">.</span><span class="token function">index_select</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> order_t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">int</span> boxes_num <span class="token operator">=</span> boxes<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//  const int col_blocks = THCCeilDiv(boxes_num, threadsPerBlock);</span>
+    <span class="token keyword">const</span> <span class="token keyword">int</span> col_blocks <span class="token operator">=</span> at<span class="token double-colon punctuation">::</span><span class="token function">ceil_div</span><span class="token punctuation">(</span>boxes_num<span class="token punctuation">,</span> threadsPerBlock<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    scalar_t<span class="token operator">*</span> boxes_dev <span class="token operator">=</span> boxes_sorted<span class="token punctuation">.</span><span class="token generic-function"><span class="token function">data_ptr</span><span class="token generic class-name"><span class="token operator">&lt;</span>scalar_t<span class="token operator">></span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//  THCState *state = at::globalContext().lazyInitCUDA();</span>
+
+    <span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">long</span><span class="token operator">*</span> mask_dev <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+
+<span class="token comment">//  mask_dev = (unsigned long long*) THCudaMalloc(state, boxes_num * col_blocks * sizeof(unsigned long long));</span>
+    mask_dev <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">long</span> <span class="token operator">*</span><span class="token punctuation">)</span> c10<span class="token double-colon punctuation">::</span>cuda<span class="token double-colon punctuation">::</span><span class="token class-name">CUDACachingAllocator</span><span class="token double-colon punctuation">::</span><span class="token function">raw_alloc</span><span class="token punctuation">(</span>boxes_num <span class="token operator">*</span> col_blocks <span class="token operator">*</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">long</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//  dim3 blocks(THCCeilDiv(boxes_num, threadsPerBlock),</span>
+<span class="token comment">//                THCCeilDiv(boxes_num, threadsPerBlock));</span>
+    dim3 <span class="token function">blocks</span><span class="token punctuation">(</span>at<span class="token double-colon punctuation">::</span><span class="token function">ceil_div</span><span class="token punctuation">(</span>boxes_num<span class="token punctuation">,</span> threadsPerBlock<span class="token punctuation">)</span><span class="token punctuation">,</span> at<span class="token double-colon punctuation">::</span><span class="token function">ceil_div</span><span class="token punctuation">(</span>boxes_num<span class="token punctuation">,</span> threadsPerBlock<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    dim3 <span class="token function">threads</span><span class="token punctuation">(</span>threadsPerBlock<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    poly_nms_kernel<span class="token operator">&lt;&lt;</span><span class="token operator">&lt;</span>blocks<span class="token punctuation">,</span> threads<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> at<span class="token double-colon punctuation">::</span>cuda<span class="token double-colon punctuation">::</span><span class="token function">getCurrentCUDAStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">>></span><span class="token operator">></span><span class="token punctuation">(</span>boxes_num<span class="token punctuation">,</span>
+                                        nms_overlap_thresh<span class="token punctuation">,</span>
+                                        boxes_dev<span class="token punctuation">,</span>
+                                        mask_dev<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span><span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">long</span><span class="token operator">></span> <span class="token function">mask_host</span><span class="token punctuation">(</span>boxes_num <span class="token operator">*</span> col_blocks<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//  THCudaCheck(cudaMemcpyAsync(</span>
+    <span class="token function">AT_CUDA_CHECK</span><span class="token punctuation">(</span><span class="token function">cudaMemcpyAsync</span><span class="token punctuation">(</span>
+                <span class="token operator">&amp;</span>mask_host<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                            mask_dev<span class="token punctuation">,</span>
+                            <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">long</span><span class="token punctuation">)</span> <span class="token operator">*</span> boxes_num <span class="token operator">*</span> col_blocks<span class="token punctuation">,</span>
+                            cudaMemcpyDeviceToHost<span class="token punctuation">,</span>
+                at<span class="token double-colon punctuation">::</span>cuda<span class="token double-colon punctuation">::</span><span class="token function">getCurrentCUDAStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span><span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">long</span><span class="token operator">></span> <span class="token function">remv</span><span class="token punctuation">(</span>col_blocks<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">memset</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>remv<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">long</span><span class="token punctuation">)</span> <span class="token operator">*</span> col_blocks<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    at<span class="token double-colon punctuation">::</span>Tensor keep <span class="token operator">=</span> at<span class="token double-colon punctuation">::</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">{</span>boxes_num<span class="token punctuation">}</span><span class="token punctuation">,</span> boxes<span class="token punctuation">.</span><span class="token function">options</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">dtype</span><span class="token punctuation">(</span>at<span class="token double-colon punctuation">::</span>kLong<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">device</span><span class="token punctuation">(</span>at<span class="token double-colon punctuation">::</span>kCPU<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int64_t</span><span class="token operator">*</span> keep_out <span class="token operator">=</span> keep<span class="token punctuation">.</span><span class="token generic-function"><span class="token function">data_ptr</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token keyword">int64_t</span><span class="token operator">></span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">int</span> num_to_keep <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> boxes_num<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> nblock <span class="token operator">=</span> i <span class="token operator">/</span> threadsPerBlock<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> inblock <span class="token operator">=</span> i <span class="token operator">%</span> threadsPerBlock<span class="token punctuation">;</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>remv<span class="token punctuation">[</span>nblock<span class="token punctuation">]</span> <span class="token operator">&amp;</span> <span class="token punctuation">(</span><span class="token number">1ULL</span> <span class="token operator">&lt;&lt;</span> inblock<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            keep_out<span class="token punctuation">[</span>num_to_keep<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">;</span>
+            <span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">long</span> <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token operator">&amp;</span>mask_host<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> i <span class="token operator">*</span> col_blocks<span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> nblock<span class="token punctuation">;</span> j <span class="token operator">&lt;</span> col_blocks<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                remv<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">|=</span> p<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+<span class="token comment">//  THCudaFree(state, mask_dev);</span>
+    c10<span class="token double-colon punctuation">::</span>cuda<span class="token double-colon punctuation">::</span><span class="token class-name">CUDACachingAllocator</span><span class="token double-colon punctuation">::</span><span class="token function">raw_delete</span><span class="token punctuation">(</span>mask_dev<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> order_t<span class="token punctuation">.</span><span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        keep<span class="token punctuation">.</span><span class="token function">narrow</span><span class="token punctuation">(</span><span class="token comment">/*dim=*/</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">/*start=*/</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">/*length=*/</span>num_to_keep<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">to</span><span class="token punctuation">(</span>
+        order_t<span class="token punctuation">.</span><span class="token function">device</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> keep<span class="token punctuation">.</span><span class="token function">scalar_type</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+8:["$","pre",null,{"style":{"background":"linear-gradient(180deg, transparent 96px, var(--bg-transparent-golden) 96px 216px, transparent 216px, transparent 624px, var(--bg-transparent-golden) 624px 648px, transparent 648px, transparent 696px, var(--bg-transparent-golden) 696px 720px, transparent 720px, transparent 4656px, var(--bg-transparent-golden) 4656px 4704px, transparent 4704px, transparent 5112px, var(--bg-transparent-golden) 5112px 5160px, transparent 5160px, transparent 5232px, var(--bg-transparent-golden) 5232px 5256px, transparent 5256px, transparent 5328px, var(--bg-transparent-golden) 5328px 5376px, transparent 5376px, transparent 5400px, var(--bg-transparent-golden) 5400px 5472px, transparent 5472px, transparent 5664px, var(--bg-transparent-golden) 5664px 5712px, transparent 5712px, transparent 6360px, var(--bg-transparent-golden) 6360px 6408px, transparent 6408px)"},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$d"}}]}]
+9:["$","$Le",null,{"path":"/24b/yolov5-obb-nms-rotated/"}]
+a:["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/d11fb5a2813f7e78.css","precedence":"next"}]
+b:["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/0befe080061721ab.css","precedence":"next"}]
+c:["$","$Lf",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@10"}]}]
+10:null
