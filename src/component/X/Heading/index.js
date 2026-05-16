@@ -6,9 +6,9 @@ export function PostTitle(props) {
 }
 
 export function H1(props) {
-    const {href, excludeFromContents, children} = props;
+    const {href, children} = props;
     return (
-        <h2 className={`x-h1${excludeFromContents ? ' exclude-from-contents' : ''}`}>
+        <h2 className="x-h1">
             {href ? (
                 <a href={href} target="_blank" rel="noreferrer">
                     {children}
@@ -21,9 +21,9 @@ export function H1(props) {
 }
 
 export function H2(props) {
-    const {href, excludeFromContents, children} = props;
+    const {href, children} = props;
     return (
-        <h3 className={`x-h2${excludeFromContents ? ' exclude-from-contents' : ''}`}>
+        <h3 className="x-h2">
             {href ? (
                 <a href={href} target="_blank" rel="noreferrer">
                     {children}

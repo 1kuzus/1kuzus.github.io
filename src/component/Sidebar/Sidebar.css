@@ -48,7 +48,7 @@
 }
 #sidebar-mask.show-sidebar {
     opacity: 1;
-    pointer-events: all;
+    pointer-events: auto;
 }
 @media (min-width: 1441px) {
     #sidebar {

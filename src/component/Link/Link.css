@@ -7,7 +7,7 @@
     text-overflow: ellipsis;
     overflow: hidden;
     border-radius: 0.5em;
-    transition: color, background-color 200ms;
+    transition: background-color 200ms;
 }
 .link.active {
     color: var(--brand-300);

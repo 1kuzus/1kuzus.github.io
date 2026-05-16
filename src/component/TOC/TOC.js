@@ -16,7 +16,7 @@ export default function Contents() {
     };
     useLayoutEffect(() => {
         const nodes = Array.from(
-            document.querySelectorAll('.x-h1:not(.x-h1.exclude-from-contents), .x-h2:not(.x-h2.exclude-from-contents)')
+            document.querySelectorAll('.x-h1, .x-h2')
         );
         const scrollHandler = () => {
             const mappedOffsetTop = getMappedOffsetTop(nodes, document.documentElement);
