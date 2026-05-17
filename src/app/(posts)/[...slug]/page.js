@@ -24,9 +24,14 @@ export async function generateMetadata({params}) {
 export default async function Page({params}) {
     const {slug} = await params;
     const path = '/' + slug.join('/') + '/';
-    const Post = dynamic(() => import('src/posts' + path), {
-        loading: () => <p>Loading component...</p>,
-    });
+    const Post = dynamic(
+        () => {
+            return import(`src/posts${path}index.md`)
+                .catch(() => import(`src/posts${path}index.mdx`))
+                .catch(() => import(`src/posts${path}index.js`));
+        },
+        {loading: () => <p>Loading component...</p>}
+    );
     return (
         <>
             <TOC />
