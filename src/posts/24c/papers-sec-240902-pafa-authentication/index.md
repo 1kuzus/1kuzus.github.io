@@ -68,7 +68,7 @@ MAGGIE包含三个核心模块：`XHelper`用于从UI中获取有用的PII，`Mo
 
     一个真实的案例：
 
-      <!-- @xprops width="800px" filterDarkTheme -->
+    <!-- @xprops width="800px" filterDarkTheme -->
 
     ![](1.jpg)
 

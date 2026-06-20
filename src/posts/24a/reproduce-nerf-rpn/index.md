@@ -178,7 +178,7 @@ cd InstantNGPforked
 
 这里展示了前面我们生成、或需要用到的各个文件的路径示意。注意这并不是仓库中的全部内容，而是只展示了前面提及的文件。
 
-```bash
+```text
 <work_dir>
 ├── InstantNGPforked
 └── NeRFrpn

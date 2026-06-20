@@ -63,7 +63,7 @@ Tips:
 - Make sure to set the `Access-Control-Allow-Origin` header.
 - Route `/flag` is for receiving the content of `flag.pdf`. Note that the challenge server will also send an `OPTIONS` request (and this is because we set `"Content-Type": "application/pdf"` in the XSS payload), so our Flask server needs to respond to it as well.
 
-      <!-- @xprops width="600px" -->
+    <!-- @xprops width="600px" -->
 
     ![](1.jpg)
 
