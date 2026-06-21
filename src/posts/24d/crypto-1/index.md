@@ -19,9 +19,13 @@ $Y$是$\{0,1\}^n$上的随机变量，$X$与$Y$独立，且是$\{0,1\}^n$上的�
 
 证明：无论$Y$的分布如何，考虑其中一位$Y_i$，假设$P(Y_i=0)=p_0$、$P(Y_i=1)=p_1$，由于$X$是均匀分布，$X_i$取$0$或$1$的概率都是一半，因此有：
 
-$$P(X_i \oplus Y_i = 0)=\frac{p_0}{2}+\frac{p_1}{2}=\frac{1}{2}$$
+$$
+P(X_i \oplus Y_i = 0)=\frac{p_0}{2}+\frac{p_1}{2}=\frac{1}{2}
+$$
 
-$$P(X_i \oplus Y_i = 1)=\frac{p_1}{2}+\frac{p_0}{2}=\frac{1}{2}$$
+$$
+P(X_i \oplus Y_i = 1)=\frac{p_1}{2}+\frac{p_0}{2}=\frac{1}{2}
+$$
 
 ### 生日悖论
 
@@ -40,7 +44,9 @@ $r_1,r_2,\dots,r_n \in U$是独立同分布的随机变量，则当$n=1.2 \times
 
 完美安全性定义为：
 
-$$\forall m_0 \in M, m_1 \in M, c \in C: P(E(k,m_0)=c)=P(E(k,m_1)=c)$$
+$$
+\forall m_0 \in M, m_1 \in M, c \in C: P(E(k,m_0)=c)=P(E(k,m_1)=c)
+$$
 
 其中$k$从密钥空间中均匀取样。
 
@@ -48,7 +54,9 @@ $$\forall m_0 \in M, m_1 \in M, c \in C: P(E(k,m_0)=c)=P(E(k,m_1)=c)$$
 >
 > 假设$|M|=|C|=|K|$，$k\stackrel{R}{\longleftarrow}K$，当且仅当使得：
 >
-> $$\forall m \in M, c \in C: E(k,m)=c$$
+> $$
+> \forall m \in M, c \in C: E(k,m)=c
+> $$
 >
 > 成立的$k$有且仅有一个。
 
@@ -74,7 +82,9 @@ PRG的不可预测性是指：对于一个输出序列$G(k)$和任意一个中�
 
 - 一个PRG对于统计检验$A$"优势"`(advantage)`：
 
-    $$Adv(A,G)=|P(A(G(k))=1)-P(A(r)=1)|$$
+    $$
+    Adv(A,G)=|P(A(G(k))=1)-P(A(r)=1)|
+    $$
 
     当$Adv$接近$1$，表明检验$A$能够区分PRG生成的伪随机数$G(k)$和真随机数$r$；反之同理。
 
@@ -94,7 +104,9 @@ PRG的不可预测性是指：对于一个输出序列$G(k)$和任意一个中�
 
 即：可预测的PRG是不安全的。这是比较容易证明的，可以构造一个统计检验$A$：
 
-$$A(x)=1 \; \text{if} \; pred(x_{i+1})=x_{i+1}, \; \text{else} \; 0$$
+$$
+A(x)=1 \; \text{if} \; pred(x_{i+1})=x_{i+1}, \; \text{else} \; 0
+$$
 
 显然可预测就意味着$Adv$是不可忽略的，因此PRG是不安全的。
 
@@ -189,7 +201,9 @@ target = "32510ba9babebbbefd001547a810e67149caee11d945cd7fc81a05e9f85aac650e9052
 
 当两条消息使用相同的密钥$k$进行加密时，由于$c_1=m_1 \oplus k$，$c_2=m_2 \oplus k$，则有：
 
-$$c_1 \oplus c_2 = m_1 \oplus m_2$$
+$$
+c_1 \oplus c_2 = m_1 \oplus m_2
+$$
 
 考虑两个ASCII字符异或的结果，ASCII字符存在一些特性：
 

@@ -484,7 +484,9 @@ N
 
 下面公式中，记当前酒店**含有需要这种食材的酒店**的子树为$i$，$w$是边权：
 
-$$t_{return}(root)=\sum_i (t_{return}(i) + 2w(root,i))$$
+$$
+t_{return}(root)=\sum_i (t_{return}(i) + 2w(root,i))
+$$
 
 对于判断子树究竟含不含有需要这种食材的酒店，只需要看子树的$t_{return}$非零，或者子树的根节点直接需要这种食材。
 
@@ -492,7 +494,9 @@ $$t_{return}(root)=\sum_i (t_{return}(i) + 2w(root,i))$$
 
 考虑单程时间相比往返时间减少的部分，假如从当前节点$root$选择的最后走一个子树分支$i$，就不需要再从此路返回了。因此首先节省了一倍$w(root,i)$的时间；其次，对于遍历这颗子树花费的时间，也从往返时间变成了单程时间，因此还可以节省$t_{return}(i)-t_{single}(i)$的时间。因此有：
 
-$$t_{single}(root)=t_{return}(root) - \max_i\{w(root,i)+t_{return}(i)-t_{single}(i)\}$$
+$$
+t_{single}(root)=t_{return}(root) - \max_i\{w(root,i)+t_{return}(i)-t_{single}(i)\}
+$$
 
 实现细节与第一步类似，具体见代码。
 

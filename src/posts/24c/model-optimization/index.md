@@ -24,25 +24,37 @@
 
 原数$d$（实数）和量化表示$q$（整数）的关系：
 
-$$d=s(q-z)$$
+$$
+d=s(q-z)
+$$
 
 其中$s$是量化步长，$z$是零点（整数）。相应地，量化计算公式为：
 
-$$q=\text{round}(d/s+z)$$
+$$
+q=\text{round}(d/s+z)
+$$
 
 参数$s$、$z$的确定公式为：
 
-$$s=(d_{max}-d_{min})/(q_{max}-q_{min})$$
+$$
+s=(d_{max}-d_{min})/(q_{max}-q_{min})
+$$
 
-$$z=\text{round}(q_{min}-d_{min}/s)$$
+$$
+z=\text{round}(q_{min}-d_{min}/s)
+$$
 
 ---
 
 例如，希望将数据范围$[\mu-2\sigma,\mu+2\sigma]$映射到`8`位整数（范围$-128$~$12$），计算参数为：
 
-$$s=(d_{max}-d_{min})/(q_{max}-q_{min})=4\sigma/255$$
+$$
+s=(d_{max}-d_{min})/(q_{max}-q_{min})=4\sigma/255
+$$
 
-$$z=\text{round}(q_{min}-d_{min}/s)=\text{round}(-128-(\mu-2\sigma)/s)$$
+$$
+z=\text{round}(q_{min}-d_{min}/s)=\text{round}(-128-(\mu-2\sigma)/s)
+$$
 
 ### 非线性量化
 
@@ -73,7 +85,9 @@ $$z=\text{round}(q_{min}-d_{min}/s)=\text{round}(-128-(\mu-2\sigma)/s)$$
 
 将$W$做SVD近似，使用两个全连接层$U$和$\Sigma V^T$代替$W$：
 
-$$y=Wx=U(\Sigma V^T)x$$
+$$
+y=Wx=U(\Sigma V^T)x
+$$
 
 取最大的前$t$个奇异值，则计算量为$t(u+v)$。
 
@@ -149,12 +163,16 @@ Ghost模块的特点：
 
 知识蒸馏的核心思想是：教师网络"软预测"的值携带了训练数据以外的泛化信息。"软预测"是指教师网络经过Softmax后的输出。小网络的目标函数就是：
 
-$$L=\alpha L_{soft}+\beta L_{hard}$$
+$$
+L=\alpha L_{soft}+\beta L_{hard}
+$$
 
 前者对应了泛化能力，后者对应了训练数据的拟合程度。
 
 使用Softmax的输出存在一个问题，Softmax的指数计算会放大差异，导致小值太小，训练效果不好；此时需要引入**蒸馏温度**$T$，将Softmax函数变为：
 
-$$q_i=\frac{e^{z_i/T}}{\sum_{j=1}^n e^{z_j/T}}$$
+$$
+q_i=\frac{e^{z_i/T}}{\sum_{j=1}^n e^{z_j/T}}
+$$
 
 此时可以通过调整$T$的值，使得Softmax的输出更为平缓（有区分度且小值不至于太小）。

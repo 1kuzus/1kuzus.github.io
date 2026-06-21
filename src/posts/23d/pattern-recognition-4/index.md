@@ -4,9 +4,13 @@
 
 `Sigmoid`函数通常表示为$\sigma(x)=\frac{1}{1+e^{-x}}$，值域为$[0,1]$，有以下两个常用的性质：
 
-$$\sigma(x)+\sigma(-x)=1$$
+$$
+\sigma(x)+\sigma(-x)=1
+$$
 
-$$\sigma'(x)=\sigma(x)\cdot\sigma(-x)=\sigma(x)\cdot[1-\sigma(x)]$$
+$$
+\sigma'(x)=\sigma(x)\cdot\sigma(-x)=\sigma(x)\cdot[1-\sigma(x)]
+$$
 
 ### 常数问题
 
@@ -22,7 +26,9 @@ $$\sigma'(x)=\sigma(x)\cdot\sigma(-x)=\sigma(x)\cdot[1-\sigma(x)]$$
 
 用下式：
 
-$$y=w_1x_1+w_2x_2 \dots w_dx_d=\bm{W}^T\bm{X}$$
+$$
+y=w_1x_1+w_2x_2 \dots w_dx_d=\bm{W}^T\bm{X}
+$$
 
 来估计带标签样本$(\bm{X}_i,y_i)$。
 
@@ -30,17 +36,23 @@ $$y=w_1x_1+w_2x_2 \dots w_dx_d=\bm{W}^T\bm{X}$$
 
 线性回归模型使用最小平方误差：
 
-$$\min L(\bm{W})=\frac{1}{N}\sum_{i=1}^N(\bm{W}^T\bm{X}_i-y_i)^2$$
+$$
+\min L(\bm{W})=\frac{1}{N}\sum_{i=1}^N(\bm{W}^T\bm{X}_i-y_i)^2
+$$
 
 记$\bm{\chi}_{(N \times d)}=[\bm{X}_1, \bm{X}_2, \dots, \bm{X}_N]^T$，$\bm{y}_{(N \times 1)}=[y_1, y_2, \dots, y_N]^T$，可以将损失写作：
 
-$$\min L(\bm{W})=\frac{1}{N}(\bm{\chi W}-\bm{y})^T(\bm{\chi W}-\bm{y})$$
+$$
+\min L(\bm{W})=\frac{1}{N}(\bm{\chi W}-\bm{y})^T(\bm{\chi W}-\bm{y})
+$$
 
 ### 最优解
 
 <!-- @xprops background="gray" -->
 
-> $$\bm{W}^*=(\bm{\chi}^T\bm{\chi})^{-1}\bm{\chi}^T\bm{y}$$
+> $$
+> \bm{W}^*=(\bm{\chi}^T\bm{\chi})^{-1}\bm{\chi}^T\bm{y}
+> $$
 
 ## Fisher线性判别
 
@@ -52,15 +64,21 @@ $$\min L(\bm{W})=\frac{1}{N}(\bm{\chi W}-\bm{y})^T(\bm{\chi W}-\bm{y})$$
 
 假设两类问题中每类的均值向量分别为$\bm{m}_1$和$\bm{m}_2$，定义**类内离散度矩阵**：
 
-$$\bm{S}_w=\bm{S}_1+\bm{S}_2=\sum_{\bm{X} \in \bm{\chi}_1}(\bm{X}-\bm{m}_1)(\bm{X}-\bm{m}_1)^T+\sum_{\bm{X} \in \bm{\chi}_2}(\bm{X}-\bm{m}_2)(\bm{X}-\bm{m}_2)^T$$
+$$
+\bm{S}_w=\bm{S}_1+\bm{S}_2=\sum_{\bm{X} \in \bm{\chi}_1}(\bm{X}-\bm{m}_1)(\bm{X}-\bm{m}_1)^T+\sum_{\bm{X} \in \bm{\chi}_2}(\bm{X}-\bm{m}_2)(\bm{X}-\bm{m}_2)^T
+$$
 
 **类间离散度矩阵**：
 
-$$\bm{S}_b=(\bm{m}_1-\bm{m}_2)(\bm{m}_1-\bm{m}_2)^T$$
+$$
+\bm{S}_b=(\bm{m}_1-\bm{m}_2)(\bm{m}_1-\bm{m}_2)^T
+$$
 
 判别准则为：
 
-$$\max J_F(\bm{W})=\frac{\bm{W}^T\bm{S}_b\bm{W}}{\bm{W}^T\bm{S}_w\bm{W}}$$
+$$
+\max J_F(\bm{W})=\frac{\bm{W}^T\bm{S}_b\bm{W}}{\bm{W}^T\bm{S}_w\bm{W}}
+$$
 
 ### 最优解
 
@@ -68,13 +86,17 @@ Fisher判别准则下的最优投影方向为：
 
 <!-- @xprops background="gray" -->
 
-> $$\bm{W}^*=\bm{S}_w^{-1}(\bm{m}_1-\bm{m}_2)$$
+> $$
+> \bm{W}^*=\bm{S}_w^{-1}(\bm{m}_1-\bm{m}_2)
+> $$
 
 确定了方向后，分类的阈值可以取两类均值的中心的投影，即：
 
 <!-- @xprops background="gray" -->
 
-> $$threshold=\bm{W}^{*T}\frac{\bm{m}_1+\bm{m}_2}{2}$$
+> $$
+> threshold=\bm{W}^{*T}\frac{\bm{m}_1+\bm{m}_2}{2}
+> $$
 
 ## 感知器
 
@@ -98,7 +120,9 @@ $$
 
 如果所有样本都分类正确，算法结束；否则对于分错的样本$(\bm{X}_i,y_i)$执行：
 
-$$\bm{W}_{t+1}=\bm{W}_t+y_i\bm{X}_i$$
+$$
+\bm{W}_{t+1}=\bm{W}_t+y_i\bm{X}_i
+$$
 
 ## 两类Logistic回归
 
@@ -110,7 +134,9 @@ $$\bm{W}_{t+1}=\bm{W}_t+y_i\bm{X}_i$$
 
 考虑最大似然估计，样本集出现的概率为：
 
-$$P=\prod_1^NP(y_i|\bm{X}_i)$$
+$$
+P=\prod_1^NP(y_i|\bm{X}_i)
+$$
 
 使用对数似然函数$\ln P=\sum_{i=1}^N\ln P(y_i|\bm{X}_i)$，考虑单个样本出现的概率：
 
@@ -126,15 +152,21 @@ $$
 
 考虑到`Sigmoid`函数的性质$1-\sigma(x)=\sigma(-x)$，上式可以统一写作：
 
-$$P(y_i|\bm{X}_i)=\sigma(y_i\bm{W}^T\bm{X_i})$$
+$$
+P(y_i|\bm{X}_i)=\sigma(y_i\bm{W}^T\bm{X_i})
+$$
 
 希望似然函数取最大，那么定义损失函数为如下形式：
 
-$$\min L(\bm{W})=-\frac{1}{N}\ln P=-\frac{1}{N}\sum_{i=1}^N\ln \sigma(y_i\bm{W}^T\bm{X_i})$$
+$$
+\min L(\bm{W})=-\frac{1}{N}\ln P=-\frac{1}{N}\sum_{i=1}^N\ln \sigma(y_i\bm{W}^T\bm{X_i})
+$$
 
 进而化简为：
 
-$$\min L(\bm{W})=\frac{1}{N}\sum_{i=1}^N\ln(1+e^{-y_i\bm{W}^T\bm{X_i}})$$
+$$
+\min L(\bm{W})=\frac{1}{N}\sum_{i=1}^N\ln(1+e^{-y_i\bm{W}^T\bm{X_i}})
+$$
 
 ### 更新规则
 
@@ -147,4 +179,6 @@ $$
 
 然后按照学习率$\eta$更新下一时刻参数：
 
-$$\bm{W}_{t+1}=\bm{W}_t-\eta\nabla L$$
+$$
+\bm{W}_{t+1}=\bm{W}_t-\eta\nabla L
+$$

@@ -4,7 +4,9 @@
 
 转移方程为：
 
-$$dp(l,r)=\max_{l \lt m \lt r}dp(l,m)+dp(m,r)+nums(l) \times nums(m) \times nums(r)$$
+$$
+dp(l,r)=\max_{l \lt m \lt r}dp(l,m)+dp(m,r)+nums(l) \times nums(m) \times nums(r)
+$$
 
 ```cpp
 #define N 305

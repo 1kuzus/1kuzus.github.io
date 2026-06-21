@@ -2,7 +2,9 @@
 
 用了一下方差的变形：
 
-$$D(x)=E(x^2)-[E(x)]^2$$
+$$
+D(x)=E(x^2)-[E(x)]^2
+$$
 
 ```cpp
 #include <iostream>
