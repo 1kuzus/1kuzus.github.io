@@ -45,10 +45,8 @@ export default function Post() {
                 Non-Optional. 非可选性|2FA设置是强制性的，否则无法创建账户或创建后无法访问完整功能|/|2FA设置是可选的
                 Common-Naming-and-Location.命名和位置的常规性|2FA设置的名称和位置较为常规|名称和位置有一个不常规|名称和位置都不常规
                 `}
-                tableStyle={{
-                    align: 'llll',
-                    width: [250, 250, 250, 250],
-                }}
+                align="llll"
+                width={[250, 250, 250, 250]}
             />
             <X.H2>Factors for Education</X.H2>
             <X.Table
@@ -57,10 +55,8 @@ export default function Post() {
                 Descriptive-Notification. 描述性通知|网站在用户确认启用2FA前，简要地描述什么是2FA，或为什么2FA对用户重要。|在用户启用2FA后提供描述，但此时用户仍然可以放弃设置|没有提供对2FA的描述
                 Additional-Information. 额外信息|网站提供更详细的关于2FA的说明，例如一个'"了解更多"'链接|/|没有额外信息，或链接损坏
                 `}
-                tableStyle={{
-                    align: 'llll',
-                    width: [250, 250, 250, 250],
-                }}
+                align="llll"
+                width={[250, 250, 250, 250]}
             />
             <X.H2>Factors for Setup</X.H2>
             <X.Table
@@ -78,10 +74,8 @@ export default function Post() {
                 Informed-2FA-Recovery-Options. 专用恢复选项|网站提供专用恢复选项，并解释为什么这是重要的|提供此功能，但没有告知用户其重要性|不提供专用恢复选项
                 Enforced-2FA-Recovery-Setup. 强制设置恢复选项（“专用恢复选项”至少为'部分满足'）|设置2FA恢复选项是设置2FA过程所必需的|不是必需，但网站建议用户设置|由用户自行决定，网站并没有建议
                 `}
-                tableStyle={{
-                    align: 'llll',
-                    width: [250, 250, 250, 250],
-                }}
+                align="llll"
+                width={[250, 250, 250, 250]}
             />
             <X.H2>Factors for Usage</X.H2>
             <X.Table
@@ -90,10 +84,8 @@ export default function Post() {
                 Device-Remembrance. 设备记忆|网站自动设置设备记忆|由用户自行决定选择退出，如未选中的复选框被描述为“在此设备上再次询问我”|由用户自行决定选择加入，如未选中的复选框被描述为“信任此设备”
                 No-Preselected-Option. 无预选选项（“多选”应为'满足'，“可以设置主选项”应为'不满足'）|网站在登录时显示所有已配置的2FA选项|/|存在对用户不透明的预选
                 `}
-                tableStyle={{
-                    align: 'llll',
-                    width: [250, 250, 250, 250],
-                }}
+                align="llll"
+                width={[250, 250, 250, 250]}
             />
             <X.H2>Factors for Deactivation</X.H2>
             <X.Table
@@ -104,10 +96,8 @@ export default function Post() {
                 Deactivation-Notification. 停用有通知（“可停用”至少为'部分满足'）|停用2FA后用户会收到通过其他渠道的通知，如电子邮件|/|停用2FA后无通知
                 Communicate-Successful-Deactivation.提示成功停用（“可停用”至少为'部分满足'）|成功停用UI会有清晰的消息提示|/|没有相应提示
                 `}
-                tableStyle={{
-                    align: 'llll',
-                    width: [250, 250, 250, 250],
-                }}
+                align="llll"
+                width={[250, 250, 250, 250]}
             />
             <X.H1>7.Results</X.H1>
             <X.H2>网站数据概览</X.H2>

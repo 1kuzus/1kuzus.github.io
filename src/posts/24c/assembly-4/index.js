@@ -176,9 +176,7 @@ export default function Post() {
                 乘数|'8'位寄存器或内存单元|'16'位寄存器或内存单元
                 结果|'AX'|高位'DX'，低位'AX'
                 `}
-                tableStyle={{
-                    thead: 'all',
-                }}
+                thead="all"
             />
             <X.P>例：</X.P>
             <X.CodeBlock

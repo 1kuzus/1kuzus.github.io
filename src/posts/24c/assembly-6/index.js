@@ -44,9 +44,7 @@ export default function Post() {
                 位|'7'|'6'|'5'|'4'|'3'|'2'|'1'|'0'
                 含义|闪烁|背景'R'|背景'G'|背景'B'|高亮|前景'R'|前景'G'|前景'B'
                 `}
-                tableStyle={{
-                    thead: 'column',
-                }}
+                thead="column"
             />
             <X.P>直接修改内存对应地址的值，屏幕上就会立即有变化：</X.P>
             <X.Image src="fig1.jpg" width="100%" />
@@ -367,9 +365,7 @@ export default function Post() {
                         位|'7'|'6'|'5'|'4'|'3'|'2'|'1'|'0'
                         含义|'Insert'|'Caps Lock'|'Num Lock'|'Scroll Lock'|'Alt'|'Ctrl'|左'Shift'|右'Shift'
                         `}
-                        tableStyle={{
-                            thead: 'column',
-                        }}
+                        thead="column"
                     />
                 </X.HighlightBlock>
                 <X.P>程序读出`60h`端口中的扫描码，如果是字符键的扫描码，将该扫描码和它所对应的ASCII码送入内存中的BIOS键盘缓冲区；如果是控制键和切换键的扫描码，则更新键盘状态字节。</X.P>

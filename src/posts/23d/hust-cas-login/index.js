@@ -22,9 +22,7 @@ export default function Post() {
                 'execution'|固定参数
                 '_eventId'|固定参数
                 `}
-                tableStyle={{
-                    thead: 'none',
-                }}
+                thead="none"
             />
             <X.HighlightBlock>
                 <X.P>此处有一个历史缘故。在2023年1月的时候，`ul`和`pl`是明文的用户名和密码的字符串长度，这也符合参数名`username length(ul)`，`rsa`是前端加密参数。后来华科登录接口似乎经历了一次改版，弃置了`rsa`参数，`ul`和`pl`变成了现在的意义。</X.P>

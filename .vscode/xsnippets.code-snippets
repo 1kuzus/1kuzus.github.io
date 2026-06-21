@@ -249,58 +249,6 @@
         ],
         "description": "X.Table tag with fromData props"
     },
-    "X.Table tag with fromText and tableStyle props": {
-        "scope": "javascript,typescript",
-        "prefix": "xtfttbs",
-        "body": [
-            "<X.Table",
-            "\tfromText={`",
-            "\t属性|值|示例$1",
-            "\t'align'|'string'|'\"lcccr\"'",
-            "\t'thead'|'\"all\"'/'\"row\"'/'\"column\"'/'\"none\"'|'\"row\"'",
-            "\t'width'|'number[]'|'[0, 0, 200, 320]'",
-            "\t`}",
-            "\ttableStyle={{",
-            "\t\talign: 'lll',",
-            "\t\tthead: 'all',",
-            "\t\twidth: [100, 0, 200],",
-            "\t}}",
-            "/>",
-        ],
-        "description": "X.Table tag with fromText and tableStyle props"
-    },
-    "X.Table tag with fromData and tableStyle props": {
-        "scope": "javascript,typescript",
-        "prefix": "xtfdtbs",
-        "body": [
-            "<X.Table",
-            "\tfromData={[",
-            "\t\t['属性', '值', '示例'],$1",
-            "\t\t['`align`', '`string`', '`\"lcccr\"`'],",
-            "\t\t['`thead`', '`\"all\"`/`\"row\"`/`\"column\"`/`\"none\"`', '`\"row\"`'],",
-            "\t\t['`width`', '`number[]`', '`[0, 0, 200, 320]`'],",
-            "\t]}",
-            "\ttableStyle={{",
-            "\t\talign: 'lll',",
-            "\t\tthead: 'all',",
-            "\t\twidth: [100, 0, 200],",
-            "\t}}",
-            "/>",
-        ],
-        "description": "X.Table tag with fromData and tableStyle props"
-    },
-    "tableStyle props": {
-        "scope": "javascript,typescript",
-        "prefix": "tbs",
-        "body": [
-            "tableStyle={{",
-            "\talign: 'lll',",
-            "\tthead: 'all',",
-            "\twidth: [100, 0, 200],",
-            "}}",
-        ],
-        "description": "tableStyle props"
-    },
     "inline latex": {
         "scope": "javascript,typescript",
         "prefix": "il",

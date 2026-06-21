@@ -3,7 +3,7 @@ import {isStringOrStringArray} from 'src/utils/utils';
 import './Table.css';
 
 export default function Table(props) {
-    const {fromText, fromData, tableStyle, children} = props;
+    const {fromText, fromData, align = '', width = [], thead = 'row', children} = props;
     const data =
         fromData ||
         (fromText &&
@@ -18,7 +18,6 @@ export default function Table(props) {
                         .split('|')
                         .map((td) => td.trim())
                 ));
-    const {align = '', thead = 'row', width = []} = tableStyle || {};
     return (
         <div className="x-table-wrapper">
             <table className="x-table">
