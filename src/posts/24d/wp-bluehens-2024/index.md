@@ -45,7 +45,7 @@ CHR: \\ NEXTCHR: -1963 + 3668
 CHR: o NEXTCHR: 3775 - 3429
 CHR: END NEXTCHR: You got the flag"""
 
-lines = hints.split("\\n")
+lines = hints.split("\n")
 data = []
 for line in lines:
     s1, s2 = line.split(" NEXTCHR: ")
@@ -439,7 +439,7 @@ def cipher_to_byte_list(cipher):
     return [int(cipher[i:i + 2], 16) for i in range(0, len(cipher), 2)]
 
 
-code = code.split("\\n")
+code = code.split("\n")
 code = [cipher_to_byte_list(line) for line in code]
 
 key = [117, 100, 99, 116, 102, 123, 105, 115, 95, 120, 48, 114, 95, 103, 117, 51, 115, 115, 121, 95, 48, 114, 95, 110,

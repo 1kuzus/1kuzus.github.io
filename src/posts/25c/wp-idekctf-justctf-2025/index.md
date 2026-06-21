@@ -482,7 +482,7 @@ Admin Bot可以访问输入的任何URL，因此允许我们构造一个攻击�
 
 ### 前期思路
 
-首先，看到Express中处理JSONP的[源码](https://github.com/expressjs/express/blob/master/lib/response.js#L267-L311)：`callback = callback.replace(/[^\[\]\w\$.]/g, '');`，这里只允许使用`A-Za-z0-9[].\$`这些字符，无法通过在`callback`中插入特殊字符进行注入。
+首先，看到Express中处理JSONP的[源码](https://github.com/expressjs/express/blob/master/lib/response.js#L267-L311)：`callback = callback.replace(/[^\[\]\w\$.]/g, '');`，这里只允许使用`A-Za-z0-9[].$`这些字符，无法通过在`callback`中插入特殊字符进行注入。
 
 `notes.ejs`中使用JSONP的方式为`src="/api/view/<%= note %>?callback=showNote"`，可以通过访问`/note/anything%3fcallback=alert%23`来触发`alert`，原理是替换进模板后引入的`src`会变成`src="/api/view/anything?callback=alert#?callback=showNote"`。我们可以通过这个操作实现执行任意函数，比如：
 

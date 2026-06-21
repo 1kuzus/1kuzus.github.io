@@ -83,7 +83,7 @@ cd InstantNGPforked
 
 本博客给出的示例需要在上面的OneDrive链接中下载`nerf_rpn_model_release\front3d_anchor_resnet50.pt`。
 
-假设预训练权重保存的路径为`NeRFrpn\\nerf_rpn\weights\front3d_anchor_resnet50.pt`。
+假设预训练权重保存的路径为`NeRFrpn\nerf_rpn\weights\front3d_anchor_resnet50.pt`。
 
 ## 生成proposals
 
@@ -115,7 +115,7 @@ python -u run_rpn.py ^
 
 由于我的设备显存小，所以把`batch_size`改为了`1`。原始的参数是`2`。
 
-运行后会在`NeRFrpn\\nerf_rpn\\results\\front3d_test`中得到`eval.json`文件和储存了`17`个测试场景的提议框的`proposals`目录。
+运行后会在`NeRFrpn\nerf_rpn\results\front3d_test`中得到`eval.json`文件和储存了`17`个测试场景的提议框的`proposals`目录。
 
 > #### 问题解决
 >
@@ -159,9 +159,9 @@ python scripts\proposals2ngp.py ^
     --output_dir .\results\proposals_to_ngp
 ```
 
-运行后会在`NeRFrpn\\nerf_rpn\\results\\proposals_to_ngp`中得到`17`个测试场景的`3dfront_xxxx_xx.json`文件。
+运行后会在`NeRFrpn\nerf_rpn\results\proposals_to_ngp`中得到`17`个测试场景的`3dfront_xxxx_xx.json`文件。
 
-接下来，把文件`3dfront_0004_00.json`复制到路径`E:\\front3d_nerf_data\\3dfront_0004_00\\train`下，然后启动Instant-NGP的UI并指定这个新的`json`文件：
+接下来，把文件`3dfront_0004_00.json`复制到路径`E:\front3d_nerf_data\3dfront_0004_00\train`下，然后启动Instant-NGP的UI并指定这个新的`json`文件：
 
 ```bash
 cd InstantNGPforked

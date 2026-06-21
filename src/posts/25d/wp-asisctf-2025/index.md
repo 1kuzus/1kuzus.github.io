@@ -81,7 +81,7 @@ def dashboard():
 
 ### 通过HTTP响应头注入XSS
 
-由于`username`可控，通过一次换行`\\r\\n`能够实现操纵HTTP响应头结构，而通过两次换行`\\r\\n\\r\\n`则能进一步穿越到HTTP响应体，从而实现操纵页面内容。
+由于`username`可控，通过一次换行`\r\n`能够实现操纵HTTP响应头结构，而通过两次换行`\r\n\r\n`则能进一步穿越到HTTP响应体，从而实现操纵页面内容。
 
 ```python
 import requests

@@ -1,6 +1,6 @@
 使用[`yolov5_obb`](https://github.com/hukaixuan19970627/yolov5_obb)时，我使用已有环境运行，此环境中的`pytorch`版本是`1.12.1`，而在`1.11`版本已经弃用了`"THC/THC.h"`。
 
-解决办法是回退版本或者修改编译失败的文件`utils\\nms_rotated\\src\\poly_nms_cuda.cu`，替换已经弃用的库。
+解决办法是回退版本或者修改编译失败的文件`utils\nms_rotated\src\poly_nms_cuda.cu`，替换已经弃用的库。
 
 修改的内容已经高亮标注，下面的代码可以直接复制替换原文件：
 

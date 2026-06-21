@@ -586,7 +586,7 @@ $username = mysql_escape_string($_POST['username']);
 $sql = "INSERT INTO users (username, password) VALUES (\"$username\", \"$pass\")";
 ```
 
-如果注册用户的用户名为`admin' #`（密码为`123`），在经过`mysql_escape_string`转义后变成`admin\\' #`，拼接到`$sql`中变成：
+如果注册用户的用户名为`admin' #`（密码为`123`），在经过`mysql_escape_string`转义后变成`admin\' #`，拼接到`$sql`中变成：
 
 ```sql
 INSERT INTO users (username, password) VALUES ("admin\' #", "123")
@@ -835,7 +835,7 @@ payload = '?id=1&id=x") UNION SELECT 0,group_concat(username),group_concat(passw
 mysql_query("SET NAMES gbk");
 ```
 
-同时服务端对输入的`'`和`\\`都进行了转义。当需要闭合一个单引号时，考虑对服务器输入`%df%27`：
+同时服务端对输入的`'`和`\`都进行了转义。当需要闭合一个单引号时，考虑对服务器输入`%df%27`：
 
 <table>
 <tr>
@@ -853,7 +853,7 @@ mysql_query("SET NAMES gbk");
 <tr>
 <td>经过服务端转义</td>
 <td><code>0xdf</code></td>
-<td><code>0x5c</code> (<code>\\</code>)</td>
+<td><code>0x5c</code> (<code>\</code>)</td>
 <td><code>0x27</code> (<code>'</code>)</td>
 </tr>
 <tr>
@@ -863,7 +863,7 @@ mysql_query("SET NAMES gbk");
 </tr>
 </table>
 
-宽字节注入就是利用GBK编码将两个字节（`0xdf`，`0x5c`）解析为一个汉字字符（`運`），从而"吃掉"了转义字符（`\\`），使得后续的单引号得以闭合。
+宽字节注入就是利用GBK编码将两个字节（`0xdf`，`0x5c`）解析为一个汉字字符（`運`），从而"吃掉"了转义字符（`\`），使得后续的单引号得以闭合。
 
 <!-- @xprops filterDarkTheme -->
 
