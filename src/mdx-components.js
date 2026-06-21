@@ -1,6 +1,7 @@
 import {Children, isValidElement} from 'react';
 import Katex from 'katex';
 import X from 'src/component/X';
+import TableMarkdown from 'src/component/X/Table/TableMarkdown';
 import {assert} from 'src/utils/utils';
 
 const components = {
@@ -27,6 +28,7 @@ const components = {
     pre: ({children}) => {
         // $$...$$
         if (children.props.className.includes('math-display')) {
+            // ToDo
             return <X.Formula text={children.props.children.trim()} />;
         }
         // ```...```
@@ -44,17 +46,10 @@ const components = {
         );
     },
     blockquote: ({children, background}) => <X.HighlightBlock background={background}>{children}</X.HighlightBlock>,
-
     img: ({src, alt, width, filterDarkTheme}) => (
         <X.Image src={src} alt={alt} width={width} filterDarkTheme={filterDarkTheme} />
     ),
-
-    table: ({children}) => (
-        <div className="x-table-wrapper">
-            <table className="x-table">{children}</table>
-        </div>
-    ),
-
+    table: (props) => <TableMarkdown {...props} />,
     ul: ({children}) => {
         const items = Children.toArray(children).filter(isValidElement);
         return (
@@ -65,7 +60,6 @@ const components = {
             </ul>
         );
     },
-
     ol: ({children}) => {
         const items = Children.toArray(children).filter(isValidElement);
         return (

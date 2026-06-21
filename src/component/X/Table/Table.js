@@ -31,18 +31,17 @@ export default function Table(props) {
                                       ) : (
                                           td
                                       );
+                                      const isHeader =
+                                          (tr_index === 0 && (thead === 'all' || thead === 'row')) ||
+                                          (td_index === 0 && (thead === 'all' || thead === 'column'));
+                                      const Tag = isHeader ? 'th' : 'td';
                                       const fmt = align[td_index];
                                       const className = fmt === 'l' || fmt === 'r' ? 'x-cell-align-' + fmt : null;
                                       const w = width[td_index] || null;
-                                      return (tr_index === 0 && (thead === 'all' || thead === 'row')) ||
-                                          (td_index === 0 && (thead === 'all' || thead === 'column')) ? (
-                                          <th key={td_index} className={className} width={w}>
+                                      return (
+                                          <Tag key={td_index} className={className} width={w}>
                                               {child}
-                                          </th>
-                                      ) : (
-                                          <td key={td_index} className={className} width={w}>
-                                              {child}
-                                          </td>
+                                          </Tag>
                                       );
                                   })}
                               </tr>

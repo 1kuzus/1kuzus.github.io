@@ -1,19 +1,31 @@
-/**
- * Remark plugin: 把紧靠目标块上方的 HTML 注释里的 JSON 合并为该块的 hProperties。
- *
- * 写法：
- *   <!-- @xprops title="fib.js" highlightLines="2-4" -->
- * 任何 Markdown 查看器（GitHub、VS Code）都直接忽略注释，Next.js 构建时解析出 props 透传给组件。
- */
 export default function remarkXProps() {
-    return (tree) => {
-        const nodes = tree.children;
-        // console.log("==========================")
-        // console.log(JSON.stringify(nodes))
-        // console.log("==========================")
+    // 解析 @xprops 注释体里的 key=value / flag 为 props 对象
+    const parseProps = (raw) =>
+        raw
+            .trim()
+            .split(/\s+/)
+            .reduce((acc, item) => {
+                if (item.includes('=')) {
+                    const [key, value] = item.split('=');
+                    acc[key] = value.trim().replace(/^['"]|['"]$/g, '');
+                } else {
+                    acc[item] = true;
+                }
+                return acc;
+            }, {});
+
+    // 对一个 children 数组就地处理：匹配注释 -> 合并 props 到下一个兄弟 -> 删除注释。
+    // 同时递归进入每个节点的子节点，以支持列表项等嵌套结构。
+    const processChildren = (nodes) => {
         let i = 0;
         while (i < nodes.length) {
             const node = nodes[i];
+
+            // 先递归处理嵌套子节点（如 listItem、blockquote 内部）
+            if (Array.isArray(node.children)) {
+                processChildren(node.children);
+            }
+
             if (node.type !== 'html') {
                 i++;
                 continue;
@@ -27,24 +39,14 @@ export default function remarkXProps() {
 
             let props;
             try {
-                props = match[1]
-                    .trim()
-                    .split(/\s+/)
-                    .reduce((acc, item) => {
-                        if (item.includes('=')) {
-                            const [key, value] = item.split('=');
-                            acc[key] = value.trim().replace(/^['"]|['"]$/g, '');
-                        } else {
-                            acc[item] = true;
-                        }
-                        return acc;
-                    }, {});
+                props = parseProps(match[1]);
             } catch {
                 i++;
                 continue;
             }
 
             if (i + 1 < nodes.length) {
+                // xx
                 let target = nodes[i + 1];
                 // 图片独占一行时，将 props 挂到内层 image 节点（而非外层 paragraph）
                 if (
@@ -61,5 +63,32 @@ export default function remarkXProps() {
 
             nodes.splice(i, 1);
         }
+    };
+
+    // 将 remark-gfm 解析出的 table.align 数组传播到每个 tableCell 的 hProperties.align，
+    // 使对齐信息能抵达最终渲染的 <td> props。
+    const propagateGfmAlignToCells = (nodes) => {
+        for (const node of nodes) {
+            if (Array.isArray(node.children)) {
+                propagateGfmAlignToCells(node.children);
+            }
+            if (node.type !== 'table' || !Array.isArray(node.align)) continue;
+            for (const row of node.children) {
+                if (row.type !== 'tableRow') continue;
+                row.children.forEach((cell, ci) => {
+                    if (cell.type !== 'tableCell') return;
+                    const a = node.align[ci];
+                    if (!a) return;
+                    if (!cell.data) cell.data = {};
+                    if (!cell.data.hProperties) cell.data.hProperties = {};
+                    cell.data.hProperties.align = a;
+                });
+            }
+        }
+    };
+
+    return (tree) => {
+        processChildren(tree.children);
+        propagateGfmAlignToCells(tree.children);
     };
 }
