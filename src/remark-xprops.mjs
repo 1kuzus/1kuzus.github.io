@@ -73,15 +73,15 @@ export default function remarkXProps() {
                 propagateGfmAlignToCells(node.children);
             }
             if (node.type !== 'table' || !Array.isArray(node.align)) continue;
-            for (const row of node.children) {
-                if (row.type !== 'tableRow') continue;
-                row.children.forEach((cell, ci) => {
-                    if (cell.type !== 'tableCell') return;
-                    const a = node.align[ci];
+            for (const tr of node.children) {
+                if (tr.type !== 'tableRow') continue;
+                tr.children.forEach((td, td_index) => {
+                    if (td.type !== 'tableCell') return;
+                    const a = node.align[td_index];
                     if (!a) return;
-                    if (!cell.data) cell.data = {};
-                    if (!cell.data.hProperties) cell.data.hProperties = {};
-                    cell.data.hProperties.align = a;
+                    if (!td.data) td.data = {};
+                    if (!td.data.hProperties) td.data.hProperties = {};
+                    td.data.hProperties.align = a;
                 });
             }
         }
