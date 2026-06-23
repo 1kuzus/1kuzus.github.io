@@ -132,10 +132,10 @@ setInterval(async function () {
 具体攻击流程如下：
 
 1. 构建恶意页面，页面中通过JavaScript注册登录一个用户，用户名包含XSS payload；
-1. 恶意页面通过`window.open`打开`/dashboard`页面，此时XSS payload触发执行；
-1. `setInterval`将轮询请求`/dashboard`页面，一开始得到的会是XSS payload用户的响应内容，不包含flag；
-1. bot触发登录，用户名为flag，此时`session`Cookie被更新；
-1. `setInterval`仍在执行，bot登录后，对`/dashboard`的请求会返回包含flag的响应内容。
+2. 恶意页面通过`window.open`打开`/dashboard`页面，此时XSS payload触发执行；
+3. `setInterval`将轮询请求`/dashboard`页面，一开始得到的会是XSS payload用户的响应内容，不包含flag；
+4. bot触发登录，用户名为flag，此时`session`Cookie被更新；
+5. `setInterval`仍在执行，bot登录后，对`/dashboard`的请求会返回包含flag的响应内容。
 
 ```html
 <html>

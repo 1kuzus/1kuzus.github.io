@@ -58,8 +58,8 @@ TOTP是一种常见的2FA形式，通常被认为比SMS 2FA更安全；然而TOT
 论文挑选了`22`个TOTP应用程序，并按照下面三个阶段分析每个`APK`：
 
 1. Exploring the App：探索、记录各种功能和设置，例如是否需要个人信息才能使用、支持何种备份机制等等，然后启用备份机制，最终执行恢复过程。
-1. Capturing & Reviewing Network Traffic：进行备份操作，审查网络流量，观察哪些信息需要传输。
-1. Performing Cryptanalysis：如果网络流量中包含加密字段，则进行加密分析。
+2. Capturing & Reviewing Network Traffic：进行备份操作，审查网络流量，观察哪些信息需要传输。
+3. Performing Cryptanalysis：如果网络流量中包含加密字段，则进行加密分析。
 
 ## 5.Results
 

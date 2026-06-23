@@ -478,7 +478,7 @@ function escapeHTML(html) {
     - `Strict`：完全禁止跨站点请求携带Cookie。
     - `Lax`：允许部分跨站点请求携带Cookie，请求要同时满足以下两个条件：
         1. 请求是顶级导航`(top-level navigation)`（本质上会导致浏览器地址栏中显示的URL发生变化）：点击链接、对`window.location`赋值、表单提交等；
-        1. 请求方法是[`safe HTTP method`](https://developer.mozilla.org/en-US/docs/Glossary/Safe/HTTP)，最常见的是`GET`。
+        2. 请求方法是[`safe HTTP method`](https://developer.mozilla.org/en-US/docs/Glossary/Safe/HTTP)，最常见的是`GET`。
 
     - `None`：允许跨站点请求携带Cookie，但必须同时设置`Secure`属性（只能通过HTTPS发送）。
 

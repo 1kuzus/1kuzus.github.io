@@ -119,11 +119,11 @@ np.load(f, allow_pickle=True)
 
     RestrictedPython禁用了复合赋值语句（如`a += b`），需要改成普通的赋值语句（如`a = a + b`）。这个限制是为了防止通过重载`__iadd__`等方法实现不安全的操作。
 
-1. `attribute-less object (assign or del)`
+2. `attribute-less object (assign or del)`
 
     不允许对象属性赋值，如`obj.attr = ...`。
 
-1. `source code string cannot contain null bytes`
+3. `source code string cannot contain null bytes`
 
     不允许字符串常量（`pickle_data`）中出现`\x00`。
 

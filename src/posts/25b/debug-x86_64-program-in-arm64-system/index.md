@@ -13,8 +13,8 @@
 首先，这种方式是可以成功调试的，具体步骤为：
 
 1. `qemu-x86_64 -g 1234 /path/to/binary`，这时会在`1234`端口上监听，等待GDB连接；
-1. 然后新开一个终端，执行：`gdb-multiarch /path/to/binary`；
-1. 进入GDB后，执行`target remote :1234`，就可以调试了。
+2. 然后新开一个终端，执行：`gdb-multiarch /path/to/binary`；
+3. 进入GDB后，执行`target remote :1234`，就可以调试了。
 
     （这一步如果使用GDB插件GEF，需要进入GDB后执行`gef-remote --qemu-user --qemu-binary /path/to/binary localhost 1234`，参考[gef-remote qemu-mode](https://hugsy.github.io/gef/commands/gef-remote/#qemu-mode)。）
 
@@ -27,15 +27,15 @@
 ### 安装QEMU和x86_64系统
 
 1. `sudo apt install qemu-user qemu-system-x86`
-1. 接下来选择一个磁盘镜像，我选择的是`debian-12-nocloud-amd64.qcow2`，可以直接在[这里](https://cdimage.debian.org/images/cloud/bookworm/latest/)下载，注意选择`nocloud`版本，最轻量，默认用户`root`，无密码。
+2. 接下来选择一个磁盘镜像，我选择的是`debian-12-nocloud-amd64.qcow2`，可以直接在[这里](https://cdimage.debian.org/images/cloud/bookworm/latest/)下载，注意选择`nocloud`版本，最轻量，默认用户`root`，无密码。
 
     这一步原则上只要是x86_64的系统就行，也可以从`.iso`镜像安装，或者选择一些其他的最小化Linux发行版（有的只有几十MB大小）。个人感觉这个Debian镜像站还不错，可以下载`.qcow2`文件，QEMU可以免安装运行；并且包含`glibc`（Alpine就不包含，不过Alpine镜像更小），和大部分题目的环境一致。
 
-1. 尝试启动系统：`qemu-system-x86_64 -m 1024 -hda /path/to/debian-12-nocloud-amd64.qcow2 -nographic`
+3. 尝试启动系统：`qemu-system-x86_64 -m 1024 -hda /path/to/debian-12-nocloud-amd64.qcow2 -nographic`
     - `-hda`：下载的磁盘镜像路径；
     - `-nographic`：不启动图形界面，直接输出到终端。
 
-1. 登录系统，用户名`root`，默认无密码。
+4. 登录系统，用户名`root`，默认无密码。
 
 看到下面的结果就说明成功了～
 
@@ -44,7 +44,7 @@
 ### 在x86_64系统上安装gdbserver
 
 1. `sudo apt update`
-1. `sudo apt install gdbserver`
+2. `sudo apt install gdbserver`
 
 ### 配置共享文件夹和端口转发
 
@@ -68,8 +68,8 @@
     - `-device`行：模拟网卡，`net0`是标识符，下面有用到；
     - `-netdev`行：使用`user`网络模式，转发了虚拟机上的`22`、`1234`、`1235`、`1236`四个端口，注意虚拟机的`22`端口被转发到主机的`2222`端口，因为主机的`22`端口通常已经被占用；另外三个端口留给`gdbserver`或其他目的使用，与转发给主机的端口号一致。
 
-1. 关闭QEMU虚拟机，用上述命令再次启动；
-1. 还需要在虚拟机中挂载共享目录：
+2. 关闭QEMU虚拟机，用上述命令再次启动；
+3. 还需要在虚拟机中挂载共享目录：
 
     ```bash
     cd /mnt
@@ -86,13 +86,13 @@
 对比了一下GEF和pwndbg，感觉pwndbg远程调试的命令更简洁一些，并且自带其他架构，不需要安装`gdb-multiarch`，所以决定使用pwndbg。
 
 1. 在Ubuntu ARM64上安装pwndbg，在[pwndbg/releases](https://github.com/pwndbg/pwndbg/releases)中选择`pwndbg_yyyy.mm.dd_arm64.deb`下载。
-1. `sudo dpkg -i pwndbg_yyyy.mm.dd_arm64.deb`
+2. `sudo dpkg -i pwndbg_yyyy.mm.dd_arm64.deb`
 
 接下来在QEMU虚拟机中启动`gdbserver`，监听`1234`端口，并在主机中连接。
 
 1. QEMU虚拟机终端中执行：`gdbserver :1234 /mnt/shared/binary`，这里假设二进制文件`binary`已经拷贝到共享目录中。
-1. 主机终端中执行：`pwndbg`，进入调试界面说明前面安装成功了。
-1. 主机pwndbg调试界面执行：`target remote :1234`
+2. 主机终端中执行：`pwndbg`，进入调试界面说明前面安装成功了。
+3. 主机pwndbg调试界面执行：`target remote :1234`
 
 <!-- @xprops width="100%" -->
 
@@ -121,7 +121,7 @@ echo "shared /mnt/shared 9p trans=virtio,access=any 0 0" | sudo tee -a /etc/fsta
 调试程序不需要SSH，但是建议装一下，便于从主机连接，可以实现远程开发之类的。
 
 1. `sudo apt install openssh-server`
-1. 我使用的`qcow2`镜像默认无密码，SSH连接时会提示`Permission denied`，需要修改SSH配置文件`sshd_config`。
+2. 我使用的`qcow2`镜像默认无密码，SSH连接时会提示`Permission denied`，需要修改SSH配置文件`sshd_config`。
 
     在QEMU虚拟机中：`sudo vi /etc/ssh/sshd_config`
 
@@ -141,8 +141,8 @@ echo "shared /mnt/shared 9p trans=virtio,access=any 0 0" | sudo tee -a /etc/fsta
     PermitEmptyPasswords yes
     ```
 
-1. 保存退出后，重启SSH服务：`sudo systemctl restart sshd`
-1. 在Ubuntu主机中连接：`ssh -p 2222 root@localhost`
+3. 保存退出后，重启SSH服务：`sudo systemctl restart sshd`
+4. 在Ubuntu主机中连接：`ssh -p 2222 root@localhost`
     - `-p`：指定端口，前面QEMU启动时已经将虚拟机的`22`端口转发到主机的`2222`端口，所以这里连接`localhost:2222`。
 
     ![](fig4.jpg)
@@ -153,6 +153,6 @@ echo "shared /mnt/shared 9p trans=virtio,access=any 0 0" | sudo tee -a /etc/fsta
 
     ![](fig5.jpg)
 
-1. 然后在MacOS主机中SSH连接：`ssh -p 2222 root@10.211.55.3`
+2. 然后在MacOS主机中SSH连接：`ssh -p 2222 root@10.211.55.3`
 
     ![](fig6.jpg)

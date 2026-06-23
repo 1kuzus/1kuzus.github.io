@@ -351,7 +351,7 @@ Thank you for using Frida!
 
     其中`ls`、`ln`、`lt`、`lc`分别为`salt`、`nonce`、`tag`和密文的长度；大小分别为`2B`、`2B`、`2B`和`4B`。
 
-1. 密钥派生过程：`key=sha256(key + salt)`迭代`43690`次。
+2. 密钥派生过程：`key=sha256(key + salt)`迭代`43690`次。
 
     例如输出的`iter_1`，`sha256`的参数以原始密码开头；所有`iter`中`sha256`的参数都以`salt`值结尾。
 

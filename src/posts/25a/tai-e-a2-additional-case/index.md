@@ -3,10 +3,10 @@ NJU程序分析[常量传播的Lab](https://tai-e.pascal-lab.net/pa2.html)在仓
 ## 易错情况
 
 1. 方法参数的初始化：要初始化成`NAC`，见作业文档。<br>对应的测试方法：`WithParameter`
-1. 非整型：此Lab只考虑整型的变量，注意在初始化以及`transferNode`中判断左值时，要用`canHoldInt`判断下。<br>对应的测试方法：`CantHoldInt`
-1. 左值不是`Var`类型：即便判断一条语句`stmt`是`DefinitionStmt`类型，`stmt.getLValue()`也不一定返回`Var`类型，比如函数调用语句（`Invoke`）的左值可能为`null`（如果没有变量接收返回值），对类的成员变量赋值左值类型为`InstanceFieldAccess`。<br>对应的测试方法：`LvalNonVar`
-1. 非二元表达式：比如单目运算符取反，此Lab不考虑，按照`NAC`处理。<br>对应的测试方法：`OtherExpression`
-1. 除零：除零和模零规定结果为`UNDEF`，见作业文档。<br>对应的测试方法：`DivisionByZero`
+2. 非整型：此Lab只考虑整型的变量，注意在初始化以及`transferNode`中判断左值时，要用`canHoldInt`判断下。<br>对应的测试方法：`CantHoldInt`
+3. 左值不是`Var`类型：即便判断一条语句`stmt`是`DefinitionStmt`类型，`stmt.getLValue()`也不一定返回`Var`类型，比如函数调用语句（`Invoke`）的左值可能为`null`（如果没有变量接收返回值），对类的成员变量赋值左值类型为`InstanceFieldAccess`。<br>对应的测试方法：`LvalNonVar`
+4. 非二元表达式：比如单目运算符取反，此Lab不考虑，按照`NAC`处理。<br>对应的测试方法：`OtherExpression`
+5. 除零：除零和模零规定结果为`UNDEF`，见作业文档。<br>对应的测试方法：`DivisionByZero`
 
 ## 测试样例
 
