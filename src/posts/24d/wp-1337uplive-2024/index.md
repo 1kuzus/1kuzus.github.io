@@ -2,9 +2,9 @@
 
 ### Pizza Paradise
 
-在`robots.txt`中找到登录页面`/secret_172346606e1d24062e891d537e917a90.html`，在JS中找到用户名和密码的哈希值；队友找到一个查弱口令的网站[https://crackstation.net](https://crackstation.net)，查到密码是`intel420`，登录。
+在`robots.txt`中找到登录页面`/secret_172346606e1d24062e891d537e917a90.html`，在JS中找到用户名和密码的哈希值；[https://crackstation.net](https://crackstation.net)上查到密码是`intel420`，登录。
 
-<!-- @xprops width="100%" -->
+<!-- @xprops width="100%" themeAdaptive -->
 
 ![](fig1.jpg)
 

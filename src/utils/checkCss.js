@@ -69,6 +69,7 @@ const propertyOrderList = [
     'overflow',
     'overflow-x',
     'overflow-y',
+    'overflow-wrap',
 
     //color
     'color',

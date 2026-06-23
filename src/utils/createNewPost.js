@@ -57,6 +57,7 @@ export default function Post() {
 }
 `;
 const T_MD = `## Hello
+
 <!-- @xprops background="blue" -->
 
 > World.
