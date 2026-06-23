@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic';
+import {notFound} from 'next/navigation';
 import X from 'src/component/X';
 import TOC from 'src/component/TOC/TOC';
 import {PostMeta, LikeButton} from 'src/component/Metadata';
@@ -13,6 +14,7 @@ export function generateStaticParams() {
 export async function generateMetadata({params}) {
     const {slug} = await params;
     const path = '/' + slug.join('/') + '/';
+    if (!archives[path]) return {title: '404 - 铃木的网络日记'};
     return {
         title: archives[path].title + ' - 铃木的网络日记', //page title
         alternates: {
@@ -24,6 +26,7 @@ export async function generateMetadata({params}) {
 export default async function Page({params}) {
     const {slug} = await params;
     const path = '/' + slug.join('/') + '/';
+    if (!archives[path]) notFound();
     const Post = dynamic(
         () => {
             return import(`src/posts${path}index.md`)
