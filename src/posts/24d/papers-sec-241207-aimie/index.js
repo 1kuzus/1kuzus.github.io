@@ -17,7 +17,7 @@ export default function Post() {
             <X.H1>2.Background</X.H1>
             <X.H2>IHM</X.H2>
             <X.P>论文提到的IHM`(Image Hosting Module)`可以理解为“私有图床”，这里格外强调了IHM主要是服务于网站的特定业务功能内部使用的，如前面提到的问答平台、聊天功能等，IHM并非旨在作为一个独立图像托管平台运行。</X.P>
-            <X.Image src="1.jpg" width="600px" filterDarkTheme />
+            <X.Image src="1.jpg" width="600px" themeAdaptive />
             <X.H2>威胁模型</X.H2>
             <X.P>恶意利用者寻找可以利用的IHM，并利用其API来创建图像托管服务，这可能被用于存储任意非法图像。（利用者只需要具有普通用户权限，也不涉及上传图片马以利用受害站点漏洞）</X.P>
             <X.H2>研究范围</X.H2>
@@ -28,7 +28,7 @@ export default function Post() {
             <X.Uli>AIMIE upload API：也就是AIMIE中被滥用的受害IHM上传图片的API</X.Uli>
             <X.Uli>Image hosting domain：受害IHM存储上传的图像的服务器（然后生成链接，返回给用户）</X.Uli>
             <X.H2>分析方法</X.H2>
-            <X.Image src="2.jpg" width="600px" filterDarkTheme />
+            <X.Image src="2.jpg" width="600px" themeAdaptive />
             <X.Uli>AIMIE discovery：在Github上手动找了`89`个开源的AIMIE。</X.Uli>
             <X.Uli>Abused upload API detection：研究团队开发了一个多语言解释器，先将收集到的AIMIE源码生成AST，然后解析字符串相关操作（拼接、格式化函数等），然后提取并验证出现的字符串值是否为一个URL（比如匹配以`http:`或`https:`开头），然后确定这是否是一个被利用的IHM上传图片的API（如果该API位于一个未被设计用于图片上传、但具有图片上传功能的网站上）。</X.Uli>
             <X.Uli>Abused hosting domain detection：研究团队部署了其中`14`个开源的AIMIE，触发其中的上传API，并抓包响应流量以确定存储服务器的域名。</X.Uli>
@@ -36,7 +36,7 @@ export default function Post() {
             <X.P>这一节是对前面收集到的数据的分析，详见原文。</X.P>
             <X.H1>5.Vulnerable IHMs in the Wild</X.H1>
             <X.P>除了分析已有的AIMIE之外，研究团队还设计了工具Viola用于发现互联网中的易被利用的IHM情况。本节会介绍Viola的三个组件。</X.P>
-            <X.Image src="3.jpg" width="100%" filterDarkTheme />
+            <X.Image src="3.jpg" width="100%" themeAdaptive />
             <X.H2>Semantic Analyzer</X.H2>
             <X.P>
                 首先是在大规模的网络服务中识别出那些使用了IHM的。论文使用了基于语义分析的方法，首先在DOM中查找元素
@@ -46,7 +46,7 @@ export default function Post() {
             <X.P>代码层面，这一阶段筛选出*具有上传图像语义的`input`元素*的页面。</X.P>
             <X.H2>Upload Lifecycle Assessor</X.H2>
             <X.P>研究团队把图片上传的生命周期整理为`4`个步骤（有些具体实现可能省略了中间的一些步骤）：</X.P>
-            <X.Image src="4.jpg" width="800px" filterDarkTheme />
+            <X.Image src="4.jpg" width="800px" themeAdaptive />
             <X.Uli>Presubmit阶段：在没提交整个表单时，通常会先把图片上传到服务器</X.Uli>
             <X.Uli>
                 <X.P>Preview阶段：</X.P>

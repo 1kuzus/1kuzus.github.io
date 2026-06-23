@@ -6,17 +6,17 @@ export default function Post() {
             <X.H1>ML</X.H1>
             <X.P>I completed all the ML challenges on @Google Colab[https://colab.google/]@.</X.P>
             <X.H2>Enchanted Weights</X.H2>
-            <X.Image src="ml1-1.jpg" filterDarkTheme />
+            <X.Image src="ml1-1.jpg" themeAdaptive />
             <X.H2>Crystal Corruption</X.H2>
             <X.P>Find the malicious code in the model weights:</X.P>
             <X.Image src="ml2-1.jpg" />
             <X.P>Copy these codes into Colab, modify the code to print the `payload` before executing:</X.P>
-            <X.Image src="ml2-2.jpg" filterDarkTheme />
+            <X.Image src="ml2-2.jpg" themeAdaptive />
             <X.P>The flag is hidden within.</X.P>
-            <X.Image src="ml2-3.jpg" filterDarkTheme />
+            <X.Image src="ml2-3.jpg" themeAdaptive />
             <X.H2>Malakars Deception</X.H2>
             <X.P>In TensorFlow, a *Lambda layer* is a way to implement custom operations within a neural network model.</X.P>
-            <X.Image src="ml3-1.jpg" filterDarkTheme />
+            <X.Image src="ml3-1.jpg" themeAdaptive />
             <X.P>After finding the Lambda layer, I tried to decode the Base64 content of `layer.get_config()["function"]["config"]["code"]`:</X.P>
             <X.CodeBlock
                 language="js"
@@ -47,7 +47,7 @@ export default function Post() {
             <X.CodeBlock language="text" code="HTB{k3r4S_L4y3r_1nj3ct10n}" />
             <X.H2>Reverse Prompt</X.H2>
             <X.P>I found @vec2text[https://github.com/vec2text/vec2text]@ for this challenge.</X.P>
-            <X.Image src="ml4-1.jpg" filterDarkTheme />
+            <X.Image src="ml4-1.jpg" themeAdaptive />
             <X.P>The following part is a little bit guessy:</X.P>
             <X.Image src="ml4-2.jpg" />
             <X.P>But since "passphrase" and "secret" have already appeared in the hint text sent by the server, let's guess the passphrase to be `terminalinit`.</X.P>

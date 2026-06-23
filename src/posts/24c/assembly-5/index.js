@@ -6,8 +6,8 @@ export default function Post() {
             <X.H1>标志寄存器</X.H1>
             <X.P>标志寄存器是按位起作用的，8086CPU中没有使用标志寄存器的`1`、`3`、`5`、`12`、`13`、`14`、`15`位，这些位不具有任何含义。</X.P>
             <X.P>标志位用来存储相关指令的某些执行结果、用来为CPU执行相关指令提供行为依据、或用来控制CPU的相关工作方式。</X.P>
-            <X.Image src="fig1.jpg" width="600px" filterDarkTheme />
-            <X.Image src="fig2.jpg" width="600px" filterDarkTheme />
+            <X.Image src="fig1.jpg" width="600px" themeAdaptive />
+            <X.Image src="fig2.jpg" width="600px" themeAdaptive />
             <X.P>8086 CPU的指令集中，有些指令执行后会改变标志寄存器中的标志位，比如`add`、`sub`、`mul`、`div`、`inc`、`or`、`and`等指令，它们大多数是算术运算指令。</X.P>
             <X.H2>ZF(Zero Flag)零标志</X.H2>
             <X.P>`ZF=1`表示“结果为`0`”，`ZF=0`表示“结果不为`0`”。</X.P>

@@ -7,10 +7,10 @@ export default function Post() {
             <X.P>The binary checks a password:</X.P>
             <X.Image src="1.jpg" />
             <X.P>After some quick static analysis, I notice that there's a suspicious function `sub_401300`, it calls `sub_406A40` to read data into a buffer `byte_4474C0`, and verifies the length is `49`.</X.P>
-            <X.Image src="2.jpg" filterDarkTheme />
+            <X.Image src="2.jpg" themeAdaptive />
             <X.P>There's great chance that the password is the flag, which is `49` bytes long.</X.P>
             <X.P>Function `sub_401300` seems to implement a VM with a custom instruction set, however, we don't need to fully understand it to solve the challenge. I notice that `dword_4474B8 == 49` is checked before the function returns, and there's also `++dword_4474B8` at line 104, this looks like a verification of the password byte by byte.</X.P>
-            <X.Image src="3.jpg" filterDarkTheme />
+            <X.Image src="3.jpg" themeAdaptive />
             <X.P>So the idea is to hook the function `sub_401300` and dump the buffer `byte_4474C0` before the function returns.</X.P>
             <X.P>When I input with the flag prefix `shaktictf`, the value of `byte_4474C0` before `sub_401300` returns is the length of matched bytes. This allows me to brute-force the password byte by byte.</X.P>
             <X.P>`hook.js`:</X.P>

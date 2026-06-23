@@ -1,0 +1,12 @@
+todo:
+2.adaptDarkMode(改名) -> themeAdaptive
+
+
+tofix：
+2. 现在markdown中有序列表都是1. 1. 1.这样编号，可以统一改成1. 2. 3.（虽然不影响渲染）
+5.404页面的script报错
+
+
+
+
+

@@ -4,13 +4,13 @@ import {usePathname} from 'next/navigation';
 import './Image.css';
 
 export default function Image(props) {
-    const {src, alt, width, filterDarkTheme} = props;
+    const {src, alt, width, themeAdaptive} = props;
     const pathname = usePathname();
     return (
         <NextImage
-            className={`x-image${filterDarkTheme ? ' x-image-invert' : ''}`}
+            className={`x-image${themeAdaptive ? ' x-image-invert' : ''}`}
             src={require('src/posts' + pathname + src)}
-            alt={alt || "image"}
+            alt={alt || 'image'}
             style={{width: width, height: 'auto'}}
         />
     );

@@ -90,8 +90,8 @@ export default function Post() {
             <X.P>显然可预测就意味着$Adv$是不可忽略的，因此PRG是不安全的。</X.P>
             <X.H3>不可预测的PRG是安全的</X.H3>
             <X.P>证明起来复杂一点，可以参考@[https://www.noahsd.com/crypto_lecture_notes/CS4830_Lecture_7____PRGs.pdf]@的`1.3`节，这里贴出截图：</X.P>
-            <X.Image src="fig1.jpg" width="800px" filterDarkTheme />
-            <X.Image src="fig2.jpg" width="800px" filterDarkTheme />
+            <X.Image src="fig1.jpg" width="800px" themeAdaptive />
+            <X.Image src="fig2.jpg" width="800px" themeAdaptive />
             <X.H1>流密码</X.H1>
             <X.H2>概念</X.H2>
             <X.P>有了PRG以后，可以根据一个较短的密钥$k$生成一个较长的伪随机密钥流$G(k)$，然后就可以像一次性密码本那样，与消息进行逐比特异或进行加密，$c=m \oplus G(k)$。</X.P>

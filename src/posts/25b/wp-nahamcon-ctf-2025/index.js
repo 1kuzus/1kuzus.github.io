@@ -61,12 +61,12 @@ export default function Post() {
                 `}
             />
             <X.P>By appending an extra `\r\\n` to the `method` parameter, the server throws an error and responds with the error message. Note that the error message reflects the value of parameters.</X.P>
-            <X.Image src="1.jpg" width="100%" filterDarkTheme />
+            <X.Image src="1.jpg" width="100%" themeAdaptive />
             <X.P>This can also be used for file existence enumeration. (And found `/flag.txt` exists.)</X.P>
-            <X.Image src="2.jpg" width="100%" filterDarkTheme />
+            <X.Image src="2.jpg" width="100%" themeAdaptive />
             <X.P>According to `apicaller.php.orig`, parameters like `@/tmp/[file]` will be parsed as file contents, and there is a path traversal vulnerability in both `method` and `parameters`.</X.P>
             <X.P>Make a request to the `../test/` API again, set the `method` parameter to a value that causes the error, like `1\r\\n`, and set the `parameters` parameter to `@/tmp/../flag.txt`. The server will reflect the contents of the file, which is the flag.</X.P>
-            <X.Image src="3.jpg" width="100%" filterDarkTheme />
+            <X.Image src="3.jpg" width="100%" themeAdaptive />
             <X.CodeBlock language="text" code="FLAG{ch41ning_bug$_1s_W0nd3rful!}" />
             <X.H1>Rev/What's a base amongst friends?</X.H1>
             <X.P>This is a custom Base32 encoding. After some dynamic debugging, the custom alphabet is `ybndrfg8ejkmcpqxot1uwisza345h769`, and the encoded flag is `m7xzr7muqtxsr3m8pfzf6h5ep738ez5ncftss7d1cftskz49qj4zg7n9cizgez5upbzzr7n9cjosg45wqjosg3mu`.</X.P>

@@ -545,7 +545,7 @@ export default function Post() {
                 `}
             />
             <X.P>我使用Flask作为托管攻击页面的服务器，`target`在这里是这道题目的地址。这个`iframe`通过POST方法请求加载`/view.js`，这会导致定义的路由均失配，最终匹配到`*path`并返回`index`页面；并且这个页面的`location.href`会变成`/view.js`：</X.P>
-            <X.Image src="1.jpg" filterDarkTheme />
+            <X.Image src="1.jpg" themeAdaptive />
             <X.P>（如果不用`srcdoc`而是`src=".../view.js"`，则会返回纯文本的JavaScript代码内容，这样就没有办法加载`index`页面了。）</X.P>
             <X.H3>Step 2</X.H3>
             <X.P>现在`index`页面中有我们需要的jQuery库和`#noteContent`元素，但是`showNote`函数是未定义的，而这个函数就定义在`/view.js`中。因此我们上一步将第一个`iframe`的`location.href`操作成`/view.js`，就是为了这一步空参调用`$._evalUrl`做铺垫。空参调用时默认使用`location.href`做参数，也就会解析执行我们需要的`/view.js`了。</X.P>
@@ -661,7 +661,7 @@ export default function Post() {
                 app.run("0.0.0.0", 5003)
                 `}
             />
-            <X.Image src="2.jpg" filterDarkTheme />
+            <X.Image src="2.jpg" themeAdaptive />
             <X.H2>Community Solution</X.H2>
             <X.P>首先除了通过`/note/anything%3fcallback=alert%23`来触发`alert`，还有一种方法是设置笔记的内容为：</X.P>
             <X.CodeBlock
@@ -777,8 +777,8 @@ export default function Post() {
                 app.run("0.0.0.0", 5003)
                 `}
             />
-            <X.Image src="3.jpg" filterDarkTheme />
-            <X.Image src="4.jpg" filterDarkTheme />
+            <X.Image src="3.jpg" themeAdaptive />
+            <X.Image src="4.jpg" themeAdaptive />
             <X.P>这样就可以逐位带外flag了。（也可以考虑更自动化的实现）</X.P>
             <X.H1>justCTF/rev/slowrun</X.H1>
             <X.P>分析整个程序能看出这是一个大整数运算的实现，生成flag时有两个函数递归进行调用：</X.P>

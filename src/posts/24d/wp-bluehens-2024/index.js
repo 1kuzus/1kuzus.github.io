@@ -6,7 +6,7 @@ export default function Post() {
             <X.Image src="overview.png" width="100%" />
             <X.H1>Web</X.H1>
             <X.H2>lists of JSONs</X.H2>
-            <X.Image src="fig1.jpg" width="800px" filterDarkTheme />
+            <X.Image src="fig1.jpg" width="800px" themeAdaptive />
             <X.P>`limitToFirst(5)`不够，在控制台贴上：</X.P>
             <X.CodeBlock
                 language="js"
@@ -68,11 +68,11 @@ export default function Post() {
             <X.CodeBlock language="text" code="?tCUzc-Hj,xMUjas&TF{JS0N_1n_tr33}o`JM0FYN" />
             <X.H2>Nonogram Pt. 2: Disgraced</X.H2>
             <X.P>正常玩一遍Nonogram，通过后显示的是乱码：</X.P>
-            <X.Image src="fig2.jpg" width="600px" filterDarkTheme />
+            <X.Image src="fig2.jpg" width="600px" themeAdaptive />
             <X.P>全局搜索找一下设置这个`div`内容的函数：</X.P>
-            <X.Image src="fig3.jpg" width="100%" filterDarkTheme />
+            <X.Image src="fig3.jpg" width="100%" themeAdaptive />
             <X.P>打断点调试一下，看到解密用的`key`就是当前Nonogram面板上的状态；而密文来自于URL参数，是一个定值。</X.P>
-            <X.Image src="fig4.jpg" width="100%" filterDarkTheme />
+            <X.Image src="fig4.jpg" width="100%" themeAdaptive />
             <X.P>尝试了两种满足条件的解法发现解码的消息都是乱码，因此直接想爆破了；理论上每一个小块可以是`0`/`1`/`2`（不填/黑/红），但是刚试二进制的组合时就成功了。代码如下，直接贴到控制台运行即可。注意要在调试没结束的状态下运行，不然有一些局部变量未定义。</X.P>
             <X.CodeBlock
                 language="js"
@@ -96,7 +96,7 @@ export default function Post() {
                 }
                 `}
             />
-            <X.Image src="fig5.jpg" width="800px" filterDarkTheme />
+            <X.Image src="fig5.jpg" width="800px" themeAdaptive />
             <X.H1>Reversing</X.H1>
             <X.H2>Bainrot.c</X.H2>
             <X.P>肉眼反混淆，纯粹的精神污染，感受下源码：</X.P>

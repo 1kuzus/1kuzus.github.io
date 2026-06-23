@@ -43,14 +43,14 @@ export default function Post() {
             <X.Oli>Performing Cryptanalysis：如果网络流量中包含加密字段，则进行加密分析。</X.Oli>
             <X.H1>5.Results</X.H1>
             <X.P>这一节讨论各种备份机制。</X.P>
-            <X.Image src="1.jpg" width="100%" filterDarkTheme />
+            <X.Image src="1.jpg" width="100%" themeAdaptive />
             <X.H2>离线：Backup without the Network</X.H2>
             <X.P>数据集中`7`个应用程序支持以二维码的形式导出到其他设备，由于不涉及网络请求，该方法安全性较高，但缺乏易用性。</X.P>
             <X.H2>在线、无加密：Remote Backups without Encryption</X.H2>
             <X.P>数据集中`12`个应用程序可以以明文形式备份TOTP数据、有`3`个应用程序可以直接以明文形式进行云同步。</X.P>
             <X.H2>在线、有加密：Remote Backups with Encryption</X.H2>
             <X.P>数据集中`15`个应用程序支持TOTP数据的加密备份，但许多应用程序的实现方式存在漏洞。</X.P>
-            <X.Image src="2.jpg" width="100%" filterDarkTheme />
+            <X.Image src="2.jpg" width="100%" themeAdaptive />
             <X.P>其中有`14`个应用的加密密钥直接来源于用户密码，这使得攻击者破解TOTP数据密文的操作就像破解一个哈希过后的密码一样。这类攻击的可行性取决于密码本身的强度和散列函数的配置（见上表）。更多密码学的分析见论文原文。</X.P>
             <X.H2>安卓自动备份：Android Auto Backup (AAB)</X.H2>
             <X.P>Android 6.0及更高版本支持自动将应用程序数据上传到用户的谷歌云端硬盘的备份系统。默认情况应用程序会加入AAB，但官方文档建议如果应用程序需要处理Android不应该自动备份的敏感信息，就应该设置`android:allowBackup="false"`来退出AAB。数据集中`12`个应用程序明确声明了退出AAB。</X.P>

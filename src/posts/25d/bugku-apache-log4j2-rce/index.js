@@ -74,7 +74,7 @@ export default function Post() {
                 ::1 - - [22/Nov/2025 22:57:23] "GET /Exploit.class HTTP/1.1" 200 -
                 `}
             />
-            <X.Image src="1.jpg" width="100%" filterDarkTheme />
+            <X.Image src="1.jpg" width="100%" themeAdaptive />
         </>
     );
 }

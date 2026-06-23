@@ -10,13 +10,13 @@ export default function Post() {
                 <X.P>For the first three phases, your exploit strings will attack CTARGET. This program is set up in a way that the stack positions will be consistent from one run to the next and so that data on the stack can be treated as executable code. These features make the program vulnerable to attacks where the exploit strings contain the byte encodings of executable code.</X.P>
             </X.HighlightBlock>
             <X.P>做Phase 2的时候，预期解是把shellcode写到栈上，然后直接跳转到栈地址。注意这题并没给泄露栈的能力，目标栈地址是调试一遍得到的。题目没开ASLR因此本地栈地址是稳定的，但神奇的是远程也能用同一个栈地址打通。这是因为`ctarget`程序做了特殊处理，在`main`函数中进入的是`stable_launch`逻辑，会把栈设为一个地址固定的`mmap`申请出来的空间。（`rtarget`在`main`函数中就直接进入`launch`，因此栈地址本地和远程是不同的）</X.P>
-            <X.Image src="1.jpg" filterDarkTheme />
-            <X.Image src="2.jpg" filterDarkTheme />
+            <X.Image src="1.jpg" themeAdaptive />
+            <X.Image src="2.jpg" themeAdaptive />
             <X.HighlightBlock background="gray">
                 <X.P>You may only construct gadgets from file `rtarget` with addresses ranging between those for functions `start_farm` and `end_farm`。</X.P>
             </X.HighlightBlock>
             <X.P>`rtarget`需要用ROP，题目特意给出了一些gadgets，分布在地址`start_farm`和`end_farm`之间。之所以强调不让使用范围之外的gadgets，是因为和大多数pwn题不一样，这个lab服务端运行的评测程序与handout不一样，服务端专门编译了`rtarget-check`程序用于评测。给定范围之外的gadgets可能不一致，导致本地能打通，但服务端测评显示`invalid`。</X.P>
-            <X.Image src="3.jpg" filterDarkTheme />
+            <X.Image src="3.jpg" themeAdaptive />
             <X.P>自己做的时候就是因为没注意到这一点，用了很多范围之外的gadgets，导致Phase 4~5的解法只适用于`rtarget`程序（过不了服务端的`rtarget-check`）。</X.P>
             <X.P>另外，并不能直接向服务器伪造“通关”请求，因为`notify_server`函数中`gets_buf`会被一起发送给服务端，服务端也会运行检查。</X.P>
             <X.H1>Code Injection</X.H1>
@@ -270,7 +270,7 @@ export default function Post() {
                 `}
             />
             <X.P>至于具体写到哪里，在`bss`段上找一段空白区写入字符串即可，这里用`0x408000`：</X.P>
-            <X.Image src="5.jpg" filterDarkTheme />
+            <X.Image src="5.jpg" themeAdaptive />
             <X.P>完整payload为：</X.P>
             <X.CodeBlock
                 language="python"

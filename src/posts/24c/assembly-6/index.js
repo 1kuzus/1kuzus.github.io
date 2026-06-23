@@ -68,7 +68,7 @@ export default function Post() {
             <X.P>中断可以分为：</X.P>
             <X.Uli>内部中断：由CPU内部产生，如除法错误（`0`号）、溢出（`4`号）、`int n`指令触发（`n`号）等。</X.Uli>
             <X.Uli>外部中断：由外部设备产生，如键盘输入等。</X.Uli>
-            <X.Image src="fig9.jpg" width="800px" filterDarkTheme />
+            <X.Image src="fig9.jpg" width="800px" themeAdaptive />
             <X.P>其中外部中断又分为可屏蔽中断和不可屏蔽中断：</X.P>
             <X.Uli>可屏蔽中断：CPU可以不响应的外中断，一般是由外部硬件通过INTR`(Interrupt Request)`信号线发送给CPU；CPU是否响应取决于`IF`标志位，如果`IF=0`，CPU不响应可屏蔽中断。</X.Uli>
             <X.Uli>不可屏蔽中断：CPU必须响应的外中断，通过NMI`(Non-Maskable Interrupt)`信号线发送。8086 CPU不可屏蔽中断的中断类型码固定为`2`。</X.Uli>
@@ -251,9 +251,9 @@ export default function Post() {
             <X.H2>BIOS中断调用示例</X.H2>
             <X.P>BIOS中断是由BIOS提供的一些服务程序，可以通过`int`指令调用。前面提到可以直接操作显存来控制屏幕显示的内容，而定位到具体的地址需要细节的计算；而BIOS的`10h`号中断提供了一系列关于字符显示的功能，包括设置光标位置、在指定位置显示字符等。BIOS中断相当于封装了底层的细节，提供了更方便的调用方式。</X.P>
             <X.P>找到这些中断的中断号和功能描述，需要*查手册*！例如：</X.P>
-            <X.Image src="fig3.jpg" width="800px" filterDarkTheme />
-            <X.Image src="fig4.jpg" width="800px" filterDarkTheme />
-            <X.Image src="fig5.jpg" width="800px" filterDarkTheme />
+            <X.Image src="fig3.jpg" width="800px" themeAdaptive />
+            <X.Image src="fig4.jpg" width="800px" themeAdaptive />
+            <X.Image src="fig5.jpg" width="800px" themeAdaptive />
             <X.P>这个手册指明显示服务的中断号是`10h`，我们如果想使用设置光标位置功能，需要设置四个输入参数：功能号`AH`，页号`BH`，行号`DH`，列号`DL`；显示字符功能同理。因此就可以编写出如下程序：</X.P>
             <X.CodeBlock
                 language="asm8086"
@@ -283,10 +283,10 @@ export default function Post() {
             <X.Image src="fig6.jpg" width="100%" />
             <X.H2>DOS中断</X.H2>
             <X.P>DOS中断是由操作系统提供的、更为高层的中断，同样提供了丰富的功能，使用时查手册即可。下图列出了一些DOS中断，并以`21h`为例做展开。</X.P>
-            <X.Image src="fig7.jpg" width="100%" filterDarkTheme />
+            <X.Image src="fig7.jpg" width="100%" themeAdaptive />
             <X.H2>二者的联系</X.H2>
             <X.P>BIOS和DOS在所提供的中断处理程序中包含了许多子程序，这些子程序实现了编程时常用到的功能。\n这些功能大多是调用外设的功能，而外设的硬件细节太多，常调用ROM中的BIOS中断来完成操作；\n对于DOS中断来说，和硬件设备相关的DOS中断处理程序中，一般都是在操作系统级调用BIOS的中断处理程序来实现的，提供更加高层的一些功能。\n当然如果这些都不能满足需求，用户也可以在程序里直接和外设进行联系（端口操作）。</X.P>
-            <X.Image src="fig8.jpg" width="600px" filterDarkTheme />
+            <X.Image src="fig8.jpg" width="600px" themeAdaptive />
             <X.H1>端口的读写</X.H1>
             <X.P>CPU可以直接读写三个地方的数据：CPU内部的寄存器、内存单元、端口；而端口对应网卡、显卡等等外部芯片。这些外部芯片工作时，都有一些寄存器由CPU读写；而从CPU的角度，就把这些寄存器当作端口并统一编址。</X.P>
             <X.P>端口的编址是`16`位的，范围是`0`~`65535`，这部分地址是独立于内存地址的。硬件设备与特定端口之间的映射是由硬件设计者决定的；为了确保不同厂商的设备能够正常工作，会有标准化组织制定统一的行业标准。</X.P>
@@ -347,7 +347,7 @@ export default function Post() {
             <X.Oli reset>
                 <X.P>键盘输入</X.P>
                 <X.P>键盘上每一个键相当于一个开关，键盘中有一个芯片对每一个键的开关状态进行扫描：按下/松开一个键时，芯片都会产生一个扫描码，扫描码被送入主板上相关接口芯片的寄存器中，该寄存器的端口地址为`60h`。扫描码与ASCII码不同，下图是通码：</X.P>
-                <X.Image src="fig10.jpg" width="800px" filterDarkTheme />
+                <X.Image src="fig10.jpg" width="800px" themeAdaptive />
                 <X.P>按下一个键产生通码，松开一个键产生断码；通码的最高位为`0`，断码的最高位为`1`；通码和断码的低`7`位是相同的。</X.P>
             </X.Oli>
             <X.Oli>
@@ -371,7 +371,7 @@ export default function Post() {
                 <X.P>程序读出`60h`端口中的扫描码，如果是字符键的扫描码，将该扫描码和它所对应的ASCII码送入内存中的BIOS键盘缓冲区；如果是控制键和切换键的扫描码，则更新键盘状态字节。</X.P>
             </X.Oli>
             <X.H2>更多中断操作</X.H2>
-            <X.Image src="fig13.jpg" width="800px" filterDarkTheme />
+            <X.Image src="fig13.jpg" width="800px" themeAdaptive />
             <X.P>硬件中断、BIOS中断、DOS中断是由底层至上层针对键盘操作提供的不同功能。</X.P>
             <X.P>以BIOS`int 16h`中断为例，第`0`号功能的过程是：</X.P>
             <X.Oli reset>检查键盘缓冲区是否有数据</X.Oli>

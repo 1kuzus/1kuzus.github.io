@@ -12,7 +12,7 @@ export default function Post() {
             <X.H2>LUDS</X.H2>
             <X.P>一种常见的密码强度估计方案：利用小写字母`(*L*owercase)`、大写字母`(*U*ppercase)`、数字`(*D*igit)`和特殊字符`(*S*ymbol)`的出现次数来评估密码强度，简写为LUDS，这种策略可以追溯到NIST（美国国家标准与技术研究院）的标准。作者认为这种估计方案从根本上就是无效的——`Passw0rd`因为有数字`0`，反而会比`QJqUbPpA`这样明显随机的密码拥有更高的分数；密码中常见的模式，如日期、键盘规律（比如`qwerty`）无法在分数中有体现。</X.P>
             <X.P>NIST的标准（通常叫NIST熵）伪代码见下图：</X.P>
-            <X.Image src="1.jpg" width="500px" filterDarkTheme />
+            <X.Image src="1.jpg" width="500px" themeAdaptive />
             <X.P>前两条都是LUDS规则：根据密码长度和特殊字符加分；尽管第三条（是可选的）考虑了字典攻击，前面的例子`Passw0rd`（假设它没通过字典测试）依然会得到和`QJqUbPpA`（假设它通过了）一样的分数，这是令人困惑的。</X.P>
             <X.H2>密码猜测相关</X.H2>
             <X.P>本文使用的“黄金准则”（原文是`gold standard`，含义类似于Ground Truth，在后面的实验用于验证强度估计的准确性）是利用Ur等人提出的@Password Guessability Service[https://pgs.ece.cmu.edu/]@（论文在@这里[https://www.usenix.org/system/files/conference/usenixsecurity15/sec15-paper-ur.pdf]@，后面简称PGS）得到的面对四种现代密码猜测攻击中，需要进行的最少限度的尝试。</X.P>
@@ -31,7 +31,7 @@ export default function Post() {
             <X.P>形式化的表达：</X.P>
             <X.Formula text="\argmin_S D^{|S|-1} + |S|!\prod_{m \in S} m.guesses" />
             <X.P>$m$表示一个模式，它可能是一个满足格式的日期、一段键盘上相邻的字符串等等：</X.P>
-            <X.Image src="2.jpg" filterDarkTheme />
+            <X.Image src="2.jpg" themeAdaptive />
             <X.P>对于一个给定的密码字符串，可以匹配到多种模式，并且这些模式会有重叠，例如密码`lenovo1111`可能提取到`lenovo(token)`、`eno(reversed 'one')`、`1111(repeat)`、`1111(date of 2011/1/1)`等模式。</X.P>
             <X.P>如果一部分模式能够*不重不漏*地组成原始的密码字符串，这个模式序列就计作$S$。$|S|$代表模式的数量。</X.P>
             <X.P>
@@ -51,15 +51,15 @@ export default function Post() {
             <X.P>没有考虑模式之间的依赖性，例如常用的短语搭配；不会把错拼的单词匹配为模式；等长的不匹配区域逻辑上是等效的，尽管有些可能的组合比完全等长的随机字符更常见。</X.P>
             <X.H1>5.Experiments</X.H1>
             <X.P>首先理解实验结果的坐标图：</X.P>
-            <X.Image src="3.jpg" width="320px" filterDarkTheme />
+            <X.Image src="3.jpg" width="320px" themeAdaptive />
             <X.P>这是一个`对数 - 对数`坐标，$x$轴是前面提到的黄金准则PGS，$y$轴是估计；在$10^6$处的竖线是在线攻击的阈值；越接近$y=x$这条实线说明密码强度估计与PGS得到的结果越接近，虚线是一个大致不错的范围。</X.P>
             <X.P>图中的蓝点所在位置，表示估计的强度低于密码真实的强度（假设PGS真实反映了密码强度），这是一个易用性问题（用户觉得：我的密码明明很强，为什么还是不合格？）；相对的，如果落在上面的区域，就代表估计的强度高于密码真实的强度，那么这是一个安全性问题。</X.P>
             <X.H2>算法选择</X.H2>
             <X.P>在算法选择上对比了NIST熵、KeePass（另一个不基于LUDS的估计方案）和zxcvbn（本文提出的方案）：</X.P>
             <X.FlexRow minWidth="600px">
-                <X.Image src="4.jpg" width="33%" filterDarkTheme />
-                <X.Image src="5.jpg" width="33%" filterDarkTheme />
-                <X.Image src="6.jpg" width="33%" filterDarkTheme />
+                <X.Image src="4.jpg" width="33%" themeAdaptive />
+                <X.Image src="5.jpg" width="33%" themeAdaptive />
+                <X.Image src="6.jpg" width="33%" themeAdaptive />
             </X.FlexRow>
             <X.P>能看到zxcvbn确实在低数量级（在线攻击区间）有更高的准确性。</X.P>
             <X.HighlightBlock>

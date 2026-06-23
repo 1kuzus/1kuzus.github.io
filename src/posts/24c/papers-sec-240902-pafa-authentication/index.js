@@ -46,7 +46,7 @@ export default function Post() {
             <X.Uli>
                 <X.P>应用程序中无处不在的PII：只能访问到SMS OTP的攻击者可以从身份认证强度低的其他应用程序中收集PII，然后破坏更强的PaFA系统。</X.P>
                 <X.P>一个真实的案例：</X.P>
-                <X.Image src="1.jpg" width="800px" filterDarkTheme />
+                <X.Image src="1.jpg" width="800px" themeAdaptive />
                 <X.P>一个值得注意的事实是攻击路径中的每一个应用程序都能够被其他（能够获取到同样PII的）应用程序取代。</X.P>
             </X.Uli>
             <X.Uli>

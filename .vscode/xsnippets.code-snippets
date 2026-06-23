@@ -188,13 +188,13 @@
         ],
         "description": "X.Image tag"
     },
-    "filterDarkTheme props": {
+    "themeAdaptive props": {
         "scope": "javascript,typescript",
-        "prefix": "fdt",
+        "prefix": "ta",
         "body": [
-            "filterDarkTheme",
+            "themeAdaptive",
         ],
-        "description": "filterDarkTheme props"
+        "description": "themeAdaptive props"
     },
     "X.Table tag": {
         "scope": "javascript,typescript",

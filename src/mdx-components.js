@@ -46,8 +46,8 @@ const components = {
         );
     },
     blockquote: ({children, background}) => <X.HighlightBlock background={background}>{children}</X.HighlightBlock>,
-    img: ({src, alt, width, filterDarkTheme}) => (
-        <X.Image src={src} alt={alt} width={width} filterDarkTheme={filterDarkTheme} />
+    img: ({src, alt, width, themeAdaptive}) => (
+        <X.Image src={src} alt={alt} width={width} themeAdaptive={themeAdaptive} />
     ),
     table: (props) => <TableMarkdown {...props} />,
     ul: ({children}) => {

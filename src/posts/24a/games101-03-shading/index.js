@@ -10,7 +10,7 @@ export default function Post() {
             <X.Uli>环境光`(ambient lighting)`：环境中经过多次反射叠加的结果，认为是常量</X.Uli>
             <X.H2>模型定义和说明</X.H2>
             <X.FlexRow gap="32px" minWidth="600px">
-                <X.Image src="fig1.jpg" width="300px" filterDarkTheme />
+                <X.Image src="fig1.jpg" width="300px" themeAdaptive />
                 <div>
                     <X.P>着色模型考虑一个点，在这个点处小范围表面被近似看作平面：</X.P>
                     <X.P>模型的输入（向量均为单位向量）：</X.P>
@@ -33,7 +33,7 @@ export default function Post() {
             <X.P>如果在与中心距离$1$处光强为$I$，则在与中心距离$r$处光强为$I/r^2$。</X.P>
             <X.H3>朗伯着色模型</X.H3>
             <X.FlexRow gap="32px" minWidth="600px">
-                <X.Image src="fig3.jpg" width="200px" filterDarkTheme />
+                <X.Image src="fig3.jpg" width="200px" themeAdaptive />
                 <div>
                     <X.P>
                         考虑一个点的着色，其漫反射部分可以接收到的光线占光源的比例为
@@ -49,7 +49,7 @@ export default function Post() {
             <X.H2>高光</X.H2>
             <X.P>高光的反射方向是接近镜面反射方向的。</X.P>
             <X.FlexRow gap="32px" minWidth="600px">
-                <X.Image src="fig4.jpg" width="300px" filterDarkTheme />
+                <X.Image src="fig4.jpg" width="300px" themeAdaptive />
                 <div>
                     <X.P>
                         我们观察到：如果反射方向与观察方向相近时，半程向量{`$\\bm{h}$`}应该与法线方向也相近，
@@ -66,7 +66,7 @@ export default function Post() {
             </X.FlexRow>
             <X.H2>环境光</X.H2>
             <X.FlexRow gap="32px" minWidth="600px">
-                <X.Image src="fig5.jpg" width="300px" filterDarkTheme />
+                <X.Image src="fig5.jpg" width="300px" themeAdaptive />
                 <div>
                     <X.P>我们假设在每一点处，来自环境中各处散射叠加而成的光强是相等的$I_a$。</X.P>
                     <X.P>环境光部分$L_a$的计算公式为：</X.P>
@@ -84,8 +84,8 @@ export default function Post() {
             <X.H2>重心坐标</X.H2>
             <X.FlexRow gap="32px" minWidth="600px">
                 <div>
-                    <X.Image src="fig8.jpg" width="300px" filterDarkTheme />
-                    <X.Image src="fig9.jpg" width="300px" filterDarkTheme />
+                    <X.Image src="fig8.jpg" width="300px" themeAdaptive />
+                    <X.Image src="fig9.jpg" width="300px" themeAdaptive />
                 </div>
                 <div>
                     <X.P>三角形所在平面上任何一点都可以用三角形顶点$A$、$B$、$C$来表示：</X.P>
@@ -117,7 +117,7 @@ export default function Post() {
             </X.FlexRow>
             <X.H2>法线贴图</X.H2>
             <X.P>法线贴图`(normal mapping)`直接将法线存储在贴图中。</X.P>
-            <X.Image src="fig12.jpg" filterDarkTheme width="800px" />
+            <X.Image src="fig12.jpg" themeAdaptive width="800px" />
             <X.P>如图，改变后的法线方向垂直于$(1,dp)^T$，应为$(-dp,1)^T$。不过，上述是在平面上的简单示意图，实际情况下纹理是一个$u-v$平面，计算改变后的法线方向需要：</X.P>
             <X.Uli>以原本的法线为$(0,0,1)^T$建立一个局部坐标系</X.Uli>
             <X.Uli>计算{`$\\bm{n}=(-dp/du,-dp/dv,1)^T$`}</X.Uli>

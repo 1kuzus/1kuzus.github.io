@@ -110,7 +110,7 @@ export default function Post() {
             <X.H1>Reversing</X.H1>
             <X.H2>You Shall Not Passss</X.H2>
             <X.P>The code is dynamically generated, I use frida to hook the `munmap` function, so that I can get the start address of `v1` by printing the first argument, then I can get the memory content of `v1`.</X.P>
-            <X.Image src="rev1-1.jpg" width="600px" filterDarkTheme />
+            <X.Image src="rev1-1.jpg" width="600px" themeAdaptive />
             <X.P>The frida script `debug.js` is as follows:</X.P>
             <X.CodeBlock
                 language="js"
@@ -199,7 +199,7 @@ export default function Post() {
                 `}
             />
             <X.P>In x86_64, when the number of parameters is less than `6`, they are passed via registers `rdi`, `rsi`, `rdx`, `rcx`, `r8` and `r9`. So the first several instructions are:</X.P>
-            <X.Image src="rev1-3.jpg" width="800px" filterDarkTheme />
+            <X.Image src="rev1-3.jpg" width="800px" themeAdaptive />
             <X.P>The highlighted part of the code (`4b`~`97`) is a loop, which is used to compare the `al ^ input[i]` (`78`~`7d`) with `unk_4140[i]` (`84`~`89`). Fortunately the content of `unk_4140` is not modified dynamically, so we can get the content of `unk_4140` by statically analyzing the code.</X.P>
             <X.P>If the `input` is real flag, the comparison will be passed. So the last step is to recover the calculation process of `al ^ input[i]`. Here's the Python code:</X.P>
             <X.CodeBlock
@@ -312,7 +312,7 @@ export default function Post() {
             <X.H1>Misc</X.H1>
             <X.H2>Blue</X.H2>
             <X.P>Fuzz the container name:</X.P>
-            <X.Image src="misc1-1.jpg" width="100%" filterDarkTheme />
+            <X.Image src="misc1-1.jpg" width="100%" themeAdaptive />
             <X.P>The flag is `https://swampctf.blob.core.windows.net/test/flag_020525.txt`.</X.P>
             <X.CodeBlock language="text" code="swampCTF{345y_4zur3_bl0b_020525}" />
             <X.H2>Lost In Translation</X.H2>

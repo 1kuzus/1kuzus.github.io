@@ -26,10 +26,10 @@ export default function Post() {
             <X.P>出于性能考虑，微信对单个小程序大小有限制，复杂操作可能需要多个小程序配合完成，例如购物小程序需要调起支付小程序。此时需要用到`navigateToMiniProgram`API。</X.P>
             <X.H1>3.Example & Challenges</X.H1>
             <X.H2>一个例子</X.H2>
-            <X.Image src="1.jpg" width="100%" filterDarkTheme />
+            <X.Image src="1.jpg" width="100%" themeAdaptive />
             <X.P>这个例子中就包含了各种类型的数据流动，详见原文。</X.P>
             <X.H2>与Web Apps和Mobile Apps比较</X.H2>
-            <X.Image src="2.jpg" width="600px" filterDarkTheme />
+            <X.Image src="2.jpg" width="600px" themeAdaptive />
             <X.P>在视图层，小程序不能操作DOM；小程序支持列表/条件渲染（`wx:for/if`）。\n在逻辑层，JavaScript是解释型、弱类型语言；而Java类似编译型语言、是强类型语言。</X.P>
             <X.H2>挑战与研究范围</X.H2>
             <X.P>为了检测小程序隐私数据潜在的泄露风险，有三类数据流目前还没有现有的污点分析技术解决：</X.P>
@@ -40,13 +40,13 @@ export default function Post() {
             <X.H1>4.Design</X.H1>
             <X.H2>UDFG Generation</X.H2>
             <X.P>第一步是生成UDFG（通用数据流图，`Universal Data Flow Graph`），这是论文提出的新概念：</X.P>
-            <X.Image src="3.jpg" width="600px" filterDarkTheme />
+            <X.Image src="3.jpg" width="600px" themeAdaptive />
             <X.P>UDFG包含两个重要结构：</X.P>
             <X.Uli>`Data Node`：数据流分析的最小粒度，可能是一个JS对象或WXML标签；生成方式是通过给每个页面JS文件生成AST，此过程会合并通过模块化导出/导入但最后组成同一页面的文件。</X.Uli>
             <X.Uli>`Event Group`：事件组有一个非常重要的性质，就是*事件组的代码同步执行*；同一个JS对象节点可以属于不同的事件组。</X.Uli>
             <X.H2>Data-Flow Propgation</X.H2>
             <X.P>这一部分论文用数学形式给出了追踪数据传播的过程：</X.P>
-            <X.Image src="4.jpg" width="600px" filterDarkTheme />
+            <X.Image src="4.jpg" width="600px" themeAdaptive />
             <X.P>先看Notations：</X.P>
             <X.Uli>第一、二条很好理解，只是用符号表示了UDFG的两个重要结构；</X.Uli>
             <X.Uli>第三条{`$S_p^{(i,n)}$`}表示一条语句$S_p$（原文是`p-th JavaScript code statement`，但$p$的数值并不重要）属于事件组$e_i$，并且由于事件组同步执行，一定会存在一个语句被执行的次序$n$；</X.Uli>
@@ -69,7 +69,7 @@ export default function Post() {
             <X.P>后三条涉及一个关键思想，*乐观地*（原文是`optimistically`）检测数据流动：对于不确定执行顺序的异步数据流，*有可能性*即视为可以流动。</X.P>
             <X.Uli>
                 <X.P>关于第五、六条，为什么第六条多了一个$n \lt m$的与条件，参考下面的例子：</X.P>
-                <X.Image src="6.jpg" width="800px" filterDarkTheme />
+                <X.Image src="6.jpg" width="800px" themeAdaptive />
                 <X.P>在两条规则、分别$n \lt m$和$n \gt m$共四种可能的情况中，有一种情况是必然会有$O_a$到$O_c$的数据流动，两种情况是可能会有（取决于异步执行的情况），只有一种情况是不可能发生数据流动的；根据前面提到的乐观原则，仅将这一种情况排除在外（也就是第六条规则但$n \gt m$的情况）。</X.P>
             </X.Uli>
             <X.Uli>第七条同样是乐观原则的体现：没有任何约束关系的事件组，执行顺序也是任意的，因此也存在数据流动的可能性，也要考虑这种数据流动。</X.Uli>

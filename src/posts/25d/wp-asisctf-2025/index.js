@@ -135,7 +135,7 @@ export default function Post() {
             <X.Oli>`setInterval`将轮询请求`/dashboard`页面，一开始得到的会是XSS payload用户的响应内容，不包含flag；</X.Oli>
             <X.Oli>bot触发登录，用户名为flag，此时`session`Cookie被更新；</X.Oli>
             <X.Oli>`setInterval`仍在执行，bot登录后，对`/dashboard`的请求会返回包含flag的响应内容。</X.Oli>
-            
+
             <X.CodeBlock
                 language="html"
                 code={`
@@ -220,7 +220,7 @@ export default function Post() {
                     app.run(host="0.0.0.0", port=5099)
                 `}
             />
-            <X.Image src="2.jpg" width="100%" filterDarkTheme />
+            <X.Image src="2.jpg" width="100%" themeAdaptive />
             <X.CodeBlock language="text" code="ASIS{CSP_1s_n0t_4_sh13ld}" />
         </>
     );

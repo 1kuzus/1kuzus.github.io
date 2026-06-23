@@ -4,7 +4,7 @@ export default function Post() {
     return (
         <>
             <X.P>最近使用DeepL，想配置截屏翻译的快捷键为`Ctrl`+`Shift`+`T`，结果在我的电脑上修改时不管按什么键，都显示“该快捷键已被使用”。</X.P>
-            <X.Image src="img1.jpg" width="100%" filterDarkTheme />
+            <X.Image src="img1.jpg" width="100%" themeAdaptive />
             <X.H3>解决办法：直接修改配置文件</X.H3>
             <X.P>找到路径`C:\Users\你的用户名\AppData\Roaming\DeepL_SE`下的`settings.json`文件。</X.P>
             <X.Image src="img2.jpg" width="600px" />
@@ -28,7 +28,7 @@ export default function Post() {
                 <X.P>注意：修改配置文件的时候要退出DeepL！</X.P>
             </X.HighlightBlock>
             <X.P>修改以后保存、关闭、再打开DeepL就发现已经更改了，经测试可以正常使用。</X.P>
-            <X.Image src="img4.jpg" width="100%" filterDarkTheme />
+            <X.Image src="img4.jpg" width="100%" themeAdaptive />
         </>
     );
 }

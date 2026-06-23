@@ -227,7 +227,7 @@ export default function Post() {
                 `}
             />
             <X.P>上述代码描述了一个如下图所示的复杂继承关系：</X.P>
-            <X.Image src="mro.jpg" width="300px" filterDarkTheme />
+            <X.Image src="mro.jpg" width="300px" themeAdaptive />
             <X.P>可以通过`mro()`函数得到类的方法解析顺序：</X.P>
             <X.CodeBlock
                 language="python"

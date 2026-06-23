@@ -145,7 +145,7 @@ export default function Post() {
             </X.Uli>
             <X.Uli>
                 <X.P>关于`Dispatch`和`Resolve`：</X.P>
-                <X.Image src="fig1.jpg" width="600px" filterDarkTheme />
+                <X.Image src="fig1.jpg" width="600px" themeAdaptive />
                 <X.P>对于以下代码：</X.P>
                 <X.CodeBlock
                     language="java"
