@@ -19,16 +19,16 @@ e:I[90484,[],"MetadataBoundary"]
 :HL["/_next/static/css/0befe080061721ab.css","style"]
 :HL["/cry.gif","image"]
 :HL["/_next/static/css/67d16539d5741f83.css","style"]
-0:{"P":null,"c":["","25b","wp-nahamcon-ctf-2025",""],"q":"","i":false,"f":[[["",{"children":["(posts)",{"children":[["slug","25b/wp-nahamcon-ctf-2025","c",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/0e407f060d54fa19.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"zh-CN","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","link",null,{"rel":"icon","href":"/favicon.ico","type":"image/x-icon"}],["$","script",null,{"async":true,"src":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"}],["$","script",null,{"async":true,"src":"https://www.googletagmanager.com/gtag/js?id=G-45BYSZ6WPY"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nwindow.dataLayer = window.dataLayer || [];\nfunction gtag() {\n    dataLayer.push(arguments);\n}\ngtag('js', new Date());\ngtag('config', 'G-45BYSZ6WPY');\n"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nconst currentTheme = localStorage.getItem('theme');\nif (currentTheme !== 'light' && currentTheme !== 'dark') {\n    localStorage.setItem('theme', 'light');\n}\nif (localStorage.getItem('theme') === 'dark') {\n    document.documentElement.setAttribute('class', 'dark');\n} else {\n    document.documentElement.setAttribute('class', 'light');\n}\n"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nif (!Array.prototype.findLast) {\n    Array.prototype.findLast = function (callback) {\n        for (let i = this.length - 1; i >= 0; i--) {\n            if (callback(this[i])) return this[i];\n        }\n        return undefined;\n    };\n}\nif (!Array.prototype.findLastIndex) {\n    Array.prototype.findLastIndex = function (callback) {\n        for (let i = this.length - 1; i >= 0; i--) {\n            if (callback(this[i])) return i;\n        }\n        return -1;\n    };\n}\n"}}]]}],["$","body",null,{"children":["$","$L2",null,{"children":[["$","$L3",null,{}],["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"id":"notfound","children":[["$","img",null,{"alt":"img","src":"/cry.gif"}],["$","code",null,{"id":"notfound-404","children":"404"}],["$","code",null,{"id":"notfound-text","children":"Page Not Found"}]]}],[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/67d16539d5741f83.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/441b9964f9b116c1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/7e90712a60ecad8e.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"/_next/static/css/0fb9b44be8255d47.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","3",{"rel":"stylesheet","href":"/_next/static/css/05da7cf1ce382fdb.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","4",{"rel":"stylesheet","href":"/_next/static/css/6be3b83d14fa0483.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","div",null,{"id":"post-layout","children":[["$","div",null,{"id":"main","className":"center-wrapper","children":["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","$L6",null,{}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L7",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/d11fb5a2813f7e78.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/0befe080061721ab.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","$L8",null,{"children":["$","$9",null,{"name":"Next.MetadataOutlet","children":"$@a"}]}]]}],{},null,false,null]},null,false,"$@b"]},null,false,null]},null,false,null],["$","$1","h",{"children":[null,["$","$Lc",null,{"children":"$Ld"}],["$","div",null,{"hidden":true,"children":["$","$Le",null,{"children":["$","$9",null,{"name":"Next.Metadata","children":"$Lf"}]}]}],null]}],false]],"m":"$undefined","G":["$10",[]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"4HMjQRkkbw0xsQIttcbAw"}
+0:{"P":null,"c":["","25b","wp-nahamcon-ctf-2025",""],"q":"","i":false,"f":[[["",{"children":["(posts)",{"children":[["slug","25b/wp-nahamcon-ctf-2025","c",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/0e407f060d54fa19.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"zh-CN","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","link",null,{"rel":"icon","href":"/favicon.ico","type":"image/x-icon"}],["$","script",null,{"async":true,"src":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"}],["$","script",null,{"async":true,"src":"https://www.googletagmanager.com/gtag/js?id=G-45BYSZ6WPY"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nwindow.dataLayer = window.dataLayer || [];\nfunction gtag() {\n    dataLayer.push(arguments);\n}\ngtag('js', new Date());\ngtag('config', 'G-45BYSZ6WPY');\n"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nconst currentTheme = localStorage.getItem('theme');\nif (currentTheme !== 'light' && currentTheme !== 'dark') {\n    localStorage.setItem('theme', 'light');\n}\nif (localStorage.getItem('theme') === 'dark') {\n    document.documentElement.setAttribute('class', 'dark');\n} else {\n    document.documentElement.setAttribute('class', 'light');\n}\n"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nif (!Array.prototype.findLast) {\n    Array.prototype.findLast = function (callback) {\n        for (let i = this.length - 1; i >= 0; i--) {\n            if (callback(this[i])) return this[i];\n        }\n        return undefined;\n    };\n}\nif (!Array.prototype.findLastIndex) {\n    Array.prototype.findLastIndex = function (callback) {\n        for (let i = this.length - 1; i >= 0; i--) {\n            if (callback(this[i])) return i;\n        }\n        return -1;\n    };\n}\n"}}]]}],["$","body",null,{"children":["$","$L2",null,{"children":[["$","$L3",null,{}],["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"id":"notfound","children":[["$","img",null,{"alt":"img","src":"/cry.gif"}],["$","code",null,{"id":"notfound-404","children":"404"}],["$","code",null,{"id":"notfound-text","children":"Page Not Found"}]]}],[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/67d16539d5741f83.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/441b9964f9b116c1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/7e90712a60ecad8e.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"/_next/static/css/0fb9b44be8255d47.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","3",{"rel":"stylesheet","href":"/_next/static/css/05da7cf1ce382fdb.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","4",{"rel":"stylesheet","href":"/_next/static/css/6be3b83d14fa0483.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","div",null,{"id":"post-layout","children":[["$","div",null,{"id":"main","className":"center-wrapper","children":["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","$L6",null,{}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L7",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/d11fb5a2813f7e78.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/0befe080061721ab.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","$L8",null,{"children":["$","$9",null,{"name":"Next.MetadataOutlet","children":"$@a"}]}]]}],{},null,false,null]},null,false,"$@b"]},null,false,null]},null,false,null],["$","$1","h",{"children":[null,["$","$Lc",null,{"children":"$Ld"}],["$","div",null,{"hidden":true,"children":["$","$Le",null,{"children":["$","$9",null,{"name":"Next.Metadata","children":"$Lf"}]}]}],null]}],false]],"m":"$undefined","G":["$10",[]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"WqRjo7VBL0ObkVW6P-Gw1"}
 11:[]
 b:"$W11"
-12:I[5224,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-2aae93d980e9e01d.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-2a7a8d2bf85b0317.js"],"default"]
+12:I[5224,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-2aae93d980e9e01d.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-0258ababde4f1640.js"],"default"]
 13:I[31698,["507","static/chunks/457b8330-3be30b04990478c7.js","500","static/chunks/500-e2a7ab501ac40f90.js","589","static/chunks/589-9fde9febffa50a4d.js","698","static/chunks/698-2aae93d980e9e01d.js","974","static/chunks/app/page-6bf0379b668d6b5a.js"],"PostMeta"]
-14:I[21957,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-2aae93d980e9e01d.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-2a7a8d2bf85b0317.js"],"PreloadChunks"]
+14:I[21957,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-2aae93d980e9e01d.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-0258ababde4f1640.js"],"PreloadChunks"]
 16:I[31698,["507","static/chunks/457b8330-3be30b04990478c7.js","500","static/chunks/500-e2a7ab501ac40f90.js","589","static/chunks/589-9fde9febffa50a4d.js","698","static/chunks/698-2aae93d980e9e01d.js","974","static/chunks/app/page-6bf0379b668d6b5a.js"],"LikeButton"]
 7:[["$","$L12",null,{}],false,["$","h1",null,{"className":"x-post-title","children":"NahamCon CTF 2025 Writeup"}],["$","$L13",null,{"path":"/25b/wp-nahamcon-ctf-2025/"}],["$","$9",null,{"fallback":["$","p",null,{"children":"Loading component..."}],"children":[["$","$L14",null,{"moduleIds":"$undefined"}],"$L15"]}],["$","$L16",null,{"path":"/25b/wp-nahamcon-ctf-2025/"}]]
-17:I[63942,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-2aae93d980e9e01d.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-2a7a8d2bf85b0317.js"],"default"]
-18:T54d,<?php
+17:I[63942,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-2aae93d980e9e01d.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-0258ababde4f1640.js"],"default"]
+18:T54c,<?php
 
 class APICaller {
     private $url =  'http://localhost/api/';
@@ -77,8 +77,7 @@ class APICaller {
 
         return $response;
     }
-}
-19:T27ee,<span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+}19:T27ed,<span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
 
 <span class="token keyword">class</span> <span class="token class-name-definition class-name">APICaller</span> <span class="token punctuation">{</span>
     <span class="token keyword">private</span> <span class="token variable">$url</span> <span class="token operator">=</span>  <span class="token string single-quoted-string">'http://localhost/api/'</span><span class="token punctuation">;</span>
@@ -127,20 +126,19 @@ class APICaller {
 
         <span class="token keyword">return</span> <span class="token variable">$response</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</span>15:[["$","h2",null,{"className":"x-h1","children":"Web/Outcast"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"The challenge gives part of the source code in <code class=\"x-inline-highlight\">/modules/apicaller.php.orig</code>:"}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"PHP"}],["$","$L17",null,{"className":"x-codeblock-header-copy","text":"$18"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$19"}}]}]]}],"$L1a","$L1b","$L1c","$L1d","$L1e","$L1f","$L20","$L21","$L22","$L23","$L24","$L25","$L26","$L27","$L28","$L29","$L2a","$L2b","$L2c","$L2d","$L2e","$L2f","$L30","$L31","$L32","$L33","$L34","$L35","$L36","$L37","$L38","$L39","$L3a","$L3b"]
-3c:I[45543,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-2aae93d980e9e01d.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-2a7a8d2bf85b0317.js"],"default"]
-1a:["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"By appending an extra <code class=\"x-inline-highlight\">\\r&#92;n</code> to the <code class=\"x-inline-highlight\">method</code> parameter, the server throws an error and responds with the error message. Note that the error message reflects the value of parameters."}}]
-1b:["$","$L3c",null,{"src":"1.jpg","width":"100%","filterDarkTheme":true}]
-1c:["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"This can also be used for file existence enumeration. (And found <code class=\"x-inline-highlight\">/flag.txt</code> exists.)"}}]
-1d:["$","$L3c",null,{"src":"2.jpg","width":"100%","filterDarkTheme":true}]
-1e:["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"According to <code class=\"x-inline-highlight\">apicaller.php.orig</code>, parameters like <code class=\"x-inline-highlight\">@/tmp/[file]</code> will be parsed as file contents, and there is a path traversal vulnerability in both <code class=\"x-inline-highlight\">method</code> and <code class=\"x-inline-highlight\">parameters</code>."}}]
-1f:["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"Make a request to the <code class=\"x-inline-highlight\">../test/</code> API again, set the <code class=\"x-inline-highlight\">method</code> parameter to a value that causes the error, like <code class=\"x-inline-highlight\">1\\r&#92;n</code>, and set the <code class=\"x-inline-highlight\">parameters</code> parameter to <code class=\"x-inline-highlight\">@/tmp/../flag.txt</code>. The server will reflect the contents of the file, which is the flag."}}]
-20:["$","$L3c",null,{"src":"3.jpg","width":"100%","filterDarkTheme":true}]
+<span class="token punctuation">}</span></span>15:[["$","h2",null,{"className":"x-h1","children":"Web/Outcast"}],"\n",["$","p",null,{"className":"x-p","children":["The challenge gives part of the source code in ",["$","code",null,{"className":"x-inline-highlight","children":"/modules/apicaller.php.orig"}],":"]}],"\n",["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"PHP"}],["$","$L17",null,{"className":"x-codeblock-header-copy","text":"$18"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$19"}}]}]]}],"\n","$L1a","\n","$L1b","\n","$L1c","\n","$L1d","\n","$L1e","\n","$L1f","\n","$L20","\n","$L21","\n","$L22","\n","$L23","\n","$L24","\n","$L25","\n","$L26","\n","$L27","\n","$L28","\n","$L29","\n","$L2a","\n","$L2b","\n","$L2c","\n","$L2d","\n","$L2e","\n","$L2f","\n","$L30","\n","$L31","\n","$L32","\n","$L33","\n","$L34","\n","$L35","\n","$L36","\n","$L37","\n","$L38","\n","$L39","\n","$L3a","\n","$L3b"]
+3c:I[45543,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-2aae93d980e9e01d.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-0258ababde4f1640.js"],"default"]
+1a:["$","p",null,{"className":"x-p","children":["By appending an extra ",["$","code",null,{"className":"x-inline-highlight","children":"\\r\\n"}]," to the ",["$","code",null,{"className":"x-inline-highlight","children":"method"}]," parameter, the server throws an error and responds with the error message. Note that the error message reflects the value of parameters."]}]
+1b:["$","p",null,{"className":"x-p","children":["$","$L3c",null,{"src":"1.jpg","alt":"","width":"100%","themeAdaptive":true}]}]
+1c:["$","p",null,{"className":"x-p","children":["This can also be used for file existence enumeration. (And found ",["$","code",null,{"className":"x-inline-highlight","children":"/flag.txt"}]," exists.)"]}]
+1d:["$","p",null,{"className":"x-p","children":["$","$L3c",null,{"src":"2.jpg","alt":"","width":"100%","themeAdaptive":true}]}]
+1e:["$","p",null,{"className":"x-p","children":["According to ",["$","code",null,{"className":"x-inline-highlight","children":"apicaller.php.orig"}],", parameters like ",["$","code",null,{"className":"x-inline-highlight","children":"@/tmp/[file]"}]," will be parsed as file contents, and there is a path traversal vulnerability in both ",["$","code",null,{"className":"x-inline-highlight","children":"method"}]," and ",["$","code",null,{"className":"x-inline-highlight","children":"parameters"}],"."]}]
+1f:["$","p",null,{"className":"x-p","children":["Make a request to the ",["$","code",null,{"className":"x-inline-highlight","children":"../test/"}]," API again, set the ",["$","code",null,{"className":"x-inline-highlight","children":"method"}]," parameter to a value that causes the error, like ",["$","code",null,{"className":"x-inline-highlight","children":"1\\r\\n"}],", and set the ",["$","code",null,{"className":"x-inline-highlight","children":"parameters"}]," parameter to ",["$","code",null,{"className":"x-inline-highlight","children":"@/tmp/../flag.txt"}],". The server will reflect the contents of the file, which is the flag."]}]
+20:["$","p",null,{"className":"x-p","children":["$","$L3c",null,{"src":"3.jpg","alt":"","width":"100%","themeAdaptive":true}]}]
 21:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"Plain Text"}],["$","$L17",null,{"className":"x-codeblock-header-copy","text":"FLAG{ch41ning_bug$_1s_W0nd3rful!}"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"FLAG{ch41ning_bug$_1s_W0nd3rful!}"}}]}]]}]
 22:["$","h2",null,{"className":"x-h1","children":"Rev/What's a base amongst friends?"}]
-23:["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"This is a custom Base32 encoding. After some dynamic debugging, the custom alphabet is <code class=\"x-inline-highlight\">ybndrfg8ejkmcpqxot1uwisza345h769</code>, and the encoded flag is <code class=\"x-inline-highlight\">m7xzr7muqtxsr3m8pfzf6h5ep738ez5ncftss7d1cftskz49qj4zg7n9cizgez5upbzzr7n9cjosg45wqjosg3mu</code>."}}]
-3d:T522,# findings
+23:["$","p",null,{"className":"x-p","children":["This is a custom Base32 encoding. After some dynamic debugging, the custom alphabet is ",["$","code",null,{"className":"x-inline-highlight","children":"ybndrfg8ejkmcpqxot1uwisza345h769"}],", and the encoded flag is ",["$","code",null,{"className":"x-inline-highlight","children":"m7xzr7muqtxsr3m8pfzf6h5ep738ez5ncftss7d1cftskz49qj4zg7n9cizgez5upbzzr7n9cjosg45wqjosg3mu"}],"."]}]
+3d:T521,# findings
 # length: 5n -> 8n
 # custom base32 alphabet: ybndrfg8ejkmcpqxot1uwisza345h769
 
@@ -183,8 +181,7 @@ print(custom_base32_decode("cfosnamb"))  # b'aaaaa'
 target = "m7xzr7muqtxsr3m8pfzf6h5ep738ez5ncftss7d1cftskz49qj4zg7n9cizgez5upbzzr7n9cjosg45wqjosg3mu"
 print(custom_base32_decode(target))  # __rust_begin_short_backtrace__rust_end_short_backtraces
 
-# Congratulations! flag{50768fcb270edc499750ea64dc45ee92}
-3e:T146a,<span class="token comment"># findings</span>
+# Congratulations! flag{50768fcb270edc499750ea64dc45ee92}3e:T1469,<span class="token comment"># findings</span>
 <span class="token comment"># length: 5n -> 8n</span>
 <span class="token comment"># custom base32 alphabet: ybndrfg8ejkmcpqxot1uwisza345h769</span>
 
@@ -227,16 +224,15 @@ table_dec <span class="token operator">=</span> <span class="token builtin">str<
 target <span class="token operator">=</span> <span class="token string">"m7xzr7muqtxsr3m8pfzf6h5ep738ez5ncftss7d1cftskz49qj4zg7n9cizgez5upbzzr7n9cjosg45wqjosg3mu"</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>custom_base32_decode<span class="token punctuation">(</span>target<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># __rust_begin_short_backtrace__rust_end_short_backtraces</span>
 
-<span class="token comment"># Congratulations! flag{50768fcb270edc499750ea64dc45ee92}</span>
-24:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"Python"}],["$","$L17",null,{"className":"x-codeblock-header-copy","text":"$3d"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$3e"}}]}]]}]
+<span class="token comment"># Congratulations! flag{50768fcb270edc499750ea64dc45ee92}</span>24:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"Python"}],["$","$L17",null,{"className":"x-codeblock-header-copy","text":"$3d"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$3e"}}]}]]}]
 25:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"Plain Text"}],["$","$L17",null,{"className":"x-codeblock-header-copy","text":"flag{50768fcb270edc499750ea64dc45ee92}"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"flag{50768fcb270edc499750ea64dc45ee92}"}}]}]]}]
 26:["$","h2",null,{"className":"x-h1","children":"Rev/It's Locked"}]
-27:["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"The given <code class=\"x-inline-highlight\">flag.sh</code> script contains a lot of unreadable binary or non-printable characters. But we can still barely recognize the following part:"}}]
-28:["$","$L3c",null,{"src":"4.jpg","width":"100%"}]
-29:["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"Which is:"}}]
+27:["$","p",null,{"className":"x-p","children":["The given ",["$","code",null,{"className":"x-inline-highlight","children":"flag.sh"}]," script contains a lot of unreadable binary or non-printable characters. But we can still barely recognize the following part:"]}]
+28:["$","p",null,{"className":"x-p","children":["$","$L3c",null,{"src":"4.jpg","alt":"","width":"100%","themeAdaptive":"$undefined"}]}]
+29:["$","p",null,{"className":"x-p","children":"Which is:"}]
 2a:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"Bash"}],["$","$L17",null,{"className":"x-codeblock-header-copy","text":"LANG=C perl -pe \"s/[^print:]//g\" | openssl base64 -A -d"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"<span class=\"token assign-left variable\"><span class=\"token environment constant\">LANG</span></span><span class=\"token operator\">=</span>C perl <span class=\"token parameter variable\">-pe</span> <span class=\"token string\">\"s/[^print:]//g\"</span> <span class=\"token operator\">|</span> openssl base64 <span class=\"token parameter variable\">-A</span> <span class=\"token parameter variable\">-d</span>"}}]}]]}]
-2b:["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"And <code class=\"x-inline-highlight\">s/[^print:]//g</code> means to remove all non-printable characters, which inspires us to extract the printable characters from the script. We use the following script:"}}]
-3f:T6ef,<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"flag.sh"</span><span class="token punctuation">,</span> <span class="token string">"rb"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+2b:["$","p",null,{"className":"x-p","children":["And ",["$","code",null,{"className":"x-inline-highlight","children":"s/[^print:]//g"}]," means to remove all non-printable characters, which inspires us to extract the printable characters from the script. We use the following script:"]}]
+3f:T6ee,<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"flag.sh"</span><span class="token punctuation">,</span> <span class="token string">"rb"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
     content <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
 simplified <span class="token operator">=</span> <span class="token string">b""</span>
@@ -246,13 +242,12 @@ simplified <span class="token operator">=</span> <span class="token string">b""<
         simplified <span class="token operator">+=</span> <span class="token builtin">bytes</span><span class="token punctuation">(</span><span class="token punctuation">[</span>ch<span class="token punctuation">]</span><span class="token punctuation">)</span>
 
 <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"flag_simplified.sh"</span><span class="token punctuation">,</span> <span class="token string">"wb"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
-    f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>simplified<span class="token punctuation">)</span>
-2c:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"Python"}],["$","$L17",null,{"className":"x-codeblock-header-copy","text":"with open(\"flag.sh\", \"rb\") as f:\n    content = f.read()\n\nsimplified = b\"\"\n\nfor ch in content:\n    if 32 <= ch <= 126:\n        simplified += bytes([ch])\n\nwith open(\"flag_simplified.sh\", \"wb\") as f:\n    f.write(simplified)\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$3f"}}]}]]}]
-2d:["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"And get <code class=\"x-inline-highlight\">flag_simplified.sh</code> which includes a long Base64 string. We can decode it into the following content:"}}]
-40:T11b6,_bcl_verify_dec ()
+    f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>simplified<span class="token punctuation">)</span>2c:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"Python"}],["$","$L17",null,{"className":"x-codeblock-header-copy","text":"with open(\"flag.sh\", \"rb\") as f:\n    content = f.read()\n\nsimplified = b\"\"\n\nfor ch in content:\n    if 32 <= ch <= 126:\n        simplified += bytes([ch])\n\nwith open(\"flag_simplified.sh\", \"wb\") as f:\n    f.write(simplified)"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$3f"}}]}]]}]
+2d:["$","p",null,{"className":"x-p","children":["And get ",["$","code",null,{"className":"x-inline-highlight","children":"flag_simplified.sh"}]," which includes a long Base64 string. We can decode it into the following content:"]}]
+40:T119d,_bcl_verify_dec ()
 {
-    [ "TEST-VALUE-VERIFY" != "$(echo "$BCV" | openssl enc -d -aes-256-cbc -md sha256 -nosalt -k "B-\${1}-\${UID}" -a -A 2> /dev/null)" ] && return 255;
-    echo "$1-\${UID}"
+    [ "TEST-VALUE-VERIFY" != "$(echo "$BCV" | openssl enc -d -aes-256-cbc -md sha256 -nosalt -k "B-${1}-${UID}" -a -A 2> /dev/null)" ] && return 255;
+    echo "$1-${UID}"
 }
 _bcl_verify() { _bcl_verify_dec "$@"; }
 _bcl_get ()
@@ -278,7 +273,7 @@ _bcl_gen_p ()
     BCL="$(echo "$BCL" | openssl base64 -d -A 2> /dev/null)";
     [ "$BCL" -eq "$BCL" ] 2> /dev/null && exit "$BCL";
     str="$(echo "$BCL" | openssl base64 -d -A 2> /dev/null)";
-    BCL="\${str:-$BCL}";
+    BCL="${str:-$BCL}";
     exec /bin/sh -c "$BCL";
     exit 255
 }
@@ -292,19 +287,19 @@ for x in openssl perl gunzip; do
 done
 unset fn _err
 if [ -n "$ZSH_VERSION" ]; then
-    [ "$ZSH_EVAL_CONTEXT" != "\${ZSH_EVAL_CONTEXT%":file:"*}" ] && fn="$0"
+    [ "$ZSH_EVAL_CONTEXT" != "${ZSH_EVAL_CONTEXT%":file:"*}" ] && fn="$0"
 elif [ -n "$BASH_VERSION" ]; then
-    (return 0 2>/dev/null) && fn="\${BASH_SOURCE[0]}"
+    (return 0 2>/dev/null) && fn="${BASH_SOURCE[0]}"
 fi
-fn="\${BC_FN:-$fn}"
-XS="\${BASH_EXECUTION_STRING:-$ZSH_EXECUTION_STRING}"
+fn="${BC_FN:-$fn}"
+XS="${BASH_EXECUTION_STRING:-$ZSH_EXECUTION_STRING}"
 [ -z "$XS" ] && unset XS
 [ -z "$fn" ] && [ -z "$XS" ] && [ ! -f "$0" ] && {
     echo >&2 'ERROR: Shell not supported. Try "BC_FN=FileName source FileName"'
     _err=1
 }
 _bc_dec() {
-    _P="\${PASSWORD:-$BC_PASSWORD}"
+    _P="${PASSWORD:-$BC_PASSWORD}"
     unset _ PASSWORD
     if [ -n "$P" ]; then
         if [ -n "$BCV" ] && [ -n "$BCL" ]; then
@@ -320,7 +315,7 @@ _bc_dec() {
     fi
     [ -n "$C" ] && {
         local str
-        str="$(echo "$C" | openssl enc -d -aes-256-cbc -md sha256 -nosalt -k "C-\${S}-\${_P}" -a -A 2>/dev/null)"
+        str="$(echo "$C" | openssl enc -d -aes-256-cbc -md sha256 -nosalt -k "C-${S}-${_P}" -a -A 2>/dev/null)"
         unset C
         [ -z "$str" ] && {
             [ -n "$BCL" ] && echo >&2 "ERROR: Decryption failed."
@@ -330,17 +325,17 @@ _bc_dec() {
         unset str
     }
     [ -n "$XS" ] && {
-        exec bash -c "$(printf %s "$XS" |LANG=C perl -e '<>;<>;read(STDIN,$_,1);while(<>){s/B3/\n/g;s/B1/\x00/g;s/B2/B/g;print}'|openssl enc -d -aes-256-cbc -md sha256 -nosalt -k "\${S}-\${_P}" 2>/dev/null|LANG=C perl -e "read(STDIN,\$_, \${R:-0});print(<>)"|gunzip)"
+        exec bash -c "$(printf %s "$XS" |LANG=C perl -e '<>;<>;read(STDIN,$_,1);while(<>){s/B3/\n/g;s/B1/\x00/g;s/B2/B/g;print}'|openssl enc -d -aes-256-cbc -md sha256 -nosalt -k "${S}-${_P}" 2>/dev/null|LANG=C perl -e "read(STDIN,\$_, ${R:-0});print(<>)"|gunzip)"
     }
     [ -z "$fn" ] && [ -f "$0" ] && {
         zf='read(STDIN,\$_,1);while(<>){s/B3/\n/g;s/B1/\\x00/g;s/B2/B/g;print}'
-        prg="perl -e '<>;<>;$zf'<'\${0}'|openssl enc -d -aes-256-cbc -md sha256 -nosalt -k '\${S}-\${_P}' 2>/dev/null|perl -e 'read(STDIN,\\\$_, \${R:-0});print(<>)'|gunzip"
-        LANG=C exec perl '-e$^F=255;for(319,279,385,4314,4354){($f=syscall$_,$",0)>0&&last};open($o,">&=".$f);open($i,"'"$prg"'|");print$o(<$i>);close($i)||exit($?/256);$ENV{"LANG"}="'"$LANG"'";exec{"/proc/$$/fd/$f"}"'"\${0:-python3}"'",@ARGV' -- "$@"
+        prg="perl -e '<>;<>;$zf'<'${0}'|openssl enc -d -aes-256-cbc -md sha256 -nosalt -k '${S}-${_P}' 2>/dev/null|perl -e 'read(STDIN,\\\$_, ${R:-0});print(<>)'|gunzip"
+        LANG=C exec perl '-e$^F=255;for(319,279,385,4314,4354){($f=syscall$_,$",0)>0&&last};open($o,">&=".$f);open($i,"'"$prg"'|");print$o(<$i>);close($i)||exit($?/256);$ENV{"LANG"}="'"$LANG"'";exec{"/proc/$$/fd/$f"}"'"${0:-python3}"'",@ARGV' -- "$@"
     }
-    [ -f "\${fn}" ] && {
+    [ -f "${fn}" ] && {
         unset -f _bcl_get _bcl_verify _bcl_verify_dec
         unset BCL BCV _ P _err
-        eval "unset _P S R fn;$(LANG=C perl -e '<>;<>;read(STDIN,$_,1);while(<>){s/B3/\n/g;s/B1/\x00/g;s/B2/B/g;print}'<"\${fn}"|openssl enc -d -aes-256-cbc -md sha256 -nosalt -k "\${S}-\${_P}" 2>/dev/null|LANG=C perl -e "read(STDIN,\$_, \${R:-0});print(<>)"|gunzip)"
+        eval "unset _P S R fn;$(LANG=C perl -e '<>;<>;read(STDIN,$_,1);while(<>){s/B3/\n/g;s/B1/\x00/g;s/B2/B/g;print}'<"${fn}"|openssl enc -d -aes-256-cbc -md sha256 -nosalt -k "${S}-${_P}" 2>/dev/null|LANG=C perl -e "read(STDIN,\$_, ${R:-0});print(<>)"|gunzip)"
         return
     }
     [ -z "$fn" ] && return
@@ -355,12 +350,11 @@ if [ -n "$_err" ]; then
     false
 else
     true
-fi
-2e:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"Plain Text"}],["$","$L17",null,{"className":"x-codeblock-header-copy","text":"$40"}]]}],"$L41"]}]
-2f:["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"<code class=\"x-inline-highlight\">_bcl_get</code> function tries a series of machine-unique identifiers to generate a key, and then decrypts the <code class=\"x-inline-highlight\">BCV</code> variable using the key. And this challenge gives us an important hint:"}}]
-30:["$","div",null,{"className":"x-highlightblock highlight-background-gray","children":["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"All I know is that this came from a machine with a cryptic ID of just 'hello'."}}]}]
-31:["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"So we then try to brute force the <code class=\"x-inline-highlight\">UID</code>:"}}]
-42:Tb3c,<span class="token keyword">import</span> subprocess
+fi2e:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"Plain Text"}],["$","$L17",null,{"className":"x-codeblock-header-copy","text":"$40"}]]}],"$L41"]}]
+2f:["$","p",null,{"className":"x-p","children":[["$","code",null,{"className":"x-inline-highlight","children":"_bcl_get"}]," function tries a series of machine-unique identifiers to generate a key, and then decrypts the ",["$","code",null,{"className":"x-inline-highlight","children":"BCV"}]," variable using the key. And this challenge gives us an important hint:"]}]
+30:["$","div",null,{"className":"x-highlightblock highlight-background-gray","children":["\n",["$","p",null,{"className":"x-p","children":"All I know is that this came from a machine with a cryptic ID of just 'hello'."}],"\n"]}]
+31:["$","p",null,{"className":"x-p","children":["So we then try to brute force the ",["$","code",null,{"className":"x-inline-highlight","children":"UID"}],":"]}]
+42:Tb3b,<span class="token keyword">import</span> subprocess
 
 BCV <span class="token operator">=</span> <span class="token string">"93iNKe0zcKfgfSwQoHYdJbWGu4Dfnw5ZZ5a3ld5UEqI="</span>
 
@@ -374,12 +368,11 @@ BCV <span class="token operator">=</span> <span class="token string">"93iNKe0zcK
 <span class="token comment"># UID 1094 succeeded: b'\x10CU1\\\xe3E\xbf\x9e\x83\xa7\xbb\xf6\xda\xc6\x90\xb3\x17O\x9e\xf5\x1c\xbe\x92\xad\xbd}\xd1\x82\x84H'</span>
 <span class="token comment"># UID 1338 succeeded: b'TEST-VALUE-VERIFY\n'</span>
 <span class="token comment"># UID 1417 succeeded: b'\xe0b[\xc2.\x08W\xb5\x15\xc9?\xf0an0W4I\xa3+\xdbb\x0f\xa8\n"\xd2\'\x85yj'</span>
-<span class="token comment"># ...</span>
-32:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"Python"}],["$","$L17",null,{"className":"x-codeblock-header-copy","text":"import subprocess\n\nBCV = \"93iNKe0zcKfgfSwQoHYdJbWGu4Dfnw5ZZ5a3ld5UEqI=\"\n\nfor uid in range(0, 10000):\n    cmd = f'echo \"{BCV}\" | openssl enc -d -aes-256-cbc -md sha256 -nosalt -k \"B-hello-{uid}\" -a -A'\n    result = subprocess.run(cmd, shell=True, capture_output=True)\n    if result.returncode == 0:\n        print(f\"UID {uid} succeeded: {result.stdout}\")\n\n# UID 83 succeeded: b'B\\x87\\xe5\\xb5\\xa5\\x1d\\xc9\\`Ww+3\\x8d\\xb8\\xa9\\x06\\x7f\\x0f\\x1dY\\xa3\\xe5\\xf3\\x080I&/\\x98N\\x01'\n# UID 1094 succeeded: b'\\x10CU1\\\\\\xe3E\\xbf\\x9e\\x83\\xa7\\xbb\\xf6\\xda\\xc6\\x90\\xb3\\x17O\\x9e\\xf5\\x1c\\xbe\\x92\\xad\\xbd}\\xd1\\x82\\x84H'\n# UID 1338 succeeded: b'TEST-VALUE-VERIFY\\n'\n# UID 1417 succeeded: b'\\xe0b[\\xc2.\\x08W\\xb5\\x15\\xc9?\\xf0an0W4I\\xa3+\\xdbb\\x0f\\xa8\\n\"\\xd2\\'\\x85yj'\n# ...\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$42"}}]}]]}]
-33:["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"And get the first key: <code class=\"x-inline-highlight\">\"B-hello-1338\"</code>."}}]
-34:["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"<code class=\"x-inline-highlight\">_bcl_get</code> function returns the second key <code class=\"x-inline-highlight\">\"hello-1338\"</code> by <code class=\"x-inline-highlight\">echo</code>, which is <code class=\"x-inline-highlight\">_k</code> used in:"}}]
+<span class="token comment"># ...</span>32:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"Python"}],["$","$L17",null,{"className":"x-codeblock-header-copy","text":"import subprocess\n\nBCV = \"93iNKe0zcKfgfSwQoHYdJbWGu4Dfnw5ZZ5a3ld5UEqI=\"\n\nfor uid in range(0, 10000):\n    cmd = f'echo \"{BCV}\" | openssl enc -d -aes-256-cbc -md sha256 -nosalt -k \"B-hello-{uid}\" -a -A'\n    result = subprocess.run(cmd, shell=True, capture_output=True)\n    if result.returncode == 0:\n        print(f\"UID {uid} succeeded: {result.stdout}\")\n\n# UID 83 succeeded: b'B\\x87\\xe5\\xb5\\xa5\\x1d\\xc9\\`Ww+3\\x8d\\xb8\\xa9\\x06\\x7f\\x0f\\x1dY\\xa3\\xe5\\xf3\\x080I&/\\x98N\\x01'\n# UID 1094 succeeded: b'\\x10CU1\\\\\\xe3E\\xbf\\x9e\\x83\\xa7\\xbb\\xf6\\xda\\xc6\\x90\\xb3\\x17O\\x9e\\xf5\\x1c\\xbe\\x92\\xad\\xbd}\\xd1\\x82\\x84H'\n# UID 1338 succeeded: b'TEST-VALUE-VERIFY\\n'\n# UID 1417 succeeded: b'\\xe0b[\\xc2.\\x08W\\xb5\\x15\\xc9?\\xf0an0W4I\\xa3+\\xdbb\\x0f\\xa8\\n\"\\xd2\\'\\x85yj'\n# ..."}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$42"}}]}]]}]
+33:["$","p",null,{"className":"x-p","children":["And get the first key: ",["$","code",null,{"className":"x-inline-highlight","children":"\"B-hello-1338\""}],"."]}]
+34:["$","p",null,{"className":"x-p","children":[["$","code",null,{"className":"x-inline-highlight","children":"_bcl_get"}]," function returns the second key ",["$","code",null,{"className":"x-inline-highlight","children":"\"hello-1338\""}]," by ",["$","code",null,{"className":"x-inline-highlight","children":"echo"}],", which is ",["$","code",null,{"className":"x-inline-highlight","children":"_k"}]," used in:"]}]
 35:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"Plain Text"}],["$","$L17",null,{"className":"x-codeblock-header-copy","text":"_k=\"$(_bcl_get)\" && _P=\"$(echo \"$1\" | openssl enc -d -aes-256-cbc -md sha256 -nosalt -k \"$_k\" -a -A 2> /dev/null)\";"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"_k=\"$(_bcl_get)\" &amp;&amp; _P=\"$(echo \"$1\" | openssl enc -d -aes-256-cbc -md sha256 -nosalt -k \"$_k\" -a -A 2> /dev/null)\";"}}]}]]}]
-43:T5d6,<span class="token keyword">import</span> subprocess
+43:T5d5,<span class="token keyword">import</span> subprocess
 
 P <span class="token operator">=</span> <span class="token string">"llLvO8+J6gmLlp964bcJG3I3mY27I9ACsJTvXYCZv2Q="</span>
 _k <span class="token operator">=</span> <span class="token string">"hello-1338"</span>  <span class="token comment"># from dec-1.py</span>
@@ -387,17 +380,16 @@ _k <span class="token operator">=</span> <span class="token string">"hello-1338"
 cmd <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f'echo "</span><span class="token interpolation"><span class="token punctuation">{</span>P<span class="token punctuation">}</span></span><span class="token string">" | openssl enc -d -aes-256-cbc -md sha256 -nosalt -k "</span><span class="token interpolation"><span class="token punctuation">{</span>_k<span class="token punctuation">}</span></span><span class="token string">" -a -A'</span></span>
 result <span class="token operator">=</span> subprocess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>cmd<span class="token punctuation">,</span> shell<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> capture_output<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
 
-<span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span>stdout<span class="token punctuation">)</span>  <span class="token comment"># b'QHh4K9JfgoACd2f4\n'</span>
-36:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"Python"}],["$","$L17",null,{"className":"x-codeblock-header-copy","text":"import subprocess\n\nP = \"llLvO8+J6gmLlp964bcJG3I3mY27I9ACsJTvXYCZv2Q=\"\n_k = \"hello-1338\"  # from dec-1.py\n\ncmd = f'echo \"{P}\" | openssl enc -d -aes-256-cbc -md sha256 -nosalt -k \"{_k}\" -a -A'\nresult = subprocess.run(cmd, shell=True, capture_output=True)\n\nprint(result.stdout)  # b'QHh4K9JfgoACd2f4\\n'\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$43"}}]}]]}]
-37:["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"Then we can get the string <code class=\"x-inline-highlight\">\"QHh4K9JfgoACd2f4\"</code> by running the above command, which is <code class=\"x-inline-highlight\">_P</code> used in the third key:"}}]
+<span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span>stdout<span class="token punctuation">)</span>  <span class="token comment"># b'QHh4K9JfgoACd2f4\n'</span>36:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"Python"}],["$","$L17",null,{"className":"x-codeblock-header-copy","text":"import subprocess\n\nP = \"llLvO8+J6gmLlp964bcJG3I3mY27I9ACsJTvXYCZv2Q=\"\n_k = \"hello-1338\"  # from dec-1.py\n\ncmd = f'echo \"{P}\" | openssl enc -d -aes-256-cbc -md sha256 -nosalt -k \"{_k}\" -a -A'\nresult = subprocess.run(cmd, shell=True, capture_output=True)\n\nprint(result.stdout)  # b'QHh4K9JfgoACd2f4\\n'"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$43"}}]}]]}]
+37:["$","p",null,{"className":"x-p","children":["Then we can get the string ",["$","code",null,{"className":"x-inline-highlight","children":"\"QHh4K9JfgoACd2f4\""}]," by running the above command, which is ",["$","code",null,{"className":"x-inline-highlight","children":"_P"}]," used in the third key:"]}]
 38:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"Plain Text"}],["$","$L17",null,{"className":"x-codeblock-header-copy","text":"str=\"$(echo \"$C\" | openssl enc -d -aes-256-cbc -md sha256 -nosalt -k \"C-${S}-${_P}\" -a -A 2>/dev/null)\""}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"str=\"$(echo \"$C\" | openssl enc -d -aes-256-cbc -md sha256 -nosalt -k \"C-${S}-${_P}\" -a -A 2>/dev/null)\""}}]}]]}]
-39:["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"Here <code class=\"x-inline-highlight\">str</code> turns out to be <code class=\"x-inline-highlight\">\"R=2105&#92;n&#92;n\"</code>."}}]
-3a:["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"..."}}]
+39:["$","p",null,{"className":"x-p","children":["Here ",["$","code",null,{"className":"x-inline-highlight","children":"str"}]," turns out to be ",["$","code",null,{"className":"x-inline-highlight","children":"\"R=2105\\n\\n\""}],"."]}]
+3a:["$","p",null,{"className":"x-p","children":"..."}]
 3b:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"Plain Text"}],["$","$L17",null,{"className":"x-codeblock-header-copy","text":"flag{f2ea4caf879bde891f0174f528c20682}"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"flag{f2ea4caf879bde891f0174f528c20682}"}}]}]]}]
-44:T1353,_bcl_verify_dec ()
+44:T133a,_bcl_verify_dec ()
 {
-    [ "TEST-VALUE-VERIFY" != "$(echo "$BCV" | openssl enc -d -aes-256-cbc -md sha256 -nosalt -k "B-\${1}-\${UID}" -a -A 2> /dev/null)" ] &amp;&amp; return 255;
-    echo "$1-\${UID}"
+    [ "TEST-VALUE-VERIFY" != "$(echo "$BCV" | openssl enc -d -aes-256-cbc -md sha256 -nosalt -k "B-${1}-${UID}" -a -A 2> /dev/null)" ] &amp;&amp; return 255;
+    echo "$1-${UID}"
 }
 _bcl_verify() { _bcl_verify_dec "$@"; }
 _bcl_get ()
@@ -423,7 +415,7 @@ _bcl_gen_p ()
     BCL="$(echo "$BCL" | openssl base64 -d -A 2> /dev/null)";
     [ "$BCL" -eq "$BCL" ] 2> /dev/null &amp;&amp; exit "$BCL";
     str="$(echo "$BCL" | openssl base64 -d -A 2> /dev/null)";
-    BCL="\${str:-$BCL}";
+    BCL="${str:-$BCL}";
     exec /bin/sh -c "$BCL";
     exit 255
 }
@@ -437,19 +429,19 @@ for x in openssl perl gunzip; do
 done
 unset fn _err
 if [ -n "$ZSH_VERSION" ]; then
-    [ "$ZSH_EVAL_CONTEXT" != "\${ZSH_EVAL_CONTEXT%":file:"*}" ] &amp;&amp; fn="$0"
+    [ "$ZSH_EVAL_CONTEXT" != "${ZSH_EVAL_CONTEXT%":file:"*}" ] &amp;&amp; fn="$0"
 elif [ -n "$BASH_VERSION" ]; then
-    (return 0 2>/dev/null) &amp;&amp; fn="\${BASH_SOURCE[0]}"
+    (return 0 2>/dev/null) &amp;&amp; fn="${BASH_SOURCE[0]}"
 fi
-fn="\${BC_FN:-$fn}"
-XS="\${BASH_EXECUTION_STRING:-$ZSH_EXECUTION_STRING}"
+fn="${BC_FN:-$fn}"
+XS="${BASH_EXECUTION_STRING:-$ZSH_EXECUTION_STRING}"
 [ -z "$XS" ] &amp;&amp; unset XS
 [ -z "$fn" ] &amp;&amp; [ -z "$XS" ] &amp;&amp; [ ! -f "$0" ] &amp;&amp; {
     echo >&amp;2 'ERROR: Shell not supported. Try "BC_FN=FileName source FileName"'
     _err=1
 }
 _bc_dec() {
-    _P="\${PASSWORD:-$BC_PASSWORD}"
+    _P="${PASSWORD:-$BC_PASSWORD}"
     unset _ PASSWORD
     if [ -n "$P" ]; then
         if [ -n "$BCV" ] &amp;&amp; [ -n "$BCL" ]; then
@@ -465,7 +457,7 @@ _bc_dec() {
     fi
     [ -n "$C" ] &amp;&amp; {
         local str
-        str="$(echo "$C" | openssl enc -d -aes-256-cbc -md sha256 -nosalt -k "C-\${S}-\${_P}" -a -A 2>/dev/null)"
+        str="$(echo "$C" | openssl enc -d -aes-256-cbc -md sha256 -nosalt -k "C-${S}-${_P}" -a -A 2>/dev/null)"
         unset C
         [ -z "$str" ] &amp;&amp; {
             [ -n "$BCL" ] &amp;&amp; echo >&amp;2 "ERROR: Decryption failed."
@@ -475,17 +467,17 @@ _bc_dec() {
         unset str
     }
     [ -n "$XS" ] &amp;&amp; {
-        exec bash -c "$(printf %s "$XS" |LANG=C perl -e '&lt;>;&lt;>;read(STDIN,$_,1);while(&lt;>){s/B3/\n/g;s/B1/\x00/g;s/B2/B/g;print}'|openssl enc -d -aes-256-cbc -md sha256 -nosalt -k "\${S}-\${_P}" 2>/dev/null|LANG=C perl -e "read(STDIN,\$_, \${R:-0});print(&lt;>)"|gunzip)"
+        exec bash -c "$(printf %s "$XS" |LANG=C perl -e '&lt;>;&lt;>;read(STDIN,$_,1);while(&lt;>){s/B3/\n/g;s/B1/\x00/g;s/B2/B/g;print}'|openssl enc -d -aes-256-cbc -md sha256 -nosalt -k "${S}-${_P}" 2>/dev/null|LANG=C perl -e "read(STDIN,\$_, ${R:-0});print(&lt;>)"|gunzip)"
     }
     [ -z "$fn" ] &amp;&amp; [ -f "$0" ] &amp;&amp; {
         zf='read(STDIN,\$_,1);while(&lt;>){s/B3/\n/g;s/B1/\\x00/g;s/B2/B/g;print}'
-        prg="perl -e '&lt;>;&lt;>;$zf'&lt;'\${0}'|openssl enc -d -aes-256-cbc -md sha256 -nosalt -k '\${S}-\${_P}' 2>/dev/null|perl -e 'read(STDIN,\\\$_, \${R:-0});print(&lt;>)'|gunzip"
-        LANG=C exec perl '-e$^F=255;for(319,279,385,4314,4354){($f=syscall$_,$",0)>0&amp;&amp;last};open($o,">&amp;=".$f);open($i,"'"$prg"'|");print$o(&lt;$i>);close($i)||exit($?/256);$ENV{"LANG"}="'"$LANG"'";exec{"/proc/$$/fd/$f"}"'"\${0:-python3}"'",@ARGV' -- "$@"
+        prg="perl -e '&lt;>;&lt;>;$zf'&lt;'${0}'|openssl enc -d -aes-256-cbc -md sha256 -nosalt -k '${S}-${_P}' 2>/dev/null|perl -e 'read(STDIN,\\\$_, ${R:-0});print(&lt;>)'|gunzip"
+        LANG=C exec perl '-e$^F=255;for(319,279,385,4314,4354){($f=syscall$_,$",0)>0&amp;&amp;last};open($o,">&amp;=".$f);open($i,"'"$prg"'|");print$o(&lt;$i>);close($i)||exit($?/256);$ENV{"LANG"}="'"$LANG"'";exec{"/proc/$$/fd/$f"}"'"${0:-python3}"'",@ARGV' -- "$@"
     }
-    [ -f "\${fn}" ] &amp;&amp; {
+    [ -f "${fn}" ] &amp;&amp; {
         unset -f _bcl_get _bcl_verify _bcl_verify_dec
         unset BCL BCV _ P _err
-        eval "unset _P S R fn;$(LANG=C perl -e '&lt;>;&lt;>;read(STDIN,$_,1);while(&lt;>){s/B3/\n/g;s/B1/\x00/g;s/B2/B/g;print}'&lt;"\${fn}"|openssl enc -d -aes-256-cbc -md sha256 -nosalt -k "\${S}-\${_P}" 2>/dev/null|LANG=C perl -e "read(STDIN,\$_, \${R:-0});print(&lt;>)"|gunzip)"
+        eval "unset _P S R fn;$(LANG=C perl -e '&lt;>;&lt;>;read(STDIN,$_,1);while(&lt;>){s/B3/\n/g;s/B1/\x00/g;s/B2/B/g;print}'&lt;"${fn}"|openssl enc -d -aes-256-cbc -md sha256 -nosalt -k "${S}-${_P}" 2>/dev/null|LANG=C perl -e "read(STDIN,\$_, ${R:-0});print(&lt;>)"|gunzip)"
         return
     }
     [ -z "$fn" ] &amp;&amp; return
@@ -500,8 +492,7 @@ if [ -n "$_err" ]; then
     false
 else
     true
-fi
-41:["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$44"}}]}]
+fi41:["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$44"}}]}]
 d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 a:null
 f:[["$","title","0",{"children":"NahamCon CTF 2025 Writeup - 铃木的网络日记"}],["$","link","1",{"rel":"canonical","href":"https://1kuzus.github.io/25b/wp-nahamcon-ctf-2025/"}]]

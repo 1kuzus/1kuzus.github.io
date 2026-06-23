@@ -1,14 +1,14 @@
 1:"$Sreact.fragment"
-2:I[5224,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-2aae93d980e9e01d.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-2a7a8d2bf85b0317.js"],"default"]
+2:I[5224,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-2aae93d980e9e01d.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-0258ababde4f1640.js"],"default"]
 3:I[31698,["507","static/chunks/457b8330-3be30b04990478c7.js","500","static/chunks/500-e2a7ab501ac40f90.js","589","static/chunks/589-9fde9febffa50a4d.js","698","static/chunks/698-2aae93d980e9e01d.js","974","static/chunks/app/page-6bf0379b668d6b5a.js"],"PostMeta"]
 4:"$Sreact.suspense"
-5:I[21957,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-2aae93d980e9e01d.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-2a7a8d2bf85b0317.js"],"PreloadChunks"]
-7:I[63942,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-2aae93d980e9e01d.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-2a7a8d2bf85b0317.js"],"default"]
+5:I[21957,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-2aae93d980e9e01d.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-0258ababde4f1640.js"],"PreloadChunks"]
+7:I[63942,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-2aae93d980e9e01d.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-0258ababde4f1640.js"],"default"]
 20:I[31698,["507","static/chunks/457b8330-3be30b04990478c7.js","500","static/chunks/500-e2a7ab501ac40f90.js","589","static/chunks/589-9fde9febffa50a4d.js","698","static/chunks/698-2aae93d980e9e01d.js","974","static/chunks/app/page-6bf0379b668d6b5a.js"],"LikeButton"]
 21:I[90484,[],"OutletBoundary"]
 :HL["/_next/static/css/d11fb5a2813f7e78.css","style"]
 :HL["/_next/static/css/0befe080061721ab.css","style"]
-6:T78d,<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">D</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>8:Tf46,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+6:T78d,<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">D</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>8:Tf45,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cmath></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">int</span> n<span class="token punctuation">,</span>a<span class="token punctuation">[</span><span class="token number">1005</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
@@ -42,10 +42,9 @@ out:
 -0.7057985054006686
 1.0096468614303775
 1.9341703768876082
-*/</span>
-0:{"rsc":["$","$1","c",{"children":[[["$","$L2",null,{}],false,["$","h1",null,{"className":"x-post-title","children":"CSP 202206 T1-T5题解"}],["$","$L3",null,{"path":"/24a/csp-2022-06/"}],["$","$4",null,{"fallback":["$","p",null,{"children":"Loading component..."}],"children":[["$","$L5",null,{}],[["$","h2",null,{"className":"x-h1","children":"T1 归一化处理"}],["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"用了一下方差的变形："}}],["$","div",null,{"className":"x-formula","dangerouslySetInnerHTML":{"__html":"$6"}}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L7",null,{"className":"x-codeblock-header-copy","text":"#include <iostream>\n#include <cmath>\nusing namespace std;\nint n,a[1005];\ndouble avg,avg_sq;\nint main()\n{\n    cin>>n;\n    for(int i=0;i<n;i++)\n    {\n        cin>>a[i];\n        avg+=a[i];\n        avg_sq+=a[i]*a[i];\n    }\n    avg/=n,avg_sq/=n;\n    for(int i=0;i<n;i++)\n    {\n        cout<<(a[i]-avg)/sqrt(avg_sq-avg*avg)<<endl;\n    }\n    return 0;\n}\n/*\nin:\n7\n-4 293 0 -22 12 654 1000\n\nout:\n-0.7485510379073613\n0.04504284674812264\n-0.7378629047806881\n-0.7966476369773906\n-0.7057985054006686\n1.0096468614303775\n1.9341703768876082\n*/\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$8"}}]}]]}],"$L9","$La","$Lb","$Lc","$Ld","$Le","$Lf","$L10","$L11","$L12"]]}],"$L13"],["$L14","$L15"],"$L16"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"4HMjQRkkbw0xsQIttcbAw"}
+*/</span>0:{"rsc":["$","$1","c",{"children":[[["$","$L2",null,{}],false,["$","h1",null,{"className":"x-post-title","children":"CSP 202206 T1-T5题解"}],["$","$L3",null,{"path":"/24a/csp-2022-06/"}],["$","$4",null,{"fallback":["$","p",null,{"children":"Loading component..."}],"children":[["$","$L5",null,{}],[["$","h2",null,{"className":"x-h1","children":"T1 归一化处理"}],"\n",["$","p",null,{"className":"x-p","children":"用了一下方差的变形："}],"\n",["$","div",null,{"className":"x-formula","dangerouslySetInnerHTML":{"__html":"$6"}}],"\n",["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L7",null,{"className":"x-codeblock-header-copy","text":"#include <iostream>\n#include <cmath>\nusing namespace std;\nint n,a[1005];\ndouble avg,avg_sq;\nint main()\n{\n    cin>>n;\n    for(int i=0;i<n;i++)\n    {\n        cin>>a[i];\n        avg+=a[i];\n        avg_sq+=a[i]*a[i];\n    }\n    avg/=n,avg_sq/=n;\n    for(int i=0;i<n;i++)\n    {\n        cout<<(a[i]-avg)/sqrt(avg_sq-avg*avg)<<endl;\n    }\n    return 0;\n}\n/*\nin:\n7\n-4 293 0 -22 12 654 1000\n\nout:\n-0.7485510379073613\n0.04504284674812264\n-0.7378629047806881\n-0.7966476369773906\n-0.7057985054006686\n1.0096468614303775\n1.9341703768876082\n*/"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$8"}}]}]]}],"\n","$L9","\n","$La","\n","$Lb","\n","$Lc","\n","$Ld","\n","$Le","\n","$Lf","\n","$L10","\n","$L11","\n","$L12"]]}],"$L13"],["$L14","$L15"],"$L16"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"WqRjo7VBL0ObkVW6P-Gw1"}
 9:["$","h2",null,{"className":"x-h1","children":"T2 寻宝！大冒险！"}]
-17:T456,#include <iostream>
+17:T455,#include <iostream>
 #include <unordered_set>
 using namespace std;
 int n,l,s,ans;
@@ -109,8 +108,7 @@ in:
 
 out:
 3
-*/
-18:T2a39,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+*/18:T2a38,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;unordered_set></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">int</span> n<span class="token punctuation">,</span>l<span class="token punctuation">,</span>s<span class="token punctuation">,</span>ans<span class="token punctuation">;</span>
@@ -174,10 +172,9 @@ in:
 
 out:
 3
-*/</span>
-a:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L7",null,{"className":"x-codeblock-header-copy","text":"$17"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$18"}}]}]]}]
+*/</span>a:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L7",null,{"className":"x-codeblock-header-copy","text":"$17"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$18"}}]}]]}]
 b:["$","h2",null,{"className":"x-h1","children":"T3 角色授权"}]
-19:Tcd3,#include <iostream>
+19:Tcd2,#include <iostream>
 #include <unordered_set>
 #include <unordered_map>
 #define N 505
@@ -318,11 +315,10 @@ out:
 1
 1
 0
-*/
-c:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L7",null,{"className":"x-codeblock-header-copy","text":"$19"}]]}],"$L1a"]}]
+*/c:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L7",null,{"className":"x-codeblock-header-copy","text":"$19"}]]}],"$L1a"]}]
 d:["$","h2",null,{"className":"x-h1","children":"T4 光线追踪"}]
-1b:T484,因为反射面的总长度<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span>，可以用<code class="x-inline-highlight">map</code>存整数格点，注意不存端点。e:["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"$1b"}}]
-1c:Tfe7,#include <iostream>
+1b:T40b,<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span>e:["$","p",null,{"className":"x-p","children":["因为反射面的总长度",["$","span",null,{"dangerouslySetInnerHTML":{"__html":"$1b"}}],"，可以用",["$","code",null,{"className":"x-inline-highlight","children":"map"}],"存整数格点，注意不存端点。"]}]
+1c:Tfe6,#include <iostream>
 #include <map>
 #include <unordered_map>
 #define N 100005
@@ -498,11 +494,10 @@ out:
 0 0 0
 4 2 3
 0 1 1
-*/
-f:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L7",null,{"className":"x-codeblock-header-copy","text":"$1c"}]]}],"$L1d"]}]
+*/f:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L7",null,{"className":"x-codeblock-header-copy","text":"$1c"}]]}],"$L1d"]}]
 10:["$","h2",null,{"className":"x-h1","children":"T5 PS无限版"}]
-11:["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"线段树题，因为涉及到查询平方和，还需要额外维护乘积交叉项；题目中涉及的二维坐标变换可以在齐次坐标下使用三阶矩阵表示，由于第三行总是<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:1em;vertical-align:-0.25em;\"></span><span class=\"mopen\">[</span><span class=\"mord\">0</span><span class=\"mpunct\">,</span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mord\">0</span><span class=\"mpunct\">,</span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mord\">1</span><span class=\"mclose\">]</span></span></span></span>，在下面代码中省略，只用<code class=\"x-inline-highlight\">mat[6]</code>表示一个三阶矩阵。"}}]
-1e:T1b8d,#include <iostream>
+11:["$","p",null,{"className":"x-p","children":["线段树题，因为涉及到查询平方和，还需要额外维护乘积交叉项；题目中涉及的二维坐标变换可以在齐次坐标下使用三阶矩阵表示，由于第三行总是",["$","span",null,{"dangerouslySetInnerHTML":{"__html":"<span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:1em;vertical-align:-0.25em;\"></span><span class=\"mopen\">[</span><span class=\"mord\">0</span><span class=\"mpunct\">,</span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mord\">0</span><span class=\"mpunct\">,</span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mord\">1</span><span class=\"mclose\">]</span></span></span></span>"}}],"，在下面代码中省略，只用",["$","code",null,{"className":"x-inline-highlight","children":"mat[6]"}],"表示一个三阶矩阵。"]}]
+1e:T1b8c,#include <iostream>
 #include <cmath>
 #include <iomanip>
 #define N 500005
@@ -781,13 +776,12 @@ out:
 2.849235 79.987632
 35.040886 148.667661
 302347.683678
-*/
-12:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L7",null,{"className":"x-codeblock-header-copy","text":"$1e"}]]}],"$L1f"]}]
+*/12:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L7",null,{"className":"x-codeblock-header-copy","text":"$1e"}]]}],"$L1f"]}]
 13:["$","$L20",null,{"path":"/24a/csp-2022-06/"}]
 14:["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/d11fb5a2813f7e78.css","precedence":"next"}]
 15:["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/0befe080061721ab.css","precedence":"next"}]
 16:["$","$L21",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@22"}]}]
-23:T61cc,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+23:T61cb,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;unordered_set></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;unordered_map></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">N</span> <span class="token expression"><span class="token number">505</span></span></span>
@@ -928,9 +922,8 @@ out:
 1
 1
 0
-*/</span>
-1a:["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$23"}}]}]
-24:T9a4d,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+*/</span>1a:["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$23"}}]}]
+24:T9a4c,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;map></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;unordered_map></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">N</span> <span class="token expression"><span class="token number">100005</span></span></span>
@@ -1106,9 +1099,8 @@ out:
 0 0 0
 4 2 3
 0 1 1
-*/</span>
-1d:["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$24"}}]}]
-25:Tf8f7,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+*/</span>1d:["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$24"}}]}]
+25:Tf8f6,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cmath></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iomanip></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">N</span> <span class="token expression"><span class="token number">500005</span></span></span>
@@ -1387,6 +1379,5 @@ out:
 2.849235 79.987632
 35.040886 148.667661
 302347.683678
-*/</span>
-1f:["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$25"}}]}]
+*/</span>1f:["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$25"}}]}]
 22:null

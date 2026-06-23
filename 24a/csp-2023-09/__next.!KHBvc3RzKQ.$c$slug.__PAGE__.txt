@@ -1,14 +1,14 @@
 1:"$Sreact.fragment"
-2:I[5224,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-2aae93d980e9e01d.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-2a7a8d2bf85b0317.js"],"default"]
+2:I[5224,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-2aae93d980e9e01d.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-0258ababde4f1640.js"],"default"]
 3:I[31698,["507","static/chunks/457b8330-3be30b04990478c7.js","500","static/chunks/500-e2a7ab501ac40f90.js","589","static/chunks/589-9fde9febffa50a4d.js","698","static/chunks/698-2aae93d980e9e01d.js","974","static/chunks/app/page-6bf0379b668d6b5a.js"],"PostMeta"]
 4:"$Sreact.suspense"
-5:I[21957,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-2aae93d980e9e01d.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-2a7a8d2bf85b0317.js"],"PreloadChunks"]
-6:I[63942,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-2aae93d980e9e01d.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-2a7a8d2bf85b0317.js"],"default"]
+5:I[21957,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-2aae93d980e9e01d.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-0258ababde4f1640.js"],"PreloadChunks"]
+6:I[63942,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-2aae93d980e9e01d.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-0258ababde4f1640.js"],"default"]
 1d:I[31698,["507","static/chunks/457b8330-3be30b04990478c7.js","500","static/chunks/500-e2a7ab501ac40f90.js","589","static/chunks/589-9fde9febffa50a4d.js","698","static/chunks/698-2aae93d980e9e01d.js","974","static/chunks/app/page-6bf0379b668d6b5a.js"],"LikeButton"]
 1e:I[90484,[],"OutletBoundary"]
 :HL["/_next/static/css/d11fb5a2813f7e78.css","style"]
 :HL["/_next/static/css/0befe080061721ab.css","style"]
-7:Tc02,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+7:Tc01,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">int</span> n<span class="token punctuation">,</span>m<span class="token punctuation">,</span>dx<span class="token punctuation">,</span>dy<span class="token punctuation">;</span>
 <span class="token keyword">int</span> dxi<span class="token punctuation">,</span>dyi<span class="token punctuation">,</span>x<span class="token punctuation">,</span>y<span class="token punctuation">;</span>
@@ -39,11 +39,10 @@ in:
 out:
 21 -11
 20 -10
-*/</span>
-0:{"rsc":["$","$1","c",{"children":[[["$","$L2",null,{}],false,["$","h1",null,{"className":"x-post-title","children":"CSP 202309 T1-T4题解"}],["$","$L3",null,{"path":"/24a/csp-2023-09/"}],["$","$4",null,{"fallback":["$","p",null,{"children":"Loading component..."}],"children":[["$","$L5",null,{}],[["$","h2",null,{"className":"x-h1","children":"T1 坐标变换（其一）"}],["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L6",null,{"className":"x-codeblock-header-copy","text":"#include <iostream>\nusing namespace std;\nint n,m,dx,dy;\nint dxi,dyi,x,y;\nint main()\n{\n    cin>>n>>m;\n    for(int i=0;i<n;i++)\n    {\n        cin>>dxi>>dyi;\n        dx+=dxi,dy+=dyi;\n    }\n    for(int i=0;i<m;i++)\n    {\n        cin>>x>>y;\n        cout<<x+dx<<' '<<y+dy<<endl;\n    }\n    return 0;\n}\n/*\nin:\n3 2\n10 10\n0 0\n10 -20\n1 -1\n0 0\n\nout:\n21 -11\n20 -10\n*/\n"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$7"}}]}]]}],"$L8","$L9","$La","$Lb","$Lc","$Ld","$Le","$Lf","$L10","$L11","$L12"]]}],"$L13"],["$L14","$L15"],"$L16"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"4HMjQRkkbw0xsQIttcbAw"}
+*/</span>0:{"rsc":["$","$1","c",{"children":[[["$","$L2",null,{}],false,["$","h1",null,{"className":"x-post-title","children":"CSP 202309 T1-T4题解"}],["$","$L3",null,{"path":"/24a/csp-2023-09/"}],["$","$4",null,{"fallback":["$","p",null,{"children":"Loading component..."}],"children":[["$","$L5",null,{}],[["$","h2",null,{"className":"x-h1","children":"T1 坐标变换（其一）"}],"\n",["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L6",null,{"className":"x-codeblock-header-copy","text":"#include <iostream>\nusing namespace std;\nint n,m,dx,dy;\nint dxi,dyi,x,y;\nint main()\n{\n    cin>>n>>m;\n    for(int i=0;i<n;i++)\n    {\n        cin>>dxi>>dyi;\n        dx+=dxi,dy+=dyi;\n    }\n    for(int i=0;i<m;i++)\n    {\n        cin>>x>>y;\n        cout<<x+dx<<' '<<y+dy<<endl;\n    }\n    return 0;\n}\n/*\nin:\n3 2\n10 10\n0 0\n10 -20\n1 -1\n0 0\n\nout:\n21 -11\n20 -10\n*/"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$7"}}]}]]}],"\n","$L8","\n","$L9","\n","$La","\n","$Lb","\n","$Lc","\n","$Ld","\n","$Le","\n","$Lf","\n","$L10","\n","$L11","\n","$L12"]]}],"$L13"],["$L14","$L15"],"$L16"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"WqRjo7VBL0ObkVW6P-Gw1"}
 8:["$","h2",null,{"className":"x-h1","children":"T2 坐标变换（其二）"}]
-9:["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"维护前缀和、前缀积。"}}]
-17:T44c,#include <iostream>
+9:["$","p",null,{"className":"x-p","children":"维护前缀和、前缀积。"}]
+17:T45b,#include <iostream>
 #include <cmath>
 using namespace std;
 int n,m,opt;
@@ -78,8 +77,7 @@ int main()
         double new_y=x*sin(thetaij)+y*cos(thetaij);
         new_x*=kij;
         new_y*=kij;
-        printf("%.6lf %.6lf
-
+        printf("%.6lf %.6lf\n",new_x,new_y);
     }
     return 0;
 }
@@ -108,8 +106,7 @@ out:
 -75099.123 -738950.159
 -119179.897 -789457.532
 114151.88 -366009.892
-*/
-18:T1e9d,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+*/18:T1ede,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cmath></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">int</span> n<span class="token punctuation">,</span>m<span class="token punctuation">,</span>opt<span class="token punctuation">;</span>
@@ -144,8 +141,7 @@ out:
         <span class="token keyword">double</span> new_y<span class="token operator">=</span>x<span class="token operator">*</span><span class="token function">sin</span><span class="token punctuation">(</span>thetaij<span class="token punctuation">)</span><span class="token operator">+</span>y<span class="token operator">*</span><span class="token function">cos</span><span class="token punctuation">(</span>thetaij<span class="token punctuation">)</span><span class="token punctuation">;</span>
         new_x<span class="token operator">*=</span>kij<span class="token punctuation">;</span>
         new_y<span class="token operator">*=</span>kij<span class="token punctuation">;</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span>"<span class="token operator">%</span><span class="token number">.6lf</span> <span class="token operator">%</span><span class="token number">.6lf</span>
-
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%.6lf %.6lf\n"</span><span class="token punctuation">,</span>new_x<span class="token punctuation">,</span>new_y<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -174,11 +170,10 @@ out:
 -75099.123 -738950.159
 -119179.897 -789457.532
 114151.88 -366009.892
-*/</span>
-a:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L6",null,{"className":"x-codeblock-header-copy","text":"$17"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$18"}}]}]]}]
+*/</span>a:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L6",null,{"className":"x-codeblock-header-copy","text":"$17"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$18"}}]}]]}]
 b:["$","h2",null,{"className":"x-h1","children":"T3 梯度求解"}]
-c:["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"可以就把后缀表达式原封不动的存在一颗树上，然后对每个节点记录前向传播值，前向传播过程和接下来求梯度都可以递归实现。"}}]
-19:Tc51,#include <iostream>
+c:["$","p",null,{"className":"x-p","children":"可以就把后缀表达式原封不动的存在一颗树上，然后对每个节点记录前向传播值，前向传播过程和接下来求梯度都可以递归实现。"}]
+19:Tc50,#include <iostream>
 #include <vector>
 #include <stack>
 #define MOD 1000000007
@@ -343,13 +338,12 @@ out:
 73
 73
 999999867
-*/
-d:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L6",null,{"className":"x-codeblock-header-copy","text":"$19"}]]}],"$L1a"]}]
+*/d:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L6",null,{"className":"x-codeblock-header-copy","text":"$19"}]]}],"$L1a"]}]
 e:["$","h2",null,{"className":"x-h1","children":"T4 阴阳龙"}]
-f:["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"看到员工数量级是比较小的，想到去维护行、列、正反对角线四个方向上的员工位置，利用C++ STL的<code class=\"x-inline-highlight\">map</code>存储，键值对为<code class=\"x-inline-highlight\">(pos_val,id)</code>，其中这个<code class=\"x-inline-highlight\">pos_val</code>在竖直方向是员工的<code class=\"x-inline-highlight\">y</code>坐标，其他方向是<code class=\"x-inline-highlight\">x</code>坐标（其实两条对角线方向上取哪个都行），<code class=\"x-inline-highlight\">id</code>是员工的编号。"}}]
-10:["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"<code class=\"x-inline-highlight\">map</code>提供了<code class=\"x-inline-highlight\">lower_bound</code>和<code class=\"x-inline-highlight\">upper_bound</code>函数，可以二分找到第一个键值<span class=\"x-inline-strong\">大于等于</span>和<span class=\"x-inline-strong\">大于</span>给定键的元素；如果想找到第一个键值<span class=\"x-inline-strong\">小于</span>给定键的元素，可以在判断<code class=\"x-inline-highlight\">lower_bound</code>返回的不指向容器首部后，再移到前一个位置（<code class=\"x-inline-highlight\">it--</code>）。"}}]
-11:["$","p",null,{"className":"x-p","dangerouslySetInnerHTML":{"__html":"在每个方向上我们都需要若干个这样的<code class=\"x-inline-highlight\">map</code>，具体地说，我们需要<code class=\"x-inline-highlight\">n</code>个存储垂直方向的、<code class=\"x-inline-highlight\">m</code>个存储水平方向的、<code class=\"x-inline-highlight\">2</code>*<code class=\"x-inline-highlight\">n+m-1</code>个存储两条对角线方向的。提前开好的话占空间比较大，考虑用<code class=\"x-inline-highlight\">unordered_map</code>存储这些<code class=\"x-inline-highlight\">map</code>。以对角线方向为例，可以用<code class=\"x-inline-highlight\">x+y</code>和<code class=\"x-inline-highlight\">y-x</code>作为定位到具体<code class=\"x-inline-highlight\">map</code>的键，我们并不需要这些键是有序的，所以用<code class=\"x-inline-highlight\">unordered_map</code>就可以了。"}}]
-1b:Tc06,#include <iostream>
+f:["$","p",null,{"className":"x-p","children":["看到员工数量级是比较小的，想到去维护行、列、正反对角线四个方向上的员工位置，利用C++ STL的",["$","code",null,{"className":"x-inline-highlight","children":"map"}],"存储，键值对为",["$","code",null,{"className":"x-inline-highlight","children":"(pos_val,id)"}],"，其中这个",["$","code",null,{"className":"x-inline-highlight","children":"pos_val"}],"在竖直方向是员工的",["$","code",null,{"className":"x-inline-highlight","children":"y"}],"坐标，其他方向是",["$","code",null,{"className":"x-inline-highlight","children":"x"}],"坐标（其实两条对角线方向上取哪个都行），",["$","code",null,{"className":"x-inline-highlight","children":"id"}],"是员工的编号。"]}]
+10:["$","p",null,{"className":"x-p","children":[["$","code",null,{"className":"x-inline-highlight","children":"map"}],"提供了",["$","code",null,{"className":"x-inline-highlight","children":"lower_bound"}],"和",["$","code",null,{"className":"x-inline-highlight","children":"upper_bound"}],"函数，可以二分找到第一个键值",["$","span",null,{"className":"x-inline-strong","children":"大于等于"}],"和",["$","span",null,{"className":"x-inline-strong","children":"大于"}],"给定键的元素；如果想找到第一个键值",["$","span",null,{"className":"x-inline-strong","children":"小于"}],"给定键的元素，可以在判断",["$","code",null,{"className":"x-inline-highlight","children":"lower_bound"}],"返回的不指向容器首部后，再移到前一个位置（",["$","code",null,{"className":"x-inline-highlight","children":"it--"}],"）。"]}]
+11:["$","p",null,{"className":"x-p","children":["在每个方向上我们都需要若干个这样的",["$","code",null,{"className":"x-inline-highlight","children":"map"}],"，具体地说，我们需要",["$","code",null,{"className":"x-inline-highlight","children":"n"}],"个存储垂直方向的、",["$","code",null,{"className":"x-inline-highlight","children":"m"}],"个存储水平方向的、",["$","code",null,{"className":"x-inline-highlight","children":"2"}],"*",["$","code",null,{"className":"x-inline-highlight","children":"n+m-1"}],"个存储两条对角线方向的。提前开好的话占空间比较大，考虑用",["$","code",null,{"className":"x-inline-highlight","children":"unordered_map"}],"存储这些",["$","code",null,{"className":"x-inline-highlight","children":"map"}],"。以对角线方向为例，可以用",["$","code",null,{"className":"x-inline-highlight","children":"x+y"}],"和",["$","code",null,{"className":"x-inline-highlight","children":"y-x"}],"作为定位到具体",["$","code",null,{"className":"x-inline-highlight","children":"map"}],"的键，我们并不需要这些键是有序的，所以用",["$","code",null,{"className":"x-inline-highlight","children":"unordered_map"}],"就可以了。"]}]
+1b:Tc05,#include <iostream>
 #include <vector>
 #include <map>
 #include <unordered_map>
@@ -493,8 +487,7 @@ in:
 
 out:
 20
-*/
-1c:T74c4,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+*/1c:T74c3,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;map></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;unordered_map></span></span>
@@ -638,13 +631,12 @@ in:
 
 out:
 20
-*/</span>
-12:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L6",null,{"className":"x-codeblock-header-copy","text":"$1b"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$1c"}}]}]]}]
+*/</span>12:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L6",null,{"className":"x-codeblock-header-copy","text":"$1b"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$1c"}}]}]]}]
 13:["$","$L1d",null,{"path":"/24a/csp-2023-09/"}]
 14:["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/d11fb5a2813f7e78.css","precedence":"next"}]
 15:["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/0befe080061721ab.css","precedence":"next"}]
 16:["$","$L1e",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@1f"}]}]
-20:T63fe,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+20:T63fd,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stack></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">MOD</span> <span class="token expression"><span class="token number">1000000007</span></span></span>
@@ -809,6 +801,5 @@ out:
 73
 73
 999999867
-*/</span>
-1a:["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$20"}}]}]
+*/</span>1a:["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$20"}}]}]
 1f:null
