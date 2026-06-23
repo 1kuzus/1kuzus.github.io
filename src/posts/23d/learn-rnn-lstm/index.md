@@ -6,7 +6,7 @@
 
 或者，如果说CNN是从空间维度上堆叠卷积层，不断加深，RNN就是从时间维度上的延展，而其网络真正的参数是很少的。
 
-<!-- @xprops width="600px" filterDarkTheme -->
+<!-- @xprops width="600px" themeAdaptive -->
 
 ![](rnn1.png)
 
@@ -35,7 +35,7 @@ plt.show()
 
 代码中我们在区间$[0,36]$取了`400`点数据，如果把横轴看成时间轴，可以认为数据集中有`400`个连续时间点的数据。
 
-<!-- @xprops width="600px" filterDarkTheme -->
+<!-- @xprops width="600px" themeAdaptive -->
 
 ![](fig1.png)
 
@@ -174,13 +174,13 @@ plt.show()
 
 如果不执行训练步骤的代码，使用初始随机参数的模型预测结果是：
 
-<!-- @xprops width="600px" filterDarkTheme -->
+<!-- @xprops width="600px" themeAdaptive -->
 
 ![](fig2.png)
 
 经过训练后，每次训练的`loss`和最终的预测：
 
-<!-- @xprops width="600px" filterDarkTheme -->
+<!-- @xprops width="600px" themeAdaptive -->
 
 ![](fig3.png)
 
@@ -324,13 +324,13 @@ RNN可以利用先前的信息理解当前的任务，这点非常不错；有�
 
 **长短期记忆网络**`(Long Short-Term Memory, LSTM)`是一种特殊的RNN，可以学习长期依赖。以RNN为例，循环神经网络随时间展开通常具有如下的示意图：
 
-<!-- @xprops width="600px" filterDarkTheme -->
+<!-- @xprops width="600px" themeAdaptive -->
 
 ![](rnn2.png)
 
 对于RNN来说，利用历史状态和输入得到新的状态，只经过一个简单的`tanh`激活层，而对于LSTM来说，它的示意图略显复杂：
 
-<!-- @xprops width="600px" filterDarkTheme -->
+<!-- @xprops width="600px" themeAdaptive -->
 
 ![](lstm1.png)
 
@@ -340,7 +340,7 @@ RNN可以利用先前的信息理解当前的任务，这点非常不错；有�
 
 下面的结构称为门控单元：
 
-<!-- @xprops width="100px" filterDarkTheme -->
+<!-- @xprops width="100px" themeAdaptive -->
 
 ![](lstm2.png)
 
@@ -358,7 +358,7 @@ $$
 
 LSTM的第一步是决定什么应该被遗忘，也就是对上一个**单元**`(cell)`状态信息选择性的遗忘。<br>这个操作由遗忘门$f_t$实现，将其$[0,1]$范围的输出按位置与单元上一时刻状态相乘。
 
-<!-- @xprops width="600px" filterDarkTheme -->
+<!-- @xprops width="600px" themeAdaptive -->
 
 ![](lstm3.png)
 
@@ -374,13 +374,13 @@ LSTM的第一步是决定什么应该被遗忘，也就是对上一个**单元**
 
 下一步就是决定要在单元中存入什么新的信息。这一部分有两路：`tanh`这一路与普通RNN很像，生成一个中间状态；$\sigma$这一路被称为输入门$i_t$，控制这个中间状态有多少信息被存入单元。
 
-<!-- @xprops width="600px" filterDarkTheme -->
+<!-- @xprops width="600px" themeAdaptive -->
 
 ![](lstm4.png)
 
 经历这两步之后，便可以相加得到新的单元状态：
 
-<!-- @xprops width="600px" filterDarkTheme -->
+<!-- @xprops width="600px" themeAdaptive -->
 
 ![](lstm5.png)
 
@@ -392,7 +392,7 @@ LSTM的第一步是决定什么应该被遗忘，也就是对上一个**单元**
 
 最后是决定新的隐藏状态，这个输出会基于单元状态，但会经过门控单元。输出门$o_t$决定经过`tanh`的单元状态$C_t$有多少被输出到下一时刻的隐藏状态。
 
-<!-- @xprops width="600px" filterDarkTheme -->
+<!-- @xprops width="600px" themeAdaptive -->
 
 ![](lstm6.png)
 

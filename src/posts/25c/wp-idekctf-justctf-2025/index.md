@@ -557,7 +557,7 @@ Admin Bot可以访问输入的任何URL，因此允许我们构造一个攻击�
 
 我使用Flask作为托管攻击页面的服务器，`target`在这里是这道题目的地址。这个`iframe`通过POST方法请求加载`/view.js`，这会导致定义的路由均失配，最终匹配到`*path`并返回`index`页面；并且这个页面的`location.href`会变成`/view.js`：
 
-<!-- @xprops filterDarkTheme -->
+<!-- @xprops themeAdaptive -->
 
 ![](1.jpg)
 
@@ -684,7 +684,7 @@ def index():
 app.run("0.0.0.0", 5003)
 ```
 
-<!-- @xprops filterDarkTheme -->
+<!-- @xprops themeAdaptive -->
 
 ![](2.jpg)
 
@@ -800,11 +800,11 @@ def index():
 app.run("0.0.0.0", 5003)
 ```
 
-<!-- @xprops filterDarkTheme -->
+<!-- @xprops themeAdaptive -->
 
 ![](3.jpg)
 
-<!-- @xprops filterDarkTheme -->
+<!-- @xprops themeAdaptive -->
 
 ![](4.jpg)
 

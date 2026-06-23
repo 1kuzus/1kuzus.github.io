@@ -165,7 +165,7 @@
 
 - 关于`Dispatch`和`Resolve`：
 
-    <!-- @xprops width="600px" filterDarkTheme -->
+    <!-- @xprops width="600px" themeAdaptive -->
 
     ![](fig1.jpg)
 

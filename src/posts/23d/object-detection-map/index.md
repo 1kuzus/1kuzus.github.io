@@ -10,7 +10,7 @@
 
 **交并比**`(Intersection over Union, IoU)`是产生的检测框与真实检测框的交集与并集的比值。
 
-<!-- @xprops width="300px" filterDarkTheme -->
+<!-- @xprops width="300px" themeAdaptive -->
 
 ![](fig2.jpg)
 
@@ -42,13 +42,13 @@
 >
 > 下面是一个常见的`Precision`-`Recall`曲线示意图。尽管现实任务中的曲线通常是不平滑、不单调的，但大致可以用图中的较为理想的曲线走势描述。我们通常用**平衡点**去衡量一个模型的好坏，也就是曲线上`Precision`=`Recall`的点。
 >
-> <!-- @xprops width="40%" filterDarkTheme -->
+> <!-- @xprops width="40%" themeAdaptive -->
 >
 > ![](fig4.jpg)
 >
 > 模型在平衡点处的精度与曲线下面积有没有联系呢？下图的蓝色折线`D`将曲线`A`的平衡点两侧的两段单调递减的曲线近似为直线，如果以折线`D`下面积近似曲线`A`下面积，将黄色三角形补到右侧后，可以发现蓝色折线`D`下的面积恰好反映了平衡点处的精度。
 >
-> <!-- @xprops width="85%" filterDarkTheme -->
+> <!-- @xprops width="85%" themeAdaptive -->
 >
 > ![](fig5.jpg)
 >

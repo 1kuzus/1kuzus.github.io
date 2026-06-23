@@ -4,11 +4,11 @@
 
 标志位用来存储相关指令的某些执行结果、用来为CPU执行相关指令提供行为依据、或用来控制CPU的相关工作方式。
 
-<!-- @xprops width="600px" filterDarkTheme -->
+<!-- @xprops width="600px" themeAdaptive -->
 
 ![](fig1.jpg)
 
-<!-- @xprops width="600px" filterDarkTheme -->
+<!-- @xprops width="600px" themeAdaptive -->
 
 ![](fig2.jpg)
 

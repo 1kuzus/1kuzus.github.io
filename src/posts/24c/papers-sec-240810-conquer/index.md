@@ -76,7 +76,7 @@ Android并没有阻止`findAccessibilityNodeInfosByText(text)`搜索密码输入
 
 #### 基于状态机的侧信道 - 恢复用户行为
 
-<!-- @xprops width="100%" filterDarkTheme -->
+<!-- @xprops width="100%" themeAdaptive -->
 
 ![](1.jpg)
 

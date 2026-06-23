@@ -6,7 +6,7 @@ The binary checks a password:
 
 After some quick static analysis, I notice that there's a suspicious function `sub_401300`, it calls `sub_406A40` to read data into a buffer `byte_4474C0`, and verifies the length is `49`.
 
-<!-- @xprops filterDarkTheme -->
+<!-- @xprops themeAdaptive -->
 
 ![](2.jpg)
 
@@ -14,7 +14,7 @@ There's great chance that the password is the flag, which is `49` bytes long.
 
 Function `sub_401300` seems to implement a VM with a custom instruction set, however, we don't need to fully understand it to solve the challenge. I notice that `dword_4474B8 == 49` is checked before the function returns, and there's also `++dword_4474B8` at line 104, this looks like a verification of the password byte by byte.
 
-<!-- @xprops filterDarkTheme -->
+<!-- @xprops themeAdaptive -->
 
 ![](3.jpg)
 

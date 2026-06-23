@@ -374,7 +374,7 @@ vector<int> G={
 
 查询字符串长度为`2`时，它们之间的生成关系是：
 
-<!-- @xprops width="600px" filterDarkTheme -->
+<!-- @xprops width="600px" themeAdaptive -->
 
 ![](fig1.jpg)
 

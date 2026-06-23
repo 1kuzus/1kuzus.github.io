@@ -35,7 +35,7 @@
 
 ### 一个例子
 
-<!-- @xprops width="100%" filterDarkTheme -->
+<!-- @xprops width="100%" themeAdaptive -->
 
 ![](1.jpg)
 
@@ -43,7 +43,7 @@
 
 ### 与Web Apps和Mobile Apps比较
 
-<!-- @xprops width="600px" filterDarkTheme -->
+<!-- @xprops width="600px" themeAdaptive -->
 
 ![](2.jpg)
 
@@ -67,7 +67,7 @@
 
 第一步是生成UDFG（通用数据流图，`Universal Data Flow Graph`），这是论文提出的新概念：
 
-<!-- @xprops width="600px" filterDarkTheme -->
+<!-- @xprops width="600px" themeAdaptive -->
 
 ![](3.jpg)
 
@@ -80,7 +80,7 @@ UDFG包含两个重要结构：
 
 这一部分论文用数学形式给出了追踪数据传播的过程：
 
-<!-- @xprops width="600px" filterDarkTheme -->
+<!-- @xprops width="600px" themeAdaptive -->
 
 ![](4.jpg)
 
@@ -107,7 +107,7 @@ UDFG包含两个重要结构：
 
 - 关于第五、六条，为什么第六条多了一个$n \lt m$的与条件，参考下面的例子：
 
-    <!-- @xprops width="800px" filterDarkTheme -->
+    <!-- @xprops width="800px" themeAdaptive -->
 
     ![](6.jpg)
 

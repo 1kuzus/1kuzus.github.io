@@ -483,13 +483,13 @@ console.log(Object.prototype.__proto__); // null
 
 事实上，`__proto__`可以看作是内部属性`[[Prototype]]`的getter/setter，它定义在`Object.prototype`上。我们几乎可以在任意对象上访问`__proto__`，本质上是沿着原型链找到了`Object.prototype`上对应的getter/setter函数，然后以当前对象作为`this`执行。
 
-<!-- @xprops filterDarkTheme -->
+<!-- @xprops themeAdaptive -->
 
 ![](1.jpg)
 
 为什么是"几乎"？我们可以通过`Object.create(null);`直接创建一个原型对象为`null`的对象，它比`const obj = {};`创建的空对象还要"纯净"。注意下面两个对象的区别：
 
-<!-- @xprops filterDarkTheme -->
+<!-- @xprops themeAdaptive -->
 
 ![](2.jpg)
 

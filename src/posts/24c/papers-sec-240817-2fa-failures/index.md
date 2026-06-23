@@ -65,7 +65,7 @@ TOTP是一种常见的2FA形式，通常被认为比SMS 2FA更安全；然而TOT
 
 这一节讨论各种备份机制。
 
-<!-- @xprops width="100%" filterDarkTheme -->
+<!-- @xprops width="100%" themeAdaptive -->
 
 ![](1.jpg)
 
@@ -81,7 +81,7 @@ TOTP是一种常见的2FA形式，通常被认为比SMS 2FA更安全；然而TOT
 
 数据集中`15`个应用程序支持TOTP数据的加密备份，但许多应用程序的实现方式存在漏洞。
 
-<!-- @xprops width="100%" filterDarkTheme -->
+<!-- @xprops width="100%" themeAdaptive -->
 
 ![](2.jpg)
 

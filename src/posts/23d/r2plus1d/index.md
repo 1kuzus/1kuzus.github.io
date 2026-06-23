@@ -6,7 +6,7 @@ PyTorch版本复现代码来自于Github仓库 [Github: R2Plus1D-PyTorch](https:
 
 普通3D卷积的核大小为$(C_i,C_o,K_t,K_w,K_h)$，$C_i,C_o$为输入通道数、$K_t,K_w,K_h$是3D卷积核的尺寸。<br>R(2+1)D网络最核心的改动就是将普通的`Conv3d`替换为`SpatioTemporalConv`卷积。
 
-<!-- @xprops width="100%" filterDarkTheme -->
+<!-- @xprops width="100%" themeAdaptive -->
 
 ![](fig1.jpg)
 
@@ -44,6 +44,6 @@ $$
 1. 增加了网络非线性层的层数
 1. 优化更容易（实验结果：R(2+1)D网络的训练和测试误差都更小）
 
-<!-- @xprops width="600" filterDarkTheme -->
+<!-- @xprops width="600" themeAdaptive -->
 
 ![](fig2.jpg)

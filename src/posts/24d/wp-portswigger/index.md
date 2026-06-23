@@ -44,7 +44,7 @@ SELECT * FROM products WHERE category = 'Gifts' AND released = 1
 
 定位到表`USERS_BGRZGA`和列名`USERNAME_RKZNTV`、`PASSWORD_HEMVUU`，剩余流程和上一题一样。
 
-<!-- @xprops filterDarkTheme -->
+<!-- @xprops themeAdaptive -->
 
 ![](lab-listing-the-database-contents-on-oracle.jpg)
 
@@ -75,7 +75,7 @@ SELECT * FROM products WHERE category = 'Gifts' AND released = 1
 - `/filter?category=Pets' and 1=0 union select 0,concat(username,':',password) from users --+`
 - `/filter?category=Pets' and 1=0 union select 0,username||':'||password from users --+`
 
-<!-- @xprops filterDarkTheme -->
+<!-- @xprops themeAdaptive -->
 
 ![](lab-retrieving-multiple-values-in-a-single-column.jpg)
 
@@ -298,7 +298,7 @@ $(window).on('hashchange', function () {
 
 输入的内容被加载到`input`元素的`value`属性：
 
-<!-- @xprops filterDarkTheme -->
+<!-- @xprops themeAdaptive -->
 
 ![](lab-attribute-angle-brackets-html-encoded.jpg)
 
@@ -312,7 +312,7 @@ $(window).on('hashchange', function () {
 
 搜索内容在后端被直接拼接在JavaScript代码里，注入点仍然是一个埋点（用于数据跟踪），比如搜索`123';123`，观察得到的HTML文档：
 
-<!-- @xprops filterDarkTheme -->
+<!-- @xprops themeAdaptive -->
 
 ![](lab-javascript-string-angle-brackets-html-encoded.jpg)
 
@@ -374,7 +374,7 @@ function escapeHTML(html) {
 
 `replace`函数这样调用只会转义首次出现的地方，正确实践应该使用正则表达式：
 
-<!-- @xprops filterDarkTheme -->
+<!-- @xprops themeAdaptive -->
 
 ![](lab-stored-dom-xss.jpg)
 
@@ -485,7 +485,7 @@ function escapeHTML(html) {
 - 默认情况下，`fetch`请求在跨源时不会携带Cookie，需要设置`credentials: 'include'`。注意如果Cookie的`SameSite`属性是`Lax`或`Strict`，即使设置了`credentials: 'include'`也不会携带。
 - 前面几个CSRF的Lab能打通是因为服务端下发的Cookie显式设置了`SameSite=None; Secure`，因此跨站请求时能够自动携带。实际上默认的`SameSite`属性是`Lax`（此时只能通过CSRF伪造`GET`请求）。
 
-    <!-- @xprops filterDarkTheme -->
+    <!-- @xprops themeAdaptive -->
 
     ![](note-csrf.jpg)
 

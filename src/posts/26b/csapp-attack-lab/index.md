@@ -69,7 +69,7 @@
 
 ## 一、标题级别与属性
 
-<!-- @xprops filterDarkTheme -->
+<!-- @xprops themeAdaptive -->
 
 ![](1.jpg)
 

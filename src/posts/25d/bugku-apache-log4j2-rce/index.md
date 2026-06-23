@@ -96,6 +96,6 @@ Serving HTTP on :: port 8888 (http://[::]:8888/) ...
 ::1 - - [22/Nov/2025 22:57:23] "GET /Exploit.class HTTP/1.1" 200 -
 ```
 
-<!-- @xprops width="100%" filterDarkTheme -->
+<!-- @xprops width="100%" themeAdaptive -->
 
 ![](1.jpg)

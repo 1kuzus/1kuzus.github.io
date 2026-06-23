@@ -114,11 +114,11 @@ $$
 
 证明起来复杂一点，可以参考[https://www.noahsd.com/crypto_lecture_notes/CS4830_Lecture_7____PRGs.pdf](https://www.noahsd.com/crypto_lecture_notes/CS4830_Lecture_7____PRGs.pdf)的`1.3`节，这里贴出截图：
 
-<!-- @xprops width="800px" filterDarkTheme -->
+<!-- @xprops width="800px" themeAdaptive -->
 
 ![](fig1.jpg)
 
-<!-- @xprops width="800px" filterDarkTheme -->
+<!-- @xprops width="800px" themeAdaptive -->
 
 ![](fig2.jpg)
 

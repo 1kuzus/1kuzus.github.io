@@ -10,7 +10,7 @@
 
 如果`float32`的绝对值最大映射为`127`，则称为**非饱和量化**；选择合适阈值$T$映射为`127`，则称为**饱和量化**。权重常用非饱和量化，激活常用饱和量化。
 
-<!-- @xprops width="300px" filterDarkTheme -->
+<!-- @xprops width="300px" themeAdaptive -->
 
 ![](fig1.jpg)
 
@@ -79,7 +79,7 @@ $$
 
 ### 基于SVD分解的模型压缩
 
-<!-- @xprops width="600px" filterDarkTheme -->
+<!-- @xprops width="600px" themeAdaptive -->
 
 ![](fig2.jpg)
 
@@ -109,7 +109,7 @@ $$
 
 #### 分组卷积
 
-<!-- @xprops width="600px" filterDarkTheme -->
+<!-- @xprops width="600px" themeAdaptive -->
 
 ![](fig3.jpg)
 
@@ -131,7 +131,7 @@ $$
 
 #### 深度可分离卷积
 
-<!-- @xprops width="800px" filterDarkTheme -->
+<!-- @xprops width="800px" themeAdaptive -->
 
 ![](fig4.jpg)
 
@@ -143,7 +143,7 @@ $$
 
 Ghost模块使用较少卷积核对输入进行常规卷积，获得通道较少的输出特征并将其作为固有特征图；然后对固有特征图的每个通道进行线性变换，得到其对应的Ghost特征图；最后拼接在一起。
 
-<!-- @xprops width="400px" filterDarkTheme -->
+<!-- @xprops width="400px" themeAdaptive -->
 
 ![](fig5.jpg)
 
@@ -157,7 +157,7 @@ Ghost模块的特点：
 
 大型的网络泛化能力较强，但不便于部署；知识蒸馏希望获得泛化能力强的小网络。首先训练一个泛化能力强的大网络（教师网络），然后结合训练数据和教师网络的"软预测"，再训练小网络（学生网络）。
 
-<!-- @xprops width="600px" filterDarkTheme -->
+<!-- @xprops width="600px" themeAdaptive -->
 
 ![](fig6.jpg)
 

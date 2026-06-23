@@ -143,7 +143,7 @@ Report to admin: https://do-not-cheat-bb7d7982d597.1753ctf.com/report?document=h
 
 Open the URL, wait a while, and we will get `flag.pdf`.
 
-<!-- @xprops width="400px" filterDarkTheme -->
+<!-- @xprops width="400px" themeAdaptive -->
 
 ![](2.jpg)
 

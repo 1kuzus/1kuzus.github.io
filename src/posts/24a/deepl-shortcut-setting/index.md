@@ -1,6 +1,6 @@
 最近使用DeepL，想配置截屏翻译的快捷键为`Ctrl`+`Shift`+`T`，结果在我的电脑上修改时不管按什么键，都显示"该快捷键已被使用"。
 
-<!-- @xprops width="100%" filterDarkTheme -->
+<!-- @xprops width="100%" themeAdaptive -->
 
 ![](img1.jpg)
 
@@ -35,6 +35,6 @@
 
 修改以后保存、关闭、再打开DeepL就发现已经更改了，经测试可以正常使用。
 
-<!-- @xprops width="100%" filterDarkTheme -->
+<!-- @xprops width="100%" themeAdaptive -->
 
 ![](img4.jpg)

@@ -217,7 +217,7 @@ if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5099)
 ```
 
-<!-- @xprops width="100%" filterDarkTheme -->
+<!-- @xprops width="100%" themeAdaptive -->
 
 ![](2.jpg)
 

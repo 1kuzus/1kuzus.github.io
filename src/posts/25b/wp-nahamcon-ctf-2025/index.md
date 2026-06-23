@@ -57,13 +57,13 @@ class APICaller {
 
 By appending an extra `\r\n` to the `method` parameter, the server throws an error and responds with the error message. Note that the error message reflects the value of parameters.
 
-<!-- @xprops width="100%" filterDarkTheme -->
+<!-- @xprops width="100%" themeAdaptive -->
 
 ![](1.jpg)
 
 This can also be used for file existence enumeration. (And found `/flag.txt` exists.)
 
-<!-- @xprops width="100%" filterDarkTheme -->
+<!-- @xprops width="100%" themeAdaptive -->
 
 ![](2.jpg)
 
@@ -71,7 +71,7 @@ According to `apicaller.php.orig`, parameters like `@/tmp/[file]` will be parsed
 
 Make a request to the `../test/` API again, set the `method` parameter to a value that causes the error, like `1\r\n`, and set the `parameters` parameter to `@/tmp/../flag.txt`. The server will reflect the contents of the file, which is the flag.
 
-<!-- @xprops width="100%" filterDarkTheme -->
+<!-- @xprops width="100%" themeAdaptive -->
 
 ![](3.jpg)
 

@@ -6,7 +6,7 @@
 
 ### lists of JSONs
 
-<!-- @xprops width="800px" filterDarkTheme -->
+<!-- @xprops width="800px" themeAdaptive -->
 
 ![](fig1.jpg)
 
@@ -75,19 +75,19 @@ while True:
 
 正常玩一遍Nonogram，通过后显示的是乱码：
 
-<!-- @xprops width="600px" filterDarkTheme -->
+<!-- @xprops width="600px" themeAdaptive -->
 
 ![](fig2.jpg)
 
 全局搜索找一下设置这个`div`内容的函数：
 
-<!-- @xprops width="100%" filterDarkTheme -->
+<!-- @xprops width="100%" themeAdaptive -->
 
 ![](fig3.jpg)
 
 打断点调试一下，看到解密用的`key`就是当前Nonogram面板上的状态；而密文来自于URL参数，是一个定值。
 
-<!-- @xprops width="100%" filterDarkTheme -->
+<!-- @xprops width="100%" themeAdaptive -->
 
 ![](fig4.jpg)
 
@@ -113,7 +113,7 @@ for (let i = 0; i < 2 ** 16; i++) {
 }
 ```
 
-<!-- @xprops width="800px" filterDarkTheme -->
+<!-- @xprops width="800px" themeAdaptive -->
 
 ![](fig5.jpg)
 

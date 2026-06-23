@@ -51,7 +51,7 @@ UX设计中的**雅各布定律**表示了功能类似的产品的设计，应�
 
 ## 4.Methodology
 
-<!-- @xprops width="100%" filterDarkTheme -->
+<!-- @xprops width="100%" themeAdaptive -->
 
 ![](1.jpg)
 
@@ -124,11 +124,11 @@ UX设计中的**雅各布定律**表示了功能类似的产品的设计，应�
 
 ### 网站数据概览
 
-<!-- @xprops width="100%" filterDarkTheme -->
+<!-- @xprops width="100%" themeAdaptive -->
 
 ![](2.jpg)
 
-<!-- @xprops width="100%" filterDarkTheme -->
+<!-- @xprops width="100%" themeAdaptive -->
 
 ![](3.jpg)
 

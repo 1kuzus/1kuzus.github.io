@@ -8,7 +8,7 @@
 
 在新版本（暂且叫它`v2`）也就是现在的`master`分支上提交了数次`commit`后，我意识到一个问题：此前的做法导致原来`v1`版本的提交记录并没有迁移到`master`分支中，当前的`master`分支相当于从零开始。
 
-<!-- @xprops width="600px" filterDarkTheme -->
+<!-- @xprops width="600px" themeAdaptive -->
 
 ![](fig1.png)
 

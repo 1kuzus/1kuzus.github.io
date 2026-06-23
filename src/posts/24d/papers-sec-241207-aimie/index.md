@@ -22,7 +22,7 @@
 
 论文提到的IHM`(Image Hosting Module)`可以理解为"私有图床"，这里格外强调了IHM主要是服务于网站的特定业务功能内部使用的，如前面提到的问答平台、聊天功能等，IHM并非旨在作为一个独立图像托管平台运行。
 
-<!-- @xprops width="600px" filterDarkTheme -->
+<!-- @xprops width="600px" themeAdaptive -->
 
 ![](1.jpg)
 
@@ -45,7 +45,7 @@
 
 ### 分析方法
 
-<!-- @xprops width="600px" filterDarkTheme -->
+<!-- @xprops width="600px" themeAdaptive -->
 
 ![](2.jpg)
 
@@ -61,7 +61,7 @@
 
 除了分析已有的AIMIE之外，研究团队还设计了工具Viola用于发现互联网中的易被利用的IHM情况。本节会介绍Viola的三个组件。
 
-<!-- @xprops width="100%" filterDarkTheme -->
+<!-- @xprops width="100%" themeAdaptive -->
 
 ![](3.jpg)
 
@@ -75,7 +75,7 @@
 
 研究团队把图片上传的生命周期整理为`4`个步骤（有些具体实现可能省略了中间的一些步骤）：
 
-<!-- @xprops width="800px" filterDarkTheme -->
+<!-- @xprops width="800px" themeAdaptive -->
 
 ![](4.jpg)
 

@@ -865,13 +865,13 @@ mysql_query("SET NAMES gbk");
 
 宽字节注入就是利用GBK编码将两个字节（`0xdf`，`0x5c`）解析为一个汉字字符（`運`），从而"吃掉"了转义字符（`\`），使得后续的单引号得以闭合。
 
-<!-- @xprops filterDarkTheme -->
+<!-- @xprops themeAdaptive -->
 
 ![](gbk1.jpg)
 
 很多文章中的例子都使用`%df`进行注入，实际上这只是众多选择中的一个。GBK编码范围如下图所示，只要第一个字节在编码范围中就可以了。
 
-<!-- @xprops filterDarkTheme -->
+<!-- @xprops themeAdaptive -->
 
 ![](gbk2.jpg)
 

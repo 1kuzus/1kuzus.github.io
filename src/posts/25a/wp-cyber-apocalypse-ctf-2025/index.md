@@ -4,7 +4,7 @@ I completed all the ML challenges on [Google Colab](https://colab.google/).
 
 ### Enchanted Weights
 
-<!-- @xprops filterDarkTheme -->
+<!-- @xprops themeAdaptive -->
 
 ![](ml1-1.jpg)
 
@@ -16,13 +16,13 @@ Find the malicious code in the model weights:
 
 Copy these codes into Colab, modify the code to print the `payload` before executing:
 
-<!-- @xprops filterDarkTheme -->
+<!-- @xprops themeAdaptive -->
 
 ![](ml2-2.jpg)
 
 The flag is hidden within.
 
-<!-- @xprops filterDarkTheme -->
+<!-- @xprops themeAdaptive -->
 
 ![](ml2-3.jpg)
 
@@ -30,7 +30,7 @@ The flag is hidden within.
 
 In TensorFlow, a **Lambda layer** is a way to implement custom operations within a neural network model.
 
-<!-- @xprops filterDarkTheme -->
+<!-- @xprops themeAdaptive -->
 
 ![](ml3-1.jpg)
 
@@ -73,7 +73,7 @@ HTB{k3r4S_L4y3r_1nj3ct10n}
 
 I found [vec2text](https://github.com/vec2text/vec2text) for this challenge.
 
-<!-- @xprops filterDarkTheme -->
+<!-- @xprops themeAdaptive -->
 
 ![](ml4-1.jpg)
 

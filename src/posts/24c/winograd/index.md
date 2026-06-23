@@ -131,7 +131,7 @@ $$
 
 推广到二维情形，假设输入是$4 \times 4$图像，卷积核大小$3 \times 3$，则首先通过Img2col展开成矩阵乘法，再分块使用Winograd。
 
-<!-- @xprops width="800px" filterDarkTheme -->
+<!-- @xprops width="800px" themeAdaptive -->
 
 ![](fig1.jpg)
 

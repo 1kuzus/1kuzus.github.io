@@ -74,7 +74,7 @@ end start
 - 内部中断：由CPU内部产生，如除法错误（`0`号）、溢出（`4`号）、`int n`指令触发（`n`号）等。
 - 外部中断：由外部设备产生，如键盘输入等。
 
-<!-- @xprops width="800px" filterDarkTheme -->
+<!-- @xprops width="800px" themeAdaptive -->
 
 ![](fig9.jpg)
 
@@ -285,15 +285,15 @@ BIOS中断是由BIOS提供的一些服务程序，可以通过`int`指令调用�
 
 找到这些中断的中断号和功能描述，需要**查手册**！例如：
 
-<!-- @xprops width="800px" filterDarkTheme -->
+<!-- @xprops width="800px" themeAdaptive -->
 
 ![](fig3.jpg)
 
-<!-- @xprops width="800px" filterDarkTheme -->
+<!-- @xprops width="800px" themeAdaptive -->
 
 ![](fig4.jpg)
 
-<!-- @xprops width="800px" filterDarkTheme -->
+<!-- @xprops width="800px" themeAdaptive -->
 
 ![](fig5.jpg)
 
@@ -330,7 +330,7 @@ end start
 
 DOS中断是由操作系统提供的、更为高层的中断，同样提供了丰富的功能，使用时查手册即可。下图列出了一些DOS中断，并以`21h`为例做展开。
 
-<!-- @xprops width="100%" filterDarkTheme -->
+<!-- @xprops width="100%" themeAdaptive -->
 
 ![](fig7.jpg)
 
@@ -341,7 +341,7 @@ BIOS和DOS在所提供的中断处理程序中包含了许多子程序，这些�
 对于DOS中断来说，和硬件设备相关的DOS中断处理程序中，一般都是在操作系统级调用BIOS的中断处理程序来实现的，提供更加高层的一些功能。
 当然如果这些都不能满足需求，用户也可以在程序里直接和外设进行联系（端口操作）。
 
-<!-- @xprops width="600px" filterDarkTheme -->
+<!-- @xprops width="600px" themeAdaptive -->
 
 ![](fig8.jpg)
 
@@ -408,7 +408,7 @@ end start
 
     键盘上每一个键相当于一个开关，键盘中有一个芯片对每一个键的开关状态进行扫描：按下/松开一个键时，芯片都会产生一个扫描码，扫描码被送入主板上相关接口芯片的寄存器中，该寄存器的端口地址为`60h`。扫描码与ASCII码不同，下图是通码：
 
-    <!-- @xprops width="800px" filterDarkTheme -->
+    <!-- @xprops width="800px" themeAdaptive -->
 
     ![](fig10.jpg)
 
@@ -436,7 +436,7 @@ end start
 
 ### 更多中断操作
 
-<!-- @xprops width="800px" filterDarkTheme -->
+<!-- @xprops width="800px" themeAdaptive -->
 
 ![](fig13.jpg)
 

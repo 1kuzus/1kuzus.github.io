@@ -234,7 +234,7 @@ obj.test()  # A
 
 上述代码描述了一个如下图所示的复杂继承关系：
 
-<!-- @xprops filterDarkTheme width="300px" -->
+<!-- @xprops themeAdaptive width="300px" -->
 
 ![](mro.jpg)
 

@@ -119,7 +119,7 @@ We get the Base64 encoded flag ~ \o/
 
 The code is dynamically generated, I use frida to hook the `munmap` function, so that I can get the start address of `v1` by printing the first argument, then I can get the memory content of `v1`.
 
-<!-- @xprops width="600px" filterDarkTheme -->
+<!-- @xprops width="600px" themeAdaptive -->
 
 ![](rev1-1.jpg)
 
@@ -215,7 +215,7 @@ bd: c3                      ret
 
 In x86_64, when the number of parameters is less than `6`, they are passed via registers `rdi`, `rsi`, `rdx`, `rcx`, `r8` and `r9`. So the first several instructions are:
 
-<!-- @xprops width="800px" filterDarkTheme -->
+<!-- @xprops width="800px" themeAdaptive -->
 
 ![](rev1-3.jpg)
 
@@ -333,7 +333,7 @@ for line in tqdm.tqdm(lines):
 
 Fuzz the container name:
 
-<!-- @xprops width="100%" filterDarkTheme -->
+<!-- @xprops width="100%" themeAdaptive -->
 
 ![](misc1-1.jpg)
 

@@ -105,7 +105,7 @@ mov ax,[bx+si+200]  ;(ax)=((ds)*16+(bx)+(si)+200)
 
 ### 总结
 
-<!-- @xprops width="800px" filterDarkTheme -->
+<!-- @xprops width="800px" themeAdaptive -->
 
 ![](fig2.png)
 
