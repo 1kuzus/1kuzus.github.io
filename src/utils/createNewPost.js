@@ -3,6 +3,12 @@ const path = require('path');
 const {exit} = require('process');
 
 const param = process.argv[2] || 'temp';
+const ext = process.argv[3] || 'md';
+
+if (ext !== 'md' && ext !== 'js') {
+    console.error(`Invalid ext: ${ext}. Use "md" or "js".`);
+    exit(1);
+}
 
 const date = new Date();
 const ystr = (date.getFullYear() % 100).toString();
@@ -11,7 +17,7 @@ const mstr = String.fromCharCode(97 + m / 3);
 
 const postPath = `/${ystr + mstr}/${param}/`;
 const dir = path.join('src', 'posts', postPath);
-const filePath = path.join(dir, 'index.js');
+const filePath = path.join(dir, `index.${ext}`);
 
 if (fs.existsSync(dir)) {
     console.log('\x1b[31m%s\x1b[0m', 'Path already exists.');
@@ -33,13 +39,14 @@ fs.writeFileSync(
             ...archives,
         },
         null,
-        4
-    )
+        4,
+    ),
 );
 console.log(`Updated src/app/_archives.json`);
 
 fs.mkdirSync(dir, {recursive: true});
-const template = `import X from 'src/component/X';
+
+const T_JS = `import X from 'src/component/X';
 
 export default function Post() {
     return (
@@ -49,6 +56,17 @@ export default function Post() {
     );
 }
 `;
-fs.writeFileSync(filePath, template);
+const T_MD = `## Hello
+<!-- @xprops background="blue" -->
+
+> World.
+`;
+
+const templates = {
+    js: T_JS,
+    md: T_MD,
+};
+
+fs.writeFileSync(filePath, templates[ext]);
 console.log('%s \x1b[36m%s\x1b[0m', 'New post created at', filePath);
 console.log("%s \x1b[36m'%s'\x1b[0m", 'postPath:', postPath);

@@ -28,7 +28,6 @@ const components = {
     pre: ({children}) => {
         // $$...$$
         if (children.props.className.includes('math-display')) {
-            // ToDo
             return <X.Formula text={children.props.children.trim()} />;
         }
         // ```...```
