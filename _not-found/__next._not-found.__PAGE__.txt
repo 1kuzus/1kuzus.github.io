@@ -3,5 +3,5 @@
 3:"$Sreact.suspense"
 :HL["/cry.gif","image"]
 :HL["/_next/static/css/67d16539d5741f83.css","style"]
-0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"id":"notfound","children":[["$","img",null,{"alt":"img","src":"/cry.gif"}],["$","code",null,{"id":"notfound-404","children":"404"}],["$","code",null,{"id":"notfound-text","children":"Page Not Found"}]]}],[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/67d16539d5741f83.css","precedence":"next"}]],["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"WqRjo7VBL0ObkVW6P-Gw1"}
+0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"id":"notfound","children":[["$","img",null,{"alt":"img","src":"/cry.gif"}],["$","code",null,{"id":"notfound-404","children":"404"}],["$","code",null,{"id":"notfound-text","children":"Page Not Found"}]]}],[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/67d16539d5741f83.css","precedence":"next"}]],["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"1kC12FFlassMAypqNFdnp"}
 4:null

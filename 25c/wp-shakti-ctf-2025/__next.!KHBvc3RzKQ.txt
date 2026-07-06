@@ -1,10 +1,10 @@
 1:"$Sreact.fragment"
 2:I[57121,[],""]
 3:I[74581,[],""]
-4:I[73060,["500","static/chunks/500-e2a7ab501ac40f90.js","799","static/chunks/799-93b8373c3e379e7d.js","212","static/chunks/app/(posts)/layout-af8f690d0eb615e4.js"],"default"]
+4:I[73060,["500","static/chunks/500-e2a7ab501ac40f90.js","799","static/chunks/799-af811b5b43bed56e.js","212","static/chunks/app/(posts)/layout-af8f690d0eb615e4.js"],"default"]
 :HL["/_next/static/css/441b9964f9b116c1.css","style"]
 :HL["/_next/static/css/7e90712a60ecad8e.css","style"]
 :HL["/_next/static/css/0fb9b44be8255d47.css","style"]
 :HL["/_next/static/css/05da7cf1ce382fdb.css","style"]
 :HL["/_next/static/css/6be3b83d14fa0483.css","style"]
-0:{"rsc":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/441b9964f9b116c1.css","precedence":"next"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/7e90712a60ecad8e.css","precedence":"next"}],["$","link","2",{"rel":"stylesheet","href":"/_next/static/css/0fb9b44be8255d47.css","precedence":"next"}],["$","link","3",{"rel":"stylesheet","href":"/_next/static/css/05da7cf1ce382fdb.css","precedence":"next"}],["$","link","4",{"rel":"stylesheet","href":"/_next/static/css/6be3b83d14fa0483.css","precedence":"next"}]],["$","div",null,{"id":"post-layout","children":[["$","div",null,{"id":"main","className":"center-wrapper","children":["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]}],["$","$L4",null,{}]]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"WqRjo7VBL0ObkVW6P-Gw1"}
+0:{"rsc":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/441b9964f9b116c1.css","precedence":"next"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/7e90712a60ecad8e.css","precedence":"next"}],["$","link","2",{"rel":"stylesheet","href":"/_next/static/css/0fb9b44be8255d47.css","precedence":"next"}],["$","link","3",{"rel":"stylesheet","href":"/_next/static/css/05da7cf1ce382fdb.css","precedence":"next"}],["$","link","4",{"rel":"stylesheet","href":"/_next/static/css/6be3b83d14fa0483.css","precedence":"next"}]],["$","div",null,{"id":"post-layout","children":[["$","div",null,{"id":"main","className":"center-wrapper","children":["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]}],["$","$L4",null,{}]]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"1kC12FFlassMAypqNFdnp"}
