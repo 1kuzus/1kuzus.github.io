@@ -6,7 +6,7 @@
 
 ## Background
 
-### pickle deserialization
+### Pickle Deserialization
 
 Pickle is Python's built-in serialization protocol. It uses a stack-based virtual machine to reconstruct objects by executing a sequence of opcodes.
 
@@ -23,9 +23,7 @@ An **opcode** is a single-byte instruction that tells the pickle VM what operati
 - `\xfe` — the argument to `BININT1`, i.e. the value 254.
 - `.` — `STOP`: ends unpickling and returns the top-of-stack value.
 
-### common opcodes
-
-Here are some common opcodes we will use in the following contents:
+### Common Opcodes
 
 | Name      | Code   | Description                                                               | Stack effect                             |
 | --------- | ------ | ------------------------------------------------------------------------- | ---------------------------------------- |
@@ -42,7 +40,7 @@ Here are some common opcodes we will use in the following contents:
 | `BUILD`   | `b`    | Pop a state, apply to top object via `__setstate__` or `__dict__.update`  | `[obj, state]` → `[obj]`                 |
 | `STOP`    | `.`    | End unpickling, return top-of-stack                                       | `[result]` → `result`                    |
 
-### execute code by pickle
+### Execute Code by Pickle
 
 Let's warm up by writing some opcodes by hand to execute `os.system("whoami")`:
 
@@ -53,7 +51,8 @@ d = (
     b"(Vwhoami\n"
     b"tR."
 )
-pickle.loads(d)  # suzuki
+res = pickle.loads(d)  # prints "suzuki"
+print(res)  # 0
 ```
 
 Here's what happens on the stack, step by step:
@@ -123,7 +122,7 @@ d5 = (
 )
 
 for d in [d1, d2, d3, d4, d5]:
-    pickle.loads(d)  # suzuki * 5
+    pickle.loads(d)  # prints "suzuki" 5 times
 ```
 
 ## Analysis & Failed Attempts
@@ -134,7 +133,7 @@ We are given a clicker game of growing cucumbers. The objective is to purchase t
 
 ![](2.png)
 
-The game has a save/load feature which players can export progress as `.bak` files and import them later. The file format is:
+The game has a save/load feature that allows players to export progress as `.bak` files and import them later. The file format is:
 
 ```text
 hex( base64(pickle_serialized_state) + hmac_sha256_signature )
