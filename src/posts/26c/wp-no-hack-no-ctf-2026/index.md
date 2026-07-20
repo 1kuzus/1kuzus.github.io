@@ -1,12 +1,14 @@
+## Cucumber Farm
+
 > This writeup is for challenge `cucumber farm`. (Got first blood out of only 3 solves!)
 
 <!-- @xprops width="300px" themeAdaptive -->
 
 ![](1.png)
 
-## Background
+### Background
 
-### Pickle Deserialization
+#### Pickle Deserialization
 
 Pickle is Python's built-in serialization protocol. It uses a stack-based virtual machine to reconstruct objects by executing a sequence of opcodes.
 
@@ -23,7 +25,7 @@ An **opcode** is a single-byte instruction that tells the pickle VM what operati
 - `\xfe` — the argument to `BININT1`, i.e. the value 254.
 - `.` — `STOP`: ends unpickling and returns the top-of-stack value.
 
-### Common Opcodes
+#### Common Opcodes
 
 | Name      | Code   | Description                                                               | Stack effect                             |
 | --------- | ------ | ------------------------------------------------------------------------- | ---------------------------------------- |
@@ -40,7 +42,7 @@ An **opcode** is a single-byte instruction that tells the pickle VM what operati
 | `BUILD`   | `b`    | Pop a state, apply to top object via `__setstate__` or `__dict__.update`  | `[obj, state]` → `[obj]`                 |
 | `STOP`    | `.`    | End unpickling, return top-of-stack                                       | `[result]` → `result`                    |
 
-### Execute Code by Pickle
+#### Execute Code by Pickle
 
 Let's warm up by writing some opcodes by hand to execute `os.system("whoami")`:
 
@@ -125,7 +127,7 @@ for d in [d1, d2, d3, d4, d5]:
     pickle.loads(d)  # prints "suzuki" 5 times
 ```
 
-## Analysis & Failed Attempts
+### Analysis & Failed Attempts
 
 We are given a clicker game of growing cucumbers. The objective is to purchase the Golden Cucumber, which costs `10^20` cucumbers and triggers a `revealFlag` effect. Reaching this legitimately would take thousands of years :)
 
@@ -149,7 +151,7 @@ Some Failed Attempts:
 
 - Forging Save Data: Modified the pickle state and tried to load it. HMAC validation rejected tampered saves.
 
-## Identify the Vulnerability
+### Identify the Vulnerability
 
 What if the server deserializes the pickle data before verifying the HMAC? If so, we can get RCE by embedding malicious opcodes in the save file, the invalid signature won't matter.
 
@@ -258,7 +260,7 @@ for d in [d1, d2, d3, d4, d5]:
 
 Only `d3` (INST) took ~10 seconds. The rest returned in ~1-2 seconds, which may indicate the server filters certain opcodes.
 
-## Final Exploit
+### Final Exploit
 
 ```python
 # ngrok tcp 4444
@@ -278,7 +280,7 @@ send(bak(exp))
 
 ![](3.png)
 
-## Post-Solve Analysis
+### Post-Solve Analysis
 
 The hardest part of this challenge was black-box testing. After `R` (REDUCE) failed, I initially suspected the server validates HMAC before deserializing which would make this entire approach impossible. It took some patience to systematically try all opcode combinations before finding that `i` (INST) bypasses the filter.
 
@@ -333,7 +335,7 @@ def load_inst(self):
 
 And `find_class` has no filtering, so `INST` can resolve and call any function from any module.
 
-## Summary
+### Summary
 
 Two vulnerabilities combined:
 
