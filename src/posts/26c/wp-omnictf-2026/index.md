@@ -182,7 +182,7 @@ print(r_post.status_code)  # 302
 
 Now we can log in as admin with the new password:
 
-<!-- @xprops width="600px" -->
+<!-- @xprops width="400px" -->
 
 ![](t1-3.png)
 
@@ -240,7 +240,7 @@ After clicking `SAVE CHANGES`, the webshell persists at `Themes/default/tmp_<PHP
 
 ### Approach - Step 1: Getting SSH Credentials
 
-With the webshell, we probe the internal network and find a service on port 2029. Passing `?cmd=curl localhost:2029` returns:
+With the webshell, we probe the internal network and find a service on port 2029, and `?cmd=curl localhost:2029` gives:
 
 ```text
 amazon.local — internal metadata service
@@ -252,7 +252,9 @@ Available endpoints:
 Fatal error: Uncaught Error: Call to undefined function xxxx() in ...
 ```
 
-An AWS-style metadata service on port 2029. Fetching `?cmd=curl localhost:2029/latest/meta-data/iam/security-credentials/june` returns a PNG image. Saving and opening it reveals:
+An AWS-style metadata service on port 2029. Fetching `localhost:2029/latest/meta-data/iam/security-credentials/june` the same way returns a PNG image. Saving and opening it reveals:
+
+<!-- @xprops width="400px" -->
 
 ![](june.png)
 
@@ -278,7 +280,7 @@ $ ls -la /usr/bin/su
 
 Kernel `6.12.63` is vulnerable to [CVE-2026-31431 "Copy Fail"](https://copy.fail/), a local privilege escalation that abuses `AF_ALG` + `splice()` to overwrite the page cache of any readable file with attacker-controlled bytes. We target the SUID binary `/usr/bin/su`.
 
-Download `copy_fail_exp.c` from [nisec-eric/cve-2026-31431](https://github.com/nisec-eric/cve-2026-31431/tree/main/poc). The remote container has no compiler, no `python3`, and no outbound network. So we compile locally and upload the binary.
+Download `copy_fail_exp.c` from [nisec-eric/cve-2026-31431](https://github.com/nisec-eric/cve-2026-31431/blob/main/poc/copy_fail_exp.c). The remote container has no compiler, no `python3`, and no outbound network. So we compile locally and upload the binary.
 
 My local machine is macOS ARM, so I used Docker to cross-compile a static x86_64 binary:
 
