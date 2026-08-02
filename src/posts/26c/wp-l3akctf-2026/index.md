@@ -68,6 +68,8 @@ def read_room(room, offset=0):
     for y in range(h):
         out += pix[(h - 1 - y) * w: (h - y) * w]
     return bytes(out).rstrip(b"\x00")
+
+# print(read_room("/etc/passwd").decode())
 ```
 
 ### Vuln 2: Arbitrary Address Write
@@ -82,16 +84,15 @@ FileExt::write_at(fd, &color, offset);
 
 The bounds check, however, never compares the full `x` / `y` against 64. It only keeps the low bytes, then rejects with `(x | y) & 0xC0 != 0`.
 
-Because `0xC0` only masks bits 6–7 of the low byte, this is exactly "low 8 bits of `x` or `y` are ≥ 64", while the `pwrite` offset still uses the full integer values. So any coordinate whose low byte sits in 0 ~ 63 is accepted, even when the real value is far outside the 64×64 board.
+Because `0xC0` only masks bits 6-7 of the low byte, this is exactly "low 8 bits of `x` or `y` are ≥ 64", while the `pwrite` offset still uses the full integer values. So any coordinate whose low byte sits in 0-63 is accepted, even when the real value is far outside the 64×64 board.
 
 | request `x` | low 8 bits (`x & 0xFF`) | check | write offset |
 | ----------- | ----------------------- | ----- | ------------ |
 | 63          | 63                      | ok    | 63           |
-| 64          | 64                      | deny  | —            |
-| 256         | 0                       | ok    | 256          |
-| 4096        | 0                       | ok    | 4096         |
+| 64          | 64                      | deny  | --           |
+| 4097        | 1                       | ok    | 4097         |
 
-Combined with the absolute-path room name from vuln 1, we can `pwrite` a single chosen byte to any offset of any file the process can open for writing — including `/proc/self/mem`.
+Combined with vuln 1, we can `pwrite` a single chosen byte to any offset of any file the process can open for writing, including `/proc/self/mem`. ^v^
 
 That gives a clean one-byte arbitrary write primitive against the process address space:
 
@@ -133,7 +134,7 @@ At the end of `l3aky_canvas::auth_check`, the failing compare is implemented as:
 
 Here `al` comes from `setz` (set if `ZF=1`): `al` is set to 1 only when the preceding compare `v10 == (v10 ^ 1)` is true, which is impossible. So `al` is always 0, and login always fails.
 
-But if we flip the middle byte from `0x94` to `0x95`:
+But if we can flip the middle byte from `0x94` to `0x95`:
 
 ```text
 .text:00000000000227C5    0F 95 C0      setnz   al
@@ -173,7 +174,7 @@ write_mem(target, 0x95)
 > target = 0x5b89d4c51000 + (0x227c5 - 0x22000) + 1   # correct
 > ```
 
-After that, any credentials will log us in.
+Now any credentials will log us in.
 
 #### Step 2: Login and read the flag
 
@@ -183,7 +184,7 @@ After the patch, log in with arbitrary credentials:
 
 ![](3.png)
 
-Finally load the flag room through `/canvas` and decode the BMP:
+Finally load the flag room and decode the BMP:
 
 ```python
 print(read_room("flag-7ba3dd4b8d83e67e6bcd2ebdbe2f40fc.bin").decode())
