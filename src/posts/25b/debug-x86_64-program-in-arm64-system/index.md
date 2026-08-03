@@ -48,7 +48,7 @@
 
 ### 配置共享文件夹和端口转发
 
-> 下面语境中"主机"指的是运行QEMU的Ubuntu 22.04.2 ARM64虚拟机。
+> 下面语境中“主机”指的是运行QEMU的Ubuntu 22.04.2 ARM64虚拟机。
 
 在这一步，我们让QEMU的x86_64系统和主机之间共享一个目录，可以把题目放在共享文件夹里。（对于我的环境，我可以让MacOS、Ubuntu ARM64虚拟机以及Ubuntu中的QEMU的x86_64系统共享同一个文件夹，共享文件很方便。）
 
@@ -147,9 +147,9 @@ echo "shared /mnt/shared 9p trans=virtio,access=any 0 0" | sudo tee -a /etc/fsta
 
     ![](fig4.jpg)
 
-> 下面语境中"主机"指的是MacOS。
+> 下面语境中“主机”指的是MacOS。
 
-1. 如果需要，也可以在MacOS中SSH连接到QEMU虚拟机，我的Ubuntu ARM64 Parallels Desktop虚拟机使用"共享网络"模式，MacOS主机可以访问到Ubuntu虚拟机。在Ubuntu虚拟机中执行`ip addr`，查到Ubuntu虚拟机的IP地址：
+1. 如果需要，也可以在MacOS中SSH连接到QEMU虚拟机，我的Ubuntu ARM64 Parallels Desktop虚拟机使用“共享网络”模式，MacOS主机可以访问到Ubuntu虚拟机。在Ubuntu虚拟机中执行`ip addr`，查到Ubuntu虚拟机的IP地址：
 
     ![](fig5.jpg)
 

@@ -88,7 +88,7 @@ const arr = [1, 5, 7, 13, 45, 66];
 console.log(arr.filter((i) => i > 10)); //[13, 45, 66]
 ```
 
-## find 系列
+## find系列
 
 - `find()`方法返回数组中满足提供的测试函数的第一个元素的值。否则返回`undefined`。
 - `findIndex()`方法返回数组中满足提供的测试函数的第一个元素的索引。若没有找到对应元素则返回`-1`。
@@ -226,7 +226,7 @@ console.log(numbers); //[1, 4, 9]
 console.log(roots); //[1, 2, 3]
 ```
 
-## pop()和 push()
+## pop()和push()
 
 `pop()`方法从数组中删除最后一个元素，并返回该元素的值。此方法会更改数组的长度。<br>`push()`方法将指定的元素添加到数组的末尾，并返回新的数组长度。
 
@@ -247,7 +247,7 @@ console.log([].pop()); //undefined
 
 `reduce()`方法对数组中的每个元素按序执行一个提供的`reducer`函数，每一次运行`reducer`会将先前元素的计算结果作为参数传入，最后将其结果汇总为单个返回值。
 
-第一次执行回调函数时，不存在"上一次的计算结果"。如果需要回调函数从数组索引为`0`的元素开始执行，则需要传递初始值。否则，数组索引为`0`的元素将被用作初始值，迭代器将从索引为`1`的元素开始执行。<br>下面是一个使用`reduce()`的例子，计算数组所有元素的总和：
+第一次执行回调函数时，不存在“上一次的计算结果”。如果需要回调函数从数组索引为`0`的元素开始执行，则需要传递初始值。否则，数组索引为`0`的元素将被用作初始值，迭代器将从索引为`1`的元素开始执行。<br>下面是一个使用`reduce()`的例子，计算数组所有元素的总和：
 
 ```js
 const arr = [1, 2, 3, 4];
@@ -263,13 +263,9 @@ console.log(sum); //17
 ```js
 const numbers = [-5, 6, 2, -1];
 
-console.log(
-    numbers.filter((n) => n > 0).map((n) => n * 2)
-); //[12, 4]
+console.log(numbers.filter((n) => n > 0).map((n) => n * 2)); //[12, 4]
 
-console.log(
-    numbers.reduce((result, n) => (n > 0 ? [...result, n * 2] : result), [])
-); //[12, 4]
+console.log(numbers.reduce((result, n) => (n > 0 ? [...result, n * 2] : result), [])); //[12, 4]
 ```
 
 ## reverse()
@@ -298,7 +294,7 @@ res[0] = 99;
 console.log(res, arr); //[99, 2, 1] [1, 2, 3]
 ```
 
-## shift()和 unshift()
+## shift()和unshift()
 
 `shift()`方法从数组中删除第一个元素，并返回该元素的值。此方法会更改数组的长度。<br>`unshift()`方法将指定元素添加到数组的开头，并返回新的数组长度。
 
@@ -352,7 +348,7 @@ arr.sort(compareFn);
 
 <!-- @xprops background="red" -->
 
-> 如果省略`compareFn`，数组元素会被转换为字符串，然后根据每个字符的 Unicode 码位值进行排序。
+> 如果省略`compareFn`，数组元素会被转换为字符串，然后根据每个字符的Unicode码位值进行排序。
 
 ```js
 const arr1 = [2, 5, 14, 8, 1];

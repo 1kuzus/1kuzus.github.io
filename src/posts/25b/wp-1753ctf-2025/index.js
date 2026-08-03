@@ -10,7 +10,7 @@ export default function Post() {
                 <X.P>A type check was missing when handling fonts in PDF.js, which would allow arbitrary JavaScript execution in the PDF.js context. This vulnerability affects Firefox &lt; 126, Firefox ESR &lt; 115.11, and Thunderbird &lt; 115.11.</X.P>
             </X.HighlightBlock>
             <X.P>So the basic roadmap is: we host a malicious PDF file and report the URL to admin, when the admin bot visits this URL, the JavaScript code will be executed and we can open `/app/admin/flag.pdf`, then send the content to our server.</X.P>
-            <X.P>However, when we tried to host the PoC PDF document, my teammate's server failed on SSL handshake, and I used to use Ngrok to tunnel my local service to the internet, but since I’m on the free plan, Ngrok will show an interstitial page before redirecting to my local service. After some trials, I decided to use @serveo.net[https://serveo.net/]@. This allowed me to do the same thing without needing to install any additional dependencies (just SSH is required).</X.P>
+            <X.P>However, when we tried to host the PoC PDF document, my teammate's server failed on SSL handshake, and I used to use Ngrok to tunnel my local service to the internet, but since I'm on the free plan, Ngrok will show an interstitial page before redirecting to my local service. After some trials, I decided to use @serveo.net[https://serveo.net/]@. This allowed me to do the same thing without needing to install any additional dependencies (just SSH is required).</X.P>
             <X.P>So here's the full approach:</X.P>
             <X.H3>Step 1</X.H3>
             <X.P>I start a local Flask server to host the PoC PDF document, and also to receive the content of `flag.pdf`.</X.P>

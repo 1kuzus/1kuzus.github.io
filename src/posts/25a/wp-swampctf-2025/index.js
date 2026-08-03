@@ -316,7 +316,7 @@ export default function Post() {
             <X.P>The flag is `https://swampctf.blob.core.windows.net/test/flag_020525.txt`.</X.P>
             <X.CodeBlock language="text" code="swampCTF{345y_4zur3_bl0b_020525}" />
             <X.H2>Lost In Translation</X.H2>
-            <X.P>The provided script doesn’t have any obvious vulnerabilities, but the indents and spaces are quite strange!!</X.P>
+            <X.P>The provided script doesn't have any obvious vulnerabilities, but the indents and spaces are quite strange!!</X.P>
             <X.CodeBlock
                 language="python"
                 code={`

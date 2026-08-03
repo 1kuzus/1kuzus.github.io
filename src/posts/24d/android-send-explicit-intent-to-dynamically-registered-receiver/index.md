@@ -10,7 +10,7 @@ Android中可以通过隐式`Intent`：`intent.setAction(action)`，或显式`In
 
 ### 接收方静态注册
 
-Android 8.0以后将不能在`AndroidManifest.xml`中静态注册大部分接收隐式`Intent`的`BroadcastReceiver`了。这里的"大部分"排除了一些[例外情况](https://developer.android.com/develop/background-work/background-tasks/broadcasts/broadcast-exceptions)，但对于自定义广播来说，基本上可以认为不能用隐式`Intent`去触发静态注册的`BroadcastReceiver`了。
+Android 8.0以后将不能在`AndroidManifest.xml`中静态注册大部分接收隐式`Intent`的`BroadcastReceiver`了。这里的“大部分”排除了一些[例外情况](https://developer.android.com/develop/background-work/background-tasks/broadcasts/broadcast-exceptions)，但对于自定义广播来说，基本上可以认为不能用隐式`Intent`去触发静态注册的`BroadcastReceiver`了。
 
 参考[https://developer.android.com/develop/background-work/background-tasks/broadcasts](https://developer.android.com/develop/background-work/background-tasks/broadcasts)：
 

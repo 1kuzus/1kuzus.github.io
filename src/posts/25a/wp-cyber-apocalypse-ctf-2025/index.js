@@ -73,7 +73,7 @@ export default function Post() {
                 with open("key.txt", "r") as f:
                     key = f.read().strip()
 
-                background = """High above Eldoria’s skyline hovers the Floating Isles.
+                background = """High above Eldoria's skyline hovers the Floating Isles.
                 The fellowship has to retrieve the Wind Crystal from this sacred land.
                 Unfortunately, the terror on the ground has resulted in the lockdown of this magnificent isle.
                 Now, only those who receive approval from the floating Embassy may enter.

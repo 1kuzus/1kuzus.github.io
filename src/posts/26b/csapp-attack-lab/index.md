@@ -30,7 +30,7 @@
 
 自己做的时候就是因为没注意到这一点，用了很多范围之外的gadgets，导致Phase 4~5的解法只适用于`rtarget`程序（过不了服务端的`rtarget-check`）。
 
-另外，并不能直接向服务器伪造"通关"请求，因为`notify_server`函数中`gets_buf`会被一起发送给服务端，服务端也会运行检查。
+另外，并不能直接向服务器伪造“通关”请求，因为`notify_server`函数中`gets_buf`会被一起发送给服务端，服务端也会运行检查。
 
 ## Code Injection
 

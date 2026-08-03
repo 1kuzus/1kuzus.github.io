@@ -663,7 +663,7 @@ Access-Control-Allow-Origin: https://cms-0a31003e035f72f780b87ba700de000f.web-se
 
 直接打开这个地址，发现一个简易的登录页面，登录失败时显示`Invalid username: ...`，存在反射XSS。
 
-利用这一点，可以在"站内"（不同源，但同站）实现WebSocket劫持，脚本如下：
+利用这一点，可以在“站内”（不同源，但同站）实现WebSocket劫持，脚本如下：
 
 ```js
 const ws = new WebSocket('wss://0a31003e035f72f780b87ba700de000f.web-security-academy.net/chat');
@@ -961,7 +961,7 @@ resp = requests.get(url, headers={"X-Original-URL": "/admin/delete"})
 
 ### Ap: 2FA simple bypass
 
-用户名密码登录后，可以直接改URL为`/my-account`跳过2FA。（用户名密码登录后登录态已经保存，2FA"形同虚设"。）
+用户名密码登录后，可以直接改URL为`/my-account`跳过2FA。（用户名密码登录后登录态已经保存，2FA“形同虚设”。）
 
 ### Ap: Password reset broken logic
 

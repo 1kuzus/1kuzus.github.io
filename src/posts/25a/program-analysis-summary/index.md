@@ -8,7 +8,7 @@
 
 ## L1. Introduction
 
-- [莱斯定理 - 不存在"完美"的静态分析算法](https://cs.nju.edu.cn/tiantan/software-analysis/introduction.pdf#page=23)
+- [莱斯定理 - 不存在“完美”的静态分析算法](https://cs.nju.edu.cn/tiantan/software-analysis/introduction.pdf#page=23)
 - [Soundness vs. Completeness](https://cs.nju.edu.cn/tiantan/software-analysis/introduction.pdf#page=35)
 - 静态分析算法大多保证Soundness（允许误报），妥协Completeness
 
@@ -31,7 +31,7 @@
 
 ### 可达定义分析 Reaching Definitions Analysis
 
-- [问题定义：分析某个"定义"是否能到达某个程序点](https://cs.nju.edu.cn/tiantan/software-analysis/DFA-AP.pdf#page=41)
+- [问题定义：分析某个“定义”是否能到达某个程序点](https://cs.nju.edu.cn/tiantan/software-analysis/DFA-AP.pdf#page=41)
 - 应用举例：如果在初始时视为所有变量均定义为`undef`，且该定义能到达某个变量被使用的点，则说明程序可能存在未定义的变量使用。
 - [数据抽象：Data Flow Values/Facts](https://cs.nju.edu.cn/tiantan/software-analysis/DFA-AP.pdf#page=44)
 - [Transfer Function（例子）](https://cs.nju.edu.cn/tiantan/software-analysis/DFA-AP.pdf#page=48)
@@ -41,7 +41,7 @@
 
 ### 活跃变量分析 Live Variables Analysis
 
-- [问题定义：分析某个变量在某个程序点是否"活跃"（即在该点之后的某条控制流路径上会被使用）](https://cs.nju.edu.cn/tiantan/software-analysis/DFA-AP.pdf#page=142)
+- [问题定义：分析某个变量在某个程序点是否“活跃”（即在该点之后的某条控制流路径上会被使用）](https://cs.nju.edu.cn/tiantan/software-analysis/DFA-AP.pdf#page=142)
 - [数据抽象：Data Flow Values/Facts](https://cs.nju.edu.cn/tiantan/software-analysis/DFA-AP.pdf#page=143)
 - [Transfer Function和控制流的传递](https://cs.nju.edu.cn/tiantan/software-analysis/DFA-AP.pdf#page=163)
 - [算法（迭代算法）](https://cs.nju.edu.cn/tiantan/software-analysis/DFA-AP.pdf#page=164)
@@ -49,7 +49,7 @@
 
 ### 可用表达式分析 Available Expressions Analysis
 
-- [问题定义：分析某个表达式在某个程序点是否"可用"（即在该点之前的所有控制流路径上均已计算过该表达式，且其操作数未被重新定义）](https://cs.nju.edu.cn/tiantan/software-analysis/DFA-AP.pdf#page=228)
+- [问题定义：分析某个表达式在某个程序点是否“可用”（即在该点之前的所有控制流路径上均已计算过该表达式，且其操作数未被重新定义）](https://cs.nju.edu.cn/tiantan/software-analysis/DFA-AP.pdf#page=228)
 - 应用举例：程序优化，在程序点处可以把表达式替换成上一次的计算结果，避免重复计算。
 - [数据抽象：Data Flow Values/Facts](https://cs.nju.edu.cn/tiantan/software-analysis/DFA-AP.pdf#page=229)
 - [Transfer Function和控制流的传递](https://cs.nju.edu.cn/tiantan/software-analysis/DFA-AP.pdf#page=242)

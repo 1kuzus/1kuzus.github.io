@@ -5,7 +5,7 @@ NJU程序分析[死代码检测的Lab](https://tai-e.pascal-lab.net/pa3.html)关
 
 不可达代码涉及到对CFG图结构的分析，而无用赋值可以逐条语句进行检测，因此考虑先完成对不可达代码的检测。
 
-从程序入口点开始，对CFG进行一次BFS，标记到达的节点（语句），即可排除掉控制流不可达的语句；对于分支不可达的语句，考虑在遍历的过程中选择他们的出边，就像把那些不可达的分支"剪掉"。比如对于这个例子（作业文档上的例子）：
+从程序入口点开始，对CFG进行一次BFS，标记到达的节点（语句），即可排除掉控制流不可达的语句；对于分支不可达的语句，考虑在遍历的过程中选择他们的出边，就像把那些不可达的分支“剪掉”。比如对于这个例子（作业文档上的例子）：
 
 ```java
 int unreachableSwitchBranch() {
@@ -35,7 +35,7 @@ int unreachableSwitchBranch() {
 代码侧面，实现`getIfStmtReachableSuccs`和`getSwitchStmtReachableSuccs`两个方法：
 
 ```java
-// 获取if语句的"可达后继"
+// 获取if语句的“可达后继”
 Set<Stmt> getIfStmtReachableSuccs(If ifStmt, CFG<Stmt> cfg, DataflowResult<Stmt, CPFact> constants) {
     ConditionExp condition = ifStmt.getCondition();
     Var op1 = condition.getOperand1(), op2 = condition.getOperand2();
@@ -66,7 +66,7 @@ Set<Stmt> getIfStmtReachableSuccs(If ifStmt, CFG<Stmt> cfg, DataflowResult<Stmt,
 ```
 
 ```java
-// 获取switch语句的"可达后继"
+// 获取switch语句的“可达后继”
 Set<Stmt> getSwitchStmtReachableSuccs(SwitchStmt switchStmt, CFG<Stmt> cfg, DataflowResult<Stmt, CPFact> constants) {
     Var condVar = switchStmt.getVar();
     Value v = constants.getInFact(switchStmt).get(condVar);
@@ -89,7 +89,7 @@ Set<Stmt> getSwitchStmtReachableSuccs(SwitchStmt switchStmt, CFG<Stmt> cfg, Data
 }
 ```
 
-这两个方法会返回条件/分支语句"可达"的后继节点，如果条件值不是常量则等价于`cfg.getSuccsOf(stmt)`（返回所有后继），否则只会返回命中条件的那个后继节点。
+这两个方法会返回条件/分支语句“可达”的后继节点，如果条件值不是常量则等价于`cfg.getSuccsOf(stmt)`（返回所有后继），否则只会返回命中条件的那个后继节点。
 
 在BFS时，对于条件/分支语句，改为用这两个方法获取语句的后继节点，即可完成对不可达代码的判断；BFS完成之后再逐语句进行无用赋值的检测即可，代码如下：
 
@@ -122,10 +122,10 @@ public Set<Stmt> analyze(IR ir) {
 
         Set<Stmt> reachableSuccs;
         if (stmt instanceof If ifStmt) {
-            // if语句的"可达后继"
+            // if语句的“可达后继”
             reachableSuccs = getIfStmtReachableSuccs(ifStmt, cfg, constants);
         } else if (stmt instanceof SwitchStmt switchStmt) {
-            // switch语句的"可达后继"
+            // switch语句的“可达后继”
             reachableSuccs = getSwitchStmtReachableSuccs(switchStmt, cfg, constants);
         } else {
             reachableSuccs = cfg.getSuccsOf(stmt);
