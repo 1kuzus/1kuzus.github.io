@@ -323,7 +323,7 @@ export default function Post() {
                 `}
             />
             <X.H1>通过shellcode在服务器RCE</X.H1>
-            <X.P>做Phase 2的时候在想，如果`ctarget`程序不开NX保护，可以执行shellcode，是不是可以RCE呢？</X.P>
+            <X.P>做Phase 2的时候在想，既然`ctarget`程序不开NX保护，可以执行shellcode，是不是可以RCE呢？</X.P>
             <X.CodeBlock
                 language="python"
                 title="gen-shellcode.py"
