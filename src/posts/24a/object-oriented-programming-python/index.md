@@ -702,7 +702,7 @@ v1 = Vector3d(3, 4, 5)
 v2 = Vector3d(1, 2, 3)
 ```
 
-### **len**
+### `__len__`
 
 `len(obj)`时调用。`__len__`方法的返回值只能是整数。
 
@@ -716,7 +716,7 @@ class Vector3d:
 print(len(v1))  # 3
 ```
 
-### **repr**和**str**
+### `__repr__`和`__str__`
 
 `__repr__`方法的返回值应该是一个**可以用来重新创建对象**的字符串。
 
@@ -740,7 +740,7 @@ print(repr(v1))  # Vector3d(3, 4, 5)
 print(v1)  # (3, 4, 5)
 ```
 
-### **call**
+### `__call__`
 
 `__call__`方法使得实例可以像函数一样被调用。
 
@@ -814,7 +814,7 @@ class Vector3d:
 print(2 * v1)  # (6, 8, 10)
 ```
 
-### **getitem**和**setitem**
+### `__getitem__`和`__setitem__`
 
 `__getitem__`在取`obj[key]`时调用，这个例子中我们约定`obj[key]`返回向量第`i`个分量；
 
