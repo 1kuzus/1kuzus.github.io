@@ -470,7 +470,7 @@ export default function Post() {
                 <X.P>这一节讨论的`[[Prototype]]`就是一个内部属性，它表示对象的原型对象。</X.P>
             </X.HighlightBlock>
             <X.P>在前面的表述中，我刻意回避了“对象的`__proto__`属性”这种说法，因为这会引起歧义，听起来好像每一个对象都天生带有一个`__proto__`属性。</X.P>
-            <X.P>事实上，`__proto__`可以看作是内部属性`[[Prototype]]`的getter/setter，它定义在`Object.prototype`上。我们几乎可以在任意对象上访问`__proto__`，本质上是沿着原型链找到了`Object.prototype.__proto__`。</X.P>
+            <X.P>事实上，`__proto__`可以看作是内部属性`[[Prototype]]`的getter/setter，它定义在`Object.prototype`上。我们几乎可以在任意对象上访问`__proto__`，本质上是沿着原型链找到了`Object.prototype`上对应的getter/setter函数，然后以当前对象作为`this`执行。</X.P>
             <X.Image src="1.jpg" themeAdaptive />
             <X.P>为什么是“几乎”？我们可以通过`Object.create(null);`直接创建一个原型对象为`null`的对象，它比`{'const obj = {};'}`创建的空对象还要“纯净”。注意下面两个对象的区别：</X.P>
             <X.Image src="2.jpg" themeAdaptive />
