@@ -1,18 +1,18 @@
 export default function remarkXProps() {
     // 解析 @xprops 注释体里的 key=value / flag 为 props 对象
-    const parseProps = (raw) =>
-        raw
-            .trim()
-            .split(/\s+/)
-            .reduce((acc, item) => {
-                if (item.includes('=')) {
-                    const [key, value] = item.split('=');
-                    acc[key] = value.trim().replace(/^['"]|['"]$/g, '');
-                } else {
-                    acc[item] = true;
-                }
-                return acc;
-            }, {});
+    const parseProps = (raw) => {
+        const acc = {};
+        const re = /([\w-]+)=(?:"([^"]*)"|'([^']*)'|([\S]+))|([\w-]+)/g;
+        let m;
+        while ((m = re.exec(raw)) !== null) {
+            if (m[1]) {
+                acc[m[1]] = m[2] ?? m[3] ?? m[4];
+            } else if (m[5]) {
+                acc[m[5]] = true;
+            }
+        }
+        return acc;
+    };
 
     // 对一个 children 数组就地处理：匹配注释 -> 合并 props 到下一个兄弟 -> 删除注释。
     // 同时递归进入每个节点的子节点，以支持列表项等嵌套结构。
