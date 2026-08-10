@@ -320,7 +320,7 @@ Blind format string challenge, no binary. A bit of poking shows our input starts
 
 The service also counts lowercase `n` in the input:
 
-| `#` of `n` | Behaviour                                                   |
+| num of `n` | Behaviour                                                   |
 | ---------- | ----------------------------------------------------------- |
 | 0          | normal `printf`, loop continues                             |
 | 1          | `printf` runs, then `Bye! Exiting...` and the process exits |
