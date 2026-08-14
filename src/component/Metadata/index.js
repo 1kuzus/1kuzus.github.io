@@ -1,11 +1,10 @@
 'use client';
 import {useEffect, useState} from 'react';
-import {getViews, increaseViews, onViewsChange, getLikes, increaseLikes, onLikesChange} from 'src/firebase/counter';
+import {increaseViews, onViewsChange, increaseLikes, onLikesChange} from 'src/firebase/counter';
 import {HeartIcon} from 'src/assets/svgs';
 import {archives} from 'src/posts-indexing';
 import './index.css';
 
-const isDev = process.env.NODE_ENV === 'development';
 const {min, max, log, floor} = Math;
 
 function animateCount(start, end, duration, setter) {
@@ -25,24 +24,33 @@ function animateCount(start, end, duration, setter) {
     };
 }
 
+function listenCount(subscribe, setter, durationFn) {
+    let cancelAnim;
+    let first = true;
+    const unsubscribe = subscribe((value) => {
+        if (first) {
+            first = false;
+            if (value > 0) cancelAnim = animateCount(0, value, durationFn(value), setter);
+            else setter(0);
+            return;
+        }
+        cancelAnim && cancelAnim();
+        setter(value);
+    });
+    return () => {
+        cancelAnim && cancelAnim();
+        unsubscribe();
+    };
+}
+
 export function HomepageViewCount() {
     const [viewCount, setViewCount] = useState(null);
     useEffect(() => {
-        let cancelAnim;
-        getViews('total').then((count) => {
-            cancelAnim = animateCount(0, count, floor(144 * log(count)), setViewCount);
-            if (!isDev) {
-                increaseViews('total');
-            }
-        });
-        const unsubscribe = onViewsChange('total', (views) => (cancelAnim && cancelAnim(), setViewCount(views)));
-        return () => (cancelAnim && cancelAnim(), unsubscribe());
+        const stop = listenCount((cb) => onViewsChange('total', cb), setViewCount, (n) => floor(144 * log(n)));
+        increaseViews('total');
+        return stop;
     }, []);
-    return (
-        <div id="homepage-view-count">
-            <code className={viewCount === null ? 'not-loaded' : ''}>{viewCount + ' views'}</code>
-        </div>
-    );
+    return <div id="homepage-view-count">{viewCount > 0 && <code>{viewCount + ' views'}</code>}</div>;
 }
 
 export function PostMeta(props) {
@@ -50,32 +58,22 @@ export function PostMeta(props) {
     const [viewCount, setViewCount] = useState(null);
     const [likeCount, setLikeCount] = useState(null);
     useEffect(() => {
-        let cancelAnim;
-        getViews(path).then((count) => {
-            cancelAnim = animateCount(0, count, floor(144 * log(count)), setViewCount);
-            if (!isDev) {
-                increaseViews(path);
-                increaseViews('total');
-            }
-        });
-        const unsubscribe = onViewsChange(path, (views) => (cancelAnim && cancelAnim(), setViewCount(views)));
-        return () => (cancelAnim && cancelAnim(), unsubscribe());
+        const stop = listenCount((cb) => onViewsChange(path, cb), setViewCount, (n) => floor(144 * log(n)));
+        increaseViews(path);
+        increaseViews('total');
+        return stop;
     }, [path]);
-    useEffect(() => {
-        let cancelAnim;
-        getLikes(path).then((count) => {
-            cancelAnim = animateCount(0, count, floor(288 * log(count)), setLikeCount);
-        });
-        const unsubscribe = onLikesChange(path, (likes) => (cancelAnim && cancelAnim(), setLikeCount(likes)));
-        return () => (cancelAnim && cancelAnim(), unsubscribe());
-    }, [path]);
+    useEffect(
+        () => listenCount((cb) => onLikesChange(path, cb), setLikeCount, (n) => floor(288 * log(n))),
+        [path]
+    );
+    const parts = [];
+    if (likeCount > 0) parts.push(likeCount + ' likes');
+    if (viewCount > 0) parts.push(viewCount + ' views');
+    if (archives[path].time) parts.push(archives[path].time);
     return (
         <div className="post-meta">
-            <code className={viewCount === null || !likeCount ? 'not-loaded' : ''}>
-                {likeCount + ' likes'}&nbsp;·&nbsp;
-            </code>
-            <code className={viewCount === null ? 'not-loaded' : ''}>{viewCount + ' views'}&nbsp;·&nbsp;</code>
-            <code>{archives[path].time}</code>
+            <code>{parts.join(' · ')}</code>
         </div>
     );
 }
@@ -143,9 +141,7 @@ export function LikeButton(props) {
                 if (!liked) {
                     setLiked(true);
                     addLikedPost(path);
-                    if (!isDev) {
-                        increaseLikes(path);
-                    }
+                    increaseLikes(path);
                 }
                 if (!animate) {
                     setAnimate(true);

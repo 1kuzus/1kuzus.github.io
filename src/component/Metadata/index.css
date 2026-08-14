@@ -6,11 +6,6 @@
 .post-meta * {
     font-size: 13px;
     color: var(--fg-gray-300);
-    transition: opacity 200ms;
-}
-#homepage-view-count .not-loaded,
-.post-meta .not-loaded {
-    opacity: 0;
 }
 .like-button {
     display: flex;
