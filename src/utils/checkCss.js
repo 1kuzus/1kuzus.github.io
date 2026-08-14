@@ -56,6 +56,7 @@ const propertyOrderList = [
     'line-height',
     'font-size',
     'font-weight',
+    'font-style',
     'font-family',
     'letter-spacing',
     'white-space',
