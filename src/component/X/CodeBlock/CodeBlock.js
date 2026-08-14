@@ -44,7 +44,7 @@ export default function CodeBlock(props) {
     const {language, code, title, highlightLines, diffRemovedLines, diffAddedLines} = props;
     assert(languageNameMap[language], 'unsupported language: ' + language);
     //处理代码行，处理空白，统一缩进
-    let lines = code.split('\n').map((line) => line.trimRight());
+    let lines = code.split('\n').map((line) => line.trimEnd());
     if (!lines[0]) lines = lines.slice(1);
     const indent = lines[0].length - lines[0].trimStart().length;
     lines = lines.map((line) => line.slice(indent));
@@ -72,14 +72,16 @@ export default function CodeBlock(props) {
         r: 'var(--bg-transparent-red)',
         a: 'var(--bg-transparent-green)',
     };
+    const lineOffset = (n) =>
+        `calc(var(--x-codeblock-pre-padding-y) + ${+n - 1} * var(--x-codeblock-line-height))`;
     const backgroundStyle =
         'linear-gradient(180deg' +
         allStartEnd
             .map(
                 ([start, end, type]) =>
-                    `, transparent ${start * 24}px, ` +
-                    `${colorMap[type]} ${start * 24}px ${end * 24}px, ` +
-                    `transparent ${end * 24}px`
+                    `, transparent ${lineOffset(start)}, ` +
+                    `${colorMap[type]} ${lineOffset(start)} ${lineOffset(end)}, ` +
+                    `transparent ${lineOffset(end)}`
             )
             .join('') +
         ')';
