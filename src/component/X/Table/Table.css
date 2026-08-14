@@ -7,8 +7,8 @@
 .x-table {
     width: max-content;
     height: fit-content;
-    border-collapse: separate;
     border-spacing: 3px;
+    border-collapse: separate;
 }
 .x-table th {
     background-color: var(--bg-transparent-gray-600);

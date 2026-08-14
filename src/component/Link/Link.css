@@ -1,11 +1,11 @@
 .link {
     display: block;
     width: 100%;
-    margin-top: 0.2em;
     padding: 0.4em 1em;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    margin-top: 0.2em;
     overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     border-radius: 0.5em;
     transition: background-color 200ms;
 }

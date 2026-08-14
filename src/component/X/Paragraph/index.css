@@ -1,12 +1,12 @@
 .x-inline-highlight {
-    margin: 0 2px;
     padding: 2px 4px;
+    margin: 0 2px;
     font-size: 14px;
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
     color: var(--fg-gray-100);
-    border-radius: 4px;
     background-color: var(--bg-transparent-gray-600);
+    border-radius: 4px;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
 }
 .x-inline-strong {
     font-weight: bold;

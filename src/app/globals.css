@@ -112,26 +112,26 @@ body::-webkit-scrollbar {
     height: 4px;
 }
 *::-webkit-scrollbar-thumb {
-    border-radius: 4px;
     background-color: var(--bg-gray-500);
+    border-radius: 4px;
 }
 *::-webkit-scrollbar-thumb:hover {
     background-color: var(--bg-gray-700);
 }
 * {
     box-sizing: border-box;
-    margin: 0;
     padding: 0;
-    scrollbar-width: thin;
+    margin: 0;
     scrollbar-color: var(--bg-gray-500) transparent;
+    scrollbar-width: thin;
 }
 body {
     padding-top: 64px;
     font-size: 16px;
-    background-color: var(--bg-body);
     color: var(--fg-main);
-    -webkit-text-size-adjust: 100%;
     scrollbar-width: auto;
+    background-color: var(--bg-body);
+    -webkit-text-size-adjust: 100%;
 }
 div,
 li,
@@ -146,9 +146,9 @@ a {
     text-decoration: none;
 }
 button {
+    cursor: pointer;
     background-color: transparent;
     border: none;
-    cursor: pointer;
 }
 img {
     -webkit-user-drag: none;

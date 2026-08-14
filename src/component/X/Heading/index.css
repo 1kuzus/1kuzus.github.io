@@ -6,17 +6,17 @@
     font-size: 24px;
 }
 .x-h1::before {
-    content: '#';
     margin-right: 8px;
     color: var(--brand-300);
+    content: '#';
 }
 .x-h2 {
     font-size: 20px;
 }
 .x-h2::before {
-    content: '##';
     margin-right: 6px;
     color: var(--brand-300);
+    content: '##';
 }
 .x-h3 {
     font-size: 18px;

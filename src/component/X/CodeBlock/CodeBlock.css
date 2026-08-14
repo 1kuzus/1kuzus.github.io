@@ -1,29 +1,31 @@
 .x-codeblock {
+    --x-codeblock-line-height: 24px;
+    --x-codeblock-pre-padding-y: 24px;
     position: relative;
     margin: 24px 0;
-    line-height: 24px;
     font-size: 15px;
-    border-radius: 12px;
+    line-height: var(--x-codeblock-line-height);
     background-color: var(--bg-main);
+    border-radius: 12px;
     box-shadow: var(--light-theme-box-shadow);
 }
 .x-codeblock .x-codeblock-header {
-    display: flex;
-    align-items: center;
     position: absolute;
     top: -8px;
     right: -8px;
+    display: flex;
+    align-items: center;
     max-width: 96%;
     height: 32px;
     padding: 0px 6px 0 10px;
-    border-radius: 6px;
     background-color: var(--bg-main);
+    border-radius: 6px;
     box-shadow: var(--light-theme-box-shadow);
 }
 .x-codeblock-header-title {
-    white-space: nowrap;
+    overflow: hidden;
     text-overflow: ellipsis;
-    overflow: hidden; 
+    white-space: nowrap; 
 }
 .x-codeblock .x-codeblock-header > * {
     opacity: 0.4;
@@ -38,12 +40,12 @@
 .x-codeblock .x-codeblock-header-copy {
     display: flex;
     align-items: center;
-    margin-left: 4px;
     padding: 2px;
+    margin-left: 4px;
     border-radius: 2px;
 }
 .x-codeblock pre {
-    padding: 24px 0;
+    padding: var(--x-codeblock-pre-padding-y) 0;
     overflow-x: auto;
 }
 .x-codeblock pre code {

@@ -23,8 +23,8 @@ ol {
 .x-uli-marker,
 .x-oli-number {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     width: 32px;
     height: 28px;
 }
@@ -34,8 +34,8 @@ ol {
 .x-uli-marker-dot {
     width: 4px;
     height: 4px;
-    border-radius: 50%;
     background-color: var(--brand-300);
+    border-radius: 50%;
 }
 .x-uli .x-uli-content-wrapper,
 .x-oli .x-oli-content-wrapper {

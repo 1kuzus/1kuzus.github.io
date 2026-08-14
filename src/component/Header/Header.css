@@ -1,24 +1,24 @@
 #header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
     height: 64px;
     padding: 0 24px;
-    border-bottom: var(--border);
-    background-color: var(--bg-main);
-    box-shadow: var(--light-theme-box-shadow);
     user-select: none;
+    background-color: var(--bg-main);
+    border-bottom: var(--border);
+    box-shadow: var(--light-theme-box-shadow);
 }
 #header-left-wrapper,
 #header-right-wrapper {
     display: flex;
-    align-items: center;
     gap: 24px;
+    align-items: center;
 }
 #header-logo-bg {
     width: 36px;
@@ -27,20 +27,20 @@
 }
 .header-button-bg {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     width: 36px;
     height: 36px;
-    border-radius: 50%;
-    background-color: var(--low-contrast-gray-100);
     cursor: pointer;
+    background-color: var(--low-contrast-gray-100);
+    border-radius: 50%;
 }
 .header-button-bg:hover {
     background-color: var(--low-contrast-gray-300);
 }
 #header-show-sidebar-button {
-    opacity: 0;
     pointer-events: none;
+    opacity: 0;
     transition: opacity 200ms;
 }
 :root .svg-dark-theme-icon,
@@ -55,8 +55,8 @@
 }
 @media (max-width: 1440px) {
     body:has(#post-layout) #header-show-sidebar-button {
-        opacity: 1;
         pointer-events: auto;
+        opacity: 1;
     }
 }
 @media (max-width: 600px) {

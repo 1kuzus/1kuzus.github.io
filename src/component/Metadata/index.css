@@ -8,15 +8,15 @@
     color: var(--fg-gray-300);
 }
 .like-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 48px;
     height: 48px;
     margin: 48px auto 0;
-    border-radius: 50%;
     background-color: var(--low-contrast-gray-100);
+    border-radius: 50%;
     transition: opacity 200ms;
 }
 .like-button.not-loaded {
@@ -30,12 +30,12 @@
     background-color: #fc90a0;
 }
 .like-button.liked::after {
-    content: '';
     position: absolute;
     top: 50%;
     left: 50%;
     width: 48px;
     height: 48px;
+    content: '';
     border: 0 solid #fc90a0;
     border-radius: 50%;
     transform: translate(-50%, -50%);

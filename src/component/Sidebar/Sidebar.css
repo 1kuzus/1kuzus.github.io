@@ -12,10 +12,10 @@
     padding-bottom: calc(2 * var(--sidebar-padding));
     overflow-x: hidden;
     overflow-y: auto;
+    user-select: none;
     background-color: var(--bg-main);
     box-shadow: var(--light-theme-box-shadow);
     transform: translateX(-100%);
-    user-select: none;
     transition: transform 200ms;
 }
 #sidebar:hover {
@@ -41,21 +41,21 @@
     bottom: 0;
     left: 0;
     z-index: 200;
+    pointer-events: none;
     background-color: #000000a0;
     opacity: 0;
-    pointer-events: none;
     transition: opacity 200ms;
 }
 #sidebar-mask.show-sidebar {
-    opacity: 1;
     pointer-events: auto;
+    opacity: 1;
 }
 @media (min-width: 1441px) {
     #sidebar {
         transform: translateX(0);
     }
     #sidebar-mask {
-        opacity: 0 !important;
         pointer-events: none !important;
+        opacity: 0 !important;
     }
 }

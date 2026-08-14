@@ -9,8 +9,8 @@
     }
     /*posts*/
     #post-layout {
-        margin-top: 0 !important;
         padding: 18px !important;
+        margin-top: 0 !important;
     }
     #contents,
     #sidebar {

@@ -1,6 +1,6 @@
 .x-highlightblock {
-    margin: 24px 0;
     padding: 24px 32px;
+    margin: 24px 0;
     border-radius: 12px;
 }
 @media (max-width: 600px) {
