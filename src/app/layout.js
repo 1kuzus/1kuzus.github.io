@@ -1,3 +1,4 @@
+import {GoogleAnalytics} from '@next/third-parties/google';
 import Header from 'src/component/Header/Header';
 import {GlobalProvider} from 'src/context/GlobalContext';
 import 'src/assets/styles/fonts.css';
@@ -5,16 +6,6 @@ import 'src/assets/styles/katex.css';
 import 'src/assets/styles/media.css';
 import 'src/assets/styles/prism.scss';
 import './globals.css';
-
-// Google Analytics
-const scriptGA = `
-window.dataLayer = window.dataLayer || [];
-function gtag() {
-    dataLayer.push(arguments);
-}
-gtag('js', new Date());
-gtag('config', 'G-45BYSZ6WPY');
-`;
 
 // 初始化色彩主题
 // const a=z=>h.getItem(z),b=(y,z)=>h.setItem(y,z),c=(y,z)=>document.documentElement.setAttribute(y,z),d='theme',e='dark',f='light',g='class',h=localStorage;a(d)!==e&&a(d)!==f&&b(d,f);a(d)===e?c(g,e):c(g,f);
@@ -30,36 +21,12 @@ if (localStorage.getItem('theme') === 'dark') {
 }
 `;
 
-// 兼容性
-const scriptFindLast = `
-if (!Array.prototype.findLast) {
-    Array.prototype.findLast = function (callback) {
-        for (let i = this.length - 1; i >= 0; i--) {
-            if (callback(this[i])) return this[i];
-        }
-        return undefined;
-    };
-}
-if (!Array.prototype.findLastIndex) {
-    Array.prototype.findLastIndex = function (callback) {
-        for (let i = this.length - 1; i >= 0; i--) {
-            if (callback(this[i])) return i;
-        }
-        return -1;
-    };
-}
-`;
-
 export default function RootLayout({children}) {
     return (
         <html lang="zh-CN" suppressHydrationWarning>
             <head>
                 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-                <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" />
-                <script async src="https://www.googletagmanager.com/gtag/js?id=G-45BYSZ6WPY" />
-                <script dangerouslySetInnerHTML={{__html: scriptGA}} />
                 <script dangerouslySetInnerHTML={{__html: scriptTheme}} />
-                <script dangerouslySetInnerHTML={{__html: scriptFindLast}} />
             </head>
             <body>
                 <GlobalProvider>
@@ -67,6 +34,7 @@ export default function RootLayout({children}) {
                     {children}
                 </GlobalProvider>
             </body>
+            <GoogleAnalytics gaId="G-45BYSZ6WPY" />
         </html>
     );
 }
