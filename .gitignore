@@ -18,7 +18,6 @@
 
 # misc
 *.pem
-.prettierrc
 
 # debug
 npm-debug.log*
