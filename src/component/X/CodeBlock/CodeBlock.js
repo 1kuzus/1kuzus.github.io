@@ -72,8 +72,7 @@ export default function CodeBlock(props) {
         r: 'var(--bg-transparent-red)',
         a: 'var(--bg-transparent-green)',
     };
-    const lineOffset = (n) =>
-        `calc(var(--x-codeblock-pre-padding-y) + ${+n - 1} * var(--x-codeblock-line-height))`;
+    const lineOffset = (n) => `calc(${n} * var(--x-codeblock-line-height))`;
     const backgroundStyle =
         'linear-gradient(180deg' +
         allStartEnd
