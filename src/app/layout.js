@@ -25,7 +25,6 @@ export default function RootLayout({children}) {
     return (
         <html lang="zh-CN" suppressHydrationWarning>
             <head>
-                <link rel="icon" href="/favicon.ico" type="image/x-icon" />
                 <script dangerouslySetInnerHTML={{__html: scriptTheme}} />
             </head>
             <body>

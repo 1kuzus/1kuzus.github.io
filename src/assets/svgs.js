@@ -21,8 +21,8 @@ export function ShowSidebarIcon() {
 export function HideSidebarIcon() {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 1024 1024">
-            <line stroke="#FCFCFC" x1="240" y1="240" x2="760" y2="760" stroke-width="128" stroke-linecap="round" />
-            <line stroke="#FCFCFC" x1="240" y1="760" x2="760" y2="240" stroke-width="128" stroke-linecap="round" />
+            <line stroke="#FCFCFC" x1="240" y1="240" x2="760" y2="760" strokeWidth="128" strokeLinecap="round" />
+            <line stroke="#FCFCFC" x1="240" y1="760" x2="760" y2="240" strokeWidth="128" strokeLinecap="round" />
         </svg>
     );
 }
