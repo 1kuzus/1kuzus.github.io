@@ -1,7 +1,6 @@
 'use client';
 import {useEffect, useState} from 'react';
-import {getViews, increaseViews, onViewsChange} from 'src/firebase/views';
-import {getLikes, increaseLikes, onLikesChange} from 'src/firebase/likes';
+import {getViews, increaseViews, onViewsChange, getLikes, increaseLikes, onLikesChange} from 'src/firebase/counter';
 import {HeartIcon} from 'src/assets/svgs';
 import {archives} from 'src/posts-indexing';
 import './index.css';
