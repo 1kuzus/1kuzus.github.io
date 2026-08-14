@@ -59,14 +59,12 @@ const components = {
             </ul>
         );
     },
-    ol: ({children}) => {
+    ol: ({children, start}) => {
         const items = Children.toArray(children).filter(isValidElement);
         return (
-            <ol>
+            <ol style={start !== undefined ? {counterReset: `oli ${start - 1}`} : undefined}>
                 {items.map((child, i) => (
-                    <X.Oli key={i} {...(i === 0 ? {reset: 1} : {})}>
-                        {child.props.children}
-                    </X.Oli>
+                    <X.Oli key={i}>{child.props.children}</X.Oli>
                 ))}
             </ol>
         );

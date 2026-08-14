@@ -4,6 +4,22 @@
     margin: 12px 0;
     line-height: 28px;
 }
+ol {
+    counter-reset: oli;
+}
+.x-oli {
+    counter-increment: oli;
+}
+.x-oli-reset {
+    counter-reset: oli;
+}
+.x-oli-content-wrapper,
+.x-uli-content-wrapper {
+    counter-reset: oli;
+}
+.x-oli-number::before {
+    content: counter(oli) '.';
+}
 .x-uli-marker,
 .x-oli-number {
     display: flex;

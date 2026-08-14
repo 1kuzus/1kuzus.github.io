@@ -20,18 +20,11 @@ export function Uli(props) {
     );
 }
 
-let oliIndex = 0;
-function addOliIndex() {
-    return ++oliIndex;
-}
-function resetOliIndex(idx) {
-    return (oliIndex = idx);
-}
 export function Oli(props) {
     const {reset, children} = props;
     return (
-        <div className="x-oli">
-            <div className="x-oli-number">{(reset !== undefined ? resetOliIndex(+reset) : addOliIndex()) + '.'}</div>
+        <div className={`x-oli${reset ? ' x-oli-reset' : ''}`}>
+            <div className="x-oli-number" />
             <div className="x-oli-content-wrapper">
                 {isStringOrStringArray(children) ? (
                     <p dangerouslySetInnerHTML={{__html: XParser(children)}} />
