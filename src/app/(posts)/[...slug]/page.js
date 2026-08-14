@@ -13,9 +13,10 @@ export function generateStaticParams() {
 export async function generateMetadata({params}) {
     const {slug} = await params;
     const path = '/' + slug.join('/') + '/';
-    if (!activeArchives[path]) return {title: '404 - 铃木的网络日记'};
+    const post = activeArchives[path];
+    if (!post) notFound();
     return {
-        title: activeArchives[path].title + ' - 铃木的网络日记', //page title
+        title: post.title + ' - 铃木的网络日记', //page title
         alternates: {
             canonical: 'https://1kuzus.github.io' + path,
         },
