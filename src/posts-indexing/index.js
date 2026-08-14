@@ -3,8 +3,7 @@ import categories from './categories.json';
 
 const isDev = process.env.NODE_ENV === 'development';
 
-// 线上环境，归档页面不展示inactive文章
-// activeArchives仅在app/archives/page.js中使用
+// 线上环境，归档页面不展示inactive文章，文章页也不导出inactive文章
 let activeArchives = archives;
 if (!isDev) activeArchives = Object.fromEntries(Object.entries(archives).filter(([_, post]) => !post.inactive));
 

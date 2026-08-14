@@ -1,12 +1,11 @@
-import dynamic from 'next/dynamic';
 import {notFound} from 'next/navigation';
 import X from 'src/component/X';
 import TOC from 'src/component/TOC/TOC';
 import {PostMeta, LikeButton} from 'src/component/Metadata';
-import {archives} from 'src/posts-indexing';
+import {activeArchives} from 'src/posts-indexing';
 
 export function generateStaticParams() {
-    return Object.keys(archives)
+    return Object.keys(activeArchives)
         .map((path) => path.split('/').filter((i) => i))
         .map((slug) => ({slug}));
 }
@@ -14,9 +13,9 @@ export function generateStaticParams() {
 export async function generateMetadata({params}) {
     const {slug} = await params;
     const path = '/' + slug.join('/') + '/';
-    if (!archives[path]) return {title: '404 - 铃木的网络日记'};
+    if (!activeArchives[path]) return {title: '404 - 铃木的网络日记'};
     return {
-        title: archives[path].title + ' - 铃木的网络日记', //page title
+        title: activeArchives[path].title + ' - 铃木的网络日记', //page title
         alternates: {
             canonical: 'https://1kuzus.github.io' + path,
         },
@@ -26,20 +25,14 @@ export async function generateMetadata({params}) {
 export default async function Page({params}) {
     const {slug} = await params;
     const path = '/' + slug.join('/') + '/';
-    if (!archives[path]) notFound();
-    const Post = dynamic(
-        () => {
-            return import(`src/posts${path}index.md`)
-                .catch(() => import(`src/posts${path}index.mdx`))
-                .catch(() => import(`src/posts${path}index.js`));
-        },
-        {loading: () => <p>Loading component...</p>}
-    );
+    if (!activeArchives[path]) notFound();
+    const {default: Post} = await import(`src/posts${path}index.md`)
+        .catch(() => import(`src/posts${path}index.mdx`))
+        .catch(() => import(`src/posts${path}index.js`));
     return (
         <>
             <TOC />
-            {X.Oli({reset: 0}) && false}
-            <X.PostTitle>{archives[path].title}</X.PostTitle>
+            <X.PostTitle>{activeArchives[path].title}</X.PostTitle>
             <PostMeta path={path} />
             <Post />
             <LikeButton path={path} />
