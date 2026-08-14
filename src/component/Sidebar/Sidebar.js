@@ -1,4 +1,5 @@
 'use client';
+import {useEffect} from 'react';
 import {usePathname} from 'next/navigation';
 import CategoryCard from 'src/component/CategoryCard/CategoryCard';
 import {useGlobalContext} from 'src/context/GlobalContext';
@@ -8,6 +9,9 @@ import './Sidebar.css';
 export default function Sidebar() {
     const pathname = usePathname();
     const {showSidebar, setShowSidebar} = useGlobalContext();
+    useEffect(() => {
+        setShowSidebar(false);
+    }, [pathname, setShowSidebar]);
     return (
         <>
             <div id="sidebar" className={showSidebar ? 'show-sidebar' : null}>
