@@ -26,12 +26,15 @@ function animateCount(start, end, duration, setter) {
 
 function listenCount(subscribe, setter, durationFn) {
     let cancelAnim;
-    let first = true;
+    let introDone = false;
     const unsubscribe = subscribe((value) => {
-        if (first) {
-            first = false;
-            if (value > 0) cancelAnim = animateCount(0, value, durationFn(value), setter);
-            else setter(0);
+        if (!introDone) {
+            if (value <= 0) {
+                setter(0);
+                return;
+            }
+            introDone = true;
+            cancelAnim = animateCount(0, value, durationFn(value), setter);
             return;
         }
         cancelAnim && cancelAnim();
@@ -43,13 +46,30 @@ function listenCount(subscribe, setter, durationFn) {
     };
 }
 
+function listenAfter(before, subscribe, setter, durationFn) {
+    let stop = () => {};
+    let dead = false;
+    before().then(() => {
+        if (!dead) stop = listenCount(subscribe, setter, durationFn);
+    });
+    return () => {
+        dead = true;
+        stop();
+    };
+}
+
 export function HomepageViewCount() {
     const [viewCount, setViewCount] = useState(null);
-    useEffect(() => {
-        const stop = listenCount((cb) => onViewsChange('total', cb), setViewCount, (n) => floor(144 * log(n)));
-        increaseViews('total');
-        return stop;
-    }, []);
+    useEffect(
+        () =>
+            listenAfter(
+                () => increaseViews('total'),
+                (cb) => onViewsChange('total', cb),
+                setViewCount,
+                (n) => floor(144 * log(n)),
+            ),
+        [],
+    );
     return <div id="homepage-view-count">{viewCount > 0 && <code>{viewCount + ' views'}</code>}</div>;
 }
 
@@ -57,15 +77,28 @@ export function PostMeta(props) {
     const {path} = props;
     const [viewCount, setViewCount] = useState(null);
     const [likeCount, setLikeCount] = useState(null);
-    useEffect(() => {
-        const stop = listenCount((cb) => onViewsChange(path, cb), setViewCount, (n) => floor(144 * log(n)));
-        increaseViews(path);
-        increaseViews('total');
-        return stop;
-    }, [path]);
     useEffect(
-        () => listenCount((cb) => onLikesChange(path, cb), setLikeCount, (n) => floor(288 * log(n))),
-        [path]
+        () =>
+            listenAfter(
+                () => {
+                    const article = increaseViews(path);
+                    article.then(() => increaseViews('total'));
+                    return article;
+                },
+                (cb) => onViewsChange(path, cb),
+                setViewCount,
+                (n) => floor(144 * log(n)),
+            ),
+        [path],
+    );
+    useEffect(
+        () =>
+            listenCount(
+                (cb) => onLikesChange(path, cb),
+                setLikeCount,
+                (n) => floor(288 * log(n)),
+            ),
+        [path],
     );
     const parts = [];
     if (likeCount > 0) parts.push(likeCount + ' likes');
