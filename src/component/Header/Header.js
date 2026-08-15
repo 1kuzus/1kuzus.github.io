@@ -36,10 +36,10 @@ function ThemeButton() {
             onClick={() => {
                 if (localStorage.getItem('theme') === 'dark') {
                     localStorage.setItem('theme', 'light');
-                    document.documentElement.setAttribute('class', 'light');
+                    document.documentElement.dataset.theme = 'light';
                 } else {
                     localStorage.setItem('theme', 'dark');
-                    document.documentElement.setAttribute('class', 'dark');
+                    document.documentElement.dataset.theme = 'dark';
                 }
             }}
         >

@@ -7,18 +7,9 @@ import 'src/assets/styles/media.css';
 import 'src/assets/styles/prism.css';
 import './globals.css';
 
-// 初始化色彩主题
-// const a=z=>h.getItem(z),b=(y,z)=>h.setItem(y,z),c=(y,z)=>document.documentElement.setAttribute(y,z),d='theme',e='dark',f='light',g='class',h=localStorage;a(d)!==e&&a(d)!==f&&b(d,f);a(d)===e?c(g,e):c(g,f);
+// 初始化色彩主题：渲染前同步设置data-theme，避免暗色主题首帧闪烁
 const scriptTheme = `
-const currentTheme = localStorage.getItem('theme');
-if (currentTheme !== 'light' && currentTheme !== 'dark') {
-    localStorage.setItem('theme', 'light');
-}
-if (localStorage.getItem('theme') === 'dark') {
-    document.documentElement.setAttribute('class', 'dark');
-} else {
-    document.documentElement.setAttribute('class', 'light');
-}
+document.documentElement.dataset.theme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
 `;
 
 export default function RootLayout({children}) {

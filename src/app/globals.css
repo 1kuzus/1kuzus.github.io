@@ -2,7 +2,7 @@
     --font-code: Menlo, Consolas, Consolas_Latin_Subset, 'Courier New', Courier, 'Ubuntu Mono', monospace;
 }
 :root,
-:root.light {
+:root[data-theme='light'] {
     /*背景色*/
     --bg-main: #ffffff;
     --bg-body: #ffffff;
@@ -52,7 +52,7 @@
     /*仅亮色模式*/
     --light-theme-box-shadow: 0 0 4px 2px #0000000c;
 }
-:root.dark {
+:root[data-theme='dark'] {
     /*背景色*/
     --bg-main: #141416;
     --bg-body: #1c1c1e;

@@ -7,121 +7,121 @@
 .token.italic {
     font-style: italic;
 }
-:root.light .token.operator,
-:root.light .token.punctuation,
-:root.light .token.attr-value .token.attr-equals,
-:root.light .token.prolog,
-:root.light .token.doctype,
-:root.light .token.cdata {
+:root[data-theme='light'] .token.operator,
+:root[data-theme='light'] .token.punctuation,
+:root[data-theme='light'] .token.attr-value .token.attr-equals,
+:root[data-theme='light'] .token.prolog,
+:root[data-theme='light'] .token.doctype,
+:root[data-theme='light'] .token.cdata {
     color: #808080;
 }
-:root.light .token.string,
-:root.light .token.url,
-:root.light .token.attr-value,
-:root.light .token.attr-value .punctuation {
+:root[data-theme='light'] .token.string,
+:root[data-theme='light'] .token.url,
+:root[data-theme='light'] .token.attr-value,
+:root[data-theme='light'] .token.attr-value .punctuation {
     color: #c94d18;
 }
-:root.light .token.tag,
-:root.light .token.keyword,
-:root.light .token.important,
-:root.light .token.macro .token.directive-hash {
+:root[data-theme='light'] .token.tag,
+:root[data-theme='light'] .token.keyword,
+:root[data-theme='light'] .token.important,
+:root[data-theme='light'] .token.macro .token.directive-hash {
     color: #005fad;
 }
-:root.light .token.boolean,
-:root.light .token.attr-name,
-:root.light .token.property,
-:root.light .token.constant,
-:root.light .token.symbol,
-:root.light .token.variable {
+:root[data-theme='light'] .token.boolean,
+:root[data-theme='light'] .token.attr-name,
+:root[data-theme='light'] .token.property,
+:root[data-theme='light'] .token.constant,
+:root[data-theme='light'] .token.symbol,
+:root[data-theme='light'] .token.variable {
     color: #168bca;
 }
-:root.light .token.function {
+:root[data-theme='light'] .token.function {
     color: #c18401;
 }
-:root.light .token.char,
-:root.light .token.entity,
-:root.light .token.selector,
-:root.light .token.decorator {
+:root[data-theme='light'] .token.char,
+:root[data-theme='light'] .token.entity,
+:root[data-theme='light'] .token.selector,
+:root[data-theme='light'] .token.decorator {
     color: #c18401;
 }
-:root.light .token.interpolation-punctuation {
+:root[data-theme='light'] .token.interpolation-punctuation {
     color: #c18401;
 }
-:root.light .token.number {
+:root[data-theme='light'] .token.number {
     color: #44950e;
 }
-:root.light .token.builtin,
-:root.light .token.class-name {
+:root[data-theme='light'] .token.builtin,
+:root[data-theme='light'] .token.class-name {
     color: #009978;
 }
-:root.light .token.comment,
-:root.light .token.inserted {
+:root[data-theme='light'] .token.comment,
+:root[data-theme='light'] .token.inserted {
     color: #008000;
 }
-:root.light .token.regex,
-:root.light .token.deleted {
+:root[data-theme='light'] .token.regex,
+:root[data-theme='light'] .token.deleted {
     color: #e61919;
 }
-:root.light .token.rule,
-:root.light .token.atrule {
+:root[data-theme='light'] .token.rule,
+:root[data-theme='light'] .token.atrule {
     color: #b923b6;
 }
-:root.dark .token.operator,
-:root.dark .token.punctuation,
-:root.dark .token.attr-value .token.attr-equals,
-:root.dark .token.prolog,
-:root.dark .token.doctype,
-:root.dark .token.cdata {
+:root[data-theme='dark'] .token.operator,
+:root[data-theme='dark'] .token.punctuation,
+:root[data-theme='dark'] .token.attr-value .token.attr-equals,
+:root[data-theme='dark'] .token.prolog,
+:root[data-theme='dark'] .token.doctype,
+:root[data-theme='dark'] .token.cdata {
     color: #808080;
 }
-:root.dark .token.string,
-:root.dark .token.url,
-:root.dark .token.attr-value,
-:root.dark .token.attr-value .punctuation {
+:root[data-theme='dark'] .token.string,
+:root[data-theme='dark'] .token.url,
+:root[data-theme='dark'] .token.attr-value,
+:root[data-theme='dark'] .token.attr-value .punctuation {
     color: #d69d85;
 }
-:root.dark .token.tag,
-:root.dark .token.keyword,
-:root.dark .token.important,
-:root.dark .token.macro .token.directive-hash {
+:root[data-theme='dark'] .token.tag,
+:root[data-theme='dark'] .token.keyword,
+:root[data-theme='dark'] .token.important,
+:root[data-theme='dark'] .token.macro .token.directive-hash {
     color: #569cd6;
 }
-:root.dark .token.boolean,
-:root.dark .token.attr-name,
-:root.dark .token.property,
-:root.dark .token.constant,
-:root.dark .token.symbol,
-:root.dark .token.variable {
+:root[data-theme='dark'] .token.boolean,
+:root[data-theme='dark'] .token.attr-name,
+:root[data-theme='dark'] .token.property,
+:root[data-theme='dark'] .token.constant,
+:root[data-theme='dark'] .token.symbol,
+:root[data-theme='dark'] .token.variable {
     color: #9cdcfe;
 }
-:root.dark .token.function {
+:root[data-theme='dark'] .token.function {
     color: #dfdf92;
 }
-:root.dark .token.char,
-:root.dark .token.entity,
-:root.dark .token.selector,
-:root.dark .token.decorator {
+:root[data-theme='dark'] .token.char,
+:root[data-theme='dark'] .token.entity,
+:root[data-theme='dark'] .token.selector,
+:root[data-theme='dark'] .token.decorator {
     color: #d7ba7d;
 }
-:root.dark .token.interpolation-punctuation {
+:root[data-theme='dark'] .token.interpolation-punctuation {
     color: #ffc814;
 }
-:root.dark .token.number {
+:root[data-theme='dark'] .token.number {
     color: #b8d7a3;
 }
-:root.dark .token.builtin,
-:root.dark .token.class-name {
+:root[data-theme='dark'] .token.builtin,
+:root[data-theme='dark'] .token.class-name {
     color: #4ec8b0;
 }
-:root.dark .token.comment,
-:root.dark .token.inserted {
+:root[data-theme='dark'] .token.comment,
+:root[data-theme='dark'] .token.inserted {
     color: #57a64a;
 }
-:root.dark .token.regex,
-:root.dark .token.deleted {
+:root[data-theme='dark'] .token.regex,
+:root[data-theme='dark'] .token.deleted {
     color: #c86464;
 }
-:root.dark .token.rule,
-:root.dark .token.atrule {
+:root[data-theme='dark'] .token.rule,
+:root[data-theme='dark'] .token.atrule {
     color: #c586c0;
 }

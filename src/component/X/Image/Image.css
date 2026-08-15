@@ -5,6 +5,6 @@
     user-select: none;
     object-fit: contain;
 }
-:root.dark .x-image.x-image-invert {
+:root[data-theme='dark'] .x-image.x-image-invert {
     filter: hue-rotate(180deg) sepia(8%) invert(89.02%) saturate(160%);
 }
