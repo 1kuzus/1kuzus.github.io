@@ -12,12 +12,14 @@
  * 避免全站图片元数据被聚合进[...slug]路由的client bundle。
  * 文章源文件与写法保持不变，仅构建期转换；外链与绝对路径(http://、https://、//、/)不转换，
  * 保持字符串交由X.Image组件处理。
+ * todo todo
  */
 
 const QUERY = '?x-post-image';
 const EXTERNAL_SRC = /^(https?:)?\//i;
 
-// for []: xxx
+// for .md blog
+// 【Todo】
 export function rehypeImageQuery() {
     const walk = (node) => {
         if (node.tagName === 'img') {
@@ -33,7 +35,13 @@ export function rehypeImageQuery() {
     };
 }
 
-// for []: xxx
+// for .js blog
+/*
+    <X.Image src="1.jpg" />
+    =>
+    import __xImageImport0 from './1.jpg?x-post-image';
+    <X.Image src={__xImageImport0} />
+*/
 export default function xImageImportLoader(source) {
     const imports = [];
     const idBySrc = new Map();
