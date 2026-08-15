@@ -1,13 +1,12 @@
 #contents {
-    --contents-width: 300px;
     position: fixed;
-    top: 64px;
+    top: var(--header-height);
     right: 0;
     z-index: 100;
-    width: var(--contents-width);
-    max-height: calc(100vh - 64px - 48px - 48px);
+    width: var(--toc-width);
+    max-height: calc(100vh - var(--header-height) - 48px - 48px);
     padding: 24px 0;
-    margin: 48px 60px 0 0;
+    margin: 48px var(--toc-gap) 0 0;
     overflow-y: auto;
     font-size: 14px;
     background-color: var(--bg-main);
@@ -36,7 +35,7 @@
     user-select: none;
 }
 #contents ul {
-    width: calc(var(--contents-width) - 4px);
+    width: calc(var(--toc-width) - 4px);
 }
 #contents .titletype-x-h1,
 #contents .titletype-x-h2 {

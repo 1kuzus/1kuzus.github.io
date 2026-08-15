@@ -7,8 +7,8 @@
     gap: 12px;
     align-items: center;
     justify-content: center;
-    height: calc(75vh - 64px);
-    min-height: calc(600px - 64px);
+    height: calc(75vh - var(--header-height));
+    min-height: calc(600px - var(--header-height));
 }
 #logopart-wrapper {
     position: relative;

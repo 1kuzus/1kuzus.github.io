@@ -5,7 +5,7 @@
 }
 @media (max-width: 600px) {
     .x-highlightblock {
-        padding: 24px 18px;
+        padding: 24px var(--content-pad-x-compact);
     }
 }
 .x-highlightblock > :first-child {

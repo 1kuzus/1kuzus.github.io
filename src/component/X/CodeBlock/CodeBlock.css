@@ -55,6 +55,6 @@
 }
 @media (max-width: 600px) {
     .x-codeblock pre code {
-        padding: 0 18px;
+        padding: 0 var(--content-pad-x-compact);
     }
 }

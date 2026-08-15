@@ -1,5 +1,17 @@
 :root {
     --font-code: Menlo, Consolas, Consolas_Latin_Subset, 'Courier New', Courier, 'Ubuntu Mono', monospace;
+
+    /*
+    响应式布局参数
+    1440px 宽屏分界 = 360 + (2*60+600) + (300+60)
+    600px 移动端分界
+    */
+    --header-height: 64px;
+    --sidebar-width: 360px;
+    --toc-width: 300px;
+    --toc-gap: 60px;
+    --content-pad-x: 60px;
+    --content-pad-x-compact: 18px;
 }
 :root,
 :root[data-theme='light'] {
@@ -126,7 +138,7 @@ body::-webkit-scrollbar {
     scrollbar-width: thin;
 }
 body {
-    padding-top: 64px;
+    padding-top: var(--header-height);
     font-size: 16px;
     color: var(--fg-main);
     scrollbar-width: auto;

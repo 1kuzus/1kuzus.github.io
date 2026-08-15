@@ -1,11 +1,11 @@
 .center-wrapper {
     min-width: 300px;
     max-width: 1200px;
-    padding: 48px 60px;
+    padding: 48px var(--content-pad-x);
     margin: 0 auto;
 }
 @media (max-width: 600px) {
     .center-wrapper {
-        padding: 32px 18px;
+        padding: 32px var(--content-pad-x-compact);
     }
 }

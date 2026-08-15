@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 64px;
+    height: var(--header-height);
     padding: 0 24px;
     user-select: none;
     background-color: var(--bg-main);
@@ -61,7 +61,7 @@
 }
 @media (max-width: 600px) {
     #header {
-        padding: 0 18px;
+        padding: 0 var(--content-pad-x-compact);
     }
     #header-right-wrapper {
         gap: 12px;
