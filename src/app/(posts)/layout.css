@@ -1,6 +1,6 @@
 #post-layout {
     min-width: 240px;
-    padding: 0 calc(var(--toc-width) + var(--toc-gap)) 0 var(--sidebar-width);
+    padding: 0 calc(var(--toc-width) + var(--toc-margin-right)) 0 var(--sidebar-width);
     transition: padding 200ms;
 }
 @media (max-width: 1440px) {

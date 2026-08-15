@@ -6,7 +6,7 @@
     width: var(--toc-width);
     max-height: calc(100vh - var(--header-height) - 48px - 48px);
     padding: 24px 0;
-    margin: 48px var(--toc-gap) 0 0;
+    margin: 48px var(--toc-margin-right) 0 0;
     overflow-y: auto;
     font-size: 14px;
     background-color: var(--bg-main);
