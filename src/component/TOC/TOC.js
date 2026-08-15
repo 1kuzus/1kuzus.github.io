@@ -30,6 +30,7 @@ export default function TOC() {
         setTitleNodes(nodes);
         return () => window.removeEventListener('scroll', scrollHandler);
     }, []);
+    if (!titleNodes.length) return null;
     return (
         <div id="contents">
             <h4
@@ -40,25 +41,23 @@ export default function TOC() {
             >
                 本页目录
             </h4>
-            {titleNodes?.length ? (
-                <ul>
-                    {titleNodes.map((titleNode, index) => {
-                        const {textContent: text, className: type} = titleNode;
-                        return (
-                            <li
-                                key={index}
-                                className={`titletype-${type}${index === activeIndex ? ' active' : ''}`}
-                                onClick={() => {
-                                    const mappedOffsetTop = getMappedOffsetTop(titleNodes, document.documentElement);
-                                    document.documentElement.scrollTo({top: Math.ceil(mappedOffsetTop[index])});
-                                }}
-                            >
-                                {text}
-                            </li>
-                        );
-                    })}
-                </ul>
-            ) : null}
+            <ul>
+                {titleNodes.map((titleNode, index) => {
+                    const {textContent: text, className: type} = titleNode;
+                    return (
+                        <li
+                            key={index}
+                            className={`titletype-${type}${index === activeIndex ? ' active' : ''}`}
+                            onClick={() => {
+                                const mappedOffsetTop = getMappedOffsetTop(titleNodes, document.documentElement);
+                                document.documentElement.scrollTo({top: Math.ceil(mappedOffsetTop[index])});
+                            }}
+                        >
+                            {text}
+                        </li>
+                    );
+                })}
+            </ul>
         </div>
     );
 }
