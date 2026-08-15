@@ -85,6 +85,10 @@
     color: var(--brand-300);
     animation: author-color 6s infinite;
 }
+#homepage-view-count {
+    height: 22px;
+    line-height: 22px;
+}
 #homepage-navs {
     display: grid;
     grid-template-columns: 1fr 1fr;

@@ -7,7 +7,7 @@ import 'src/assets/styles/media.css';
 import 'src/assets/styles/prism.css';
 import './globals.css';
 
-// 初始化色彩主题：渲染前同步设置data-theme，避免暗色主题首帧闪烁
+// 渲染前同步设置data-theme，避免暗色主题首帧闪烁
 const scriptTheme = `
 document.documentElement.dataset.theme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
 `;
