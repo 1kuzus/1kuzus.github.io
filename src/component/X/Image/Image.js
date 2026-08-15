@@ -1,18 +1,18 @@
-'use client';
 import NextImage from 'next/image';
-import {usePathname} from 'next/navigation';
 import './Image.css';
-
-const postImages = require.context('../../../posts', true, /\.(png|jpe?g|gif|webp|svg)$/i);
 
 export default function Image(props) {
     const {src, alt, width, themeAdaptive} = props;
-    const pathname = usePathname();
+    // for []: xxx
+    if (typeof src === 'string') {
+        throw new Error(`[X.Image] unimplemented: external image src "${src}"`);
+    }
     return (
         <NextImage
             className={`x-image${themeAdaptive ? ' x-image-invert' : ''}`}
-            src={postImages('.' + pathname + src)}
+            src={src}
             alt={alt || 'image'}
+            placeholder={src.blurDataURL ? 'blur' : 'empty'}
             style={{width: width, height: 'auto'}}
         />
     );
