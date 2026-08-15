@@ -5,7 +5,7 @@ import {HeartIcon} from 'src/assets/svgs';
 import {archives} from 'src/posts-indexing';
 import './index.css';
 
-const {min, max, log, floor} = Math;
+const {min, max, log, floor, abs} = Math;
 
 function animateCount(start, end, duration, setter) {
     let t0 = null;
@@ -14,7 +14,7 @@ function animateCount(start, end, duration, setter) {
     const step = (t) => {
         if (cancelled) return;
         if (!t0) t0 = t;
-        const progress = min((t - t0) ** 0.5 / duration ** 0.5, 1);
+        const progress = min(((t - t0) / duration) ** 0.5, 1);
         setter(floor(progress * (end - start) + start));
         if (progress < 1) window.requestAnimationFrame(step);
     };
@@ -24,82 +24,42 @@ function animateCount(start, end, duration, setter) {
     };
 }
 
-function listenCount(subscribe, setter, durationFn) {
-    let cancelAnim;
-    let introDone = false;
-    const unsubscribe = subscribe((value) => {
-        if (!introDone) {
-            if (value <= 0) {
-                setter(0);
-                return;
-            }
-            introDone = true;
-            cancelAnim = animateCount(0, value, durationFn(value), setter);
-            return;
-        }
-        cancelAnim && cancelAnim();
-        setter(value);
-    });
-    return () => {
-        cancelAnim && cancelAnim();
-        unsubscribe();
-    };
-}
-
-function listenAfter(before, subscribe, setter, durationFn) {
-    let stop = () => {};
-    let dead = false;
-    before().then(() => {
-        if (!dead) stop = listenCount(subscribe, setter, durationFn);
-    });
-    return () => {
-        dead = true;
-        stop();
-    };
+function useAnimatedCount(subscribe, path, durationScale) {
+    const [count, setCount] = useState(null);
+    useEffect(() => {
+        let shown = 0;
+        let cancelAnim;
+        const unsubscribe = subscribe(path, (value) => {
+            cancelAnim && cancelAnim();
+            cancelAnim = animateCount(shown, value, durationScale * log(max(abs(value - shown), 1)), (v) => {
+                shown = v;
+                setCount(v);
+            });
+        });
+        return () => {
+            cancelAnim && cancelAnim();
+            unsubscribe();
+        };
+    }, [subscribe, path, durationScale]);
+    return count;
 }
 
 export function HomepageViewCount() {
-    const [viewCount, setViewCount] = useState(null);
-    useEffect(
-        () =>
-            listenAfter(
-                () => increaseViews('total'),
-                (cb) => onViewsChange('total', cb),
-                setViewCount,
-                (n) => floor(144 * log(n)),
-            ),
-        [],
-    );
+    const viewCount = useAnimatedCount(onViewsChange, 'total', 144);
+    useEffect(() => {
+        increaseViews('total');
+    }, []);
     return <div id="homepage-view-count">{viewCount > 0 && <code>{viewCount + ' views'}</code>}</div>;
 }
 
 export function PostMeta(props) {
     const {path} = props;
-    const [viewCount, setViewCount] = useState(null);
-    const [likeCount, setLikeCount] = useState(null);
-    useEffect(
-        () =>
-            listenAfter(
-                () => {
-                    const article = increaseViews(path);
-                    article.then(() => increaseViews('total'));
-                    return article;
-                },
-                (cb) => onViewsChange(path, cb),
-                setViewCount,
-                (n) => floor(144 * log(n)),
-            ),
-        [path],
-    );
-    useEffect(
-        () =>
-            listenCount(
-                (cb) => onLikesChange(path, cb),
-                setLikeCount,
-                (n) => floor(288 * log(n)),
-            ),
-        [path],
-    );
+    const viewCount = useAnimatedCount(onViewsChange, path, 144);
+    const likeCount = useAnimatedCount(onLikesChange, path, 288);
+    useEffect(() => {
+        increaseViews(path);
+        increaseViews('total');
+    }, [path]);
     const parts = [];
     if (likeCount > 0) parts.push(likeCount + ' likes');
     if (viewCount > 0) parts.push(viewCount + ' views');
@@ -111,33 +71,16 @@ export function PostMeta(props) {
     );
 }
 
-function myB64Transform(s, isEncode = true) {
-    let src = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
-    let dst = '1KUzusaGmgiLwvQANpFI9Vhl76yCeDW3YOkPH5fqdbtBZM402RXxnjScrJETo8+/=';
-    if (!isEncode) [src, dst] = [dst, src];
-    return s
-        .split('')
-        .map((ch) => dst[src.indexOf(ch)])
-        .join('');
-}
-
-function myB64Enc(x) {
-    let result = btoa(x);
-    result = myB64Transform(result, true);
-    return result;
-}
-
-function myB64Dec(y) {
-    let result = myB64Transform(y, false);
-    result = atob(result);
-    return result;
-}
+const S = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+const D = '1KUzusaGmgiLwvQANpFI9Vhl76yCeDW3YOkPH5fqdbtBZM402RXxnjScrJETo8+/=';
+const encodeLiked = (s) => btoa(s).replace(/./g, (ch) => D[S.indexOf(ch)]);
+const decodeLiked = (s) => atob(s.replace(/./g, (ch) => S[D.indexOf(ch)]));
 
 function getLikedPosts() {
     try {
         const liked = localStorage.getItem('liked');
-        return JSON.parse(liked ? myB64Dec(liked) : '[]');
-    } catch (e) {
+        return JSON.parse(liked ? decodeLiked(liked) : '[]');
+    } catch {
         localStorage.removeItem('liked');
         return [];
     }
@@ -147,12 +90,7 @@ function addLikedPost(path) {
     const likedPosts = getLikedPosts();
     if (likedPosts.includes(path)) return; // 重复检查一次
     likedPosts.push(path);
-    localStorage.setItem('liked', myB64Enc(JSON.stringify(likedPosts)));
-}
-
-function isLiked(path) {
-    const likedPosts = getLikedPosts();
-    return likedPosts.includes(path);
+    localStorage.setItem('liked', encodeLiked(JSON.stringify(likedPosts)));
 }
 
 export function LikeButton(props) {
@@ -160,7 +98,7 @@ export function LikeButton(props) {
     const [liked, setLiked] = useState(null);
     const [animate, setAnimate] = useState(false);
     useEffect(() => {
-        setLiked(isLiked(path));
+        setLiked(getLikedPosts().includes(path));
     }, [path]);
     return (
         <button

@@ -15,15 +15,15 @@ function onCountChange(path, field, callback) {
     });
 }
 
-// views生产环境不自增
+// views开发环境不自增
 export async function increaseViews(path) {
-    const viewsRef = fieldRef(path, 'views');
-    const snapshot = await get(viewsRef);
     if (isDev) {
-        if (!snapshot.exists()) await set(viewsRef, 1);
+        const viewsRef = fieldRef(path, 'views');
+        const snapshot = await get(viewsRef);
+        if (!snapshot.exists()) set(viewsRef, 1);
         return;
     }
-    return increaseCount(path, 'views');
+    increaseCount(path, 'views');
 }
 
 export const increaseLikes = (path) => increaseCount(path, 'likes');
