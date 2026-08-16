@@ -10,11 +10,11 @@
     margin-block-start: 12px;
 }
 
-:where(.x-table th, .x-table td)>*+* {
-    margin-block-start: 8px;
-}
-
 .x-uli+.x-uli,
 .x-oli+.x-oli {
     margin-block-start: 12px;
+}
+
+:where(.x-table th, .x-table td)>*+* {
+    margin-block-start: 8px;
 }
