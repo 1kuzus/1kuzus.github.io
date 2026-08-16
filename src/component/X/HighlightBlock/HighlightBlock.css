@@ -1,18 +1,11 @@
 .x-highlightblock {
     padding: 24px 32px;
-    margin: 24px 0;
     border-radius: 12px;
 }
 @media (max-width: 600px) {
     .x-highlightblock {
         padding: 24px var(--content-pad-x-compact);
     }
-}
-.x-highlightblock > :first-child {
-    margin-top: 0;
-}
-.x-highlightblock > :last-child {
-    margin-bottom: 0;
 }
 .x-highlightblock.highlight-background-golden {
     background-color: var(--bg-transparent-golden);

@@ -1,7 +1,7 @@
 .x-image {
     display: block;
     max-width: 100%;
-    margin: 24px auto;
+    margin-inline: auto;
     user-select: none;
     object-fit: contain;
 }

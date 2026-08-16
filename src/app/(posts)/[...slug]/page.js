@@ -35,7 +35,9 @@ export default async function Page({params}) {
             <TOC />
             <X.PostTitle>{activeArchives[path].title}</X.PostTitle>
             <PostMeta path={path} />
-            <Post />
+            <article className="post-flow">
+                <Post />
+            </article>
             <LikeButton path={path} />
         </>
     );

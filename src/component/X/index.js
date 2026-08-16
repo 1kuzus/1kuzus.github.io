@@ -8,6 +8,7 @@ import Image from './Image/Image';
 import {Uli, Oli} from './ListItem';
 import {P} from './Paragraph';
 import Table from './Table/Table';
+import './flow.css';
 
 const X = {
     CodeBlock,

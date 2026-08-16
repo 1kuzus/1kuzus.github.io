@@ -1,6 +1,5 @@
 .x-flexrow-wrapper {
     max-width: 100%;
-    margin: 24px 0;
     overflow-x: auto;
 }
 .x-flexrow {
@@ -8,14 +7,8 @@
     flex-direction: row;
     padding: 4px;
 }
-.x-flexrow > * {
-    margin: 0 !important;
-}
-.x-flexrow > div > *:first-child {
-    margin-top: 0 !important;
-}
-.x-flexrow > div > *:last-child {
-    margin-bottom: 0 !important;
+.x-flexrow > .x-image {
+    margin-inline: 0;
 }
 .x-flexrow.flex1 > * {
     flex: 1;
