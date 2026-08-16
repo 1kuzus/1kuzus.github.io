@@ -17,7 +17,7 @@ const nextConfig = {
         config.module.rules.push({
             test: /[\\/]src[\\/]posts[\\/].+[\\/]index\.js$/,
             enforce: 'pre',
-            use: [{loader: fileURLToPath(new URL('./src/x-image-import.mjs', import.meta.url))}],
+            use: [{loader: fileURLToPath(new URL('./src/x-image-static-import.mjs', import.meta.url))}],
         });
         return config;
     },

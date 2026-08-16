@@ -13,6 +13,17 @@
  * 文章源文件与写法保持不变，仅构建期转换；外链与绝对路径(http://、https://、//、/)不转换，
  * 保持字符串交由X.Image组件处理。
  * todo todo
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 实施中发现的关键问题
+原方案预期"图片元数据分散进各文章自己的 chunk"，但第一次构建后发现它们仍然全量聚在文章路由的共享 client chunk 里。根因是 Next.js 的一条内部规则：在 App Router 里，凡是被 server component 模块图引用到的图片（.jpg/.png/...），一律被 isClientComponentEntryModule 判定为 client entry 强行拉进客户端包（见 node_modules/next/dist/build/webpack/loaders/utils.js 第 60 行的 imageRegex.test(mod.resource)）。你的文章是 server component，所以静态 import 的图片反而被全量收集。
+
+解决办法是给图片 import 路径加一个 query 后缀 ?x-post-image，让模块 resource 不以图片扩展名结尾，从而绕过这条判定——图片元数据随 RSC payload 留在服务端，客户端 bundle 里一张都没有（验证：含真实图片数据的 client chunk = 0 个）。
+
  */
 
 const QUERY = '?x-post-image';
