@@ -6,10 +6,10 @@ export default function Post() {
             <X.H1>几何的隐式和显式表示</X.H1>
             <X.FlexRow gap="32px" alignItems="center">
                 <X.Image src="fig1.jpg" width="200px" />
-                <div>
+                <X.FlexCol>
                     <X.P>隐式：$x^2+y^2+z^2-1=0$</X.P>
                     <X.P>显式：$(u,v)\rightarrow(\cos u \sin v,\sin u \sin v,\cos v)$</X.P>
-                </div>
+                </X.FlexCol>
             </X.FlexRow>
             <X.P>隐式`(implicit)`表示就像数学中的隐函数，比如$f(x,y)=0$、$g(x,y,z)=0$，通过描述点满足的条件来表达几何体；这样的方式容易验证一点$(x_0,y_0,z_0)$是否在定义的面上，但求出构成形体的所有点是困难的，因为这需要求出方程的解。</X.P>
             <X.P>

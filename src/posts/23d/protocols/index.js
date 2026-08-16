@@ -146,7 +146,7 @@ export default function Post() {
                 <X.P>R6和R4是两个相邻路由器，现在R6收到R4发来的更新信息，试更新R6的路由表。</X.P>
                 <X.Divider />
                 <X.FlexRow gap="32px">
-                    <div>
+                    <X.FlexCol>
                         <X.P>R6的路由表：</X.P>
                         <X.Table
                             fromText={`
@@ -156,8 +156,8 @@ export default function Post() {
                             Net3|4|R5
                             `}
                         />
-                    </div>
-                    <div>
+                    </X.FlexCol>
+                    <X.FlexCol>
                         <X.P>R4发给R6的路由表（更新信息）：</X.P>
                         <X.Table
                             fromText={`
@@ -167,7 +167,7 @@ export default function Post() {
                             Net3|1|直接交付
                             `}
                         />
-                    </div>
+                    </X.FlexCol>
                 </X.FlexRow>
                 <X.P>解：\n对于Net1，原表中没有，填入新表项，距离改为`7+1=8`；\n对于Net2，原表中有，并且原表项下一跳路由器也是R4，因此填入新表项，但距离改为`5`，下一跳路由器改为R4；\n对于Net3，原表中有，但下一跳路由器不是R4；此时比较`4`和`1+1`，选择较小的新表项，同理下一跳路由器应改为R4。</X.P>
                 <X.P>最终结果，更新后R6的路由表：</X.P>

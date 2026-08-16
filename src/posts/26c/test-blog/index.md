@@ -1363,6 +1363,7 @@ Setext 写法的二级标题
 | 组件 / 属性 | 说明 | 触达方式 |
 |---|---|---|
 | `X.FlexRow` | 横向弹性布局容器（`gap` / `minWidth` / `justifyContent` / `alignItems` / `flex1`） | 仅 `index.js` |
+| `X.FlexCol` | `FlexRow` 内的竖排分组容器（常规流容器，子元素间距 24px） | 仅 `index.js` |
 | `X.Table` | 直接组件形式的表格（`fromText` / `fromData` / `align` / `width` / `thead` / `children`） | 仅 `index.js` |
 | `X.P` | 走 XParser 的段落组件 | 仅 `index.js` |
 | `X.PostTitle` | 文章大标题 | 由 `page.js` 渲染，取自 `archives.json` |

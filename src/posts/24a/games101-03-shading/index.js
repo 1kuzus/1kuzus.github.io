@@ -11,21 +11,21 @@ export default function Post() {
             <X.H2>模型定义和说明</X.H2>
             <X.FlexRow gap="32px" minWidth="600px">
                 <X.Image src="fig1.jpg" width="300px" themeAdaptive />
-                <div>
+                <X.FlexCol>
                     <X.P>着色模型考虑一个点，在这个点处小范围表面被近似看作平面：</X.P>
                     <X.P>模型的输入（向量均为单位向量）：</X.P>
                     <X.Uli>观察方向{`$\\bm{v}$`}</X.Uli>
                     <X.Uli>法线方向{`$\\bm{n}$`}</X.Uli>
                     <X.Uli>光照方向{`$\\bm{l}$`}</X.Uli>
                     <X.Uli>这一点处表面的固有性质（颜色等）</X.Uli>
-                </div>
+                </X.FlexCol>
             </X.FlexRow>
             <X.FlexRow gap="32px" minWidth="600px">
                 <X.Image width="300px" src="fig2.jpg" />
-                <div>
+                <X.FlexCol>
                     <X.P>着色是局部的，计算每一点的着色结果时，不会考虑其他物体的存在，不会产生影子。</X.P>
                     <X.P>例如红色框部分是有些反直觉的。</X.P>
-                </div>
+                </X.FlexCol>
             </X.FlexRow>
             <X.H2>漫反射</X.H2>
             <X.H3>光线衰减</X.H3>
@@ -34,7 +34,7 @@ export default function Post() {
             <X.H3>朗伯着色模型</X.H3>
             <X.FlexRow gap="32px" minWidth="600px">
                 <X.Image src="fig3.jpg" width="200px" themeAdaptive />
-                <div>
+                <X.FlexCol>
                     <X.P>
                         考虑一个点的着色，其漫反射部分可以接收到的光线占光源的比例为
                         {`$\\cos\\theta=\\bm{l}\\cdot\\bm{n}$`}：
@@ -44,13 +44,13 @@ export default function Post() {
                     <X.Uli>其中的$k_d$是漫反射常量，表示着色点对能量的吸收率，取决于物体材质。如果定义为具有`3`个分量的常向量，则可以表示不同的颜色。</X.Uli>
                     <X.Uli>当光照方向和法线方向余弦值为负数的时候，认为光线不可到达此点，按$0$考虑。</X.Uli>
                     <X.P>注意到漫反射是与观察方向{`$\\bm{v}$`}无关的。</X.P>
-                </div>
+                </X.FlexCol>
             </X.FlexRow>
             <X.H2>高光</X.H2>
             <X.P>高光的反射方向是接近镜面反射方向的。</X.P>
             <X.FlexRow gap="32px" minWidth="600px">
                 <X.Image src="fig4.jpg" width="300px" themeAdaptive />
-                <div>
+                <X.FlexCol>
                     <X.P>
                         我们观察到：如果反射方向与观察方向相近时，半程向量{`$\\bm{h}$`}应该与法线方向也相近，
                         {`$\\bm{h}$`}是归一化后的观察方向与光照方向的和：
@@ -62,16 +62,16 @@ export default function Post() {
                     <X.Uli>
                         指数$p$使得{`$\\bm{n}$`}、{`$\\bm{h}$`}向量夹角增大时，使$L_s$快速衰减。
                     </X.Uli>
-                </div>
+                </X.FlexCol>
             </X.FlexRow>
             <X.H2>环境光</X.H2>
             <X.FlexRow gap="32px" minWidth="600px">
                 <X.Image src="fig5.jpg" width="300px" themeAdaptive />
-                <div>
+                <X.FlexCol>
                     <X.P>我们假设在每一点处，来自环境中各处散射叠加而成的光强是相等的$I_a$。</X.P>
                     <X.P>环境光部分$L_a$的计算公式为：</X.P>
                     <X.Formula text="L_a=k_aI_a" />
-                </div>
+                </X.FlexCol>
             </X.FlexRow>
             <X.H2>结果</X.H2>
             <X.Image src="fig6.jpg" width="100%" />
@@ -83,11 +83,11 @@ export default function Post() {
             <X.P>纹理表面是如何得到的？美工画的！</X.P>
             <X.H2>重心坐标</X.H2>
             <X.FlexRow gap="32px" minWidth="600px">
-                <div>
+                <X.FlexCol>
                     <X.Image src="fig8.jpg" width="300px" themeAdaptive />
                     <X.Image src="fig9.jpg" width="300px" themeAdaptive />
-                </div>
-                <div>
+                </X.FlexCol>
+                <X.FlexCol>
                     <X.P>三角形所在平面上任何一点都可以用三角形顶点$A$、$B$、$C$来表示：</X.P>
                     <X.HighlightBlock>
                         <X.Formula text="(x,y)=\alpha A + \beta B + \gamma C, \; \alpha + \beta + \gamma = 1" />
@@ -102,7 +102,7 @@ export default function Post() {
                     <X.HighlightBlock background="red">
                         <X.P>重心坐标插值并不具有投影不变性。</X.P>
                     </X.HighlightBlock>
-                </div>
+                </X.FlexCol>
             </X.FlexRow>
             <X.P>利用重心坐标插值，就可以查询任意一点$(x,y)$对应的纹理$(u,v)$。</X.P>
             <X.H1>纹理的应用</X.H1>

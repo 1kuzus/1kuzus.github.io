@@ -13,7 +13,7 @@ export function Demo1() {
                     <p>Hello, World!</p>
                 </div>
             </div>
-            <div>
+            <X.FlexCol>
                 <X.H3>HTML</X.H3>
                 <X.CodeBlock
                     language="html"
@@ -29,8 +29,8 @@ export function Demo1() {
                     </div>
                     `}
                 />
-            </div>
-            <div>
+            </X.FlexCol>
+            <X.FlexCol>
                 <X.H3>CSS</X.H3>
                 <X.CodeBlock
                     language="css"
@@ -54,7 +54,7 @@ export function Demo1() {
                     }
                     `}
                 />
-            </div>
+            </X.FlexCol>
         </X.FlexRow>
     );
 }
@@ -71,7 +71,7 @@ export function Demo2() {
                     <p>Hello, World!</p>
                 </div>
             </div>
-            <div>
+            <X.FlexCol>
                 <X.H3>HTML</X.H3>
                 <X.CodeBlock
                     language="html"
@@ -87,8 +87,8 @@ export function Demo2() {
                     </div>
                     `}
                 />
-            </div>
-            <div>
+            </X.FlexCol>
+            <X.FlexCol>
                 <X.H3>CSS</X.H3>
                 <X.CodeBlock
                     language="css"
@@ -113,7 +113,7 @@ export function Demo2() {
                     }
                     `}
                 />
-            </div>
+            </X.FlexCol>
         </X.FlexRow>
     );
 }
@@ -132,7 +132,7 @@ export function Demo3() {
                     </div>
                 </div>
             </div>
-            <div>
+            <X.FlexCol>
                 <X.H3>HTML</X.H3>
                 <X.CodeBlock
                     language="html"
@@ -150,8 +150,8 @@ export function Demo3() {
                 </div>
                 `}
                 />
-            </div>
-            <div>
+            </X.FlexCol>
+            <X.FlexCol>
                 <X.H3>CSS</X.H3>
                 <X.CodeBlock
                     language="css"
@@ -181,7 +181,7 @@ export function Demo3() {
                     }
                     `}
                 />
-            </div>
+            </X.FlexCol>
         </X.FlexRow>
     );
 }
@@ -189,7 +189,7 @@ export function Demo3() {
 export function Demo4() {
     return (
         <X.FlexRow gap="32px">
-            <div>
+            <X.FlexCol>
                 <X.H3>不使用</X.H3>
                 <div className={styles['wrapper4']}>
                     <h4>hover me!</h4>
@@ -202,8 +202,8 @@ export function Demo4() {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div>
+            </X.FlexCol>
+            <X.FlexCol>
                 <X.H3>使用</X.H3>
                 <div className={styles['wrapper5']}>
                     <h4>hover me!</h4>
@@ -216,7 +216,7 @@ export function Demo4() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </X.FlexCol>
             <div className={styles['flex-spacer']} />
         </X.FlexRow>
     );
