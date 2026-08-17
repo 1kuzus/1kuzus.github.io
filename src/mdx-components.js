@@ -41,10 +41,10 @@ function H4({children, href}) {
 function Hr() {
     return <X.Divider />;
 }
-function Pre({children}) {
+function Pre({children, alignLeft}) {
     // $$...$$
     if (children.props.className.includes('math-display')) {
-        return <X.Formula text={children.props.children.trim()} />;
+        return <X.Formula text={children.props.children.trim()} alignLeft={alignLeft} />;
     }
     // ```...```
     assert(children.props.className.startsWith('language-'), 'invalid <pre> element');

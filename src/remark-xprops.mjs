@@ -37,16 +37,9 @@ export default function remarkXProps() {
                 continue;
             }
 
-            let props;
-            try {
-                props = parseProps(match[1]);
-            } catch {
-                i++;
-                continue;
-            }
+            const props = parseProps(match[1]);
 
             if (i + 1 < nodes.length) {
-                // xx
                 let target = nodes[i + 1];
                 // 图片独占一行时，将 props 挂到内层 image 节点（而非外层 paragraph）
                 if (
