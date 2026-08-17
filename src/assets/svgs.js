@@ -10,7 +10,13 @@ export function LogoIcon() {
 
 export function ShowSidebarIcon() {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 1024 1024">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 1024 1024"
+            className="svg-show-sidebar-icon"
+        >
             <rect fill="#FCFCFC" x="100" y="148" width="824" height="128" rx="64" />
             <rect fill="#FCFCFC" x="100" y="448" width="824" height="128" rx="64" />
             <rect fill="#FCFCFC" x="100" y="748" width="824" height="128" rx="64" />
@@ -20,7 +26,13 @@ export function ShowSidebarIcon() {
 
 export function HideSidebarIcon() {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 1024 1024">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 1024 1024"
+            className="svg-hide-sidebar-icon"
+        >
             <line stroke="#FCFCFC" x1="240" y1="240" x2="760" y2="760" strokeWidth="128" strokeLinecap="round" />
             <line stroke="#FCFCFC" x1="240" y1="760" x2="760" y2="240" strokeWidth="128" strokeLinecap="round" />
         </svg>

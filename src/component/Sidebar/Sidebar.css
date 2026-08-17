@@ -45,11 +45,16 @@
     #sidebar {
         transform: translateX(-100%);
     }
-    #sidebar.show-sidebar {
+    :root[data-show-sidebar] #sidebar {
         transform: translateX(0);
     }
-    #sidebar-mask.show-sidebar {
+    :root[data-show-sidebar] #sidebar-mask {
         pointer-events: auto;
         opacity: 1;
+    }
+}
+@media (width > 1440px) {
+    :root[data-collapse-sidebar] #sidebar {
+        transform: translateX(-100%);
     }
 }

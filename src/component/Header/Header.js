@@ -1,6 +1,5 @@
 'use client';
 import NextLink from 'next/link';
-import {useGlobalContext} from 'src/context/GlobalContext';
 import {LogoIcon, ShowSidebarIcon, HideSidebarIcon, LightThemeIcon, DarkThemeIcon, GithubIcon} from 'src/assets/svgs';
 import './Header.css';
 
@@ -14,17 +13,35 @@ function LogoButton() {
     );
 }
 
+// ≤1440px：开合抽屉式侧栏，瞬态状态，不持久化
 function ShowSidebarButton() {
-    const {showSidebar, setShowSidebar} = useGlobalContext();
     return (
         <button
             id="header-show-sidebar-button"
             className="header-button-bg"
             onClick={() => {
-                setShowSidebar((prev) => !prev);
+                document.documentElement.toggleAttribute('data-show-sidebar');
             }}
         >
-            {showSidebar ? <HideSidebarIcon /> : <ShowSidebarIcon />}
+            <ShowSidebarIcon />
+            <HideSidebarIcon />
+        </button>
+    );
+}
+
+// >1440px：折叠/展开常驻侧栏，偏好持久化到localStorage
+function CollapseSidebarButton() {
+    return (
+        <button
+            id="header-collapse-sidebar-button"
+            className="header-button-bg"
+            onClick={() => {
+                const collapsed = document.documentElement.toggleAttribute('data-collapse-sidebar');
+                localStorage.setItem('collapse-sidebar', String(collapsed));
+            }}
+        >
+            <ShowSidebarIcon />
+            <HideSidebarIcon />
         </button>
     );
 }
@@ -67,6 +84,7 @@ export default function Header() {
             </div>
             <div id="header-right-wrapper">
                 <ShowSidebarButton />
+                <CollapseSidebarButton />
                 <ThemeButton />
                 <GithubButton />
             </div>

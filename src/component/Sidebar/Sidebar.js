@@ -2,19 +2,17 @@
 import {useEffect} from 'react';
 import {usePathname} from 'next/navigation';
 import CategoryCard from 'src/component/CategoryCard/CategoryCard';
-import {useGlobalContext} from 'src/context/GlobalContext';
 import {categories} from 'src/posts-indexing';
 import './Sidebar.css';
 
 export default function Sidebar() {
     const pathname = usePathname();
-    const {showSidebar, setShowSidebar} = useGlobalContext();
     useEffect(() => {
-        setShowSidebar(false);
-    }, [pathname, setShowSidebar]);
+        document.documentElement.removeAttribute('data-show-sidebar');
+    }, [pathname]);
     return (
         <>
-            <div id="sidebar" className={showSidebar ? 'show-sidebar' : null}>
+            <div id="sidebar">
                 <div id="sidebar-width-wrapper">
                     {categories.map((category, index) => {
                         const activeIndex = category.posts.findIndex((path) => path === pathname);
@@ -24,9 +22,8 @@ export default function Sidebar() {
             </div>
             <div
                 id="sidebar-mask"
-                className={showSidebar ? 'show-sidebar' : null}
                 onClick={() => {
-                    setShowSidebar(false);
+                    document.documentElement.removeAttribute('data-show-sidebar');
                 }}
             />
         </>
