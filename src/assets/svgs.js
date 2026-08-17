@@ -18,7 +18,7 @@ export function ShowSidebarIcon() {
             className="svg-show-sidebar-icon"
         >
             <rect fill="none" stroke="#FCFCFC" strokeWidth="80" x="80" y="160" width="864" height="704" rx="128" />
-            <rect fill="#FCFCFC" opacity="0.45" x="168" y="248" width="216" height="528" rx="40" />
+            <rect fill="#FCFCFC" opacity="0.4" x="184" y="264" width="216" height="496" rx="32" />
         </svg>
     );
 }
@@ -33,7 +33,7 @@ export function HideSidebarIcon() {
             className="svg-hide-sidebar-icon"
         >
             <rect fill="none" stroke="#FCFCFC" strokeWidth="80" x="80" y="160" width="864" height="704" rx="128" />
-            <rect fill="#FCFCFC" x="168" y="248" width="216" height="528" rx="40" />
+            <rect fill="#FCFCFC" x="184" y="264" width="216" height="496" rx="32" />
         </svg>
     );
 }
