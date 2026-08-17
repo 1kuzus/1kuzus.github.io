@@ -2,6 +2,9 @@ import {XParser} from '../Paragraph';
 import {isStringOrStringArray} from 'src/utils/utils';
 import './index.css';
 
+// .md blog: ul/ol > div
+// .js blog: div
+
 export function Uli(props) {
     const {children} = props;
     return (

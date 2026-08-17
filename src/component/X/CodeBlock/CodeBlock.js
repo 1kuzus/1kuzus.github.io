@@ -51,7 +51,7 @@ export default function CodeBlock(props) {
     // 将普通高亮、diff增加、diff删除合并为三元组[start:number,end:number,type:'n'|'r'|'a']
     const processLines = (ls, t) =>
         ls
-            ? ls.split(',').map((i) => (i.includes('-') ? [i.split('-')[0], +i.split('-')[1] + 1, t] : [i, +i + 1, t]))
+            ? ls.split(',').map((i) => (i.includes('-') ? [+i.split('-')[0], +i.split('-')[1] + 1, t] : [+i, +i + 1, t]))
             : [];
     const allStartEnd = [
         ...processLines(highlightLines, 'n'),
