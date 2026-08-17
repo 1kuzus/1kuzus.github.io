@@ -13,8 +13,7 @@
     --content-pad-x: 60px;
     --content-pad-x-compact: 18px;
 }
-:root,
-:root[data-theme='light'] {
+:root {
     /*背景色*/
     --bg-main: #ffffff;
     --bg-body: #ffffff;

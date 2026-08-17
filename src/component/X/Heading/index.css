@@ -21,11 +21,6 @@
 .x-h3 {
     font-size: 18px;
 }
-.x-h1 a,
-.x-h2 a,
-.x-h3 a {
-    color: inherit;
-}
 .x-h1 a:hover,
 .x-h2 a:hover,
 .x-h3 a:hover {

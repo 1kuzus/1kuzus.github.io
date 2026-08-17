@@ -60,8 +60,7 @@ body:has(#post-layout) #header-show-sidebar-button {
         display: none;
     }
 }
-:root .svg-dark-theme-icon,
-:root[data-theme='light'] .svg-dark-theme-icon {
+.svg-dark-theme-icon {
     display: none;
 }
 :root[data-theme='dark'] .svg-light-theme-icon {
