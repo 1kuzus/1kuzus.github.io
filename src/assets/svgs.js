@@ -1,9 +1,9 @@
 export function LogoIcon() {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 1560 1560">
-            <path fill="#00A8C4" d="M644 97h273l272 683H916z" />
-            <path fill="#30303C" d="M98 97h273l409 1024L1189 97h273L916 1462H644z" />
-            <path fill="#00F8FF" d="M98 1462 643 97h273L371 1462z" />
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 1024 1024">
+            <path fill="#00A8C4" d="M423 64h179l178 448H601z" />
+            <path fill="#30303C" d="M64 64h180l268 672L780 64h180L601 960H423z" />
+            <path fill="#00F8FF" d="M64 960 422 64h179L244 960z" />
         </svg>
     );
 }
@@ -100,9 +100,9 @@ export function SuccessfullyCopiedIcon() {
 
 export function HeartIcon() {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1024 896">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1024 1024">
             <path
-                d="M512 911l-62-56C230 655 85 524 85 363 85 231 189 128 320 128c74 0 145 35 192 89 47-55 118-89 192-89 131 0 235 103 235 235 0 161-145 293-365 492l-62 56z"
+                d="M512 975l-62-56C230 719 85 588 85 427 85 295 189 192 320 192c74 0 145 35 192 89 47-55 118-89 192-89 131 0 235 103 235 235 0 161-145 293-365 492l-62 56z"
                 fill="#FCFCFC"
             />
         </svg>

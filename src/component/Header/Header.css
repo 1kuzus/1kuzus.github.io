@@ -53,12 +53,12 @@ body:has(#post-layout) #header-show-sidebar-button {
 }
 @media (width <= 1440px) {
     :root:not([data-show-sidebar]) .svg-sidebar-icon-panel {
-        opacity: 0.4;
+        opacity: 0.45;
     }
 }
 @media (width > 1440px) {
     :root[data-collapse-sidebar] .svg-sidebar-icon-panel {
-        opacity: 0.4;
+        opacity: 0.45;
     }
 }
 .svg-dark-theme-icon {
