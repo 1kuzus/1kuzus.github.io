@@ -3,7 +3,7 @@ import X from 'src/component/X';
 export default function Post() {
     return (
         <>
-            <X.P>题目连接：@[https://ctf.bugku.com/challenges/detail/id/340.html]@</X.P>
+            <X.P>题目链接：@[https://ctf.bugku.com/challenges/detail/id/340.html]@</X.P>
             <X.H1>Step 1</X.H1>
             <X.P>构建恶意类`Exploit.java`：</X.P>
             <X.CodeBlock

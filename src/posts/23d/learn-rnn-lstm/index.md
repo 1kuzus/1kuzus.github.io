@@ -10,7 +10,7 @@
 
 ![](rnn1.png)
 
-下面以一个简单的正弦序列预测任务出发，结合代码理解RNN网络的部分细节。
+下面从一个简单的正弦序列预测任务出发，结合代码理解RNN网络的部分细节。
 
 ### 预测一个正弦序列
 
@@ -225,7 +225,7 @@ plt.show()
 >         self.rnn=nn.RNN(input_size=input_size,hidden_size=hidden_size,batch_first=True)
 >         self.linear_ho=nn.Linear(hidden_size,output_size)
 >     def forward(self,seq,init_state):
->         output_hidden,tate=self.rnn(seq,init_state)
+>         output_hidden,state=self.rnn(seq,init_state)
 >         output=self.linear_ho(output_hidden[-1,:]) #取最后一个时间点的输出
 >         return output,state
 > ```
@@ -298,7 +298,7 @@ plt.show()
 然而对于RNN来说这个概念似乎并不清晰，例如上述例子的训练策略是：
 
 1. 从`0`到`(训练集大小 - 序列长度)`依次遍历起始时间`t`；
-2. 对于每个起始时间`t`，将`y[t]`~`y[t+9]`为输入，`y[t+10]`为真值作为一组训练样本。
+2. 对于每个起始时间`t`，以`y[t]`~`y[t+9]`为输入，`y[t+10]`为真值作为一组训练样本。
 3. 第`1`步只遍历了一次！
 
 或者：
@@ -310,11 +310,11 @@ plt.show()
 另一个常用的策略是：
 
 1. 指定超参数：训练轮次`num_iter`；
-2. 重复执行`num_iter`次，每次随机抽取一个起始时间`t`，并且将`y[t]`~`y[t+9]`为输入，`y[t+10]`为真值作为一组训练样本。
+2. 重复执行`num_iter`次，每次随机抽取一个起始时间`t`，并且以`y[t]`~`y[t+9]`为输入，`y[t+10]`为真值作为一组训练样本。
 
 ## LSTM
 
-以下的内容和插图总结或翻译自这篇的英文博客：[Understanding LSTM Networks](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
+以下的内容和插图总结或翻译自这篇英文博客：[Understanding LSTM Networks](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
 
 ### 长期依赖问题
 

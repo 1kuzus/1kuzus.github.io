@@ -162,7 +162,7 @@ export default function Post() {
                     if(i==str.length()) return "0";//如果全是0，保留一个0
                     return str.substr(i);
                 }
-                //查询q是否匹配规则p，如果成果就返回r和参数
+                //查询q是否匹配规则p，如果成功就返回r和参数
                 vector<string> checkMatch(string q,string p,string r)
                 {
                     vector<string> q_parts=splitSlash(q);

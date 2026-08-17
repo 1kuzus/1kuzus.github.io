@@ -737,7 +737,7 @@ export default function Post() {
             <X.P>这里就是小程序JS逻辑层的调用进入Native层的边界了。</X.P>
             <X.H2>Native层：注入NativeGlobal</X.H2>
             <X.P>微信小程序的逻辑层不跑在WebView中，而是跑在一个独立的V8 Isolate里。V8原生只能和C++交互，因此无法像渲染层那样直接用`@JavascriptInterface`让JS调用Java，必须由C++做中转。`NativeGlobal`对象实际上是Native层向V8环境中注入的，相关逻辑在`libwxa-runtime-binding.so`中。</X.P>
-            <X.P>逻辑层启动后，`notifyCreate(appBrandCommonBindingJniParams)`和`notifyBindTo(isolatePtr, contextPtr, uVLoopPtr)`两个函数依次被调用：</X.P>
+            <X.P>逻辑层启动后，`notifyCreate(appBrandCommonBindingJniParams)`和`notifyBindTo(isolatePtr, contextPtr, uvLoopPtr)`两个函数依次被调用：</X.P>
             <X.CodeBlock
                 language="java"
                 title="com.tencent.mm.appbrand.commonjni.AppBrandCommonBindingJni"
@@ -1981,7 +1981,7 @@ export default function Post() {
             <X.CodeBlock language="text" code=">>> ./files/TencentLocation_sapp/comp/1.dex" />
             <X.P>然后复制到本地避免权限问题：</X.P>
             <X.CodeBlock language="bash" code="cp /data/data/com.tencent.mm/files/TencentLocation_sapp/comp/1.dex /sdcard/Download/" />
-            <X.P>`exit`退出ADB Shell，`abd pull`并反编译`1.dex`：</X.P>
+            <X.P>`exit`退出ADB Shell，`adb pull`并反编译`1.dex`：</X.P>
             <X.CodeBlock
                 language="bash"
                 code={String.raw`

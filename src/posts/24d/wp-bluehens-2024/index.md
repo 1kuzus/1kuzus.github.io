@@ -282,7 +282,7 @@ print(message)
 
 理论上这个过程可以一直重复下去，但其实猜到一定数量就可以Google一下了，找到原文：[https://milton.host.dartmouth.edu/reading_room/comus/text.shtml](https://milton.host.dartmouth.edu/reading_room/comus/text.shtml)
 
-第三阶段，找到其中一句（长度够的话）就可以恢复全部到密钥。最后的代码如下（整个脚本是一边推测一边完善的）：
+第三阶段，找到其中一句（长度够的话）就可以恢复全部的密钥。最后的代码如下（整个脚本是一边推测一边完善的）：
 
 ```python
 # ----- guess the rest -----

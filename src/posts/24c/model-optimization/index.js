@@ -25,7 +25,7 @@ export default function Post() {
             <X.Formula text="s=(d_{max}-d_{min})/(q_{max}-q_{min})" />
             <X.Formula text="z=\text{round}(q_{min}-d_{min}/s)" />
             <X.Divider />
-            <X.P>例如，希望将数据范围$[\mu-2\sigma,\mu+2\sigma]$映射到`8`位整数（范围$-128$~$12$），计算参数为：</X.P>
+            <X.P>例如，希望将数据范围$[\mu-2\sigma,\mu+2\sigma]$映射到`8`位整数（范围$-128$~$127$），计算参数为：</X.P>
             <X.Formula text="s=(d_{max}-d_{min})/(q_{max}-q_{min})=4\sigma/255" />
             <X.Formula text="z=\text{round}(q_{min}-d_{min}/s)=\text{round}(-128-(\mu-2\sigma)/s)" />
             <X.H2>非线性量化</X.H2>

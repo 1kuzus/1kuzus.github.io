@@ -8,7 +8,7 @@
 
 - `(ord(password[8 - 3]) + 3) ^ 0x7a == 9`
 - `(ord(password[9 - 3]) + 3) + 9 == 116`
-- 也就是`password[5]="p", pasword[6]="h"`
+- 也就是`password[5]="p", password[6]="h"`
 
 `check3`:
 

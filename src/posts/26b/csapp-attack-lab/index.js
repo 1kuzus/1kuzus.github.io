@@ -156,7 +156,7 @@ export default function Post() {
                 `}
             />
             <X.H2>Phase 3</X.H2>
-            <X.P>Phase 3要跳转到`touch3`函数，并且需要布置对应的参数（参数为字符串）。`touch3`中通过。与Phase 2的区别是要多布置一个字符串，并把`rdi`指向字符串首地址。字符串会通过`hexmatch`函数与`cookie`比较，这里需要`cookie`的十六进制字符串（不含`0x`），也就是`"2d8c0362"`。</X.P>
+            <X.P>Phase 3要跳转到`touch3`函数，并且需要布置对应的参数（参数为字符串）。与Phase 2的区别是要多布置一个字符串，并把`rdi`指向字符串首地址。字符串会通过`hexmatch`函数与`cookie`比较，这里需要`cookie`的十六进制字符串（不含`0x`），也就是`"2d8c0362"`。</X.P>
             <X.CodeBlock
                 language="c"
                 code={String.raw`

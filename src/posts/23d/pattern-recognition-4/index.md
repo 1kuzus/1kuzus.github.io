@@ -27,7 +27,7 @@ $$
 用下式：
 
 $$
-y=w_1x_1+w_2x_2 \dots w_dx_d=\bm{W}^T\bm{X}
+y=w_1x_1+w_2x_2+\dots+w_dx_d=\bm{W}^T\bm{X}
 $$
 
 来估计带标签样本$(\bm{X}_i,y_i)$。

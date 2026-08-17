@@ -90,7 +90,7 @@ export default function Post() {
             <X.CodeBlock language="python" code={`payload = '?id=x") UNION SELECT 0,group_concat(username),group_concat(password) FROM security.users -- '`} />
             <X.H1>盲注：L5-L10</X.H1>
             <X.H2>前言 & 笔记</X.H2>
-            <X.P>有些场景下，服务端不会返回SQL查询结果，此时需要用到盲注技术。常见的盲注技术有基于布尔的盲注等、基于时间的盲注、基于报错的盲注。</X.P>
+            <X.P>有些场景下，服务端不会返回SQL查询结果，此时需要用到盲注技术。常见的盲注技术有基于布尔的盲注、基于时间的盲注、基于报错的盲注。</X.P>
             <X.P>这一部分的Lab同样没有明确的通关条件，这里以查询`Angelina`用户的密码为目标：</X.P>
             <X.CodeBlock language="sql" code="SELECT password FROM security.users WHERE username='Angelina'" />
             <X.P>查询结果应为`I-kill-you`。</X.P>

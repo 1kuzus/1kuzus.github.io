@@ -445,7 +445,7 @@ export default function Post() {
                 `}
             />
             <X.H3>类方法的应用：自动计算实例数</X.H3>
-            <X.P>假如我们希望每创建一个类时，都可以自动计数当前类的实例数量。这个功能可以由类方法实现。</X.P>
+            <X.P>假如我们希望每创建一个实例时，都可以自动计数当前类的实例数量。这个功能可以由类方法实现。</X.P>
             <X.CodeBlock
                 language="python"
                 highlightLines="9"

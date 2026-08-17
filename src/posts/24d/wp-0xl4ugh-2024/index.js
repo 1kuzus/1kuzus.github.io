@@ -6,7 +6,7 @@ export default function Post() {
             <X.H1>Web</X.H1>
             <X.H2>manifesto</X.H2>
             <X.P>Noting the code {'`(assoc :session (merge {"prefer" "light"} session query-params))`'}, this means `query-params` will be merged into `session`, potentially allowing permission checks to be bypassed via a URL like `/?username=admin`.</X.P>
-            <X.P>The next step is the exploitation of the `read-string` function. The `read-string` function can be used to execute arbitrary code, you can try the payload `#=(* 7 7)` and you will see the result `49`. However, when i attempt `(clojure.java.shell/sh "...")`, it always shows `Something went wrong...`. So after some googling, I find the payload in @this writeup[https://b.poc.fun/faust-ctf-doedel-writeup/]@ works. My final solution is as follows:</X.P>
+            <X.P>The next step is the exploitation of the `read-string` function. The `read-string` function can be used to execute arbitrary code, you can try the payload `#=(* 7 7)` and you will see the result `49`. However, when I attempt `(clojure.java.shell/sh "...")`, it always shows `Something went wrong...`. So after some googling, I find the payload in @this writeup[https://b.poc.fun/faust-ctf-doedel-writeup/]@ works. My final solution is as follows:</X.P>
             <X.CodeBlock
                 language="python"
                 code={`

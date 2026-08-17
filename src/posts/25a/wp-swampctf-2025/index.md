@@ -270,7 +270,7 @@ loop()
 
 ### Rock My Password
 
-Generate a dictionary containing all 10-digit passwords in `rockyou.txt`:
+Generate a dictionary containing all 10-character passwords in `rockyou.txt`:
 
 ```python
 with open("rockyou.txt", "r", encoding="iso-8859-1") as f:

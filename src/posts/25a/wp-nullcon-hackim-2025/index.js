@@ -525,7 +525,7 @@ export default function Post() {
                 # 78 69 68 44
                 `}
             />
-            <X.P>And then... Alright, I just combining these chunks together to make the flag read smoothly. The expected solution might be to leak the seed based on the position of the first chunk, and then obtain the correct order of the chunk sequence.</X.P>
+            <X.P>And then... Alright, I just combined these chunks together to make the flag read smoothly. The expected solution might be to leak the seed based on the position of the first chunk, and then obtain the correct order of the chunk sequence.</X.P>
             <X.CodeBlock
                 language="python"
                 code={`

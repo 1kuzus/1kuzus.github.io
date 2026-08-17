@@ -553,7 +553,7 @@ for i in range(len(result)):
 # 78 69 68 44
 ```
 
-And then... Alright, I just combining these chunks together to make the flag read smoothly. The expected solution might be to leak the seed based on the position of the first chunk, and then obtain the correct order of the chunk sequence.
+And then... Alright, I just combined these chunks together to make the flag read smoothly. The expected solution might be to leak the seed based on the position of the first chunk, and then obtain the correct order of the chunk sequence.
 
 ```python
 key = 42

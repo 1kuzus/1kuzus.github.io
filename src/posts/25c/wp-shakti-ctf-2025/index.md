@@ -18,9 +18,9 @@ Function `sub_401300` seems to implement a VM with a custom instruction set, how
 
 ![](3.jpg)
 
-So the idea is to hook the function `sub_401300` and dump the buffer `byte_4474C0` before the function returns.
+So the idea is to hook the function `sub_401300` and dump `dword_4474B8` before the function returns.
 
-When I input with the flag prefix `shaktictf`, the value of `byte_4474C0` before `sub_401300` returns is the length of matched bytes. This allows me to brute-force the password byte by byte.
+When I input with the flag prefix `shaktictf`, the value of `dword_4474B8` before `sub_401300` returns is the length of matched bytes. This allows me to brute-force the password byte by byte.
 
 `hook.js`:
 

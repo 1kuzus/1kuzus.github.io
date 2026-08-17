@@ -44,7 +44,7 @@ export default function Post() {
             <X.P>UDFG包含两个重要结构：</X.P>
             <X.Uli>`Data Node`：数据流分析的最小粒度，可能是一个JS对象或WXML标签；生成方式是通过给每个页面JS文件生成AST，此过程会合并通过模块化导出/导入但最后组成同一页面的文件。</X.Uli>
             <X.Uli>`Event Group`：事件组有一个非常重要的性质，就是*事件组的代码同步执行*；同一个JS对象节点可以属于不同的事件组。</X.Uli>
-            <X.H2>Data-Flow Propgation</X.H2>
+            <X.H2>Data-Flow Propagation</X.H2>
             <X.P>这一部分论文用数学形式给出了追踪数据传播的过程：</X.P>
             <X.Image src="4.jpg" width="600px" themeAdaptive />
             <X.P>先看Notations：</X.P>
@@ -55,7 +55,7 @@ export default function Post() {
             <X.Uli>
                 <X.P>
                     第六条表示事件组$e_i$中有对$e_j$的调用，并且调用的语句是{`$S_p^{(i,n)}$`}
-                    ，这就暗含了一个性质：事件组$e_i$中执行次序大于$n$的语句，会与事件组$e_j$，这就暗含了一个性质：事件组$e_i$中执行次序大于$n$的语句，会与事件组$e_j$异步执行。如果文字描述不够直观可以参考下面的例子：
+                    ，这就暗含了一个性质：事件组$e_i$中执行次序大于$n$的语句，会与事件组$e_j$异步执行。如果文字描述不够直观可以参考下面的例子：
                 </X.P>
                 <X.Image src="5.jpg" width="300px" />
                 <X.P>

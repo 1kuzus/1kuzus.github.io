@@ -205,7 +205,7 @@ def encrypt(username, password, public_key):
 
 这个模块根据传入的`public_key`替换JS源代码中的部分，再编译，最后在Python环境中调用JS代码得到加密结果。
 
-> 到目前位置，`public_key`参数一直都是同一个值（`MFwwDQYJKo...`）。
+> 到目前为止，`public_key`参数一直都是同一个值（`MFwwDQYJKo...`）。
 
 ## OCR
 

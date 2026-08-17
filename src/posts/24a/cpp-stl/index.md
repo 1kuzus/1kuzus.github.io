@@ -108,7 +108,7 @@ cout<<"*"<<str1<<' '<<str1.empty()<<endl; //* 1
 
 - `str.insert(pos,n,ch)`：向`str`中插入`n`个字符`ch`，第一个字符的下标是`pos`。
 
-- `str1.insert(pos,str2)`：向`str`中插入字符串`str2`，`str2`的首位在`str1`中下标是`pos`。
+- `str1.insert(pos,str2)`：向`str1`中插入字符串`str2`，`str2`的首位在`str1`中下标是`pos`。
 
 ```cpp
 cout<<str2<<endl; //hello
@@ -573,7 +573,7 @@ else
 
 - `lower_bound(key)`返回指向第一个键值**大于等于**`key`的位置的迭代器，找不到则返回迭代器`end()`。
 
-- `upper_bound(key)`返回指向第一个键值**大于**`key`的位置的迭代，找不到则返回迭代器`end()`。
+- `upper_bound(key)`返回指向第一个键值**大于**`key`的位置的迭代器，找不到则返回迭代器`end()`。
 
 ```cpp
 m1.clear();

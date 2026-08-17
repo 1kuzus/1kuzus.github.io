@@ -172,7 +172,7 @@ export default function Post() {
             <X.HighlightBlock background="gray">
                 <X.P>从几何的视角来看，以上决策规则实际就是比较样本点和各类的中心点距离，并且选择距离最近的类别作为决策结果。\n以上分类器也称`最小距离分类器`，把每个`均值`看作一个`典型的样本`，则这种分类方法也称为`模板匹配技术`。</X.P>
             </X.HighlightBlock>
-            <X.P>如果对于上述判别函数{`$g(\\bm{X})$`}的欧式距离项展开，并删掉与类别无关的二次项，得：</X.P>
+            <X.P>如果对于上述判别函数{`$g(\\bm{X})$`}的欧氏距离项展开，并删掉与类别无关的二次项，得：</X.P>
             <X.Formula text="g_i(\bm{X}) = \bm{W_i}^T\bm{X} + b" />
             <X.P>
                 其中{`$\\bm{W_i} = \\frac{1}{\\sigma^2}\\bm{\\mu_i}$`}，{`$b = -\\frac{1}{2\\sigma^2}\\bm{\\mu_i}^T\\bm{\\mu_i} + \\ln P(\\omega_i)$`}
@@ -206,9 +206,9 @@ export default function Post() {
                 <X.H3>马氏距离</X.H3>
                 <X.P>马氏距离可以看作对欧氏距离的修正。考虑下面的例子：\n黑色的点距离`green`类样本中心更近，与`red`、`blue`类样本中心等距。它应该被归为哪一类？\n</X.P>
                 <X.Image src="fig6.png" width="500px" themeAdaptive />
-                <X.P>按照欧氏距离判别，它应该被归为`green`类；然而从直觉上判断，它更可能属于`red`类。\n欧式距离并没有考虑样本的方差，以及样本各个维度之间的相关性。\n定义马氏距离：</X.P>
+                <X.P>按照欧氏距离判别，它应该被归为`green`类；然而从直觉上判断，它更可能属于`red`类。\n欧氏距离并没有考虑样本的方差，以及样本各个维度之间的相关性。\n定义马氏距离：</X.P>
                 <X.Formula text="r^2 = (\bm{X}-\bm{\mu})^T \bm{\Sigma}^{-1} (\bm{X}-\bm{\mu})" />
-                <X.P>如果样本是二维的，且协方差矩阵$\sigma$为对角矩阵，马氏距离表示为：</X.P>
+                <X.P>如果样本是二维的，且协方差矩阵$\Sigma$为对角矩阵，马氏距离表示为：</X.P>
                 <X.Formula
                     text="r^2 =
                     \begin{bmatrix}
@@ -225,7 +225,7 @@ export default function Post() {
                     \frac{(x_1-\mu_1)^2}{\sigma_1^2} + \frac{(x_2-\mu_2)^2}{\sigma_2^2}
                     "
                 />
-                <X.P>如果样本方差一样，则就是欧式距离；如果方差不一样，可以看作是标准化之后的欧氏距离。</X.P>
+                <X.P>如果样本方差一样，则就是欧氏距离；如果方差不一样，可以看作是标准化之后的欧氏距离。</X.P>
             </X.HighlightBlock>
             <X.P>判别函数：</X.P>
             <X.Formula text="g_i(\bm{X}) = -\frac{1}{2}r_i^2 + \ln P(\omega_i)" />

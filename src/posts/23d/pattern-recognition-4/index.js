@@ -21,7 +21,7 @@ export default function Post() {
             <X.H1>线性回归</X.H1>
             <X.H2>动机</X.H2>
             <X.P>用下式：</X.P>
-            <X.Formula text="y=w_1x_1+w_2x_2 \dots w_dx_d=\bm{W}^T\bm{X}" />
+            <X.Formula text="y=w_1x_1+w_2x_2+\dots+w_dx_d=\bm{W}^T\bm{X}" />
             <X.P>来估计带标签样本{`$(\\bm{X}_i,y_i)$`}。</X.P>
             <X.H2>损失函数</X.H2>
             <X.P>线性回归模型使用最小平方误差：</X.P>

@@ -11,8 +11,8 @@ export default function Post() {
             <X.P>There's great chance that the password is the flag, which is `49` bytes long.</X.P>
             <X.P>Function `sub_401300` seems to implement a VM with a custom instruction set, however, we don't need to fully understand it to solve the challenge. I notice that `dword_4474B8 == 49` is checked before the function returns, and there's also `++dword_4474B8` at line 104, this looks like a verification of the password byte by byte.</X.P>
             <X.Image src="3.jpg" themeAdaptive />
-            <X.P>So the idea is to hook the function `sub_401300` and dump the buffer `byte_4474C0` before the function returns.</X.P>
-            <X.P>When I input with the flag prefix `shaktictf`, the value of `byte_4474C0` before `sub_401300` returns is the length of matched bytes. This allows me to brute-force the password byte by byte.</X.P>
+            <X.P>So the idea is to hook the function `sub_401300` and dump `dword_4474B8` before the function returns.</X.P>
+            <X.P>When I input with the flag prefix `shaktictf`, the value of `dword_4474B8` before `sub_401300` returns is the length of matched bytes. This allows me to brute-force the password byte by byte.</X.P>
             <X.P>`hook.js`:</X.P>
             <X.CodeBlock
                 language="js"

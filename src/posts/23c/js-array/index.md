@@ -81,7 +81,7 @@ console.log(getArray(3, 'some value')); //['some value', 'some value', 'some val
 
 ## filter()
 
-`filter()`方法用一个固定值填充数组中从起始索引（默认为`0`）到终止索引（默认为`array.length`）内的全部元素，返回修改后的数组。
+`filter()`方法创建一个新数组，其中包含通过指定函数测试的所有元素。
 
 ```js
 const arr = [1, 5, 7, 13, 45, 66];
@@ -212,7 +212,7 @@ console.log(elements.join('-')); //Fire-Air-Water
 arr.map(callbackFn);
 ```
 
-`callbackFn`为数组中每个元素执行的函数，它的返回值作为一个元素被添加为新数组中。该函数被调用时将传入以下参数：
+`callbackFn`为数组中每个元素执行的函数，它的返回值作为一个元素被添加到新数组中。该函数被调用时将传入以下参数：
 
 - `value`：数组中正在处理的当前元素
 - `index`：数组中正在处理的当前元素的索引

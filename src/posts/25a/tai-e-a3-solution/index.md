@@ -32,7 +32,7 @@ int unreachableSwitchBranch() {
 
 ![](fig2.jpg)
 
-代码侧面，实现`getIfStmtReachableSuccs`和`getSwitchStmtReachableSuccs`两个方法：
+代码层面，实现`getIfStmtReachableSuccs`和`getSwitchStmtReachableSuccs`两个方法：
 
 ```java
 // 获取if语句的“可达后继”

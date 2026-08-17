@@ -249,7 +249,7 @@ export default function Post() {
             />
             <X.H1>Crypto</X.H1>
             <X.H2>Rock My Password</X.H2>
-            <X.P>Generate a dictionary containing all 10-digit passwords in `rockyou.txt`:</X.P>
+            <X.P>Generate a dictionary containing all 10-character passwords in `rockyou.txt`:</X.P>
             <X.CodeBlock
                 language="python"
                 code={`

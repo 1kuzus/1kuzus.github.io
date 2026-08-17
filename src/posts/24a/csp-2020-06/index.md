@@ -12,7 +12,7 @@ bool check(int t0,int t1,int t2)
     for(int i=0;i<n;i++)
     {
         label[i]=t0+t1*p[i][0]+t2*p[i][1]>0;
-        //希望label[i]与p[i][3]全相等或全相反
+        //希望label[i]与p[i][2]全相等或全相反
         sum+=label[i]^p[i][2];
     }
     return sum==0||sum==n;

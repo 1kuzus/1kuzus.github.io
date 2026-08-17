@@ -27,7 +27,7 @@ export default function Post() {
             <X.Image src="fig1.svg" width="600px" themeAdaptive />
             <X.P>对于`switch`语句，`x`为常量`2`，如果我们在遍历CFG的时候忽略其余的边，就等价于只剩一条从{'`15->5->6->7->8->9->16`'}的通路，其他分支上的（即使是不与节点`15`直接相连的）节点也自然不会被遍历到了。同时也不需要特殊考虑`switch`语句的fall through问题（语句`y=200`后没有`break`因此语句`y=300`也是可达的）。</X.P>
             <X.Image src="fig2.jpg" width="600px" themeAdaptive />
-            <X.P>代码侧面，实现`getIfStmtReachableSuccs`和`getSwitchStmtReachableSuccs`两个方法：</X.P>
+            <X.P>代码层面，实现`getIfStmtReachableSuccs`和`getSwitchStmtReachableSuccs`两个方法：</X.P>
             <X.CodeBlock
                 language="java"
                 code={`

@@ -12,7 +12,7 @@ export default function Post() {
                 <X.P>跨程序认证绕过（原文是`Bypass Authentication by Cross App Exploitation`，简写为`Bacae Attack`）的一个实例是：支付宝本来需要四个身份认证因素：SMS OTP、银行卡号、全名和身份证号；但如果是通过淘宝授权登录，攻击者只需要两个认证因素登录淘宝：SMS OTP和身份证号。</X.P>
             </X.HighlightBlock>
             <X.P>论文的主要贡献是：</X.P>
-            <X.Uli>发现了用户在同时使用多个小程序的情况下，可能会对其他应用程序产生重要安全影响，使得PaFA认证机制的强度在大多数情况下仅与SMS OTP相同。</X.Uli>
+            <X.Uli>发现了用户在同时使用多个应用程序的情况下，可能会对其他应用程序产生重要安全影响，使得PaFA认证机制的强度在大多数情况下仅与SMS OTP相同。</X.Uli>
             <X.Uli>提出了分析模型和对应的半自动工具MAGGIE，可以对于一个给定的应用程序，分析用户使用其他应用程序是否会减弱它的身份认证强度。</X.Uli>
             <X.H1>2.Background and Threat Model</X.H1>
             <X.H2>App中的认证因素</X.H2>
@@ -39,7 +39,7 @@ export default function Post() {
             <X.P>论文从华为应用商店、Vivo应用商店和腾讯应用程序中心中下载了`39`个类别的总共`234`个应用程序作为测试集。</X.P>
             <X.P>实验过程中研究人员首先用个人真实信息手动（因为通常需要人机测试）注册和配置应用程序；然后使用`XHelper`探索应用程序，如果过程中出现人机测试同样手动协助它完成；然后基于`Model Builder`生成的模型，使用`Model Checker`生成对于每个`App.Op`的`1000`个优化的攻击路径；最后由研究人员手动验证。</X.P>
             <X.HighlightBlock>
-                <X.P>论文假设了一种常见的情况：用户通常仅使用一个不同的手机号；不同的手机号会被视为不同的用户。</X.P>
+                <X.P>论文假设了一种常见的情况：用户通常仅使用一个手机号；不同的手机号会被视为不同的用户。</X.P>
             </X.HighlightBlock>
             <X.H1>5.Findings and Measurements</X.H1>
             <X.H2>Bacae Attack的根因分析</X.H2>

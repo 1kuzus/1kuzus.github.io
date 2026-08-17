@@ -71,7 +71,7 @@ def serve_blog(username):
     return render_template("blog.html", blogs=blogs, name=users[username]["user"]["name"])
 ```
 
-本题的需要读取`/flag`中的flag，需要利用`blog["name"]`触发`(blog_path / blog["name"]).read_text()`的LFI漏洞。
+本题需要读取`/flag`中的flag，需要利用`blog["name"]`触发`(blog_path / blog["name"]).read_text()`的LFI漏洞。
 
 通过`update_config`更新的YAML配置会经过`validate_conf`的检查，直接在`blog["name"]`中使用`../`会被拒绝；本题切入点是，注意到`blog`（`conf["blogs"][i]`）和`conf["user"]`都包含`name`字段，且`validate_conf`在验证过`blog["name"]`后，会通过`display_name`函数删除`conf["user"]["name"]`中的下划线：
 

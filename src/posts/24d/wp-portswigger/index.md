@@ -639,7 +639,7 @@ Set-Cookie: csrfKey=some_key; SameSite=None; Secure; HttpOnly
 
 ### Pr: SameSite Strict bypass via client-side redirect
 
-本题更新邮箱接口允许直接`GET`请求，但Cookie的`SameSite`属性是`Strict`。注意到`/post/comment/confirmation?postId=xxx`会触发客户端重定向，这相当于我们拥有了发起任意站内`GET`请求到能力。
+本题更新邮箱接口允许直接`GET`请求，但Cookie的`SameSite`属性是`Strict`。注意到`/post/comment/confirmation?postId=xxx`会触发客户端重定向，这相当于我们拥有了发起任意站内`GET`请求的能力。
 
 本题的表单多了参数`submit=1`。
 
@@ -991,7 +991,7 @@ resp = requests.get(url, headers={"X-Original-URL": "/admin/delete"})
 
 发现网站一些不合理的行为：验证码登录（`/login2`页面）验证的用户依赖于Cookie中的`verify`字段；在`/login2`页面直接刷新就可以接收到验证邮件。
 
-利用这个问题，可以跳过账号密码登录，把Cookie改为`verify=carlos`，`GET`请求`/login2`后一次后，爆破验证码登录目标用户账号。
+利用这个问题，可以跳过账号密码登录，把Cookie改为`verify=carlos`，`GET`请求`/login2`一次后，爆破验证码登录目标用户账号。
 
 ### Pr: Brute-forcing a stay-logged-in cookie
 

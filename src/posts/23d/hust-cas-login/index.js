@@ -162,7 +162,7 @@ export default function Post() {
             />
             <X.P>这个模块根据传入的`public_key`替换JS源代码中的部分，再编译，最后在Python环境中调用JS代码得到加密结果。</X.P>
             <X.HighlightBlock>
-                <X.P>到目前位置，`public_key`参数一直都是同一个值（`MFwwDQYJKo...`）。</X.P>
+                <X.P>到目前为止，`public_key`参数一直都是同一个值（`MFwwDQYJKo...`）。</X.P>
             </X.HighlightBlock>
             <X.H1>OCR</X.H1>
             <X.P>华科的验证码是一个四位数字，干扰比较小，属于非常简单的验证码。验证码请求的地址是@[https://pass.hust.edu.cn/cas/code]@。</X.P>

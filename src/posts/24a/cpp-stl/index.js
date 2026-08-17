@@ -113,7 +113,7 @@ export default function Post() {
             />
             <X.H2>插入：insert()</X.H2>
             <X.Uli>`str.insert(pos,n,ch)`：向`str`中插入`n`个字符`ch`，第一个字符的下标是`pos`。</X.Uli>
-            <X.Uli>`str1.insert(pos,str2)`：向`str`中插入字符串`str2`，`str2`的首位在`str1`中下标是`pos`。</X.Uli>
+            <X.Uli>`str1.insert(pos,str2)`：向`str1`中插入字符串`str2`，`str2`的首位在`str1`中下标是`pos`。</X.Uli>
             <X.CodeBlock
                 language="cpp"
                 code={`
@@ -578,7 +578,7 @@ export default function Post() {
             />
             <X.H2>二分查找</X.H2>
             <X.Uli>`lower_bound(key)`返回指向第一个键值*大于等于*`key`的位置的迭代器，找不到则返回迭代器`end()`。</X.Uli>
-            <X.Uli>`upper_bound(key)`返回指向第一个键值*大于*`key`的位置的迭代，找不到则返回迭代器`end()`。</X.Uli>
+            <X.Uli>`upper_bound(key)`返回指向第一个键值*大于*`key`的位置的迭代器，找不到则返回迭代器`end()`。</X.Uli>
             <X.CodeBlock
                 language="cpp"
                 code={`

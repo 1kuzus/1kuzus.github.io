@@ -9,7 +9,7 @@ export default function Post() {
             <X.P>`check2`:</X.P>
             <X.Uli>`(ord(password[8 - 3]) + 3) ^ 0x7a == 9`</X.Uli>
             <X.Uli>`(ord(password[9 - 3]) + 3) + 9 == 116`</X.Uli>
-            <X.Uli>也就是`password[5]="p", pasword[6]="h"`</X.Uli>
+            <X.Uli>也就是`password[5]="p", password[6]="h"`</X.Uli>
             <X.P>`check3`:</X.P>
             <X.CodeBlock
                 language="python"

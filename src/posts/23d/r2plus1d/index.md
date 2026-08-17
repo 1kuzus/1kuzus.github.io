@@ -4,7 +4,7 @@ PyTorch版本复现代码来自于Github仓库 [Github: R2Plus1D-PyTorch](https:
 
 ## (2+1)D卷积
 
-普通3D卷积的核大小为$(C_i,C_o,K_t,K_w,K_h)$，$C_i,C_o$为输入通道数、$K_t,K_w,K_h$是3D卷积核的尺寸。<br>R(2+1)D网络最核心的改动就是将普通的`Conv3d`替换为`SpatioTemporalConv`卷积。
+普通3D卷积的核大小为$(C_i,C_o,K_t,K_w,K_h)$，$C_i,C_o$为输入、输出通道数、$K_t,K_w,K_h$是3D卷积核的尺寸。<br>R(2+1)D网络最核心的改动就是将普通的`Conv3d`替换为`SpatioTemporalConv`卷积。
 
 <!-- @xprops width="100%" themeAdaptive -->
 
@@ -16,7 +16,7 @@ PyTorch版本复现代码来自于Github仓库 [Github: R2Plus1D-PyTorch](https:
 - `BatchNorm`+`ReLU`
 - 大小为$(C,C_o,K_t,1,1)$的`Conv3d`
 
-如果二者作用于相同的输出，得到的结果`shape`是一样的：
+如果二者作用于相同的输入，得到的结果`shape`是一样的：
 
 ```python
 import torch

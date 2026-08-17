@@ -8,7 +8,7 @@ export default function Post() {
             <X.P>下面是一个非常常见的RNN结构描述图。它展示了RNN的自反馈机制和与时间的依赖关系，但是对网络结构的描述容易引起误解：右侧的展开形式并不意味着网络有`t`层，而是反映了随着时间增加（有时也可以理解为随着程序中循环的迭代），上一次输出的隐藏状态，和$x_t$共同作为网络的下一次的输入。</X.P>
             <X.P>或者，如果说CNN是从空间维度上堆叠卷积层，不断加深，RNN就是从时间维度上的延展，而其网络真正的参数是很少的。</X.P>
             <X.Image src="rnn1.png" width="600px" themeAdaptive />
-            <X.P>下面以一个简单的正弦序列预测任务出发，结合代码理解RNN网络的部分细节。</X.P>
+            <X.P>下面从一个简单的正弦序列预测任务出发，结合代码理解RNN网络的部分细节。</X.P>
             <X.H2>预测一个正弦序列</X.H2>
             <X.P>这个例子中，我们对一个加了噪声的正弦序列进行预测。</X.P>
             <X.CodeBlock
@@ -210,7 +210,7 @@ export default function Post() {
                             self.rnn=nn.RNN(input_size=input_size,hidden_size=hidden_size,batch_first=True)
                             self.linear_ho=nn.Linear(hidden_size,output_size)
                         def forward(self,seq,init_state):
-                            output_hidden,tate=self.rnn(seq,init_state)
+                            output_hidden,state=self.rnn(seq,init_state)
                             output=self.linear_ho(output_hidden[-1,:]) #取最后一个时间点的输出
                             return output,state
                     `}
@@ -277,7 +277,7 @@ export default function Post() {
             <X.Oli>重复执行`num_epoch`次。</X.Oli>
             <X.P>然而对于RNN来说这个概念似乎并不清晰，例如上述例子的训练策略是：</X.P>
             <X.Oli reset>从`0`到`(训练集大小 - 序列长度)`依次遍历起始时间`t`；</X.Oli>
-            <X.Oli>对于每个起始时间`t`，将`y[t]`~`y[t+9]`为输入，`y[t+10]`为真值作为一组训练样本。</X.Oli>
+            <X.Oli>对于每个起始时间`t`，以`y[t]`~`y[t+9]`为输入，`y[t+10]`为真值作为一组训练样本。</X.Oli>
             <X.Oli>第`1`步只遍历了一次！</X.Oli>
             <X.P>或者：</X.P>
             <X.Oli reset>...</X.Oli>
@@ -285,9 +285,9 @@ export default function Post() {
             <X.Oli>前两步同上，但多次遍历训练集。</X.Oli>
             <X.P>另一个常用的策略是：</X.P>
             <X.Oli reset>指定超参数：训练轮次`num_iter`；</X.Oli>
-            <X.Oli>重复执行`num_iter`次，每次随机抽取一个起始时间`t`，并且将`y[t]`~`y[t+9]`为输入，`y[t+10]`为真值作为一组训练样本。</X.Oli>
+            <X.Oli>重复执行`num_iter`次，每次随机抽取一个起始时间`t`，并且以`y[t]`~`y[t+9]`为输入，`y[t+10]`为真值作为一组训练样本。</X.Oli>
             <X.H1>LSTM</X.H1>
-            <X.P>以下的内容和插图总结或翻译自这篇的英文博客：@Understanding LSTM Networks[https://colah.github.io/posts/2015-08-Understanding-LSTMs/]@</X.P>
+            <X.P>以下的内容和插图总结或翻译自这篇英文博客：@Understanding LSTM Networks[https://colah.github.io/posts/2015-08-Understanding-LSTMs/]@</X.P>
             <X.H2>长期依赖问题</X.H2>
             <X.P>RNN可以利用先前的信息理解当前的任务，这点非常不错；有时我们只需要短期的信息，例如一个语言模型预测下面的句子：\n`天空中飘着一朵白色的【云】`，这很简单。但有些时候我们需要更多背景信息，例如：\n`我出生在法国，…… ，我可以说流利的【法语】`，这个情况下，随着前后文距离变大，RNN对长期依赖关系的学习会变得困难。</X.P>
             <X.H2>LSTM</X.H2>

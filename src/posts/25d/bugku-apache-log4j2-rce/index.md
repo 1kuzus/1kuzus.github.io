@@ -1,4 +1,4 @@
-题目连接：[https://ctf.bugku.com/challenges/detail/id/340.html](https://ctf.bugku.com/challenges/detail/id/340.html)
+题目链接：[https://ctf.bugku.com/challenges/detail/id/340.html](https://ctf.bugku.com/challenges/detail/id/340.html)
 
 ## Step 1
 

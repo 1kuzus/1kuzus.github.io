@@ -226,7 +226,7 @@ export default function Post() {
                 end start
                 `}
             />
-            <X.P>首先分两次把参数`x`和`y`入栈。在`cube`子程序中，取出参数时，栈顶是`BP`的旧值，栈顶下一个元素是`call`指令入栈的`IP`，所以`(bp+4)`是`x`，`(bp+6)`是`y`。</X.P>
+            <X.P>首先分两次把参数`x`和`y`入栈。在`cube`子程序中，取出参数时，栈顶是`BP`的旧值，栈顶下一个元素是`call`指令入栈的`IP`，所以`(bp+4)`是`y`，`(bp+6)`是`x`。</X.P>
             <X.Image src="fig3.jpg" width="100%" />
             <X.P>$7^3=343$也就是`157h`。</X.P>
             <X.H1>练习</X.H1>

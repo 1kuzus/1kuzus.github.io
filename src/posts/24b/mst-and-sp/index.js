@@ -410,7 +410,7 @@ export default function Post() {
             <X.P>对于Bellman-Ford算法，会给出判负环测试题目的代码：</X.P>
             <X.Uli>@洛谷 - P3385【模板】负环[https://www.luogu.com.cn/problem/P3385]@</X.Uli>
             <X.H2>Bellman-Ford</X.H2>
-            <X.P>Bellman-Ford算法思想非常简单，由于源点到任意点的最短路径最多包含$V-1$条边，因此对所有边进行$V-1$次松弛操作，一定能得到最短路。$V-1$次循环后，如果还能存在能继续松弛的边，则说明存在负环。</X.P>
+            <X.P>Bellman-Ford算法思想非常简单，由于源点到任意点的最短路径最多包含$V-1$条边，因此对所有边进行$V-1$次松弛操作，一定能得到最短路。$V-1$次循环后，如果还存在能继续松弛的边，则说明存在负环。</X.P>
             <X.P>洛谷弱化版通过`7`/`10`，标准版通过`0`/`6`，代码如下：</X.P>
             <X.CodeBlock
                 language="cpp"
@@ -523,7 +523,7 @@ export default function Post() {
                         bool flag=false;
                         for(int u=0;u<n;u++)
                         {
-                            //题目要求判断是否存在从顶点1出发能到达的负环，因此d值过大的顶点视为不与1联通
+                            //题目要求判断是否存在从顶点1出发能到达的负环，因此d值过大的顶点视为不与1连通
                             if(d[u]>1e8) continue;
                             for(EDGE e:g[u])
                             {

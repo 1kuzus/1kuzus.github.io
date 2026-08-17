@@ -352,7 +352,7 @@ export default function Post() {
                 system($command);
                 `}
             />
-            <X.P>如果缺乏相应的认证，攻击者可以通过命令分隔符执行攻击命令，例如参数传入`;rm -rf /`，命令就等价于：</X.P>
+            <X.P>如果缺乏相应的校验，攻击者可以通过命令分隔符执行攻击命令，例如参数传入`;rm -rf /`，命令就等价于：</X.P>
             <X.CodeBlock language="bash" code="ls -l /home/;rm -rf /" />
             <X.HighlightBlock background="blue">
                 <X.H3>Example in real-world project</X.H3>
@@ -801,7 +801,7 @@ export default function Post() {
                 <X.P>问题的大致描述为：从v1.3.0开始，未打补丁的Argo CD版本都容易受到路径遍历错误的影响，再加上不适当的访问控制错误，可能允许具有只读存储库访问权限的恶意用户从Argo CD的存储库服务器中泄露敏感文件。</X.P>
                 <X.P>
                     有读权限的用户可以给{'`/api/v1/repositories/{repo_url}/appdetails`'}
-                    发送带有恶意载荷请求以访问预期之外的文件。
+                    发送带有恶意载荷的请求以访问预期之外的文件。
                 </X.P>
                 <X.P>补丁的作用：</X.P>
                 <X.Uli>防止路径遍历；</X.Uli>
@@ -838,7 +838,7 @@ export default function Post() {
                 <X.H3>Example in real-world project</X.H3>
                 <X.Uli>OpenCVE：@CVE-2008-5183[https://www.opencve.io/cve/CVE-2008-5183]@</X.Uli>
                 <X.Uli>`Exploit`：@[https://www.exploit-db.com/exploits/7150]@</X.Uli>
-                <X.P>通过CSRF发出大量`add-rss-subscription`请求，触发空指针引用（此处没有找到源码），进而导致DoS攻击。</X.P>
+                <X.P>通过CSRF发出大量`add-rss-subscription`请求，触发空指针解引用（此处没有找到源码），进而导致DoS攻击。</X.P>
                 <X.CodeBlock
                     language="js"
                     code={`
@@ -1156,7 +1156,7 @@ export default function Post() {
                 <X.Uli>`Exploit`：@[https://huntr.com/bounties/b230d76b-ae2d-440e-a25b-94ffaa7c4ff1]@</X.Uli>
                 <X.Uli>`Patch`：@[https://github.com/mintplex-labs/anything-llm/commit/f4088d9348fa86dcebe9f97a18d39c0a6e92f15e]@</X.Uli>
                 <X.P>AnythingLLM的上传链接功能存在SSRF漏洞，该功能面向具有`manager`或`admin`角色的用户，使用无头浏览器通过内部`collectorApi`处理上传的链接。 攻击者可以通过托管恶意网站并使用该网站执行内部端口扫描、访问未对外公开的内部网络应用程序等操作来利用这一漏洞。</X.P>
-                <X.P>部署AnytingLLM后会有两个`express.js`节点运行，分别是`collector`和`server`。</X.P>
+                <X.P>部署AnythingLLM后会有两个`express.js`节点运行，分别是`collector`和`server`。</X.P>
                 <X.P>补丁引入了`comKey`检验数据完整性，让攻击者无法构造出合法的请求头部。部分新增的内容如下：\n`collector/utils/comKey/index.js`：</X.P>
                 <X.CodeBlock
                     language="js"
@@ -1361,7 +1361,7 @@ export default function Post() {
                 `}
             />
             <X.P>这个例子中`GetBalanceFromDatabase()`和`SendNewBalanceToDatabase()`可能会发生数据竞争。</X.P>
-            <X.P>假设初始余额`balance`是`100.00`，一个攻击可以构造如下：</X.P>
+            <X.P>假设初始余额`balance`是`100.00`，一次攻击可以构造如下：</X.P>
             <X.Oli>攻击者调起两个程序，`PROGRAM-1`和`PROGRAM-2`，使用同一账户。</X.Oli>
             <X.Oli>`PROGRAM-1`请求转账`80.00`，此时`PROGRAM-1`计算出`$newbalance`为`20.00`。</X.Oli>
             <X.Oli>`PROGRAM-1`调用`SendNewBalanceToDatabase(20.00)`，但是*受到了延迟*。</X.Oli>
