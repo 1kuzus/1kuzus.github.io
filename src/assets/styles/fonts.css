@@ -3,14 +3,14 @@
     font-style: normal;
     font-weight: normal;
     src: url(../fonts/Consolas_Latin.woff2) format('woff2');
-    font-display: block;
+    font-display: swap;
 }
 @font-face {
     font-family: 'Consolas_Latin_Subset';
     font-style: normal;
     font-weight: bold;
     src: url(../fonts/Consolas_Latin-Bold.woff2) format('woff2');
-    font-display: block;
+    font-display: swap;
 }
 
 @font-face {
