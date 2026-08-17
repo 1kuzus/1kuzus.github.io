@@ -20,6 +20,7 @@
     transition: opacity 200ms;
 }
 .like-button.not-loaded {
+    pointer-events: none;
     opacity: 0;
 }
 .like-button:hover {

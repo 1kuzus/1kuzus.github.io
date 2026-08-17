@@ -43,12 +43,12 @@ const languageNameMap = {
 export default function CodeBlock(props) {
     const {language, code, title, highlightLines, diffRemovedLines, diffAddedLines} = props;
     assert(languageNameMap[language], 'unsupported language: ' + language);
-    //处理代码行，处理空白，统一缩进
+    // 处理代码行，处理空白，统一缩进
     let lines = code.split('\n').map((line) => line.trimEnd());
     if (!lines[0]) lines = lines.slice(1);
     const indent = lines[0].length - lines[0].trimStart().length;
     lines = lines.map((line) => line.slice(indent));
-    //将普通高亮、diff增加、diff删除合并为三元组[start:number,end:number,type:'n'|'r'|'a']
+    // 将普通高亮、diff增加、diff删除合并为三元组[start:number,end:number,type:'n'|'r'|'a']
     const processLines = (ls, t) =>
         ls
             ? ls.split(',').map((i) => (i.includes('-') ? [i.split('-')[0], +i.split('-')[1] + 1, t] : [i, +i + 1, t]))
@@ -59,14 +59,14 @@ export default function CodeBlock(props) {
         ...processLines(diffAddedLines, 'a'),
     ];
     allStartEnd.sort((a, b) => a[0] - b[0]);
-    //检验区间是否重叠
+    // 检验区间是否重叠
     for (let i = 0; i < allStartEnd.length - 1; i++) {
         assert(
             allStartEnd[i][1] <= allStartEnd[i + 1][0],
             'highlight lines range overlap: ' + allStartEnd[i].slice(0, 2) + ' and ' + allStartEnd[i + 1].slice(0, 2)
         );
     }
-    //渲染背景
+    // 渲染背景
     const colorMap = {
         n: 'var(--bg-transparent-golden)',
         r: 'var(--bg-transparent-red)',

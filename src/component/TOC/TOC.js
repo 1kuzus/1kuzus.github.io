@@ -6,22 +6,20 @@ export default function TOC() {
     const [titleNodes, setTitleNodes] = useState([]);
     const [activeIndex, setActiveIndex] = useState();
     const getMappedOffsetTop = (titleNodes, container) => {
-        const titleNodesOffsetTop = titleNodes.map((titleNode) => titleNode.offsetTop - 80);
-        // return titleNodesOffsetTop; //旧版
+        const titleNodesOffsetTop = titleNodes.map((titleNode) => titleNode.offsetTop - 80); // 80 = var(--header-height) + 16
+        // return titleNodesOffsetTop; // 旧版
         const maxContainerScrollTop = container.scrollHeight - container.clientHeight;
-        const ot_i = titleNodesOffsetTop.findLast((offset) => offset <= maxContainerScrollTop) || 0;
+        const ot_i = titleNodesOffsetTop.findLast((offset) => offset <= maxContainerScrollTop) ?? 0;
         const ot_n = titleNodesOffsetTop[titleNodes.length - 1];
         const linear = (a, b, c, d, x) => ((d - b) / (c - a)) * (x - a) + b;
         return titleNodesOffsetTop.map((ot) => (ot <= ot_i ? ot : linear(ot_i, ot_i, ot_n, maxContainerScrollTop, ot)));
     };
     useLayoutEffect(() => {
-        const nodes = Array.from(
-            document.querySelectorAll('.x-h1, .x-h2')
-        );
+        const nodes = Array.from(document.querySelectorAll('.x-h1, .x-h2'));
         const scrollHandler = () => {
             const mappedOffsetTop = getMappedOffsetTop(nodes, document.documentElement);
             const lastIdx = mappedOffsetTop.findLastIndex(
-                (offset) => offset <= Math.ceil(document.documentElement.scrollTop)
+                (offset) => offset <= Math.ceil(document.documentElement.scrollTop),
             );
             setActiveIndex(lastIdx);
         };

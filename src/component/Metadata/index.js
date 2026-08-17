@@ -85,11 +85,12 @@ function getLikedPosts() {
     }
 }
 
-function addLikedPost(path) {
+function storeLikedPost(path) {
     const likedPosts = getLikedPosts();
-    if (likedPosts.includes(path)) return; // 重复检查一次
+    if (likedPosts.includes(path)) return false; // 重复检查一次
     likedPosts.push(path);
     localStorage.setItem('liked', encodeLiked(JSON.stringify(likedPosts)));
+    return true;
 }
 
 export function LikeButton(props) {
@@ -108,10 +109,9 @@ export function LikeButton(props) {
                 (animate ? ' animate' : '')
             }
             onClick={() => {
-                if (!liked) {
+                if (liked === false) {
                     setLiked(true);
-                    addLikedPost(path);
-                    increaseLikes(path);
+                    if (storeLikedPost(path)) increaseLikes(path);
                 }
                 if (!animate) {
                     setAnimate(true);
