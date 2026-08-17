@@ -4,7 +4,7 @@ import CenterWrapper from 'src/component/CenterWrapper/CenterWrapper';
 import {categories} from 'src/posts-indexing';
 
 export const metadata = {
-    title: '全部分类 - 铃木的网络日记',
+    title: '全部分类',
 };
 
 export default function Categories() {

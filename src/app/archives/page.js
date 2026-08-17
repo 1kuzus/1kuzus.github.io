@@ -5,7 +5,7 @@ import {activeArchives} from 'src/posts-indexing';
 import './page.css';
 
 export const metadata = {
-    title: '归档 - 铃木的网络日记',
+    title: '归档',
 };
 
 export default function Archives() {

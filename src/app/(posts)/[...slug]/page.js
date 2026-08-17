@@ -16,9 +16,9 @@ export async function generateMetadata({params}) {
     const post = activeArchives[path];
     if (!post) notFound();
     return {
-        title: post.title + ' - 铃木的网络日记', //page title
+        title: post.title,
         alternates: {
-            canonical: 'https://1kuzus.github.io' + path,
+            canonical: path,
         },
     };
 }
@@ -34,7 +34,7 @@ export default async function Page({params}) {
         <>
             <TOC />
             <X.PostTitle>{activeArchives[path].title}</X.PostTitle>
-            <PostMeta path={path} />
+            <PostMeta path={path} time={activeArchives[path].time} />
             <article className="post-flow">
                 <Post />
             </article>

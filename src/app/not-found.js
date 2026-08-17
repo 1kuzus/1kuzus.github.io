@@ -1,7 +1,7 @@
 import './not-found.css';
 
 export const metadata = {
-    title: '404 - 铃木的网络日记',
+    title: '404 Not Found',
 };
 
 export default function NotFound() {

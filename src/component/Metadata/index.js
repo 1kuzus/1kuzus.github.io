@@ -2,7 +2,6 @@
 import {useEffect, useState} from 'react';
 import {increaseViews, onViewsChange, increaseLikes, onLikesChange} from 'src/firebase/counter';
 import {HeartIcon} from 'src/assets/svgs';
-import {archives} from 'src/posts-indexing';
 import './index.css';
 
 const {min, max, log, floor, abs} = Math;
@@ -53,7 +52,7 @@ export function HomepageViewCount() {
 }
 
 export function PostMeta(props) {
-    const {path} = props;
+    const {path, time} = props;
     const viewCount = useAnimatedCount(onViewsChange, path, 144);
     const likeCount = useAnimatedCount(onLikesChange, path, 288);
     useEffect(() => {
@@ -63,7 +62,7 @@ export function PostMeta(props) {
     const parts = [];
     if (likeCount > 0) parts.push(likeCount + ' likes');
     if (viewCount > 0) parts.push(viewCount + ' views');
-    if (archives[path].time) parts.push(archives[path].time);
+    if (time) parts.push(time);
     return (
         <div className="post-meta">
             <code>{parts.join(' · ')}</code>

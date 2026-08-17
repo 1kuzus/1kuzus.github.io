@@ -6,6 +6,14 @@ import 'src/assets/styles/media.css';
 import 'src/assets/styles/prism.css';
 import './globals.css';
 
+export const metadata = {
+    title: {
+        default: '铃木的网络日记',
+        template: '%s - 铃木的网络日记',
+    },
+    metadataBase: new URL('https://1kuzus.github.io'),
+};
+
 // 渲染前同步设置data-theme与宽屏侧栏折叠状态，避免首帧闪烁
 const scriptInit = `
 document.documentElement.dataset.theme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
