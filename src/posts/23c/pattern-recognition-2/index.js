@@ -44,21 +44,20 @@ export default function Post() {
             </X.P>
             <X.H2>正态分布下的最大似然估计</X.H2>
             <X.H3>单变量正态分布</X.H3>
-            <X.Formula text="\hat{\mu} = \frac{1}{n} \sum x_k" alignLeft />
-            <X.Formula text="\hat{\sigma}^2 = \frac{1}{n} \sum (x_k - \hat{\mu})^2" alignLeft />
+            <X.Formula text="\hat{\mu} = \frac{1}{n} \sum x_k" />
+            <X.Formula text="\hat{\sigma}^2 = \frac{1}{n} \sum (x_k - \hat{\mu})^2" />
             <X.H3>多变量正态分布</X.H3>
-            <X.Formula text="\hat{\bm{\mu}} = \frac{1}{n} \sum \bm{X}_k" alignLeft />
-            <X.Formula text="\hat{\bm{\Sigma}} = \frac{1}{n} \sum (\bm{X}_k - \hat{\bm{\mu}})(\bm{X}_k - \hat{\bm{\mu}})^T" alignLeft />
+            <X.Formula text="\hat{\bm{\mu}} = \frac{1}{n} \sum \bm{X}_k" />
+            <X.Formula text="\hat{\bm{\Sigma}} = \frac{1}{n} \sum (\bm{X}_k - \hat{\bm{\mu}})(\bm{X}_k - \hat{\bm{\mu}})^T" />
             <X.H1>贝叶斯估计</X.H1>
             <X.P>
                 贝叶斯估计与最大似然估计一个根本的区别是，最大似然估计把未知参数当作固定的量，而贝叶斯估计把未知参数本身也看作随机变量。假设未知参数是
                 {`$\\bm{\\theta}$`}，其分布空间为{`$\\bm{\\Theta}$`}，定义损失函数
                 {`$\\lambda(\\bm{\\theta},\\hat{\\bm{\\theta}})$`}表示估计误差的损失。如果已经观测到了样本集
-                {`$\\bm{\\chi}$`}，那么我们的目标是：
+                {`$\\bm{\\chi}$`}，那么我们的目标是最小化期望风险：
             </X.P>
             <X.HighlightBlock>
-                <X.P>最小化期望风险：</X.P>
-                <X.Formula text="\int_{\bm{\Theta}} \lambda(\bm{\theta},\hat{\bm{\theta}}) P(\bm{\theta}|\bm{\chi}) d\bm{\theta}" alignLeft />
+                <X.Formula text="\int_{\bm{\Theta}} \lambda(\bm{\theta},\hat{\bm{\theta}}) P(\bm{\theta}|\bm{\chi}) d\bm{\theta}" />
             </X.HighlightBlock>
             <X.P>
                 通常情况下损失函数取
