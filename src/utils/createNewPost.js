@@ -32,7 +32,7 @@ fs.writeFileSync(
     JSON.stringify(
         {
             [postPath]: {
-                title: `Untitled__${param.replace('-', '_')}`,
+                title: `Untitled__${param.replaceAll('-', '_')}`,
                 time: `${date.getFullYear()}-${pad0(m + 1)}-${pad0(date.getDate())}`,
                 inactive: true,
             },
@@ -42,7 +42,7 @@ fs.writeFileSync(
         4,
     ),
 );
-console.log(`Updated src/app/_archives.json`);
+console.log(`Updated ${archivesPath}`);
 
 fs.mkdirSync(dir, {recursive: true});
 

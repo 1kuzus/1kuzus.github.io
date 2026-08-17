@@ -14,12 +14,12 @@ export default function TableMarkdown({children, width, thead}) {
     const widthArr = Array.isArray(width)
         ? width
         : typeof width === 'string'
-        ? width
-              .replace(/[[\]\s]/g, '')
-              .split(',')
-              .filter((w) => w !== '')
-              .map(Number)
-        : [];
+          ? width
+                .replace(/[[\]\s]/g, '')
+                .split(',')
+                .filter((w) => w !== '')
+                .map(Number)
+          : [];
 
     const trs = [];
     const collectTrs = (nodes) => {
@@ -46,10 +46,10 @@ export default function TableMarkdown({children, width, thead}) {
                                               (td_index === 0 && (thead === 'all' || thead === 'column'))
                                             : td.type === 'th';
                                     const Tag = isHeader ? 'th' : 'td';
-                                    const a = td.props.style?.textAlign || td.props.align;
+                                    const textAlign = td.props.style?.textAlign;
                                     const w = widthArr[td_index] || td.props.width || undefined;
                                     return (
-                                        <Tag key={td_index} style={a ? {textAlign: a} : undefined} width={w}>
+                                        <Tag key={td_index} style={textAlign || w ? {textAlign, width: w} : undefined}>
                                             {td.props.children}
                                         </Tag>
                                     );

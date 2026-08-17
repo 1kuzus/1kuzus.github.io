@@ -65,30 +65,7 @@ export default function remarkXProps() {
         }
     };
 
-    // 将 remark-gfm 解析出的 table.align 数组传播到每个 tableCell 的 hProperties.align，
-    // 使对齐信息能抵达最终渲染的 <td> props。
-    const propagateGfmAlignToCells = (nodes) => {
-        for (const node of nodes) {
-            if (Array.isArray(node.children)) {
-                propagateGfmAlignToCells(node.children);
-            }
-            if (node.type !== 'table' || !Array.isArray(node.align)) continue;
-            for (const tr of node.children) {
-                if (tr.type !== 'tableRow') continue;
-                tr.children.forEach((td, td_index) => {
-                    if (td.type !== 'tableCell') return;
-                    const a = node.align[td_index];
-                    if (!a) return;
-                    if (!td.data) td.data = {};
-                    if (!td.data.hProperties) td.data.hProperties = {};
-                    td.data.hProperties.align = a;
-                });
-            }
-        }
-    };
-
     return (tree) => {
         processChildren(tree.children);
-        propagateGfmAlignToCells(tree.children);
     };
 }
