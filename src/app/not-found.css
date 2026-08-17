@@ -4,8 +4,6 @@
     align-items: center;
     width: fit-content;
     margin: 120px auto;
-}
-#notfound * {
     user-select: none;
 }
 #notfound img {

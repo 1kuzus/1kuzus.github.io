@@ -21,9 +21,11 @@
     line-height: 28px;
     text-align: center;
 }
-.x-cell-align-l * {
+.x-table th.x-cell-align-l,
+.x-table td.x-cell-align-l {
     text-align: left;
 }
-.x-cell-align-r * {
+.x-table th.x-cell-align-r,
+.x-table td.x-cell-align-r {
     text-align: right;
 }

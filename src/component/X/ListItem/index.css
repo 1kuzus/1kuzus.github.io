@@ -22,6 +22,7 @@ ol {
 .x-uli-marker,
 .x-oli-number {
     display: flex;
+    flex-shrink: 0;
     align-items: center;
     justify-content: center;
     width: 32px;
@@ -39,5 +40,5 @@ ol {
 .x-uli .x-uli-content-wrapper,
 .x-oli .x-oli-content-wrapper {
     flex: 1;
-    max-width: calc(100% - 32px);
+    min-width: 0;
 }

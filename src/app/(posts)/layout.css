@@ -8,6 +8,6 @@
         padding: 0;
     }
 }
-#main * {
+#main {
     overflow-wrap: break-word;
 }
