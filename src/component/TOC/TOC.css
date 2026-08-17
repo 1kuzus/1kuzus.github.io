@@ -28,7 +28,7 @@
     display: block;
 }
 #contents-header {
-    padding: 4px 32px 4px 32px;
+    padding: 4px 32px;
     line-height: 20px;
     color: var(--brand-200);
     cursor: pointer;
@@ -39,7 +39,7 @@
 }
 #contents .titletype-x-h1,
 #contents .titletype-x-h2 {
-    padding: 4px 32px 4px 32px;
+    padding: 4px 32px;
     margin-top: 2px;
     overflow: hidden;
     text-overflow: ellipsis;

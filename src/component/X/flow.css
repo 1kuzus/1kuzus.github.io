@@ -1,20 +1,16 @@
 .post-flow {
     margin-block-start: 24px;
 }
-
-:where(.post-flow, .x-highlightblock, .x-flexcol)>*+* {
+:where(.post-flow, .x-highlightblock, .x-flexcol) > * + * {
     margin-block-start: 24px;
 }
-
-:where(.x-uli-content-wrapper, .x-oli-content-wrapper)>*+* {
+:where(.x-uli-content-wrapper, .x-oli-content-wrapper) > * + * {
     margin-block-start: 12px;
 }
-
-.x-uli+.x-uli,
-.x-oli+.x-oli {
+.x-uli + .x-uli,
+.x-oli + .x-oli {
     margin-block-start: 12px;
 }
-
-:where(.x-table th, .x-table td)>*+* {
+:where(.x-table th, .x-table td) > * + * {
     margin-block-start: 8px;
 }

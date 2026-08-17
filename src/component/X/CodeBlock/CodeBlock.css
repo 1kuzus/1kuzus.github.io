@@ -15,7 +15,7 @@
     align-items: center;
     max-width: 96%;
     height: 32px;
-    padding: 0px 6px 0 10px;
+    padding: 0 6px 0 10px;
     background-color: var(--bg-main);
     border-radius: 6px;
     box-shadow: var(--light-theme-box-shadow);
@@ -23,7 +23,7 @@
 .x-codeblock-header-title {
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap; 
+    white-space: nowrap;
 }
 .x-codeblock .x-codeblock-header > * {
     opacity: 0.4;

@@ -33,7 +33,7 @@ export default function Archives() {
                                     {activeArchives[path].time && (
                                         <code className="archives-post-time">{activeArchives[path].time.slice(5)}</code>
                                     )}
-                                    {<span className="archives-post-title">{activeArchives[path].title}</span>}
+                                    <span className="archives-post-title">{activeArchives[path].title}</span>
                                 </Link>
                             </li>
                         ))}
