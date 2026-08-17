@@ -41,7 +41,7 @@
     opacity: 0;
     transition: opacity 200ms;
 }
-@media (max-width: 1440px) {
+@media (width <= 1440px) {
     #sidebar {
         transform: translateX(-100%);
     }

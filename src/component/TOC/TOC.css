@@ -14,7 +14,7 @@
     box-shadow: var(--light-theme-box-shadow);
     transition: opacity 400ms ease-in;
 }
-@media (max-width: 1440px) {
+@media (width <= 1440px) {
     #contents {
         pointer-events: none;
         opacity: 0;

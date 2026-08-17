@@ -48,7 +48,7 @@ body:has(#post-layout) #header-show-sidebar-button {
     opacity: 1;
 }
 /* 图标切换：≤1440px跟随抽屉开合状态，>1440px跟随侧栏折叠状态 */
-@media (max-width: 1440px) {
+@media (width <= 1440px) {
     :root[data-show-sidebar] .svg-show-sidebar-icon,
     :root:not([data-show-sidebar]) .svg-hide-sidebar-icon {
         display: none;
@@ -70,7 +70,7 @@ body:has(#post-layout) #header-show-sidebar-button {
 :root[data-theme='dark'] .svg-dark-theme-icon {
     display: block;
 }
-@media (max-width: 600px) {
+@media (width <= 600px) {
     #header {
         padding: 0 var(--content-pad-x-compact);
     }

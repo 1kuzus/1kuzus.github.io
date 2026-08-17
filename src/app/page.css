@@ -147,7 +147,7 @@
 .homepage-nav-card:nth-child(2) > h3::after {
     background-color: var(--brand-100);
 }
-@media (max-width: 600px) {
+@media (width <= 600px) {
     #homepage-navs {
         grid-template-columns: 1fr;
     }

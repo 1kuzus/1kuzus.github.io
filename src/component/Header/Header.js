@@ -13,14 +13,13 @@ function LogoButton() {
     );
 }
 
-// ≤1440px：开合抽屉式侧栏，瞬态状态不持久化；>1440px：折叠/展开常驻侧栏，偏好持久化到localStorage
 function ShowSidebarButton() {
     return (
         <button
             id="header-show-sidebar-button"
             className="header-button-bg"
             onClick={() => {
-                if (window.matchMedia('(max-width: 1440px)').matches) {
+                if (window.matchMedia('(width <= 1440px)').matches) {
                     document.documentElement.toggleAttribute('data-show-sidebar');
                 } else {
                     const collapsed = document.documentElement.toggleAttribute('data-collapse-sidebar');

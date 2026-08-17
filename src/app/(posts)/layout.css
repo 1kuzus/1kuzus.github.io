@@ -3,7 +3,7 @@
     padding: 0 calc(var(--toc-width) + var(--toc-margin-right)) 0 var(--sidebar-width);
     transition: padding 200ms;
 }
-@media (max-width: 1440px) {
+@media (width <= 1440px) {
     #post-layout {
         padding: 0;
     }

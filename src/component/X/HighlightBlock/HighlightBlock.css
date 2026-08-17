@@ -2,7 +2,7 @@
     padding: 24px 32px;
     border-radius: 12px;
 }
-@media (max-width: 600px) {
+@media (width <= 600px) {
     .x-highlightblock {
         padding: 24px var(--content-pad-x-compact);
     }
