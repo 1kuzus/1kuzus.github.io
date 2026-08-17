@@ -14,7 +14,7 @@
     --content-pad-x-compact: 18px;
 }
 :root {
-    /*背景色*/
+    /* 背景色 */
     --bg-main: #ffffff;
     --bg-body: #ffffff;
 
@@ -40,32 +40,32 @@
     --bg-transparent-green: #00ff0020;
     --bg-transparent-golden: #ffb80018;
 
-    /*前景色*/
+    /* 前景色 */
     --fg-main: #30303c;
     --fg-gray-100: #40404c;
     --fg-gray-200: #50505c;
     --fg-gray-300: #60606c;
 
-    /*主题色*/
+    /* 主题色 */
     --brand-main: #00f8ff;
     --brand-100: #00b8d0;
     --brand-200: #00a8c4;
     --brand-300: #0088ac;
 
-    /*低对比度灰色*/
+    /* 低对比度灰色 */
     --low-contrast-gray-100: #30303c;
     --low-contrast-gray-200: #40404c;
     --low-contrast-gray-300: #50505c;
 
-    /*非颜色*/
+    /* 非颜色 */
     --border: 1px solid #80808040;
 }
 :root[data-theme='light'] {
-    /*仅亮色模式*/
+    /* 仅亮色模式 */
     --light-theme-box-shadow: 0 0 4px 2px #0000000c;
 }
 :root[data-theme='dark'] {
-    /*背景色*/
+    /* 背景色 */
     --bg-main: #141416;
     --bg-body: #1c1c1e;
 
@@ -91,27 +91,27 @@
     --bg-transparent-green: #80ff8018;
     --bg-transparent-golden: #c08a0020;
 
-    /*前景色*/
+    /* 前景色 */
     --fg-main: #fcfcfc;
     --fg-gray-100: #ececec;
     --fg-gray-200: #dcdcdc;
     --fg-gray-300: #cccccc;
 
-    /*主题色*/
+    /* 主题色 */
     --brand-main: #00f8ff;
     --brand-100: #00c8dc;
     --brand-200: #00b8d0;
     --brand-300: #00a8c4;
 
-    /*低对比度灰色*/
+    /* 低对比度灰色 */
     --low-contrast-gray-100: #404044;
     --low-contrast-gray-200: #48484c;
     --low-contrast-gray-300: #505054;
 
-    /*非颜色*/
+    /* 非颜色 */
     --border: 1px solid #80808060;
 
-    /*仅暗色模式*/
+    /* 仅暗色模式 */
     --dark-theme-logopart-shadow: 0 0 48px 4px #00e8f4a0;
 }
 

@@ -15,7 +15,7 @@ function onCountChange(path, field, callback) {
     });
 }
 
-// views开发环境不自增
+// views 开发环境不自增
 export async function increaseViews(path) {
     if (isDev) {
         const viewsRef = fieldRef(path, 'views');

@@ -8,7 +8,7 @@ const IMG_EXT = /\.(png|jpe?g|gif|webp|avif|svg)$/i;
 
 const toPosix = (p) => p.split(path.sep).join('/');
 
-// 收集src/posts季度目录下所有图片的相对路径
+// 收集 src/posts 季度目录下所有图片的相对路径
 function collectExpected() {
     const expected = new Set();
     for (const entry of fs.readdirSync(SRC_DIR, {recursive: true})) {

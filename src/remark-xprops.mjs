@@ -6,7 +6,7 @@ export default function remarkXProps() {
         let m;
         // m[1]           - 键
         // m[2]/m[3]/m[4] - 双引号、单引号、无引号的值
-        // m[5]           - 布尔flag
+        // m[5]           - 布尔 flag
         while ((m = re.exec(raw)) !== null) {
             if (m[1]) acc[m[1]] = m[2] ?? m[3] ?? m[4];
             else if (m[5]) acc[m[5]] = true;

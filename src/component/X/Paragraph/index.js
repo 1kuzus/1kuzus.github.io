@@ -4,8 +4,8 @@ import './index.css';
 
 export function XParser(children) {
     /*
-        解析自定义的格式化语法，返回字符串形式的HTML。
-        输入的React children应为字符串（子元素为纯文本）或字符串数组（子元素含有JSX形式的字符串值）。
+        解析自定义的格式化语法，返回字符串形式的 HTML。
+        输入的 React children 应为字符串（子元素为纯文本）或字符串数组（子元素含有 JSX 形式的字符串值）。
 
         `content`   行内高亮
         *content*   加粗

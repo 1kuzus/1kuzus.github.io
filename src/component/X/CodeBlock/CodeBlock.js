@@ -48,7 +48,7 @@ export default function CodeBlock(props) {
     if (!lines[0]) lines = lines.slice(1);
     const indent = lines[0].length - lines[0].trimStart().length;
     lines = lines.map((line) => line.slice(indent));
-    // 将普通高亮、diff增加、diff删除合并为三元组[start:number,end:number,type:'n'|'r'|'a']
+    // 将普通高亮、diff 增加、diff 删除合并为三元组 [start:number,end:number,type:'n'|'r'|'a']
     const processLines = (ls, t) =>
         ls
             ? ls.split(',').map((i) => (i.includes('-') ? [+i.split('-')[0], +i.split('-')[1] + 1, t] : [+i, +i + 1, t]))

@@ -87,9 +87,9 @@ function Ol({children, start}) {
     );
 }
 
-const BLOCK_TYPES = new Set([P, H2, H3, H4, Hr, Pre, Blockquote, Table, Ul, Ol]); // li的children中可能出现的块级映射组件
+const BLOCK_TYPES = new Set([P, H2, H3, H4, Hr, Pre, Blockquote, Table, Ul, Ol]); // li 的 children 中可能出现的块级映射组件
 
-// 将li的children中连续的行内片段（紧凑列表的文本、行内代码、公式等）包装为<p>，使列表项内容器的子节点全部是块级元素
+// 将 li 的 children 中连续的行内片段（紧凑列表的文本、行内代码、公式等）包装为 <p>，使列表项内容器的子节点全部是块级元素
 function normalizeLiChildren(children) {
     const nodes = Children.toArray(children);
     const result = [];

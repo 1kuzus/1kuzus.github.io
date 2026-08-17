@@ -14,7 +14,7 @@ export const metadata = {
     metadataBase: new URL('https://1kuzus.github.io'),
 };
 
-// 渲染前同步设置data-theme与宽屏侧栏折叠状态，避免首帧闪烁
+// 渲染前同步设置 data-theme 与宽屏侧栏折叠状态，避免首帧闪烁
 const scriptInit = `
 document.documentElement.dataset.theme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
 if (localStorage.getItem('collapse-sidebar') === 'true') document.documentElement.setAttribute('data-collapse-sidebar', '');
