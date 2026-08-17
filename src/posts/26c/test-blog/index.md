@@ -643,19 +643,7 @@ SELECT 3;
 
 **预期**：六个块依次为 金、金、红、蓝、绿、灰，圆角 12px、内边距上下 24px 左右 32px（手机端左右 18px），块间距 24px。所有背景都是**半透明**的，切到暗色主题后底色应当自动变暗而文字保持可读。**异常**：任意两块颜色相同（除前两块外）；某块没有背景色；暗色主题下底色仍是亮色导致文字看不清；块与块之间粘连没有间距。
 
-### 8.2 非法与缺省 background
-
-<!-- @xprops background="purple" -->
-
-> 传入了一个不存在的颜色 `purple`。
-
-<!-- @xprops background -->
-
-> `background` 作为布尔 flag 传入（值为 `true`）。
-
-**预期**：这两块**没有任何背景色**（透明），但仍保留 12px 圆角的内边距布局 —— 表现为文字左右各内缩 32px、上下各 24px 的"隐形块"。这是当前实现的既定行为（类名拼成了不存在的 `highlight-background-purple` / `highlight-background-true`），不算 bug，但**如果需要容错降级到 golden，这里就是改动点**。**异常**：页面报错；或者非法值意外地渲染成了某种颜色。
-
-### 8.3 空块与连续块
+### 8.2 空块与连续块
 
 >
 
@@ -667,7 +655,7 @@ SELECT 3;
 
 **预期**：空引用块渲染为一个高度约 48px（上下内边距）的纯色条；三个块彼此独立、间距 24px。**异常**：空块把后面的内容吸进去合并成一块；空块高度塌陷为 0 完全看不见。
 
-### 8.4 引用块内的行内元素与多段落
+### 8.3 引用块内的行内元素与多段落
 
 <!-- @xprops background="blue" -->
 
@@ -1461,6 +1449,11 @@ _斜体（em 未映射）_、~~删除线（del 未映射）~~、以及行内 HTM
 4) 非法的 LaTeX 命令
    $\undefinedcommand$ 或 $$\begin{unknownenv}...\end{unknownenv}$$
    → KaTeX 默认 throwOnError:true，抛 ParseError 使整页渲染失败
+
+5) 引用块使用不支持的 background
+   <!-- @xprops background="purple" --> 或 <!-- @xprops background -->
+   → HighlightBlock 的 assert 抛 "unsupported highlight background: ..."
+   → 已支持：golden red gray blue green（不写 background 时默认 golden）
 ````
 
 **预期**：上面这段是一个 `Plain Text` 代码块（用四个反引号包裹以容纳内部的三反引号），内容原样显示，**不应**被解析成真正的代码块。**异常**：这段内容变成了多个嵌套代码块，或页面直接 500 —— 那说明四反引号围栏没被正确处理。
