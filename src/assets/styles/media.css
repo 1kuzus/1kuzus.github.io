@@ -3,27 +3,41 @@
         size: A4;
         margin: 0;
     }
-    html {
-        --print-zoom: 0.8;
+    @font-face {
+        font-family: PrintCJK;
+        src: local('Noto Serif CJK SC'), local('Source Han Serif SC'), local('Songti SC'), local('STSong'), local('SimSun');
+    }
+    @font-face {
+        font-family: PrintMono;
+        src: local('Menlo'), local('Consolas'), local('Courier New'), url('../fonts/Consolas_Latin.woff2') format('woff2');
+        unicode-range: U+0000-024F, U+2000-206F;
+    }
+
+    body {
+        padding: 16mm 18mm !important;
+        font-family: PrintCJK, serif !important;
+        zoom: 0.8;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
-    body {
-        padding: 16mm 18mm !important;
-        font-family: 'Songti SC', 'STSong', 'Hiragino Sans GB', 'STHeiti', 'Heiti SC', 'Arial Unicode MS', serif !important;
-        color: #222 !important;
-        zoom: var(--print-zoom);
+    #post-layout,
+    .center-wrapper {
+        padding: 0 !important;
     }
-    code {
-        font-family: inherit !important;
+    code,
+    .x-codeblock {
+        font-family: PrintMono, PrintCJK, monospace !important;
     }
     .x-codeblock {
-        font-family: Menlo, Consolas, 'Courier New', monospace !important;
+        background-color: #fafafa !important;
         box-shadow: none !important;
     }
     .x-codeblock pre {
         overflow-wrap: anywhere !important;
         white-space: pre-wrap !important;
+    }
+    .x-table {
+        width: auto !important;
     }
     #header,
     #sidebar,
@@ -35,21 +49,5 @@
     .like-button,
     .x-codeblock-header {
         display: none !important;
-    }
-    #post-layout,
-    .center-wrapper {
-        min-width: 0 !important;
-        max-width: none !important;
-        padding: 0 !important;
-    }
-    .x-table,
-    .x-codeblock,
-    .x-image,
-    .x-table-wrapper,
-    .x-flexrow-wrapper {
-        max-width: 100% !important;
-    }
-    .x-table {
-        width: auto !important;
     }
 }
