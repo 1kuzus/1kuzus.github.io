@@ -17,9 +17,8 @@ export function ShowSidebarIcon() {
             viewBox="0 0 1024 1024"
             className="svg-show-sidebar-icon"
         >
-            <rect fill="#FCFCFC" x="100" y="148" width="824" height="128" rx="64" />
-            <rect fill="#FCFCFC" x="100" y="448" width="824" height="128" rx="64" />
-            <rect fill="#FCFCFC" x="100" y="748" width="824" height="128" rx="64" />
+            <rect fill="none" stroke="#FCFCFC" strokeWidth="80" x="80" y="160" width="864" height="704" rx="128" />
+            <rect fill="#FCFCFC" opacity="0.45" x="168" y="248" width="216" height="528" rx="40" />
         </svg>
     );
 }
@@ -33,8 +32,8 @@ export function HideSidebarIcon() {
             viewBox="0 0 1024 1024"
             className="svg-hide-sidebar-icon"
         >
-            <line stroke="#FCFCFC" x1="240" y1="240" x2="760" y2="760" strokeWidth="128" strokeLinecap="round" />
-            <line stroke="#FCFCFC" x1="240" y1="760" x2="760" y2="240" strokeWidth="128" strokeLinecap="round" />
+            <rect fill="none" stroke="#FCFCFC" strokeWidth="80" x="80" y="160" width="864" height="704" rx="128" />
+            <rect fill="#FCFCFC" x="168" y="248" width="216" height="528" rx="40" />
         </svg>
     );
 }
