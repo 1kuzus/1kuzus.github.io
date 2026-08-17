@@ -1,56 +1,25 @@
 @media print {
     @page {
-        margin: 18mm 16mm;
+        size: A4;
+        margin: 0;
     }
     html {
+        --print-zoom: 0.8;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
     body {
-        padding-top: 0 !important;
-        font-family: 'Songti SC', 'STSong', 'Hiragino Sans GB', 'STHeiti', 'Heiti SC', 'Arial Unicode MS', sans-serif !important;
-        font-size: 12px !important;
+        padding: 16mm 18mm !important;
+        font-family: 'Songti SC', 'STSong', 'Hiragino Sans GB', 'STHeiti', 'Heiti SC', 'Arial Unicode MS', serif !important;
+        color: #222 !important;
+        zoom: var(--print-zoom);
     }
-    .x-p,
-    .x-uli,
-    .x-oli,
-    .x-table th,
-    .x-table td {
-        line-height: 1.65 !important;
+    code {
+        font-family: inherit !important;
     }
-    .x-post-title {
-        font-size: 20px !important;
-    }
-    .x-h1 {
-        font-size: 16px !important;
-    }
-    .x-h2 {
-        font-size: 14px !important;
-    }
-    .x-h3 {
-        font-size: 13px !important;
-    }
-    /* 行内代码与正文字号对齐，去掉额外padding以免灰底盒子高出一行 */
-    .x-inline-highlight {
-        padding: 0 0.25em !important;
-        margin: 0 0.1em !important;
-        font-size: inherit !important;
-        line-height: inherit !important;
-    }
-    code,
     .x-codeblock {
         font-family: Menlo, Consolas, 'Courier New', monospace !important;
-    }
-    .x-codeblock,
-    .x-codeblock .x-codeblock-header {
         box-shadow: none !important;
-    }
-    .x-codeblock {
-        --x-codeblock-line-height: 18px;
-        font-size: 12px !important;
-    }
-    .x-codeblock .x-codeblock-header > * {
-        opacity: 1 !important;
     }
     .x-codeblock pre {
         overflow-wrap: anywhere !important;
@@ -61,28 +30,26 @@
     #sidebar-mask,
     #contents,
     #logopart-wrapper,
+    #homepage-view-count,
+    .post-meta,
     .like-button,
-    .x-codeblock-header-copy {
+    .x-codeblock-header {
         display: none !important;
     }
     #post-layout,
     .center-wrapper {
+        min-width: 0 !important;
+        max-width: none !important;
         padding: 0 !important;
     }
-    .x-table {
-        width: auto !important;
-    }
+    .x-table,
     .x-codeblock,
     .x-image,
     .x-table-wrapper,
-    .x-formula,
-    .x-highlightblock {
-        break-inside: avoid;
+    .x-flexrow-wrapper {
+        max-width: 100% !important;
     }
-    .x-post-title,
-    .x-h1,
-    .x-h2,
-    .x-h3 {
-        break-after: avoid;
+    .x-table {
+        width: auto !important;
     }
 }
