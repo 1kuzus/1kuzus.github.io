@@ -8,32 +8,11 @@ export function LogoIcon() {
     );
 }
 
-export function ShowSidebarIcon() {
+export function SidebarIcon() {
     return (
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 1024 1024"
-            className="svg-show-sidebar-icon"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 1024 1024">
             <rect fill="none" stroke="#FCFCFC" strokeWidth="80" x="80" y="160" width="864" height="704" rx="128" />
-            <rect fill="#FCFCFC" opacity="0.4" x="184" y="264" width="216" height="496" rx="32" />
-        </svg>
-    );
-}
-
-export function HideSidebarIcon() {
-    return (
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 1024 1024"
-            className="svg-hide-sidebar-icon"
-        >
-            <rect fill="none" stroke="#FCFCFC" strokeWidth="80" x="80" y="160" width="864" height="704" rx="128" />
-            <rect fill="#FCFCFC" x="184" y="264" width="216" height="496" rx="32" />
+            <rect className="svg-sidebar-icon-panel" fill="#FCFCFC" x="184" y="264" width="216" height="496" rx="32" />
         </svg>
     );
 }

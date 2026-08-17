@@ -47,17 +47,18 @@ body:has(#post-layout) #header-show-sidebar-button {
     pointer-events: auto;
     opacity: 1;
 }
-/* 图标切换：≤1440px跟随抽屉开合状态，>1440px跟随侧栏折叠状态 */
+.svg-sidebar-icon-panel {
+    opacity: 1;
+    transition: opacity 200ms;
+}
 @media (width <= 1440px) {
-    :root[data-show-sidebar] .svg-show-sidebar-icon,
-    :root:not([data-show-sidebar]) .svg-hide-sidebar-icon {
-        display: none;
+    :root:not([data-show-sidebar]) .svg-sidebar-icon-panel {
+        opacity: 0.4;
     }
 }
 @media (width > 1440px) {
-    :root[data-collapse-sidebar] .svg-hide-sidebar-icon,
-    :root:not([data-collapse-sidebar]) .svg-show-sidebar-icon {
-        display: none;
+    :root[data-collapse-sidebar] .svg-sidebar-icon-panel {
+        opacity: 0.4;
     }
 }
 .svg-dark-theme-icon {

@@ -1,6 +1,6 @@
 'use client';
 import NextLink from 'next/link';
-import {LogoIcon, ShowSidebarIcon, HideSidebarIcon, LightThemeIcon, DarkThemeIcon, GithubIcon} from 'src/assets/svgs';
+import {LogoIcon, SidebarIcon, LightThemeIcon, DarkThemeIcon, GithubIcon} from 'src/assets/svgs';
 import './Header.css';
 
 function LogoButton() {
@@ -27,8 +27,7 @@ function ShowSidebarButton() {
                 }
             }}
         >
-            <ShowSidebarIcon />
-            <HideSidebarIcon />
+            <SidebarIcon />
         </button>
     );
 }
