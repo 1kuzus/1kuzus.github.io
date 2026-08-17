@@ -38,33 +38,27 @@
 .header-button-bg:hover {
     background-color: var(--low-contrast-gray-300);
 }
-#header-show-sidebar-button,
-#header-collapse-sidebar-button {
+#header-show-sidebar-button {
     pointer-events: none;
     opacity: 0;
     transition: opacity 200ms;
 }
-body:has(#post-layout) #header-show-sidebar-button,
-body:has(#post-layout) #header-collapse-sidebar-button {
+body:has(#post-layout) #header-show-sidebar-button {
     pointer-events: auto;
     opacity: 1;
 }
+/* 图标切换：≤1440px跟随抽屉开合状态，>1440px跟随侧栏折叠状态 */
 @media (max-width: 1440px) {
-    #header-collapse-sidebar-button {
+    :root[data-show-sidebar] .svg-show-sidebar-icon,
+    :root:not([data-show-sidebar]) .svg-hide-sidebar-icon {
         display: none;
     }
 }
 @media (width > 1440px) {
-    #header-show-sidebar-button {
+    :root[data-collapse-sidebar] .svg-hide-sidebar-icon,
+    :root:not([data-collapse-sidebar]) .svg-show-sidebar-icon {
         display: none;
     }
-}
-/* 图标随抽屉开合/侧栏折叠状态切换 */
-:root[data-show-sidebar] #header-show-sidebar-button .svg-show-sidebar-icon,
-:root:not([data-show-sidebar]) #header-show-sidebar-button .svg-hide-sidebar-icon,
-:root[data-collapse-sidebar] #header-collapse-sidebar-button .svg-hide-sidebar-icon,
-:root:not([data-collapse-sidebar]) #header-collapse-sidebar-button .svg-show-sidebar-icon {
-    display: none;
 }
 :root .svg-dark-theme-icon,
 :root[data-theme='light'] .svg-dark-theme-icon {

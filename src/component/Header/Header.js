@@ -13,31 +13,19 @@ function LogoButton() {
     );
 }
 
-// ≤1440px：开合抽屉式侧栏，瞬态状态，不持久化
+// ≤1440px：开合抽屉式侧栏，瞬态状态不持久化；>1440px：折叠/展开常驻侧栏，偏好持久化到localStorage
 function ShowSidebarButton() {
     return (
         <button
             id="header-show-sidebar-button"
             className="header-button-bg"
             onClick={() => {
-                document.documentElement.toggleAttribute('data-show-sidebar');
-            }}
-        >
-            <ShowSidebarIcon />
-            <HideSidebarIcon />
-        </button>
-    );
-}
-
-// >1440px：折叠/展开常驻侧栏，偏好持久化到localStorage
-function CollapseSidebarButton() {
-    return (
-        <button
-            id="header-collapse-sidebar-button"
-            className="header-button-bg"
-            onClick={() => {
-                const collapsed = document.documentElement.toggleAttribute('data-collapse-sidebar');
-                localStorage.setItem('collapse-sidebar', String(collapsed));
+                if (window.matchMedia('(max-width: 1440px)').matches) {
+                    document.documentElement.toggleAttribute('data-show-sidebar');
+                } else {
+                    const collapsed = document.documentElement.toggleAttribute('data-collapse-sidebar');
+                    localStorage.setItem('collapse-sidebar', String(collapsed));
+                }
             }}
         >
             <ShowSidebarIcon />
@@ -84,7 +72,6 @@ export default function Header() {
             </div>
             <div id="header-right-wrapper">
                 <ShowSidebarButton />
-                <CollapseSidebarButton />
                 <ThemeButton />
                 <GithubButton />
             </div>
