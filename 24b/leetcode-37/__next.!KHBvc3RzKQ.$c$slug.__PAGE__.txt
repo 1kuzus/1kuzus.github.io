@@ -1,12 +1,12 @@
 1:"$Sreact.fragment"
-2:I[5224,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-9e09921c601311ab.js"],"default"]
-3:I[9488,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-9e09921c601311ab.js"],"PostMeta"]
-4:I[3942,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-9e09921c601311ab.js"],"default"]
-b:I[9488,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-9e09921c601311ab.js"],"LikeButton"]
+2:I[5224,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-1c53eb915b534e07.js"],"default"]
+3:I[9488,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-1c53eb915b534e07.js"],"PostMeta"]
+4:I[3942,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-1c53eb915b534e07.js"],"default"]
+b:I[9488,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-1c53eb915b534e07.js"],"LikeButton"]
 c:I[484,[],"OutletBoundary"]
 d:"$Sreact.suspense"
 :HL["/_next/static/css/10d75a70630a18cb.css","style"]
-:HL["/_next/static/css/10d426fca24618a5.css","style"]
+:HL["/_next/static/css/25da4c51e755391e.css","style"]
 5:T5f5,class Solution {
 public:
     int visr[9],visc[9],viss[9];
@@ -121,9 +121,9 @@ public:
         <span class="token function">dfs</span><span class="token punctuation">(</span>board<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>0:{"rsc":["$","$1","c",{"children":[[["$","$L2",null,{}],["$","h1",null,{"className":"x-post-title","children":"LeetCode 37.解数独"}],["$","$L3",null,{"path":"/24b/leetcode-37/","time":"2024-06-01"}],["$","article",null,{"className":"post-flow","children":[["$","div",null,{"className":"x-highlightblock highlight-background-golden","children":["\n",["$","p",null,{"className":"x-p","children":["原题链接：",["$","a",null,{"href":"https://leetcode.cn/problems/sudoku-solver/description/","target":"_blank","rel":"noreferrer","className":"x-inline-link","children":"解数独"}]]}],"\n"]}],"\n",["$","p",null,{"className":"x-p","children":["练习一下位运算和DFS。注意这个题目找到唯一解之后，就要通过",["$","code",null,{"className":"x-inline-highlight","children":"halt"}],"判断终止，在回溯时直接返回，否则会把填好的数值改回成",["$","code",null,{"className":"x-inline-highlight","children":"."}],"。"]}],"\n",["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L4",null,{"className":"x-codeblock-header-copy","text":"$5"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$6"}}]}]]}]]}],"$L7"],["$L8","$L9"],"$La"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"wUYr6sw9gW1SFJJjUJik5"}
+<span class="token punctuation">}</span><span class="token punctuation">;</span>0:{"rsc":["$","$1","c",{"children":[[["$","$L2",null,{}],["$","h1",null,{"className":"x-post-title","children":"LeetCode 37.解数独"}],["$","$L3",null,{"path":"/24b/leetcode-37/","time":"2024-06-01"}],["$","article",null,{"className":"post-flow","children":[["$","div",null,{"className":"x-highlightblock highlight-background-golden","children":["\n",["$","p",null,{"className":"x-p","children":["原题链接：",["$","a",null,{"href":"https://leetcode.cn/problems/sudoku-solver/description/","target":"_blank","rel":"noreferrer","className":"x-inline-link","children":"解数独"}]]}],"\n"]}],"\n",["$","p",null,{"className":"x-p","children":["练习一下位运算和DFS。注意这个题目找到唯一解之后，就要通过",["$","code",null,{"className":"x-inline-highlight","children":"halt"}],"判断终止，在回溯时直接返回，否则会把填好的数值改回成",["$","code",null,{"className":"x-inline-highlight","children":"."}],"。"]}],"\n",["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L4",null,{"className":"x-codeblock-header-copy","text":"$5"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$6"}}]}]]}]]}],"$L7"],["$L8","$L9"],"$La"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"KEateuu0rvlZhhfw8mQQy"}
 7:["$","$Lb",null,{"path":"/24b/leetcode-37/"}]
 8:["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/10d75a70630a18cb.css","precedence":"next"}]
-9:["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/10d426fca24618a5.css","precedence":"next"}]
+9:["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/25da4c51e755391e.css","precedence":"next"}]
 a:["$","$Lc",null,{"children":["$","$d",null,{"name":"Next.MetadataOutlet","children":"$@e"}]}]
 e:null
