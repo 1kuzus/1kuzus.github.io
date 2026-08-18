@@ -1,12 +1,12 @@
 1:"$Sreact.fragment"
-2:I[5224,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-1c53eb915b534e07.js"],"default"]
-3:I[9488,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-1c53eb915b534e07.js"],"PostMeta"]
-4:I[3942,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-1c53eb915b534e07.js"],"default"]
-16:I[9488,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-1c53eb915b534e07.js"],"LikeButton"]
+2:I[5224,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-9e09921c601311ab.js"],"default"]
+3:I[9488,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-9e09921c601311ab.js"],"PostMeta"]
+4:I[3942,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-9e09921c601311ab.js"],"default"]
+16:I[9488,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-9e09921c601311ab.js"],"LikeButton"]
 17:I[484,[],"OutletBoundary"]
 18:"$Sreact.suspense"
 :HL["/_next/static/css/10d75a70630a18cb.css","style"]
-:HL["/_next/static/css/ce05af467fcdc258.css","style"]
+:HL["/_next/static/css/10d426fca24618a5.css","style"]
 5:Te75,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">int</span> n<span class="token punctuation">,</span>a<span class="token punctuation">[</span><span class="token number">1005</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
@@ -35,7 +35,7 @@ in:
 
 out:
 2
-*/</span>0:{"rsc":["$","$1","c",{"children":[[["$","$L2",null,{}],["$","h1",null,{"className":"x-post-title","children":"CSP 201604 T1-T4题解"}],["$","$L3",null,{"path":"/24a/csp-2016-04/","time":"2024-03-09"}],["$","article",null,{"className":"post-flow","children":[["$","h2",null,{"className":"x-h1","children":"T1 折点计数"}],"\n",["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L4",null,{"className":"x-codeblock-header-copy","text":"#include <iostream>\nusing namespace std;\nint n,a[1005];\nint ans;//折点数量\nint main()\n{\n    cin>>n;\n    for(int i=0;i<n;i++)\n    {\n        cin>>a[i];\n    }\n    if(n>2)\n    {\n        for(int i=2;i<n;i++)\n        {\n            ans+=(a[i]>a[i-1])^(a[i-1]>a[i-2]);\n        }\n    }\n    cout<<ans<<endl;\n    return 0;\n}\n/*\nin:\n7\n5 4 1 2 3 6 4\n\nout:\n2\n*/"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$5"}}]}]]}],"\n","$L6","\n","$L7","\n","$L8","\n","$L9","\n","$La","\n","$Lb"]}],"$Lc"],["$Ld","$Le"],"$Lf"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"Uml674kAmLcC7zN5K4Kxu"}
+*/</span>0:{"rsc":["$","$1","c",{"children":[[["$","$L2",null,{}],["$","h1",null,{"className":"x-post-title","children":"CSP 201604 T1-T4题解"}],["$","$L3",null,{"path":"/24a/csp-2016-04/","time":"2024-03-09"}],["$","article",null,{"className":"post-flow","children":[["$","h2",null,{"className":"x-h1","children":"T1 折点计数"}],"\n",["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L4",null,{"className":"x-codeblock-header-copy","text":"#include <iostream>\nusing namespace std;\nint n,a[1005];\nint ans;//折点数量\nint main()\n{\n    cin>>n;\n    for(int i=0;i<n;i++)\n    {\n        cin>>a[i];\n    }\n    if(n>2)\n    {\n        for(int i=2;i<n;i++)\n        {\n            ans+=(a[i]>a[i-1])^(a[i-1]>a[i-2]);\n        }\n    }\n    cout<<ans<<endl;\n    return 0;\n}\n/*\nin:\n7\n5 4 1 2 3 6 4\n\nout:\n2\n*/"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$5"}}]}]]}],"\n","$L6","\n","$L7","\n","$L8","\n","$L9","\n","$La","\n","$Lb"]}],"$Lc"],["$Ld","$Le"],"$Lf"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"wUYr6sw9gW1SFJJjUJik5"}
 6:["$","h2",null,{"className":"x-h1","children":"T2 俄罗斯方块"}]
 10:T70f,#include <iostream>
 using namespace std;
@@ -606,6 +606,6 @@ out:
 */</span>b:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L4",null,{"className":"x-codeblock-header-copy","text":"$14"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$15"}}]}]]}]
 c:["$","$L16",null,{"path":"/24a/csp-2016-04/"}]
 d:["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/10d75a70630a18cb.css","precedence":"next"}]
-e:["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/ce05af467fcdc258.css","precedence":"next"}]
+e:["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/10d426fca24618a5.css","precedence":"next"}]
 f:["$","$L17",null,{"children":["$","$18",null,{"name":"Next.MetadataOutlet","children":"$@19"}]}]
 19:null

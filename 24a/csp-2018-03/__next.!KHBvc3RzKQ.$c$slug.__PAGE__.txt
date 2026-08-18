@@ -1,12 +1,12 @@
 1:"$Sreact.fragment"
-2:I[5224,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-1c53eb915b534e07.js"],"default"]
-3:I[9488,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-1c53eb915b534e07.js"],"PostMeta"]
-4:I[3942,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-1c53eb915b534e07.js"],"default"]
-17:I[9488,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-1c53eb915b534e07.js"],"LikeButton"]
+2:I[5224,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-9e09921c601311ab.js"],"default"]
+3:I[9488,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-9e09921c601311ab.js"],"PostMeta"]
+4:I[3942,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-9e09921c601311ab.js"],"default"]
+17:I[9488,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-9e09921c601311ab.js"],"LikeButton"]
 18:I[484,[],"OutletBoundary"]
 19:"$Sreact.suspense"
 :HL["/_next/static/css/10d75a70630a18cb.css","style"]
-:HL["/_next/static/css/ce05af467fcdc258.css","style"]
+:HL["/_next/static/css/10d426fca24618a5.css","style"]
 5:Tba1,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">int</span> cur<span class="token punctuation">,</span>score<span class="token punctuation">;</span>
@@ -37,7 +37,7 @@ in:
 
 out:
 22
-*/</span>0:{"rsc":["$","$1","c",{"children":[[["$","$L2",null,{}],["$","h1",null,{"className":"x-post-title","children":"CSP 201803 T1-T4题解"}],["$","$L3",null,{"path":"/24a/csp-2018-03/","time":"2024-03-10"}],["$","article",null,{"className":"post-flow","children":[["$","h2",null,{"className":"x-h1","children":"T1 跳一跳"}],"\n",["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L4",null,{"className":"x-codeblock-header-copy","text":"#include <iostream>\nusing namespace std;\nint cur,score;\nint d=2;//下一次如果cur=2(跳到中心)，加的分数\nint main()\n{\n    while(1)\n    {\n        cin>>cur;\n        if(!cur) break;\n        if(cur==1)\n        {\n            score+=1;\n            d=2;\n        }\n        else if(cur==2)\n        {\n            score+=d;\n            d+=2;\n        }\n    }\n    cout<<score<<endl;\n    return 0;\n}\n/*\nin:\n1 1 2 2 2 1 1 2 2 0\n\nout:\n22\n*/"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$5"}}]}]]}],"\n","$L6","\n","$L7","\n","$L8","\n","$L9","\n","$La","\n","$Lb","\n","$Lc"]}],"$Ld"],["$Le","$Lf"],"$L10"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"Uml674kAmLcC7zN5K4Kxu"}
+*/</span>0:{"rsc":["$","$1","c",{"children":[[["$","$L2",null,{}],["$","h1",null,{"className":"x-post-title","children":"CSP 201803 T1-T4题解"}],["$","$L3",null,{"path":"/24a/csp-2018-03/","time":"2024-03-10"}],["$","article",null,{"className":"post-flow","children":[["$","h2",null,{"className":"x-h1","children":"T1 跳一跳"}],"\n",["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L4",null,{"className":"x-codeblock-header-copy","text":"#include <iostream>\nusing namespace std;\nint cur,score;\nint d=2;//下一次如果cur=2(跳到中心)，加的分数\nint main()\n{\n    while(1)\n    {\n        cin>>cur;\n        if(!cur) break;\n        if(cur==1)\n        {\n            score+=1;\n            d=2;\n        }\n        else if(cur==2)\n        {\n            score+=d;\n            d+=2;\n        }\n    }\n    cout<<score<<endl;\n    return 0;\n}\n/*\nin:\n1 1 2 2 2 1 1 2 2 0\n\nout:\n22\n*/"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$5"}}]}]]}],"\n","$L6","\n","$L7","\n","$L8","\n","$L9","\n","$La","\n","$Lb","\n","$Lc"]}],"$Ld"],["$Le","$Lf"],"$L10"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"wUYr6sw9gW1SFJJjUJik5"}
 6:["$","h2",null,{"className":"x-h1","children":"T2 碰撞的小球"}]
 11:T4d9,#include <iostream>
 #include <cstring>
@@ -560,7 +560,7 @@ out:
 */</span>c:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L4",null,{"className":"x-codeblock-header-copy","text":"$15"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$16"}}]}]]}]
 d:["$","$L17",null,{"path":"/24a/csp-2018-03/"}]
 e:["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/10d75a70630a18cb.css","precedence":"next"}]
-f:["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/ce05af467fcdc258.css","precedence":"next"}]
+f:["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/10d426fca24618a5.css","precedence":"next"}]
 10:["$","$L18",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@1a"}]}]
 1b:T7231,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
