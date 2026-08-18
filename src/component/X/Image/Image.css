@@ -12,6 +12,8 @@
     z-index: 1000;
     display: grid;
     place-items: center;
+    overflow: hidden;
+    overscroll-behavior: none;
     cursor: zoom-out;
     background: #000000c0;
 }
