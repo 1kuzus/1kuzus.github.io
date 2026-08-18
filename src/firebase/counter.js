@@ -17,12 +17,13 @@ function onCountChange(path, field, callback) {
 
 // views 开发环境不自增
 export async function increaseViews(path) {
-    if (isDev) {
-        const viewsRef = fieldRef(path, 'views');
-        const snapshot = await get(viewsRef);
-        if (!snapshot.exists()) set(viewsRef, 1);
+    const viewsRef = fieldRef(path, 'views');
+    const snapshot = await get(viewsRef);
+    if (!snapshot.exists()) {
+        set(viewsRef, 1);
         return;
     }
+    if (isDev) return;
     increaseCount(path, 'views');
 }
 
