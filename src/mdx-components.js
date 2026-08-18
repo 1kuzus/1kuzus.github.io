@@ -43,7 +43,8 @@ function Hr() {
 }
 function Pre({children, alignLeft}) {
     const className = children?.props?.className || '';
-    const text = children?.props?.children?.trim();
+    const raw = children?.props?.children;
+    const text = typeof raw === 'string' ? raw.trim() : '';
     // $$...$$
     if (className.includes('math-display')) {
         return <X.Formula text={text} alignLeft={alignLeft} />;
