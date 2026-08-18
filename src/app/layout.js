@@ -2,7 +2,7 @@ import {GoogleAnalytics} from '@next/third-parties/google';
 import Header from 'src/component/Header/Header';
 import 'src/assets/styles/fonts.css';
 import 'src/assets/styles/katex.css';
-import 'src/assets/styles/media.css';
+import 'src/assets/styles/print.css';
 import 'src/assets/styles/prism.css';
 import './globals.css';
 
