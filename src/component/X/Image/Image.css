@@ -2,8 +2,24 @@
     display: block;
     max-width: 100%;
     margin-inline: auto;
+    cursor: zoom-in;
     user-select: none;
     object-fit: contain;
+}
+.x-image-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: grid;
+    place-items: center;
+    cursor: zoom-out;
+    background: #000000c0;
+}
+.x-image-lightbox .x-image {
+    max-width: 96vw;
+    max-height: 92vh;
+    margin: 0;
+    cursor: zoom-out;
 }
 :root[data-theme='dark'] .x-image.x-image-invert {
     filter: hue-rotate(180deg) sepia(8%) invert(89.02%) saturate(160%);

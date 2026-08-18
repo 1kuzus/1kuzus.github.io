@@ -1,4 +1,6 @@
 'use client';
+import {useEffect, useState} from 'react';
+import {createPortal} from 'react-dom';
 import {usePathname} from 'next/navigation';
 import postImages from './postImages';
 import './Image.css';
@@ -25,14 +27,38 @@ function resolve(src, postPath) {
 export default function Image(props) {
     const {src, alt, width, themeAdaptive} = props;
     const url = resolve(src, usePathname());
+    const [open, setOpen] = useState(false);
+    const className = `x-image${themeAdaptive ? ' x-image-invert' : ''}`;
+
+    useEffect(() => {
+        if (!open) return;
+        const onKey = (e) => e.key === 'Escape' && setOpen(false);
+        document.addEventListener('keydown', onKey);
+        document.body.style.overflow = 'hidden';
+        return () => {
+            document.removeEventListener('keydown', onKey);
+            document.body.style.overflow = '';
+        };
+    }, [open]);
+
     return (
-        <img
-            className={`x-image${themeAdaptive ? ' x-image-invert' : ''}`}
-            src={url}
-            alt={alt || 'image'}
-            loading="lazy"
-            decoding="async"
-            style={{width: width, height: 'auto'}}
-        />
+        <>
+            <img
+                className={className}
+                src={url}
+                alt={alt || 'image'}
+                loading="lazy"
+                decoding="async"
+                style={{width: width, height: 'auto'}}
+                onClick={() => setOpen(true)}
+            />
+            {open &&
+                createPortal(
+                    <div className="x-image-lightbox" onClick={() => setOpen(false)}>
+                        <img className={className} src={url} alt={alt || 'image'} />
+                    </div>,
+                    document.body,
+                )}
+        </>
     );
 }
