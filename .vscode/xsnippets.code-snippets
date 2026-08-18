@@ -74,7 +74,7 @@
         "body": [
             "<X.CodeBlock",
             "\tlanguage=\"$1\"",
-            "\tcode={String.raw`",
+            "\tcode={String.raw`$2",
             "\t`}",
             "/>",
         ],
@@ -84,9 +84,9 @@
         "scope": "javascript,typescript",
         "prefix": "xco",
         "body": [
-            "<X.CodeBlock language=\"$1\" code=\"\" />",
+            "<X.CodeBlock language=\"$1\" code=\"$2\" />",
         ],
-        "description": "X.CodeBlock tag"
+        "description": "X.CodeBlock tag (oneline)"
     },
     "X.CodeBlock tag for C++": {
         "scope": "javascript,typescript",
@@ -152,7 +152,7 @@
         "scope": "javascript,typescript",
         "prefix": "xhbg",
         "body": [
-            "<X.HighlightBlock background=\"$1\"></X.HighlightBlock>",
+            "<X.HighlightBlock background=\"$1\">$2</X.HighlightBlock>",
         ],
         "description": "X.HighlightBlock tag with background props"
     },
@@ -291,7 +291,7 @@
         "body": [
             "<!-- @xprops width=\"100%\" -->",
             "",
-            "![](1$1.jpg)",
+            "![](fig1$1.jpg)",
         ],
         "description": "X.Image (markdown image)"
     },
