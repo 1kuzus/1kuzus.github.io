@@ -183,7 +183,10 @@ if True:
             </X.FlexRow>
             <X.Image src={wide} width="50%" />
             <X.Image src={wide} width="200" />
-            <X.P>上一张 `width="200"` 没有单位，是非法 CSS，应忽略并显示原图宽度（受 max-width:100% 约束）。</X.P>
+            <X.P>
+                上一张 `width="200"` 没有单位，是非法 CSS，应忽略并显示原图宽度（受 max-width:100%
+                约束）。所有图片点击应打开灯箱，Escape / 点击遮罩关闭；`themeAdaptive` 图在暗色主题的灯箱里仍保持反色。
+            </X.P>
             <X.Divider />
             <X.P>分割线下方。</X.P>
         </>
