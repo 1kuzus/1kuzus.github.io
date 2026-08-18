@@ -1,6 +1,7 @@
-import './Image.css';
+'use client';
+import {usePathname} from 'next/navigation';
 import postImages from './postImages';
-import {getPostPath} from 'src/app/(posts)/postPathStore';
+import './Image.css';
 
 // 图片解析走两条路线
 // 开发：require.context 查表换成 webpack URL，以免开发阶段需要把 src/posts 实时镜像到 public
@@ -23,7 +24,7 @@ function resolve(src, postPath) {
 
 export default function Image(props) {
     const {src, alt, width, themeAdaptive} = props;
-    const url = resolve(src, getPostPath());
+    const url = resolve(src, usePathname());
     return (
         <img
             className={`x-image${themeAdaptive ? ' x-image-invert' : ''}`}
