@@ -1,7 +1,7 @@
 @media print {
     @page {
         size: A4;
-        margin: 0;
+        margin: 16mm;
     }
     @font-face {
         font-family: PrintCJK;
@@ -14,12 +14,12 @@
     }
 
     body {
-        padding: 16mm 18mm !important;
         font-family: PrintCJK, serif !important;
         zoom: 0.8;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
+    body,
     #post-layout,
     .center-wrapper {
         padding: 0 !important;
