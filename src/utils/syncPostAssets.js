@@ -63,18 +63,3 @@ function sync() {
 }
 
 sync();
-
-if (process.argv.includes('--watch')) {
-    let timer = null;
-    fs.watch(SRC_DIR, {recursive: true}, () => {
-        clearTimeout(timer);
-        timer = setTimeout(() => {
-            try {
-                sync();
-            } catch (err) {
-                console.error('[syncPostAssets]', err);
-            }
-        }, 100);
-    });
-    console.log(`[syncPostAssets] watching ${SRC_DIR}`);
-}

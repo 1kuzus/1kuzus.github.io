@@ -3,6 +3,7 @@ import X from 'src/component/X';
 import TOC from 'src/component/TOC/TOC';
 import {PostMeta, LikeButton} from 'src/component/Metadata';
 import {activeArchives} from 'src/posts-indexing';
+import {setPostPath} from '../postPathStore';
 
 export function generateStaticParams() {
     return Object.keys(activeArchives)
@@ -27,6 +28,7 @@ export default async function Page({params}) {
     const {slug} = await params;
     const path = '/' + slug.join('/') + '/';
     if (!activeArchives[path]) notFound();
+    setPostPath(path);
     const {default: Post} = await import(`src/posts${path}index.md`)
         .catch(() => import(`src/posts${path}index.mdx`))
         .catch(() => import(`src/posts${path}index.js`));

@@ -5,7 +5,7 @@
   "scripts": {
     "new": "node src/utils/createNewPost.js",
     "stylelint": "stylelint \"src/**/*.css\" --fix",
-    "dev": "node src/utils/syncPostAssets.js --watch & next dev -p 3030 --webpack",
+    "dev": "next dev -p 3030 --webpack",
     "prebuild": "node src/utils/syncPostAssets.js",
     "build": "next build --webpack",
     "predeploy": "npm run build && next-sitemap && touch out/.nojekyll",
