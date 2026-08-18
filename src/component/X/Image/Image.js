@@ -9,8 +9,7 @@ import {getPostPath} from 'src/app/(posts)/postPathStore';
 function contextLookup(key) {
     if (typeof postImages !== 'function') return null;
     try {
-        const mod = postImages(key);
-        return typeof mod === 'string' ? mod : (mod?.src ?? null);
+        return postImages(key).default.src;
     } catch {
         return null;
     }
