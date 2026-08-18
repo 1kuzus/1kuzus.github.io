@@ -1,14 +1,13 @@
 1:"$Sreact.fragment"
-2:I[5224,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-626baa8c64cb45b9.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-e64447cf932656cd.js"],"default"]
-3:I[31698,["507","static/chunks/457b8330-3be30b04990478c7.js","500","static/chunks/500-e2a7ab501ac40f90.js","589","static/chunks/589-9fde9febffa50a4d.js","698","static/chunks/698-626baa8c64cb45b9.js","974","static/chunks/app/page-6bf0379b668d6b5a.js"],"PostMeta"]
-4:"$Sreact.suspense"
-5:I[21957,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-626baa8c64cb45b9.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-e64447cf932656cd.js"],"PreloadChunks"]
-6:I[63942,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-626baa8c64cb45b9.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-e64447cf932656cd.js"],"default"]
-d:I[31698,["507","static/chunks/457b8330-3be30b04990478c7.js","500","static/chunks/500-e2a7ab501ac40f90.js","589","static/chunks/589-9fde9febffa50a4d.js","698","static/chunks/698-626baa8c64cb45b9.js","974","static/chunks/app/page-6bf0379b668d6b5a.js"],"LikeButton"]
-e:I[90484,[],"OutletBoundary"]
-:HL["/_next/static/css/d11fb5a2813f7e78.css","style"]
-:HL["/_next/static/css/0befe080061721ab.css","style"]
-7:T51c,/**
+2:I[5224,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-fd6c6a16d3c3ae20.js"],"default"]
+3:I[9488,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-fd6c6a16d3c3ae20.js"],"PostMeta"]
+4:I[3942,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-fd6c6a16d3c3ae20.js"],"default"]
+b:I[9488,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-fd6c6a16d3c3ae20.js"],"LikeButton"]
+c:I[484,[],"OutletBoundary"]
+d:"$Sreact.suspense"
+:HL["/_next/static/css/10d75a70630a18cb.css","style"]
+:HL["/_next/static/css/f6f42e5ab5594602.css","style"]
+5:T51c,/**
  * @param {string[]} words
  * @param {number} maxWidth
  * @return {string[]}
@@ -39,7 +38,7 @@ var fullJustify = function (words, maxWidth) {
         fullJustifyLine(words.slice(0, i), maxWidth, i === words.length /*最后一行*/),
         ...fullJustify(words.slice(i), maxWidth),
     ];
-};8:T21b0,<span class="token comment">/**
+};6:T21b0,<span class="token comment">/**
  * @param {string[]} words
  * @param {number} maxWidth
  * @return {string[]}
@@ -70,9 +69,9 @@ var fullJustify = function (words, maxWidth) {
         <span class="token function">fullJustifyLine</span><span class="token punctuation">(</span>words<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">,</span> maxWidth<span class="token punctuation">,</span> i <span class="token operator">===</span> words<span class="token punctuation">.</span>length <span class="token comment">/*最后一行*/</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
         <span class="token operator">...</span><span class="token function">fullJustify</span><span class="token punctuation">(</span>words<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">,</span> maxWidth<span class="token punctuation">)</span><span class="token punctuation">,</span>
     <span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>0:{"rsc":["$","$1","c",{"children":[[["$","$L2",null,{}],false,["$","h1",null,{"className":"x-post-title","children":"LeetCode 68.文本左右对齐"}],["$","$L3",null,{"path":"/24c/leetcode-68/"}],["$","$4",null,{"fallback":["$","p",null,{"children":"Loading component..."}],"children":[["$","$L5",null,{}],[["$","div",null,{"className":"x-highlightblock highlight-background-golden","children":["\n",["$","p",null,{"className":"x-p","children":["原题链接：",["$","a",null,{"href":"https://leetcode.cn/problems/text-justification/description/","target":"_blank","rel":"noreferrer","className":"x-inline-link","children":"文本左右对齐"}]]}],"\n"]}],"\n",["$","p",null,{"className":"x-p","children":"可以递归求解，详见注释。"}],"\n",["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"JavaScript"}],["$","$L6",null,{"className":"x-codeblock-header-copy","text":"$7"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$8"}}]}]]}]]]}],"$L9"],["$La","$Lb"],"$Lc"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"7t7DmNj5FLU53d5gYU9OW"}
-9:["$","$Ld",null,{"path":"/24c/leetcode-68/"}]
-a:["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/d11fb5a2813f7e78.css","precedence":"next"}]
-b:["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/0befe080061721ab.css","precedence":"next"}]
-c:["$","$Le",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@f"}]}]
-f:null
+<span class="token punctuation">}</span><span class="token punctuation">;</span>0:{"rsc":["$","$1","c",{"children":[[["$","$L2",null,{}],["$","h1",null,{"className":"x-post-title","children":"LeetCode 68.文本左右对齐"}],["$","$L3",null,{"path":"/24c/leetcode-68/","time":"2024-08-08"}],["$","article",null,{"className":"post-flow","children":[["$","div",null,{"className":"x-highlightblock highlight-background-golden","children":["\n",["$","p",null,{"className":"x-p","children":["原题链接：",["$","a",null,{"href":"https://leetcode.cn/problems/text-justification/description/","target":"_blank","rel":"noreferrer","className":"x-inline-link","children":"文本左右对齐"}]]}],"\n"]}],"\n",["$","p",null,{"className":"x-p","children":"可以递归求解，详见注释。"}],"\n",["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"JavaScript"}],["$","$L4",null,{"className":"x-codeblock-header-copy","text":"$5"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$6"}}]}]]}]]}],"$L7"],["$L8","$L9"],"$La"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"XTUWs_yfnBwWybsdgTa2K"}
+7:["$","$Lb",null,{"path":"/24c/leetcode-68/"}]
+8:["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/10d75a70630a18cb.css","precedence":"next"}]
+9:["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/f6f42e5ab5594602.css","precedence":"next"}]
+a:["$","$Lc",null,{"children":["$","$d",null,{"name":"Next.MetadataOutlet","children":"$@e"}]}]
+e:null

@@ -1,34 +1,31 @@
 1:"$Sreact.fragment"
-2:I[89005,["500","static/chunks/500-e2a7ab501ac40f90.js","177","static/chunks/app/layout-44556a1aa6fe4cd1.js"],"GlobalProvider"]
-3:I[65808,["500","static/chunks/500-e2a7ab501ac40f90.js","177","static/chunks/app/layout-44556a1aa6fe4cd1.js"],"default"]
-4:I[57121,[],""]
-5:I[74581,[],""]
-6:I[73060,["500","static/chunks/500-e2a7ab501ac40f90.js","799","static/chunks/799-cfc3f298d5ed28bd.js","212","static/chunks/app/(posts)/layout-af8f690d0eb615e4.js"],"default"]
-8:I[90484,[],"OutletBoundary"]
+2:I[5808,["500","static/chunks/500-c99b8dfd3de17c86.js","177","static/chunks/app/layout-a6587d1fe24c423a.js"],"default"]
+3:I[7121,[],""]
+4:I[4581,[],""]
+5:I[565,["500","static/chunks/500-c99b8dfd3de17c86.js","177","static/chunks/app/layout-a6587d1fe24c423a.js"],"GoogleAnalytics"]
+6:I[3060,["500","static/chunks/500-c99b8dfd3de17c86.js","799","static/chunks/799-6d5cad5a157eea5e.js","212","static/chunks/app/(posts)/layout-e918627ddfd82eb9.js"],"default"]
+8:I[484,[],"OutletBoundary"]
 9:"$Sreact.suspense"
-c:I[90484,[],"ViewportBoundary"]
-e:I[90484,[],"MetadataBoundary"]
-10:I[27123,[],"default",1]
-:HL["/_next/static/css/0e407f060d54fa19.css","style"]
-:HL["/_next/static/css/441b9964f9b116c1.css","style"]
-:HL["/_next/static/css/7e90712a60ecad8e.css","style"]
-:HL["/_next/static/css/0fb9b44be8255d47.css","style"]
-:HL["/_next/static/css/05da7cf1ce382fdb.css","style"]
-:HL["/_next/static/css/6be3b83d14fa0483.css","style"]
-:HL["/_next/static/css/d11fb5a2813f7e78.css","style"]
-:HL["/_next/static/css/0befe080061721ab.css","style"]
+c:I[484,[],"ViewportBoundary"]
+e:I[484,[],"MetadataBoundary"]
+10:I[7123,[],"default",1]
+:HL["/_next/static/css/8227b7dc7ec5a3b4.css","style"]
+:HL["/_next/static/css/19ee994d149680ac.css","style"]
+:HL["/_next/static/css/2436f9f6a3021010.css","style"]
+:HL["/_next/static/css/93199215b4935523.css","style"]
+:HL["/_next/static/css/fef4f4b8cf538f4e.css","style"]
+:HL["/_next/static/css/ee0977caebc7daab.css","style"]
+:HL["/_next/static/css/10d75a70630a18cb.css","style"]
+:HL["/_next/static/css/f6f42e5ab5594602.css","style"]
 :HL["/cry.gif","image"]
-:HL["/_next/static/css/67d16539d5741f83.css","style"]
-0:{"P":null,"c":["","24a","csp-2018-03",""],"q":"","i":false,"f":[[["",{"children":["(posts)",{"children":[["slug","24a/csp-2018-03","c",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/0e407f060d54fa19.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"zh-CN","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","link",null,{"rel":"icon","href":"/favicon.ico","type":"image/x-icon"}],["$","script",null,{"async":true,"src":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"}],["$","script",null,{"async":true,"src":"https://www.googletagmanager.com/gtag/js?id=G-45BYSZ6WPY"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nwindow.dataLayer = window.dataLayer || [];\nfunction gtag() {\n    dataLayer.push(arguments);\n}\ngtag('js', new Date());\ngtag('config', 'G-45BYSZ6WPY');\n"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nconst currentTheme = localStorage.getItem('theme');\nif (currentTheme !== 'light' && currentTheme !== 'dark') {\n    localStorage.setItem('theme', 'light');\n}\nif (localStorage.getItem('theme') === 'dark') {\n    document.documentElement.setAttribute('class', 'dark');\n} else {\n    document.documentElement.setAttribute('class', 'light');\n}\n"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nif (!Array.prototype.findLast) {\n    Array.prototype.findLast = function (callback) {\n        for (let i = this.length - 1; i >= 0; i--) {\n            if (callback(this[i])) return this[i];\n        }\n        return undefined;\n    };\n}\nif (!Array.prototype.findLastIndex) {\n    Array.prototype.findLastIndex = function (callback) {\n        for (let i = this.length - 1; i >= 0; i--) {\n            if (callback(this[i])) return i;\n        }\n        return -1;\n    };\n}\n"}}]]}],["$","body",null,{"children":["$","$L2",null,{"children":[["$","$L3",null,{}],["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"id":"notfound","children":[["$","img",null,{"alt":"img","src":"/cry.gif"}],["$","code",null,{"id":"notfound-404","children":"404"}],["$","code",null,{"id":"notfound-text","children":"Page Not Found"}]]}],[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/67d16539d5741f83.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/441b9964f9b116c1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/7e90712a60ecad8e.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"/_next/static/css/0fb9b44be8255d47.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","3",{"rel":"stylesheet","href":"/_next/static/css/05da7cf1ce382fdb.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","4",{"rel":"stylesheet","href":"/_next/static/css/6be3b83d14fa0483.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","div",null,{"id":"post-layout","children":[["$","div",null,{"id":"main","className":"center-wrapper","children":["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","$L6",null,{}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L7",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/d11fb5a2813f7e78.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/0befe080061721ab.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","$L8",null,{"children":["$","$9",null,{"name":"Next.MetadataOutlet","children":"$@a"}]}]]}],{},null,false,null]},null,false,"$@b"]},null,false,null]},null,false,null],["$","$1","h",{"children":[null,["$","$Lc",null,{"children":"$Ld"}],["$","div",null,{"hidden":true,"children":["$","$Le",null,{"children":["$","$9",null,{"name":"Next.Metadata","children":"$Lf"}]}]}],null]}],false]],"m":"$undefined","G":["$10",[]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"7t7DmNj5FLU53d5gYU9OW"}
+:HL["/_next/static/css/4bd8a774280272e6.css","style"]
+0:{"P":null,"c":["","24a","csp-2018-03",""],"q":"","i":false,"f":[[["",{"children":["(posts)",{"children":[["slug","24a/csp-2018-03","c",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/8227b7dc7ec5a3b4.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"zh-CN","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\ndocument.documentElement.dataset.theme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';\nif (localStorage.getItem('collapse-sidebar') === 'true') document.documentElement.setAttribute('data-collapse-sidebar', '');\n"}}]}],["$","body",null,{"children":[["$","$L2",null,{}],["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"id":"notfound","children":[["$","img",null,{"alt":"img","src":"/cry.gif"}],["$","code",null,{"id":"notfound-404","children":"404"}],["$","code",null,{"id":"notfound-text","children":"Page Not Found"}]]}],[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/4bd8a774280272e6.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}],["$","$L5",null,{"gaId":"G-45BYSZ6WPY"}]]}]]}],{"children":[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/19ee994d149680ac.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/2436f9f6a3021010.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"/_next/static/css/93199215b4935523.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","3",{"rel":"stylesheet","href":"/_next/static/css/fef4f4b8cf538f4e.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","4",{"rel":"stylesheet","href":"/_next/static/css/ee0977caebc7daab.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","div",null,{"id":"post-layout","children":[["$","div",null,{"id":"main","className":"center-wrapper","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","$L6",null,{}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L7",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/10d75a70630a18cb.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/f6f42e5ab5594602.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","$L8",null,{"children":["$","$9",null,{"name":"Next.MetadataOutlet","children":"$@a"}]}]]}],{},null,false,null]},null,false,"$@b"]},null,false,null]},null,false,null],["$","$1","h",{"children":[null,["$","$Lc",null,{"children":"$Ld"}],["$","div",null,{"hidden":true,"children":["$","$Le",null,{"children":["$","$9",null,{"name":"Next.Metadata","children":"$Lf"}]}]}],null]}],false]],"m":"$undefined","G":["$10",[]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"XTUWs_yfnBwWybsdgTa2K"}
 11:[]
 b:"$W11"
-12:I[5224,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-626baa8c64cb45b9.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-e64447cf932656cd.js"],"default"]
-13:I[31698,["507","static/chunks/457b8330-3be30b04990478c7.js","500","static/chunks/500-e2a7ab501ac40f90.js","589","static/chunks/589-9fde9febffa50a4d.js","698","static/chunks/698-626baa8c64cb45b9.js","974","static/chunks/app/page-6bf0379b668d6b5a.js"],"PostMeta"]
-14:I[21957,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-626baa8c64cb45b9.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-e64447cf932656cd.js"],"PreloadChunks"]
-16:I[31698,["507","static/chunks/457b8330-3be30b04990478c7.js","500","static/chunks/500-e2a7ab501ac40f90.js","589","static/chunks/589-9fde9febffa50a4d.js","698","static/chunks/698-626baa8c64cb45b9.js","974","static/chunks/app/page-6bf0379b668d6b5a.js"],"LikeButton"]
-7:[["$","$L12",null,{}],false,["$","h1",null,{"className":"x-post-title","children":"CSP 201803 T1-T4题解"}],["$","$L13",null,{"path":"/24a/csp-2018-03/"}],["$","$9",null,{"fallback":["$","p",null,{"children":"Loading component..."}],"children":[["$","$L14",null,{"moduleIds":"$undefined"}],"$L15"]}],["$","$L16",null,{"path":"/24a/csp-2018-03/"}]]
-17:I[63942,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-626baa8c64cb45b9.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-e64447cf932656cd.js"],"default"]
-18:Tba1,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+12:I[5224,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-fd6c6a16d3c3ae20.js"],"default"]
+13:I[9488,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-fd6c6a16d3c3ae20.js"],"PostMeta"]
+14:I[3942,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-fd6c6a16d3c3ae20.js"],"default"]
+15:Tba1,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">int</span> cur<span class="token punctuation">,</span>score<span class="token punctuation">;</span>
 <span class="token keyword">int</span> d<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span><span class="token comment">//下一次如果cur=2(跳到中心)，加的分数</span>
@@ -58,9 +55,10 @@ in:
 
 out:
 22
-*/</span>15:[["$","h2",null,{"className":"x-h1","children":"T1 跳一跳"}],"\n",["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L17",null,{"className":"x-codeblock-header-copy","text":"#include <iostream>\nusing namespace std;\nint cur,score;\nint d=2;//下一次如果cur=2(跳到中心)，加的分数\nint main()\n{\n    while(1)\n    {\n        cin>>cur;\n        if(!cur) break;\n        if(cur==1)\n        {\n            score+=1;\n            d=2;\n        }\n        else if(cur==2)\n        {\n            score+=d;\n            d+=2;\n        }\n    }\n    cout<<score<<endl;\n    return 0;\n}\n/*\nin:\n1 1 2 2 2 1 1 2 2 0\n\nout:\n22\n*/"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$18"}}]}]]}],"\n","$L19","\n","$L1a","\n","$L1b","\n","$L1c","\n","$L1d","\n","$L1e","\n","$L1f"]
-19:["$","h2",null,{"className":"x-h1","children":"T2 碰撞的小球"}]
-20:T4d9,#include <iostream>
+*/</span>7:[["$","$L12",null,{}],["$","h1",null,{"className":"x-post-title","children":"CSP 201803 T1-T4题解"}],["$","$L13",null,{"path":"/24a/csp-2018-03/","time":"2024-03-10"}],["$","article",null,{"className":"post-flow","children":[["$","h2",null,{"className":"x-h1","children":"T1 跳一跳"}],"\n",["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L14",null,{"className":"x-codeblock-header-copy","text":"#include <iostream>\nusing namespace std;\nint cur,score;\nint d=2;//下一次如果cur=2(跳到中心)，加的分数\nint main()\n{\n    while(1)\n    {\n        cin>>cur;\n        if(!cur) break;\n        if(cur==1)\n        {\n            score+=1;\n            d=2;\n        }\n        else if(cur==2)\n        {\n            score+=d;\n            d+=2;\n        }\n    }\n    cout<<score<<endl;\n    return 0;\n}\n/*\nin:\n1 1 2 2 2 1 1 2 2 0\n\nout:\n22\n*/"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$15"}}]}]]}],"\n","$L16","\n","$L17","\n","$L18","\n","$L19","\n","$L1a","\n","$L1b","\n","$L1c"]}],"$L1d"]
+24:I[9488,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-fd6c6a16d3c3ae20.js"],"LikeButton"]
+16:["$","h2",null,{"className":"x-h1","children":"T2 碰撞的小球"}]
+1e:T4d9,#include <iostream>
 #include <cstring>
 using namespace std;
 int n,l,t;
@@ -120,7 +118,7 @@ in:
 
 out:
 6 6 8 2 4 0 4 12 10 2
-*/21:T2a82,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+*/1f:T2a82,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cstring></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">int</span> n<span class="token punctuation">,</span>l<span class="token punctuation">,</span>t<span class="token punctuation">;</span>
@@ -180,9 +178,9 @@ in:
 
 out:
 6 6 8 2 4 0 4 12 10 2
-*/</span>1a:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L17",null,{"className":"x-codeblock-header-copy","text":"$20"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$21"}}]}]]}]
-1b:["$","h2",null,{"className":"x-h1","children":"T3 URL映射"}]
-22:T10d6,#include <iostream>
+*/</span>17:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L14",null,{"className":"x-codeblock-header-copy","text":"$1e"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$1f"}}]}]]}]
+18:["$","h2",null,{"className":"x-h1","children":"T3 URL映射"}]
+20:T10d6,#include <iostream>
 #include <vector>
 using namespace std;
 int n,m;
@@ -233,7 +231,7 @@ string trimZero(string str)
     if(i==str.length()) return "0";//如果全是0，保留一个0
     return str.substr(i);
 }
-//查询q是否匹配规则p，如果成果就返回r和参数
+//查询q是否匹配规则p，如果成功就返回r和参数
 vector<string> checkMatch(string q,string p,string r)
 {
     vector<string> q_parts=splitSlash(q);
@@ -371,10 +369,10 @@ out:
 a_int 0
 a_int_slash 0
 b_str 000
-*/1c:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L17",null,{"className":"x-codeblock-header-copy","text":"$22"}]]}],"$L23"]}]
-1d:["$","h2",null,{"className":"x-h1","children":"T4 棋局评估"}]
-1e:["$","p",null,{"className":"x-p","children":[["$","code",null,{"className":"x-inline-highlight","children":"Minimax"}],"搜索问题。"]}]
-24:T93e,#include <iostream>
+*/19:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L14",null,{"className":"x-codeblock-header-copy","text":"$20"}]]}],"$L21"]}]
+1a:["$","h2",null,{"className":"x-h1","children":"T4 棋局评估"}]
+1b:["$","p",null,{"className":"x-p","children":[["$","code",null,{"className":"x-inline-highlight","children":"Minimax"}],"搜索问题。"]}]
+22:T93e,#include <iostream>
 #include <map>
 using namespace std;
 int n;
@@ -476,7 +474,7 @@ out:
 3
 -4
 0
-*/25:T4a0b,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+*/23:T4a0b,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;map></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">int</span> n<span class="token punctuation">;</span>
@@ -578,8 +576,9 @@ out:
 3
 -4
 0
-*/</span>1f:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L17",null,{"className":"x-codeblock-header-copy","text":"$24"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$25"}}]}]]}]
-26:T7231,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+*/</span>1c:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L14",null,{"className":"x-codeblock-header-copy","text":"$22"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$23"}}]}]]}]
+1d:["$","$L24",null,{"path":"/24a/csp-2018-03/"}]
+25:T7231,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">int</span> n<span class="token punctuation">,</span>m<span class="token punctuation">;</span>
@@ -630,7 +629,7 @@ string <span class="token function">trimZero</span><span class="token punctuatio
     <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">==</span>str<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token string">"0"</span><span class="token punctuation">;</span><span class="token comment">//如果全是0，保留一个0</span>
     <span class="token keyword">return</span> str<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span class="token comment">//查询q是否匹配规则p，如果成果就返回r和参数</span>
+<span class="token comment">//查询q是否匹配规则p，如果成功就返回r和参数</span>
 vector<span class="token operator">&lt;</span>string<span class="token operator">></span> <span class="token function">checkMatch</span><span class="token punctuation">(</span>string q<span class="token punctuation">,</span>string p<span class="token punctuation">,</span>string r<span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
     vector<span class="token operator">&lt;</span>string<span class="token operator">></span> q_parts<span class="token operator">=</span><span class="token function">splitSlash</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -768,7 +767,8 @@ out:
 a_int 0
 a_int_slash 0
 b_str 000
-*/</span>23:["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$26"}}]}]
+*/</span>21:["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$25"}}]}]
 d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+26:I[6869,[],"IconMark"]
 a:null
-f:[["$","title","0",{"children":"CSP 201803 T1-T4题解 - 铃木的网络日记"}],["$","link","1",{"rel":"canonical","href":"https://1kuzus.github.io/24a/csp-2018-03/"}]]
+f:[["$","title","0",{"children":"CSP 201803 T1-T4题解 - 铃木的网络日记"}],["$","link","1",{"rel":"canonical","href":"https://1kuzus.github.io/24a/csp-2018-03/"}],["$","link","2",{"rel":"icon","href":"/favicon.ico?4de06e244364a241","type":"image/x-icon","sizes":"48x48"}],["$","$L26","3",{}]]

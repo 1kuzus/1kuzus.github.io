@@ -1,0 +1,1 @@
+#post-layout{min-width:240px;padding:0 calc(var(--toc-width) + var(--toc-margin-right)) 0 var(--sidebar-width);transition:padding .2s}@media (max-width:1440px){#post-layout{padding:0}}#main{overflow-wrap:break-word}

@@ -1,34 +1,31 @@
 1:"$Sreact.fragment"
-2:I[89005,["500","static/chunks/500-e2a7ab501ac40f90.js","177","static/chunks/app/layout-44556a1aa6fe4cd1.js"],"GlobalProvider"]
-3:I[65808,["500","static/chunks/500-e2a7ab501ac40f90.js","177","static/chunks/app/layout-44556a1aa6fe4cd1.js"],"default"]
-4:I[57121,[],""]
-5:I[74581,[],""]
-6:I[73060,["500","static/chunks/500-e2a7ab501ac40f90.js","799","static/chunks/799-cfc3f298d5ed28bd.js","212","static/chunks/app/(posts)/layout-af8f690d0eb615e4.js"],"default"]
-8:I[90484,[],"OutletBoundary"]
+2:I[5808,["500","static/chunks/500-c99b8dfd3de17c86.js","177","static/chunks/app/layout-a6587d1fe24c423a.js"],"default"]
+3:I[7121,[],""]
+4:I[4581,[],""]
+5:I[565,["500","static/chunks/500-c99b8dfd3de17c86.js","177","static/chunks/app/layout-a6587d1fe24c423a.js"],"GoogleAnalytics"]
+6:I[3060,["500","static/chunks/500-c99b8dfd3de17c86.js","799","static/chunks/799-6d5cad5a157eea5e.js","212","static/chunks/app/(posts)/layout-e918627ddfd82eb9.js"],"default"]
+8:I[484,[],"OutletBoundary"]
 9:"$Sreact.suspense"
-c:I[90484,[],"ViewportBoundary"]
-e:I[90484,[],"MetadataBoundary"]
-10:I[27123,[],"default",1]
-:HL["/_next/static/css/0e407f060d54fa19.css","style"]
-:HL["/_next/static/css/441b9964f9b116c1.css","style"]
-:HL["/_next/static/css/7e90712a60ecad8e.css","style"]
-:HL["/_next/static/css/0fb9b44be8255d47.css","style"]
-:HL["/_next/static/css/05da7cf1ce382fdb.css","style"]
-:HL["/_next/static/css/6be3b83d14fa0483.css","style"]
-:HL["/_next/static/css/d11fb5a2813f7e78.css","style"]
-:HL["/_next/static/css/0befe080061721ab.css","style"]
+c:I[484,[],"ViewportBoundary"]
+e:I[484,[],"MetadataBoundary"]
+10:I[7123,[],"default",1]
+:HL["/_next/static/css/8227b7dc7ec5a3b4.css","style"]
+:HL["/_next/static/css/19ee994d149680ac.css","style"]
+:HL["/_next/static/css/2436f9f6a3021010.css","style"]
+:HL["/_next/static/css/93199215b4935523.css","style"]
+:HL["/_next/static/css/fef4f4b8cf538f4e.css","style"]
+:HL["/_next/static/css/ee0977caebc7daab.css","style"]
+:HL["/_next/static/css/10d75a70630a18cb.css","style"]
+:HL["/_next/static/css/f6f42e5ab5594602.css","style"]
 :HL["/cry.gif","image"]
-:HL["/_next/static/css/67d16539d5741f83.css","style"]
-0:{"P":null,"c":["","24a","csp-2023-09",""],"q":"","i":false,"f":[[["",{"children":["(posts)",{"children":[["slug","24a/csp-2023-09","c",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/0e407f060d54fa19.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"zh-CN","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","link",null,{"rel":"icon","href":"/favicon.ico","type":"image/x-icon"}],["$","script",null,{"async":true,"src":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"}],["$","script",null,{"async":true,"src":"https://www.googletagmanager.com/gtag/js?id=G-45BYSZ6WPY"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nwindow.dataLayer = window.dataLayer || [];\nfunction gtag() {\n    dataLayer.push(arguments);\n}\ngtag('js', new Date());\ngtag('config', 'G-45BYSZ6WPY');\n"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nconst currentTheme = localStorage.getItem('theme');\nif (currentTheme !== 'light' && currentTheme !== 'dark') {\n    localStorage.setItem('theme', 'light');\n}\nif (localStorage.getItem('theme') === 'dark') {\n    document.documentElement.setAttribute('class', 'dark');\n} else {\n    document.documentElement.setAttribute('class', 'light');\n}\n"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\nif (!Array.prototype.findLast) {\n    Array.prototype.findLast = function (callback) {\n        for (let i = this.length - 1; i >= 0; i--) {\n            if (callback(this[i])) return this[i];\n        }\n        return undefined;\n    };\n}\nif (!Array.prototype.findLastIndex) {\n    Array.prototype.findLastIndex = function (callback) {\n        for (let i = this.length - 1; i >= 0; i--) {\n            if (callback(this[i])) return i;\n        }\n        return -1;\n    };\n}\n"}}]]}],["$","body",null,{"children":["$","$L2",null,{"children":[["$","$L3",null,{}],["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"id":"notfound","children":[["$","img",null,{"alt":"img","src":"/cry.gif"}],["$","code",null,{"id":"notfound-404","children":"404"}],["$","code",null,{"id":"notfound-text","children":"Page Not Found"}]]}],[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/67d16539d5741f83.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/441b9964f9b116c1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/7e90712a60ecad8e.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"/_next/static/css/0fb9b44be8255d47.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","3",{"rel":"stylesheet","href":"/_next/static/css/05da7cf1ce382fdb.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","4",{"rel":"stylesheet","href":"/_next/static/css/6be3b83d14fa0483.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","div",null,{"id":"post-layout","children":[["$","div",null,{"id":"main","className":"center-wrapper","children":["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","$L6",null,{}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L7",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/d11fb5a2813f7e78.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/0befe080061721ab.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","$L8",null,{"children":["$","$9",null,{"name":"Next.MetadataOutlet","children":"$@a"}]}]]}],{},null,false,null]},null,false,"$@b"]},null,false,null]},null,false,null],["$","$1","h",{"children":[null,["$","$Lc",null,{"children":"$Ld"}],["$","div",null,{"hidden":true,"children":["$","$Le",null,{"children":["$","$9",null,{"name":"Next.Metadata","children":"$Lf"}]}]}],null]}],false]],"m":"$undefined","G":["$10",[]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"7t7DmNj5FLU53d5gYU9OW"}
+:HL["/_next/static/css/4bd8a774280272e6.css","style"]
+0:{"P":null,"c":["","24a","csp-2023-09",""],"q":"","i":false,"f":[[["",{"children":["(posts)",{"children":[["slug","24a/csp-2023-09","c",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/8227b7dc7ec5a3b4.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"zh-CN","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\ndocument.documentElement.dataset.theme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';\nif (localStorage.getItem('collapse-sidebar') === 'true') document.documentElement.setAttribute('data-collapse-sidebar', '');\n"}}]}],["$","body",null,{"children":[["$","$L2",null,{}],["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"id":"notfound","children":[["$","img",null,{"alt":"img","src":"/cry.gif"}],["$","code",null,{"id":"notfound-404","children":"404"}],["$","code",null,{"id":"notfound-text","children":"Page Not Found"}]]}],[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/4bd8a774280272e6.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}],["$","$L5",null,{"gaId":"G-45BYSZ6WPY"}]]}]]}],{"children":[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/19ee994d149680ac.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/2436f9f6a3021010.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"/_next/static/css/93199215b4935523.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","3",{"rel":"stylesheet","href":"/_next/static/css/fef4f4b8cf538f4e.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","4",{"rel":"stylesheet","href":"/_next/static/css/ee0977caebc7daab.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","div",null,{"id":"post-layout","children":[["$","div",null,{"id":"main","className":"center-wrapper","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","$L6",null,{}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L7",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/10d75a70630a18cb.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/f6f42e5ab5594602.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","$L8",null,{"children":["$","$9",null,{"name":"Next.MetadataOutlet","children":"$@a"}]}]]}],{},null,false,null]},null,false,"$@b"]},null,false,null]},null,false,null],["$","$1","h",{"children":[null,["$","$Lc",null,{"children":"$Ld"}],["$","div",null,{"hidden":true,"children":["$","$Le",null,{"children":["$","$9",null,{"name":"Next.Metadata","children":"$Lf"}]}]}],null]}],false]],"m":"$undefined","G":["$10",[]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"XTUWs_yfnBwWybsdgTa2K"}
 11:[]
 b:"$W11"
-12:I[5224,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-626baa8c64cb45b9.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-e64447cf932656cd.js"],"default"]
-13:I[31698,["507","static/chunks/457b8330-3be30b04990478c7.js","500","static/chunks/500-e2a7ab501ac40f90.js","589","static/chunks/589-9fde9febffa50a4d.js","698","static/chunks/698-626baa8c64cb45b9.js","974","static/chunks/app/page-6bf0379b668d6b5a.js"],"PostMeta"]
-14:I[21957,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-626baa8c64cb45b9.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-e64447cf932656cd.js"],"PreloadChunks"]
-16:I[31698,["507","static/chunks/457b8330-3be30b04990478c7.js","500","static/chunks/500-e2a7ab501ac40f90.js","589","static/chunks/589-9fde9febffa50a4d.js","698","static/chunks/698-626baa8c64cb45b9.js","974","static/chunks/app/page-6bf0379b668d6b5a.js"],"LikeButton"]
-7:[["$","$L12",null,{}],false,["$","h1",null,{"className":"x-post-title","children":"CSP 202309 T1-T4题解"}],["$","$L13",null,{"path":"/24a/csp-2023-09/"}],["$","$9",null,{"fallback":["$","p",null,{"children":"Loading component..."}],"children":[["$","$L14",null,{"moduleIds":"$undefined"}],"$L15"]}],["$","$L16",null,{"path":"/24a/csp-2023-09/"}]]
-17:I[63942,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-626baa8c64cb45b9.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-e64447cf932656cd.js"],"default"]
-18:Tc01,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+12:I[5224,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-fd6c6a16d3c3ae20.js"],"default"]
+13:I[9488,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-fd6c6a16d3c3ae20.js"],"PostMeta"]
+14:I[3942,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-fd6c6a16d3c3ae20.js"],"default"]
+15:Tc01,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">int</span> n<span class="token punctuation">,</span>m<span class="token punctuation">,</span>dx<span class="token punctuation">,</span>dy<span class="token punctuation">;</span>
 <span class="token keyword">int</span> dxi<span class="token punctuation">,</span>dyi<span class="token punctuation">,</span>x<span class="token punctuation">,</span>y<span class="token punctuation">;</span>
@@ -59,10 +56,11 @@ in:
 out:
 21 -11
 20 -10
-*/</span>15:[["$","h2",null,{"className":"x-h1","children":"T1 坐标变换（其一）"}],"\n",["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L17",null,{"className":"x-codeblock-header-copy","text":"#include <iostream>\nusing namespace std;\nint n,m,dx,dy;\nint dxi,dyi,x,y;\nint main()\n{\n    cin>>n>>m;\n    for(int i=0;i<n;i++)\n    {\n        cin>>dxi>>dyi;\n        dx+=dxi,dy+=dyi;\n    }\n    for(int i=0;i<m;i++)\n    {\n        cin>>x>>y;\n        cout<<x+dx<<' '<<y+dy<<endl;\n    }\n    return 0;\n}\n/*\nin:\n3 2\n10 10\n0 0\n10 -20\n1 -1\n0 0\n\nout:\n21 -11\n20 -10\n*/"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$18"}}]}]]}],"\n","$L19","\n","$L1a","\n","$L1b","\n","$L1c","\n","$L1d","\n","$L1e","\n","$L1f","\n","$L20","\n","$L21","\n","$L22","\n","$L23"]
-19:["$","h2",null,{"className":"x-h1","children":"T2 坐标变换（其二）"}]
-1a:["$","p",null,{"className":"x-p","children":"维护前缀和、前缀积。"}]
-24:T45b,#include <iostream>
+*/</span>7:[["$","$L12",null,{}],["$","h1",null,{"className":"x-post-title","children":"CSP 202309 T1-T4题解"}],["$","$L13",null,{"path":"/24a/csp-2023-09/","time":"2024-03-19"}],["$","article",null,{"className":"post-flow","children":[["$","h2",null,{"className":"x-h1","children":"T1 坐标变换（其一）"}],"\n",["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L14",null,{"className":"x-codeblock-header-copy","text":"#include <iostream>\nusing namespace std;\nint n,m,dx,dy;\nint dxi,dyi,x,y;\nint main()\n{\n    cin>>n>>m;\n    for(int i=0;i<n;i++)\n    {\n        cin>>dxi>>dyi;\n        dx+=dxi,dy+=dyi;\n    }\n    for(int i=0;i<m;i++)\n    {\n        cin>>x>>y;\n        cout<<x+dx<<' '<<y+dy<<endl;\n    }\n    return 0;\n}\n/*\nin:\n3 2\n10 10\n0 0\n10 -20\n1 -1\n0 0\n\nout:\n21 -11\n20 -10\n*/"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$15"}}]}]]}],"\n","$L16","\n","$L17","\n","$L18","\n","$L19","\n","$L1a","\n","$L1b","\n","$L1c","\n","$L1d","\n","$L1e","\n","$L1f","\n","$L20"]}],"$L21"]
+28:I[9488,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-fd6c6a16d3c3ae20.js"],"LikeButton"]
+16:["$","h2",null,{"className":"x-h1","children":"T2 坐标变换（其二）"}]
+17:["$","p",null,{"className":"x-p","children":"维护前缀和、前缀积。"}]
+22:T45b,#include <iostream>
 #include <cmath>
 using namespace std;
 int n,m,opt;
@@ -126,7 +124,7 @@ out:
 -75099.123 -738950.159
 -119179.897 -789457.532
 114151.88 -366009.892
-*/25:T1ede,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+*/23:T1ede,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cmath></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">int</span> n<span class="token punctuation">,</span>m<span class="token punctuation">,</span>opt<span class="token punctuation">;</span>
@@ -190,10 +188,10 @@ out:
 -75099.123 -738950.159
 -119179.897 -789457.532
 114151.88 -366009.892
-*/</span>1b:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L17",null,{"className":"x-codeblock-header-copy","text":"$24"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$25"}}]}]]}]
-1c:["$","h2",null,{"className":"x-h1","children":"T3 梯度求解"}]
-1d:["$","p",null,{"className":"x-p","children":"可以就把后缀表达式原封不动的存在一颗树上，然后对每个节点记录前向传播值，前向传播过程和接下来求梯度都可以递归实现。"}]
-26:Tc50,#include <iostream>
+*/</span>18:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L14",null,{"className":"x-codeblock-header-copy","text":"$22"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$23"}}]}]]}]
+19:["$","h2",null,{"className":"x-h1","children":"T3 梯度求解"}]
+1a:["$","p",null,{"className":"x-p","children":"可以就把后缀表达式原封不动的存在一棵树上，然后对每个节点记录前向传播值，前向传播过程和接下来求梯度都可以递归实现。"}]
+24:Tc50,#include <iostream>
 #include <vector>
 #include <stack>
 #define MOD 1000000007
@@ -358,12 +356,12 @@ out:
 73
 73
 999999867
-*/1e:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L17",null,{"className":"x-codeblock-header-copy","text":"$26"}]]}],"$L27"]}]
-1f:["$","h2",null,{"className":"x-h1","children":"T4 阴阳龙"}]
-20:["$","p",null,{"className":"x-p","children":["看到员工数量级是比较小的，想到去维护行、列、正反对角线四个方向上的员工位置，利用C++ STL的",["$","code",null,{"className":"x-inline-highlight","children":"map"}],"存储，键值对为",["$","code",null,{"className":"x-inline-highlight","children":"(pos_val,id)"}],"，其中这个",["$","code",null,{"className":"x-inline-highlight","children":"pos_val"}],"在竖直方向是员工的",["$","code",null,{"className":"x-inline-highlight","children":"y"}],"坐标，其他方向是",["$","code",null,{"className":"x-inline-highlight","children":"x"}],"坐标（其实两条对角线方向上取哪个都行），",["$","code",null,{"className":"x-inline-highlight","children":"id"}],"是员工的编号。"]}]
-21:["$","p",null,{"className":"x-p","children":[["$","code",null,{"className":"x-inline-highlight","children":"map"}],"提供了",["$","code",null,{"className":"x-inline-highlight","children":"lower_bound"}],"和",["$","code",null,{"className":"x-inline-highlight","children":"upper_bound"}],"函数，可以二分找到第一个键值",["$","span",null,{"className":"x-inline-strong","children":"大于等于"}],"和",["$","span",null,{"className":"x-inline-strong","children":"大于"}],"给定键的元素；如果想找到第一个键值",["$","span",null,{"className":"x-inline-strong","children":"小于"}],"给定键的元素，可以在判断",["$","code",null,{"className":"x-inline-highlight","children":"lower_bound"}],"返回的不指向容器首部后，再移到前一个位置（",["$","code",null,{"className":"x-inline-highlight","children":"it--"}],"）。"]}]
-22:["$","p",null,{"className":"x-p","children":["在每个方向上我们都需要若干个这样的",["$","code",null,{"className":"x-inline-highlight","children":"map"}],"，具体地说，我们需要",["$","code",null,{"className":"x-inline-highlight","children":"n"}],"个存储垂直方向的、",["$","code",null,{"className":"x-inline-highlight","children":"m"}],"个存储水平方向的、",["$","code",null,{"className":"x-inline-highlight","children":"2"}],"*",["$","code",null,{"className":"x-inline-highlight","children":"n+m-1"}],"个存储两条对角线方向的。提前开好的话占空间比较大，考虑用",["$","code",null,{"className":"x-inline-highlight","children":"unordered_map"}],"存储这些",["$","code",null,{"className":"x-inline-highlight","children":"map"}],"。以对角线方向为例，可以用",["$","code",null,{"className":"x-inline-highlight","children":"x+y"}],"和",["$","code",null,{"className":"x-inline-highlight","children":"y-x"}],"作为定位到具体",["$","code",null,{"className":"x-inline-highlight","children":"map"}],"的键，我们并不需要这些键是有序的，所以用",["$","code",null,{"className":"x-inline-highlight","children":"unordered_map"}],"就可以了。"]}]
-28:Tc05,#include <iostream>
+*/1b:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L14",null,{"className":"x-codeblock-header-copy","text":"$24"}]]}],"$L25"]}]
+1c:["$","h2",null,{"className":"x-h1","children":"T4 阴阳龙"}]
+1d:["$","p",null,{"className":"x-p","children":["看到员工数量级是比较小的，想到去维护行、列、正反对角线四个方向上的员工位置，利用C++ STL的",["$","code",null,{"className":"x-inline-highlight","children":"map"}],"存储，键值对为",["$","code",null,{"className":"x-inline-highlight","children":"(pos_val,id)"}],"，其中这个",["$","code",null,{"className":"x-inline-highlight","children":"pos_val"}],"在竖直方向是员工的",["$","code",null,{"className":"x-inline-highlight","children":"y"}],"坐标，其他方向是",["$","code",null,{"className":"x-inline-highlight","children":"x"}],"坐标（其实两条对角线方向上取哪个都行），",["$","code",null,{"className":"x-inline-highlight","children":"id"}],"是员工的编号。"]}]
+1e:["$","p",null,{"className":"x-p","children":[["$","code",null,{"className":"x-inline-highlight","children":"map"}],"提供了",["$","code",null,{"className":"x-inline-highlight","children":"lower_bound"}],"和",["$","code",null,{"className":"x-inline-highlight","children":"upper_bound"}],"函数，可以二分找到第一个键值",["$","span",null,{"className":"x-inline-strong","children":"大于等于"}],"和",["$","span",null,{"className":"x-inline-strong","children":"大于"}],"给定键的元素；如果想找到第一个键值",["$","span",null,{"className":"x-inline-strong","children":"小于"}],"给定键的元素，可以在判断",["$","code",null,{"className":"x-inline-highlight","children":"lower_bound"}],"返回的不指向容器首部后，再移到前一个位置（",["$","code",null,{"className":"x-inline-highlight","children":"it--"}],"）。"]}]
+1f:["$","p",null,{"className":"x-p","children":["在每个方向上我们都需要若干个这样的",["$","code",null,{"className":"x-inline-highlight","children":"map"}],"，具体地说，我们需要",["$","code",null,{"className":"x-inline-highlight","children":"n"}],"个存储垂直方向的、",["$","code",null,{"className":"x-inline-highlight","children":"m"}],"个存储水平方向的、",["$","code",null,{"className":"x-inline-highlight","children":"2"}],"*",["$","code",null,{"className":"x-inline-highlight","children":"n+m-1"}],"个存储两条对角线方向的。提前开好的话占空间比较大，考虑用",["$","code",null,{"className":"x-inline-highlight","children":"unordered_map"}],"存储这些",["$","code",null,{"className":"x-inline-highlight","children":"map"}],"。以对角线方向为例，可以用",["$","code",null,{"className":"x-inline-highlight","children":"x+y"}],"和",["$","code",null,{"className":"x-inline-highlight","children":"y-x"}],"作为定位到具体",["$","code",null,{"className":"x-inline-highlight","children":"map"}],"的键，我们并不需要这些键是有序的，所以用",["$","code",null,{"className":"x-inline-highlight","children":"unordered_map"}],"就可以了。"]}]
+26:Tc05,#include <iostream>
 #include <vector>
 #include <map>
 #include <unordered_map>
@@ -507,7 +505,7 @@ in:
 
 out:
 20
-*/29:T74c3,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+*/27:T74c3,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;map></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;unordered_map></span></span>
@@ -651,8 +649,9 @@ in:
 
 out:
 20
-*/</span>23:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L17",null,{"className":"x-codeblock-header-copy","text":"$28"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$29"}}]}]]}]
-2a:T63fd,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+*/</span>20:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L14",null,{"className":"x-codeblock-header-copy","text":"$26"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$27"}}]}]]}]
+21:["$","$L28",null,{"path":"/24a/csp-2023-09/"}]
+29:T63fd,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stack></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">MOD</span> <span class="token expression"><span class="token number">1000000007</span></span></span>
@@ -817,7 +816,8 @@ out:
 73
 73
 999999867
-*/</span>27:["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$2a"}}]}]
+*/</span>25:["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$29"}}]}]
 d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+2a:I[6869,[],"IconMark"]
 a:null
-f:[["$","title","0",{"children":"CSP 202309 T1-T4题解 - 铃木的网络日记"}],["$","link","1",{"rel":"canonical","href":"https://1kuzus.github.io/24a/csp-2023-09/"}]]
+f:[["$","title","0",{"children":"CSP 202309 T1-T4题解 - 铃木的网络日记"}],["$","link","1",{"rel":"canonical","href":"https://1kuzus.github.io/24a/csp-2023-09/"}],["$","link","2",{"rel":"icon","href":"/favicon.ico?4de06e244364a241","type":"image/x-icon","sizes":"48x48"}],["$","$L2a","3",{}]]

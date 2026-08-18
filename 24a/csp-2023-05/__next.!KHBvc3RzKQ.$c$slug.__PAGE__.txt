@@ -1,14 +1,13 @@
 1:"$Sreact.fragment"
-2:I[5224,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-626baa8c64cb45b9.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-e64447cf932656cd.js"],"default"]
-3:I[31698,["507","static/chunks/457b8330-3be30b04990478c7.js","500","static/chunks/500-e2a7ab501ac40f90.js","589","static/chunks/589-9fde9febffa50a4d.js","698","static/chunks/698-626baa8c64cb45b9.js","974","static/chunks/app/page-6bf0379b668d6b5a.js"],"PostMeta"]
-4:"$Sreact.suspense"
-5:I[21957,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-626baa8c64cb45b9.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-e64447cf932656cd.js"],"PreloadChunks"]
-6:I[63942,["507","static/chunks/457b8330-3be30b04990478c7.js","330","static/chunks/d3ac728e-3328b046974259c3.js","589","static/chunks/589-9fde9febffa50a4d.js","707","static/chunks/707-62fdd1b6f2deb256.js","698","static/chunks/698-626baa8c64cb45b9.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-e64447cf932656cd.js"],"default"]
-1f:I[31698,["507","static/chunks/457b8330-3be30b04990478c7.js","500","static/chunks/500-e2a7ab501ac40f90.js","589","static/chunks/589-9fde9febffa50a4d.js","698","static/chunks/698-626baa8c64cb45b9.js","974","static/chunks/app/page-6bf0379b668d6b5a.js"],"LikeButton"]
-20:I[90484,[],"OutletBoundary"]
-:HL["/_next/static/css/d11fb5a2813f7e78.css","style"]
-:HL["/_next/static/css/0befe080061721ab.css","style"]
-7:Te27,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+2:I[5224,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-fd6c6a16d3c3ae20.js"],"default"]
+3:I[9488,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-fd6c6a16d3c3ae20.js"],"PostMeta"]
+4:I[3942,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-fd6c6a16d3c3ae20.js"],"default"]
+1d:I[9488,["507","static/chunks/457b8330-da74ed6877b467e0.js","589","static/chunks/589-fe25d09b5e186056.js","321","static/chunks/app/(posts)/%5B...slug%5D/page-fd6c6a16d3c3ae20.js"],"LikeButton"]
+1e:I[484,[],"OutletBoundary"]
+1f:"$Sreact.suspense"
+:HL["/_next/static/css/10d75a70630a18cb.css","style"]
+:HL["/_next/static/css/f6f42e5ab5594602.css","style"]
+5:Te27,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;unordered_map></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">int</span> n<span class="token punctuation">;</span>
@@ -107,10 +106,10 @@ out:
 2
 2
 1
-*/</span>0:{"rsc":["$","$1","c",{"children":[[["$","$L2",null,{}],false,["$","h1",null,{"className":"x-post-title","children":"CSP 202305 T1-T5题解"}],["$","$L3",null,{"path":"/24a/csp-2023-05/"}],["$","$4",null,{"fallback":["$","p",null,{"children":"Loading component..."}],"children":[["$","$L5",null,{}],[["$","h2",null,{"className":"x-h1","children":"T1 重复局面"}],"\n",["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L6",null,{"className":"x-codeblock-header-copy","text":"#include <iostream>\n#include <unordered_map>\nusing namespace std;\nint n;\nunordered_map<string,int> m;\nint main()\n{\n    cin>>n;\n    for(int i=0;i<n;i++)\n    {\n        string s;\n        for(int j=0;j<8;j++)\n        {\n            string si;\n            cin>>si;\n            s+=si;\n        }\n        m[s]++;\n        cout<<m[s]<<endl;\n    }\n    return 0;\n}\n/*\nin:\n8\n********\n******pk\n*****r*p\np*pQ****\n********\n**b*B*PP\n****qP**\n**R***K*\n********\n******pk\n*****r*p\np*pQ****\n*b******\n****B*PP\n****qP**\n**R***K*\n********\n******pk\n*****r*p\np*p*****\n*b**Q***\n****B*PP\n****qP**\n**R***K*\n******k*\n******p*\n*****r*p\np*p*****\n*b**Q***\n****B*PP\n****qP**\n**R***K*\n******k*\n******p*\n*****r*p\np*pQ****\n*b******\n****B*PP\n****qP**\n**R***K*\n********\n******pk\n*****r*p\np*pQ****\n*b******\n****B*PP\n****qP**\n**R***K*\n********\n******pk\n*****r*p\np*p*****\n*b**Q***\n****B*PP\n****qP**\n**R***K*\n********\n******pk\n******rp\np*p*****\n*b**Q***\n****B*PP\n****qP**\n**R***K*\n\nout:\n1\n1\n1\n1\n1\n2\n2\n1\n*/"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$7"}}]}]]}],"\n","$L8","\n","$L9","\n","$La","\n","$Lb","\n","$Lc","\n","$Ld","\n","$Le","\n","$Lf","\n","$L10","\n","$L11","\n","$L12"]]}],"$L13"],["$L14","$L15"],"$L16"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"7t7DmNj5FLU53d5gYU9OW"}
-8:["$","h2",null,{"className":"x-h1","children":"T2 矩阵运算"}]
-9:["$","p",null,{"className":"x-p","children":"矩阵乘积有结合律，不同的结合方式结果相同，但中间过程的时间复杂度不同。"}]
-17:T799,#include <iostream>
+*/</span>0:{"rsc":["$","$1","c",{"children":[[["$","$L2",null,{}],["$","h1",null,{"className":"x-post-title","children":"CSP 202305 T1-T5题解"}],["$","$L3",null,{"path":"/24a/csp-2023-05/","time":"2024-03-23"}],["$","article",null,{"className":"post-flow","children":[["$","h2",null,{"className":"x-h1","children":"T1 重复局面"}],"\n",["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L4",null,{"className":"x-codeblock-header-copy","text":"#include <iostream>\n#include <unordered_map>\nusing namespace std;\nint n;\nunordered_map<string,int> m;\nint main()\n{\n    cin>>n;\n    for(int i=0;i<n;i++)\n    {\n        string s;\n        for(int j=0;j<8;j++)\n        {\n            string si;\n            cin>>si;\n            s+=si;\n        }\n        m[s]++;\n        cout<<m[s]<<endl;\n    }\n    return 0;\n}\n/*\nin:\n8\n********\n******pk\n*****r*p\np*pQ****\n********\n**b*B*PP\n****qP**\n**R***K*\n********\n******pk\n*****r*p\np*pQ****\n*b******\n****B*PP\n****qP**\n**R***K*\n********\n******pk\n*****r*p\np*p*****\n*b**Q***\n****B*PP\n****qP**\n**R***K*\n******k*\n******p*\n*****r*p\np*p*****\n*b**Q***\n****B*PP\n****qP**\n**R***K*\n******k*\n******p*\n*****r*p\np*pQ****\n*b******\n****B*PP\n****qP**\n**R***K*\n********\n******pk\n*****r*p\np*pQ****\n*b******\n****B*PP\n****qP**\n**R***K*\n********\n******pk\n*****r*p\np*p*****\n*b**Q***\n****B*PP\n****qP**\n**R***K*\n********\n******pk\n******rp\np*p*****\n*b**Q***\n****B*PP\n****qP**\n**R***K*\n\nout:\n1\n1\n1\n1\n1\n2\n2\n1\n*/"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$5"}}]}]]}],"\n","$L6","\n","$L7","\n","$L8","\n","$L9","\n","$La","\n","$Lb","\n","$Lc","\n","$Ld","\n","$Le","\n","$Lf","\n","$L10"]}],"$L11"],["$L12","$L13"],"$L14"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"XTUWs_yfnBwWybsdgTa2K"}
+6:["$","h2",null,{"className":"x-h1","children":"T2 矩阵运算"}]
+7:["$","p",null,{"className":"x-p","children":"矩阵乘积有结合律，不同的结合方式结果相同，但中间过程的时间复杂度不同。"}]
+15:T799,#include <iostream>
 #include <vector>
 #define LL long long
 using namespace std;
@@ -222,7 +221,7 @@ out:
 480 240
 0 0
 -2200 -1100
-*/18:T47ba,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+*/16:T47ba,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">LL</span> <span class="token expression"><span class="token keyword">long</span> <span class="token keyword">long</span></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
@@ -334,9 +333,9 @@ out:
 480 240
 0 0
 -2200 -1100
-*/</span>a:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L6",null,{"className":"x-codeblock-header-copy","text":"$17"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$18"}}]}]]}]
-b:["$","h2",null,{"className":"x-h1","children":"T3 解压缩"}]
-19:T90f,#include <iostream>
+*/</span>8:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L4",null,{"className":"x-codeblock-header-copy","text":"$15"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$16"}}]}]]}]
+9:["$","h2",null,{"className":"x-h1","children":"T3 解压缩"}]
+17:T90f,#include <iostream>
 using namespace std;
 int n,p;
 string s,cmp,raw;
@@ -462,7 +461,7 @@ out:
 0d0e0f0d0e0f0d0e
 0f0d0e0f0d0e0f0d
 0e02030405060708
-*/1a:T4f46,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+*/18:T4f46,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">int</span> n<span class="token punctuation">,</span>p<span class="token punctuation">;</span>
 string s<span class="token punctuation">,</span>cmp<span class="token punctuation">,</span>raw<span class="token punctuation">;</span>
@@ -588,11 +587,11 @@ out:
 0d0e0f0d0e0f0d0e
 0f0d0e0f0d0e0f0d
 0e02030405060708
-*/</span>c:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L6",null,{"className":"x-codeblock-header-copy","text":"$19"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$1a"}}]}]]}]
-d:["$","h2",null,{"className":"x-h1","children":"T4 电力网络"}]
-e:["$","p",null,{"className":"x-p","children":["思路受",["$","a",null,{"href":"https://blog.csdn.net/qq_45123552/article/details/136783152","target":"_blank","rel":"noreferrer","className":"x-inline-link","children":"CSDN - Pujx的题解"}],"启发。"]}]
-f:["$","p",null,{"className":"x-p","children":["80分TLE被卡了好久。在暴力枚举的时候要尽可能优化单次的求解过程，最后我在剩余小于等于",["$","code",null,{"className":"x-inline-highlight","children":"6"}],"个节点的时候重新建一张邻接矩阵图，再跑枚举，勉强",["$","code",null,{"className":"x-inline-highlight","children":"800ms"}],"通过。"]}]
-1b:T1579,#include <iostream>
+*/</span>a:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L4",null,{"className":"x-codeblock-header-copy","text":"$17"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$18"}}]}]]}]
+b:["$","h2",null,{"className":"x-h1","children":"T4 电力网络"}]
+c:["$","p",null,{"className":"x-p","children":["思路受",["$","a",null,{"href":"https://blog.csdn.net/qq_45123552/article/details/136783152","target":"_blank","rel":"noreferrer","className":"x-inline-link","children":"CSDN - Pujx的题解"}],"启发。"]}]
+d:["$","p",null,{"className":"x-p","children":["80分TLE被卡了好久。在暴力枚举的时候要尽可能优化单次的求解过程，最后我在剩余小于等于",["$","code",null,{"className":"x-inline-highlight","children":"6"}],"个节点的时候重新建一张邻接矩阵图，再跑枚举，勉强",["$","code",null,{"className":"x-inline-highlight","children":"800ms"}],"通过。"]}]
+19:T1579,#include <iostream>
 #include <cstring>
 #include <vector>
 #include <map>
@@ -828,9 +827,9 @@ in:
 
 out:
 5
-*/10:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L6",null,{"className":"x-codeblock-header-copy","text":"$1b"}]]}],"$L1c"]}]
-11:["$","h2",null,{"className":"x-h1","children":"T5 闪耀巡航"}]
-1d:T80b,#include <iostream>
+*/e:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L4",null,{"className":"x-codeblock-header-copy","text":"$19"}]]}],"$L1a"]}]
+f:["$","h2",null,{"className":"x-h1","children":"T5 闪耀巡航"}]
+1b:T80b,#include <iostream>
 #include <cstring>
 #define INF 999999999
 using namespace std;
@@ -931,7 +930,7 @@ out:
 16
 22
 11
-*/1e:T4868,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+*/1c:T4868,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cstring></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">INF</span> <span class="token expression"><span class="token number">999999999</span></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
@@ -1032,12 +1031,12 @@ out:
 16
 22
 11
-*/</span>12:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L6",null,{"className":"x-codeblock-header-copy","text":"$1d"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$1e"}}]}]]}]
-13:["$","$L1f",null,{"path":"/24a/csp-2023-05/"}]
-14:["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/d11fb5a2813f7e78.css","precedence":"next"}]
-15:["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/0befe080061721ab.css","precedence":"next"}]
-16:["$","$L20",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@21"}]}]
-22:Taedb,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+*/</span>10:["$","div",null,{"className":"x-codeblock","children":[["$","div",null,{"className":"x-codeblock-header","children":[["$","div",null,{"className":"x-codeblock-header-title","children":"C++"}],["$","$L4",null,{"className":"x-codeblock-header-copy","text":"$1b"}]]}],["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$1c"}}]}]]}]
+11:["$","$L1d",null,{"path":"/24a/csp-2023-05/"}]
+12:["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/10d75a70630a18cb.css","precedence":"next"}]
+13:["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/f6f42e5ab5594602.css","precedence":"next"}]
+14:["$","$L1e",null,{"children":["$","$1f",null,{"name":"Next.MetadataOutlet","children":"$@20"}]}]
+21:Taedb,<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cstring></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;map></span></span>
@@ -1273,5 +1272,5 @@ in:
 
 out:
 5
-*/</span>1c:["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$22"}}]}]
-21:null
+*/</span>1a:["$","pre",null,{"style":{"background":null},"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$21"}}]}]
+20:null
