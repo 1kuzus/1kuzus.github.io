@@ -46,6 +46,7 @@ export default function CodeBlock(props) {
     // 处理代码行，处理空白，统一缩进
     let lines = code.split('\n').map((line) => line.trimEnd());
     if (!lines[0]) lines = lines.slice(1);
+    if (lines.length === 0) lines = [''];
     const indent = lines[0].length - lines[0].trimStart().length;
     lines = lines.map((line) => line.slice(indent));
     // 将普通高亮、diff 增加、diff 删除合并为三元组 [start:number,end:number,type:'n'|'r'|'a']

@@ -42,17 +42,19 @@ function Hr() {
     return <X.Divider />;
 }
 function Pre({children, alignLeft}) {
+    const className = children?.props?.className || '';
+    const text = children?.props?.children?.trim();
     // $$...$$
-    if (children.props.className.includes('math-display')) {
-        return <X.Formula text={children.props.children.trim()} alignLeft={alignLeft} />;
+    if (className.includes('math-display')) {
+        return <X.Formula text={text} alignLeft={alignLeft} />;
     }
     // ```...```
-    assert(children.props.className.startsWith('language-'), 'invalid <pre> element');
-    const language = children.props.className.replace('language-', '');
+    assert(className.startsWith('language-'), 'invalid <pre> element');
+    const language = className.replace('language-', '');
     return (
         <X.CodeBlock
             language={language}
-            code={children.props.children.trim()}
+            code={text}
             title={children.props.title}
             highlightLines={children.props.highlightLines}
             diffRemovedLines={children.props.diffRemovedLines}

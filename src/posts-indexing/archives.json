@@ -1,4 +1,9 @@
 {
+    "/26c/test-blog-js/": {
+        "title": "JS 渲染管线全量测试页",
+        "time": "2026-08-18",
+        "inactive": true
+    },
     "/26c/test-blog/": {
         "title": "Markdown 渲染管线全量测试页",
         "time": "2026-08-13",

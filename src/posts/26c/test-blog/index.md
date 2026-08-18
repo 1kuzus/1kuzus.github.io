@@ -52,12 +52,6 @@
 
 **预期**：三个标题外观与普通标题**完全一致**（同样的字号、同样的品牌色前缀、同样的正文色文字），只有鼠标悬停时整行文字变为品牌色，点击在新标签页打开。`#` / `##` 前缀符号**不参与**悬停变色（它在 `::before` 上，始终是品牌色）。**异常**：标题默认就显示为品牌色/带下划线（说明继承了 `x-inline-link` 而不是 `color: inherit`）；悬停无变色；点击在当前标签页跳走。
 
-### 2.4 长标题折行
-
-### 这是一个非常非常长的二级标题，用于验证标题在窄视口下折行时前缀符号是否正确悬挂以及行距是否稳定这是一个非常非常长的二级标题
-
-**预期**：折行后第二行文字左边缘与第一行的**文字**左边缘对齐（前缀 `##` 只占第一行）。**异常**：折行后前缀符号被重复渲染；第二行缩进错乱到与前缀符号对齐。
-
 ---
 
 ## 三、段落与行内元素
@@ -612,6 +606,15 @@ SELECT 3;
 这段话紧接在代码块之后。
 
 **预期**：三个代码块彼此间距 24px，且各自的右上角标签**不与上一个代码块的底边重叠**（标签是 `top: -8px` 的绝对定位，24px 间距足够容纳）。**异常**：后一个代码块的标签压在前一个代码块的右下角上；段落与代码块之间的间距明显大于 24px。
+
+### 7.5 空代码块（仅语言标识、无内容）
+
+<!-- @xprops title="empty.js" -->
+
+```js
+```
+
+**预期**：渲染为一个只有标签 `empty.js / JavaScript`、没有代码行的空代码块（高度约为上下各 24px 内边距），页面不 500。**异常**：整页崩溃。
 
 ---
 
@@ -1364,6 +1367,58 @@ const noQuotes = 1;
 
 **预期**：普通注释不产生任何可见输出，也不影响前后元素的间距。**异常**：注释文本以字面形式显示在页面上。
 
+### 17.6 等号两侧空格（解析失败的既定行为）
+
+<!-- @xprops title= hello -->
+
+这段落在段落上的 `title= hello`（等号后有空格）应被解析成 flag `title=true` 与 `hello=true`，而不是 `title="hello"`。段落外观不变。
+
+**预期**：本段是普通段落；控制台无 unknown-prop 警告。**不要**在引用块上写 `background= red`（等号后空格）——`background` 会变成布尔 `true`，`HighlightBlock` 的 assert 会让整页 500，见第二十节。**异常**：段落上出现 title 标签或页面 500。
+
+### 17.7 空值、含等号的值、Unicode、紧贴写法
+
+<!-- @xprops title="" highlightLines="1" -->
+
+```js
+const emptyTitle = 1;
+```
+
+<!-- @xprops title="a=b&c" -->
+
+```js
+const eqInTitle = 1;
+```
+
+<!-- @xprops title="中文 🎉" -->
+
+```js
+const unicodeTitle = 1;
+```
+
+<!--@xprops title="tight-comment" -->
+
+```js
+const tight = 1;
+```
+
+**预期**：四个标签依次为 `JavaScript`（空字符串 title 在 JS 里是 falsy，不拼 ` / `）、`a=b&c / JavaScript`、`中文 🎉 / JavaScript`、`tight-comment / JavaScript`。**异常**：`a=b&c` 被截断；紧贴写法 `<!--@xprops` 失效。
+
+### 17.8 行内图片：xprops 落在段落上
+
+<!-- @xprops width="40px" themeAdaptive -->
+
+段落里的图片 ![行内xprops](small.gif) 不是独占一行，xprops 会挂到外层 `paragraph` 而不是 `image`。
+
+**预期**：这张图**不会**变成 40px 宽，也**不会**在暗色主题下反色（属性没有传到 `X.Image`）。**异常**：图被缩成 40px（说明实现改成了向段落内的图片转发 props，本节预期需更新）。
+
+### 17.9 分割线接收 xprops（应静默忽略）
+
+<!-- @xprops width="200px" -->
+
+---
+
+**预期**：一条普通分割线，不被撑宽、不报错。**异常**：页面 500。
+
 ---
 
 ## 十八、未映射元素与既定限制
@@ -1402,7 +1457,7 @@ _斜体（em 未映射）_、~~删除线（del 未映射）~~、以及行内 HTM
 
 [^note]: 脚注的内容，含 `代码` 与[链接](https://example.com)。
 
-**预期**：正文中出现上标数字 `1`（品牌色可点击）；页面最底部自动生成一个 `Footnotes` 区块，其标题是**英文的、且被渲染成带 `#` 前缀的 X.H1**，因此**会混进右侧目录**。脚注条目本身用有序列表编号渲染。**异常**：不接受这个英文标题混进目录的话，这里就是改动点。另外注意脚注末尾的返回箭头 `↩`：本站给**所有**链接强制加了 `target="_blank"`，所以点击 `↩` 会**新开一个标签页**而不是跳回正文 —— 这是一个真实的可用性缺陷，**看到新标签页打开即为异常行为**（虽然是当前代码的必然结果）。
+**预期**：正文中出现上标数字 `1`（品牌色可点击）；页面最底部自动生成一个 `Footnotes` 区块，其标题是**英文的、且被渲染成带 `#` 前缀的 X.H1**，因此**会混进右侧目录**。脚注条目本身用有序列表编号渲染。点击脚注数字应跳到文末；点击返回箭头 `↩` 应**在当前页**跳回正文（hash 链接不再加 `target="_blank"`）。**异常**：不接受这个英文标题混进目录的话，这里就是改动点；点击 `↩` 仍新开标签页。
 
 ---
 
@@ -1436,6 +1491,7 @@ _斜体（em 未映射）_、~~删除线（del 未映射）~~、以及行内 HTM
    ```
    → mdx-components.js 的 pre 映射读取 children.props.className 时为 undefined，
      抛 TypeError: Cannot read properties of undefined (reading 'includes')
+   （空的、但带了语言标识的围栏现在可以渲染，见 7.5）
 
 2) 使用未登记的语言
    ```go / ```rust / ```yaml / ```diff / ```shell / ```sh / ```xml / ```toml / ```ruby ...
@@ -1452,6 +1508,7 @@ _斜体（em 未映射）_、~~删除线（del 未映射）~~、以及行内 HTM
 
 5) 引用块使用不支持的 background
    <!-- @xprops background="purple" --> 或 <!-- @xprops background -->
+   或 <!-- @xprops background= red -->（等号后空格，background 被解析成 true）
    → HighlightBlock 的 assert 抛 "unsupported highlight background: ..."
    → 已支持：golden red gray blue green（不写 background 时默认 golden）
 ````
