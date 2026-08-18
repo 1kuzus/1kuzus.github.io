@@ -17,12 +17,16 @@ export default function Post() {
                 @[https://example.com/bare]@、以及用反斜杠 n 换行的下一行。line1\nline2
             </X.P>
             <X.P>
-                转义：\\`not-code\\`、\\*not-bold\\*、\\$100、\\@not-link[x]@、尖括号
-                `&lt;script&gt;alert(1)&lt;/script&gt;`（此处用实体是因为 XParser 会把真实尖括号转成实体）。
+                JSX 文本不是 JS 字符串，转义只需一层反斜杠：\`not-code\`、\*not-bold\*、\$100、\@not-link[x]@、反斜杠
+                \\。尖括号必须放进 JS 字符串，否则会被当成 JSX 标签：{'`<script>alert(1)</script>`'}。
             </X.P>
-            <X.P>`code with *stars* inside` 以及 3 * 4 * 5 与售价 $5 涨到 $10。</X.P>
             <X.P>
-                混合 children：前半是字符串，后面是{`$\\alpha + \\beta$`}公式片段，再接`代码`。
+                未转义的既定陷阱：`code with *stars* inside` 里的星号仍会被二次加粗；3 * 4 * 5 中间会加粗；售价 $5 涨到 $10
+                会把中间吃成公式。
+            </X.P>
+            <X.P>转义后应保持字面：3 \* 4 \* 5，售价 \$5 涨到 \$10。</X.P>
+            <X.P>
+                混合 children：前半是字符串，公式反斜杠必须写在 JS 字符串里（{`$\\alpha + \\beta$`}），再接`代码`。
             </X.P>
 
             <X.H1 href="https://github.com">二、标题（带外链）</X.H1>
@@ -152,11 +156,15 @@ if True:
                     <td>1</td>
                 </tr>
             </X.Table>
-            <X.P>fromText 里的英文撇号会被替换成反引号：don't → 中间 don 与 t 之间会变成行内代码（既定陷阱）。</X.P>
+            <X.P>
+                fromText 会把英文撇号替换成反引号：don't 只有一个撇号，只会露出反引号、不会变成行内代码；同一格里两个撇号
+                can't / won't 会把中间配成行内代码（既定陷阱）。
+            </X.P>
             <X.Table
                 fromText={`
                 word|note
-                don't|apostrophe
+                don't|单个撇号，露出反引号
+                can't / won't|两个撇号，中间变成行内代码
                 `}
             />
 
@@ -175,6 +183,7 @@ if True:
             </X.FlexRow>
             <X.Image src={wide} width="50%" />
             <X.Image src={wide} width="200" />
+            <X.P>上一张 `width="200"` 没有单位，是非法 CSS，应忽略并显示原图宽度（受 max-width:100% 约束）。</X.P>
             <X.Divider />
             <X.P>分割线下方。</X.P>
         </>
