@@ -52,6 +52,24 @@
 
 **预期**：三个标题外观与普通标题**完全一致**（同样的字号、同样的品牌色前缀、同样的正文色文字），只有鼠标悬停时整行文字变为品牌色，点击在新标签页打开。`#` / `##` 前缀符号**不参与**悬停变色（它在 `::before` 上，始终是品牌色）。**异常**：标题默认就显示为品牌色/带下划线（说明继承了 `x-inline-link` 而不是 `color: inherit`）；悬停无变色；点击在当前标签页跳走。
 
+### 2.4 连续标题（中间无正文）
+
+## 连续标题甲
+
+### 连续标题乙
+
+#### 连续标题丙
+
+紧跟在三级连续标题之后的段落。
+
+**预期**：三个标题之间、以及末个标题与这段落之间，间距均为 24px；目录里出现甲（`.x-h1`）和乙（`.x-h2`），不出现丙。**异常**：连续标题粘连（0px）或出现 48px 双倍间距。
+
+### 2.5 超长标题（目录省略）
+
+## 这是一个用来测试目录条目 ellipsis 的超长一级标题，中英文混排 The quick brown fox jumps over the lazy dog 并且继续加长直到目录单行放不下
+
+**预期**：正文标题完整折行，不撑破正文列；右侧目录对应条目单行显示、溢出部分以省略号收尾。**异常**：目录条目折成多行把后面的目录项挤乱；或正文标题溢出产生横向滚动。
+
 ---
 
 ## 三、段落与行内元素
@@ -1469,7 +1487,7 @@ _斜体（em 未映射）_、~~删除线（del 未映射）~~、以及行内 HTM
 
 [^note]: 脚注的内容，含 `代码` 与[链接](https://example.com)。
 
-**预期**：正文中出现上标数字 `1`（品牌色可点击）；页面最底部自动生成一个 `Footnotes` 区块，其标题是**英文的、且被渲染成带 `#` 前缀的 X.H1**，因此**会混进右侧目录**。脚注条目本身用有序列表编号渲染。点击脚注数字应跳到文末；点击返回箭头 `↩` 应**在当前页**跳回正文（hash 链接不再加 `target="_blank"`）。**异常**：不接受这个英文标题混进目录的话，这里就是改动点；点击 `↩` 仍新开标签页。
+**预期**：正文中出现上标数字 `1`（品牌色可点击）；页面最底部自动生成一个 `Footnotes` 区块，其标题是**英文的、且被渲染成带 `#` 前缀的 X.H1**，因此**会混进右侧目录**。脚注条目本身用有序列表编号渲染。脚注数字和返回箭头 `↩` 都是 hash 链接。
 
 ---
 
@@ -1501,14 +1519,23 @@ _斜体（em 未映射）_、~~删除线（del 未映射）~~、以及行内 HTM
    ```
    code
    ```
-   → mdx-components.js 的 pre 映射读取 children.props.className 时为 undefined，
-     抛 TypeError: Cannot read properties of undefined (reading 'includes')
-   （空的、但带了语言标识的围栏现在可以渲染，见 7.5）
+   → mdx-components.js 的 pre 映射已对 className 做 `|| ''` 兜底，
+     随后 assert(className.startsWith('language-'), 'invalid <pre> element')
+   → 不再是 TypeError: Cannot read properties of undefined
+   （空的、但带了语言标识的围栏可以渲染，见 7.5）
 
-2) 使用未登记的语言
-   ```go / ```rust / ```yaml / ```diff / ```shell / ```sh / ```xml / ```toml / ```ruby ...
+2) 使用未登记的语言（含常见别名）
+   ```go / ```rust / ```yaml / ```diff / ```shell / ```sh / ```xml / ```toml / ```ruby
+   ```javascript（登记的是 js 不是 javascript）/ ```typescript / ```plaintext
    → CodeBlock 的 assert 抛 "unsupported language: xxx"
    → 已登记的 18 种：c cpp jsx tsx php sql java json perl bash python markdown js ts text html css asm8086
+   → 注意：Prism 本身给 bash 配了 sh/shell 别名、给 js 配了 javascript 别名，
+     但 languageNameMap 不认这些别名，仍会 assert 失败
+
+2b) 围栏 info string 带多余 token
+   ```js extra
+   → 若 className 变成 "language-js extra"，replace('language-','') 得到 "js extra"，
+     同样走未登记语言断言。本页故意不写这条，以免整页 500。
 
 3) 高亮区间重叠
    <!-- @xprops highlightLines="1-3" diffAddedLines="2" -->
@@ -1546,3 +1573,7 @@ _斜体（em 未映射）_、~~删除线（del 未映射）~~、以及行内 HTM
 ### 21.4 控制台
 
 **预期**：打开浏览器控制台，整页渲染过程**没有任何 React 警告**（特别是 unknown prop、key 缺失、hydration mismatch）和 404 资源请求。**异常**：出现 `Warning: Received \`true\` for a non-boolean attribute`、`Each child in a list should have a unique "key" prop`、或图片 404。
+
+### 21.5 无障碍与键盘
+
+**预期**：主题按钮、侧栏按钮、点赞按钮、代码复制按钮都能用 Tab 聚焦并用 Enter/Space 激活；聚焦态有可见轮廓。图片灯箱打开后 Escape 关闭（见 14.6）。**异常**：焦点落入灯箱后 Tab 逃到背后页面；按钮没有可访问名称（屏幕阅读器只读到"按钮"）。
