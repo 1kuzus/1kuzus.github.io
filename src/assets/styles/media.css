@@ -50,4 +50,11 @@
     .x-codeblock-header {
         display: none !important;
     }
+
+    @supports (font: -apple-system-body) {
+        /* fix for Safari */
+        .x-codeblock pre {
+            background: none !important;
+        }
+    }
 }
