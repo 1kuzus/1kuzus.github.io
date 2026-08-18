@@ -124,30 +124,6 @@
         ],
         "description": "X.CodeBlock tag for JavaScript"
     },
-    "highlightLines props": {
-        "scope": "javascript,typescript",
-        "prefix": "hll",
-        "body": [
-            "highlightLines",
-        ],
-        "description": "highlightLines props"
-    },
-    "diffRemovedLines props": {
-        "scope": "javascript,typescript",
-        "prefix": "drl",
-        "body": [
-            "diffRemovedLines",
-        ],
-        "description": "diffRemovedLines props"
-    },
-    "diffAddedLines props": {
-        "scope": "javascript,typescript",
-        "prefix": "dal",
-        "body": [
-            "diffAddedLines",
-        ],
-        "description": "diffAddedLines props"
-    },
     "X.FlexRow tag": {
         "scope": "javascript,typescript",
         "prefix": "xflex",
@@ -187,14 +163,6 @@
             "<X.Image src=\"fig1$1.jpg\" width=\"100%\" />",
         ],
         "description": "X.Image tag"
-    },
-    "themeAdaptive props": {
-        "scope": "javascript,typescript",
-        "prefix": "ta",
-        "body": [
-            "themeAdaptive",
-        ],
-        "description": "themeAdaptive props"
     },
     "X.Table tag": {
         "scope": "javascript,typescript",
@@ -249,12 +217,124 @@
         ],
         "description": "X.Table tag with fromData props"
     },
-    "inline latex": {
-        "scope": "javascript,typescript",
-        "prefix": "il",
+    "@xprops": {
+        "scope": "markdown,mdx",
+        "prefix": "xprops",
         "body": [
-            "{`$$1$`}",
+            "<!-- @xprops $1 -->",
         ],
-        "description": "inline latex"
-    }
+        "description": "@xprops"
+    },
+    "X.CodeBlock (markdown fenced code block)": {
+        "scope": "markdown,mdx",
+        "prefix": "xc",
+        "body": [
+            "```$1",
+            "$2",
+            "```",
+        ],
+        "description": "X.CodeBlock (markdown fenced code block)"
+    },
+    "X.CodeBlock for C++ (markdown fenced code block)": {
+        "scope": "markdown,mdx",
+        "prefix": "xccpp",
+        "body": [
+            "```cpp",
+            "$1",
+            "```",
+        ],
+        "description": "X.CodeBlock for C++ (markdown fenced code block)"
+    },
+    "X.CodeBlock for Python (markdown fenced code block)": {
+        "scope": "markdown,mdx",
+        "prefix": "xcpy",
+        "body": [
+            "```python",
+            "$1",
+            "```",
+        ],
+        "description": "X.CodeBlock for Python (markdown fenced code block)"
+    },
+    "X.CodeBlock for JavaScript (markdown fenced code block)": {
+        "scope": "markdown,mdx",
+        "prefix": "xcjs",
+        "body": [
+            "```js",
+            "$1",
+            "```",
+        ],
+        "description": "X.CodeBlock for JavaScript (markdown fenced code block)"
+    },
+    "X.Formula (markdown block math)": {
+        "scope": "markdown,mdx",
+        "prefix": "xformula",
+        "body": [
+            "$$",
+            "$1",
+            "$$",
+        ],
+        "description": "X.Formula (markdown block math)"
+    },
+    "X.HighlightBlock with background (markdown blockquote)": {
+        "scope": "markdown,mdx",
+        "prefix": "xhbg",
+        "body": [
+            "<!-- @xprops background=\"$1\" -->",
+            "",
+            "> $2",
+        ],
+        "description": "X.HighlightBlock with background (markdown blockquote)"
+    },
+    "X.Image (markdown image)": {
+        "scope": "markdown,mdx",
+        "prefix": "ximage",
+        "body": [
+            "<!-- @xprops width=\"100%\" -->",
+            "",
+            "![](1$1.jpg)",
+        ],
+        "description": "X.Image (markdown image)"
+    },
+    "X.Table (markdown GFM table)": {
+        "scope": "markdown,mdx",
+        "prefix": "xtable",
+        "body": [
+            "| col1 | col2 |",
+            "| --- | --- |",
+            "| hello | world |",
+        ],
+        "description": "X.Table (markdown GFM table)"
+    },
+    "highlightLines props": {
+        "scope": "javascript,typescript,markdown,mdx",
+        "prefix": "hll",
+        "body": [
+            "highlightLines",
+        ],
+        "description": "highlightLines props"
+    },
+    "diffRemovedLines props": {
+        "scope": "javascript,typescript,markdown,mdx",
+        "prefix": "drl",
+        "body": [
+            "diffRemovedLines",
+        ],
+        "description": "diffRemovedLines props"
+    },
+    "diffAddedLines props": {
+        "scope": "javascript,typescript,markdown,mdx",
+        "prefix": "dal",
+        "body": [
+            "diffAddedLines",
+        ],
+        "description": "diffAddedLines props"
+    },
+    "themeAdaptive props": {
+        "scope": "javascript,typescript,markdown,mdx",
+        "prefix": "ta",
+        "body": [
+            "themeAdaptive",
+        ],
+        "description": "themeAdaptive props"
+    },
 }
