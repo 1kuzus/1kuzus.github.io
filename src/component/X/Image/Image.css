@@ -18,8 +18,9 @@
     background: #000000c0;
 }
 .x-image-lightbox .x-image {
-    max-width: 96vw;
-    max-height: 92vh;
+    max-width: calc(96vw / 1.2);
+    max-height: calc(92vh / 1.2);
+    transform: scale(1.2);
     margin: 0;
     cursor: zoom-out;
 }
