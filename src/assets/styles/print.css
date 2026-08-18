@@ -35,6 +35,7 @@
     .x-codeblock pre {
         overflow-wrap: anywhere !important;
         white-space: pre-wrap !important;
+        background: none !important;
     }
     .x-table {
         width: auto !important;
@@ -49,12 +50,5 @@
     .like-button,
     .x-codeblock-header {
         display: none !important;
-    }
-
-    @supports (font: -apple-system-body) {
-        /* fix for Safari */
-        .x-codeblock pre {
-            background: none !important;
-        }
     }
 }
