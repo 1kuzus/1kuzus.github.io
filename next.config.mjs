@@ -11,7 +11,6 @@ const postImagesDev = path.resolve(path.dirname(fileURLToPath(import.meta.url)),
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     output: process.env.NODE_ENV === 'production' ? 'export' : undefined,
-    images: {unoptimized: true},
     trailingSlash: true,
     pageExtensions: ['js', 'jsx', 'md', 'mdx'],
     webpack: (config, {dev}) => {
