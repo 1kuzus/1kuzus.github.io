@@ -8,4 +8,4 @@
 :HL["/_next/static/css/25da4c51e755391e.css","style"]
 :HL["/cry.gif","image"]
 :HL["/_next/static/css/4bd8a774280272e6.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"(posts)","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"c","key":"24a/games101-02-rasterization","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"KEateuu0rvlZhhfw8mQQy"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"(posts)","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"c","key":"24a/games101-02-rasterization","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"-wV5ZCKIpy57h7erJ60SK"}
