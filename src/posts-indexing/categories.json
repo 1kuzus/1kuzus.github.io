@@ -56,7 +56,7 @@
         ]
     },
     {
-        "categoryName": "网络杂识",
+        "categoryName": "杂识",
         "posts": [
             "/25b/debug-x86_64-program-in-arm64-system/",
             "/24b/injective-surjective-bijective/",
@@ -144,7 +144,7 @@
         ]
     },
     {
-        "categoryName": "杂记",
+        "categoryName": "其他",
         "posts": [
             "/24d/about-interactive-multimedia/"
         ]

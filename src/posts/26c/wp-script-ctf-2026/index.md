@@ -386,7 +386,7 @@ print(dump(gift - 0x2080, gift - 0x1fd0))
 
 ![](t2-2.png)
 
-A bit of guesswork from here: with `rb` and `flop.txt` sitting next to each other, this looks a lot like `fopen(..., "rb")` on a path that should have been `flag.txt`. I guessed that an input containing `FSOP` will read the file and print it; `Nothing to see here ;)` is just the decoy in `flop.txt`.
+A bit of guesswork from here: with `rb` and `flop.txt` this looks a lot like `fopen(..., "rb")` on a path that should have been `flag.txt`. I guessed that an input containing `FSOP` will read the file and print it; `Nothing to see here ;)` is just the decoy in `flop.txt`.
 
 Because of the single-`n` limit, the rename and the trigger have to happen in the same payload: `%hn` flips `op` to `ag` (`flop.txt` to `flag.txt`), and the same input carries `FSOP`:
 

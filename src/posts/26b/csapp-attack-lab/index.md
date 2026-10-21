@@ -221,7 +221,7 @@ ff d0
 
 ### Phase 4
 
-如最前面所说，一开始做题的时候没注意，Phase 4~5用了gadget farm范围外的gadgets，而服务端有专用于测评的程序`rtarget-check`，无法保证与下发的`rtarget`程序找到的gadgets一致。因此这两题的解法过不了服务端的测评，重在学习ROP思路~
+如最前面所说，一开始做题的时候没注意，Phase 4~5用了gadget farm范围外的gadgets，而服务端有专用于测评的程序`rtarget-check`，无法保证与下发的`rtarget`程序找到的gadgets一致。因此这两题的解法过不了服务端的测评，重在学习ROP思路。
 
 Phase 4和Phase 2要求目标一致，但是开启了NX（也没有泄露栈地址）因此无法注入shellcode来操纵`rdi`的值。找一个`pop rdi`gadget：
 
